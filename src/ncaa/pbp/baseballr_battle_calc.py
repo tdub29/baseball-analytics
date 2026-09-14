@@ -801,13 +801,29 @@ def baseballr_to_battle_df(raw: pd.DataFrame, games_lookup: dict[int, tuple[str,
     raw["any_adv_wp_pb"] = _adv_breakdown.apply(lambda d: d["wp_pb"])
     raw["any_adv_other"] = _adv_breakdown.apply(lambda d: d["other"])
 
+    # Final score per game, computed ONCE.
+    #
+    # This used to be `raw[raw["game_pbp_id"] == gid].iloc[-1]` evaluated twice inside an
+    # `apply(axis=1)`, so every row scanned the whole frame twice: O(n^2) over the PBP
+    # table. Profiled at 800 rows it was 17.2 of 21.1 seconds, and the cost per row rose
+    # with n (11.8 ms/row at 200, 24.4 at 1600), which is the signature. A five-game CSV
+    # took over five minutes and the four tests that call it each paid that again.
+    # groupby().last() is the same "last row of this game" semantics in one pass.
+    _last_by_gid = raw.groupby("game_pbp_id", dropna=False)[["_away", "_home"]].last()
+    _last_scores = {
+        gid: (rec["_away"], rec["_home"])
+        for gid, rec in _last_by_gid.to_dict("index").items()
+    }
+
     def game_meta(row: pd.Series) -> pd.Series:
         gid = row["game_pbp_id"]
         gid_int = int(gid) if not pd.isna(gid) else 0
         away, home = games.get(gid_int, ("?", "?"))
-        last = raw[raw["game_pbp_id"] == gid].iloc[-1] if not raw[raw["game_pbp_id"] == gid].empty else row
-        away_runs = last["_away"] if "_away" in last else 0
-        home_runs = last["_home"] if "_home" in last else 0
+        away_runs, home_runs = _last_scores.get(gid, (row.get("_away", 0), row.get("_home", 0)))
+        if pd.isna(away_runs):
+            away_runs = 0
+        if pd.isna(home_runs):
+            home_runs = 0
         _away_s = (away.strip() if isinstance(away, str) else "") or ""
         is_usd_away = (
             away in USD_ALIASES
