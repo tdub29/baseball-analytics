@@ -1,0 +1,34 @@
+player,team,season,height_in,weight_lb,bats,throws,class_year,position,hometown,high_school
+NYLE BANKS,"Southern University, Baton Rouge",2026,70,155,S,R,SR,SS,"Lenexa, KS",Olathe North
+JAKOB SCHARDT,"California State University, Fullerton",2026,73,166,L,R,JR,OF,"Camarillo, CA",Adolfo Camarillo
+NICK SOLORZANO,Stony Brook University,2026,72,175,S,R,GR,C,"El Dorado Hills, CA",Oak Ridge
+CHAD GURNEA,"California State University, Fullerton",2026,71,205,R,R,SO,RHP/IF/OF,"Garden Grove, CA",Pacifica
+ELI GIPSON,Indiana State University,2026,74,160,R,R,JR,SS,"Tuscumbia, AL",Russellville
+ALEXANDER SANDERSON,University of South Carolina Upstate,2026,75,170,L,L,JR,LHP,"Peoria, AZ",
+JOSEPH CALABRETTI,Seton Hall University,2026,75,215,S,R,JR,3B/OF,"Perkasie, PA",Pennridge
+JACKSON ELDER,University of Utah,2026,73,190,R,R,SR,,OR,Central Catholic
+KANNON COAKLEY,University of Southern Indiana,2026,73,195,R,R,SR,C/1B,"La Motte, IA",Maquoketa
+CHRISTOPHER ELLISON,Cornell University,2026,72,186,R,R,SR,RHP/IF/OF,"Howell, NJ",
+JAYDEN DILLARD,University of Maryland Eastern Shore,2026,71,180,R,R,JR,SS/OF/RHP,"Salisbury, MD",James M. Bennett
+ELIJAH COSTON,Virginia Commonwealth University,2026,75,185,L,L,FR,OF/LHP,"Chester, VA",Benedictine
+DYLAN GREGO,Ball State University,2026,72,155,S,R,JR,SS/2B,"Kansas City, MO",Staley
+HENRY GARCIA JR,University of Louisiana Monroe,2026,74,215,R,R,JR,OF/3B/SS,"New York, NY",James Monroe
+OWEN WOJCIECHOWSKI,James Madison University,2026,72,160,R,R,,C/RHP,"Herndon, VA",South Lakes
+NOLAN FICKLIN,Brigham Young University,2026,71,175,L,L,JR,LHP,UT,Pine View
+BRANDON BREWER,University of Louisiana Monroe,2026,77,180,L,R,JR,RHP/OF,"Sterlington, LA",Sterlington
+TRAVIS MAXWELL,"University of California, Davis",2026,71,170,R,R,,RHP/MIF,"Yorba Linda, CA",El Dorado
+DYLAN SKIDMORE,Mercyhurst University,2026,71,155,L,L,,OF/LHP,OH,
+JOSEPH WILGA,University of Richmond,2026,76,221,R,R,SR,3B,"Doylestown, PA",Central Bucks East
+DEREK WESTFALL,Queens University of Charlotte,2026,70,175,L,R,SO,RHP/OF,"Wesley Chapel, FL",Tampa Jesuit
+PARRISH BEAGLE,Tarleton State University,2026,73,184,R,R,SO,RHP/3B,"Atchison, KS",Maur Hill Mount Academy
+JACKSON HORRAS,Bradley University,2026,73,150,R,R,SR,2-way,IA,
+HAYDEN CREWS,"California State University, Fresno",2026,75,205,R,R,JR,1B/3B,"West Sacramento, CA",River City
+CHAD FALCON,St. John's University (New York),2026,70,170,L,L,SO,LHP/OF,NJ,Don Bosco Prep
+QUINCY THORNTON,University of Tennessee at Martin,2026,74,200,R,R,SR,RHP/SS,"Morgantown, WV",Morgantown
+MATTHEW SCHARK,Southern Illinois University at Carbondale,2026,76,220,R,R,SR,3B/1B/RHP,"O'Fallon, MO",Francis Howell
+JACK BROOKER,Queens University of Charlotte,2026,73,185,R,R,SO,RHP/1B/OF,"Boulder, CO",Niwot
+TYLER PRYSTAJKO,University of San Francisco,2026,74,180,R,R,JR,RHP/OF,"Huntington Beach, CA",
+ERIC CORREA,Rice University,2026,72,190,L,R,FR,OF/1B,"Carolina, PR",Montverde Academy
+TYLER FOX,The Ohio State University,2026,75,195,R,R,FR,3B/1B/MIF,"Northville, MI",Brother Rice
+NATHAN TICHY,Pepperdine University,2026,71,170,R,R,FR,RHP/OF,"San Jose, CA",Pioneer
+JOSEPH VALENTINE,Wright State University,2026,74,175,L,L,JR,LHP/OF,"Medina, OH",

@@ -1,0 +1,77 @@
+player,team,season,height_in,weight_lb,bats,throws,class_year,position,hometown,high_school
+RYAN ZUCKERMAN,University of Pittsburgh,2026,76,200,R,R,2023,SS/3B/RHP,"Yardley, PA",Pennsbury
+PETER DUBIE,Brown University,2026,76,210,R,R,2022,RHP/OF,"Indianapolis, IN",Park Tudor
+COOPER TORRES,East Tennessee State University,2026,70,175,R,R,2020,SS/2B/OF,"Woodstock, GA",Woodstock HS
+KOLTEN SMITH,University of Georgia,2026,75,200,R,R,2022,RHP/1B,"Ocala, FL",Forest
+MATTHEW TIPPIE,Texas State University,2026,76,190,R,R,2021,RHP,"Burnet, TX",
+TANNER THACH,University of North Carolina Wilmington,2026,75,215,L,L,2022,1B/LHP,"Belvidere, NC",Perquimans County
+ANTHONY LIRA,University of Arizona,2026,75,220,R,R,2024,1B/3B,"Citrus Heights, CA",Oakmont
+RYAN WIDEMAN,Western Kentucky University,2026,77,208,R,R,2022,OF/RHP/1B,"Marietta, GA",Walton
+JACK MOROKNEK,Butler University,2026,75,185,L,R,2021,OF/3B,"Carmel, IN",Brebeuf Jesuit Preparatory
+RYAN BAKES,"University of South Carolina, Columbia",2026,70,187,R,R,2023,C/OF,"Algonquin, IL",Huntley
+ANGELO CABRAL,The University of Texas Rio Grande Valley,2026,74,180,R,R,2019,RHP/IF,"Keller, TX",Fossil Ridge
+COREY KLING,University of South Florida,2026,71,175,R,R,2023,RHP/UT,"Delray Beach, FL",West Boca Raton
+ETHAN MCELVAIN,Vanderbilt University,2026,76,210,S,L,2023,LHP/1B,"Thompsons Station, TN",Nolensville
+CARSON CORMIER,Texas Christian University,2026,78,235,R,R,2023,RHP/1B,"Westford, MA",Phillips Academy
+DALLAS MACIAS,Oregon State University,2026,72,195,S,R,2022,SS/OF,"Aurora, CO",Regis Jesuit
+JARET NELSON,Florida Gulf Coast University,2026,74,215,R,R,2022,1B,"Nixa, MO",Nixa
+DYLAN LOY,"University of Tennessee, Knoxville",2026,73,175,R,L,2023,LHP/1B,"Sevierville, TN",Pigeon Forge
+REECE CLAPP,Bradley University,2026,76,200,R,R,2021,RHP,"Columbia, MO",Rock Bridge
+HENRY GODBOUT,University of Virginia,2026,74,185,R,R,2022,SS/3B/RHP,"Brooklyn, NY",Baylor
+CARSON MCENTIRE,Oregon State University,2026,73,190,R,R,2023,OF/1B/C,"Peoria, AZ",Mountain Ridge
+GABRIEL NARD,Duke University,2026,71,180,R,R,2022,SS/RHP,"Shaker Heights, OH",St Ignatius
+BEAU SYLVESTER,Oklahoma State University,2026,72,200,R,R,2022,C/1B/OF,"Kailua, HI",Kamehameha Schools Kapalama
+VICENTE FELICIANO,Seattle University,2026,72,170,L,R,2022,SS/3B,"Auburn, WA",Auburn Mountainview
+TRENTON RUMLEY,Canisius University,2026,67,165,R,R,2021,2B/MIF/OF,"Cowlesville, NY",St. Mary's
+DYLAN DRIESSEN,South Dakota State University,2026,75,210,R,R,2022,RHP/3B,"Omaha, NE",Millard West
+KEMPER NIX,"University of South Carolina, Columbia",2026,76,210,L,L,2022,LHP,"Spartanburg, SC",Spartanburg
+REISS CALVIN,"University of California, Santa Barbara",2026,73,175,S,R,2021,MIF/3B/OF,"Woodbury, MN",Woodbury
+PATRICK MORRIS,Western Kentucky University,2026,73,180,L,L,2021,LHP/OF,"Gilbert, AZ",Chandler Lobos
+CAMDEN CHALFANT,Charleston Southern University,2026,74,195,R,R,2022,RHP/1B,"Edmond, OK",Edmond Memorial
+BRADY JONES,"University of South Carolina, Columbia",2026,72,195,R,R,2022,RHP/2B,"Decatur, GA",Decatur
+JOSEPH TROMBLEY,Sacred Heart University,2026,78,230,R,R,2023,RHP/1B,"Watervliet, NY",Shaker
+NICHOLAS POTTER,Wichita State University,2026,76,178,R,R,2022,RHP/3B,"Greenwood, MO",Lees Summit West
+TATE BETHEL,University of Texas at Arlington,2026,72,185,R,R,2021,SS/3B/RHP,"Sherman, TX",
+SEBASTIAN LIPPMAN,Georgia Institute of Technology,2026,75,180,S,R,2024,RHP/MIF/OF,"Plainview, NY",Plainview-Old Bethpage
+MASON DAVENPORT,Stetson University,2026,81,250,R,R,2022,RHP/1B,"Tonganoxie, KS",
+KALEB THOMAS,Missouri State University,2026,72,190,R,R,2023,RHP/MIF,"Hagersville, ON",
+DYLAN RHADANS,Wofford College,2026,76,215,L,L,2021,LHP/1B/OF,"Acworth, GA",North Paulding
+OWEN SULLIVAN,Western Illinois University,2026,70,180,R,R,2023,OF/RHP,"Oak Creek, WI",Oak Creek
+DAYNE PENGELLY,University of New Mexico,2026,73,170,L,R,2021,C/RHP/UT,"Rio Rancho, NM",V. Sue Cleveland
+SPENSER HAMBLEN,Western Carolina University,2026,74,185,R,R,2021,OF/RHP,"Suwannee, GA",North Gwinnett
+HUNTER CARLSON,Wichita State University,2026,73,210,L,R,2024,C/MIF,"Hudson, WI",Hudson
+JAIME PEREZ JR.,Tarleton State University,2026,71,145,R,R,2021,C,"McAllen, TX",Robert Vela
+MAX COUPE,Gonzaga University,2026,73,185,R,R,2021,OF,"Menlo Park, CA",
+JEREMY URENA,University of Rhode Island,2026,72,165,R,R,2022,RHP/MIF,"Johnston, RI",Johnston Senior
+JOSEPH MCMANNIS,"University of Maryland, College Park",2026,77,230,R,R,2023,RHP/IF,"Emmitsburg, MD",Catoctin
+FLYNN HOWARD,Merrimack College,2026,73,180,L,R,2022,RHP/1B,"Washington, DC",St. Johns College
+BRANDON HSU,University of Rhode Island,2026,69,180,R,R,2021,RHP/3B,"Brookline, NH",Hollis-Brookline
+HARRISON BARNETT,Marshall University,2026,75,215,L,R,2022,RHP/1B/OF,"Charlotte, NC",Providence Day
+CADE DAVIS,George Washington University,2026,72,195,L,L,2022,LHP/1B/OF,"Bloomsburg, PA",Central Columbia
+ADDISON KLEPSCH,Auburn University,2026,70,192,R,R,2024,SS/IF/RHP,"San Diego, CA",Del Norte
+AUSTIN BREEDLOVE,"University of Tennessee, Knoxville",2026,74,180,R,R,2022,RHP/OF,"Ooltewah, TN",McCallie School
+WYATT PEIFER,James Madison University,2026,73,175,S,R,2022,SS/2B/3B,"Greentown, PA",Wallenpaupack Area
+BRADEN CONSAUL,University of South Carolina Upstate,2026,74,220,R,R,2022,RHP/1B/3B/OF,"Fairport, NY",Fairport Senior
+PAYTON HAWKINSON,"California State University, Fullerton",2026,78,230,R,L,2023,LHP/1B/OF,"Turlock, CA",Turlock
+DANIEL CORONA JR,UNIVERSITY OF MISSOURI COLUMBIA,2026,74,198,L,R,2021,SS/RHP,"Brooklyn, NY",Baylor
+JOHN MITCHELL,U.S. Air Force Academy,2026,74,182,L,R,2024,RHP/3B/SS,"Cypress, TX",St. John XXIII
+MICHAEL QUICK,Southern Illinois University at Carbondale,2026,70,165,L,R,2022,C/MIF,"Oshawa, ON",Maxwell Heights Secondary
+PETER MOUTZOURIDIS,"University of California, Berkeley",2026,72,185,R,R,2023,SS,"San Jose, CA",Valley Christian
+CADEN WOOSTER,Santa Clara University,2026,80,245,R,R,2022,RHP/1B/OF,"Oakland, CA",Bishop O'Dowd
+JUDE CLOUGH,George Washington University,2026,68,168,R,R,2023,C/2B,"Fairfield, NJ",DePaul Catholic
+HAYDEN ODELL,University of New Orleans,2026,71,180,L,L,2022,OF/LHP,"Mobile, AL",St. Paul's Episcopal
+DERRICK SMITH,North Carolina State University,2026,74,198,R,R,2022,RHP/SS,"White Bear Lake, MN",White Bear Lake
+BRADY CHRISTENSEN,Sam Houston State University,2026,76,215,L,R,2021,OF/1B/3B,"Elkhorn, NE",Elkhorn South
+QUINTEN MCMANMON,Georgia State University,2026,77,200,S,R,2022,RHP/1B/3B,"Gray, GA",Jones County
+ADAM HABER,Wofford College,2026,70,170,L,R,2021,OF/RHP,"Marietta, GA",Walton
+DOMINIC GUZMAN,Gardner-Webb University,2026,76,205,R,R,2021,RHP/3B,"Crystal Lake, IL",Crystal Lake Central
+JACOB HAVERN,Louisiana Tech University,2026,78,180,R,R,2022,RHP,"Round Rock, TX",Cedar Ridge
+MATTHEW WESTLEY,Virginia Polytechnic Institute and State University,2026,73,200,R,R,2023,3B/RHP,"Manassas, VA",Charles J. Colgan Sr.
+RYAN URE,Oklahoma State University,2026,79,225,R,L,2021,LHP/1B,"Eaton, CO",
+ZACHARY BUSCHSCHULTE,Lindenwood University,2026,71,165,R,R,2021,SS/RHP,"Kansas City, MO",Staley
+CAMDEN KARCZEWSKI,Purdue University Fort Wayne,2026,72,190,R,R,2021,SS/2B,"Shorewood, IL",Joliet West
+ANDREW RIVAS,"University of California, Riverside",2026,71,180,L,L,2021,LHP/1B/OF,"Thousand Oaks, CA",Newbury Park
+JACKSON FARRELL,"University of Arkansas, Fayetteville",2026,75,210,L,L,2024,LHP/1B,"Jenks, OK",Owasso
+LUKE DOTSON,Mississippi State University,2026,76,195,L,L,2023,LHP/OF,"Marietta, GA",Mt Paran Christian
+JARED HUGHES,Long Island University,2026,74,180,R,R,2021,RHP/1B/3B,"Republic, MO",
+TYSON GREENWOOD,Purdue University Fort Wayne,2026,75,190,L,L,2024,LHP/1B/OF,"New Carlisle, IN",New Prairie

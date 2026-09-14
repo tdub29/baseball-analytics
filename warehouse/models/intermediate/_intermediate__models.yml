@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: int_pitches__enriched
+    description: >
+      Per-pitch TrackMan rows with engineered boolean event flags (swing / whiff /
+      strike / in-zone / contact / in-play / barrel-proxy) and a normalized
+      pitch_code. Mirrors src/portal/trackman._pitch_flags. Feeds fct_pitch and
+      the per-pitcher / per-hitter season marts. Grain = one row per pitch_uid.
+    columns:
+      - name: pitch_uid
+        data_tests:
+          - not_null
+          - unique
+      - name: is_swing
+        description: "True if the batter offered (swinging strike, foul, or ball in play)."
+        data_tests:
+          - not_null
+      - name: is_whiff
+        description: "True if PitchCall = StrikeSwinging."
+        data_tests:
+          - not_null
+      - name: in_zone
+        description: "True if the pitch crossed the standard rule-book zone box."
+        data_tests:
+          - not_null
+      - name: barrel_proxy
+        description: "PROXY barrel flag (ExitSpeed>=98 & LA 26-30) — not a true Statcast barrel."
+        data_tests:
+          - not_null
+      - name: pitch_code
+        description: "Normalized bucket fb/si/sl/cb/ch/ct (null when untagged/Other)."
+        data_tests:
+          - accepted_values:
+              values: ["fb", "si", "sl", "cb", "ch", "ct"]
+              config:
+                where: "pitch_code is not null"

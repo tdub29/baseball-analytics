@@ -1,0 +1,17 @@
+USD Baseball — Battle calculation output
+Source: baseballr-style PBP via battles/baseballr_battle_calc.py
+============================================================
+
+Game 6507954  (San Diego Toreros @ Pacific Tigers)
+----------------------------------------
+  B1a Leadoff Runners (Off): 4/4  (goal met: ✓)
+  B1b Leadoff Runners (Def): 5/3  (goal met: ✗)
+  B2a Leadoff Runs % (Off): 2/4  (goal met: ✗)
+  B2b Leadoff Stranded % (Def): 0/5  (goal met: ✗)
+  B3a Total Baserunners (Off): 16/16  (goal met: ✓)
+  B3b Total Baserunners (Def): 26/13  (goal met: ✗)
+  B3c Total Bases + XBs (Off): 29/24  (goal met: ✓)
+  B4 Defensive Errors (Pitch): 0/0  (goal met: ✓)
+  B5a BB+HBP (Off) vs K: 7/4  (goal met: ✓)
+  B5b BB+HBP (Def): 6/4  (goal met: ✗)
+  Makeup B3c: 1B 2, 2B 4, 3B 2, HR 1 | XB: 2 (SB 0, WP/PB 0)

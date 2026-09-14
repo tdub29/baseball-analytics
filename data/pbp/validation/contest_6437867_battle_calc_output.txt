@@ -1,0 +1,17 @@
+USD Baseball — Battle calculation output
+Source: baseballr-style PBP via battles/baseballr_battle_calc.py
+============================================================
+
+Game 6437867  (UC Irvine Anteaters @ San Diego Toreros)
+----------------------------------------
+  B1a Leadoff Runners (Off): 3/4  (goal met: ✗)
+  B1b Leadoff Runners (Def): 5/3  (goal met: ✗)
+  B2a Leadoff Runs % (Off): 1/3  (goal met: ✗)
+  B2b Leadoff Stranded % (Def): 2/5  (goal met: ✗)
+  B3a Total Baserunners (Off): 11/16  (goal met: ✗)
+  B3b Total Baserunners (Def): 24/13  (goal met: ✗)
+  B3c Total Bases + XBs (Off): 17/24  (goal met: ✗)
+  B4 Defensive Errors (Pitch): 2/0  (goal met: ✗)
+  B5a BB+HBP (Off) vs K: 5/13  (goal met: ✗)
+  B5b BB+HBP (Def): 11/4  (goal met: ✗)
+  Makeup B3c: 1B 3, 2B 3, 3B 0, HR 0 | XB: 3 (SB 0, WP/PB 0)

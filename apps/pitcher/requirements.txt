@@ -1,0 +1,11 @@
+streamlit
+pandas
+matplotlib
+seaborn
+joblib
+scikit-learn
+lightgbm
+xgboost==2.1.0
+numpy==1.23.5
+catboost==1.2.5
+tqdm

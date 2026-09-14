@@ -1,0 +1,4 @@
+# Battles: NCAA PBP scraper + battle calc
+playwright>=1.40
+pandas>=2.0
+beautifulsoup4>=4.12

@@ -1,0 +1,17 @@
+pitch_type,code,code_label
+Fastball,fb,Four-Seam Fastball
+Four-Seam,fb,Four-Seam Fastball
+FourSeamFastBall,fb,Four-Seam Fastball
+Sinker,si,Sinker
+Two-Seam,si,Sinker
+TwoSeamFastBall,si,Sinker
+Cutter,ct,Cutter
+Slider,sl,Slider/Sweeper
+Sweeper,sl,Slider/Sweeper
+Curveball,cb,Curveball
+Curve,cb,Curveball
+KnuckleCurve,cb,Curveball
+Changeup,ch,Changeup/Splitter
+Change,ch,Changeup/Splitter
+ChangeUp,ch,Changeup/Splitter
+Splitter,ch,Changeup/Splitter

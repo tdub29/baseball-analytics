@@ -1,0 +1,17 @@
+USD Baseball — Battle calculation output
+Source: baseballr-style PBP via battles/baseballr_battle_calc.py
+============================================================
+
+Game 6507273  (Saint Mary's (CA) Gaels @ San Diego Toreros)
+----------------------------------------
+  B1a Leadoff Runners (Off): 3/4  (goal met: ✗)
+  B1b Leadoff Runners (Def): 4/3  (goal met: ✗)
+  B2a Leadoff Runs % (Off): 2/3  (goal met: ✗)
+  B2b Leadoff Stranded % (Def): 0/4  (goal met: ✗)
+  B3a Total Baserunners (Off): 8/16  (goal met: ✗)
+  B3b Total Baserunners (Def): 22/13  (goal met: ✗)
+  B3c Total Bases + XBs (Off): 12/24  (goal met: ✗)
+  B4 Defensive Errors (Pitch): 3/0  (goal met: ✗)
+  B5a BB+HBP (Off) vs K: 2/7  (goal met: ✗)
+  B5b BB+HBP (Def): 5/4  (goal met: ✗)
+  Makeup B3c: 1B 5, 2B 0, 3B 0, HR 1 | XB: 1 (SB 1, WP/PB 0)

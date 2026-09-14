@@ -1,0 +1,61 @@
+version: 2
+
+sources:
+  # ── TrackMan: USD's own pitch-by-pitch radar export (one row per pitch) ──────
+  # dbt-duckdb reads the CSV directly via the external_location meta below; no
+  # load step, no credentials. The path comes from the `trackman_csv` var
+  # (defaults to the committed sample fixture; point at the full master file in
+  # dev — see README quickstart).
+  - name: trackman
+    description: >
+      USD Baseball TrackMan master export, pitch-level grain. One row per tracked
+      pitch (release/movement/location/outcome). This is the radar feed the
+      pitcher-app and hitter-app score with their Stuff+/xWhiff/xSLG models;
+      the warehouse consumes the RAW measured fields only and does NOT run model
+      inference (ML scoring stays in Python — see README honest-scope note).
+    meta:
+      external_location: "read_csv_auto('{{ var('trackman_csv') }}', header=true, all_varchar=true, sample_size=-1)"
+    # freshness uses the file's own Date column; loaded_at is text in the CSV so
+    # we cap with a generous warn/error and let it pass on the static fixture.
+    tables:
+      - name: pitches
+        description: "Raw TrackMan pitch rows (PitchUID grain)."
+        # source freshness check (no loaded_at timestamp column in the static
+        # fixture, so this is wired but lenient — documents intent for the live
+        # feed where Date refreshes per game day).
+        loaded_at_field: "try_strptime(\"Date\", '%-m/%-d/%Y')"
+        freshness:
+          warn_after: { count: 30, period: day }
+          error_after: { count: 365, period: day }
+        columns:
+          - name: PitchUID
+            description: "Stable per-pitch unique id (TrackMan UUID)."
+
+  # ── 6-4-3 Charts: per-pitcher x pitch-type quality grades (national D1 set) ──
+  - name: six_four_three
+    description: >
+      6-4-3 Charts exports. Pitching = one row per (pitcher, pitch type) with the
+      already-computed quality grades (Stuff+, Location+, xRV+, etc.) and shape.
+      Hitting = one row per hitter (overall). dbt consumes these PRE-COMPUTED
+      grades; it does not recompute Stuff+ (that model lives in 6-4-3 / Python).
+    meta:
+      external_location: "read_csv_auto('{{ var('six43_pitching_csv') }}', header=true, all_varchar=true, sample_size=-1)"
+    tables:
+      - name: pitching
+        description: "6-4-3 per-(pitcher, pitch-type) pitching grades + shape."
+        meta:
+          external_location: "read_csv_auto('{{ var('six43_pitching_csv') }}', header=true, all_varchar=true, sample_size=-1)"
+        loaded_at_field: null
+        columns:
+          - name: Player
+            description: "Pitcher display name (resolved upstream in 6-4-3)."
+          - name: Pitch Type
+            description: "Raw pitch-type label (Fastball/Slider/...); mapped to code."
+      - name: hitting
+        description: "6-4-3 per-hitter overall batted-ball + discipline line."
+        meta:
+          external_location: "read_csv_auto('{{ var('six43_hitting_csv') }}', header=true, all_varchar=true, sample_size=-1)"
+        loaded_at_field: null
+        columns:
+          - name: Player
+            description: "Hitter display name."

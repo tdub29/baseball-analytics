@@ -1,0 +1,88 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "baseball-analytics"
+version = "0.1.0"
+description = "Pitch-level baseball modeling at two levels: an NCAA transfer-portal scouting platform in active use, and an MLB run-expectancy and Statcast modeling track."
+requires-python = ">=3.10"
+readme = "README.md"
+dependencies = [
+  "pandas>=2.2",
+  "openpyxl>=3.1",
+  "pyyaml>=6.0",
+  "rapidfuzz>=3.9",
+  "python-dateutil>=2.9",
+  "requests>=2.32",
+  "beautifulsoup4>=4.12",
+  "lxml>=5.0",
+  "tenacity>=8.0",
+]
+
+# The two Streamlit apps pin numpy and scipy against each other (hitter wants
+# numpy==1.24.3 + scipy==1.10.0, pitcher wants numpy==1.23.5), which is why they are
+# extras and not one dependency list. Install one app per environment.
+[project.optional-dependencies]
+scoring = [
+  "xgboost==2.1.0",
+  "scikit-learn>=1.3",
+  "lightgbm>=4.0",
+  "joblib>=1.3",
+]
+hitter = [
+  "streamlit",
+  "numpy==1.24.3",
+  "scipy==1.10.0",
+  "scikit-learn==1.3.0",
+  "xgboost==2.1.0",
+  "statsmodels",
+  "seaborn",
+  "matplotlib",
+]
+pitcher = [
+  "streamlit",
+  "numpy==1.23.5",
+  "scikit-learn",
+  "lightgbm",
+  "xgboost==2.1.0",
+  "catboost==1.2.5",
+  "joblib",
+  "seaborn",
+  "matplotlib",
+  "tqdm",
+]
+ncaa-stats = [
+  "collegebaseball @ git+https://github.com/nathanblumenfeld/collegebaseball",
+]
+board = [
+  "gspread>=6.0",
+  "google-auth>=2.30",
+  "supabase>=2.0",
+]
+pbp = [
+  "playwright>=1.44",
+  "reportlab>=4.0",
+]
+warehouse = [
+  "dbt-core>=1.8",
+  "dbt-duckdb>=1.8",
+]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5",
+]
+
+[project.scripts]
+portal = "ncaa.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "src/ncaa/pbp"]
+pythonpath = ["src", "."]
+
+[tool.ruff]
+line-length = 110
+exclude = ["research", "apps"]

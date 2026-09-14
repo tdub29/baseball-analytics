@@ -1,0 +1,139 @@
+# Copy to config.yaml and edit. config.yaml is gitignored (holds creds/paths).
+#
+# ── Secrets via env vars (recommended; no secret ever lands in the file) ──────
+# Any string value may be written as ${ENV_VAR} or ${ENV_VAR:-fallback}; it is
+# expanded from the environment at load time (see src/portal/config.py). So the
+# five live-feed credentials can stay out of config.yaml entirely:
+#   sources.d1baseball.cookie       -> ${D1BASEBALL_COOKIE}
+#   sources.64analytics.cookie      -> ${ANALYTICS64_COOKIE}
+#   sources.twitter.bearer_token    -> ${X_BEARER_TOKEN}
+#   alerts.webhook_url              -> ${ALERT_WEBHOOK_URL}
+#   google_sheet.service_account_json -> secrets/google-service-account.json (file path; gitignored)
+# An unset ${VAR} with no fallback becomes "" — which every adapter treats as
+# "not configured" and no-ops on, so the offline pipeline always still runs.
+
+database:
+  path: db/baseball.db
+
+# ── Portal-entry sources (who's in the portal). Toggle on/off. ───────────────
+# Pipeline runs with ZERO dependence on the official NCAA login (2FA-gated).
+sources:
+  d1baseball:
+    enabled: true
+    # Best baseball coverage, but DOUBLE-walled: Cloudflare bot wall + subscriber paywall.
+    # stealth=true fetches via CloakBrowser (clears the bot wall); cookie clears the paywall.
+    # Paste your logged-in d1baseball.com session Cookie header here (internal use only).
+    stealth: true            # needs: pip install cloakbrowser
+    cookie: ""               # e.g. "wordpress_logged_in_...=...; ..."  (from your browser devtools)
+                             #   or leave the file clean and use env: cookie: ${D1BASEBALL_COOKIE}
+    # url: "https://d1baseball.com/stories/2026-transfer-tracker/"   # override per season
+    # paste_path: ""         # NO-COOKIE PATH: copy the rendered tracker table into a .txt and
+                             # point here (or pass --path). Parsed by parse_tracker_text() and
+                             # used in place of the live fetch when set.
+  verbalcommits:
+    enabled: true
+  64analytics:
+    enabled: false          # set true if you hold a Portal Pass; flags removals
+    cookie: ""              #   or: cookie: ${ANALYTICS64_COOKIE}
+  twitter:
+    enabled: false          # fastest signal; needs API bearer token
+    bearer_token: ""        #   or: bearer_token: ${X_BEARER_TOKEN}
+    watch_accounts: ["d1baseball", "KendallRogers", "VerbalCommitsD2"]
+    keywords: ["transfer portal"]
+  ncaa_official:
+    enabled: false          # optional confirmation only; needs 2FA code from a coach
+    note: "Use rarely, to confirm + pull contacts for top-N call targets."
+
+# ── Stat enrichment ──────────────────────────────────────────────────────────
+enrichment:
+  collegebaseball:
+    enabled: true
+    seasons: ["2025"]
+  six_four_three:           # 6-4-3 Charts CSV exports (Portal HQ) dropped here
+    enabled: true
+    inbox_dir: data/643_exports
+  d3dashboard:              # d3-dashboard.com developer API (D1-D3, 2021+); fills collegebaseball's gap
+    enabled: false
+    api_key: ""             # X-API-Key (or set bearer); docs: https://d3-dashboard.com/docs
+    bearer: ""
+    base_url: "https://d3-dashboard.com/api"
+    seasons: ["2025"]
+    divisions: [1]
+  trackman:                 # score TrackMan pitch-by-pitch with the hitter/pitcher app models
+    enabled: false          # needs: pip install xgboost scikit-learn lightgbm joblib
+    csv: ""                 # path or URL to a TrackMan export; default = pitcher-app master file
+    season: "2025"
+    hitting: true           # xSLG + decision value (hitter-app XGBoost models)
+    pitching: true          # TJ Stuff+ + xWhiff (pitcher-app sklearn/LightGBM models)
+    create_missing: true    # create player rows for names not yet in the DB
+    # hitter_models: hitter-app/models     # override if models live elsewhere
+    # pitcher_models: pitcher-app/models
+  ncaa_api:
+    enabled: false
+    base_url: "http://localhost:3000"   # self-hosted henrygd/ncaa-api
+
+# ── Roster needs → drives fit scoring (mirrors your hot-board priorities) ─────
+need_profiles:
+  - label: "Weekend starter"
+    position: RHP
+    priority: 1
+    min_eligibility: 1
+    min_class: JR
+    target_metrics: { k_per_9: ">=9.5", bb_per_9: "<=3.5", ip: ">=40" }
+  - label: "Everyday SS"
+    position: SS
+    priority: 2
+    min_eligibility: 2
+    target_metrics: { obp: ">=.380", k_pct: "<=18", iso: ">=.150" }
+
+filters:
+  divisions: [D1, D2]
+  conferences_exclude: []
+
+# ── Fit-score weights (0-100 output) ─────────────────────────────────────────
+fit_weights:
+  performance_percentile: 0.45
+  positional_need: 0.25
+  level_of_competition: 0.20
+  eligibility: 0.10
+
+# ── Output: Google Sheet board ───────────────────────────────────────────────
+google_sheet:
+  enabled: false
+  service_account_json: secrets/google-service-account.json
+  spreadsheet_id: "1oYJcLKUFpPOvE8690SxsKfnPZXlWzqrGIRfT5lskrac"
+  board_tab: "Hot Board (auto)"
+
+# ── Coach interaction overlay: lead temp (Hot/Warm/Cold) + favorites + notes ──
+# Lets coaches mark players on the published board. No login: writes carry a name
+# the coach picks from the `coaches` dropdown. Round-trips into call_assignments
+# (lead_temp / favorite / scout_notes). Setup: docs/board-interaction-setup.md.
+# backend: none (off) | supabase (edit on the board, shared+live) | sheet (edit in a Google Sheet).
+board_overlay:
+  backend: none
+  coaches: ["Trevor", "Coach"]      # dropdown names for attribution (edit to your staff)
+
+  # ── Path A: edit ON the board (recommended). Browser reads+writes Supabase via
+  # PostgREST using the PUBLIC anon key, gated by row-level security on just these
+  # two tables (see supabase/overlay_schema.sql). ──
+  supabase:
+    url: ""                         # https://<project-ref>.supabase.co
+    anon_key: ""                    # PUBLIC anon/publishable key — safe to embed in the board.
+                                    # NEVER the service_role/secret key (it ships to browsers).
+    overlay_table: board_overlay    # player_id PK; lead_temp, favorite, updated_by, updated_at
+    notes_table: board_notes        # (player_id, author) PK; body, updated_at
+
+  # ── Path B: edit in a linked Google Sheet (board shows it read-only + filterable).
+  # Reuses google_sheet creds unless overridden here. `push-overlay-sheet` builds the
+  # coach-editable tab; the board bakes in whatever coaches have entered at build time. ──
+  sheet:
+    # service_account_json: secrets/google-service-account.json   # defaults to google_sheet's
+    # spreadsheet_id: "..."                                       # defaults to google_sheet's
+    tab: "Coach Board"
+    limit: 300                       # how many top-fit players to list for tagging
+    edit_url: ""                     # optional: deep link shown on the board ("Edit in the team sheet →")
+
+alerts:
+  enabled: false
+  channel: teams            # teams | slack | email
+  webhook_url: ""           #   or: webhook_url: ${ALERT_WEBHOOK_URL}

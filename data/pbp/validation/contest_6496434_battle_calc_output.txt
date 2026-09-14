@@ -1,0 +1,17 @@
+USD Baseball — Battle calculation output
+Source: baseballr-style PBP via battles/baseballr_battle_calc.py
+============================================================
+
+Game 6496434  (LMU (CA) Lions @ San Diego Toreros)
+----------------------------------------
+  B1a Leadoff Runners (Off): 4/4  (goal met: ✓)
+  B1b Leadoff Runners (Def): 4/3  (goal met: ✗)
+  B2a Leadoff Runs % (Off): 4/4  (goal met: ✓)
+  B2b Leadoff Stranded % (Def): 1/4  (goal met: ✗)
+  B3a Total Baserunners (Off): 26/16  (goal met: ✓)
+  B3b Total Baserunners (Def): 15/13  (goal met: ✗)
+  B3c Total Bases + XBs (Off): 42/24  (goal met: ✓)
+  B4 Defensive Errors (Pitch): 2/0  (goal met: ✗)
+  B5a BB+HBP (Off) vs K: 10/9  (goal met: ✓)
+  B5b BB+HBP (Def): 6/4  (goal met: ✗)
+  Makeup B3c: 1B 8, 2B 5, 3B 1, HR 2 | XB: 3 (SB 2, WP/PB 0)

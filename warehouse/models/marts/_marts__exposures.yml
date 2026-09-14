@@ -1,0 +1,68 @@
+version: 2
+
+exposures:
+  - name: pitcher_app
+    label: "Pitcher App (Streamlit / Stuff+)"
+    type: application
+    maturity: high
+    url: "https://github.com/tdub29/streamlit-app-1"
+    description: >
+      USD pitching evaluation app. Scores TrackMan with the TJ Stuff+ (LightGBM)
+      and xWhiff (RandomForest) models. Consumes the pitch-level shape/flag
+      aggregates this warehouse produces (fct_pitch, mart_pitcher_season,
+      mart_pitcher_arsenal); the ML scoring itself stays in Python.
+    depends_on:
+      - ref('fct_pitch')
+      - ref('mart_pitcher_season')
+      - ref('mart_pitcher_arsenal')
+    owner:
+      name: Trevor White
+      email: trevwhite1329@gmail.com
+
+  - name: hitter_app
+    label: "Hitter App (xSLG / decision value)"
+    type: application
+    maturity: high
+    description: >
+      USD hitting evaluation app (xSLG + swing-decision value, XGBoost on TrackMan).
+      Consumes the hitter season line + pitch fact.
+    depends_on:
+      - ref('fct_pitch')
+      - ref('mart_hitter_season')
+    owner:
+      name: Trevor White
+      email: trevwhite1329@gmail.com
+
+  - name: hot_board
+    label: "Transfer-portal Hot Board"
+    type: dashboard
+    maturity: high
+    description: >
+      The published evaluation board the coaching staff works from. Ranks pitchers
+      on the pitches-weighted arsenal rollup + season rates. (Coaches' notes /
+      lead-temp CRM overlay is a SEPARATE private store and is intentionally NOT a
+      dependency of this warehouse.)
+    depends_on:
+      - ref('mart_pitcher_arsenal')
+      - ref('mart_pitcher_season')
+      - ref('mart_hitter_season')
+      - ref('dim_pitcher')
+    owner:
+      name: Trevor White
+      email: trevwhite1329@gmail.com
+
+  - name: pdf_scouting_reports
+    label: "PDF Scouting Reports"
+    type: analysis
+    maturity: medium
+    description: >
+      Per-pitcher PDF scouting reports generated off the arsenal rollup + pitch
+      fact (release/movement/usage tables).
+    depends_on:
+      - ref('mart_pitcher_arsenal')
+      - ref('fct_pitch')
+      - ref('dim_pitcher')
+      - ref('dim_pitch_type')
+    owner:
+      name: Trevor White
+      email: trevwhite1329@gmail.com

@@ -1,0 +1,50 @@
+# Secrets. This gate stands regardless of the public-data decision: a live D1Baseball
+# session cookie or a Supabase service key in a public repo is a different problem from
+# public athlete data. Verified with `git ls-files` + gitleaks before the first push.
+config.yaml
+config.local.yaml
+.env
+.env.*
+secrets/
+*.pem
+*.key
+*-service-account.json
+profiles.yml
+# warehouse/profiles.example.yml ships instead and is copied into place by the quickstart,
+# so `dbt build` still runs from a fresh clone without a real profile ever being tracked.
+
+# Databases. 128MB of SQLite plus dbt's local duckdb; both rebuild from the pipeline.
+db/*.db
+db/*.bak*
+*.duckdb
+*.duckdb.wal
+
+# Regenerable build and cache output
+dist/
+.netlify/
+warehouse/target/
+warehouse/logs/
+warehouse/dbt_packages/
+data/cache/
+data/ncaa_cache/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Notebook checkpoints. Committed notebooks are outputs-stripped on the way in
+# (scripts/build_consolidated_repo.py), so a diff shows code, not base64 images.
+.ipynb_checkpoints/
+
+# NOT ignored, deliberately, reversing the old repo's blanket data ban:
+#   data/**            real TrackMan and portal exports, so the apps run from a clone
+#   *.csv *.xlsx       usd_baseball_TM_master_file.csv, USDHITTINGYTD.csv and friends
+#   *.txt              the stat-page pastes the parsers are tested against
+#   apps/*/models/**   the 10 trained model artifacts
+# Trevor cleared public real data and USD branding on 2026-09-12. A repo whose apps
+# cannot start from a fresh clone is a demo nobody can run.

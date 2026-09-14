@@ -1,0 +1,15 @@
+{
+  "name": "battle-pdf",
+  "version": "1.0.0",
+  "description": "Generate clean PDF table from battle calc output",
+  "type": "module",
+  "main": "generate-pdf.mjs",
+  "scripts": {
+    "generate": "node generate-pdf.mjs",
+    "pdf": "node generate-pdf.mjs"
+  },
+  "dependencies": {
+    "@react-pdf/renderer": "^4.0.0",
+    "react": "^18.2.0"
+  }
+}

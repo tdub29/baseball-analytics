@@ -1,0 +1,22 @@
+event_cd,event_tx,event_desc
+2,,"Generic Out (see event_tx: F=fly, G=ground, L=line, P=pop)"
+3,K,Strikeout
+4,,Stolen Base
+5,,Defensive Indifference
+6,,Caught Stealing
+8,,Pickoff
+9,,Wild Pitch
+10,,Passed Ball
+11,,Balk
+12,,Other Advance
+13,,Foul Error
+14,W,Nonintentional Walk
+15,,Intentional Walk
+16,H,Hit By Pitch
+17,,Interference
+18,E,Error
+19,,Fielder's Choice
+20,S,Single
+21,D,Double
+22,T,Triple
+23,H,Homerun
