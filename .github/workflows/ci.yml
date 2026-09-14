@@ -37,8 +37,37 @@ jobs:
           cache: pip
       - name: install dbt
         run: pip install -e ".[warehouse]"
+      # profiles.yml is gitignored (it is the file that CAN hold credentials), so only
+      # profiles.example.yml ships. Without this copy, `--profiles-dir .` finds no profile
+      # and the job fails on a clean runner even though nothing is wrong. Both targets in
+      # the example are local duckdb file paths, so no secret is involved.
+      - name: stage the dbt profile
+        working-directory: warehouse
+        run: cp profiles.example.yml profiles.yml
+
       # Builds off warehouse/sample_data fixtures, so this needs zero credentials.
       # If it ever needs a secret, the fixtures regressed, not the CI.
       - name: dbt build
         working-directory: warehouse
         run: dbt build --profiles-dir .
+
+  # The MLB R pipeline is a headline deliverable, so it gets a gate. testthat runs entirely
+  # on in-line data frames, so this job never touches the network or baseballr.
+  r-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "release"
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::dplyr
+            any::tidyr
+            any::purrr
+            any::testthat
+            any::tseries
+            any::ggplot2
+      - name: testthat
+        run: Rscript research/r/tests/testthat.R

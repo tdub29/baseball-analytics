@@ -62,7 +62,7 @@ from bs4 import BeautifulSoup
 # project import: reuse the canonical name normalizer
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from ncaa.portal.util import normalize_name, parse_hometown, parse_height_to_inches  # noqa: E402
+from ncaa.portal.util import normalize_name, parse_height_to_inches, parse_hometown  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # Config

@@ -7,6 +7,7 @@ Run from battles/ with the CSV closed.
   python baseballr_battle_calc.py
 """
 from pathlib import Path
+
 import pandas as pd
 
 CSV = Path(__file__).resolve().parent / "real5_pbp_baseballr_style.csv"

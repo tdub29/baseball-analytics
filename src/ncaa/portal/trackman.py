@@ -175,7 +175,8 @@ def aggregate_pitching(scored: pd.DataFrame) -> list[dict]:
     flags = _pitch_flags(scored)
     d = scored.assign(**{k: flags[k] for k in flags.columns})
     d["code"] = d.get("autopitchtype", "").astype(str).str.strip().str.lower().map(_PITCH_CODE)
-    ev = pd.to_numeric(d.get("exitspeed"), errors="coerce")
+    # exitspeed is recomputed per pitcher as `bip` inside the loop below, so this
+    # frame-level pass was dead. `ang` is not: it is indexed per group as ang.loc[g.index].
     ang = pd.to_numeric(d.get("angle"), errors="coerce")
 
     rows = []

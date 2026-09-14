@@ -31,9 +31,9 @@ TrackMan
 | `warehouse/` | 18 SQL files, 925 lines | dbt-duckdb rebuild of the transform layer, with model contracts, source freshness and sample fixtures |
 | `apps/hitter/`, `apps/pitcher/` | 5,275 lines | The two Streamlit apps coaches open, with their 10 model artifacts |
 | `scripts/` | 19 files | NCAA bio fetchers (D1/D2/D3/portal), school geocoding, Excel import and export, board HTML build, Netlify publish, Supabase RLS verify |
-| `tests/` plus the pbp test | 14 pytest files | bio, board, d1baseball, dedupe, geo, overlay, RLS schema, pipeline, program tier, resolve, rollup, speed, status, battle calc |
+| `tests/` plus the pbp tests | 15 pytest files, 147 tests | bio, board, d1baseball, dedupe, geo, overlay, RLS schema, pipeline, program tier, resolve, rollup, speed, status, battle calc, and a guard that the battle converter stays linear in input size |
 | `research/notebooks/` | 21 notebooks | 8 MLB, 13 NCAA, outputs stripped. Every shipped model was trained in one of these |
-| `research/r/` | R | `baseballr` NCAA export, and the legacy MLB run-expectancy pipeline |
+| `research/r/` | 5 R files + 59 testthat assertions | The MLB run-expectancy pipeline, rebuilt from a 604-line monolith into ingest / features / model / evaluate. The original is kept at `research/r/legacy/` so the diff is readable ([before and after](research/r/README.md)) |
 | `docs/` | 11 design docs | Pipeline design, 2026 sourcing, capabilities and blockers, Netlify and Supabase recipes, the consolidation plan |
 
 Model provenance, which notebook trained which artifact: [`models/README.md`](models/README.md).
@@ -72,7 +72,18 @@ The warehouse builds green from a clone with zero credentials, off the fixtures 
 `warehouse/sample_data/`:
 
 ```bash
-pip install -e ".[warehouse]" && cd warehouse && dbt build
+pip install -e ".[warehouse]"
+cd warehouse && cp profiles.example.yml profiles.yml && dbt build
+```
+
+`profiles.yml` is gitignored because it is the file that can hold credentials; the example
+that ships holds two local duckdb paths and nothing else.
+
+The MLB R pipeline runs on its own, and its tests need no network:
+
+```bash
+Rscript research/r/tests/testthat.R        # 59 assertions
+Rscript research/r/mlb/run_season.R 2019   # one season end to end
 ```
 
 ## Sample output

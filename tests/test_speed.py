@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from ncaa.portal.evaluate import evaluate, _load_pool  # noqa: E402
+from ncaa.portal.evaluate import _load_pool, evaluate  # noqa: E402
 
 
 def _db():

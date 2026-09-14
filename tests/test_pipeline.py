@@ -9,12 +9,11 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from ncaa.portal.util import (clean_str, eligibility_from_class, name_key,  # noqa: E402
-                         normalize_name, to_float, to_int)
+from ncaa.portal.enrich import HITTING_ALIASES, _build_map, detect_kind  # noqa: E402
+from ncaa.portal.evaluate import _pos_matches, level_factor, normalize_pos  # noqa: E402
 from ncaa.portal.resolve import Resolver  # noqa: E402
-from ncaa.portal.enrich import detect_kind, _build_map, HITTING_ALIASES, PITCHING_ALIASES  # noqa: E402
-from ncaa.portal.evaluate import level_factor, normalize_pos, _pos_matches  # noqa: E402
 from ncaa.portal.sources.twitter import TwitterAdapter  # noqa: E402
+from ncaa.portal.util import clean_str, eligibility_from_class, name_key, to_float, to_int  # noqa: E402
 
 
 # ── util ─────────────────────────────────────────────────────────────────────
@@ -148,6 +147,7 @@ def test_d1b_stats_parse():
 # ── trackman scoring (pure logic; models/network not required) ───────────────
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
+
 from ncaa.portal import trackman as tm  # noqa: E402
 
 
@@ -340,7 +340,7 @@ def test_winsorized_z_caps_junk():
 
 
 def test_tool_grade_20_80():
-    from ncaa.portal.evaluate import _tool_grade, POWER_TOOL
+    from ncaa.portal.evaluate import POWER_TOOL, _tool_grade
     # small pool (< POS_GROUP_MIN) → falls back to the whole-hitter pool
     sub = pd.DataFrame({"xslg": [0.7, 0.5, 0.3, 0.2], "avg_ev": [95.0, 90.0, 85.0, 80.0],
                         "position": ["OF", "OF", "OF", "OF"]})
@@ -355,7 +355,7 @@ def test_tool_grade_20_80():
 def test_tool_grade_is_position_relative():
     """A tool is graded against same-position peers: a SS with mid power outranks a 1B with
     the SAME raw line, because SS as a group hit for less power."""
-    from ncaa.portal.evaluate import _tool_grade, POWER_TOOL, POS_GROUP_MIN
+    from ncaa.portal.evaluate import POS_GROUP_MIN, POWER_TOOL, _tool_grade
     n = POS_GROUP_MIN + 5
     rng = np.random.default_rng(0)
     ss = pd.DataFrame({"xslg": rng.normal(0.35, 0.03, n), "avg_ev": rng.normal(86, 2, n), "position": ["SS"] * n})
@@ -370,8 +370,9 @@ def test_tool_grade_is_position_relative():
 def test_hit_tool_groups_average_contact_and_zone():
     """A strong BA/xBA line should not be dragged below average just because the source has
     several whiff/discipline columns but no OBP/K% line."""
-    from ncaa.portal.evaluate import _tool_grade, HIT_TOOL, POS_GROUP_MIN
     import numpy as np
+
+    from ncaa.portal.evaluate import HIT_TOOL, POS_GROUP_MIN, _tool_grade
 
     n = POS_GROUP_MIN + 10
     rng = np.random.default_rng(4)

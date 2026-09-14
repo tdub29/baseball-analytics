@@ -11,8 +11,13 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 import pytest  # noqa: E402
+
 from ncaa.portal.program_tier import (  # noqa: E402
-    program_strength, is_usd, CONF_STRENGTH, DIV_STRENGTH, USD_STRENGTH,
+    CONF_STRENGTH,
+    DIV_STRENGTH,
+    USD_STRENGTH,
+    is_usd,
+    program_strength,
 )
 
 

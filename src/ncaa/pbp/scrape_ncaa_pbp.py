@@ -25,14 +25,13 @@ from pathlib import Path
 OUT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(OUT_DIR))
 
+import pandas as pd
 from ncaa_pbp_playwright import (
-    fetch_pbp_with_playwright,
-    parse_pbp_table,
     BASEBALLR_COLUMNS,
     extract_contest_id,
+    fetch_pbp_with_playwright,
+    parse_pbp_table,
 )
-import pandas as pd
-
 
 DEFAULT_URL = "https://stats.ncaa.org/contests/6500370/play_by_play"
 DEFAULT_CSV = OUT_DIR / "pbp_ncaa_playwright_baseballr_style.csv"

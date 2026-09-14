@@ -6,7 +6,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from ncaa.portal.sources.d1baseball import (  # noqa: E402
-    D1BaseballAdapter, parse_tracker_text, _is_anchor,
+    D1BaseballAdapter,
+    _is_anchor,
+    parse_tracker_text,
 )
 
 # A faithful miniature of a copied tracker page: header chrome, the two record

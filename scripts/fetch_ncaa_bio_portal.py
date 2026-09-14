@@ -45,6 +45,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import fetch_ncaa_bio as nb  # noqa: E402  (reuse session/caches/parser/resolver)
+
 from ncaa.portal.db import connect  # noqa: E402
 from ncaa.portal.util import normalize_name  # noqa: E402
 

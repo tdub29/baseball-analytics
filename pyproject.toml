@@ -86,3 +86,35 @@ pythonpath = ["src", "."]
 [tool.ruff]
 line-length = 110
 exclude = ["research", "apps"]
+
+# Pin the rule set explicitly. Without a `select`, the gate is whatever ruff's default
+# happens to be that week, and `ruff>=0.5` in the dev extra means CI installs the newest.
+# Measured 2026-09-14: the same unchanged tree reported 98 errors under E4/E7/E9/F and 262
+# under 0.16.7's defaults. A lint gate whose verdict moves on its own is not a gate.
+[tool.ruff.lint]
+#
+# Chosen for defects, not for style. E9 catches syntax and runtime errors, F is pyflakes
+# (undefined names, unused imports and variables), I keeps imports sorted and is fully
+# autofixable, and B023 catches a closure capturing a loop variable, which is the one
+# opinionated rule here that finds real bugs rather than formatting opinions.
+# Deliberately NOT selected: E702/E701 semicolons and one-line bodies, B904/B905/B007,
+# UP. They flagged 150+ sites across working, tested code and would have turned a lint
+# gate into a reformat. Add one back when it catches something, not before.
+select = ["E4", "E9", "F", "I", "B023"]
+
+[tool.ruff.lint.per-file-ignores]
+# Tests and scripts insert the repo root on sys.path before importing the package, which
+# is exactly what E402 exists to flag and exactly what these files have to do.
+"tests/*" = ["E402"]
+"src/ncaa/pbp/test_*.py" = ["E402"]
+# The bio scrapers define a per-table helper inside the table loop and call it in the same
+# iteration, so B023 cannot bite as written. Left as-is rather than rewritten: they are
+# HTML-shape-specific and the only way to know a rewrite is safe is to re-scrape.
+"scripts/*" = ["E402", "B023", "F841"]
+# Availability probes. These import a library only to find out whether it is installed,
+# which is what F401 exists to flag and exactly what this module is for.
+"src/ncaa/pbp/explore_college_baseball_pbp_sources.py" = ["F401"]
+# Playwright entry points that extend sys.path before importing the package.
+"src/ncaa/pbp/fetch_multiple_ncaa_pbp.py" = ["E402", "F841"]
+"src/ncaa/pbp/scrape_ncaa_pbp.py" = ["E402"]
+"src/ncaa/pbp/write_battle_pdfs.py" = ["E402"]

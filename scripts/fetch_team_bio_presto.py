@@ -68,10 +68,10 @@ import requests
 # Reuse the verified normalizers from the main scraper (same dir).
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from fetch_team_bio import (  # noqa: E402
+    clean_name,
+    parse_bats_throws,
     parse_height_to_inches,
     parse_weight_to_lb,
-    parse_bats_throws,
-    clean_name,
     split_hometown_field,
 )
 

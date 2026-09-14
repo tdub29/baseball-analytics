@@ -77,12 +77,10 @@ BATTLE 5: Free 90s (Walks + HBP)
 
 from __future__ import annotations
 
-import os
 from textwrap import fill
 
 import numpy as np
 import pandas as pd
-
 
 # Define performance goals based on the 2025 OFFENSE BATTLES document
 GOALS = {
