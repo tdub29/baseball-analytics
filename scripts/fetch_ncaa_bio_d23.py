@@ -57,11 +57,9 @@ from __future__ import annotations
 
 import argparse
 import csv
-import json
 import re
 import sqlite3
 import sys
-import time
 from pathlib import Path
 
 from bs4 import BeautifulSoup
@@ -77,7 +75,8 @@ _fnb = _ilu.module_from_spec(_spec)
 _spec.loader.exec_module(_fnb)  # type: ignore
 
 from ncaa.portal.util import (  # noqa: E402
-    normalize_name, parse_hometown, parse_height_to_inches,
+    parse_height_to_inches,
+    parse_hometown,
 )
 
 NcaaSession = _fnb.NcaaSession

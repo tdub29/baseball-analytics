@@ -27,8 +27,9 @@ _STAT_TABLES = {"stats_hitting": "hit", "stats_pitching": "pit", "pitch_arsenal"
 
 def _tracker_lookup(con: sqlite3.Connection, tracker_path: str) -> dict:
     """(name_key, normalized_school) -> {'position', 'class_year'} from the live tracker."""
-    from .sources.d1baseball import parse_tracker_text
     from pathlib import Path
+
+    from .sources.d1baseball import parse_tracker_text
     p = Path(tracker_path)
     if not p.exists():
         return {}

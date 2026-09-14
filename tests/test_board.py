@@ -14,8 +14,8 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from ncaa.portal.board import BOARD_SQL, build_board  # noqa: E402
 from ncaa.portal.alerts import ALERT_SQL  # noqa: E402
+from ncaa.portal.board import BOARD_SQL, build_board  # noqa: E402
 from ncaa.portal.geo import CA_BOARD_SQL  # noqa: E402
 
 

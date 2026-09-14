@@ -86,7 +86,7 @@ def parse_schedule_table(html: str, base_url: str = "https://stats.ncaa.org") ->
         if not any("date" in h for h in header_cells) or not any("opponent" in h for h in header_cells):
             continue
 
-        def idx(key: str, default: int = 0) -> int:
+        def idx(key: str, default: int = 0, header_cells=header_cells) -> int:
             for i, h in enumerate(header_cells):
                 if key in h:
                     return i

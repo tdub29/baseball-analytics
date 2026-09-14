@@ -18,7 +18,7 @@ import requests
 from tenacity import retry, stop_after_attempt, wait_exponential
 
 from .db import now_iso
-from .enrich import HITTING_ALIASES, PITCHING_ALIASES, NAME_ALIASES, _norm_header
+from .enrich import HITTING_ALIASES, NAME_ALIASES, PITCHING_ALIASES, _norm_header
 from .resolve import Resolver
 from .util import clean_str, to_float, to_int
 

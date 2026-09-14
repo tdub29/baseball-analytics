@@ -79,10 +79,10 @@ results cached to disk so reruns hit cache.
 from __future__ import annotations
 
 import json
+import random
 import re
 import sys
 import time
-import random
 from pathlib import Path
 
 # ---------------------------------------------------------------------------

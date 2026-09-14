@@ -22,8 +22,8 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from ncaa.portal.db import connect  # noqa: E402
 from ncaa.portal.config import load_config  # noqa: E402
+from ncaa.portal.db import connect  # noqa: E402
 from ncaa.portal.overlay import build_overlay_payload  # noqa: E402
 
 random.seed(7)

@@ -13,7 +13,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from ncaa.portal.rollup import rollup_arsenal, get_arsenal, _weighted_mean  # noqa: E402
+from ncaa.portal.rollup import _weighted_mean, get_arsenal, rollup_arsenal  # noqa: E402
 
 SCHEMA = ROOT / "db" / "schema.sql"
 

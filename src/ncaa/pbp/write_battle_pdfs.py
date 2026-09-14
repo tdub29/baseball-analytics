@@ -24,7 +24,6 @@ import pandas as pd
 from ncaa.pbp.baseballr_battle_calc import (
     build_complete_games_lookup,
     build_rows_df_and_summary_df,
-    load_and_convert,
     run_battle_calc_for_all_games,
 )
 from ncaa.pbp.battle_logic import render_season_summary_pdf

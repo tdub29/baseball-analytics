@@ -13,11 +13,9 @@ Run: python sample_pbp_dfs_for_detail.py [--out-dir PATH]
 from __future__ import annotations
 
 import argparse
-import os
 from pathlib import Path
 
 import pandas as pd
-
 
 BASEBALLR_DESCRIPTIONS = [
     "Smith singled to center.",
@@ -247,7 +245,7 @@ def print_detail_summary(name: str, df: pd.DataFrame) -> None:
     print(f"\n--- {name} ---")
     print(f"  Rows: {len(df)}, Columns: {len(df.columns)}")
     print(f"  Columns: {list(df.columns)}")
-    print(f"  Granularity: ", end="")
+    print("  Granularity: ", end="")
     if "pitchResult" in df.columns and "balls" in df.columns:
         print("pitch-level (one row per pitch)")
     elif "event_cd" in df.columns or "event_tx" in df.columns:

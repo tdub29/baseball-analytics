@@ -21,10 +21,11 @@ import pandas as pd
 OUT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(OUT_DIR))
 from ncaa_pbp_playwright import (
+    BASEBALLR_COLUMNS,
     fetch_pbp_with_playwright,
     parse_pbp_table,
-    BASEBALLR_COLUMNS,
 )
+
 from ncaa.pbp.baseballr_battle_calc import add_leadoff_column_to_pbp
 
 

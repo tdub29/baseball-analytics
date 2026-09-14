@@ -6,9 +6,9 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+from ncaa_pbp_playwright import _effective_outs_added, _outs_on_play
 
 from ncaa.pbp.baseballr_description_mappings import has_pa_action
-from ncaa_pbp_playwright import _effective_outs_added, _outs_on_play
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 

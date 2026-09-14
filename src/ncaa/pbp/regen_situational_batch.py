@@ -6,15 +6,15 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+from ncaa_situational_stats_playwright import (
+    batch_situational_vs_b1_consolidated,
+    batch_situational_vs_b1_consolidated_battle_refresh,
+)
 
 from ncaa.pbp.baseballr_battle_calc import (
     build_complete_games_lookup,
     run_battle_calc_for_all_games,
     write_battle_report,
-)
-from ncaa_situational_stats_playwright import (
-    batch_situational_vs_b1_consolidated,
-    batch_situational_vs_b1_consolidated_battle_refresh,
 )
 
 SCRIPT_DIR = Path(__file__).resolve().parent

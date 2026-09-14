@@ -40,7 +40,7 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
-from ncaa.portal.util import parse_hometown, parse_height_to_inches  # type: ignore  # noqa: E402
+from ncaa.portal.util import parse_height_to_inches, parse_hometown  # type: ignore  # noqa: E402
 
 OUT_COLS = ["player", "team", "season", "height_in", "class_year", "bats", "throws",
             "hometown_city", "hometown_state", "high_school"]
@@ -97,7 +97,7 @@ def parse_sidearm_roster(html: str, team: str, season: str) -> list[dict]:
             continue
         idx = {h.lower(): i for i, h in enumerate(heads)}
 
-        def col(cells, *names):
+        def col(cells, *names, idx=idx):   # bind the loop's idx, not the last one
             for n in names:
                 for k, i in idx.items():
                     if n in k and i < len(cells):

@@ -13,9 +13,7 @@ Usage: python explore_college_baseball_pbp_sources.py [--test]
 from __future__ import annotations
 
 import argparse
-import sys
 from textwrap import dedent
-
 
 # -----------------------------------------------------------------------------
 # SUMMARY: PACKAGES AND DATA SOURCES

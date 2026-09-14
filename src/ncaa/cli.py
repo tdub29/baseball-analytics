@@ -23,18 +23,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "src"))
 
-from ncaa.portal.alerts import send_alerts                       # noqa: E402
-from ncaa.portal.board import export_board                       # noqa: E402
-from ncaa.portal.config import load_config                       # noqa: E402
-from ncaa.portal.d3dashboard import enrich_from_d3dashboard      # noqa: E402
+from ncaa.portal.alerts import send_alerts  # noqa: E402
+from ncaa.portal.bio import load_player_bio  # noqa: E402
+from ncaa.portal.board import export_board  # noqa: E402
+from ncaa.portal.config import load_config  # noqa: E402
+from ncaa.portal.d3dashboard import enrich_from_d3dashboard  # noqa: E402
 from ncaa.portal.db import connect, reconcile_status_from_ledger  # noqa: E402
-from ncaa.portal.enrich import import_643_csv                    # noqa: E402
-from ncaa.portal.evaluate import evaluate                        # noqa: E402
-from ncaa.portal.trackman import enrich_from_trackman            # noqa: E402
-from ncaa.portal.rollup import rollup_arsenal                    # noqa: E402
-from ncaa.portal.bio import load_player_bio                      # noqa: E402
-from ncaa.portal.geo import score_geo_ties, export_california_board  # noqa: E402
-from ncaa.portal.overlay import sync_overlay_to_db, push_overlay_to_sheet, backend_of  # noqa: E402
+from ncaa.portal.enrich import import_643_csv  # noqa: E402
+from ncaa.portal.evaluate import evaluate  # noqa: E402
+from ncaa.portal.geo import export_california_board, score_geo_ties  # noqa: E402
+from ncaa.portal.overlay import backend_of, push_overlay_to_sheet, sync_overlay_to_db  # noqa: E402
+from ncaa.portal.rollup import rollup_arsenal  # noqa: E402
+from ncaa.portal.trackman import enrich_from_trackman  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
 
