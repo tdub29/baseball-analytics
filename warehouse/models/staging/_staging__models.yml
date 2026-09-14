@@ -1,0 +1,99 @@
+version: 2
+
+models:
+  - name: stg_trackman__pitches
+    description: >
+      Typed, snake_case TrackMan pitch rows (one per pitch). Numeric release /
+      movement / location fields are coerced from the all-varchar source; the
+      grain is pitch_uid. Mirrors src/portal/trackman.load_trackman().
+    columns:
+      - name: pitch_uid
+        description: "Stable per-pitch key (TrackMan UUID; synthesized only if missing)."
+        data_tests:
+          - not_null
+          - unique
+      - name: pitcher
+        description: "Pitcher display name."
+        data_tests:
+          - not_null
+      - name: pitch_call
+        description: "Raw TrackMan PitchCall (StrikeSwinging, InPlay, BallCalled, Undefined, ...)."
+        data_tests:
+          - accepted_values:
+              # 'Undefined' is a real, expected TrackMan value for untagged
+              # pitches in this feed — included so the test reflects reality.
+              values:
+                - StrikeSwinging
+                - StrikeCalled
+                - BallCalled
+                - BallinDirt
+                - BallIntentional
+                - FoulBallNotFieldable
+                - FoulBallFieldable
+                - InPlay
+                - HitByPitch
+                - Undefined
+              config:
+                severity: warn
+      - name: rel_speed
+        description: "Release speed (mph). DQ-gated downstream (see tests/assert_pitch_velo_in_range)."
+      - name: batter_side
+        description: "Batter handedness as tracked."
+        data_tests:
+          - accepted_values:
+              values: ["Left", "Right", "Undefined"]
+              config:
+                severity: warn
+
+  - name: stg_643__pitch_arsenal
+    description: >
+      6-4-3 per-(pitcher, pitch-type) grades + shape, unit-stripped and typed.
+      dbt analogue of src/portal/arsenal.import_643_arsenal. Stuff+/Location+/xRV+
+      are 6-4-3 model outputs consumed as-is (no recompute in dbt).
+    columns:
+      - name: player
+        description: "Pitcher display name."
+        data_tests:
+          - not_null
+      - name: player_key
+        description: "Sorted, de-accented join key (macro name_key)."
+        data_tests:
+          - not_null
+      - name: pitch_type
+        description: "Raw 6-4-3 pitch-type label."
+        data_tests:
+          - not_null
+      - name: code
+        description: "Normalized pitch bucket fb/si/sl/cb/ch/ct (macro pitch_code)."
+        data_tests:
+          - accepted_values:
+              values: ["fb", "si", "sl", "cb", "ch", "ct"]
+              # Splitter maps to ch, Sweeper to sl; anything unmapped is null.
+              config:
+                where: "code is not null"
+      - name: pitches
+        description: "Pitch count behind this (pitcher, pitch-type) line."
+        data_tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+              config:
+                where: "pitches is not null"
+      - name: stuff_plus
+        description: "6-4-3 Stuff+ (100 = avg). Pitches-weighted in the mart rollup."
+
+  - name: stg_643__hitting
+    description: >
+      6-4-3 per-hitter overall line (batted-ball + plate discipline), unit-stripped
+      and typed. Maps to the stats_hitting target shape.
+    columns:
+      - name: player
+        description: "Hitter display name."
+        data_tests:
+          - not_null
+      - name: player_key
+        description: "Sorted, de-accented join key (macro name_key)."
+        data_tests:
+          - not_null
+      - name: pitches
+        description: "Pitch count behind this hitter line."

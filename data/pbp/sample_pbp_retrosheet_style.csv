@@ -1,0 +1,51 @@
+game_id,inning,bat_home_id,bat_team_id,fld_team_id,bat_id,pit_id,event_cd,event_tx,event_desc,runs_outs,runs_outs_desc
+12345,1,0,USD,OPP,bat01,opp01,20,S,Single,0,No out recorded on this play
+12345,1,0,USD,OPP,bat02,opp01,2,F,Fly out,1,One out recorded on this play
+12345,1,0,USD,OPP,bat03,opp01,14,W,Walk,0,No out recorded on this play
+12345,1,0,USD,OPP,bat04,opp01,3,K,Strikeout,0,No out recorded on this play
+12345,1,0,USD,OPP,bat05,opp01,2,G,Ground out,1,One out recorded on this play
+12345,2,1,OPP,USD,bat06,usd01,21,D,Double,0,No out recorded on this play
+12345,2,1,OPP,USD,bat07,usd01,2,L,Line out,0,No out recorded on this play
+12345,2,1,OPP,USD,bat08,usd01,16,H,Hit by pitch,0,No out recorded on this play
+12345,2,1,OPP,USD,bat09,usd01,20,S,Single,0,No out recorded on this play
+12345,2,1,OPP,USD,bat10,usd01,3,K,Strikeout,0,No out recorded on this play
+12345,3,0,USD,OPP,bat11,opp01,2,G,Ground out,1,One out recorded on this play
+12345,3,0,USD,OPP,bat12,opp01,23,H,Homerun,0,No out recorded on this play
+12345,3,0,USD,OPP,bat13,opp01,2,L,Line out,0,No out recorded on this play
+12345,3,0,USD,OPP,bat14,opp01,20,S,Single,0,No out recorded on this play
+12345,3,0,USD,OPP,bat15,opp01,2,F,Fly out,2,Two outs recorded on this play (e.g. double play)
+12345,4,1,OPP,USD,bat16,usd01,14,W,Walk,0,No out recorded on this play
+12345,4,1,OPP,USD,bat17,usd01,2,G,Ground out,1,One out recorded on this play
+12345,4,1,OPP,USD,bat18,usd01,3,K,Strikeout,2,Two outs recorded on this play (e.g. double play)
+12345,4,1,OPP,USD,bat19,usd01,20,S,Single,0,No out recorded on this play
+12345,4,1,OPP,USD,bat20,usd01,2,F,Fly out,1,One out recorded on this play
+12345,5,0,USD,OPP,bat21,opp01,21,D,Double,0,No out recorded on this play
+12345,5,0,USD,OPP,bat22,opp01,2,G,Ground out,0,No out recorded on this play
+12345,5,0,USD,OPP,bat23,opp01,3,K,Strikeout,1,One out recorded on this play
+12345,5,0,USD,OPP,bat24,opp01,2,L,Line out,2,Two outs recorded on this play (e.g. double play)
+12345,5,0,USD,OPP,bat25,opp01,20,S,Single,0,No out recorded on this play
+12345,6,1,OPP,USD,bat26,usd01,2,F,Fly out,1,One out recorded on this play
+12345,6,1,OPP,USD,bat27,usd01,2,G,Ground out,2,Two outs recorded on this play (e.g. double play)
+12345,6,1,OPP,USD,bat28,usd01,23,H,Homerun,0,No out recorded on this play
+12345,6,1,OPP,USD,bat29,usd01,2,L,Line out,1,One out recorded on this play
+12345,6,1,OPP,USD,bat30,usd01,3,K,Strikeout,2,Two outs recorded on this play (e.g. double play)
+12345,7,0,USD,OPP,bat31,opp01,20,S,Single,0,No out recorded on this play
+12345,7,0,USD,OPP,bat32,opp01,2,F,Fly out,1,One out recorded on this play
+12345,7,0,USD,OPP,bat33,opp01,2,G,Ground out,2,Two outs recorded on this play (e.g. double play)
+12345,7,0,USD,OPP,bat34,opp01,14,W,Walk,0,No out recorded on this play
+12345,7,0,USD,OPP,bat35,opp01,3,K,Strikeout,1,One out recorded on this play
+12345,8,1,OPP,USD,bat36,usd01,20,S,Single,0,No out recorded on this play
+12345,8,1,OPP,USD,bat37,usd01,2,F,Fly out,0,No out recorded on this play
+12345,8,1,OPP,USD,bat38,usd01,2,G,Ground out,1,One out recorded on this play
+12345,8,1,OPP,USD,bat39,usd01,21,D,Double,0,No out recorded on this play
+12345,8,1,OPP,USD,bat40,usd01,2,L,Line out,0,No out recorded on this play
+12345,9,0,USD,OPP,bat41,opp01,3,K,Strikeout,1,One out recorded on this play
+12345,9,0,USD,OPP,bat42,opp01,20,S,Single,0,No out recorded on this play
+12345,9,0,USD,OPP,bat43,opp01,2,F,Fly out,0,No out recorded on this play
+12345,9,0,USD,OPP,bat44,opp01,2,G,Ground out,1,One out recorded on this play
+12345,9,0,USD,OPP,bat45,opp01,14,W,Walk,0,No out recorded on this play
+12345,1,1,OPP,USD,bat46,usd01,3,K,Strikeout,0,No out recorded on this play
+12345,1,1,OPP,USD,bat47,usd01,20,S,Single,0,No out recorded on this play
+12345,1,1,OPP,USD,bat48,usd01,2,F,Fly out,2,Two outs recorded on this play (e.g. double play)
+12345,1,1,OPP,USD,bat49,usd01,14,W,Walk,0,No out recorded on this play
+12345,1,1,OPP,USD,bat50,usd01,3,K,Strikeout,1,One out recorded on this play

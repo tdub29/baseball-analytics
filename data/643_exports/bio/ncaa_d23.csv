@@ -1,0 +1,983 @@
+player,team,season,height_in,weight_lb,bats,throws,class_year,position,hometown,high_school
+MARTIN MT SANCHEZ,Sonoma State University,2025,,,,,Jr.,ph,,
+CHRISTOPHER ORTIZ,Sonoma State University,2025,72,,RIGHT,RIGHT,Sr.,C,"Henderson, NV",Paloma Valley HS
+BEN SAITZ,Sonoma State University,2025,74,,RIGHT,LEFT,Sr.,ss,,
+BRANDON MARION,Sonoma State University,2025,,,,,Jr.,ss,,
+MASON HANSHAW,Sonoma State University,2025,73,,RIGHT,RIGHT,Jr.,c,"Danville, CA",Monte Vista HS
+RYAN   MT TIGER,Sonoma State University,2025,,,,,Jr.,ph/rf,,
+JACOB MT COURTNEY,Sonoma State University,2025,,,,,Jr.,c,,
+MICHAEL GORMLEY,Sonoma State University,2025,71,,LEFT,LEFT,Jr.,P,"Aliso Viejo, CA",Crean Lutheran HS
+JESSE MOORE,Sonoma State University,2025,75,,LEFT,LEFT,Jr.,p,,
+JOSEPH REPLOGLE,Sonoma State University,2025,,,,,Jr.,1b,,
+JACOB PAUL,Sonoma State University,2025,,,,,Fr.,lf,,
+TREY TRIAS,Sonoma State University,2025,,,,,Jr.,3b,,
+DAVID HOWARD,Sonoma State University,2025,77,,LEFT,LEFT,---,p,"Newark, CA",Newark Memorial High School
+HAWK HILL,Sonoma State University,2025,70,,RIGHT,RIGHT,Jr.,p,"Martinez, CA",Alhambra
+LUKE IVANOFF,Sonoma State University,2025,79,,RIGHT,RIGHT,So.,P,"Anchorage, AK",South Anchorage HS
+HERMAN LUNA,Sonoma State University,2025,71,,RIGHT,RIGHT,Jr.,p,"Corcoran, CA",Corcoran High School
+VINCENT LENCIONI,Sonoma State University,2025,73,,RIGHT,RIGHT,---,ph,"Santa Rosa, CA",Santa Rosa
+GABRIEL TAPIA,Sonoma State University,2025,,,,,Jr.,lf,,
+MAX MT SHABESTARI,Sonoma State University,2025,,,,,Jr.,2b,,
+BRADEN SELLZ,Sonoma State University,2025,,,,,---,ph,,
+JARED ESPARZA,Sonoma State University,2025,75,,RIGHT,RIGHT,Sr.,P,"Hollister, CA",San Benito HS
+ELI HANCOCK,Sonoma State University,2025,73,,LEFT,RIGHT,Jr.,OF,"Stockton, CA",Lincoln HS
+TYLER CRUDO,Sonoma State University,2025,73,,RIGHT,RIGHT,Sr.,INF,"Calistoga, CA",Middletown HS
+KOBE MT ROLLING,Sonoma State University,2025,67,,LEFT,RIGHT,Jr.,2b,"Vacaville, CA",Will C. Wood HS
+SHANE CALLISON,Sonoma State University,2025,68,,LEFT,RIGHT,Jr.,INF,"Morgan Hill, CA",Ann Sobrato HS
+JAMES BRUNO,Barry University,2025,69,,RIGHT,RIGHT,Sr.,INF,"Haddon Heights, NJ",Paul VI
+DAVIEL FERNANDEZ,Barry University,2025,72,,RIGHT,RIGHT,Fr.,P,"Pennsauken, NJ",Gloucester Catholic HS
+ALBERT   MT ESPINOSA,Barry University,2025,72,,RIGHT,RIGHT,Sr.,C,"Miami, FL",Christopher Columbus HS
+WILLIAM EICH,Barry University,2025,79,,RIGHT,RIGHT,Jr.,P,"Tampa, FL",Wharton HS
+MALIK FOSTER,Barry University,2025,72,,RIGHT,RIGHT,So.,P,"Nassau, Bahamas",St. Augustine's College
+FELIX ARROYO,Barry University,2025,72,,LEFT,LEFT,So.,P,"Toa Alta, PR",American School
+DYLAN ROSE,Barry University,2025,71,,RIGHT,RIGHT,Jr.,P,"Fort Myers, FL",Bishop Verot HS
+LEONARDO VAZQUEZ,Barry University,2025,73,,LEFT,LEFT,Sr.,P,"Miami, FL",Southridge HS
+HARRY VARGAS SEGURA,Barry University,2025,74,,BOTH,RIGHT,Sr.,OF,"Bronx, NY",Port St. Lucie
+FELIX DIAZ,Barry University,2025,71,,RIGHT,RIGHT,Sr.,INF,"North Brunswick, NJ",Immaculata HS
+XAVIER DELGADO,Barry University,2025,72,,RIGHT,RIGHT,Sr.,INF,"Warminster, PA",William Tennent HS
+DYLAN PECK,Barry University,2025,71,,RIGHT,RIGHT,Jr.,P,"Fort Myers, FL",Bishop Verot HS
+DANIEL LIPKA,Barry University,2025,70,,LEFT,LEFT,Jr.,P,"Hollywood, FL",Chaminade Madonna Prep
+AIDEN DENTON,Barry University,2026,76,,RIGHT,RIGHT,Sr.,P,"Pitman, NJ",Pitman HS
+NATANGEL SANTANA,Barry University,2025,74,,LEFT,RIGHT,Jr.,OF,"Harrisburg, PA",TNXL Academy
+KENDRY NORIEGA,Barry University,2025,72,,RIGHT,RIGHT,Sr.,OF,"Miami, FL",Miami Senior HS
+BRANDON MON,Barry University,2026,76,,RIGHT,RIGHT,Sr.,OF,"Coconut Creek, FL",Calvary Christian HS
+ZACHARY BAUERS,Cairn University,2026,72,,RIGHT,RIGHT,Sr.,OF,"Perkasie, PA",
+GUSTAVO VILLEGAS,Cairn University,2025,69,,RIGHT,RIGHT,Fr.,INF,"Plantation, FL",Plantation
+DOMINIC CARAFA,Cairn University,2025,69,,RIGHT,RIGHT,Jr.,2B,"Broomall, PA",
+CASEY FLETCHER,Cairn University,2025,70,,LEFT,LEFT,Fr.,P,"Stafford, VA",North Stafford
+BENJAMIN GAGNON,Cairn University,2025,75,,RIGHT,RIGHT,Jr.,INF,"Bethlehem, PA",
+ANDREW HOLT,Cairn University,2025,74,,LEFT,RIGHT,So.,INF,"Sunrise, FL",Western High
+EVAN HUGHES,Cairn University,2025,71,,RIGHT,RIGHT,Jr.,P,"Langhorne, PA",Neshaminy
+MICHAEL KIM,Cairn University,2025,72,,RIGHT,RIGHT,Fr.,OF,"Harrington Pk, NJ",No. Valley Old Tappan
+STEPHEN PERSIANI,Cairn University,2026,68,,LEFT,LEFT,So.,OF,"Rancho Santa Margarita, CA",Capistrano Valley Christian
+NOAH RUSH,Cairn University,2026,69,,RIGHT,RIGHT,Fr.,C,"York, PA",West York Area Highschool
+JAYMES SARIANO,Cairn University,2026,69,,BOTH,RIGHT,Jr.,UT,"Langhorne, PA",Neshaminy
+NATHAN SCHURGA,Cairn University,2025,70,,LEFT,RIGHT,So.,INF,"Wilmington, DE",Conrad Schools of Science
+NICHOLAS SIMONETTI-BENSON,Cairn University,2025,74,,LEFT,LEFT,Jr.,P,"Philadelphia, PA",Father Judge
+CHRISITAN SPADEA,Cairn University,2026,75,,RIGHT,RIGHT,Jr.,1B,"Yardley, PA",Pennsbury
+GAVIN SWITZER,Cairn University,2025,68,,RIGHT,RIGHT,Jr.,P,"Millersville, PA",Penn Manor
+JOSHUA THIERO,Cairn University,2026,66,,RIGHT,RIGHT,So.,OF,"Wayne, NJ",Wayne Hills
+JOSHUA SMELTZER JR.,Cairn University,2026,66,,RIGHT,RIGHT,So.,OF,"Wayne, NJ",Wayne Hills
+DANIEL LAMLAMAY,Cairn University,2025,69,,RIGHT,RIGHT,Jr.,C,"Franklin, NJ",Wallkill Valley Regional
+GREG JESSUP,Cairn University,2025,72,,RIGHT,RIGHT,Jr.,P,"Tyler, TX",McKinney Christian Academy
+DANIEL TAPP,Cairn University,2025,72,,RIGHT,RIGHT,So.,C,"Baltimore, MD",Boys Latin School of Maryland
+JAMES WTULICH,Cairn University,2025,73,,RIGHT,RIGHT,Jr.,OF,"Vernon, NJ",Vernon Twp.
+JOHN DEZAGO,St. Thomas Aquinas College,2025,73,,RIGHT,RIGHT,Jr.,P,"Howard Beach, NY",Xaverian
+JACK DWYER,St. Thomas Aquinas College,2025,69,,RIGHT,RIGHT,So.,INF,"Smithfield, RI",Smithfield
+CHRISTOPHER CUMBO,St. Thomas Aquinas College,2026,67,,RIGHT,RIGHT,Fr.,C,"East Meadow, NY",W Tresper Clarke High School
+ANTHONY HOLTJE,St. Thomas Aquinas College,2026,71,,RIGHT,RIGHT,Fr.,INF,"Midland Park, NJ",Midland Park High School
+JAMES KAHN,St. Thomas Aquinas College,2026,70,,RIGHT,RIGHT,Fr.,INF,"New York, NY",University Heights Secondary School
+JUSTIN KLAYMAN,St. Thomas Aquinas College,2026,70,,RIGHT,RIGHT,Jr.,INF,"New York, NY",All Hallows
+SEBASTIAN LOCURTO,St. Thomas Aquinas College,2025,72,,RIGHT,RIGHT,Fr.,P,"Commack, NY",Commack
+BRADEN SEEBER,St. Thomas Aquinas College,2025,75,,RIGHT,RIGHT,So.,C,"Baldwinsville, NY",Baker
+MATTHEW CALLAGHAN,St. Thomas Aquinas College,2026,70,,RIGHT,RIGHT,Fr.,C,"Lake Grove, NY",Sachem High School North
+BRIAN KLUMPP,St. Thomas Aquinas College,2025,71,,LEFT,RIGHT,So.,OF,"Warminster, PA",Archbishop Wood
+LORENT HOTI,St. Thomas Aquinas College,2026,72,,LEFT,LEFT,Jr.,P,"New York, NY",Monsignor McClancy Memorial
+MICHAEL MT MANGANIELLO,St. Thomas Aquinas College,2025,70,,RIGHT,RIGHT,Jr.,C,"Yonkers, NY",Archbishop Stepinac
+BRADY BELFUS,St. Thomas Aquinas College,2025,73,,RIGHT,RIGHT,Fr.,INF,"Deptford, NJ",Gloucester Catholic
+RYAN KRZEMIENSKI,St. Thomas Aquinas College,2026,73,,RIGHT,RIGHT,So.,INF,"West Sayville, NY",Sayville
+JOHN MARGOLIES,St. Thomas Aquinas College,2025,73,,RIGHT,RIGHT,Jr.,P,"Howard Beach, NY",Xaverian
+JOSHUA ORTIZ,St. Thomas Aquinas College,2026,70,,LEFT,LEFT,Sr.,OF,"Drexel Hill, PA",Lower Merion High School
+MATTHEW NEGLIA,St. Thomas Aquinas College,2026,70,,RIGHT,RIGHT,Fr.,C,"Lake Grove, NY",Sachem High School North
+MATTHEW PAOLUCCI,St. Thomas Aquinas College,2026,70,,RIGHT,RIGHT,Fr.,C,"Lake Grove, NY",Sachem High School North
+SAMUEL   MT ODUM,Barton College,2025,77,,RIGHT,RIGHT,Jr.,P,"Lexington, NC",Pfeiffer Univ.
+IAN MURPHY,Barton College,2025,73,,RIGHT,RIGHT,Jr.,1B,"West Deptford, NJ",West Deptford
+BRADY DUNLOP,Barton College,2025,76,,RIGHT,RIGHT,Fr.,P,"Clayton, NC",Corinth Holders
+ANTHONY CRUDO,Barton College,2025,72,,RIGHT,RIGHT,Fr.,OF,"Pt Pleasant, NJ",St. Rose
+BLAKE MT ALTSCHULER,Barton College,2025,76,,RIGHT,RIGHT,So.,P,"Concord, NC",
+JOSEPH BUCKLEY II,Barton College,2025,73,,RIGHT,RIGHT,Jr.,P,"Plymouth Meeting, PA",Harford CC
+YARIEL DIAZ,Barton College,2025,72,,RIGHT,RIGHT,Jr.,C,"Fort Myers, FL",Middle Georgia State Univ.
+EVAN HARDING,Barton College,2026,74,,RIGHT,RIGHT,Sr.,P,"Buffalo, NY",Limestone Univ.
+SALVATORE LAIMO,Barton College,2025,70,,RIGHT,RIGHT,Jr.,INF,"Philadelphia, PA",Saint John Neumann & Maria Goretti
+NICHOLAS MT NAPOLITANO,Barton College,2025,74,,RIGHT,RIGHT,Jr.,P,"North Massapequa, NY",Caldwell Univ.
+DANTE ONORATO,Barton College,2025,70,,LEFT,LEFT,So.,P,"Cinnaminson, NJ",Paulsboro
+JOSEPH RAUSCHER,Barton College,2025,73,,RIGHT,RIGHT,Jr.,P,"Plymouth Meeting, PA",Harford CC
+ARAMIS SALMERON,Barton College,2025,73,,RIGHT,RIGHT,Jr.,P,"Chicago, IL",Olive-Harvey Coll.
+GARRETT MT PAYNE,Barton College,2025,72,,RIGHT,RIGHT,Fr.,P,"Greensboro, GA",Lake Oconee Acad.
+DAWSON BOCHENEK,Barton College,2025,72,,RIGHT,RIGHT,Jr.,UT,"Homer Glen, IL",Olive Harvey Coll.
+JACOB CABANISS,Barton College,2026,74,,RIGHT,RIGHT,So.,INF,"Carthage, NC",The O'Neal School
+EASTON MAINS,Missouri Western State University,2025,72,,RIGHT,RIGHT,Jr.,OF,"Omaha, NE",Elkhorn North
+JAYSON SHORB,Missouri Western State University,2025,70,,RIGHT,RIGHT,Fr.,P,"Fenton, MO",Rockwood Summit High School
+JACE WEEMS,Missouri Western State University,2025,71,,RIGHT,RIGHT,Fr.,OF,"Grain Valley, MO",Grain Valley
+QUINN MT GUNDELFINGER,Missouri Western State University,2025,74,,RIGHT,RIGHT,Sr.,INF,"Nixa, MO",Nixa
+KADEN DOAN,Missouri Western State University,2025,69,,LEFT,RIGHT,Sr.,INF,"Frisco, TX",Lone Star
+MICAH DIAMOND,Missouri Western State University,2026,73,,LEFT,LEFT,Sr.,OF,"Topeka, KS",Seaman HS
+KOREY MESSICK,Missouri Western State University,2025,75,,RIGHT,RIGHT,Fr.,INF,"Independence, MO",Van Horn
+CAMERON DEAN,Missouri Western State University,2025,71,,LEFT,RIGHT,So.,C,"Kansas City, MO",Platte County
+PARKER BRAYLEY,Missouri Western State University,2026,76,,RIGHT,RIGHT,Jr.,P,"Lincoln, NE",Pius X HS
+GAGE BUSBY,Missouri Western State University,2025,78,,RIGHT,RIGHT,Fr.,P,"Gower, MO",East Buchanan
+CARSON MT RIPLEY,Missouri Western State University,2025,73,,RIGHT,RIGHT,Fr.,P,"Elkhorn, NE",Elkhorn North
+DIEGO RODRIGUEZ,Missouri Western State University,2025,71,,RIGHT,RIGHT,So.,INF,"Blue Springs, MO",Blue Springs South
+LOUIS LEVY,Missouri Western State University,2025,75,,RIGHT,RIGHT,Jr.,P,"Highlands Ranch, CO",Mountain Vista
+COLBY DEAVER,Missouri Western State University,2025,75,,RIGHT,RIGHT,Fr.,P,"Blue Springs, MO",Blue Springs South
+JETT GROSSART,Missouri Western State University,2025,73,,LEFT,RIGHT,Fr.,INF,"Elkhorn, NE",Elkhorn North
+JACKSON ADAM,Missouri Western State University,2026,73,,RIGHT,RIGHT,Sr.,P,"Collinsville, IL",Collinsville HS
+LOGAN MYERS,Missouri Western State University,2025,69,,RIGHT,RIGHT,Jr.,C,"Andover, MN",Andover
+LUKE BRILEY,Missouri Western State University,2026,73,,RIGHT,RIGHT,Sr.,INF,"Bethalto, IL",Civic Memorial HS
+JOHNATHAN HOOD,Missouri Western State University,2025,73,,RIGHT,RIGHT,Fr.,P,"Hickman, NE",Norris
+SOLOMON DENMARK,Rosemont College,2026,69,,RIGHT,RIGHT,So.,P,"Jersey City, NJ",Henry Snyder HS
+JOHN WOODS,Rosemont College,2025,,,,,Sr.,C,,
+SHANE LENNON,Rosemont College,2025,,,,,So.,UT,,
+JOSEPH MASTEN,Rosemont College,2026,,,,,So.,,,
+NICHOLAS FRATANGELI,Rosemont College,2025,69,,LEFT,LEFT,Fr.,P,"Clifton Heights, PA",Audubon
+LARSON GREENLEE,Rosemont College,2026,,,,,Sr.,P,,
+PATRICK MCCALISTER,Rosemont College,2026,,,,,Sr.,P,,
+CHRISTOPHER PAULINO,Rosemont College,2025,68,,RIGHT,RIGHT,Fr.,INF,,
+BRANDON PEAKE,Rosemont College,2026,,,,,Sr.,OF,,
+EVAN WOLLMAN,Rosemont College,2025,75,,RIGHT,RIGHT,Fr.,OF,,
+ANTHONY GALLI,Rosemont College,2026,,,LEFT,LEFT,So.,P,"Springfield, PA",
+GARY KROLL,Rosemont College,2026,,,BOTH,RIGHT,So.,UT,,
+ALEXANDER RAUSCH,Rosemont College,2026,,,,,Sr.,P,,
+JAMES RODIER,Rosemont College,2026,,,,,Sr.,p,,
+NICHOLAS SKOUFALOS,Rosemont College,2025,70,,RIGHT,RIGHT,Jr.,P,,
+ISAAC BUGMAN,Rosemont College,2026,67,,,,So.,INF,"Red Hill, PA",
+COLLIN MCCARRON,Rosemont College,2025,70,,RIGHT,RIGHT,Fr.,INF,"Jackson, NJ",
+NICHOLAS VITALE,Rosemont College,2025,,,,,So.,ph,,
+RYNE BUCKLEY,Lake Erie College,2026,74,,RIGHT,RIGHT,Sr.,C,"Mishawaka, IN",Penn
+ZIMBA CADIZ,Lake Erie College,2025,74,,RIGHT,RIGHT,Jr.,INF,"Buenos Aires, Argentina",River Plate
+CARSON REPP,Lake Erie College,2025,70,,RIGHT,LEFT,Fr.,P,"Powell, OH",Olentangy Berlin
+LUCAS DUDTE,Lake Erie College,2026,76,,RIGHT,LEFT,So.,P,"Hamilton, OH",Fairfield
+GARRETT   MT ESPOSITO,Lake Erie College,2025,72,,RIGHT,RIGHT,Sr.,OF,"Beech Grove, IN",Beech Grove Sr.
+WILLIAM CORNETT,Lake Erie College,2026,71,,RIGHT,RIGHT,Sr.,P,"Medina, OH",Medina
+COOPER HELTON,Lake Erie College,2026,73,,RIGHT,RIGHT,Jr.,P,"Marengo, OH",Highland
+LUCAS DAVIDS,Lake Erie College,2026,76,,RIGHT,LEFT,So.,P,"Hamilton, OH",Fairfield
+GREGORY KENNEDY,Lake Erie College,2025,72,,RIGHT,RIGHT,Fr.,P,"Ravenna, OH",Jonathan Alder
+TEAGAN WILLIAMS,Lake Erie College,2026,76,,RIGHT,RIGHT,Jr.,INF,"Miamisburg, OH",Miamisburg
+MICAH GEISE,Lake Erie College,2026,73,,RIGHT,RIGHT,Jr.,OF,"Chillicothe, OH",Ross County Christian Academy
+AARON DALLMAYER,Lake Erie College,2025,74,,RIGHT,RIGHT,So.,P,"Washington Court House, OH",Washington
+JAKE VASIL,Lake Erie College,2025,74,,RIGHT,LEFT,Jr.,P,"Chagrin Falls, OH",Kenston
+COLE SCHWOCHOW,Lake Erie College,2025,71,,LEFT,LEFT,So.,P,"Clyde, OH",Clyde
+ALEXANDER MT JONES,Lake Erie College,2025,,,,,Sr.,OF,,
+NICHOLAS MT OYSTER,Lake Erie College,2025,73,,RIGHT,RIGHT,Jr.,P,"Columbus, OH",Hilliard Davidson
+NEVIN BELANGER,Franklin Pierce University,2026,,,,,Fr.,C,"Claremont, NH",Stevens High School
+DAMIEN CARTER,Franklin Pierce University,2025,72,,RIGHT,RIGHT,Fr.,P,"Milford, MA",Milford '24
+STEVEN DIAZ,Franklin Pierce University,2026,74,,RIGHT,RIGHT,Jr.,P,"Sturbridge, MA",
+JUSTIN FEISTEIN,Franklin Pierce University,2025,66,,RIGHT,RIGHT,Fr.,P,"Monroe, CT",
+ZACHARY MASCARO,Franklin Pierce University,2025,72,,RIGHT,RIGHT,Sr.,OF,"Rocky Hill, CT",
+ANDREW DELUCIA,Franklin Pierce University,2025,73,,RIGHT,RIGHT,Jr.,P,"Medway, MA",Catholic Memorial HS
+COLBY MT GAREY-WRIGHT,Franklin Pierce University,2025,75,,RIGHT,RIGHT,So.,P,"East Saint Johnsbury, VT",
+MICHAEL QUIROS,Franklin Pierce University,2026,70,,RIGHT,RIGHT,Jr.,P,"North Brookfield, MA",
+COLIN HOFFMAN,Franklin Pierce University,2026,72,,RIGHT,RIGHT,Sr.,1B,"Longmeadow, MA",
+NOLAN MT DEANDRADE,Franklin Pierce University,2025,74,,RIGHT,RIGHT,Jr.,1B,"Bridgewater, MA",
+KYLE SALVATI,Franklin Pierce University,2025,77,,RIGHT,RIGHT,Jr.,P,"Mount Sinai, NY",
+RAFAEL RODRIGUEZ ROSA,Franklin Pierce University,2026,73,,RIGHT,RIGHT,So.,C,"Meriden, CT",
+LUC NIVAUD,Franklin Pierce University,2025,73,,RIGHT,RIGHT,So.,3B,"Cohasset, CA",
+DEVIN KULAS,Franklin Pierce University,2025,74,,RIGHT,RIGHT,So.,OF,"Southington, CT",St. Paul Catholic '23
+NICHOLAS CARLUCCI,Franklin Pierce University,2025,68,,RIGHT,RIGHT,Fr.,P,"Oxford, CT",
+PAUL DONNELLY,Gordon College,2025,70,,LEFT,LEFT,Fr.,P,"Middleton, MA",Masconomet Regional
+GABRIEL FALES,Gordon College,2026,71,,RIGHT,RIGHT,So.,INF,"Middleton, MA",Masconomet Regional
+TYLER FONCK FONCK,Gordon College,2026,74,,LEFT,LEFT,Jr.,OF,"Lynn, MA",Lynn Classical
+ADAM GRACIE,Gordon College,2026,66,,RIGHT,RIGHT,So.,INF,"Swansea, MA",Joseph Case
+GIANNI MERCURIO,Gordon College,2025,72,,LEFT,RIGHT,Jr.,OF,"Wakefield, MA",Bishop Fenwick
+EVAN LOUIE,Gordon College,2026,,,RIGHT,RIGHT,Fr.,C,,
+CALEB STUART,Gordon College,2026,74,,BOTH,RIGHT,Jr.,P,"Chelmsford, MA",Chelmsford
+HUNTER NORMANDIN,Gordon College,2026,71,,RIGHT,RIGHT,Sr.,P,"Prospect, CT",Woodland Regional
+JACK BIRTWELL BIRTWELL,Gordon College,2025,72,,RIGHT,RIGHT,So.,P,"Norwell, MA",Norwell
+ANTHONY FIGUEROA FIGUEROA,Gordon College,2025,67,,LEFT,RIGHT,So.,INF,"Wantagh, NY",Chaminade
+CAMERON FLAHERTY,Gordon College,2025,74,,RIGHT,RIGHT,Fr.,P,"Medford, MA",Austin Preparatory
+JOEY KAZLAUSKAS,Gordon College,2025,71,,RIGHT,RIGHT,So.,INF,"Taunton, MA",Taunton
+SULLIVAN QUIRK,Gordon College,2025,70,,RIGHT,LEFT,Fr.,P,"Somers, CT",Somers
+CASEY WATSON,Gordon College,2026,72,,RIGHT,RIGHT,Jr.,P,"Chester, NH",Pinkerton Academy
+TYLER SPRINCE,Gordon College,2026,74,,LEFT,LEFT,Jr.,OF,"Lynn, MA",Lynn Classical
+TYLER ARMSTRONG,University of Charleston (West Virginia),2025,75,,LEFT,RIGHT,Jr.,P,"Villa Hills, KY",Covington Catholic
+AIDEN BRUNNER,University of Charleston (West Virginia),2025,72,,RIGHT,RIGHT,Fr.,P,"Spring Lake, NJ",St. John Vianney
+GAVIN WAGNER,University of Charleston (West Virginia),2026,72,,RIGHT,RIGHT,So.,UT,"Pittsburgh, PA",Central Catholic
+PHINNEAS ELLIS,University of Charleston (West Virginia),2025,72,,RIGHT,RIGHT,Jr.,INF,"Elmwood Park, NJ",P27 Academy
+WILLIAM PONCE,Eastern New Mexico University,2025,71,,LEFT,RIGHT,Sr.,OF,"Sacramento, CA",Jesuit
+NICHOLAS CHASEY,Newman University,2025,73,,LEFT,RIGHT,Sr.,INF,"Ames, IA",Gilbert HS
+TRENTON TRAMMELL,Newman University,2025,73,,RIGHT,RIGHT,Sr.,INF,"Kansas City, MO",Park Hill HS
+MICAH KOBUSZEWSKI,Newman University,2025,73,,LEFT,LEFT,Jr.,OF,"Topeka, KS",Seaman HS
+SUTTON TITSWORTH,Newman University,2025,72,,RIGHT,RIGHT,Jr.,OF,"Bristow, OK",Bristow HS
+JACK KISER,Newman University,2025,71,,RIGHT,RIGHT,Jr.,INF,"Kansas City, MO",Park Hill
+HUNTER BROWN,Newman University,2025,72,,RIGHT,RIGHT,Sr.,INF,"Oakdale, CA",Enochs HS
+SCOTT ALLAN,Newman University,2025,69,,RIGHT,RIGHT,Jr.,INF,"Ladner, Canada",Delta Secondary School
+LANCE ELSEN,Newman University,2025,77,,RIGHT,RIGHT,Sr.,P,"Madison, MS",Canton Academy
+ROBERT LANDGRAF,Newman University,2025,74,,RIGHT,RIGHT,Sr.,P,"Flower Mound, TX",Marcus HS
+PIERSON   MT GUNNELL,Newman University,2025,72,,RIGHT,RIGHT,Sr.,C,"Fayetteville, AR",Fayetteville HS
+ALEKS KOPPEL,Newman University,2025,74,,RIGHT,RIGHT,Jr.,P,"Kiili, Estonia",Kiili Gymnasium
+CHAN YOON,Newman University,2025,73,,RIGHT,RIGHT,Jr.,P,"Seoul, South Korea",Pohang Jecheol HS
+BRANDON LEROY,Miles College,2025,,,,,Sr.,C,,
+DAVEYON LAVENDER,Miles College,2025,,,,,Jr.,P,,
+BENEN FERNANDEZ,Miles College,2025,77,,RIGHT,RIGHT,Fr.,1b,"Savannah, GA",Islands
+XAVIER WALLACE,Miles College,2025,,,,,So.,ph,,
+GAVIN MT MILLIANS,Miles College,2025,74,,RIGHT,RIGHT,Jr.,DH,"Bremen, GA",Bremen High School
+NICHOLAS COPEN,Miles College,2025,,,,,Sr.,UT,,
+LOGAN STARNES,Miles College,2025,,,,,So.,INF,,
+GAGE   MT WILLIAMS,Northeastern State University,2025,70,,RIGHT,RIGHT,Sr.,C,"Sapulpa, OK",Sapulpa
+COLTON AYRES,Northeastern State University,2025,72,,RIGHT,RIGHT,Jr.,OF,"Kellyville, OK",Kellyville
+MASON MT RUIZ,Northeastern State University,2025,72,,,,Jr.,P,,
+FINLEY BUNCH,Northeastern State University,2026,70,,,,Jr.,OF,,
+DEVIN BLAYNEY,Northeastern State University,2025,70,,,,Jr.,,"Lees Summit, MO",Lees Summit North
+DIEGO MURILLO,Northeastern State University,2025,71,,RIGHT,RIGHT,Jr.,SS,"San Luis Obispo, CA",San Luis Obispo HS
+BRAXTON JONES,Northeastern State University,2025,78,,RIGHT,RIGHT,Fr.,P,"Sapulpa, OK",Sapulpa
+XAVIER SANCHEZ,Northeastern State University,2026,74,,,,Jr.,OF,,
+CRISTIAN HERNANDEZ,Northeastern State University,2025,,,,,Sr.,P,,
+TANNER MT ALMOND,Northeastern State University,2025,74,,,,Jr.,OF,,
+CALEB REYNOLDS,Northeastern State University,2025,78,,,,Jr.,UT,,
+TYLER OHLSON,San Francisco State University,2026,,,,,Sr.,2b,,
+JACKSON WOOD,San Francisco State University,2026,,,RIGHT,RIGHT,Sr.,OF,"Livermore, CA",
+JAKE SPENCE,San Francisco State University,2026,75,,RIGHT,RIGHT,Fr.,P,"Saint George, UT",Dixie High School
+TYLER BYRNS,San Francisco State University,2026,,,,,Sr.,2b,,
+PHOENIX SOMMAY,"California State University, San Marcos",2025,70,,RIGHT,RIGHT,Jr.,UT,"Temecula, CA",Chaparral HS
+TREVOR MT EBY,"California State University, San Marcos",2025,74,,RIGHT,RIGHT,Sr.,P,"Palm Desert, CA",Palm Desert HS
+SPENCER ANDERSON,"California State University, San Marcos",2025,76,,LEFT,RIGHT,Sr.,P,"Danville, CA",De La Salle HS
+ZAVIEN MT WATSON,"California State University, San Marcos",2025,75,,RIGHT,RIGHT,Sr.,OF,"San Diego, CA",Cathedral Catholic HS
+DYLAN UNANGST,"California State University, San Marcos",2026,72,,LEFT,LEFT,So.,P,"Rancho Cucamonga, CA",Rancho Cucamonga High School
+JORDAN TOWNLEY,"California State University, San Marcos",2025,73,,RIGHT,RIGHT,Jr.,P,"Victorville, CA",Snowline Virtual Academy
+MASEN MT MCDONNELL,"California State University, San Marcos",2025,72,,LEFT,RIGHT,Sr.,P,"San Juan Capistrano, CA",Capistrano Valley HS
+LUKE MT HIGGINS,"California State University, San Marcos",2026,73,,RIGHT,RIGHT,Sr.,P,"Laguna Beach, CA",Hillcrest HS
+KYLE DOUIN,University of Southern Maine,2026,73,,LEFT,RIGHT,Sr.,1B,"Augusta, ME",Cony
+IAN LIBBY,University of Southern Maine,2025,79,,RIGHT,,So.,P,"Gray, ME",Gray-New Gloucester
+ADAM GWARJANSKI,University of Southern Maine,2025,74,,RIGHT,RIGHT,Fr.,P,"Minot, ME",
+AUGUSTIN HOLLEN,University of Southern Maine,2025,74,,RIGHT,RIGHT,So.,C,"Freeport, ME",Freeport
+JUSTIN GOIRE LEON,University of Southern Maine,2025,69,,RIGHT,RIGHT,Fr.,UT,,
+REEGAN BUCK,University of Southern Maine,2025,69,,RIGHT,RIGHT,Fr.,OF,,
+CAMDEN BURKE,University of Southern Maine,2025,73,,LEFT,RIGHT,Fr.,C,,
+CHRISTOPHER MURPHY,University of Southern Maine,2026,70,,LEFT,RIGHT,Sr.,INF,"Halifax, MA",Silver Lake Regional
+GRADY HOTHAM,University of Southern Maine,2025,67,,RIGHT,RIGHT,So.,UT,"Palermo, ME",Erskine Academy
+JOSEPH TORRES,Dominican University New York,2026,69,,RIGHT,RIGHT,Jr.,C,,
+VINCENT MT GIAMBONA,Dominican University New York,2026,70,,RIGHT,RIGHT,Sr.,P,,
+JEDADIAH TRUDEAU,Dominican University New York,2025,70,,BOTH,RIGHT,So.,P,"Cohoes, NY",Cohoes HS
+MYLES VAZQUEZ,Dominican University New York,2026,73,,LEFT,LEFT,Jr.,INF,,
+ANTHONY GAGLIARDO,Dominican University New York,2026,68,,LEFT,LEFT,Jr.,OF,,
+MIGUEL PEREZ III,Dominican University New York,2026,,,,,Fr.,rf,,
+JOHN MT ONOFRIO,Dominican University New York,2026,67,,RIGHT,RIGHT,So.,INF,"Northford, CT",North Branford
+TORRY JONES,Edward Waters University,2025,75,,,,Sr.,OF,"Saint Petersburg, FL",Lakewood HS
+ERICKSON MATOS,Edward Waters University,2025,70,,,,Jr.,INF,"Santo Domingo, Dominican Republic",
+LUIS VALERO,Edward Waters University,2026,67,,,,Sr.,INF,"Coamo, PR",Osceola HS
+JEANCARLOS MEDINA,Edward Waters University,2025,71,,,,Sr.,C,"Orlando, FL",Central Pointe Christian School
+JAXSON   MT WALL,Felician University,2025,74,,RIGHT,RIGHT,So.,INF,"San Jose, CA",Valley Christian HS
+KYLE PETERSON,Felician University,2026,73,,RIGHT,RIGHT,Sr.,P,"West Milford, NJ",West Mildford
+CHRISTOPHER MT RAIMONDA,Felician University,2025,73,,LEFT,LEFT,Fr.,P,"Staten Island, NY",Saint Peters Boys HS
+BRYAN RIOS,Felician University,2025,72,,RIGHT,RIGHT,Fr.,P,"South Plainfield, NJ",Saint Joseph's HS
+JACE MT GILLIGAN,Felician University,2025,70,,RIGHT,RIGHT,So.,C,"Wayne, NJ",Passaic County Technical Institute
+ANTHONY RADICE,Felician University,2025,72,,RIGHT,RIGHT,Fr.,C,"Nutley, NJ",Paramus Catholic HS
+EDDY NUNEZ,Felician University,2025,72,,RIGHT,RIGHT,Fr.,P,"Fords, NJ",Woodbridge HS
+JAY ADAMS,Felician University,2025,73,,RIGHT,RIGHT,Fr.,OF,"Bethesda, MD",Landon School
+GEORGE KYRIAKOPOULOS,Felician University,2025,78,,RIGHT,RIGHT,So.,1B,"Astoria, NY",Monsignor McClancy
+JAKE DUFFY,Greensboro College,2026,,,,,So.,OF,,
+CHRISTOPHER LE,Greensboro College,2025,,,,,Sr.,OF,,
+MICHAEL RINALDI,Greensboro College,2026,,,,,So.,INF,,
+JAHEIM MT BROWN,Greensboro College,2025,73,,RIGHT,RIGHT,Sr.,P,"Louisburg, NC",Louisburg HS
+ALEXANDER VAZQUEZ,Greensboro College,2026,,,,,Jr.,INF,,
+IAN BAST,Greensboro College,2026,,,,,Jr.,P,,
+ROBERT HAYES,Greensboro College,2025,,,,,Fr.,INF,,
+JESSE MADOLE,Greensboro College,2025,,,,,Jr.,OF,,
+ROBERT ROSSI,Greensboro College,2026,,,,,So.,UT,,
+BRADEN MARINO,Greensboro College,2026,,,,,So.,P,,
+KAEHUKAI YOUNG,Northwest Missouri State University,2025,74,,RIGHT,RIGHT,Sr.,INF,"Lemoore, CA",Fresno
+CHARLES MOSSER,Northwest Missouri State University,2025,71,,RIGHT,LEFT,Jr.,P,"Lincoln, NE",Lincoln East
+CARTER LIEZERT,Northwest Missouri State University,2025,75,,RIGHT,RIGHT,Fr.,P,"Overland Park, KS",Olathe East
+AUSTIN OGORMAN,Northwest Missouri State University,2026,70,,RIGHT,RIGHT,So.,OF,"Lees Summit, MO",Lee's Summit West
+WILLIAM HUDELSON,Northwest Missouri State University,2026,68,,LEFT,LEFT,Fr.,OF,"Omaha, NE",Millard South
+NOAH RILEY,Northwest Missouri State University,2026,75,,RIGHT,RIGHT,So.,INF,"Liberty, MO",Liberty
+MATTHEW MT BRANDT,Point Park University,2025,68,,RIGHT,RIGHT,Jr.,C,"Queensville, Canada",Saint Andrew's College
+BLAKE EWING,Point Park University,2026,74,,LEFT,RIGHT,So.,INF,"Columbus, OH",Hillard Bradley
+CHRISTOPHER ALVAREZ,Point Park University,2026,72,,RIGHT,RIGHT,Sr.,INF,"Miami, FL",Southwest Miami
+JONATHAN RAMALLO,Point Park University,2026,72,,RIGHT,RIGHT,Sr.,P,"Miami, FL",Elite Squad Academy
+EDWARD MATEO,Point Park University,2025,69,,BOTH,RIGHT,Jr.,INF,"Miami, FL",Felix Varela
+ANTONIO SWADER,Spring Hill College,2025,73,,LEFT,RIGHT,Sr.,INF,"Murfreesboro, TN",Oakland HS
+KAI ST. GERMAINE,Spring Hill College,2025,72,,RIGHT,RIGHT,Sr.,P,"Peoria, AZ",Plymouth HS
+ENRIQUE BARRAZA,Spring Hill College,2025,74,,RIGHT,RIGHT,So.,C,"Mobile, AL",UMS-Wright
+MILES JUSTIN,Spring Hill College,2025,73,,RIGHT,RIGHT,Sr.,P,"Lafayette, LA",Lafayette Christian HS
+HUNTER GRESSEL,Spring Hill College,2025,76,,RIGHT,RIGHT,So.,P,"Orlando, FL",Lake Highland Prepatory
+MICHAEL   MT RACOBALDO,Spring Hill College,2025,76,,RIGHT,RIGHT,Sr.,P,"Mullica Hill, NJ",Gloucester Catholic
+BLAKE MITCHELL,Spring Hill College,2026,,,,,---,2b,,
+JOSEPH SANTOS,University of Mount Saint Vincent,2025,72,,LEFT,LEFT,Fr.,UT,"Baden, PA",Ambridge
+ANDREW ZWEIBACK,University of Mount Saint Vincent,2026,74,,RIGHT,RIGHT,Jr.,P,"Bridgeport, WV",
+JAKE BLAND,University of Mount Saint Vincent,2026,71,,RIGHT,RIGHT,Jr.,INF,"North Huntingdon, PA",Norwin
+ANDREW FARINA,University of Mount Saint Vincent,2026,74,,RIGHT,RIGHT,Jr.,P,"Bridgeport, WV",
+HAYDEN   MT PRIEST,Washburn University,2025,,,,,Sr.,C,,
+SAMUEL WRAGGE,Washburn University,2026,,,,,Fr.,P,"Manhattan, KS",Manhattan High School
+DARIAN DUHON,Washburn University,2025,,,,,Jr.,OF,,
+CADEN WALKER,Washburn University,2025,,,,,Jr.,P,,
+ETHAN MT ALEXANDER,Washburn University,2025,,,,,Sr.,P,,
+LOGAN BARTLETT,Washburn University,2025,,,,,Sr.,P,,
+CAYDEN BROWN,Washburn University,2025,,,,,Jr.,P,,
+RICKY POWELL,Washburn University,2025,,,,,Jr.,INF,,
+GAVIN WILHELM,Washburn University,2026,,,,,Jr.,P,,
+VICTOR MUNOZ,Cameron University,2025,74,,,,Sr.,P,"El Paso, TX",Cathedral HS
+WILMER HENRIQUEZ,Cameron University,2025,70,,,,Jr.,,"New Brunswick, NJ",
+GABE CLYDEN,Cameron University,2025,70,,RIGHT,RIGHT,Jr.,INF,"Piedmont, OK",Piedmont HS
+LUKE LENSING,Cameron University,2025,76,,,,Sr.,P,"Mansfield, TX",Mansfield HS
+AIDAN DUGGAN,Cameron University,2026,,,,,Jr.,,,
+CODY HILL,Cameron University,2025,74,,,,Jr.,,"Muenster, TX",
+HUNTER HITT,Cameron University,2026,72,,,LEFT,So.,P,"Sunnyvale, TX",Sunnyvale High School
+KALEB ROBERTS,Cameron University,2026,,,,,So.,,,
+ZANE ROOS,Cameron University,2026,,,,,So.,,,
+DREW GIRTZ,Crown College (Minnesota),2025,,,LEFT,LEFT,Jr.,OF,"Ramsey, MN",Elk River Area
+MITCHELL COX,Crown College (Minnesota),2025,,,,,So.,P,,
+LOUIS GARCIA,Crown College (Minnesota),2025,,,,,So.,INF,,
+QUENTIN HOLMES,Crown College (Minnesota),2025,,,,,So.,P,,
+TY REILLY,Crown College (Minnesota),2026,,,,,So.,INF,,
+DYLAN KEELAN,Crown College (Minnesota),2025,,,,,So.,INF,,
+KYLER THRUSTON,Crown College (Minnesota),2025,,,,,Fr.,INF,,
+NICHOLAS ANDERSON,Crown College (Minnesota),2026,,,,,Fr.,INF,,
+BRENNAN PENNY,Crown College (Minnesota),2025,,,,,So.,INF,,
+SETH GALFANO,New Mexico Highlands University,2026,76,,RIGHT,RIGHT,Jr.,P,"Greer, SC",Riverside HS
+ANDREW RODRIGUEZ,New Mexico Highlands University,2025,71,,LEFT,RIGHT,Sr.,UT,"Oakley, CA",Freedom HS
+RYAN HONS,"Pennsylvania Western University, Clarion",2026,71,,LEFT,LEFT,Sr.,P,"Pittsburgh, PA",Montour
+CALIN MCKNIGHT,"Pennsylvania Western University, Clarion",2025,74,,RIGHT,RIGHT,Fr.,OF,"Lewistown, PA",Mifflin County
+JAXSON MT WOOD,"Pennsylvania Western University, Clarion",2025,71,,RIGHT,RIGHT,Fr.,OF,"Frederick, MD",Georgetown Prep
+ANTHONY DURAN,"Pennsylvania Western University, Clarion",2025,74,,RIGHT,RIGHT,Fr.,1B,"Clewiston, FL",Labelle
+JACK EDNER,"Pennsylvania Western University, Clarion",2026,72,,RIGHT,RIGHT,Fr.,C,"Glen Burnie, MD",Archbishop Spalding
+LOGAN IRVIN,"Pennsylvania Western University, Clarion",2026,70,,RIGHT,RIGHT,So.,P,"Warrington, PA",CB South
+LUKE LIPTAK,"Pennsylvania Western University, Clarion",2026,73,,LEFT,LEFT,Jr.,P,"Woodbridge, VA",Woodbridge Senior High School
+LUKE BIRKHEAD,"Pennsylvania Western University, Clarion",2026,73,,LEFT,LEFT,Jr.,P,"Woodbridge, VA",Woodbridge Senior High School
+WYATT ISHII,Saint Martin's University,2025,,,,,Fr.,p,,
+EVAN NICOL,Saint Martin's University,2026,77,,,,Jr.,1B,"Olympia, WA",
+PETER HOLLABAUGH,Saint Martin's University,2026,,,,,Jr.,INF,"Normandy Park, WA",John F. Kennedy Catholic
+CAIDEN SCHULTZ,Saint Martin's University,2026,74,,RIGHT,RIGHT,Fr.,P,,
+REILLY SMALLING,Saint Martin's University,2025,,,,,So.,UT,"Redlands, CA",
+JAKE SCHUMACHER,Saint Martin's University,2025,71,,LEFT,LEFT,So.,P,"Kennewick, WA",Kamiakin
+CADE GIBSON,Saint Martin's University,2025,,,,,Jr.,2b,"Ellensburg, WA",
+DAMON INGRAM,Saint Martin's University,2025,72,,,,Sr.,UT,,
+ALEX HARTNETT,Saint Martin's University,2025,,,,,Jr.,ph,,
+DENTON WHITESIDE,University of Central Oklahoma,2025,77,,LEFT,LEFT,Sr.,P,,
+AUSTIN BURDA,University of Central Oklahoma,2025,70,,RIGHT,RIGHT,Sr.,P,,
+ROBERT DIBRELL,University of Central Oklahoma,2025,72,,LEFT,LEFT,Sr.,P,"Piedmont, OK",
+TY CHAPMAN,University of Central Oklahoma,2025,75,,RIGHT,RIGHT,Sr.,INF,,
+PRESTON GILTNER,University of Central Oklahoma,2025,76,,RIGHT,RIGHT,Sr.,P,,
+BRETT MCCOMAS,University of Central Oklahoma,2026,76,,RIGHT,RIGHT,Jr.,P,"Edmond, OK",Deer Creek
+RICHARD ROBERTSON,University of Central Oklahoma,2025,76,,RIGHT,LEFT,Sr.,OF,"Magnolia, TX",Magnolia West
+TYLER MT GRAY,University of Central Oklahoma,2025,75,,,,So.,P,"Coral Springs, FL",J.P Taravella HS
+TYLER SIMMONS,University of South Carolina Aiken,2026,72,,LEFT,LEFT,Jr.,OF,"Sugar Hill, GA",North Gwinnett
+LUKE NORMAN,University of South Carolina Aiken,2026,76,,RIGHT,RIGHT,Sr.,OF,"Moss Bluff, LA",Sam Houston
+KYLE LAZER,West Chester University of Pennsylvania,2026,,,RIGHT,RIGHT,Sr.,P,,
+CASEY VAUGHAN,West Chester University of Pennsylvania,2025,,,BOTH,RIGHT,Sr.,,,
+LUKE KEITSOCK,West Chester University of Pennsylvania,2026,68,,RIGHT,RIGHT,So.,P,"Johnstown, PA",Richland
+LUKE LEVENTHALL,West Chester University of Pennsylvania,2026,68,,RIGHT,RIGHT,So.,P,"Johnstown, PA",Richland
+ANDREW SAGRESTANO,West Chester University of Pennsylvania,2026,70,,RIGHT,RIGHT,Sr.,OF,"Columbia, MD",Oakland Mills
+MICHAEL LARSON,Christian Brothers University,2026,76,,LEFT,LEFT,Sr.,P,"Bowie, MD",
+ANTHONY GAMBOA JR,Christian Brothers University,2025,74,,RIGHT,RIGHT,Jr.,P,"Pittsburg, CA",Pittsburg HS
+ANDREW REED,Christian Brothers University,2025,70,,RIGHT,RIGHT,Sr.,OF,"Brownsville, TN",
+LAWSON RYAN,Christian Brothers University,2025,70,,RIGHT,RIGHT,So.,P,"Nashville, TN",
+BRANTON STRINGER,Christian Brothers University,2025,77,,RIGHT,RIGHT,So.,P,"Hartselle, AL",Hartselle HS
+ELI POTTER,Christian Brothers University,2025,72,,LEFT,LEFT,Fr.,P,"Burns, TN",Dickson County
+JALEN MT SMITH,Christian Brothers University,2025,76,,RIGHT,RIGHT,So.,INF,"Tampa, FL",Tampa Jesuit HS
+JOJO MACK,Roosevelt University,2025,,,,,Sr.,OF,,
+DIMITRI SPATHARAKIS,Roosevelt University,2025,,,,,Jr.,OF,,
+FABIAN CRUZ,Roosevelt University,2025,,,,,Jr.,OF,,
+KEAGAN BOBBITT,Roosevelt University,2025,77,,LEFT,LEFT,Jr.,P,"New Lenox, IL",Lincoln Way
+DANIEL DALTON,Roosevelt University,2025,,,,,Fr.,UT,,
+SEBASTIAN CASILLAS,Roosevelt University,2025,70,,LEFT,RIGHT,So.,2B,"San Diego, CA",Otay Ranch HS
+LIAM MT MORENO,St. Cloud State University,2026,72,,RIGHT,RIGHT,Jr.,INF,"Sun Prairie, WI",Sun Prairie
+TAEHYUNG KIM,St. Cloud State University,2025,72,,LEFT,RIGHT,Jr.,INF,"Marana, AZ",Ironwood Ridge
+WILLIAM HESS,St. Cloud State University,2026,73,,RIGHT,RIGHT,Jr.,P,"Hartland, WI",Arrowhead
+CAMDEN LYKE,St. Cloud State University,2025,76,,RIGHT,RIGHT,Fr.,P,"Lakeville, MN",Lakeville South
+BRAYDEN JACOBSON,St. Cloud State University,2026,,,,,Fr.,INF,"Sartell, MN",Sartell High School
+BRADY NELSON,St. Cloud State University,2025,74,,RIGHT,RIGHT,Jr.,P,"Oro Valley, AZ",Ironwood Ridge
+DANIEL CLUSIAU,St. Cloud State University,2025,73,,LEFT,LEFT,Fr.,P,"Bemidji, MN",Bemidji High School
+WYATT TWEET,St. Cloud State University,2026,70,,LEFT,RIGHT,Sr.,INF,"Russell, Canada",Major PRatt
+KEVIN BAEZ,Thomas Jefferson University,2026,68,,LEFT,RIGHT,So.,P,"Oakdale, NY",Saint Anthony's
+ANDREW GONZALEZ,Thomas Jefferson University,2026,75,,RIGHT,RIGHT,Sr.,UT,"Bronxville, NY",Bronxville
+JOSHUA MT LOPEZ,Thomas Jefferson University,2025,70,,RIGHT,RIGHT,Jr.,OF,"Nanuet, NY",Nanuet Senior
+LUKE DEVITA,Thomas Jefferson University,2025,70,,RIGHT,RIGHT,So.,INF,"Howell, NJ",Howell
+WILLIAM WOODRING,Thomas Jefferson University,2026,72,,RIGHT,RIGHT,So.,P,"Haverford, PA",Haverford
+DANNY MT KERR,Thomas Jefferson University,2025,72,,RIGHT,RIGHT,Jr.,P,"Haddonfield, NJ",Bishop Eustace
+LOU SPADAFORA,Thomas Jefferson University,2025,67,,RIGHT,RIGHT,So.,C,"Monroe Township, NJ",Ranney
+ROMAN REED,Thomas Jefferson University,2025,72,,RIGHT,RIGHT,Jr.,INF,"Coatesville, PA",Collegium Charter
+JOHNATHON RAY,Tiffin University,2026,75,,RIGHT,RIGHT,Sr.,P,,
+RYAN YINGST,Tiffin University,2026,72,,RIGHT,RIGHT,Fr.,P,"Chandler, AZ",Higley High School
+RYAN HURSHE,Tiffin University,2026,72,,RIGHT,RIGHT,Fr.,P,"Chandler, AZ",Higley High School
+BRETT NICODEMUS,Tiffin University,2026,67,,,,So.,P,,
+AUSTIN DICK,Tiffin University,2026,68,,,,So.,P,,
+JACK LONNEMAN,Tiffin University,2025,70,,LEFT,RIGHT,Sr.,OF,,
+NOAH   MT KARLINER,"California State University, Dominguez Hills",2025,76,,RIGHT,RIGHT,Sr.,UT,"Huntingtn Bch, CA",Fountain Valley HS
+DYLAN SCHUMACHER,"California State University, Dominguez Hills",2026,77,,RIGHT,RIGHT,Sr.,P,,
+TREY   MT WINGET,"California State University, Dominguez Hills",2025,74,,LEFT,RIGHT,Sr.,OF,"Saint George, UT",
+DYLAN   MT SINGH,"California State University, Dominguez Hills",2025,69,,LEFT,LEFT,Jr.,P,"Culver City, CA",Culver City HS
+MASANOBU SASAKI,"California State University, Dominguez Hills",2025,,,RIGHT,RIGHT,Jr.,P,,
+JACOB PFITZNER,"California State University, Dominguez Hills",2026,76,,RIGHT,RIGHT,Jr.,OF,"Long Beach, CA",Lakewood High School
+JOEL GAITAN,"California State University, Dominguez Hills",2025,74,,RIGHT,RIGHT,Sr.,P,"Rancho Cucamonga, CA",
+JOEL BONNER,East Stroudsburg University of Pennsylvania,2025,70,,LEFT,RIGHT,Fr.,OF,"Hulmeville, PA",Neshaminy
+ODYSSEUS SOBERAL,East Stroudsburg University of Pennsylvania,2025,72,,RIGHT,RIGHT,Jr.,OF,"Bensalem, PA",Bensalem
+LUKE KOPEC,East Stroudsburg University of Pennsylvania,2026,,,,,Fr.,P,,
+JAXON GRANT,East Stroudsburg University of Pennsylvania,2025,71,,LEFT,RIGHT,Fr.,C,,
+CADEN MT HALL,Marietta College,2025,71,,RIGHT,RIGHT,Fr.,P,"Glenville, WV",Gilmer County High School
+JACK KINSEY,Marietta College,2026,75,,RIGHT,RIGHT,Jr.,C,"Louisville, KY",Trinity
+WILLIAM LOFTUS,Marietta College,2025,,,RIGHT,RIGHT,Fr.,dh,"Westfield, IN",Brebuf Jesuit
+CAM RUSSELL,Marietta College,2026,72,,RIGHT,RIGHT,Fr.,INF,"Lebanon, OH",Lebanon
+NOAH GABRIEL,Marietta College,2025,66,,RIGHT,RIGHT,Jr.,INF,,Shaler Area
+SCOTTSON PACOT,Ouachita Baptist University,2025,76,,RIGHT,RIGHT,Jr.,P,,
+SHANE SONGER,Ouachita Baptist University,2025,74,,RIGHT,RIGHT,Fr.,INF,"White Hall, AR",White Hall
+GAVIN JACOBS,Ouachita Baptist University,2025,,,RIGHT,RIGHT,Fr.,C,,
+LUKE NAJERA,Ouachita Baptist University,2025,,,LEFT,RIGHT,Fr.,C,,
+WILLIAM TITUS,Ouachita Baptist University,2025,,,RIGHT,RIGHT,Jr.,OF,,
+AIDAN LEMASTERS,Ouachita Baptist University,2025,,,RIGHT,RIGHT,Fr.,INF,,
+ERIC MENDOZA,Pfeiffer University,2026,,,,,So.,dh,,
+CONNER BROWN,Pfeiffer University,2026,,,,,So.,p,,
+MATTHEW WELCH,Pfeiffer University,2026,,,,,Fr.,c,,
+HUNTER MT HUNEYCUTT,Pfeiffer University,2025,70,,BOTH,RIGHT,Fr.,UT,"Laurinburg, NC",Pinecrest
+CONNOR WELKER,Pfeiffer University,2026,70,,RIGHT,RIGHT,Sr.,UT,"Concord, NC",Cox Mill
+BENJAMIN BARNES,Pfeiffer University,2026,,,,,Fr.,c,,
+HAYDEN FURR,Pfeiffer University,2026,71,,RIGHT,RIGHT,Sr.,OF,"New London, NC",North Stanly
+ERIC PEREZ,Post University,2025,72,,RIGHT,RIGHT,Jr.,C,"Los Angeles, CA",El Camino Community College
+KIEFER MCGRATH,Post University,2025,67,,RIGHT,RIGHT,Fr.,C,"South Burlington, VT",South Burlington
+BRIAN MT ZWEIGBAUM,Post University,2025,71,,RIGHT,RIGHT,So.,C,"Smithtown, NY",University of Maine (NCAA DI)
+ISAIAH MT VELAZCO,Post University,2025,72,,LEFT,RIGHT,Sr.,C,"Sylmar, CA",Granada Hills Charter / Post
+JAKE BAUMANN,Post University,2026,74,,RIGHT,RIGHT,Fr.,OF,"Mystic, CT",Stonington High School
+TYLER GALLOWAY,Roanoke College,2026,,,RIGHT,RIGHT,Jr.,OF,,
+PARKER   MT STALLARD,Roanoke College,2025,,,RIGHT,RIGHT,Sr.,OF,,
+OWEN MT WOJCIECHOWSKI,Roanoke College,2025,,,RIGHT,RIGHT,Fr.,P,,
+ROBERT JOHNSTON,Roanoke College,2025,,,RIGHT,RIGHT,So.,P,,
+CODY PETRAUSKAS,Roanoke College,2025,,,RIGHT,RIGHT,Fr.,P,,
+KYLE MOSHIER,Roanoke College,2026,,,RIGHT,RIGHT,Fr.,INF,,
+ISAAC THORNTON,Southern Arkansas University,2025,75,,RIGHT,RIGHT,Jr.,P,"Flower Mound, TX",Marcus
+JOSHUA MT FLAUGHER,Southern Arkansas University,2025,73,,RIGHT,RIGHT,Sr.,P,"Bremerton, WA",
+JAYDEN MT HILL,Southern Arkansas University,2025,75,,BOTH,RIGHT,Sr.,OF,"Frisco, TX",Frisco HS
+CAMERON THROWER,Southern Arkansas University,2025,70,,,,Fr.,UT,"Madisonville, TX",Madisonville
+CODY GIBSON,Southwest Baptist University,2025,,,,RIGHT,So.,P,,
+DOMINIC TELLEZ,Southwest Baptist University,2025,,,,,Sr.,OF,,
+JAYLON MCGEE,Southwest Baptist University,2025,,,,BOTH,Jr.,P,,
+COLIN WHITED,Southwest Baptist University,2025,,,,RIGHT,So.,P,,
+JAYCE BASER,Southwest Baptist University,2025,,,,RIGHT,Fr.,INF,,
+AIDAN JONES,Southwest Baptist University,2026,,,,RIGHT,Fr.,P,,
+NOAH LARA,University of Valley Forge,2025,,,,,Fr.,,,
+LOGAN RINEER,University of Valley Forge,2025,,,,,Fr.,,,
+AARON GONZALES,University of Valley Forge,2026,,,,,Jr.,,,
+BRADY OVES,University of Valley Forge,2025,,,,,Fr.,,,
+ERIC REINHART,University of Valley Forge,2025,,,,,Jr.,UT,,
+WESLEY LANDIS,Wheeling University,2025,,,,,Jr.,,,
+HUDSON MT WESNEY,Wheeling University,2025,,,,,So.,UT,,
+STEVEN MERKEL,Wheeling University,2025,71,,RIGHT,RIGHT,Jr.,,,
+MICHAEL NORTON,Wheeling University,2025,73,,LEFT,RIGHT,Jr.,,,
+ZACHARY DELLERMAN,Wheeling University,2025,71,,,,Jr.,,,
+BROCK MT ELLIOTT,Wheeling University,2026,73,,RIGHT,RIGHT,Sr.,P,"Alex City, AL",Benjamin Russell HS
+CADE LACY,Wheeling University,2025,,,,,Jr.,,,
+LANDON MT KIEFER,Albany State University (Georgia),2025,70,,RIGHT,RIGHT,Jr.,INF,"Crestview, FL",Braden River
+GERCAL REYES ALVARADO,Albany State University (Georgia),2025,,,,,Sr.,1B,,
+BENJAMIN ADDISON,Albany State University (Georgia),2026,,,RIGHT,RIGHT,Sr.,OF,,
+NATHAN MT SAAVEDRA,Albany State University (Georgia),2025,,,,,Sr.,1B,,
+TODD LITTLE,Albany State University (Georgia),2025,,,,,Jr.,C,,
+AIDAN CONNERS,Aurora University,2025,,,,,Fr.,P,,
+WILLIAM SEVIER,Aurora University,2025,,,,,Jr.,INF,,
+CARSON FAUST,Aurora University,2025,,,,,So.,INF,,
+BRANDON TODD,Aurora University,2025,76,,RIGHT,RIGHT,So.,P,"San Diego, CA",canyon Hills High School
+JACK SHARKO,Aurora University,2026,,,,,Fr.,P,,
+PRESTON HALL-POINTER,Benedict College,2025,,,,,Jr.,p,,
+JUAN GUARDADO,Benedict College,2025,72,,RIGHT,RIGHT,Jr.,C,"La Puente, CA",Nogales HS
+SHANE WILLIAMS,Benedict College,2025,,,,,So.,p,,
+BRAILIN DURAN,Benedict College,2025,,,,,Jr.,p,,
+NICHOLAS GIOIA,Benedict College,2025,,,,,So.,p,,
+YOSMILL DIAZ,Benedict College,2025,,,,,Jr.,c,,
+AIDAN   MT LEE,"California State University, Monterey Bay",2025,77,,RIGHT,RIGHT,Sr.,P,"Live Oak, CA",Monte Vista Christian
+JAVIER   MT FELIX,"California State University, Monterey Bay",2025,74,,RIGHT,RIGHT,Sr.,INF,"Watsonville, CA",Santa Cruz
+VINCENT MT CICOLELLO,"California State University, Monterey Bay",2025,,,,,Sr.,p,,
+COLBY SEELIG,Chestnut Hill College,2025,,,,,Jr.,OF,,
+ZACHARY BRAIG,Chestnut Hill College,2025,69,,RIGHT,RIGHT,Fr.,C,,
+CHRISTIAN MT PELUSO,Chestnut Hill College,2025,69,,RIGHT,RIGHT,Jr.,C,"Bridgewater, NJ",Seton Hall Prep
+SCOTT ENNIST,Chestnut Hill College,2025,72,,RIGHT,RIGHT,Jr.,OF,"Poughkeepsie, NY",
+AAREON MONROE,Chestnut Hill College,2025,77,,RIGHT,RIGHT,Jr.,OF,"Philadelphia, PA",Science Leadership Academy
+JOSHUA CAVAS,Dean College,2025,73,,RIGHT,RIGHT,Fr.,UT,,
+RYLAN SECOVICH,Dean College,2025,71,,RIGHT,RIGHT,So.,OF,,
+NATHAN SUNCAR,Dean College,2025,75,,LEFT,LEFT,So.,OF,"Boston, MA",Brooke
+DYLAN CATANIA,Dean College,2026,72,,RIGHT,RIGHT,Jr.,UT,,
+SAMUEL SENES,Dean College,2026,70,,LEFT,RIGHT,Jr.,INF,,
+JAYDEN VILLALTA,Dean College,2026,71,,RIGHT,RIGHT,Fr.,C,,
+DANE SAMARTINO,Indiana University of Pennsylvania,2025,72,,RIGHT,RIGHT,So.,P,"Haddonfield, NJ",Haddonfield Memorial HS
+JACOB JEWETT,Indiana University of Pennsylvania,2026,72,,RIGHT,RIGHT,Sr.,P,"Martinsburg, PA",Lebanon Valley
+ETHAN MT SCHIMONY,Indiana University of Pennsylvania,2025,73,,LEFT,RIGHT,Jr.,UT,"State College, PA",State College Area
+GARDNER FRAVEL,Indiana University of Pennsylvania,2025,68,,RIGHT,RIGHT,Fr.,INF,"Mill Hall, PA",Central Mountain HS
+KEEGAN CARR,Indiana University of Pennsylvania,2025,70,,RIGHT,RIGHT,Fr.,INF,"North Huntingdon, PA",Norwin
+LUKE GOODWIN,Indiana University of Pennsylvania,2026,71,,RIGHT,RIGHT,So.,P,"Center Valley, PA",Soutthern Lehigh
+DESEAN ROGERS,Lane College,2026,73,,RIGHT,RIGHT,Sr.,P,,
+JADEN GARCIA,Lane College,2025,71,,RIGHT,RIGHT,Fr.,1B,,
+LEONARDO ALBORNOZ,Lane College,2026,,,,,Fr.,,,
+ANDERSON JORGE,Lane College,2026,75,,RIGHT,RIGHT,So.,P,,
+NICHOLAS DETERDING,Lane College,2025,73,,RIGHT,RIGHT,So.,OF,,
+MICHAEL O'NEILL,Lane College,2025,70,,RIGHT,RIGHT,Fr.,C,,
+TANNER SHUMSKI,"Minnesota State University, Mankato",2025,73,,RIGHT,RIGHT,Jr.,P,"Mankato, MN",Mankato West
+HUNTER   MT DAY,"Minnesota State University, Mankato",2025,74,,RIGHT,RIGHT,Sr.,P,"Richfield, MN",Thomas Jefferson HS
+LINCOLN BERRY,"Minnesota State University, Mankato",2025,72,,RIGHT,RIGHT,Sr.,INF,"Inver Grove Heights, MN",Eagan
+JADEN CASE,"Minnesota State University, Mankato",2025,70,,LEFT,LEFT,Fr.,P,"Shakopee, MN",Shakopee
+EASTON PRATT,"Minnesota State University, Mankato",2025,77,,RIGHT,RIGHT,Fr.,P,"Polk City, IA",Ankeny Centennial
+NATHANIEL FRONHEISER,Misericordia University,2025,72,,RIGHT,RIGHT,Fr.,P,"Mertztown, PA",Bandywine Heights
+ANDREW HAUSSMAN,Misericordia University,2026,,,RIGHT,RIGHT,Fr.,P,,
+ADAM REGAN,Misericordia University,2025,74,,RIGHT,RIGHT,So.,OF,"Braintree, MA",Boston College High
+ROCCO VISCITO,Misericordia University,2025,67,,LEFT,LEFT,So.,P,,
+ANDREW ROXBY,Misericordia University,2026,,,RIGHT,RIGHT,Fr.,P,,
+CASEY WAYNE,Northwest Nazarene University,2025,76,,RIGHT,RIGHT,Sr.,OF,"Phoenix, AZ",Boulder Creek
+JASON BELL,Northwest Nazarene University,2025,76,,RIGHT,RIGHT,Sr.,C,"La Quinta, CA",La Quinta
+NIN   MT BURNS II,Northwest Nazarene University,2025,71,,RIGHT,RIGHT,Sr.,OF,"Covina, CA",Covina HS
+BRAYDEN SOMERS,Northwest Nazarene University,2026,74,,RIGHT,RIGHT,Fr.,P,"Nampa, ID",Nampa Christian High School
+MAKANI GEISEN,Northwest Nazarene University,2025,77,,RIGHT,RIGHT,Fr.,INF,"Battle Ground, WA",King's Way Christian
+NICOLAS MANGANO,Purdue University Northwest,2025,,,RIGHT,RIGHT,So.,INF,,
+OWEN BENDIS,Purdue University Northwest,2026,77,,RIGHT,RIGHT,Sr.,P,,
+JACOB GRANICZNY,Purdue University Northwest,2026,,,,,So.,P,,
+DANIEL PUPLAVA,Purdue University Northwest,2025,,,RIGHT,RIGHT,Sr.,1B,,
+PAUL FERET,Purdue University Northwest,2025,,,RIGHT,RIGHT,Fr.,OF,,
+BRADY WALL,Purdue University Northwest,2025,,,RIGHT,RIGHT,Fr.,OF,,
+DOMINIC TETTA,Saint Michael's College,2025,72,,RIGHT,RIGHT,So.,OF,"East Northport, NY",Northport
+TAD GIARDINA,Saint Michael's College,2025,72,,RIGHT,RIGHT,So.,OF,"Reading, MA",Saint Mary's
+VINCENT ARMELLINO,Saint Michael's College,2025,74,,LEFT,LEFT,Fr.,P,"Mckinney, TX",McKinney Boyd
+BRANDON BREAKELL,Saint Michael's College,2025,74,,LEFT,LEFT,Jr.,P,"Albany, NY",Shaker
+DAVID BREAKELL,Saint Michael's College,2025,73,,RIGHT,RIGHT,Jr.,SS,"Albany, NY",Shaker
+BRAD ALEXANDER,Saint Michael's College,2026,67,,RIGHT,RIGHT,Fr.,SS,"Danbury, CT",Danbury
+CONNER CLARK,The University of Texas Permian Basin,2025,72,,RIGHT,RIGHT,So.,P,"Carlsbad, CA",Sage Creek
+GIOVANNI GASTELUM,The University of Texas Permian Basin,2025,71,,RIGHT,RIGHT,Fr.,P,"El Paso, TX",Franklin
+ETHAN RALPH,The University of Texas Permian Basin,2025,71,,LEFT,RIGHT,Fr.,INF,"Toronto, Canada",Riverdale Collegiate Institute
+TAVEN MT HATHAWAY,The University of Texas Permian Basin,2025,72,,RIGHT,RIGHT,So.,P,"Honolulu, HI",Moanalua
+WILLIAM SEEGER,"University of Arkansas, Fort Smith",2026,,,,,So.,P,,
+TANNER CALLAHAN,"University of Arkansas, Fort Smith",2025,,,,,Sr.,C,,
+WILLIAM BURCH,"University of Arkansas, Fort Smith",2026,,,,,So.,P,,
+RYAN RIGGS,"University of Arkansas, Fort Smith",2025,70,,LEFT,RIGHT,Sr.,C,,
+CHASE PAIR,"University of Arkansas, Fort Smith",2025,,,,,Jr.,P,,
+NOAH OCHOA,"University of Arkansas, Fort Smith",2026,,,,,Jr.,P,,
+KYLE ROOP,"University of Arkansas, Monticello",2026,69,,RIGHT,RIGHT,Sr.,OF,"Jonesboro, AR",
+NELSON SCHOTBORGH MERCADO,"University of Arkansas, Monticello",2025,75,,,RIGHT,Sr.,P,"Brampton, Canada",
+TRENTON SMITH,"University of Arkansas, Monticello",2025,76,,,RIGHT,Jr.,P,"Longview, TX",
+JUSTIN MT SANTOYO,"University of Arkansas, Monticello",2025,72,,RIGHT,RIGHT,Sr.,INF,"Los Alamitos, CA",
+CAMDEN TANNER,"University of Arkansas, Monticello",2026,69,,LEFT,RIGHT,Jr.,OF,"N Little Rock, AR",Catholic High School
+MASON MORGAN,"University of Arkansas, Monticello",2026,74,,RIGHT,RIGHT,Jr.,P,"Houston, TX",
+JEFFREY TIW,University of Mary,2025,75,,RIGHT,RIGHT,So.,P,"Burlington, Canada",Dr. Frank J. Hayden Secondary School
+CARTER SHIN,University of Mary,2026,,,RIGHT,RIGHT,So.,INF,"Burlington, Canada",
+AUSTIN ARMSTRONG,University of Mary,2025,,,RIGHT,RIGHT,Fr.,P,"Great Falls, MT",Great Falls Central
+KEEGAN DRINKLE,University of Mary,2025,,,LEFT,RIGHT,Fr.,C,"Maple Ridge, Canada",
+ALEX MAUSHART,University of Mary,2025,,,LEFT,LEFT,Fr.,P,"Vacaville, CA",
+CAMDEN KEARNEY,University of Wisconsin-Parkside,2025,73,,LEFT,RIGHT,Jr.,UT,"Saint Anne, IL",Kankakee
+ANDREW MACK,University of Wisconsin-Parkside,2025,72,,RIGHT,RIGHT,So.,C,"Shorewood, IL",Minooka
+JACOB YORK,University of Wisconsin-Parkside,2026,72,,LEFT,RIGHT,Sr.,INF,"New Franken, WI",Green Bay Preble
+OWEN MASLOWSKI,University of Wisconsin-Parkside,2025,70,,RIGHT,RIGHT,Fr.,C,"Stillwater, MN",Stillwater
+ZACHARY ALBURG,University of Wisconsin-Parkside,2025,72,,RIGHT,RIGHT,Sr.,C,"Menomonee Falls, WI",Menomonee Falls
+KEEGAN MEGARO,Virginia Wesleyan University,2025,67,,RIGHT,RIGHT,Jr.,INF,"Chesapeake, VA",Hickory
+ZACHARY MEGARO,Virginia Wesleyan University,2026,,,RIGHT,RIGHT,Fr.,P,,
+RYAN COWELL,Virginia Wesleyan University,2026,,,RIGHT,RIGHT,Fr.,C,,
+EDGAR HARWOOD III,Virginia Wesleyan University,2025,74,,RIGHT,RIGHT,Jr.,INF,"Philadelphia, PA",
+JAMES GIFFORD,Virginia Wesleyan University,2026,,,,,Jr.,UT,,
+"JEFFREY FABIAN, JR.",West Virginia State University,2025,73,,LEFT,LEFT,Sr.,P,"Hudson, OH",Hudson
+BRYSON BROWN,West Virginia State University,2026,74,,LEFT,RIGHT,Sr.,P,"Wellston, OH",Jackson
+BRYSON SMITH,West Virginia State University,2026,74,,LEFT,RIGHT,Sr.,P,"Wellston, OH",Jackson
+BRANDON MORRISON,West Virginia State University,2025,72,,RIGHT,RIGHT,Fr.,P,"Plantation, FL",Broward Virtual
+ETHAN COHEN,West Virginia State University,2026,72,,RIGHT,RIGHT,Sr.,OF,"Weston, FL",Cypress Bay
+JARRYN BARBER,Anna Maria College,2025,,,,,So.,INF,,
+BRADY MACCARONE,Anna Maria College,2026,,,,,Sr.,C,,
+JOSH BATCHELDER,Anna Maria College,2026,,,,,Jr.,OF,,
+BLAKE FULLER,Anna Maria College,2025,,,,,So.,OF,,
+MATTHEW BEUKA,Anna Maria College,2026,,,,,So.,INF,,
+ANTHONY BRUNO,Arcadia University,2026,,,,,Sr.,P,,
+JAKE HENDERSHOT,Arcadia University,2026,72,,RIGHT,RIGHT,Fr.,C,,
+ERIC   MT SHANDLER,Arcadia University,2026,70,,,,Jr.,INF,,
+CAMERON NEBEL,Arcadia University,2025,73,,LEFT,RIGHT,Sr.,P,"Mechanicsburg, PA",Mechanicsburg Area
+JUSTIN PLAUSKY,Assumption University,2026,74,,RIGHT,RIGHT,Sr.,INF,"Middleborough, MA",Middleborough
+NICHOLAS GALEAZZI,Assumption University,2026,71,,RIGHT,RIGHT,Sr.,INF,"Hopkinton, MA",Hopkinton
+PATRICK FOULIS,Assumption University,2026,69,,RIGHT,RIGHT,So.,OF,"Hadley, MA",Hopkins Academy
+AUSTIN STONE,Assumption University,2025,76,,RIGHT,RIGHT,Sr.,P,"Boylston, MA",Tahanto
+ALEXANDER MEESIG,Assumption University,2025,70,,RIGHT,RIGHT,Sr.,P,"Nashua, NH",Nashua North
+WILLIAM EDGERTON,Belmont Abbey College,2025,76,,RIGHT,RIGHT,Jr.,P,"Greer, SC",Riverside HS
+ETHAN WENDT,Belmont Abbey College,2026,,,RIGHT,RIGHT,Fr.,UT,"Stedman, NC",Grace Christian School
+TRAVIS WILSON,Belmont Abbey College,2026,73,,RIGHT,RIGHT,Sr.,C,,
+ALFREDO GONZALEZ,Caldwell University,2026,71,,RIGHT,RIGHT,So.,INF,"Kenilworth, NJ",David Brearley
+CHRISTIAN PETINO JR,Caldwell University,2026,66,,BOTH,RIGHT,Sr.,INF,"Marlton, NJ",Cherokee
+JAY CRUZ,Caldwell University,2025,73,,RIGHT,RIGHT,Fr.,P,"Perth Amboy, NJ",Perth Amboy
+ALFONSO ESPOSITO,Caldwell University,2025,73,,RIGHT,RIGHT,Jr.,P,"Middlesex, NJ",Middlesex
+DANIEL VIERRA,"California State University, Chico",2025,72,,RIGHT,RIGHT,Sr.,UT,"Whittier, CA",Whittier HS
+TROY KENT,"California State University, Chico",2025,72,,LEFT,RIGHT,Sr.,OF,"Huntington Beach, CA",Marina HS
+JOSEPH LOUBERT,"California State University, Chico",2025,75,,RIGHT,RIGHT,Sr.,P,"Las Vegas, NV",Palo Verde HS
+KOREY LIKENS,"California State University, Chico",2025,72,,RIGHT,RIGHT,Jr.,OF,"Bakersfield, CA",Centennial HS
+JAYLEN HODGES,"California State University, East Bay",2025,72,,RIGHT,RIGHT,So.,INF,"Sacramento, CA",C.K. McClatchy HS
+JAKE SEARLES,"California State University, East Bay",2025,70,,RIGHT,RIGHT,Fr.,P,"Long Beach, CA",St. Anthony HS
+RYAN JURIC,"California State University, East Bay",2026,76,,RIGHT,RIGHT,Sr.,P,"Livermore, CA",Granada High School
+CALEB SCHAEFFER,"California State University, East Bay",2026,70,,RIGHT,RIGHT,Sr.,INF,"Livermore, CA",De La Salle HS
+DANELLE DANIELS,"California State University, East Bay",2025,69,,RIGHT,RIGHT,Sr.,OF,,
+GAUGE   MT LOCKHART,Colorado Mesa University,2025,76,,RIGHT,RIGHT,Sr.,P,"Delta, CO",Delta
+JACKSON HELBERG,Colorado Mesa University,2026,72,,RIGHT,RIGHT,Fr.,P,"Los Angeles, CA",Crespi Carmelite High School
+ETHAN NUNEZ,Colorado Mesa University,2025,76,,RIGHT,RIGHT,So.,OF,"Chino Hills, CA",Ayala
+SEAVER NEWBY,Colorado School of Mines,2025,79,,RIGHT,RIGHT,So.,P,"Southlake, TX",Carroll
+ROBERT GORLING,Colorado School of Mines,2025,76,,RIGHT,RIGHT,Jr.,P,"The Woodlands, TX",The Woodlands College Park
+COLLINS ST. AMANT,Colorado School of Mines,2025,74,,RIGHT,RIGHT,Jr.,P,"Cypress, TX",Cy-Fair
+TYLER STULL,Colorado School of Mines,2026,73,,RIGHT,RIGHT,Sr.,C,"Sandy, UT",Juan Diego Catholic
+COLE GRADY,Glenville State University,2025,71,,RIGHT,RIGHT,So.,P,"York, PA",Central York High School
+COLTON HALL,Glenville State University,2025,70,,LEFT,RIGHT,Fr.,OF,"Coxs Mills, WV",Gilmer County
+TRENTON TAYLOR,Glenville State University,2026,79,,RIGHT,RIGHT,So.,P,"Fleming, OH",Warren
+JAYDEN HELMICK,Glenville State University,2025,72,,RIGHT,RIGHT,Fr.,P,"Sistersville, WV",Tyler Consolidated High School
+SEAN MINDAS,Keystone College,2025,70,,RIGHT,RIGHT,Jr.,OF,"Toms River, NJ",Toms River North
+MATTHEW MT MCELLIGOTT,Keystone College,2025,73,,RIGHT,RIGHT,Sr.,P,"Columbus, OH",Bishop Hartley
+NICHOLAS GRAVEL,Keystone College,2025,74,,RIGHT,RIGHT,Sr.,P,"Sidney, NY",Sidney
+BRANDON HOLZINGER,Keystone College,2026,72,,LEFT,LEFT,Sr.,P,"Toms River, NJ",Toms River North
+ETHAN STRONG,McKendree University,2025,,,,,So.,p,,
+RYAN BUSCHMANN,McKendree University,2026,70,,RIGHT,RIGHT,Sr.,OF,"Mahwah, NJ",Mahwah High School
+KYLE MT CORTNER,McKendree University,2025,75,,LEFT,LEFT,Jr.,P,"Fishers, IN",Lincoln Trail J.C. Cathedral
+BRYCE HUMPHREY,McKendree University,2025,,,,,Jr.,p,,
+IAN SWANSON,Methodist University,2025,74,,RIGHT,RIGHT,Fr.,P,,
+ANDREW HARTMAN,Methodist University,2026,72,,RIGHT,RIGHT,Sr.,P,"Longwood, FL",Lake Brantley
+LARRY BECK III,Methodist University,2025,70,,RIGHT,RIGHT,So.,P,,
+ARIAN LUNAR,New Jersey City University,2026,67,,RIGHT,RIGHT,Sr.,SS,"Elizabeth, NJ",Elizabeth
+JAMES BAJANA,New Jersey City University,2026,,,,,So.,lf,,
+DOM YARSON,New Jersey City University,2026,74,,RIGHT,RIGHT,Sr.,UT,"Ewing, NJ",Ewing
+ENRIQUE BELTRA,New Jersey City University,2026,72,,RIGHT,RIGHT,Jr.,UT,"Monroe, NJ",Ranney
+EVAN FREID,New Jersey City University,2026,,,,,So.,ph,,
+CHASE HAMILTON,Northwestern Oklahoma State University,2026,65,,,,Jr.,C,"Bristow, OK",
+CONNOR WILLIS,Northwestern Oklahoma State University,2025,,,,,So.,,"Yukon, OK",
+JACKSON FIXICO,Northwestern Oklahoma State University,2026,74,,RIGHT,RIGHT,So.,UT,"Heavener, OK",Heavener High School
+DALEN JENSEN,Northwestern Oklahoma State University,2025,,,,,So.,,"Katy, TX",
+DAGEN BREWER,Pittsburg State University,2026,70,,RIGHT,RIGHT,Sr.,OF,"Topeka, KS",
+JACOB   MT SKAGGS,Pittsburg State University,2025,70,,LEFT,LEFT,Jr.,OF,"Walnut Grove, MO",Ozark HS
+LANDON REITH,Pittsburg State University,2026,71,,RIGHT,RIGHT,Jr.,INF,,
+SAMUEL RUSSO,Pittsburg State University,2025,70,,LEFT,RIGHT,Jr.,OF,"Nixa, MO",
+JOSHUA HOLMES,Pittsburg State University,2025,72,,RIGHT,RIGHT,Jr.,OF,"Lenexa, KS",
+JESLYN   MT WHITEHEAD,Rollins College,2025,74,,RIGHT,RIGHT,Sr.,1B,"Orlando, FL",Olympia
+CONNOR MT HENSLEY,Rollins College,2025,75,,RIGHT,RIGHT,Jr.,P,"Casselberry, FL",Lake Brantley
+DALTON MT PYZER,Rollins College,2025,72,,LEFT,LEFT,Sr.,1B,"Franklin, TN",Franklin
+CHRISTOPHER MT SPARBER,Rollins College,2025,73,,RIGHT,RIGHT,Sr.,OF,"Lincroft, NJ",Red Bank Catholic
+DYLAN   MT WINEBRENNER,Salisbury University,2025,75,,RIGHT,RIGHT,Sr.,C,"Frederick, MD",St. John's College High School
+ALEX CRAIG,Salisbury University,2025,73,,RIGHT,RIGHT,So.,UT,"Gambrills, MD",Crofton
+ANDREW KELL,Salisbury University,2025,70,,RIGHT,RIGHT,Sr.,OF,"Columbia, MD",Oakland Mills
+JACOB HNATH,Salisbury University,2026,73,,LEFT,LEFT,So.,OF,"North Potomac, MD",Quince Orchard
+BRANDON YODER,Salisbury University,2025,73,,RIGHT,RIGHT,Fr.,INF,"Dover, DE",Dover
+DIEGO SOLIS,St. Edward's University,2025,71,,RIGHT,RIGHT,Sr.,C,"El Paso, TX",Eastlake High School
+JAKUB RAYFIELD,St. Edward's University,2025,75,,,,Sr.,P,"San Antonio, TX",Clark HS
+TRAVIS   MT CHESTNUT,St. Edward's University,2025,67,,RIGHT,RIGHT,Sr.,INF,"Pflugerville, TX",Pflugerville
+CHARLES BOWER,St. Edward's University,2025,79,,LEFT,LEFT,Jr.,P,"Austin, UT",Lake Travis HS
+JACOB SYMON,St. Edward's University,2026,70,,RIGHT,RIGHT,Jr.,INF,"The Woodlands, TX",Woodlands High School The
+JOHN BOWLING,Swarthmore College,2025,74,,RIGHT,RIGHT,Sr.,P,"Cornelius, NC",Charlotte Country Day
+MAXWELL BEADLING,Swarthmore College,2025,70,,LEFT,RIGHT,Sr.,INF,"San Francisco, CA",Berkshire School
+ANDREW MOY,Swarthmore College,2026,,,RIGHT,RIGHT,So.,INF,"Wilmington, DE",Concord
+EASTON TOLSON,Swarthmore College,2025,72,,RIGHT,RIGHT,Fr.,P,"Allendale, MI",Allendale
+ALEXANDER GLASSCOCK,Swarthmore College,2025,74,,RIGHT,RIGHT,Sr.,P,"Mount Laurel, NJ",Lenape
+CODY BRUSS,University of Central Missouri,2026,,,RIGHT,RIGHT,Sr.,C,,
+EASTON MT WASINGER,University of Central Missouri,2025,74,,LEFT,LEFT,Fr.,INF,"Overland Park, KS",Blue Valley Southwest
+LINCOLN ASCHER,University of Central Missouri,2026,,,RIGHT,RIGHT,Fr.,INF,,
+JAMES HINSPETER,University of Hartford,2026,69,,RIGHT,RIGHT,Fr.,C,"Putnam Valley, NY",Putnam Valley
+RYAN MT JEWELL,University of Hartford,2025,72,,RIGHT,RIGHT,So.,P,,
+CAMERON BOARDMAN,University of Hartford,2026,70,,LEFT,RIGHT,Sr.,C,"Bradford, VT",Vermont Academy
+TORREY PURSEL,University of Hartford,2025,72,,RIGHT,RIGHT,So.,C,,
+DYLAN DEBILZEN,"University of Minnesota, Crookston",2026,,,,,Fr.,C,,
+GRANT LINDHOLM,"University of Minnesota, Crookston",2025,,,,,Fr.,P,,
+OWEN SWANSON,"University of Minnesota, Crookston",2025,73,,,RIGHT,So.,P,,
+BROCK LARSEN,"University of Minnesota, Crookston",2025,,,,,Jr.,C,,
+KADEN FAYCHAK,"University of Pittsburgh, Johnstown",2026,72,,RIGHT,RIGHT,Fr.,P,"Sidman, PA",Forest Hills
+MCCLAIN FLINN,"University of Pittsburgh, Johnstown",2025,73,,RIGHT,RIGHT,Fr.,P,"Pittsburgh, PA",Thomas Jefferson
+ERIK RHODES,"University of Pittsburgh, Johnstown",2025,73,,LEFT,LEFT,Jr.,UT,"Altoona, PA",Altoona Area
+DEVON MT BOYLES,"University of Pittsburgh, Johnstown",2025,77,,RIGHT,RIGHT,Jr.,UT,"Martinsburg, PA",Central Martinsburg
+LUKE LEA,"University of Pittsburgh, Johnstown",2025,71,,RIGHT,RIGHT,So.,P,"Center Valley, PA",Soutthern Lehigh
+TYLER CORINO,Washington College (Maryland),2026,,,,,Sr.,P,,
+ZACHARY STOLZE,Washington College (Maryland),2025,,,,,So.,INF,,
+MATTHEW HERBERT,Washington College (Maryland),2026,,,,,Sr.,P,,
+COLIN MACNABB,Washington College (Maryland),2026,,,,,Fr.,INF,,
+GAVIN TURNER,William Peace University,2026,74,,,RIGHT,So.,P,"Cary, NC",
+JASON DIXON,William Peace University,2025,77,,,RIGHT,So.,P,"Hampstead, NC",
+JEFFREY DOBSON,William Peace University,2025,71,,,RIGHT,So.,P,"Fuquay Varina, NC",
+JOSHUA FITCH,William Peace University,2026,72,,,RIGHT,Sr.,P,"Cary, NC",
+SHANE ROSENBERRY,Wilmington University (Delaware),2025,67,,RIGHT,RIGHT,Fr.,UT,"Reading, PA",Muhlenberg
+DEREK WOODS,Colby College,2026,,,,,Sr.,P,,
+PATRICK SHRAKE,Colby College,2026,,,,,Jr.,INF,,
+LUKE WHITNEY,Colby College,2026,,,,,So.,UT,,
+RYAN   MT GRACE,Colby College,2025,68,,LEFT,LEFT,Sr.,INF,"Concord, MA",Concord Carlisle
+JAG VERDERY,Covenant College,2025,,,,,So.,OF,,
+ETHAN GOEBERT,Covenant College,2026,78,,RIGHT,RIGHT,Jr.,P,"New Port Richey, FL",Homeschool
+MILLER POLLARD,Covenant College,2025,,,,,Fr.,OF,,
+ETHAN ALLEN,Covenant College,2026,78,,RIGHT,RIGHT,Jr.,P,"New Port Richey, FL",Homeschool
+BRYAN MT PINA,Georgia Southwestern State University,2025,77,,RIGHT,RIGHT,Jr.,P,"Hialeah, FL",Barbara Goleman
+JONATHAN MT FERNANDEZ-ANDREW,Georgia Southwestern State University,2025,73,,LEFT,LEFT,Fr.,P,"Cutler Bay, FL",St. Brendan
+JAXSON GREGG,Henderson State University,2025,76,,RIGHT,RIGHT,Sr.,1B,"Keller, TX",Chisholm Trail HS
+GARRETT MT KLEIN,Henderson State University,2026,74,,RIGHT,RIGHT,Sr.,P,"Westminster, CO",Broomfield HS
+JORDAN ALLEN,Henderson State University,2025,72,,RIGHT,RIGHT,So.,OF,"Tatum, TX",Longview HS
+REECE MT DAVIS,Kentucky Wesleyan College,2025,74,,RIGHT,RIGHT,Sr.,UT,"Tell City, IN",Western Illinois
+ANTHONY MT THOMAS,Kentucky Wesleyan College,2025,71,,RIGHT,RIGHT,Jr.,P,"Huntington Park, CA",St. John Bosco
+BRADEN MUNDY,Kentucky Wesleyan College,2025,74,,RIGHT,RIGHT,Sr.,C,"Paducah, KY",McCracken County
+DYLAN TOLER,Kentucky Wesleyan College,2025,75,,LEFT,LEFT,Jr.,P,"La Crosse, WI",Central
+MYLES BRINCKS,Lawrence University,2026,,,RIGHT,RIGHT,Jr.,INF,,
+NATHANIEL JOHANNES,Lawrence University,2025,,,RIGHT,LEFT,Sr.,P,,
+COLTEN CHASTAIN,Lawrence University,2026,74,,RIGHT,RIGHT,So.,P,"Warm Springs, OR",Ridgeview High School
+RICHARD LACIEN,Lawrence University,2025,,,RIGHT,RIGHT,Sr.,P,,
+MASON ERWIN,Lesley University,2025,73,,LEFT,LEFT,Fr.,C,"Essex, CT",Cheshire Academy
+KEVIN DORSEY,Lesley University,2025,70,,RIGHT,RIGHT,So.,C,"Cibolo, TX",Byron P. Steele
+OWEN KALAGHER,Lesley University,2026,74,,RIGHT,RIGHT,Fr.,OF,"Wayland, MA",Wayland
+RAYMOND MORALES,Lesley University,2025,67,,RIGHT,RIGHT,Fr.,INF,"Naugatuck, CT",Bullard Havens Tech
+ALLEN DIAZ,Malone University,2025,74,,RIGHT,RIGHT,Jr.,INF,"North Canton, OH",Hoover
+DEVIN NORTON,Malone University,2025,74,,RIGHT,RIGHT,Sr.,P,"Tallmadge, OH",Tallmadge
+JACOB ROLLYSON,Malone University,2026,76,,RIGHT,RIGHT,Jr.,UT,"Chardon, OH",Chardon
+BRADY PARKS,Malone University,2025,70,,RIGHT,RIGHT,So.,P,"Tallmadge, OH",Tallmadge
+KALEIKAUMAKA   MT GREBIN,Marymount University (Virginia),2026,70,,RIGHT,RIGHT,Sr.,C,"Woodbridge, VA",Potomac Senior
+JONATHAN MCMATH,Marymount University (Virginia),2025,75,,LEFT,LEFT,Sr.,UT,"Brooksville, FL",Nature Coast Technical
+JACK MT MCCARTHY,Marymount University (Virginia),2025,74,,RIGHT,RIGHT,Fr.,C,"Burke, VA",Lake Braddock
+THOMAS DAY,Marywood University,2026,70,,RIGHT,RIGHT,Fr.,C,"Nazareth, PA",Nazareth
+TRISTAN GATCHALIAN,Marywood University,2025,72,,RIGHT,RIGHT,So.,1B,"Manorville, NY",Eastport-South Manor
+AMERICO GIANNETTI,Marywood University,2025,70,,RIGHT,RIGHT,Sr.,C,"New City, NY",Albertus Magnus
+CHRISTIAN MICHAK,Marywood University,2025,74,,RIGHT,RIGHT,Jr.,SS,"Kingston, PA",Wyoming Valley West
+NOLAN MT JAMES,Otterbein University,2026,73,,,,Jr.,UT,"Shaker Heights, OH",Shaker Heights
+JAMESON OLESEN,Otterbein University,2025,75,,,,Fr.,P,"Anderson, IN",
+LUKE WALTER,Otterbein University,2025,74,,,,Jr.,P,"Dublin, OH",Jerome
+JUSTIN DRESLER,Pace University,2026,69,,LEFT,LEFT,Jr.,OF,,
+MATTHEW   MT FRANCO,Pace University,2025,,,,,Sr.,dh,,
+BRENDAN ALTMAN,Penn State Berks College,2025,,,,,Fr.,,,
+PARKER ZOOK,Penn State Berks College,2025,,,,,Fr.,,,
+ISAIAH DULL,Penn State Berks College,2025,71,,RIGHT,RIGHT,So.,P,"Spring Grove, PA",Spring Grove
+NOAH   MT MEFFERT,Point Loma Nazarene University,2025,73,,RIGHT,RIGHT,Sr.,UT,"Coupeville, WA",Oak Harbor
+JACK   MT BUNNELL,Point Loma Nazarene University,2025,70,,RIGHT,RIGHT,So.,P,"Irvine, CA",Woodbridge
+MICHAEL   MT SARHATT,Point Loma Nazarene University,2025,78,,RIGHT,RIGHT,Sr.,P,"Belmont, CA",Junipero Serra
+CALEB CASSIE,Queens College (New York),2025,76,,RIGHT,RIGHT,Sr.,P,"Vancouver, Canada",Sands Secondary
+ANDREW YANEZ,Queens College (New York),2025,75,,RIGHT,RIGHT,Fr.,P,"Mount Sinai, NY",Mount Sinai High School
+CHRISTOPHER MT LAMOND,Queens College (New York),2025,73,,RIGHT,RIGHT,Jr.,P,"Nutley, NJ",DePaul Catholic
+NICHOLAS MT KOZERSKI,Queens College (New York),2025,70,,RIGHT,RIGHT,Sr.,P,"Hicksville, NY",Hicksville
+JOHN LAQUARA,Randolph-Macon College,2026,71,,LEFT,RIGHT,So.,C,"Millstone Township, NJ",Allentown
+DECLAN RYAN,Saint Anselm College,2026,76,,RIGHT,RIGHT,Jr.,INF,"Hooksett, NH",Manchester Central
+ZACHARY ABBOTT,Saint Anselm College,2025,71,,RIGHT,RIGHT,Sr.,P,"Gloucester, MA",Gloucester
+CASEY DELORENZO,Saint Anselm College,2025,71,,RIGHT,RIGHT,Fr.,P,"E Greenwich, RI",East Greenwich
+BRAYDEN MICHAELSON,Saint Anselm College,2026,73,,RIGHT,RIGHT,Fr.,P,"Amherst, NH",Souhegan High School
+ANDREW MT WERTZ,Salve Regina University,2025,75,,RIGHT,RIGHT,Sr.,P,"Dover, NH",Saint Thomas Aquinas
+ALEXANDER HOLBERTON,Salve Regina University,2026,70,,RIGHT,RIGHT,Fr.,INF,"Palm Beach Gardens, FL",Cardinal Newman
+JOSEPH DITZEL,Salve Regina University,2026,74,,RIGHT,RIGHT,Sr.,P,"Trumbull, CT",Trumbull
+STOCKTON HALL,Southern Virginia University,2025,,,,,Jr.,3B,,
+MARCELINO LEONARDO,Southern Virginia University,2026,,,,,Sr.,3B,,
+ROBERT GEERTSEN,Southern Virginia University,2026,,,,,Jr.,P,,
+GARRETT STAUFFER,Southern Virginia University,2026,,,,,Jr.,3B,,
+AARON MT MORALES,Sul Ross State University,2025,73,,LEFT,LEFT,Jr.,OF,"El Paso, TX",Montwood H.S.
+AIDAN BECKER,Sul Ross State University,2025,75,,RIGHT,RIGHT,Jr.,P,,
+NOAH TOFAN,Sul Ross State University,2026,,,RIGHT,RIGHT,Fr.,,,
+GAGE MCANALLY,Sul Ross State University,2026,74,,LEFT,LEFT,Sr.,P,"Lubbock, TX",
+HOGAN MCCLEARY,The University of Olivet,2025,71,,RIGHT,RIGHT,Fr.,C,"Marshall, MI",Marshall
+CARTER PETERSON,The University of Olivet,2025,76,,RIGHT,RIGHT,Fr.,P,"Saint Clair, MI",Saint Clair
+AUSTIN HUYCK,The University of Olivet,2026,73,,RIGHT,RIGHT,Jr.,INF,"Linden, MI",Linden
+BRADY DIXON,The University of Olivet,2026,71,,RIGHT,RIGHT,So.,C,"Battle Creek, MI",Harper Creek
+VINCENT MT MALLON,University of Bridgeport,2025,71,,RIGHT,RIGHT,Sr.,INF,,
+RORY MAYER,University of Bridgeport,2025,72,,RIGHT,RIGHT,So.,P,,
+VINCENZO BRUNO,University of Bridgeport,2025,69,,RIGHT,RIGHT,Jr.,P,,
+SPENCER MUELLER,University of Findlay,2025,73,,LEFT,LEFT,Fr.,P,"Grafton, OH",
+KEEGAN CUBBISON,University of Findlay,2026,69,,RIGHT,RIGHT,Fr.,C,"Chillicothe, OH",Unioto High School
+KAEL POLAND,University of Findlay,2025,75,,LEFT,LEFT,Fr.,INF,"Uhrichsville, OH",
+HAYDEN WOODWARD,University of Findlay,2025,74,,RIGHT,RIGHT,Fr.,OF,"Heath, OH",
+NOAH   MT SCANLON-DEAN,"University of Massachusetts, Dartmouth",2025,,,,,Sr.,OF,,
+GEORDAN JACKSON-MURPHY,"University of Massachusetts, Dartmouth",2025,,,,,Jr.,P,,
+IAN-JAMES MT MCCASLAND,"University of Massachusetts, Dartmouth",2025,70,,RIGHT,RIGHT,Sr.,P,"Plattsburgh, NY",Beekmantown
+RYAN STANSELL,University of South Carolina Beaufort,2025,70,,RIGHT,RIGHT,So.,C,"Algonquin, IL",Huntley
+WILLIAM MITCHELL,University of South Carolina Beaufort,2026,75,,RIGHT,RIGHT,Fr.,INF,"Anderson, SC",T L Hanna High School
+HUDSON MORGAN,University of South Carolina Beaufort,2026,76,,RIGHT,LEFT,Jr.,P,"Roebuck, SC",Dorman HS
+TYLER GIBBONS,Wilson College,2026,,,,,Fr.,OF,,
+DYLAN NEE,Wilson College,2025,,,,,---,p,,
+TONY SCOTT,Wilson College,2026,,,,,So.,1B,,
+HARRY MIDDLEBROOKS,Wilson College,2025,74,,RIGHT,RIGHT,So.,3B,"Bel Air, MD",Archbishop Curly
+THOMAS LANDSNES,Allegheny College,2026,74,,RIGHT,RIGHT,Jr.,P,"Conneaut Lake, PA",Conneaut
+AUSTIN BAKOWSKI,Allegheny College,2025,74,,RIGHT,RIGHT,Fr.,P,"Pittsburgh, PA",North Hills
+JAMES ROBINSON,Allegheny College,2025,75,,RIGHT,RIGHT,Sr.,INF,"Round Hill, VA",Woodgrove
+ALEXANDER HARDACRE,Alma College,2026,72,,RIGHT,RIGHT,Jr.,C,"Macomb, MI",Macomb Dakota
+KENNETH FISTLER,Alma College,2026,71,,RIGHT,RIGHT,Sr.,P,"Canton, MI",Canton
+HAYDEN HILEMAN,Alma College,2026,76,,RIGHT,RIGHT,Fr.,P,"Bay City, MI",John Glenn
+DIEGO SARABIA,Bates College,2026,75,,RIGHT,RIGHT,Sr.,P,"Atlanta, GA",The Lovett School
+MATTHEW SHRAKE,Bates College,2025,73,,LEFT,LEFT,Sr.,P,"Chicago, IL",The Latin School of Chicago
+KENNETH CARLISLE,Bates College,2026,76,,RIGHT,RIGHT,Jr.,P,"South Portland, ME",South Portland
+MICHAEL MT BUDORICK,Benedictine University (Illinois),2026,73,,LEFT,RIGHT,Sr.,OF,"Glenview, IL",Glenbrook North
+DREW ANDERSON,Benedictine University (Illinois),2025,,,RIGHT,RIGHT,Jr.,P,,
+JOHN CREVISTON,Benedictine University (Illinois),2025,71,,LEFT,LEFT,Sr.,P,"Westchester, IL",Brother Rice
+MARCO MALERBA,"California State Polytechnic University, Pomona",2025,73,,LEFT,RIGHT,Sr.,INF,"Glendora, CA",Glendora HS
+CLAY MT PORTER,"California State Polytechnic University, Pomona",2025,71,,RIGHT,RIGHT,Sr.,INF,"Hesperia, CA",Sultana HS
+DAVID ALLEN,"California State Polytechnic University, Pomona",2025,74,,LEFT,RIGHT,Jr.,INF,"Eastvale, CA",Eleanor Roosevelt HS
+MALIK CLAYTON,"California State University, Los Angeles",2025,71,,RIGHT,RIGHT,Sr.,C,"Los Angeles, CA",Culver City HS
+ISAIAH MARQUEZ,"California State University, Los Angeles",2026,72,,RIGHT,RIGHT,Jr.,INF,"Fresno, CA",Clovis North HS
+JOEL MARTINEZ,"California State University, Los Angeles",2025,75,,RIGHT,RIGHT,Sr.,P,"Norwalk, CA",Gahr HS
+IAN SEGNA,"Concordia University, St. Paul",2025,,,,,So.,P,,
+KADEN RUSSO,"Concordia University, St. Paul",2026,,,,,Jr.,OF,,
+EVAN EBERLE,"Concordia University, St. Paul",2026,,,,,Fr.,P,"White Bear Lake, MN",White Bear Lake HS
+JONATHAN SIMPSON,D'Youville University,2025,76,,RIGHT,RIGHT,So.,1b,"Niagara Falls, NY",
+AUSTIN MT DELGADO,D'Youville University,2025,,,,,Jr.,P,,
+CONNOR JOEDICKE,D'Youville University,2025,72,,,RIGHT,Sr.,INF,"Bloomville, NY",Margaretville Central
+TRENT MACDOUGALL,Eastern University,2026,69,,RIGHT,RIGHT,Jr.,OF,"Boynton Beach, FL",Park Vista Community
+ELIJAH KIERNAN,Eastern University,2026,76,,RIGHT,RIGHT,Jr.,OF,"Bayville, NJ",Central Regional
+CONNOR ENGLISH,Eastern University,2026,72,,RIGHT,RIGHT,Sr.,P,"Mendham, NJ",West Morris Mendham
+ALVIN RAMIREZ JR,Elmira College,2025,66,,RIGHT,RIGHT,So.,INF,"Manchester, NJ",Manchester
+ROBERT DAGOSTINO,Elmira College,2026,72,,RIGHT,LEFT,So.,UT,"Elmira, NY",Elmira HS
+CARTER MT MATUS,Elmira College,2026,70,,RIGHT,RIGHT,Sr.,P,"St Petersburg, FL",
+ANDY PACHECO,Emporia State University,2025,73,,RIGHT,RIGHT,Fr.,UT,"Tucson, AZ",Desert View HS
+SYLER MT PILLSBURY,Emporia State University,2025,71,,LEFT,LEFT,Jr.,P,"Coarsegold, CA",Minarets
+DERICK JOHNSON,Fort Hays State University,2025,75,,RIGHT,LEFT,Sr.,P,"Inman, KS",Inman
+LUIS AYALA,Fort Hays State University,2025,72,,RIGHT,RIGHT,Sr.,C,"Panama City, Panama",Broadfording Christian Academy
+MICHAEL ACIERNO,Fort Hays State University,2025,74,,RIGHT,RIGHT,Sr.,P,"Thornton, CO",Mountain Range HS
+JOSHUA DOMARACKI,Frostburg State University,2025,71,,LEFT,LEFT,Fr.,P,"Selinsgrove, PA",Selinsgrove
+CRISTIAN BONILLA,Frostburg State University,2025,75,,LEFT,RIGHT,So.,P,"Severn, MD",Old Mill
+CARSON KENSINGER,Frostburg State University,2025,71,,LEFT,LEFT,Fr.,P,"Duncansville, PA",Holidaysburg
+GABRIEL MORALES FELIX,Gannon University,2025,70,,RIGHT,RIGHT,Jr.,INF,,
+JOSEPH FAZZONE,Gannon University,2025,74,,RIGHT,RIGHT,Jr.,1B,,
+JUSTIN WEAVER,Gannon University,2025,73,,RIGHT,RIGHT,So.,OF,,
+GABRIEL TOMEI,Gwynedd Mercy University,2025,70,,LEFT,RIGHT,Fr.,C,"Manahawkin, NJ",Southern Regional
+THOMAS ANGELUCCI,Gwynedd Mercy University,2025,74,,RIGHT,RIGHT,Jr.,P,"Mount Laurel, NJ",Camden Catholic
+AIDEN TESCHE,Gwynedd Mercy University,2025,68,,RIGHT,RIGHT,So.,OF,"Avondale, PA",Salesianum
+HARRISON MT GRIFFITH,Harding University,2025,73,,RIGHT,RIGHT,Sr.,INF,"Arlington, TX",Arlington Lamar HS
+BO SOLLEY,Harding University,2026,70,,RIGHT,RIGHT,So.,INF,"Decatur, AL",Decatur Heritage Christian Academy
+KADE MT SMITH,Harding University,2025,70,,RIGHT,RIGHT,Fr.,OF,"Searcy, AR",Harding Academy
+GABE HUTCHISON,Houghton University,2025,72,,LEFT,LEFT,Fr.,OF,"Albion, PA",Northwestern
+BENJI KRAMER,Houghton University,2025,,,RIGHT,RIGHT,So.,P,"Grand Blanc, MI",Lake Fenton
+KANTA UENO,Houghton University,2025,72,,RIGHT,RIGHT,Sr.,UT,"Omura, Japan",Nagasaki Prefectural Omura High School
+DANIEL ALLARD,Ithaca College,2025,,,,,Sr.,P,,
+LOGAN   MT SCULLY,Ithaca College,2025,73,,RIGHT,RIGHT,Jr.,C,"Arnold, MD",St. Mary's
+NOLAN HARRIS,LeTourneau University,2025,73,,LEFT,LEFT,So.,P,"Jarrell, TX",Rouse
+ANTRETZ MCDOWELL JR.,LeTourneau University,2026,72,,RIGHT,RIGHT,Fr.,P,"Diana, TX",New Diana
+GEORGE BILECKI,Lewis University,2025,74,,LEFT,LEFT,Jr.,OF,"Chicago, IL",Marist
+ANTHONY SORRENTINO,Lewis University,2026,,,,,---,p,,
+DOMINIC CODA,Lewis University,2025,71,,RIGHT,RIGHT,So.,P,"Plainfield, IL",Joliet Catholic
+FRANK AMBROSIO IV,Lock Haven University of Pennsylvania,2025,,,,,So.,C,,
+KEEGAN MCGRAW,Lock Haven University of Pennsylvania,2025,,,,,So.,OF,,
+HAYES WADDELL,Macalester College,2025,,,,,Sr.,OF,,
+BOWMAN WINGARD,Macalester College,2025,,,,,Sr.,C,,
+NATHAN LAPP,Millersville University of Pennsylvania,2025,72,,RIGHT,RIGHT,Fr.,SS,"Sellersville, PA",Dock Mennonite Academy
+JARED RUSSO,Mitchell College,2025,72,,RIGHT,RIGHT,Fr.,3B,"Lebanon, CT",Lyman Memorial
+NIKOLAS MISIASZEK,Mitchell College,2025,72,,RIGHT,RIGHT,Fr.,P,"Granby, MA",Granby
+NICHOLAS KROMPEGAL,Mitchell College,2026,70,,RIGHT,RIGHT,Sr.,C,"East Haven, CT",Notre Dame West Haven
+RYAN   MT JEFFREY,Montana State University Billings,2025,72,,LEFT,RIGHT,Sr.,OF,,Park City High School
+JASON MT WRIGHT,Montana State University Billings,2026,,,,,Sr.,C,,
+KEVIN MCCLELLAN,Montana State University Billings,2025,77,,RIGHT,RIGHT,Sr.,P,,
+WYATT HARRAR,Moravian University,2025,73,,RIGHT,RIGHT,So.,C,,
+JOHNOVAN RODRIGUEZ,Moravian University,2026,75,,LEFT,LEFT,Jr.,1B,,
+ANDREW BENVENUTO,Moravian University,2026,75,,RIGHT,RIGHT,So.,OF,,
+LONELL WILLIAMS,Muskingum University,2026,,,,,Fr.,P,,
+TIMOTHY HUDSON,Nichols College,2025,,,,,Fr.,P,,
+JOHNATHON BRZEZICKI,Nichols College,2025,,,,,So.,,,
+JORDAN MT BARTHEL,Nichols College,2025,75,,,,Fr.,P,,
+EDWARD PEINE,Northern State University,2025,71,,RIGHT,RIGHT,So.,UT,"Hastings, MN",Hastings HS
+CARTER OHLEEN,Northern State University,2026,72,,RIGHT,RIGHT,Fr.,P,"Parkston, SD",Parkston Jr-sr High School
+BRAXTON KUSLER,Northern State University,2025,73,,LEFT,LEFT,Fr.,P,"Sioux Falls, SD",Harrisburg HS
+DEVON MT MORRIS,Ohio Northern University,2025,70,,LEFT,RIGHT,So.,C,"Archbold, OH",Archbold
+ANDREW STECHSCHULTE,Ohio Northern University,2026,76,,RIGHT,RIGHT,Sr.,C,"Findlay, OH",Findlay
+NICHOLAS   MT MEYER,Oklahoma Baptist University,2025,79,,LEFT,LEFT,Sr.,P,"Omaha, NE",Valor Christian HS
+TYLER BIGGS,Oklahoma Baptist University,2025,75,,RIGHT,RIGHT,Jr.,P,"Valencia, CA",
+CHRISTOPHER   MT AMPARO,Palm Beach Atlantic University,2025,72,,,,Sr.,INF,"Belleville, NJ",Bergen
+LUIS AZUAJE,Palm Beach Atlantic University,2025,,,,,Fr.,,,
+STEVEN MT TRONE,Palm Beach Atlantic University,2025,73,,RIGHT,RIGHT,Jr.,P,"Summit, NJ","Riverside HS (Loudoun County, Va)"
+BRAYDEN MT MICHAELSON,Salem State University,2025,74,,RIGHT,RIGHT,So.,INF,,
+ANTHONY BUTKEVICIUS,Salem State University,2025,70,,RIGHT,RIGHT,So.,P,,
+CAMERON FISHER,Salem State University,2026,70,,RIGHT,RIGHT,Fr.,OF,,
+ADONIS PEREZ,Savannah State University,2026,76,,RIGHT,RIGHT,Sr.,P,"Woodbury, NJ",East Georgia CC
+WILLIAM MAHONEY,Savannah State University,2025,71,,RIGHT,RIGHT,Jr.,C,"Marietta, GA",East Georgia CC
+JACOB FIX,Shepherd University,2025,69,,LEFT,RIGHT,So.,OF,"Westlake, OH",St. Ignatius
+OLIVER LEONARD,Shepherd University,2025,77,,RIGHT,RIGHT,Jr.,P,"Kennebunk, ME",Kennebunk
+DANIEL MT QUINTANA,Shepherd University,2025,75,,RIGHT,RIGHT,So.,P,"Haymarket, VA",Paul VI
+SCOTT MT NORTHROP,"St. Joseph's University, New York L.I.",2025,,,RIGHT,RIGHT,So.,OF,,
+ANSELMO JOYA,"St. Joseph's University, New York L.I.",2025,,,RIGHT,RIGHT,Sr.,OF,,
+DOMINIC LAFROSCIA,"St. Joseph's University, New York L.I.",2026,70,,RIGHT,RIGHT,Jr.,INF,"Smithtown, NY",Smithtown West
+MICHAEL PETRUCELLY,State University of New York at Old Westbury,2026,,,,,Sr.,1B,,
+RICKY FASITTA,State University of New York at Old Westbury,2025,,,RIGHT,RIGHT,Fr.,INF,,
+MATTHEW   MT GORDON,Stevenson University,2025,72,,,,Jr.,P,"West Islip, NY",West Islip
+DHRUV INDELICATO,Stevenson University,2025,72,,,,Jr.,P,"Lawrence, NJ",Lawrence
+MATTHEW KOSSEY,Stevenson University,2025,69,,RIGHT,RIGHT,Sr.,P,"Norristown, PA",Pope John Paul II
+ANTONIO SANSONE,Stockton University,2025,,,,,Jr.,P,,
+JEFFREY ERSCHEN,Stockton University,2025,,,,,So.,P,,
+JOSEPH SCLAMA,Stockton University,2026,,,,,Sr.,INF,,
+CHRISTIAN BIUSO,Susquehanna University,2025,69,,RIGHT,RIGHT,Jr.,UT,"Staten Island, NY",Tottenville
+GRIFFIN SHENMAN,Susquehanna University,2025,69,,RIGHT,RIGHT,So.,INF,"Rumson, NJ",Rumson Fair-Haven
+GEORGE THOMAS,Susquehanna University,2025,74,,LEFT,RIGHT,Sr.,INF,"Wantagh, NY",Chaminade
+SILAS   MT COWGILL,The University of Texas at Tyler,2025,72,,RIGHT,RIGHT,Jr.,P,"Texarkana, TX",Redwater HS
+BRADEN BECKER,Transylvania University,2026,,,RIGHT,RIGHT,Sr.,P,"Edgewood, KY","Highlands, KY"
+ROMAN FURUTA,Transylvania University,2025,69,,,,So.,INF,"Union, KY",Ryle High School
+EZRA YI,Transylvania University,2025,,,,,Jr.,C,,
+MADDOX   MT MCDONALD,Trinity University (Texas),2025,73,,RIGHT,RIGHT,So.,OF,"San Antonio, TX",Antonian Prep
+TRAJAN   MT LEE,Trinity University (Texas),2025,76,,RIGHT,RIGHT,Jr.,P,"Dallas, TX",John Paul II
+JOHN HELLINGS,Trinity University (Texas),2026,74,,RIGHT,RIGHT,Jr.,P,"Summit, NJ",Summit
+CALEB   MT CHANCE,"University of Colorado, Colorado Springs",2025,70,,RIGHT,RIGHT,Sr.,INF,"Livermore, CA",De La Salle HS
+RONAN HELLA,"University of Colorado, Colorado Springs",2025,76,,RIGHT,RIGHT,Jr.,INF,"Albuquerque, NM",La Cueva
+DAVID BRABB,"University of Colorado, Colorado Springs",2025,73,,,,Fr.,C,"Castle Pines, CO",Rock Canyon
+ETHAN PETTIS,University of Minnesota Duluth,2026,74,,RIGHT,RIGHT,So.,P,"Sauk Rapids, MN",Sauk Rapids-Rice High School
+BRENNAN COHEN,University of Wisconsin-Eau Claire,2025,71,,RIGHT,RIGHT,Sr.,P,"Vestavia Hills, AL",Vestavia Hills
+BRANDON DENTON,University of Wisconsin-Eau Claire,2026,73,,RIGHT,RIGHT,So.,P,"Independence, WI",Independence
+AUSTIN MILLER,University of Wisconsin-Stout,2026,71,,RIGHT,RIGHT,Sr.,INF,"Mcfarland, WI",McFarland
+LEYTEN BOWERS,University of Wisconsin-Stout,2025,73,,RIGHT,RIGHT,Jr.,SS,"Mineral Point, WI",Mineral Point
+BILLY MT JONES,University of Wisconsin-Stout,2025,69,,RIGHT,RIGHT,So.,OF,"Portage, IN",Andrean
+MASON ADKINS,Upper Iowa University,2026,69,,RIGHT,RIGHT,Fr.,C,"Mesa, AZ",Desert Ridge HS
+WILLIAM MCCOMBS,William Jewell College,2025,,,,,Sr.,OF,,
+ANTHONY RIOS,William Jewell College,2025,,,,,Sr.,INF,,
+EVAN JILBERT,William Jewell College,2025,,,,,Sr.,INF,,
+TYLER PFIRRMANN,Adrian College,2026,72,,RIGHT,RIGHT,So.,P,,
+RAYMOND MT KEANE,Adrian College,2025,78,,RIGHT,RIGHT,Sr.,P,,
+JAMIE FRYER,Bard College,2026,74,,RIGHT,RIGHT,Jr.,INF,"Washingtonville, NY",Washingtonville
+JAMES KARRAS,Bard College,2025,72,,RIGHT,RIGHT,So.,OF,"Levittown, NY",Island Trees
+TAYLOR HOLLIER,Belhaven University,2025,,,,LEFT,Fr.,P,"Opelousas, LA",Opelousas Catholic HS
+HUDSON CONNER,Belhaven University,2025,,,RIGHT,RIGHT,Fr.,P,"Basile, LA",Eunice HS
+JOSEPH HUBERT,Bethany College (West Virginia),2025,69,,LEFT,LEFT,So.,P,"Virginia Beach, VA",Pro5 Academy
+MARCO RATERMANN,Brandeis University,2025,69,,RIGHT,RIGHT,So.,P,"Roaming Shores, OH",Academy of Information Technology and Engineering
+JANSEN LANDEN,Brandeis University,2025,75,,RIGHT,RIGHT,So.,P,"Swampscott, MA",Austin Prep
+MICHAEL COBB,Bridgewater State University,2025,71,,LEFT,LEFT,So.,P,"Waltham, MA",Waltham
+NICHOLAS MT REISER,Bridgewater State University,2025,70,,RIGHT,RIGHT,Sr.,P,"Nahant, MA",Swampscott
+JACKSON BROOKS,"California State University, Stanislaus",2025,73,,LEFT,LEFT,Sr.,OF,"Exeter, CA",Exeter HS
+JOSHUA OCHOA,"California State University, Stanislaus",2025,70,,RIGHT,RIGHT,Sr.,P,"Nuevo, CA",Nuview Bridge
+JOSEPH MT MASCARO,Catholic University,2026,73,,RIGHT,RIGHT,So.,P,"Gwynedd Valley, PA",IMG Academy
+ANDREW MT SHARP,Central Washington University,2025,72,,LEFT,RIGHT,Jr.,INF,"Santa Clarita, CA",Grace Brethren HS
+MAX MT BLEDY,Central Washington University,2026,72,,RIGHT,RIGHT,Sr.,OF,"Wilsonville, OR",Wilsonville HS
+CHRISTOPHER MT POLEMENI,College of Staten Island,2025,72,,RIGHT,RIGHT,So.,OF,"Staten Island, NY",St. Peter's Boys'
+CHRISTOPHER BARTNIK,College of Staten Island,2026,70,,RIGHT,RIGHT,So.,P,,
+WILLIAM FRITCH,Drew University,2025,75,,RIGHT,RIGHT,Sr.,INF,,
+THOMAS PAPPAS,Drew University,2025,70,,,,Fr.,P,"Saddle Brook, NJ",Saddle Brook
+KYLE BYRNE,Drury University,2025,72,,LEFT,LEFT,So.,OF,"Chesterfield, MO",Christian Brothers
+CARTER LEWIS,Drury University,2026,74,,LEFT,RIGHT,Sr.,P,"Sun Prairie, WI",
+PATRICK HARDIMON,Earlham College,2025,77,,,RIGHT,So.,P,"Kokomo, IN",Kokomo
+AIDAN TEMPLE,Earlham College,2025,78,,,RIGHT,So.,P,"Johns Creek, GA",Chattahooche
+JACKSON PRESLEY,East Central University,2026,,,,,Jr.,,"Azle, TX",Azle High School
+MATTHEW WOOTTON,Eastern Connecticut State University,2026,66,,RIGHT,RIGHT,Jr.,INF,"Mount Sinai, NY",Mount Sinai '22
+SEAN SHEA,Eastern Connecticut State University,2026,75,,RIGHT,RIGHT,So.,C,"Bethel, CT",Bethel
+JERRY MITCHELL III,Eastern Mennonite University,2025,70,,RIGHT,RIGHT,So.,P,,
+AIDAN MILLER,Eastern Mennonite University,2026,,,,,Sr.,INF,,
+ZACH   MT STEPHENSON,Endicott College,2025,,,,,Sr.,OF,,
+JOSEPH   MT FRAMMARTINO,Endicott College,2025,67,,,,Jr.,OF,,
+AARON CABRERA,Eureka College,2025,,,,,Jr.,P,,
+JACK GUALDONI,Eureka College,2025,,,,,Fr.,OF,,
+JOHN FUSCO,Franciscan University of Steubenville,2026,73,,LEFT,LEFT,Fr.,P,"Cleveland, OH",Mayfield
+ANTHONY JAKEMAN,Goldey-Beacom College,2025,69,,RIGHT,RIGHT,So.,C,"Philadelphia, PA",
+SAM SCHNEIDER,Gustavus Adolphus College,2026,72,,RIGHT,RIGHT,So.,INF,,
+BREVIN GOETZ,Gustavus Adolphus College,2025,,,,,Sr.,OF,,
+BRENDEN KAMNICK,Howard Payne University,2025,70,,LEFT,LEFT,Jr.,P,,
+RYAN MCFARLING,Huntingdon College,2026,,,RIGHT,RIGHT,Sr.,P,"Southside, AL",Southside HS
+KARL WISSMANN,Immaculata University,2025,71,,LEFT,LEFT,So.,1B,"Cinnaminson, NJ",Bishop Eustace
+CEDRIC POELLNITZ,Kentucky State University,2025,70,,RIGHT,RIGHT,Jr.,INF,"Nashville, TN",
+JOSIAH SALEEM,Kentucky State University,2025,,,,,---,pr,,
+LUKE MEISTER,Kenyon College,2026,70,,,RIGHT,So.,P,"Cumming, GA",Denmark
+KAYDEN SHIVERS,Loras College,2025,73,,RIGHT,RIGHT,So.,P,,
+TREVOR SEGRAVES,Loras College,2025,69,,RIGHT,RIGHT,Sr.,INF,,
+AIDEN CONNOLLY,Lyon College,2025,75,,RIGHT,RIGHT,So.,P,"San Jose, CA",Prosper HS
+GAVIN CALDWELL,Lyon College,2026,73,,RIGHT,RIGHT,Fr.,OF,"Mountain View, MO",Liberty High School
+JAKE WARNOCK,Manhattanville University,2026,71,,RIGHT,RIGHT,So.,C,"Eastchester, NY",
+RYAN COSTA,Manhattanville University,2026,71,,RIGHT,RIGHT,Jr.,P,"Bayport, NY",
+FRANCESCO ASARO,Mercy University,2025,68,,RIGHT,RIGHT,Sr.,2B,"East Williston, NY",Wheatley
+MANUEL MARTINEZ-BETANCES,Mercy University,2025,76,,RIGHT,RIGHT,Fr.,P,"Queens Village, NY",Monsignor McClancy
+JOSH BENNEMA,Millikin University,2025,78,,LEFT,LEFT,Jr.,P,,
+GUNNAR KOZLOWITZ,Minot State University,2025,,,LEFT,RIGHT,Sr.,UT,,
+NOAH MT GUTIERREZ,Minot State University,2025,68,,,,So.,pr/2b,"Phoenix, AZ",Marcos De Niza HS
+COOPER WALKOFF,Missouri Southern State University,2025,73,,RIGHT,RIGHT,So.,INF,"Saint Louis, MO",Parkway West
+DREW PIASKOWY,Missouri Southern State University,2025,,,,,Jr.,p,,
+CODY HAZZARD,Missouri University of Science and Technology,2025,74,,,,So.,P,,
+WYATT CHANDLER,Missouri University of Science and Technology,2025,,,,,Fr.,OF,,
+BRADY   R PHILIBOTTE,New England College,2026,,,,,Sr.,INF,,
+JAKEN PELLERIN,New England College,2026,68,,RIGHT,RIGHT,So.,3B,,
+LOCHLAN STOUDT,Northwood University,2025,74,,RIGHT,RIGHT,Fr.,INF,"Clarkston, MI",Clarkston
+WILLIAM CASE,Northwood University,2025,76,,RIGHT,RIGHT,Jr.,P,"Kinde, MI",North Huron
+TRAYCE MERCER,Ohio Dominican University,2025,,,,,So.,p,,
+JACOB KISSELBACH,"Penn State University, Abington",2025,74,,RIGHT,RIGHT,Fr.,P,"Phillipsburg, NJ",Phillipsburg
+KAIN SMITH,"Penn State University, Abington",2025,69,,RIGHT,RIGHT,Jr.,2B,"Debary, FL",University High School
+BRYCEN FLINTON,"Penn State University, Altoona",2025,69,,LEFT,LEFT,So.,P,"Denver, PA",Cocalico
+TRISTAN HOLLAND,"Penn State University, Altoona",2025,72,,BOTH,RIGHT,So.,C,"Pittsburgh, PA",Shaler
+HAYDEN MT ZAFFINO,"Pennsylvania Western University, California",2025,80,,RIGHT,RIGHT,Jr.,P,"Erie, PA",Mercyhurst Prep
+TYLER GINGRAS,Principia College,2026,,,RIGHT,RIGHT,Fr.,P,"Avondale, AZ",Heritage Academy Laveen
+RATTANAKOR MEAN,Principia College,2026,,,RIGHT,RIGHT,Jr.,INF,"Kent, WA",Kent-Meridian High School
+CLINT PAZDERA,Ramapo College,2025,75,,RIGHT,RIGHT,Jr.,p,"New Providence, NJ",New Providence
+TREVOR MT MOECK,Regis University (Colorado),2025,74,,RIGHT,RIGHT,So.,P,"San Diego, CA",Rancho Bernardo
+TYLER TIEDEMAN,Regis University (Colorado),2025,70,,RIGHT,RIGHT,So.,INF,,
+TANYON BLACK,Ripon College,2025,72,,RIGHT,RIGHT,So.,C,"Milaca, MN",Milaca
+EVAN OLSON,Ripon College,2025,70,,RIGHT,RIGHT,Jr.,C,"Appleton, WI",Appleton East
+RYLAND HIXON,Rose-Hulman Institute of Technology,2025,71,,RIGHT,RIGHT,Sr.,C,"Fort Collins, CO",Fossil Ride
+MARK SERDINAK,Rose-Hulman Institute of Technology,2025,74,,RIGHT,RIGHT,Jr.,INF,"Sagamore Hills, OH",
+LUCAS HAMPEL,Rowan University,2025,71,,RIGHT,RIGHT,Jr.,P,"Woolwich Twp, NJ",Kingsway Regional
+CHRISTOPHER RAIMONDA,Rowan University,2025,70,,BOTH,RIGHT,Sr.,INF,"Kearny, NJ",Kearny
+NICK   MT MUELLER,Southeastern Oklahoma State University,2025,73,,RIGHT,RIGHT,Jr.,OF,"Houston, TX",Clear Falls
+TRISTAN MILLS,Southeastern Oklahoma State University,2025,75,,RIGHT,RIGHT,Jr.,P,"Houston, TX",
+JACKSON SYRING,Southwestern Oklahoma State University,2025,,,,,Sr.,P,,
+HUNTER MT SMITH,Southwestern Oklahoma State University,2025,,,,,Jr.,OF,,
+MARIO CUBELLO,St. John Fisher University,2026,,,,,Sr.,INF,,
+MARIO   R CUBELLO,St. John Fisher University,2026,,,,,Sr.,INF,,
+WILLIAM LANDMAN,St. Lawrence University,2026,72,,RIGHT,RIGHT,Sr.,C,,
+JAMES MORR,St. Lawrence University,2026,74,,RIGHT,RIGHT,Sr.,P,,
+NICHOLAS JACOBS,Thiel College,2026,75,,RIGHT,RIGHT,Jr.,UT,"Sharon, PA",Kennedy Catholic
+TYLER GARBISO,Thiel College,2025,,,,,---,c,,
+LEVI HILTON,Trine University,2026,66,,RIGHT,RIGHT,Jr.,INF,"Cloverdale, IN",Cloverdale
+GAVIN SCHIEFFER,Truman State University,2026,72,,RIGHT,RIGHT,So.,C,"Waukesha, WI",Lake County Lutheran HS
+COLTON EGGERDING,Truman State University,2025,76,,RIGHT,LEFT,Sr.,P,"Saint Louis, MO",
+ZACHARY BEATTY,University of Missouri-St. Louis,2025,69,,LEFT,RIGHT,Sr.,OF,"Springfield, MO",Glendale
+CALE MT WILLSON,University of Missouri-St. Louis,2025,76,,RIGHT,RIGHT,Jr.,P,"Jefferson City, MO",
+ASHTON BLOMBERG,University of Sioux Falls,2025,76,,RIGHT,RIGHT,Fr.,P,,
+JACE COLEMAN,University of Sioux Falls,2025,72,,RIGHT,RIGHT,Fr.,P,,
+AUSTIN RHODES,Utica University,2025,75,,LEFT,LEFT,So.,P,"Wappingers Falls, NY",Kennedy Catholic
+TAISON JEMISON,Vassar College,2025,74,,RIGHT,RIGHT,Jr.,INF,,
+ADDISON LEE,Vassar College,2026,71,,RIGHT,RIGHT,Sr.,P,"Manhattan Beach, CA",Mira Costa
+KARL PETERS,Webster University,2025,,,,,Sr.,INF,,
+JACOB MAZA,Webster University,2026,,,,,Jr.,INF,,
+JAKE ACKER,Wesleyan University (Connecticut),2026,67,,RIGHT,RIGHT,Jr.,C,"Holtsville, NY",Sachem East
+MALCOLM HSU,Wesleyan University (Connecticut),2025,75,,RIGHT,RIGHT,Sr.,P,"Cupertino, CA",St. Francis
+SEAN MCNAMARA,Westfield State University,2026,72,,RIGHT,RIGHT,Jr.,P,"Lowell, MA",Lowell Catholic
+NICK PARROTTO,Westminster College (Pennsylvania),2026,72,,RIGHT,RIGHT,Jr.,P,"Ellwood City, PA",Lincoln
+Preston Kelly,CSU San Marcos,2025,70,,RIGHT,RIGHT,Jr.,P,"Eastvale, CA",Chino Hills HS

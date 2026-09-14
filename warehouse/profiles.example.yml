@@ -1,0 +1,29 @@
+# Copy this to ~/.dbt/profiles.yml, OR run dbt with DBT_PROFILES_DIR pointing at
+# this `warehouse/` dir (it is also read from here when you pass
+#   dbt build --profiles-dir .
+# ). No credentials are needed — DuckDB reads the local CSVs directly.
+
+usd_baseball_warehouse:
+  # `dev` builds against whatever the dbt_project.yml `vars` point at.
+  #   - by default that is the small committed sample fixtures (zero setup)
+  #   - point them at the real CSVs locally with --vars (see README quickstart)
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      # a local DuckDB file next to the project; gitignored
+      path: "dev.duckdb"
+      threads: 4
+      # extensions DuckDB loads for CSV/parquet reads
+      extensions:
+        - parquet
+
+    # `ci` is what .github/workflows/ci.yml uses. Identical engine; it just runs
+    # against the committed sample fixtures (the vars defaults) so CI needs no
+    # secrets and no full-season data dump. Uncomment / adjust as needed.
+    ci:
+      type: duckdb
+      path: "ci.duckdb"
+      threads: 4
+      extensions:
+        - parquet

@@ -1,0 +1,53 @@
+Comparison: Period Stats (SD vs Long Beach St.) vs PBP Battle Calc
+Game: 6500370 (San Diego @ Long Beach St. — Blair Field)
+============================================================
+
+ALL 10 BATTLE METRICS (full list):
+  1. B1a Leadoff Runners (Off)
+  2. B1b Leadoff Runners (Def)
+  3. B2a Leadoff Runs % (Off)
+  4. B2b Leadoff Stranded % (Def)
+  5. B3a Total Baserunners (Off)
+  6. B3b Total Baserunners (Def)
+  7. B3c Total Bases + XBs (Off)
+  8. B4  Defensive Errors (Pitch)
+  9. B5a BB+HBP (Off) vs K
+ 10. B5b BB+HBP (Def)
+
+PBP enables all 10: it has half-inning detail, so for each half-inning you can
+identify the leadoff batter, whether they got on base (B1a/B1b), and whether
+a run scored after (B2a Leadoff Runs %, B2b Leadoff Stranded %). The battle
+calc computes B1a/B1b/B2a/B2b from that when team names are set (e.g. San Diego).
+
+This comparison only includes the six battles that can be derived from the
+team period-stats table (B3a, B3b, B3c, B4, B5a, B5b). B1a, B1b, B2a, B2b are
+not in period stats—they need leadoff/run-after-leadoff detail, which PBP has.
+------------------------------------------------------------
+
+FROM PERIOD STATS (team stats section):
+  B3a Total Baserunners (Off):  H+BB+HBP = 6.0+5.0+4.0 = 15.0
+  B3b Total Baserunners (Def):  LB H+BB+HBP = 5.0+8.0+2 = 15.0
+  B3c Total Bases (Off):       TB = 9.0
+  B4  Defensive Errors:         E = 3.0
+  B5a BB+HBP (Off) vs K:       9.0 / 4.0
+  B5b BB+HBP (Def):            allowed = 10.0
+
+FROM PBP BATTLE CALC (same game, when teams = San Diego / Long Beach St.):
+  B3a Total Baserunners (Off):  14  (goal 16)
+  B3b Total Baserunners (Def):  16  (goal 13)
+  B3c Total Bases + XBs (Off):  9   (goal 24)
+  B4  Defensive Errors:         4   (goal 0)
+  B5a BB+HBP (Off) vs K:        10 / 6
+  B5b BB+HBP (Def):             9   (goal 3)
+
+COMPARISON (battles that period stats can support):
+  B3a:  Period 15.0  vs  PBP 14   (close; PBP may exclude some events)
+  B3b:  Period 15.0  vs  PBP 16   (close)
+  B3c:  Period 9.0   vs  PBP 9    (match)
+  B4:   Period 3.0   vs  PBP 4    (PBP may count pitcher-related)
+  B5a:  Period 9.0/4.0  vs  PBP 10/6
+  B5b:  Period 10.0  vs  PBP 9    (close)
+
+Conclusion: Period stats and PBP battle calc are in the same ballpark for the
+            six battles above. B1a, B1b, B2a, B2b are computed from PBP (leadoff
+            batter per half-inning, on-base, and whether a run scored after).

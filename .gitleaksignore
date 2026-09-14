@@ -1,0 +1,11 @@
+# gitleaks allowlist. One entry, and it is a deliberately-public key, not a suppression.
+#
+# data/portal_board.html carries a Supabase key in the form `sb_publishable_...`. That is
+# the publishable key format, the browser-side replacement for the legacy `anon` JWT, and
+# it is designed to ship in client HTML. Row-level security is what protects the data;
+# src/ncaa/portal/overlay.py refuses to accept a service_role/secret key at all, and
+# tests/test_overlay.py::test_service_role_key_is_rejected pins that refusal.
+#
+# gitleaks' generic-api-key rule fires on the entropy, not on the prefix, so it cannot
+# tell this apart from a real secret. Fingerprint format is file:rule:startline.
+data/portal_board.html:generic-api-key:321

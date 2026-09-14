@@ -1,0 +1,302 @@
+version: 2
+
+models:
+  # ── dimensions (with enforced contracts) ───────────────────────────────────
+  - name: dim_pitcher
+    description: "One row per TrackMan-tracked pitcher. Surrogate key + name_key for joins."
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: pitcher_sk
+        data_type: varchar
+        description: "Surrogate key (hash of pitcher name)."
+        constraints:
+          - type: not_null
+        data_tests:
+          - unique
+      - name: pitcher_name
+        data_type: varchar
+        constraints:
+          - type: not_null
+      - name: player_key
+        data_type: varchar
+        description: "Sorted de-accented join key (macro name_key)."
+      - name: throws
+        data_type: varchar
+      - name: team
+        data_type: varchar
+      - name: tracked_pitches
+        data_type: bigint
+      - name: tracked_games
+        data_type: bigint
+      - name: first_tracked_date
+        data_type: date
+      - name: last_tracked_date
+        data_type: date
+
+  - name: dim_pitch_type
+    description: "Conformed pitch-type dimension (fb/si/sl/cb/ch/ct) + family."
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: pitch_type_sk
+        data_type: varchar
+        constraints:
+          - type: not_null
+        data_tests:
+          - unique
+      - name: code
+        data_type: varchar
+        constraints:
+          - type: not_null
+        data_tests:
+          - unique
+          - accepted_values:
+              values: ["fb", "si", "sl", "cb", "ch", "ct"]
+      - name: code_label
+        data_type: varchar
+      - name: pitch_family
+        data_type: varchar
+
+  - name: dim_game
+    description: "One row per tracked game."
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: game_sk
+        data_type: varchar
+        constraints:
+          - type: not_null
+        data_tests:
+          - unique
+      - name: game_id
+        data_type: varchar
+        constraints:
+          - type: not_null
+        data_tests:
+          - unique
+      - name: game_date
+        data_type: date
+      - name: game_day_of_week
+        data_type: varchar
+      - name: level
+        data_type: varchar
+      - name: pitch_count
+        data_type: bigint
+      - name: pitchers
+        data_type: bigint
+      - name: batters
+        data_type: bigint
+
+  # ── fact (enforced contract; the grain guarantee) ──────────────────────────
+  - name: fct_pitch
+    description: >
+      Pitch-level fact, grain = one row per pitch (pitch_uid). Incremental,
+      idempotent on pitch_uid (cf. the Python pipeline's INSERT OR REPLACE on
+      PitchUID). Carries measured shape/location + engineered event flags + FK
+      surrogate keys to dim_pitcher / dim_game / dim_pitch_type.
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: pitch_uid
+        data_type: varchar
+        constraints:
+          - type: not_null
+        data_tests:
+          - unique
+      - name: pitcher_sk
+        data_type: varchar
+        data_tests:
+          - relationships:
+              to: ref('dim_pitcher')
+              field: pitcher_sk
+      - name: game_sk
+        data_type: varchar
+      - name: pitch_type_sk
+        data_type: varchar
+      - name: game_id
+        data_type: varchar
+      - name: game_date
+        data_type: date
+      - name: inning
+        data_type: integer
+      - name: inning_half
+        data_type: varchar
+      - name: balls
+        data_type: integer
+      - name: strikes
+        data_type: integer
+      - name: pitcher
+        data_type: varchar
+        constraints:
+          - type: not_null
+      - name: pitcher_throws
+        data_type: varchar
+      - name: pitcher_team
+        data_type: varchar
+      - name: batter
+        data_type: varchar
+      - name: batter_side
+        data_type: varchar
+      - name: tagged_pitch_type
+        data_type: varchar
+      - name: auto_pitch_type
+        data_type: varchar
+      - name: pitch_code
+        data_type: varchar
+      - name: pitch_call
+        data_type: varchar
+      - name: kor_bb
+        data_type: varchar
+      - name: play_result
+        data_type: varchar
+      - name: rel_speed
+        data_type: double
+      - name: spin_rate
+        data_type: double
+      - name: spin_axis
+        data_type: double
+      - name: rel_height
+        data_type: double
+      - name: rel_side
+        data_type: double
+      - name: extension
+        data_type: double
+      - name: induced_vert_break
+        data_type: double
+      - name: horz_break
+        data_type: double
+      - name: vert_appr_angle
+        data_type: double
+      - name: horz_appr_angle
+        data_type: double
+      - name: plate_loc_height
+        data_type: double
+      - name: plate_loc_side
+        data_type: double
+      - name: exit_speed
+        data_type: double
+      - name: launch_angle
+        data_type: double
+      - name: distance
+        data_type: double
+      - name: is_swing
+        data_type: boolean
+      - name: is_whiff
+        data_type: boolean
+      - name: is_strike
+        data_type: boolean
+      - name: in_zone
+        data_type: boolean
+      - name: is_contact
+        data_type: boolean
+      - name: is_in_play
+        data_type: boolean
+      - name: has_batted_ball
+        data_type: boolean
+      - name: barrel_proxy
+        data_type: boolean
+      - name: level
+        data_type: varchar
+      - name: _loaded_at
+        data_type: timestamp
+
+  # ── marts (rollups) ────────────────────────────────────────────────────────
+  - name: mart_pitcher_arsenal
+    description: >
+      The dbt replacement for rollup.rollup_arsenal — one wide pitches-weighted row
+      per pitcher from the 6-4-3 per-pitch-type arsenal. Overall stuff_plus is
+      pitches-weighted across the mix; per-code *_stuff columns and fastball shape
+      (fb_velo/fb_ivb/fb_hb) fan out; pitches = sum across types.
+    columns:
+      - name: pitcher_sk
+        data_tests:
+          - not_null
+          - unique
+      - name: pitcher_name
+        data_tests:
+          - not_null
+      - name: player_key
+        data_tests:
+          - not_null
+      - name: stuff_plus
+        description: "Pitches-weighted overall Stuff+ (cf. t2_stuff in stats_pitching)."
+        data_tests:
+          - dbt_utils.accepted_range:
+              # college Stuff+ lives roughly here; wide band catches a unit error
+              min_value: 0
+              max_value: 250
+              config:
+                where: "stuff_plus is not null"
+      - name: pitches
+        description: "Sum of pitches across the pitcher's pitch types."
+        data_tests:
+          - dbt_utils.accepted_range:
+              min_value: 1
+              inclusive: true
+              config:
+                where: "pitches is not null"
+      - name: fb_velo
+        description: "Pitches-weighted fastball velocity from the fb rows."
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 60
+              max_value: 105
+              row_condition: "fb_velo is not null"
+
+  - name: mart_pitcher_season
+    description: >
+      Per-pitcher season aggregates from the TrackMan pitch fact — rate stats off
+      the engineered flags (strike%/miss%/chase%/ground%/hardhit%). Mirrors
+      trackman.aggregate_pitching. ML Stuff+/xWhiff stay in Python.
+    columns:
+      - name: pitcher_sk
+        data_tests:
+          - not_null
+          - unique
+      - name: pitcher_name
+        data_tests:
+          - not_null
+      - name: pitches
+        data_tests:
+          - dbt_utils.accepted_range:
+              min_value: 1
+              inclusive: true
+      - name: strike_pct
+        data_tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+              config:
+                where: "strike_pct is not null"
+      - name: chase_pct
+        data_tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+              config:
+                where: "chase_pct is not null"
+
+  - name: mart_hitter_season
+    description: >
+      Per-hitter season line from the 6-4-3 overall hitting export (typed,
+      conformed pass-through to the stats_hitting shape).
+    columns:
+      - name: hitter_sk
+        data_tests:
+          - not_null
+          - unique
+      - name: hitter_name
+        data_tests:
+          - not_null
+      - name: hardhit_pct
+        data_tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+              config:
+                where: "hardhit_pct is not null"

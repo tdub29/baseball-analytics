@@ -1,0 +1,55 @@
+USD Baseball — Battle calculation output
+Source: baseballr-style PBP via battles/baseballr_battle_calc.py
+============================================================
+
+Game 6500370  (San Diego Toreros @ Long Beach St. Beach)
+----------------------------------------
+  B1a Leadoff Runners (Off): 6/4  (goal met: Y)
+  B1b Leadoff Runners (Def): 4/3  (goal met: N)
+  B2a Leadoff Runs % (Off): 2/6  (goal met: N)
+  B2b Leadoff Stranded % (Def): 1/4  (goal met: N)
+  B3a Total Baserunners (Off): 17/16  (goal met: Y)
+  B3b Total Baserunners (Def): 13/13  (goal met: Y)
+  B3c Total Bases + XBs (Off): 10/24  (goal met: N)
+  B4 Defensive Errors (Pitch): 3/0  (goal met: N)
+  B5a BB+HBP (Off) vs K: 12/7  (goal met: Y)
+  B5b BB+HBP (Def): 7/3  (goal met: N)
+
+Game 6536340  (San Diego Toreros @ Charlotte 49ers)
+----------------------------------------
+  B1a Leadoff Runners (Off): 3/4  (goal met: N)
+  B1b Leadoff Runners (Def): 2/3  (goal met: Y)
+  B2a Leadoff Runs % (Off): 2/3  (goal met: N)
+  B2b Leadoff Stranded % (Def): 1/2  (goal met: N)
+  B3a Total Baserunners (Off): 21/16  (goal met: Y)
+  B3b Total Baserunners (Def): 11/13  (goal met: Y)
+  B3c Total Bases + XBs (Off): 20/24  (goal met: N)
+  B4 Defensive Errors (Pitch): 0/0  (goal met: Y)
+  B5a BB+HBP (Off) vs K: 12/16  (goal met: N)
+  B5b BB+HBP (Def): 7/3  (goal met: N)
+
+Game 6536345  (San Diego Toreros @ Charlotte 49ers)
+----------------------------------------
+  B1a Leadoff Runners (Off): 2/4  (goal met: N)
+  B1b Leadoff Runners (Def): 4/3  (goal met: N)
+  B2a Leadoff Runs % (Off): 0/2  (goal met: N)
+  B2b Leadoff Stranded % (Def): 1/4  (goal met: N)
+  B3a Total Baserunners (Off): 6/16  (goal met: N)
+  B3b Total Baserunners (Def): 18/13  (goal met: N)
+  B3c Total Bases + XBs (Off): 5/24  (goal met: N)
+  B4 Defensive Errors (Pitch): 0/0  (goal met: Y)
+  B5a BB+HBP (Off) vs K: 2/4  (goal met: N)
+  B5b BB+HBP (Def): 6/3  (goal met: N)
+
+Game 6536347  (San Diego Toreros @ Charlotte 49ers)
+----------------------------------------
+  B1a Leadoff Runners (Off): 3/4  (goal met: N)
+  B1b Leadoff Runners (Def): 3/3  (goal met: Y)
+  B2a Leadoff Runs % (Off): 0/3  (goal met: N)
+  B2b Leadoff Stranded % (Def): 3/3  (goal met: Y)
+  B3a Total Baserunners (Off): 17/16  (goal met: Y)
+  B3b Total Baserunners (Def): 20/13  (goal met: N)
+  B3c Total Bases + XBs (Off): 19/24  (goal met: N)
+  B4 Defensive Errors (Pitch): 4/0  (goal met: N)
+  B5a BB+HBP (Off) vs K: 5/12  (goal met: N)
+  B5b BB+HBP (Def): 9/3  (goal met: N)

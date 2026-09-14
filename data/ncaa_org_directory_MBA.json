@@ -1,0 +1,6572 @@
+[
+{
+"org_id": null,
+"vid": 26172,
+"label": "A&M-Corpus Christi - Southland",
+"value": 26172
+},
+{
+"org_id": null,
+"vid": 30093,
+"label": "AUM - Gulf South",
+"value": 30093
+},
+{
+"org_id": null,
+"vid": 2,
+"label": "Abilene Christian - WAC",
+"value": 2
+},
+{
+"org_id": null,
+"vid": 929,
+"label": "Adams St. - RMAC",
+"value": 929
+},
+{
+"org_id": null,
+"vid": 3,
+"label": "Adelphi - NE10",
+"value": 3
+},
+{
+"org_id": null,
+"vid": 4,
+"label": "Adrian - Michigan Intercol. Ath. Assn.",
+"value": 4
+},
+{
+"org_id": null,
+"vid": 11324,
+"label": "Agnes Scott - CCS",
+"value": 11324
+},
+{
+"org_id": null,
+"vid": 721,
+"label": "Air Force - Mountain West",
+"value": 721
+},
+{
+"org_id": null,
+"vid": 5,
+"label": "Akron - MAC",
+"value": 5
+},
+{
+"org_id": null,
+"vid": 8,
+"label": "Alabama - SEC",
+"value": 8
+},
+{
+"org_id": null,
+"vid": 6,
+"label": "Alabama A&M - SWAC",
+"value": 6
+},
+{
+"org_id": null,
+"vid": 7,
+"label": "Alabama St. - SWAC",
+"value": 7
+},
+{
+"org_id": null,
+"vid": 11,
+"label": "Alas. Anchorage - Great Northwest",
+"value": 11
+},
+{
+"org_id": null,
+"vid": 12,
+"label": "Alas. Fairbanks - Great Northwest",
+"value": 12
+},
+{
+"org_id": null,
+"vid": 13,
+"label": "Albany St. (GA) - SIAC",
+"value": 13
+},
+{
+"org_id": null,
+"vid": 2798,
+"label": "Albertus Magnus - Great Northeast",
+"value": 2798
+},
+{
+"org_id": null,
+"vid": 15,
+"label": "Albion - Michigan Intercol. Ath. Assn.",
+"value": 15
+},
+{
+"org_id": null,
+"vid": 16,
+"label": "Albright - Middle Atlantic",
+"value": 16
+},
+{
+"org_id": null,
+"vid": 17,
+"label": "Alcorn - SWAC",
+"value": 17
+},
+{
+"org_id": null,
+"vid": 18,
+"label": "Alfred - Empire 8",
+"value": 18
+},
+{
+"org_id": null,
+"vid": 30170,
+"label": "Alfred St. - AMCC",
+"value": 30170
+},
+{
+"org_id": null,
+"vid": 19,
+"label": "Allegheny - PAC",
+"value": 19
+},
+{
+"org_id": null,
+"vid": 30240,
+"label": "Allen - SIAC",
+"value": 30240
+},
+{
+"org_id": null,
+"vid": 21,
+"label": "Alma - Michigan Intercol. Ath. Assn.",
+"value": 21
+},
+{
+"org_id": null,
+"vid": 938,
+"label": "Alvernia - Middle Atlantic",
+"value": 938
+},
+{
+"org_id": null,
+"vid": 28746,
+"label": "Alverno - NACC",
+"value": 28746
+},
+{
+"org_id": null,
+"vid": 23,
+"label": "American - Patriot",
+"value": 23
+},
+{
+"org_id": null,
+"vid": 22,
+"label": "American Int'l - NE10",
+"value": 22
+},
+{
+"org_id": null,
+"vid": 24,
+"label": "Amherst - NESCAC",
+"value": 24
+},
+{
+"org_id": null,
+"vid": 939,
+"label": "Anderson (IN) - HCAC",
+"value": 939
+},
+{
+"org_id": null,
+"vid": 13028,
+"label": "Anderson (SC) - SAC",
+"value": 13028
+},
+{
+"org_id": null,
+"vid": 25,
+"label": "Angelo St. - Lone Star",
+"value": 25
+},
+{
+"org_id": null,
+"vid": 26,
+"label": "Anna Maria - MASCAC",
+"value": 26
+},
+{
+"org_id": null,
+"vid": 27,
+"label": "App State - Sun Belt",
+"value": 27
+},
+{
+"org_id": null,
+"vid": 966,
+"label": "Arcadia - Middle Atlantic",
+"value": 966
+},
+{
+"org_id": null,
+"vid": 29,
+"label": "Arizona - Big 12",
+"value": 29
+},
+{
+"org_id": null,
+"vid": 28,
+"label": "Arizona St. - Big 12",
+"value": 28
+},
+{
+"org_id": null,
+"vid": 30105,
+"label": "Ark.-Fort Smith - Mid-America Intercollegiate",
+"value": 30105
+},
+{
+"org_id": null,
+"vid": 8411,
+"label": "Ark.-Monticello - GAC",
+"value": 8411
+},
+{
+"org_id": null,
+"vid": 2678,
+"label": "Ark.-Pine Bluff - SWAC",
+"value": 2678
+},
+{
+"org_id": null,
+"vid": 31,
+"label": "Arkansas - SEC",
+"value": 31
+},
+{
+"org_id": null,
+"vid": 30,
+"label": "Arkansas St. - Sun Belt",
+"value": 30
+},
+{
+"org_id": null,
+"vid": 947,
+"label": "Arkansas Tech - GAC",
+"value": 947
+},
+{
+"org_id": null,
+"vid": 725,
+"label": "Army West Point - Patriot",
+"value": 725
+},
+{
+"org_id": null,
+"vid": 30243,
+"label": "Asbury - CCS",
+"value": 30243
+},
+{
+"org_id": null,
+"vid": 35,
+"label": "Ashland - G-MAC",
+"value": 35
+},
+{
+"org_id": null,
+"vid": 36,
+"label": "Assumption - NE10",
+"value": 36
+},
+{
+"org_id": null,
+"vid": 37,
+"label": "Auburn - SEC",
+"value": 37
+},
+{
+"org_id": null,
+"vid": 38,
+"label": "Augsburg - MIAC",
+"value": 38
+},
+{
+"org_id": null,
+"vid": 39,
+"label": "Augusta - Peach Belt",
+"value": 39
+},
+{
+"org_id": null,
+"vid": 40,
+"label": "Augustana (IL) - CCIW",
+"value": 40
+},
+{
+"org_id": null,
+"vid": 41,
+"label": "Augustana (SD) - NSIC",
+"value": 41
+},
+{
+"org_id": null,
+"vid": 42,
+"label": "Aurora - NACC",
+"value": 42
+},
+{
+"org_id": null,
+"vid": 953,
+"label": "Austin - SCAC",
+"value": 953
+},
+{
+"org_id": null,
+"vid": 43,
+"label": "Austin Peay - ASUN",
+"value": 43
+},
+{
+"org_id": null,
+"vid": 44,
+"label": "Averett - ODAC",
+"value": 44
+},
+{
+"org_id": null,
+"vid": 30146,
+"label": "Azusa Pacific - PacWest",
+"value": 30146
+},
+{
+"org_id": null,
+"vid": 77,
+"label": "BYU - Big 12",
+"value": 77
+},
+{
+"org_id": null,
+"vid": 45,
+"label": "Babson - NEWMAC",
+"value": 45
+},
+{
+"org_id": null,
+"vid": 46,
+"label": "Baldwin Wallace - OAC",
+"value": 46
+},
+{
+"org_id": null,
+"vid": 47,
+"label": "Ball St. - MAC",
+"value": 47
+},
+{
+"org_id": null,
+"vid": 962,
+"label": "Bard - Liberty League",
+"value": 962
+},
+{
+"org_id": null,
+"vid": 49,
+"label": "Barry - Sunshine State",
+"value": 49
+},
+{
+"org_id": null,
+"vid": 15646,
+"label": "Barton - Conference Carolinas",
+"value": 15646
+},
+{
+"org_id": null,
+"vid": 58,
+"label": "Baruch - CUNYAC",
+"value": 58
+},
+{
+"org_id": null,
+"vid": 50,
+"label": "Bates - NESCAC",
+"value": 50
+},
+{
+"org_id": null,
+"vid": 51,
+"label": "Baylor - Big 12",
+"value": 51
+},
+{
+"org_id": null,
+"vid": 30197,
+"label": "Belhaven - CCS",
+"value": 30197
+},
+{
+"org_id": null,
+"vid": 52,
+"label": "Bellarmine - ASUN",
+"value": 52
+},
+{
+"org_id": null,
+"vid": 14927,
+"label": "Belmont - MVC",
+"value": 14927
+},
+{
+"org_id": null,
+"vid": 2683,
+"label": "Belmont Abbey - Conference Carolinas",
+"value": 2683
+},
+{
+"org_id": null,
+"vid": 53,
+"label": "Beloit - MWC",
+"value": 53
+},
+{
+"org_id": null,
+"vid": 54,
+"label": "Bemidji St. - NSIC",
+"value": 54
+},
+{
+"org_id": null,
+"vid": 55,
+"label": "Benedict - SIAC",
+"value": 55
+},
+{
+"org_id": null,
+"vid": 296,
+"label": "Benedictine (IL) - NACC",
+"value": 296
+},
+{
+"org_id": null,
+"vid": 56,
+"label": "Bentley - NE10",
+"value": 56
+},
+{
+"org_id": null,
+"vid": 30171,
+"label": "Berea - HCAC",
+"value": 30171
+},
+{
+"org_id": null,
+"vid": 973,
+"label": "Berry - SAA",
+"value": 973
+},
+{
+"org_id": null,
+"vid": 59,
+"label": "Bethany (WV) - PAC",
+"value": 59
+},
+{
+"org_id": null,
+"vid": 30038,
+"label": "Bethany Lutheran - UMAC",
+"value": 30038
+},
+{
+"org_id": null,
+"vid": 60,
+"label": "Bethel (MN) - MIAC",
+"value": 60
+},
+{
+"org_id": null,
+"vid": 61,
+"label": "Bethune-Cookman - SWAC",
+"value": 61
+},
+{
+"org_id": null,
+"vid": 62,
+"label": "Binghamton - America East",
+"value": 62
+},
+{
+"org_id": null,
+"vid": 30220,
+"label": "Biola - PacWest",
+"value": 30220
+},
+{
+"org_id": null,
+"vid": 30134,
+"label": "Black Hills St. - RMAC",
+"value": 30134
+},
+{
+"org_id": null,
+"vid": 64,
+"label": "Blackburn - SLIAC",
+"value": 64
+},
+{
+"org_id": null,
+"vid": 65,
+"label": "Bloomsburg - PSAC",
+"value": 65
+},
+{
+"org_id": null,
+"vid": 985,
+"label": "Bluefield St. - CIAA",
+"value": 985
+},
+{
+"org_id": null,
+"vid": 987,
+"label": "Bluffton - HCAC",
+"value": 987
+},
+{
+"org_id": null,
+"vid": 66,
+"label": "Boise St. - Mountain West",
+"value": 66
+},
+{
+"org_id": null,
+"vid": 67,
+"label": "Boston College - ACC",
+"value": 67
+},
+{
+"org_id": null,
+"vid": 68,
+"label": "Boston U. - Patriot",
+"value": 68
+},
+{
+"org_id": null,
+"vid": 69,
+"label": "Bowdoin - NESCAC",
+"value": 69
+},
+{
+"org_id": null,
+"vid": 70,
+"label": "Bowie St. - CIAA",
+"value": 70
+},
+{
+"org_id": null,
+"vid": 71,
+"label": "Bowling Green - MAC",
+"value": 71
+},
+{
+"org_id": null,
+"vid": 72,
+"label": "Bradley - MVC",
+"value": 72
+},
+{
+"org_id": null,
+"vid": 73,
+"label": "Brandeis - UAA",
+"value": 73
+},
+{
+"org_id": null,
+"vid": 30094,
+"label": "Brevard - USA South",
+"value": 30094
+},
+{
+"org_id": null,
+"vid": 74,
+"label": "Bridgeport - CACC",
+"value": 74
+},
+{
+"org_id": null,
+"vid": 75,
+"label": "Bridgewater (VA) - ODAC",
+"value": 75
+},
+{
+"org_id": null,
+"vid": 76,
+"label": "Bridgewater St. - MASCAC",
+"value": 76
+},
+{
+"org_id": null,
+"vid": 79,
+"label": "Brooklyn - CUNYAC",
+"value": 79
+},
+{
+"org_id": null,
+"vid": 80,
+"label": "Brown - Ivy League",
+"value": 80
+},
+{
+"org_id": null,
+"vid": 81,
+"label": "Bryant - America East",
+"value": 81
+},
+{
+"org_id": null,
+"vid": 82,
+"label": "Bryn Mawr - Centennial",
+"value": 82
+},
+{
+"org_id": null,
+"vid": 83,
+"label": "Bucknell - Patriot",
+"value": 83
+},
+{
+"org_id": null,
+"vid": 84,
+"label": "Buena Vista - American Rivers",
+"value": 84
+},
+{
+"org_id": null,
+"vid": 86,
+"label": "Buffalo - MAC",
+"value": 86
+},
+{
+"org_id": null,
+"vid": 85,
+"label": "Buffalo St. - SUNYAC",
+"value": 85
+},
+{
+"org_id": null,
+"vid": 87,
+"label": "Butler - Big East",
+"value": 87
+},
+{
+"org_id": null,
+"vid": 480,
+"label": "CCNY - CUNYAC",
+"value": 480
+},
+{
+"org_id": null,
+"vid": 94,
+"label": "CSU Bakersfield - Big West",
+"value": 94
+},
+{
+"org_id": null,
+"vid": 2720,
+"label": "CSU Pueblo - RMAC",
+"value": 2720
+},
+{
+"org_id": null,
+"vid": 101,
+"label": "CSUN - Big West",
+"value": 101
+},
+{
+"org_id": null,
+"vid": 93,
+"label": "CSUSB - CCAA",
+"value": 93
+},
+{
+"org_id": null,
+"vid": 30199,
+"label": "CUI - PacWest",
+"value": 30199
+},
+{
+"org_id": null,
+"vid": 122,
+"label": "CWRU - UAA",
+"value": 122
+},
+{
+"org_id": null,
+"vid": 1305,
+"label": "Cairn - United East",
+"value": 1305
+},
+{
+"org_id": null,
+"vid": 105,
+"label": "Cal Lutheran - SCIAC",
+"value": 105
+},
+{
+"org_id": null,
+"vid": 90,
+"label": "Cal Poly - Big West",
+"value": 90
+},
+{
+"org_id": null,
+"vid": 291,
+"label": "Cal Poly Humboldt - CCAA",
+"value": 291
+},
+{
+"org_id": null,
+"vid": 91,
+"label": "Cal Poly Pomona - CCAA",
+"value": 91
+},
+{
+"org_id": null,
+"vid": 92,
+"label": "Cal St. Dom. Hills - CCAA",
+"value": 92
+},
+{
+"org_id": null,
+"vid": 98,
+"label": "Cal St. East Bay - CCAA",
+"value": 98
+},
+{
+"org_id": null,
+"vid": 97,
+"label": "Cal St. Fullerton - Big West",
+"value": 97
+},
+{
+"org_id": null,
+"vid": 30055,
+"label": "Cal St. Monterey Bay - CCAA",
+"value": 30055
+},
+{
+"org_id": null,
+"vid": 30198,
+"label": "Cal St. San Marcos - CCAA",
+"value": 30198
+},
+{
+"org_id": null,
+"vid": 100,
+"label": "Cal State LA - CCAA",
+"value": 100
+},
+{
+"org_id": null,
+"vid": 995,
+"label": "Caldwell - CACC",
+"value": 995
+},
+{
+"org_id": null,
+"vid": 107,
+"label": "California - ACC",
+"value": 107
+},
+{
+"org_id": null,
+"vid": 106,
+"label": "California (PA) - PSAC",
+"value": 106
+},
+{
+"org_id": null,
+"vid": 30135,
+"label": "California Baptist - WAC",
+"value": 30135
+},
+{
+"org_id": null,
+"vid": 89,
+"label": "Caltech - SCIAC",
+"value": 89
+},
+{
+"org_id": null,
+"vid": 114,
+"label": "Calvin - Michigan Intercol. Ath. Assn.",
+"value": 114
+},
+{
+"org_id": null,
+"vid": 996,
+"label": "Cameron - Lone Star",
+"value": 996
+},
+{
+"org_id": null,
+"vid": 115,
+"label": "Campbell - CAA",
+"value": 115
+},
+{
+"org_id": null,
+"vid": 116,
+"label": "Canisius - MAAC",
+"value": 116
+},
+{
+"org_id": null,
+"vid": 117,
+"label": "Capital - OAC",
+"value": 117
+},
+{
+"org_id": null,
+"vid": 118,
+"label": "Carleton - MIAC",
+"value": 118
+},
+{
+"org_id": null,
+"vid": 30253,
+"label": "Carlow - AMCC",
+"value": 30253
+},
+{
+"org_id": null,
+"vid": 119,
+"label": "Carnegie Mellon - UAA",
+"value": 119
+},
+{
+"org_id": null,
+"vid": 120,
+"label": "Carroll (WI) - CCIW",
+"value": 120
+},
+{
+"org_id": null,
+"vid": 1000,
+"label": "Carson-Newman - SAC",
+"value": 1000
+},
+{
+"org_id": null,
+"vid": 121,
+"label": "Carthage - CCIW",
+"value": 121
+},
+{
+"org_id": null,
+"vid": 1001,
+"label": "Catawba - SAC",
+"value": 1001
+},
+{
+"org_id": null,
+"vid": 124,
+"label": "Catholic - Landmark",
+"value": 124
+},
+{
+"org_id": null,
+"vid": 14795,
+"label": "Cedar Crest - United East",
+"value": 14795
+},
+{
+"org_id": null,
+"vid": 30124,
+"label": "Cedarville - G-MAC",
+"value": 30124
+},
+{
+"org_id": null,
+"vid": 125,
+"label": "Centenary (LA) - SCAC",
+"value": 125
+},
+{
+"org_id": null,
+"vid": 12884,
+"label": "Centenary (NJ) - Atlantic East",
+"value": 12884
+},
+{
+"org_id": null,
+"vid": 126,
+"label": "Central (IA) - American Rivers",
+"value": 126
+},
+{
+"org_id": null,
+"vid": 1004,
+"label": "Central Ark. - ASUN",
+"value": 1004
+},
+{
+"org_id": null,
+"vid": 127,
+"label": "Central Conn. St. - NEC",
+"value": 127
+},
+{
+"org_id": null,
+"vid": 129,
+"label": "Central Mich. - MAC",
+"value": 129
+},
+{
+"org_id": null,
+"vid": 130,
+"label": "Central Mo. - Mid-America Intercollegiate",
+"value": 130
+},
+{
+"org_id": null,
+"vid": 1009,
+"label": "Central Okla. - Mid-America Intercollegiate",
+"value": 1009
+},
+{
+"org_id": null,
+"vid": 30049,
+"label": "Central St. (OH) - SIAC",
+"value": 30049
+},
+{
+"org_id": null,
+"vid": 1010,
+"label": "Central Wash. - Great Northwest",
+"value": 1010
+},
+{
+"org_id": null,
+"vid": 132,
+"label": "Centre - SAA",
+"value": 132
+},
+{
+"org_id": null,
+"vid": 1012,
+"label": "Chadron St. - RMAC",
+"value": 1012
+},
+{
+"org_id": null,
+"vid": 133,
+"label": "Chaminade - PacWest",
+"value": 133
+},
+{
+"org_id": null,
+"vid": 134,
+"label": "Chapman - SCIAC",
+"value": 134
+},
+{
+"org_id": null,
+"vid": 1013,
+"label": "Charleston (WV) - MEC",
+"value": 1013
+},
+{
+"org_id": null,
+"vid": 48,
+"label": "Charleston So. - Big South",
+"value": 48
+},
+{
+"org_id": null,
+"vid": 458,
+"label": "Charlotte - American",
+"value": 458
+},
+{
+"org_id": null,
+"vid": 10972,
+"label": "Chatham - PAC",
+"value": 10972
+},
+{
+"org_id": null,
+"vid": 693,
+"label": "Chattanooga - SoCon",
+"value": 693
+},
+{
+"org_id": null,
+"vid": 21323,
+"label": "Chestnut Hill - CACC",
+"value": 21323
+},
+{
+"org_id": null,
+"vid": 136,
+"label": "Chicago St. - NEC",
+"value": 136
+},
+{
+"org_id": null,
+"vid": 95,
+"label": "Chico St. - CCAA",
+"value": 95
+},
+{
+"org_id": null,
+"vid": 8875,
+"label": "Chowan - Conference Carolinas",
+"value": 8875
+},
+{
+"org_id": null,
+"vid": 139,
+"label": "Chris. Newport - C2C",
+"value": 139
+},
+{
+"org_id": null,
+"vid": 1015,
+"label": "Christian Brothers - Gulf South",
+"value": 1015
+},
+{
+"org_id": null,
+"vid": 140,
+"label": "Cincinnati - Big 12",
+"value": 140
+},
+{
+"org_id": null,
+"vid": 30058,
+"label": "Claflin - CIAA",
+"value": 30058
+},
+{
+"org_id": null,
+"vid": 142,
+"label": "Claremont-M-S - SCIAC",
+"value": 142
+},
+{
+"org_id": null,
+"vid": 143,
+"label": "Clarion - PSAC",
+"value": 143
+},
+{
+"org_id": null,
+"vid": 145,
+"label": "Clark (MA) - NEWMAC",
+"value": 145
+},
+{
+"org_id": null,
+"vid": 144,
+"label": "Clark Atlanta - SIAC",
+"value": 144
+},
+{
+"org_id": null,
+"vid": 146,
+"label": "Clarkson - Liberty League",
+"value": 146
+},
+{
+"org_id": null,
+"vid": 20576,
+"label": "Clayton St. - Peach Belt",
+"value": 20576
+},
+{
+"org_id": null,
+"vid": 147,
+"label": "Clemson - ACC",
+"value": 147
+},
+{
+"org_id": null,
+"vid": 148,
+"label": "Cleveland St. - Horizon",
+"value": 148
+},
+{
+"org_id": null,
+"vid": 722,
+"label": "Coast Guard - NEWMAC",
+"value": 722
+},
+{
+"org_id": null,
+"vid": 149,
+"label": "Coastal Carolina - Sun Belt",
+"value": 149
+},
+{
+"org_id": null,
+"vid": 150,
+"label": "Coe - American Rivers",
+"value": 150
+},
+{
+"org_id": null,
+"vid": 1023,
+"label": "Coker - SAC",
+"value": 1023
+},
+{
+"org_id": null,
+"vid": 1014,
+"label": "Col. of Charleston - CAA",
+"value": 1014
+},
+{
+"org_id": null,
+"vid": 151,
+"label": "Colby - NESCAC",
+"value": 151
+},
+{
+"org_id": null,
+"vid": 152,
+"label": "Colby-Sawyer - Great Northeast",
+"value": 152
+},
+{
+"org_id": null,
+"vid": 153,
+"label": "Colgate - Patriot",
+"value": 153
+},
+{
+"org_id": null,
+"vid": 11403,
+"label": "Colo. Christian - RMAC",
+"value": 11403
+},
+{
+"org_id": null,
+"vid": 155,
+"label": "Colo. Sch. of Mines - RMAC",
+"value": 155
+},
+{
+"org_id": null,
+"vid": 157,
+"label": "Colorado - Big 12",
+"value": 157
+},
+{
+"org_id": null,
+"vid": 154,
+"label": "Colorado Col. - SCAC",
+"value": 154
+},
+{
+"org_id": null,
+"vid": 11416,
+"label": "Colorado Mesa - RMAC",
+"value": 11416
+},
+{
+"org_id": null,
+"vid": 156,
+"label": "Colorado St. - Mountain West",
+"value": 156
+},
+{
+"org_id": null,
+"vid": 158,
+"label": "Columbia - Ivy League",
+"value": 158
+},
+{
+"org_id": null,
+"vid": 159,
+"label": "Columbus St. - Peach Belt",
+"value": 159
+},
+{
+"org_id": null,
+"vid": 1028,
+"label": "Concord - MEC",
+"value": 1028
+},
+{
+"org_id": null,
+"vid": 24400,
+"label": "Concordia (TX) - SCAC",
+"value": 24400
+},
+{
+"org_id": null,
+"vid": 160,
+"label": "Concordia Chicago - NACC",
+"value": 160
+},
+{
+"org_id": null,
+"vid": 1036,
+"label": "Concordia Wisconsin - NACC",
+"value": 1036
+},
+{
+"org_id": null,
+"vid": 161,
+"label": "Concordia-M'head - MIAC",
+"value": 161
+},
+{
+"org_id": null,
+"vid": 9081,
+"label": "Concordia-St. Paul - NSIC",
+"value": 9081
+},
+{
+"org_id": null,
+"vid": 163,
+"label": "Connecticut Col. - NESCAC",
+"value": 163
+},
+{
+"org_id": null,
+"vid": 8935,
+"label": "Converse - Conference Carolinas",
+"value": 8935
+},
+{
+"org_id": null,
+"vid": 165,
+"label": "Coppin St. - MEAC",
+"value": 165
+},
+{
+"org_id": null,
+"vid": 167,
+"label": "Cornell - Ivy League",
+"value": 167
+},
+{
+"org_id": null,
+"vid": 166,
+"label": "Cornell College - MWC",
+"value": 166
+},
+{
+"org_id": null,
+"vid": 168,
+"label": "Cortland - SUNYAC",
+"value": 168
+},
+{
+"org_id": null,
+"vid": 30111,
+"label": "Covenant - CCS",
+"value": 30111
+},
+{
+"org_id": null,
+"vid": 169,
+"label": "Creighton - Big East",
+"value": 169
+},
+{
+"org_id": null,
+"vid": 30035,
+"label": "Crown (MN) - UMAC",
+"value": 30035
+},
+{
+"org_id": null,
+"vid": 170,
+"label": "Curry - CNE",
+"value": 170
+},
+{
+"org_id": null,
+"vid": 1059,
+"label": "D'Youville - ECC",
+"value": 1059
+},
+{
+"org_id": null,
+"vid": 1045,
+"label": "DBU - Lone Star",
+"value": 1045
+},
+{
+"org_id": null,
+"vid": 30174,
+"label": "Daemen - ECC",
+"value": 30174
+},
+{
+"org_id": null,
+"vid": 1044,
+"label": "Dallas - SCAC",
+"value": 1044
+},
+{
+"org_id": null,
+"vid": 172,
+"label": "Dartmouth - Ivy League",
+"value": 172
+},
+{
+"org_id": null,
+"vid": 30221,
+"label": "Davenport - GLIAC",
+"value": 30221
+},
+{
+"org_id": null,
+"vid": 173,
+"label": "Davidson - Atlantic 10",
+"value": 173
+},
+{
+"org_id": null,
+"vid": 174,
+"label": "Davis & Elkins - MEC",
+"value": 174
+},
+{
+"org_id": null,
+"vid": 175,
+"label": "Dayton - Atlantic 10",
+"value": 175
+},
+{
+"org_id": null,
+"vid": 176,
+"label": "DePaul - Big East",
+"value": 176
+},
+{
+"org_id": null,
+"vid": 177,
+"label": "DePauw - NCAC",
+"value": 177
+},
+{
+"org_id": null,
+"vid": 20,
+"label": "DeSales - Middle Atlantic",
+"value": 20
+},
+{
+"org_id": null,
+"vid": 30219,
+"label": "Dean - Great Northeast",
+"value": 30219
+},
+{
+"org_id": null,
+"vid": 180,
+"label": "Delaware - CUSA",
+"value": 180
+},
+{
+"org_id": null,
+"vid": 178,
+"label": "Delaware St. - MEAC",
+"value": 178
+},
+{
+"org_id": null,
+"vid": 179,
+"label": "Delaware Valley - Middle Atlantic",
+"value": 179
+},
+{
+"org_id": null,
+"vid": 181,
+"label": "Delta St. - Gulf South",
+"value": 181
+},
+{
+"org_id": null,
+"vid": 182,
+"label": "Denison - NCAC",
+"value": 182
+},
+{
+"org_id": null,
+"vid": 183,
+"label": "Denver - Summit League",
+"value": 183
+},
+{
+"org_id": null,
+"vid": 184,
+"label": "Detroit Mercy - Horizon",
+"value": 184
+},
+{
+"org_id": null,
+"vid": 185,
+"label": "Dickinson - Centennial",
+"value": 185
+},
+{
+"org_id": null,
+"vid": 186,
+"label": "Dist. Columbia - ECC",
+"value": 186
+},
+{
+"org_id": null,
+"vid": 30118,
+"label": "Dominican (CA) - PacWest",
+"value": 30118
+},
+{
+"org_id": null,
+"vid": 1332,
+"label": "Dominican (IL) - NACC",
+"value": 1332
+},
+{
+"org_id": null,
+"vid": 8956,
+"label": "Dominican (NY) - CACC",
+"value": 8956
+},
+{
+"org_id": null,
+"vid": 189,
+"label": "Drake - MVC",
+"value": 189
+},
+{
+"org_id": null,
+"vid": 190,
+"label": "Drew - Landmark",
+"value": 190
+},
+{
+"org_id": null,
+"vid": 191,
+"label": "Drexel - CAA",
+"value": 191
+},
+{
+"org_id": null,
+"vid": 1057,
+"label": "Drury - GLVC",
+"value": 1057
+},
+{
+"org_id": null,
+"vid": 192,
+"label": "Dubuque - American Rivers",
+"value": 192
+},
+{
+"org_id": null,
+"vid": 193,
+"label": "Duke - ACC",
+"value": 193
+},
+{
+"org_id": null,
+"vid": 194,
+"label": "Duquesne - Atlantic 10",
+"value": 194
+},
+{
+"org_id": null,
+"vid": 198,
+"label": "ETSU - SoCon",
+"value": 198
+},
+{
+"org_id": null,
+"vid": 195,
+"label": "Earlham - HCAC",
+"value": 195
+},
+{
+"org_id": null,
+"vid": 196,
+"label": "East Carolina - American",
+"value": 196
+},
+{
+"org_id": null,
+"vid": 8965,
+"label": "East Central - GAC",
+"value": 8965
+},
+{
+"org_id": null,
+"vid": 197,
+"label": "East Stroudsburg - PSAC",
+"value": 197
+},
+{
+"org_id": null,
+"vid": 1062,
+"label": "East Tex. Baptist - ASC",
+"value": 1062
+},
+{
+"org_id": null,
+"vid": 199,
+"label": "East Texas A&M - Southland",
+"value": 199
+},
+{
+"org_id": null,
+"vid": 203,
+"label": "East. Mennonite - ODAC",
+"value": 203
+},
+{
+"org_id": null,
+"vid": 8968,
+"label": "Eastern - Middle Atlantic",
+"value": 8968
+},
+{
+"org_id": null,
+"vid": 200,
+"label": "Eastern Conn. St. - Little East",
+"value": 200
+},
+{
+"org_id": null,
+"vid": 201,
+"label": "Eastern Ill. - OVC",
+"value": 201
+},
+{
+"org_id": null,
+"vid": 202,
+"label": "Eastern Ky. - ASUN",
+"value": 202
+},
+{
+"org_id": null,
+"vid": 204,
+"label": "Eastern Mich. - MAC",
+"value": 204
+},
+{
+"org_id": null,
+"vid": 206,
+"label": "Eastern N.M. - Lone Star",
+"value": 206
+},
+{
+"org_id": null,
+"vid": 207,
+"label": "Eastern Wash. - Big Sky",
+"value": 207
+},
+{
+"org_id": null,
+"vid": 208,
+"label": "Eckerd - Sunshine State",
+"value": 208
+},
+{
+"org_id": null,
+"vid": 1066,
+"label": "Edgewood - NACC",
+"value": 1066
+},
+{
+"org_id": null,
+"vid": 209,
+"label": "Edinboro - PSAC",
+"value": 209
+},
+{
+"org_id": null,
+"vid": 30244,
+"label": "Edward Waters - SIAC",
+"value": 30244
+},
+{
+"org_id": null,
+"vid": 210,
+"label": "Elizabeth City St. - CIAA",
+"value": 210
+},
+{
+"org_id": null,
+"vid": 211,
+"label": "Elizabethtown - Landmark",
+"value": 211
+},
+{
+"org_id": null,
+"vid": 212,
+"label": "Elmhurst - CCIW",
+"value": 212
+},
+{
+"org_id": null,
+"vid": 213,
+"label": "Elmira - Empire 8",
+"value": 213
+},
+{
+"org_id": null,
+"vid": 532,
+"label": "Elms - Great Northeast",
+"value": 532
+},
+{
+"org_id": null,
+"vid": 1068,
+"label": "Elon - CAA",
+"value": 1068
+},
+{
+"org_id": null,
+"vid": 9680,
+"label": "Embry-Riddle (FL) - Sunshine State",
+"value": 9680
+},
+{
+"org_id": null,
+"vid": 214,
+"label": "Emerson - NEWMAC",
+"value": 214
+},
+{
+"org_id": null,
+"vid": 30193,
+"label": "Emmanuel (GA) - Conference Carolinas",
+"value": 30193
+},
+{
+"org_id": null,
+"vid": 215,
+"label": "Emmanuel (MA) - Great Northeast",
+"value": 215
+},
+{
+"org_id": null,
+"vid": 217,
+"label": "Emory - UAA",
+"value": 217
+},
+{
+"org_id": null,
+"vid": 216,
+"label": "Emory & Henry - SAC",
+"value": 216
+},
+{
+"org_id": null,
+"vid": 1071,
+"label": "Emporia St. - Mid-America Intercollegiate",
+"value": 1071
+},
+{
+"org_id": null,
+"vid": 8981,
+"label": "Endicott - CNE",
+"value": 8981
+},
+{
+"org_id": null,
+"vid": 1072,
+"label": "Erskine - Conference Carolinas",
+"value": 1072
+},
+{
+"org_id": null,
+"vid": 218,
+"label": "Eureka - SLIAC",
+"value": 218
+},
+{
+"org_id": null,
+"vid": 219,
+"label": "Evansville - MVC",
+"value": 219
+},
+{
+"org_id": null,
+"vid": 222,
+"label": "FDU - NEC",
+"value": 222
+},
+{
+"org_id": null,
+"vid": 221,
+"label": "FDU-Florham - Middle Atlantic",
+"value": 221
+},
+{
+"org_id": null,
+"vid": 28755,
+"label": "FGCU - ASUN",
+"value": 28755
+},
+{
+"org_id": null,
+"vid": 231,
+"label": "FIU - CUSA",
+"value": 231
+},
+{
+"org_id": null,
+"vid": 220,
+"label": "Fairfield - MAAC",
+"value": 220
+},
+{
+"org_id": null,
+"vid": 1076,
+"label": "Fairmont St. - MEC",
+"value": 1076
+},
+{
+"org_id": null,
+"vid": 27892,
+"label": "Farmingdale St. - Skyline",
+"value": 27892
+},
+{
+"org_id": null,
+"vid": 223,
+"label": "Fayetteville St. - CIAA",
+"value": 223
+},
+{
+"org_id": null,
+"vid": 23157,
+"label": "Felician - CACC",
+"value": 23157
+},
+{
+"org_id": null,
+"vid": 224,
+"label": "Ferris St. - GLIAC",
+"value": 224
+},
+{
+"org_id": null,
+"vid": 225,
+"label": "Ferrum - Conference Carolinas",
+"value": 225
+},
+{
+"org_id": null,
+"vid": 1079,
+"label": "Findlay - G-MAC",
+"value": 1079
+},
+{
+"org_id": null,
+"vid": 227,
+"label": "Fitchburg St. - MASCAC",
+"value": 227
+},
+{
+"org_id": null,
+"vid": 229,
+"label": "Fla. Atlantic - American",
+"value": 229
+},
+{
+"org_id": null,
+"vid": 233,
+"label": "Fla. Southern - Sunshine State",
+"value": 233
+},
+{
+"org_id": null,
+"vid": 30092,
+"label": "Flagler - Peach Belt",
+"value": 30092
+},
+{
+"org_id": null,
+"vid": 235,
+"label": "Florida - SEC",
+"value": 235
+},
+{
+"org_id": null,
+"vid": 228,
+"label": "Florida A&M - SWAC",
+"value": 228
+},
+{
+"org_id": null,
+"vid": 234,
+"label": "Florida St. - ACC",
+"value": 234
+},
+{
+"org_id": null,
+"vid": 230,
+"label": "Florida Tech - Sunshine State",
+"value": 230
+},
+{
+"org_id": null,
+"vid": 236,
+"label": "Fordham - Atlantic 10",
+"value": 236
+},
+{
+"org_id": null,
+"vid": 9011,
+"label": "Fort Hays St. - Mid-America Intercollegiate",
+"value": 9011
+},
+{
+"org_id": null,
+"vid": 1083,
+"label": "Fort Lewis - RMAC",
+"value": 1083
+},
+{
+"org_id": null,
+"vid": 237,
+"label": "Fort Valley St. - SIAC",
+"value": 237
+},
+{
+"org_id": null,
+"vid": 238,
+"label": "Framingham St. - MASCAC",
+"value": 238
+},
+{
+"org_id": null,
+"vid": 1085,
+"label": "Francis Marion - Conference Carolinas",
+"value": 1085
+},
+{
+"org_id": null,
+"vid": 30069,
+"label": "Franciscan - PAC",
+"value": 30069
+},
+{
+"org_id": null,
+"vid": 2694,
+"label": "Franklin - HCAC",
+"value": 2694
+},
+{
+"org_id": null,
+"vid": 239,
+"label": "Franklin & Marshall - Centennial",
+"value": 239
+},
+{
+"org_id": null,
+"vid": 241,
+"label": "Franklin Pierce - NE10",
+"value": 241
+},
+{
+"org_id": null,
+"vid": 242,
+"label": "Fredonia - SUNYAC",
+"value": 242
+},
+{
+"org_id": null,
+"vid": 30147,
+"label": "Fresno Pacific - PacWest",
+"value": 30147
+},
+{
+"org_id": null,
+"vid": 96,
+"label": "Fresno St. - Mountain West",
+"value": 96
+},
+{
+"org_id": null,
+"vid": 243,
+"label": "Frostburg St. - MEC",
+"value": 243
+},
+{
+"org_id": null,
+"vid": 244,
+"label": "Furman - SoCon",
+"value": 244
+},
+{
+"org_id": null,
+"vid": 253,
+"label": "Ga. Southern - Sun Belt",
+"value": 253
+},
+{
+"org_id": null,
+"vid": 1097,
+"label": "Ga. Southwestern - Peach Belt",
+"value": 1097
+},
+{
+"org_id": null,
+"vid": 245,
+"label": "Gallaudet - United East",
+"value": 245
+},
+{
+"org_id": null,
+"vid": 246,
+"label": "Gannon - PSAC",
+"value": 246
+},
+{
+"org_id": null,
+"vid": 1092,
+"label": "Gardner-Webb - Big South",
+"value": 1092
+},
+{
+"org_id": null,
+"vid": 30084,
+"label": "Geneva - PAC",
+"value": 30084
+},
+{
+"org_id": null,
+"vid": 1094,
+"label": "George Fox - NWC",
+"value": 1094
+},
+{
+"org_id": null,
+"vid": 248,
+"label": "George Mason - Atlantic 10",
+"value": 248
+},
+{
+"org_id": null,
+"vid": 249,
+"label": "George Washington - Atlantic 10",
+"value": 249
+},
+{
+"org_id": null,
+"vid": 251,
+"label": "Georgetown - Big East",
+"value": 251
+},
+{
+"org_id": null,
+"vid": 257,
+"label": "Georgia - SEC",
+"value": 257
+},
+{
+"org_id": null,
+"vid": 1096,
+"label": "Georgia College - Peach Belt",
+"value": 1096
+},
+{
+"org_id": null,
+"vid": 254,
+"label": "Georgia St. - Sun Belt",
+"value": 254
+},
+{
+"org_id": null,
+"vid": 255,
+"label": "Georgia Tech - ACC",
+"value": 255
+},
+{
+"org_id": null,
+"vid": 9004,
+"label": "Georgian Court - CACC",
+"value": 9004
+},
+{
+"org_id": null,
+"vid": 258,
+"label": "Gettysburg - Centennial",
+"value": 258
+},
+{
+"org_id": null,
+"vid": 1098,
+"label": "Glenville St. - MEC",
+"value": 1098
+},
+{
+"org_id": null,
+"vid": 8366,
+"label": "Goldey-Beacom - CACC",
+"value": 8366
+},
+{
+"org_id": null,
+"vid": 260,
+"label": "Gonzaga - WCC",
+"value": 260
+},
+{
+"org_id": null,
+"vid": 1099,
+"label": "Gordon - CNE",
+"value": 1099
+},
+{
+"org_id": null,
+"vid": 1467,
+"label": "Goucher - Landmark",
+"value": 1467
+},
+{
+"org_id": null,
+"vid": 261,
+"label": "Grambling - SWAC",
+"value": 261
+},
+{
+"org_id": null,
+"vid": 1104,
+"label": "Grand Canyon - Mountain West",
+"value": 1104
+},
+{
+"org_id": null,
+"vid": 262,
+"label": "Grand Valley St. - GLIAC",
+"value": 262
+},
+{
+"org_id": null,
+"vid": 794,
+"label": "Green Bay - Horizon",
+"value": 794
+},
+{
+"org_id": null,
+"vid": 263,
+"label": "Greensboro - USA South",
+"value": 263
+},
+{
+"org_id": null,
+"vid": 1111,
+"label": "Greenville - SLIAC",
+"value": 1111
+},
+{
+"org_id": null,
+"vid": 264,
+"label": "Grinnell - MWC",
+"value": 264
+},
+{
+"org_id": null,
+"vid": 265,
+"label": "Grove City - PAC",
+"value": 265
+},
+{
+"org_id": null,
+"vid": 1112,
+"label": "Guilford - ODAC",
+"value": 1112
+},
+{
+"org_id": null,
+"vid": 266,
+"label": "Gustavus Adolphus - MIAC",
+"value": 266
+},
+{
+"org_id": null,
+"vid": 12399,
+"label": "Gwynedd Mercy - Atlantic East",
+"value": 12399
+},
+{
+"org_id": null,
+"vid": 267,
+"label": "Hamilton - NESCAC",
+"value": 267
+},
+{
+"org_id": null,
+"vid": 268,
+"label": "Hamline - MIAC",
+"value": 268
+},
+{
+"org_id": null,
+"vid": 269,
+"label": "Hampden-Sydney - ODAC",
+"value": 269
+},
+{
+"org_id": null,
+"vid": 270,
+"label": "Hampton - CAA",
+"value": 270
+},
+{
+"org_id": null,
+"vid": 1115,
+"label": "Hanover - HCAC",
+"value": 1115
+},
+{
+"org_id": null,
+"vid": 271,
+"label": "Hardin-Simmons - ASC",
+"value": 271
+},
+{
+"org_id": null,
+"vid": 1116,
+"label": "Harding - GAC",
+"value": 1116
+},
+{
+"org_id": null,
+"vid": 272,
+"label": "Hartford - CNE",
+"value": 272
+},
+{
+"org_id": null,
+"vid": 273,
+"label": "Hartwick - Empire 8",
+"value": 273
+},
+{
+"org_id": null,
+"vid": 275,
+"label": "Harvard - Ivy League",
+"value": 275
+},
+{
+"org_id": null,
+"vid": 276,
+"label": "Haverford - Centennial",
+"value": 276
+},
+{
+"org_id": null,
+"vid": 277,
+"label": "Hawaii - Big West",
+"value": 277
+},
+{
+"org_id": null,
+"vid": 2697,
+"label": "Hawaii Hilo - PacWest",
+"value": 2697
+},
+{
+"org_id": null,
+"vid": 2696,
+"label": "Hawaii Pacific - PacWest",
+"value": 2696
+},
+{
+"org_id": null,
+"vid": 278,
+"label": "Heidelberg - OAC",
+"value": 278
+},
+{
+"org_id": null,
+"vid": 1123,
+"label": "Henderson St. - GAC",
+"value": 1123
+},
+{
+"org_id": null,
+"vid": 1124,
+"label": "Hendrix - SCAC",
+"value": 1124
+},
+{
+"org_id": null,
+"vid": 19651,
+"label": "High Point - Big South",
+"value": 19651
+},
+{
+"org_id": null,
+"vid": 8398,
+"label": "Hilbert - AMCC",
+"value": 8398
+},
+{
+"org_id": null,
+"vid": 280,
+"label": "Hillsdale - G-MAC",
+"value": 280
+},
+{
+"org_id": null,
+"vid": 281,
+"label": "Hiram - PAC",
+"value": 281
+},
+{
+"org_id": null,
+"vid": 282,
+"label": "Hobart - Liberty League",
+"value": 282
+},
+{
+"org_id": null,
+"vid": 283,
+"label": "Hofstra - CAA",
+"value": 283
+},
+{
+"org_id": null,
+"vid": 284,
+"label": "Hollins - ODAC",
+"value": 284
+},
+{
+"org_id": null,
+"vid": 285,
+"label": "Holy Cross - Patriot",
+"value": 285
+},
+{
+"org_id": null,
+"vid": 1126,
+"label": "Holy Family - CACC",
+"value": 1126
+},
+{
+"org_id": null,
+"vid": 8404,
+"label": "Hood - Middle Atlantic",
+"value": 8404
+},
+{
+"org_id": null,
+"vid": 286,
+"label": "Hope - Michigan Intercol. Ath. Assn.",
+"value": 286
+},
+{
+"org_id": null,
+"vid": 30160,
+"label": "Houghton - Empire 8",
+"value": 30160
+},
+{
+"org_id": null,
+"vid": 288,
+"label": "Houston - Big 12",
+"value": 288
+},
+{
+"org_id": null,
+"vid": 287,
+"label": "Houston Christian - Southland",
+"value": 287
+},
+{
+"org_id": null,
+"vid": 290,
+"label": "Howard - MEAC",
+"value": 290
+},
+{
+"org_id": null,
+"vid": 2741,
+"label": "Howard Payne - ASC",
+"value": 2741
+},
+{
+"org_id": null,
+"vid": 292,
+"label": "Hunter - CUNYAC",
+"value": 292
+},
+{
+"org_id": null,
+"vid": 1130,
+"label": "Huntingdon - CCS",
+"value": 1130
+},
+{
+"org_id": null,
+"vid": 1133,
+"label": "Husson - North Atlantic",
+"value": 1133
+},
+{
+"org_id": null,
+"vid": 2699,
+"label": "IU Indy - Horizon",
+"value": 2699
+},
+{
+"org_id": null,
+"vid": 295,
+"label": "Idaho - Big Sky",
+"value": 295
+},
+{
+"org_id": null,
+"vid": 294,
+"label": "Idaho St. - Big Sky",
+"value": 294
+},
+{
+"org_id": null,
+"vid": 30050,
+"label": "Ill. Springfield - GLVC",
+"value": 30050
+},
+{
+"org_id": null,
+"vid": 300,
+"label": "Ill. Wesleyan - CCIW",
+"value": 300
+},
+{
+"org_id": null,
+"vid": 301,
+"label": "Illinois - Big Ten",
+"value": 301
+},
+{
+"org_id": null,
+"vid": 297,
+"label": "Illinois Col. - MWC",
+"value": 297
+},
+{
+"org_id": null,
+"vid": 299,
+"label": "Illinois St. - MVC",
+"value": 299
+},
+{
+"org_id": null,
+"vid": 30172,
+"label": "Illinois Tech - NACC",
+"value": 30172
+},
+{
+"org_id": null,
+"vid": 303,
+"label": "Immaculata - Atlantic East",
+"value": 303
+},
+{
+"org_id": null,
+"vid": 306,
+"label": "Indiana - Big Ten",
+"value": 306
+},
+{
+"org_id": null,
+"vid": 307,
+"label": "Indiana (PA) - PSAC",
+"value": 307
+},
+{
+"org_id": null,
+"vid": 305,
+"label": "Indiana St. - MVC",
+"value": 305
+},
+{
+"org_id": null,
+"vid": 310,
+"label": "Iona - MAAC",
+"value": 310
+},
+{
+"org_id": null,
+"vid": 312,
+"label": "Iowa - Big Ten",
+"value": 312
+},
+{
+"org_id": null,
+"vid": 311,
+"label": "Iowa St. - Big 12",
+"value": 311
+},
+{
+"org_id": null,
+"vid": 313,
+"label": "Ithaca - Liberty League",
+"value": 313
+},
+{
+"org_id": null,
+"vid": 22626,
+"label": "JWU (Providence) - CNE",
+"value": 22626
+},
+{
+"org_id": null,
+"vid": 30245,
+"label": "JWU Charlotte - C2C",
+"value": 30245
+},
+{
+"org_id": null,
+"vid": 314,
+"label": "Jackson St. - SWAC",
+"value": 314
+},
+{
+"org_id": null,
+"vid": 316,
+"label": "Jacksonville - ASUN",
+"value": 316
+},
+{
+"org_id": null,
+"vid": 315,
+"label": "Jacksonville St. - CUSA",
+"value": 315
+},
+{
+"org_id": null,
+"vid": 317,
+"label": "James Madison - Sun Belt",
+"value": 317
+},
+{
+"org_id": null,
+"vid": 30267,
+"label": "Jamestown - NSIC",
+"value": 30267
+},
+{
+"org_id": null,
+"vid": 543,
+"label": "Jefferson - CACC",
+"value": 543
+},
+{
+"org_id": null,
+"vid": 30262,
+"label": "Jessup - PacWest",
+"value": 30262
+},
+{
+"org_id": null,
+"vid": 320,
+"label": "John Carroll - NCAC",
+"value": 320
+},
+{
+"org_id": null,
+"vid": 321,
+"label": "John Jay - CUNYAC",
+"value": 321
+},
+{
+"org_id": null,
+"vid": 322,
+"label": "Johns Hopkins - Centennial",
+"value": 322
+},
+{
+"org_id": null,
+"vid": 323,
+"label": "Johnson C. Smith - CIAA",
+"value": 323
+},
+{
+"org_id": null,
+"vid": 325,
+"label": "Juniata - Landmark",
+"value": 325
+},
+{
+"org_id": null,
+"vid": 326,
+"label": "Kalamazoo - Michigan Intercol. Ath. Assn.",
+"value": 326
+},
+{
+"org_id": null,
+"vid": 328,
+"label": "Kansas - Big 12",
+"value": 328
+},
+{
+"org_id": null,
+"vid": 2707,
+"label": "Kansas City - Summit League",
+"value": 2707
+},
+{
+"org_id": null,
+"vid": 327,
+"label": "Kansas St. - Big 12",
+"value": 327
+},
+{
+"org_id": null,
+"vid": 329,
+"label": "Kean - NJAC",
+"value": 329
+},
+{
+"org_id": null,
+"vid": 330,
+"label": "Keene St. - Little East",
+"value": 330
+},
+{
+"org_id": null,
+"vid": 1157,
+"label": "Kennesaw St. - CUSA",
+"value": 1157
+},
+{
+"org_id": null,
+"vid": 331,
+"label": "Kent St. - MAC",
+"value": 331
+},
+{
+"org_id": null,
+"vid": 334,
+"label": "Kentucky - SEC",
+"value": 334
+},
+{
+"org_id": null,
+"vid": 332,
+"label": "Kentucky St. - SIAC",
+"value": 332
+},
+{
+"org_id": null,
+"vid": 335,
+"label": "Kenyon - NCAC",
+"value": 335
+},
+{
+"org_id": null,
+"vid": 1159,
+"label": "Keuka - Empire 8",
+"value": 1159
+},
+{
+"org_id": null,
+"vid": 30047,
+"label": "Keystone - United East",
+"value": 30047
+},
+{
+"org_id": null,
+"vid": 30051,
+"label": "King (TN) - Conference Carolinas",
+"value": 30051
+},
+{
+"org_id": null,
+"vid": 336,
+"label": "King's (PA) - Middle Atlantic",
+"value": 336
+},
+{
+"org_id": null,
+"vid": 337,
+"label": "Knox - MWC",
+"value": 337
+},
+{
+"org_id": null,
+"vid": 339,
+"label": "Kutztown - PSAC",
+"value": 339
+},
+{
+"org_id": null,
+"vid": 333,
+"label": "Ky. Wesleyan - G-MAC",
+"value": 333
+},
+{
+"org_id": null,
+"vid": 361,
+"label": "LIU - NEC",
+"value": 361
+},
+{
+"org_id": null,
+"vid": 370,
+"label": "LMU (CA) - WCC",
+"value": 370
+},
+{
+"org_id": null,
+"vid": 365,
+"label": "LSU - SEC",
+"value": 365
+},
+{
+"org_id": null,
+"vid": 1163,
+"label": "La Roche - AMCC",
+"value": 1163
+},
+{
+"org_id": null,
+"vid": 340,
+"label": "La Salle - Atlantic 10",
+"value": 340
+},
+{
+"org_id": null,
+"vid": 341,
+"label": "La Verne - SCIAC",
+"value": 341
+},
+{
+"org_id": null,
+"vid": 1162,
+"label": "LaGrange - CCS",
+"value": 1162
+},
+{
+"org_id": null,
+"vid": 342,
+"label": "Lafayette - Patriot",
+"value": 342
+},
+{
+"org_id": null,
+"vid": 2746,
+"label": "Lake Erie - G-MAC",
+"value": 2746
+},
+{
+"org_id": null,
+"vid": 344,
+"label": "Lake Forest - MWC",
+"value": 344
+},
+{
+"org_id": null,
+"vid": 345,
+"label": "Lake Superior St. - GLIAC",
+"value": 345
+},
+{
+"org_id": null,
+"vid": 1164,
+"label": "Lakeland - NACC",
+"value": 1164
+},
+{
+"org_id": null,
+"vid": 346,
+"label": "Lamar University - Southland",
+"value": 346
+},
+{
+"org_id": null,
+"vid": 30085,
+"label": "Lancaster Bible - United East",
+"value": 30085
+},
+{
+"org_id": null,
+"vid": 1167,
+"label": "Lander - Peach Belt",
+"value": 1167
+},
+{
+"org_id": null,
+"vid": 347,
+"label": "Lane - SIAC",
+"value": 347
+},
+{
+"org_id": null,
+"vid": 8486,
+"label": "Lasell - Great Northeast",
+"value": 8486
+},
+{
+"org_id": null,
+"vid": 348,
+"label": "Lawrence - MWC",
+"value": 348
+},
+{
+"org_id": null,
+"vid": 349,
+"label": "Le Moyne - NEC",
+"value": 349
+},
+{
+"org_id": null,
+"vid": 350,
+"label": "LeMoyne-Owen - SIAC",
+"value": 350
+},
+{
+"org_id": null,
+"vid": 8490,
+"label": "LeTourneau - SCAC",
+"value": 8490
+},
+{
+"org_id": null,
+"vid": 351,
+"label": "Lebanon Valley - Middle Atlantic",
+"value": 351
+},
+{
+"org_id": null,
+"vid": 30013,
+"label": "Lee - Gulf South",
+"value": 30013
+},
+{
+"org_id": null,
+"vid": 13302,
+"label": "Lees-McRae - Conference Carolinas",
+"value": 13302
+},
+{
+"org_id": null,
+"vid": 352,
+"label": "Lehigh - Patriot",
+"value": 352
+},
+{
+"org_id": null,
+"vid": 279,
+"label": "Lehman - CUNYAC",
+"value": 279
+},
+{
+"org_id": null,
+"vid": 1170,
+"label": "Lenoir-Rhyne - SAC",
+"value": 1170
+},
+{
+"org_id": null,
+"vid": 24317,
+"label": "Lesley - North Atlantic",
+"value": 24317
+},
+{
+"org_id": null,
+"vid": 354,
+"label": "Lewis - GLVC",
+"value": 354
+},
+{
+"org_id": null,
+"vid": 22235,
+"label": "Lewis & Clark - NWC",
+"value": 22235
+},
+{
+"org_id": null,
+"vid": 355,
+"label": "Liberty - CUSA",
+"value": 355
+},
+{
+"org_id": null,
+"vid": 356,
+"label": "Lincoln (MO) - GLVC",
+"value": 356
+},
+{
+"org_id": null,
+"vid": 357,
+"label": "Lincoln (PA) - CIAA",
+"value": 357
+},
+{
+"org_id": null,
+"vid": 1176,
+"label": "Lincoln Memorial - SAC",
+"value": 1176
+},
+{
+"org_id": null,
+"vid": 30136,
+"label": "Lindenwood - OVC",
+"value": 30136
+},
+{
+"org_id": null,
+"vid": 1179,
+"label": "Linfield - NWC",
+"value": 1179
+},
+{
+"org_id": null,
+"vid": 28600,
+"label": "Lipscomb - ASUN",
+"value": 28600
+},
+{
+"org_id": null,
+"vid": 32,
+"label": "Little Rock - OVC",
+"value": 32
+},
+{
+"org_id": null,
+"vid": 359,
+"label": "Livingstone - CIAA",
+"value": 359
+},
+{
+"org_id": null,
+"vid": 360,
+"label": "Lock Haven - PSAC",
+"value": 360
+},
+{
+"org_id": null,
+"vid": 99,
+"label": "Long Beach St. - Big West",
+"value": 99
+},
+{
+"org_id": null,
+"vid": 363,
+"label": "Longwood - Big South",
+"value": 363
+},
+{
+"org_id": null,
+"vid": 364,
+"label": "Loras - American Rivers",
+"value": 364
+},
+{
+"org_id": null,
+"vid": 671,
+"label": "Louisiana - Sun Belt",
+"value": 671
+},
+{
+"org_id": null,
+"vid": 366,
+"label": "Louisiana Tech - CUSA",
+"value": 366
+},
+{
+"org_id": null,
+"vid": 367,
+"label": "Louisville - ACC",
+"value": 367
+},
+{
+"org_id": null,
+"vid": 371,
+"label": "Loyola Chicago - Atlantic 10",
+"value": 371
+},
+{
+"org_id": null,
+"vid": 369,
+"label": "Loyola Maryland - Patriot",
+"value": 369
+},
+{
+"org_id": null,
+"vid": 30177,
+"label": "Lubbock Christian - Lone Star",
+"value": 30177
+},
+{
+"org_id": null,
+"vid": 372,
+"label": "Luther - American Rivers",
+"value": 372
+},
+{
+"org_id": null,
+"vid": 373,
+"label": "Lycoming - Landmark",
+"value": 373
+},
+{
+"org_id": null,
+"vid": 374,
+"label": "Lynchburg - ODAC",
+"value": 374
+},
+{
+"org_id": null,
+"vid": 20794,
+"label": "Lynn - Sunshine State",
+"value": 20794
+},
+{
+"org_id": null,
+"vid": 22989,
+"label": "Lyon - SLIAC",
+"value": 22989
+},
+{
+"org_id": null,
+"vid": 486,
+"label": "MCLA - MASCAC",
+"value": 486
+},
+{
+"org_id": null,
+"vid": 398,
+"label": "MIT - NEWMAC",
+"value": 398
+},
+{
+"org_id": null,
+"vid": 20220,
+"label": "MSOE - NACC",
+"value": 20220
+},
+{
+"org_id": null,
+"vid": 413,
+"label": "MSU Denver - RMAC",
+"value": 413
+},
+{
+"org_id": null,
+"vid": 1240,
+"label": "MSU Moorhead - NSIC",
+"value": 1240
+},
+{
+"org_id": null,
+"vid": 431,
+"label": "MUW - SLIAC",
+"value": 431
+},
+{
+"org_id": null,
+"vid": 376,
+"label": "Macalester - MIAC",
+"value": 376
+},
+{
+"org_id": null,
+"vid": 380,
+"label": "Maine - America East",
+"value": 380
+},
+{
+"org_id": null,
+"vid": 378,
+"label": "Maine Maritime - North Atlantic",
+"value": 378
+},
+{
+"org_id": null,
+"vid": 30137,
+"label": "Malone - G-MAC",
+"value": 30137
+},
+{
+"org_id": null,
+"vid": 1192,
+"label": "Manchester - HCAC",
+"value": 1192
+},
+{
+"org_id": null,
+"vid": 381,
+"label": "Manhattan - MAAC",
+"value": 381
+},
+{
+"org_id": null,
+"vid": 382,
+"label": "Manhattanville - Skyline",
+"value": 382
+},
+{
+"org_id": null,
+"vid": 384,
+"label": "Mansfield - PSAC",
+"value": 384
+},
+{
+"org_id": null,
+"vid": 1194,
+"label": "Maranatha Baptist - Independent",
+"value": 1194
+},
+{
+"org_id": null,
+"vid": 1196,
+"label": "Marian (WI) - NACC",
+"value": 1196
+},
+{
+"org_id": null,
+"vid": 385,
+"label": "Marietta - OAC",
+"value": 385
+},
+{
+"org_id": null,
+"vid": 386,
+"label": "Marist - MAAC",
+"value": 386
+},
+{
+"org_id": null,
+"vid": 387,
+"label": "Marquette - Big East",
+"value": 387
+},
+{
+"org_id": null,
+"vid": 1199,
+"label": "Mars Hill - SAC",
+"value": 1199
+},
+{
+"org_id": null,
+"vid": 388,
+"label": "Marshall - Sun Belt",
+"value": 388
+},
+{
+"org_id": null,
+"vid": 8597,
+"label": "Martin Luther - UMAC",
+"value": 8597
+},
+{
+"org_id": null,
+"vid": 30075,
+"label": "Mary - NSIC",
+"value": 30075
+},
+{
+"org_id": null,
+"vid": 389,
+"label": "Mary Baldwin - USA South",
+"value": 389
+},
+{
+"org_id": null,
+"vid": 1203,
+"label": "Mary Hardin-Baylor - ASC",
+"value": 1203
+},
+{
+"org_id": null,
+"vid": 390,
+"label": "Mary Washington - C2C",
+"value": 390
+},
+{
+"org_id": null,
+"vid": 392,
+"label": "Maryland - Big Ten",
+"value": 392
+},
+{
+"org_id": null,
+"vid": 394,
+"label": "Marymount (VA) - Atlantic East",
+"value": 394
+},
+{
+"org_id": null,
+"vid": 395,
+"label": "Maryville (MO) - GLVC",
+"value": 395
+},
+{
+"org_id": null,
+"vid": 396,
+"label": "Maryville (TN) - CCS",
+"value": 396
+},
+{
+"org_id": null,
+"vid": 397,
+"label": "Marywood - Atlantic East",
+"value": 397
+},
+{
+"org_id": null,
+"vid": 399,
+"label": "Mass. Maritime - MASCAC",
+"value": 399
+},
+{
+"org_id": null,
+"vid": 400,
+"label": "Massachusetts - MAC",
+"value": 400
+},
+{
+"org_id": null,
+"vid": 773,
+"label": "McDaniel - Centennial",
+"value": 773
+},
+{
+"org_id": null,
+"vid": 30138,
+"label": "McKendree - GLVC",
+"value": 30138
+},
+{
+"org_id": null,
+"vid": 8530,
+"label": "McMurry - SCAC",
+"value": 8530
+},
+{
+"org_id": null,
+"vid": 402,
+"label": "McNeese - Southland",
+"value": 402
+},
+{
+"org_id": null,
+"vid": 379,
+"label": "Me.-Farmington - North Atlantic",
+"value": 379
+},
+{
+"org_id": null,
+"vid": 30040,
+"label": "Me.-Presque Isle - North Atlantic",
+"value": 30040
+},
+{
+"org_id": null,
+"vid": 403,
+"label": "Medgar Evers - CUNYAC",
+"value": 403
+},
+{
+"org_id": null,
+"vid": 404,
+"label": "Memphis - American",
+"value": 404
+},
+{
+"org_id": null,
+"vid": 405,
+"label": "Menlo - PacWest",
+"value": 405
+},
+{
+"org_id": null,
+"vid": 406,
+"label": "Mercer - SoCon",
+"value": 406
+},
+{
+"org_id": null,
+"vid": 724,
+"label": "Merchant Marine - Skyline",
+"value": 724
+},
+{
+"org_id": null,
+"vid": 407,
+"label": "Mercy - ECC",
+"value": 407
+},
+{
+"org_id": null,
+"vid": 408,
+"label": "Mercyhurst - NEC",
+"value": 408
+},
+{
+"org_id": null,
+"vid": 409,
+"label": "Meredith - USA South",
+"value": 409
+},
+{
+"org_id": null,
+"vid": 410,
+"label": "Merrimack - MAAC",
+"value": 410
+},
+{
+"org_id": null,
+"vid": 411,
+"label": "Messiah - Middle Atlantic",
+"value": 411
+},
+{
+"org_id": null,
+"vid": 412,
+"label": "Methodist - USA South",
+"value": 412
+},
+{
+"org_id": null,
+"vid": 415,
+"label": "Miami (FL) - ACC",
+"value": 415
+},
+{
+"org_id": null,
+"vid": 414,
+"label": "Miami (OH) - MAC",
+"value": 414
+},
+{
+"org_id": null,
+"vid": 418,
+"label": "Michigan - Big Ten",
+"value": 418
+},
+{
+"org_id": null,
+"vid": 416,
+"label": "Michigan St. - Big Ten",
+"value": 416
+},
+{
+"org_id": null,
+"vid": 417,
+"label": "Michigan Tech - GLIAC",
+"value": 417
+},
+{
+"org_id": null,
+"vid": 30272,
+"label": "Middle Georgia - Peach Belt",
+"value": 30272
+},
+{
+"org_id": null,
+"vid": 419,
+"label": "Middle Tenn. - CUSA",
+"value": 419
+},
+{
+"org_id": null,
+"vid": 420,
+"label": "Middlebury - NESCAC",
+"value": 420
+},
+{
+"org_id": null,
+"vid": 1222,
+"label": "Midwestern St. - Lone Star",
+"value": 1222
+},
+{
+"org_id": null,
+"vid": 422,
+"label": "Miles - SIAC",
+"value": 422
+},
+{
+"org_id": null,
+"vid": 423,
+"label": "Millersville - PSAC",
+"value": 423
+},
+{
+"org_id": null,
+"vid": 424,
+"label": "Millikin - CCIW",
+"value": 424
+},
+{
+"org_id": null,
+"vid": 426,
+"label": "Millsaps - SAA",
+"value": 426
+},
+{
+"org_id": null,
+"vid": 797,
+"label": "Milwaukee - Horizon",
+"value": 797
+},
+{
+"org_id": null,
+"vid": 427,
+"label": "Minn. Duluth - NSIC",
+"value": 427
+},
+{
+"org_id": null,
+"vid": 27854,
+"label": "Minn.-Crookston - NSIC",
+"value": 27854
+},
+{
+"org_id": null,
+"vid": 1226,
+"label": "Minn.-Morris - UMAC",
+"value": 1226
+},
+{
+"org_id": null,
+"vid": 428,
+"label": "Minnesota - Big Ten",
+"value": 428
+},
+{
+"org_id": null,
+"vid": 383,
+"label": "Minnesota St. - NSIC",
+"value": 383
+},
+{
+"org_id": null,
+"vid": 30125,
+"label": "Minot St. - NSIC",
+"value": 30125
+},
+{
+"org_id": null,
+"vid": 16142,
+"label": "Misericordia - Middle Atlantic",
+"value": 16142
+},
+{
+"org_id": null,
+"vid": 429,
+"label": "Mississippi Col. - Gulf South",
+"value": 429
+},
+{
+"org_id": null,
+"vid": 430,
+"label": "Mississippi St. - SEC",
+"value": 430
+},
+{
+"org_id": null,
+"vid": 432,
+"label": "Mississippi Val. - SWAC",
+"value": 432
+},
+{
+"org_id": null,
+"vid": 434,
+"label": "Missouri - SEC",
+"value": 434
+},
+{
+"org_id": null,
+"vid": 435,
+"label": "Missouri S&T - GLVC",
+"value": 435
+},
+{
+"org_id": null,
+"vid": 669,
+"label": "Missouri St. - CUSA",
+"value": 669
+},
+{
+"org_id": null,
+"vid": 9013,
+"label": "Missouri Western - Mid-America Intercollegiate",
+"value": 9013
+},
+{
+"org_id": null,
+"vid": 30042,
+"label": "Mitchell - Great Northeast",
+"value": 30042
+},
+{
+"org_id": null,
+"vid": 9012,
+"label": "Mo. Southern St. - Mid-America Intercollegiate",
+"value": 9012
+},
+{
+"org_id": null,
+"vid": 436,
+"label": "Mo.-St. Louis - GLVC",
+"value": 436
+},
+{
+"org_id": null,
+"vid": 437,
+"label": "Molloy - ECC",
+"value": 437
+},
+{
+"org_id": null,
+"vid": 439,
+"label": "Monmouth - CAA",
+"value": 439
+},
+{
+"org_id": null,
+"vid": 438,
+"label": "Monmouth (IL) - MWC",
+"value": 438
+},
+{
+"org_id": null,
+"vid": 205,
+"label": "Mont. St. Billings - Great Northwest",
+"value": 205
+},
+{
+"org_id": null,
+"vid": 441,
+"label": "Montana - Big Sky",
+"value": 441
+},
+{
+"org_id": null,
+"vid": 440,
+"label": "Montana St. - Big Sky",
+"value": 440
+},
+{
+"org_id": null,
+"vid": 442,
+"label": "Montclair St. - NJAC",
+"value": 442
+},
+{
+"org_id": null,
+"vid": 1238,
+"label": "Montevallo - Gulf South",
+"value": 1238
+},
+{
+"org_id": null,
+"vid": 443,
+"label": "Moravian - Landmark",
+"value": 443
+},
+{
+"org_id": null,
+"vid": 444,
+"label": "Morehead St. - OVC",
+"value": 444
+},
+{
+"org_id": null,
+"vid": 445,
+"label": "Morehouse - SIAC",
+"value": 445
+},
+{
+"org_id": null,
+"vid": 446,
+"label": "Morgan St. - MEAC",
+"value": 446
+},
+{
+"org_id": null,
+"vid": 30036,
+"label": "Mount Aloysius - AMCC",
+"value": 30036
+},
+{
+"org_id": null,
+"vid": 449,
+"label": "Mount Holyoke - NEWMAC",
+"value": 449
+},
+{
+"org_id": null,
+"vid": 1245,
+"label": "Mount Olive - Conference Carolinas",
+"value": 1245
+},
+{
+"org_id": null,
+"vid": 450,
+"label": "Mount St. Mary's - MAAC",
+"value": 450
+},
+{
+"org_id": null,
+"vid": 452,
+"label": "Mount Union - OAC",
+"value": 452
+},
+{
+"org_id": null,
+"vid": 8567,
+"label": "Mt. St. Joseph - HCAC",
+"value": 8567
+},
+{
+"org_id": null,
+"vid": 1468,
+"label": "Mt. St. Mary (NY) - Skyline",
+"value": 1468
+},
+{
+"org_id": null,
+"vid": 453,
+"label": "Muhlenberg - Centennial",
+"value": 453
+},
+{
+"org_id": null,
+"vid": 454,
+"label": "Murray St. - MVC",
+"value": 454
+},
+{
+"org_id": null,
+"vid": 455,
+"label": "Muskingum - OAC",
+"value": 455
+},
+{
+"org_id": null,
+"vid": 488,
+"label": "N.C. A&T - CAA",
+"value": 488
+},
+{
+"org_id": null,
+"vid": 489,
+"label": "N.C. Central - MEAC",
+"value": 489
+},
+{
+"org_id": null,
+"vid": 491,
+"label": "N.C. Wesleyan - USA South",
+"value": 491
+},
+{
+"org_id": null,
+"vid": 8577,
+"label": "N.M. Highlands - RMAC",
+"value": 8577
+},
+{
+"org_id": null,
+"vid": 490,
+"label": "NC State - ACC",
+"value": 490
+},
+{
+"org_id": null,
+"vid": 503,
+"label": "NIU - MAC",
+"value": 503
+},
+{
+"org_id": null,
+"vid": 471,
+"label": "NJIT - America East",
+"value": 471
+},
+{
+"org_id": null,
+"vid": 479,
+"label": "NYU - UAA",
+"value": 479
+},
+{
+"org_id": null,
+"vid": 726,
+"label": "Navy - Patriot",
+"value": 726
+},
+{
+"org_id": null,
+"vid": 461,
+"label": "Nazareth - Empire 8",
+"value": 461
+},
+{
+"org_id": null,
+"vid": 462,
+"label": "Neb. Wesleyan - American Rivers",
+"value": 462
+},
+{
+"org_id": null,
+"vid": 1156,
+"label": "Neb.-Kearney - Mid-America Intercollegiate",
+"value": 1156
+},
+{
+"org_id": null,
+"vid": 463,
+"label": "Nebraska - Big Ten",
+"value": 463
+},
+{
+"org_id": null,
+"vid": 1254,
+"label": "Neumann - Atlantic East",
+"value": 1254
+},
+{
+"org_id": null,
+"vid": 466,
+"label": "Nevada - Mountain West",
+"value": 466
+},
+{
+"org_id": null,
+"vid": 467,
+"label": "New England Col. - Great Northeast",
+"value": 467
+},
+{
+"org_id": null,
+"vid": 469,
+"label": "New Hampshire - America East",
+"value": 469
+},
+{
+"org_id": null,
+"vid": 470,
+"label": "New Haven - NEC",
+"value": 470
+},
+{
+"org_id": null,
+"vid": 319,
+"label": "New Jersey City - NJAC",
+"value": 319
+},
+{
+"org_id": null,
+"vid": 473,
+"label": "New Mexico - Mountain West",
+"value": 473
+},
+{
+"org_id": null,
+"vid": 472,
+"label": "New Mexico St. - CUSA",
+"value": 472
+},
+{
+"org_id": null,
+"vid": 474,
+"label": "New Orleans - Southland",
+"value": 474
+},
+{
+"org_id": null,
+"vid": 477,
+"label": "New York Tech - ECC",
+"value": 477
+},
+{
+"org_id": null,
+"vid": 1257,
+"label": "Newberry - SAC",
+"value": 1257
+},
+{
+"org_id": null,
+"vid": 30054,
+"label": "Newman - Mid-America Intercollegiate",
+"value": 30054
+},
+{
+"org_id": null,
+"vid": 482,
+"label": "Niagara - MAAC",
+"value": 482
+},
+{
+"org_id": null,
+"vid": 483,
+"label": "Nicholls - Southland",
+"value": 483
+},
+{
+"org_id": null,
+"vid": 484,
+"label": "Nichols - CNE",
+"value": 484
+},
+{
+"org_id": null,
+"vid": 485,
+"label": "Norfolk St. - MEAC",
+"value": 485
+},
+{
+"org_id": null,
+"vid": 487,
+"label": "North Ala. - ASUN",
+"value": 487
+},
+{
+"org_id": null,
+"vid": 457,
+"label": "North Carolina - ACC",
+"value": 457
+},
+{
+"org_id": null,
+"vid": 492,
+"label": "North Central (IL) - CCIW",
+"value": 492
+},
+{
+"org_id": null,
+"vid": 30039,
+"label": "North Central (MN) - UMAC",
+"value": 30039
+},
+{
+"org_id": null,
+"vid": 494,
+"label": "North Dakota - Summit League",
+"value": 494
+},
+{
+"org_id": null,
+"vid": 493,
+"label": "North Dakota St. - Summit League",
+"value": 493
+},
+{
+"org_id": null,
+"vid": 2711,
+"label": "North Florida - ASUN",
+"value": 2711
+},
+{
+"org_id": null,
+"vid": 30052,
+"label": "North Georgia - Peach Belt",
+"value": 30052
+},
+{
+"org_id": null,
+"vid": 9223,
+"label": "North Greenville - Conference Carolinas",
+"value": 9223
+},
+{
+"org_id": null,
+"vid": 496,
+"label": "North Park - CCIW",
+"value": 496
+},
+{
+"org_id": null,
+"vid": 497,
+"label": "North Texas - American",
+"value": 497
+},
+{
+"org_id": null,
+"vid": 500,
+"label": "Northeastern - CAA",
+"value": 500
+},
+{
+"org_id": null,
+"vid": 12810,
+"label": "Northeastern St. - Mid-America Intercollegiate",
+"value": 12810
+},
+{
+"org_id": null,
+"vid": 501,
+"label": "Northern Ariz. - Big Sky",
+"value": 501
+},
+{
+"org_id": null,
+"vid": 502,
+"label": "Northern Colo. - Big Sky",
+"value": 502
+},
+{
+"org_id": null,
+"vid": 505,
+"label": "Northern Ky. - Horizon",
+"value": 505
+},
+{
+"org_id": null,
+"vid": 506,
+"label": "Northern Mich. - GLIAC",
+"value": 506
+},
+{
+"org_id": null,
+"vid": 1266,
+"label": "Northern St. - NSIC",
+"value": 1266
+},
+{
+"org_id": null,
+"vid": 507,
+"label": "Northwest Mo. St. - Mid-America Intercollegiate",
+"value": 507
+},
+{
+"org_id": null,
+"vid": 1274,
+"label": "Northwest Nazarene - Great Northwest",
+"value": 1274
+},
+{
+"org_id": null,
+"vid": 509,
+"label": "Northwestern - Big Ten",
+"value": 509
+},
+{
+"org_id": null,
+"vid": 30178,
+"label": "Northwestern Okla. - GAC",
+"value": 30178
+},
+{
+"org_id": null,
+"vid": 508,
+"label": "Northwestern St. - Southland",
+"value": 508
+},
+{
+"org_id": null,
+"vid": 30031,
+"label": "Northwestern-St. Paul - UMAC",
+"value": 30031
+},
+{
+"org_id": null,
+"vid": 510,
+"label": "Northwood - G-MAC",
+"value": 510
+},
+{
+"org_id": null,
+"vid": 511,
+"label": "Norwich - Great Northeast",
+"value": 511
+},
+{
+"org_id": null,
+"vid": 513,
+"label": "Notre Dame - ACC",
+"value": 513
+},
+{
+"org_id": null,
+"vid": 8600,
+"label": "Notre Dame (MD) - United East",
+"value": 8600
+},
+{
+"org_id": null,
+"vid": 24639,
+"label": "Nova Southeastern - Sunshine State",
+"value": 24639
+},
+{
+"org_id": null,
+"vid": 514,
+"label": "Oakland - Horizon",
+"value": 514
+},
+{
+"org_id": null,
+"vid": 515,
+"label": "Oberlin - NCAC",
+"value": 515
+},
+{
+"org_id": null,
+"vid": 516,
+"label": "Occidental - SCIAC",
+"value": 516
+},
+{
+"org_id": null,
+"vid": 2713,
+"label": "Oglethorpe - SAA",
+"value": 2713
+},
+{
+"org_id": null,
+"vid": 519,
+"label": "Ohio - MAC",
+"value": 519
+},
+{
+"org_id": null,
+"vid": 30119,
+"label": "Ohio Dominican - G-MAC",
+"value": 30119
+},
+{
+"org_id": null,
+"vid": 517,
+"label": "Ohio Northern - OAC",
+"value": 517
+},
+{
+"org_id": null,
+"vid": 518,
+"label": "Ohio St. - Big Ten",
+"value": 518
+},
+{
+"org_id": null,
+"vid": 520,
+"label": "Ohio Wesleyan - NCAC",
+"value": 520
+},
+{
+"org_id": null,
+"vid": 30202,
+"label": "Okla. Baptist - GAC",
+"value": 30202
+},
+{
+"org_id": null,
+"vid": 30179,
+"label": "Okla. Christian - Lone Star",
+"value": 30179
+},
+{
+"org_id": null,
+"vid": 522,
+"label": "Oklahoma - SEC",
+"value": 522
+},
+{
+"org_id": null,
+"vid": 521,
+"label": "Oklahoma St. - Big 12",
+"value": 521
+},
+{
+"org_id": null,
+"vid": 523,
+"label": "Old Dominion - Sun Belt",
+"value": 523
+},
+{
+"org_id": null,
+"vid": 524,
+"label": "Old Westbury - Skyline",
+"value": 524
+},
+{
+"org_id": null,
+"vid": 433,
+"label": "Ole Miss - SEC",
+"value": 433
+},
+{
+"org_id": null,
+"vid": 525,
+"label": "Olivet - Michigan Intercol. Ath. Assn.",
+"value": 525
+},
+{
+"org_id": null,
+"vid": 464,
+"label": "Omaha - Summit League",
+"value": 464
+},
+{
+"org_id": null,
+"vid": 527,
+"label": "Oral Roberts - Summit League",
+"value": 527
+},
+{
+"org_id": null,
+"vid": 529,
+"label": "Oregon - Big Ten",
+"value": 529
+},
+{
+"org_id": null,
+"vid": 528,
+"label": "Oregon St. - Pac-12",
+"value": 528
+},
+{
+"org_id": null,
+"vid": 530,
+"label": "Oswego St. - SUNYAC",
+"value": 530
+},
+{
+"org_id": null,
+"vid": 531,
+"label": "Otterbein - OAC",
+"value": 531
+},
+{
+"org_id": null,
+"vid": 1289,
+"label": "Ouachita Baptist - GAC",
+"value": 1289
+},
+{
+"org_id": null,
+"vid": 23008,
+"label": "Ozarks (AR) - SCAC",
+"value": 23008
+},
+{
+"org_id": null,
+"vid": 2682,
+"label": "P.R.-Bayamon - Independent",
+"value": 2682
+},
+{
+"org_id": null,
+"vid": 24361,
+"label": "P.R.-Mayaguez - Independent",
+"value": 24361
+},
+{
+"org_id": null,
+"vid": 2716,
+"label": "P.R.-Rio Piedras - Independent",
+"value": 2716
+},
+{
+"org_id": null,
+"vid": 533,
+"label": "Pace - NE10",
+"value": 533
+},
+{
+"org_id": null,
+"vid": 534,
+"label": "Pacific - WCC",
+"value": 534
+},
+{
+"org_id": null,
+"vid": 2751,
+"label": "Pacific (OR) - NWC",
+"value": 2751
+},
+{
+"org_id": null,
+"vid": 1297,
+"label": "Pacific Lutheran - NWC",
+"value": 1297
+},
+{
+"org_id": null,
+"vid": 30045,
+"label": "Palm Beach Atl. - Sunshine State",
+"value": 30045
+},
+{
+"org_id": null,
+"vid": 540,
+"label": "Penn - Ivy League",
+"value": 540
+},
+{
+"org_id": null,
+"vid": 30190,
+"label": "Penn College - United East",
+"value": 30190
+},
+{
+"org_id": null,
+"vid": 539,
+"label": "Penn St. - Big Ten",
+"value": 539
+},
+{
+"org_id": null,
+"vid": 30189,
+"label": "Penn St. Brandywine - United East",
+"value": 30189
+},
+{
+"org_id": null,
+"vid": 30081,
+"label": "Penn St. Harrisburg - United East",
+"value": 30081
+},
+{
+"org_id": null,
+"vid": 30114,
+"label": "Penn St.-Abington - United East",
+"value": 30114
+},
+{
+"org_id": null,
+"vid": 25719,
+"label": "Penn St.-Altoona - AMCC",
+"value": 25719
+},
+{
+"org_id": null,
+"vid": 538,
+"label": "Penn St.-Behrend - AMCC",
+"value": 538
+},
+{
+"org_id": null,
+"vid": 30044,
+"label": "Penn St.-Berks - United East",
+"value": 30044
+},
+{
+"org_id": null,
+"vid": 541,
+"label": "Pepperdine - WCC",
+"value": 541
+},
+{
+"org_id": null,
+"vid": 542,
+"label": "Pfeiffer - USA South",
+"value": 542
+},
+{
+"org_id": null,
+"vid": 21830,
+"label": "Piedmont - CCS",
+"value": 21830
+},
+{
+"org_id": null,
+"vid": 1315,
+"label": "Pitt.-Bradford - AMCC",
+"value": 1315
+},
+{
+"org_id": null,
+"vid": 11839,
+"label": "Pitt.-Greensburg - AMCC",
+"value": 11839
+},
+{
+"org_id": null,
+"vid": 546,
+"label": "Pitt.-Johnstown - PSAC",
+"value": 546
+},
+{
+"org_id": null,
+"vid": 1314,
+"label": "Pittsburg St. - Mid-America Intercollegiate",
+"value": 1314
+},
+{
+"org_id": null,
+"vid": 545,
+"label": "Pittsburgh - ACC",
+"value": 545
+},
+{
+"org_id": null,
+"vid": 547,
+"label": "Plattsburgh St. - SUNYAC",
+"value": 547
+},
+{
+"org_id": null,
+"vid": 548,
+"label": "Plymouth St. - Little East",
+"value": 548
+},
+{
+"org_id": null,
+"vid": 30149,
+"label": "Point Loma - PacWest",
+"value": 30149
+},
+{
+"org_id": null,
+"vid": 30268,
+"label": "Point Park - MEC",
+"value": 30268
+},
+{
+"org_id": null,
+"vid": 549,
+"label": "Pomona-Pitzer - SCIAC",
+"value": 549
+},
+{
+"org_id": null,
+"vid": 551,
+"label": "Portland - WCC",
+"value": 551
+},
+{
+"org_id": null,
+"vid": 550,
+"label": "Portland St. - Big Sky",
+"value": 550
+},
+{
+"org_id": null,
+"vid": 1318,
+"label": "Post - CACC",
+"value": 1318
+},
+{
+"org_id": null,
+"vid": 553,
+"label": "Prairie View - SWAC",
+"value": 553
+},
+{
+"org_id": null,
+"vid": 2715,
+"label": "Pratt - Atlantic East",
+"value": 2715
+},
+{
+"org_id": null,
+"vid": 1320,
+"label": "Presbyterian - Big South",
+"value": 1320
+},
+{
+"org_id": null,
+"vid": 554,
+"label": "Princeton - Ivy League",
+"value": 554
+},
+{
+"org_id": null,
+"vid": 555,
+"label": "Principia - SLIAC",
+"value": 555
+},
+{
+"org_id": null,
+"vid": 556,
+"label": "Providence - Big East",
+"value": 556
+},
+{
+"org_id": null,
+"vid": 557,
+"label": "Puget Sound - NWC",
+"value": 557
+},
+{
+"org_id": null,
+"vid": 30029,
+"label": "Purchase - Skyline",
+"value": 30029
+},
+{
+"org_id": null,
+"vid": 559,
+"label": "Purdue - Big Ten",
+"value": 559
+},
+{
+"org_id": null,
+"vid": 308,
+"label": "Purdue Fort Wayne - Horizon",
+"value": 308
+},
+{
+"org_id": null,
+"vid": 30222,
+"label": "Purdue Northwest - GLIAC",
+"value": 30222
+},
+{
+"org_id": null,
+"vid": 11504,
+"label": "Queens (NC) - ASUN",
+"value": 11504
+},
+{
+"org_id": null,
+"vid": 560,
+"label": "Queens (NY) - ECC",
+"value": 560
+},
+{
+"org_id": null,
+"vid": 561,
+"label": "Quincy - GLVC",
+"value": 561
+},
+{
+"org_id": null,
+"vid": 562,
+"label": "Quinnipiac - MAAC",
+"value": 562
+},
+{
+"org_id": null,
+"vid": 580,
+"label": "RIT - Liberty League",
+"value": 580
+},
+{
+"org_id": null,
+"vid": 563,
+"label": "Radford - Big South",
+"value": 563
+},
+{
+"org_id": null,
+"vid": 564,
+"label": "Ramapo - NJAC",
+"value": 564
+},
+{
+"org_id": null,
+"vid": 566,
+"label": "Randolph - ODAC",
+"value": 566
+},
+{
+"org_id": null,
+"vid": 565,
+"label": "Randolph-Macon - ODAC",
+"value": 565
+},
+{
+"org_id": null,
+"vid": 567,
+"label": "Redlands - SCIAC",
+"value": 567
+},
+{
+"org_id": null,
+"vid": 30264,
+"label": "Regent - C2C",
+"value": 30264
+},
+{
+"org_id": null,
+"vid": 568,
+"label": "Regis (CO) - RMAC",
+"value": 568
+},
+{
+"org_id": null,
+"vid": 569,
+"label": "Regis (MA) - Great Northeast",
+"value": 569
+},
+{
+"org_id": null,
+"vid": 570,
+"label": "Rensselaer - Liberty League",
+"value": 570
+},
+{
+"org_id": null,
+"vid": 572,
+"label": "Rhode Island - Atlantic 10",
+"value": 572
+},
+{
+"org_id": null,
+"vid": 571,
+"label": "Rhode Island Col. - Little East",
+"value": 571
+},
+{
+"org_id": null,
+"vid": 573,
+"label": "Rhodes - SAA",
+"value": 573
+},
+{
+"org_id": null,
+"vid": 574,
+"label": "Rice - American",
+"value": 574
+},
+{
+"org_id": null,
+"vid": 575,
+"label": "Richmond - Atlantic 10",
+"value": 575
+},
+{
+"org_id": null,
+"vid": 576,
+"label": "Rider - MAAC",
+"value": 576
+},
+{
+"org_id": null,
+"vid": 577,
+"label": "Ripon - MWC",
+"value": 577
+},
+{
+"org_id": null,
+"vid": 18422,
+"label": "Rivier - Great Northeast",
+"value": 18422
+},
+{
+"org_id": null,
+"vid": 578,
+"label": "Roanoke - ODAC",
+"value": 578
+},
+{
+"org_id": null,
+"vid": 579,
+"label": "Robert Morris - Horizon",
+"value": 579
+},
+{
+"org_id": null,
+"vid": 30150,
+"label": "Roberts Wesleyan - ECC",
+"value": 30150
+},
+{
+"org_id": null,
+"vid": 581,
+"label": "Rochester (NY) - UAA",
+"value": 581
+},
+{
+"org_id": null,
+"vid": 582,
+"label": "Rockford - NACC",
+"value": 582
+},
+{
+"org_id": null,
+"vid": 1328,
+"label": "Rockhurst - GLVC",
+"value": 1328
+},
+{
+"org_id": null,
+"vid": 583,
+"label": "Roger Williams - CNE",
+"value": 583
+},
+{
+"org_id": null,
+"vid": 30180,
+"label": "Rogers St. - Mid-America Intercollegiate",
+"value": 30180
+},
+{
+"org_id": null,
+"vid": 584,
+"label": "Rollins - Sunshine State",
+"value": 584
+},
+{
+"org_id": null,
+"vid": 2807,
+"label": "Roosevelt - GLIAC",
+"value": 2807
+},
+{
+"org_id": null,
+"vid": 585,
+"label": "Rose-Hulman - HCAC",
+"value": 585
+},
+{
+"org_id": null,
+"vid": 15882,
+"label": "Rosemont - Independent",
+"value": 15882
+},
+{
+"org_id": null,
+"vid": 259,
+"label": "Rowan - NJAC",
+"value": 259
+},
+{
+"org_id": null,
+"vid": 11036,
+"label": "Russell Sage - Empire 8",
+"value": 11036
+},
+{
+"org_id": null,
+"vid": 587,
+"label": "Rutgers - Big Ten",
+"value": 587
+},
+{
+"org_id": null,
+"vid": 588,
+"label": "Rutgers-Camden - NJAC",
+"value": 588
+},
+{
+"org_id": null,
+"vid": 589,
+"label": "Rutgers-Newark - NJAC",
+"value": 589
+},
+{
+"org_id": null,
+"vid": 676,
+"label": "SFA - Southland",
+"value": 676
+},
+{
+"org_id": null,
+"vid": 660,
+"label": "SIUE - OVC",
+"value": 660
+},
+{
+"org_id": null,
+"vid": 663,
+"label": "SMU - ACC",
+"value": 663
+},
+{
+"org_id": null,
+"vid": 78,
+"label": "SUNY Brockport - Empire 8",
+"value": 78
+},
+{
+"org_id": null,
+"vid": 30165,
+"label": "SUNY Canton - SUNYAC",
+"value": 30165
+},
+{
+"org_id": null,
+"vid": 30083,
+"label": "SUNY Cobleskill  - North Atlantic",
+"value": 30083
+},
+{
+"org_id": null,
+"vid": 30225,
+"label": "SUNY Delhi - North Atlantic",
+"value": 30225
+},
+{
+"org_id": null,
+"vid": 247,
+"label": "SUNY Geneseo - Empire 8",
+"value": 247
+},
+{
+"org_id": null,
+"vid": 478,
+"label": "SUNY Maritime - Skyline",
+"value": 478
+},
+{
+"org_id": null,
+"vid": 30067,
+"label": "SUNY Morrisville - SUNYAC",
+"value": 30067
+},
+{
+"org_id": null,
+"vid": 475,
+"label": "SUNY New Paltz - SUNYAC",
+"value": 475
+},
+{
+"org_id": null,
+"vid": 526,
+"label": "SUNY Oneonta - SUNYAC",
+"value": 526
+},
+{
+"org_id": null,
+"vid": 9500,
+"label": "SUNY Poly - Empire 8",
+"value": 9500
+},
+{
+"org_id": null,
+"vid": 552,
+"label": "SUNY Potsdam - SUNYAC",
+"value": 552
+},
+{
+"org_id": null,
+"vid": 102,
+"label": "Sacramento St. - Big Sky",
+"value": 102
+},
+{
+"org_id": null,
+"vid": 590,
+"label": "Sacred Heart - MAAC",
+"value": 590
+},
+{
+"org_id": null,
+"vid": 591,
+"label": "Saginaw Valley - GLIAC",
+"value": 591
+},
+{
+"org_id": null,
+"vid": 593,
+"label": "Saint Anselm - NE10",
+"value": 593
+},
+{
+"org_id": null,
+"vid": 595,
+"label": "Saint Benedict - MIAC",
+"value": 595
+},
+{
+"org_id": null,
+"vid": 9684,
+"label": "Saint Elizabeth - Atlantic East",
+"value": 9684
+},
+{
+"org_id": null,
+"vid": 600,
+"label": "Saint Francis - NEC",
+"value": 600
+},
+{
+"org_id": null,
+"vid": 602,
+"label": "Saint John's (MN) - MIAC",
+"value": 602
+},
+{
+"org_id": null,
+"vid": 8687,
+"label": "Saint Joseph (CT) - Great Northeast",
+"value": 8687
+},
+{
+"org_id": null,
+"vid": 606,
+"label": "Saint Joseph's - Atlantic 10",
+"value": 606
+},
+{
+"org_id": null,
+"vid": 608,
+"label": "Saint Leo - Sunshine State",
+"value": 608
+},
+{
+"org_id": null,
+"vid": 609,
+"label": "Saint Louis - Atlantic 10",
+"value": 609
+},
+{
+"org_id": null,
+"vid": 1343,
+"label": "Saint Martin's - Great Northwest",
+"value": 1343
+},
+{
+"org_id": null,
+"vid": 610,
+"label": "Saint Mary's (CA) - WCC",
+"value": 610
+},
+{
+"org_id": null,
+"vid": 612,
+"label": "Saint Mary's (MN) - MIAC",
+"value": 612
+},
+{
+"org_id": null,
+"vid": 613,
+"label": "Saint Michael's - NE10",
+"value": 613
+},
+{
+"org_id": null,
+"vid": 617,
+"label": "Saint Peter's - MAAC",
+"value": 617
+},
+{
+"org_id": null,
+"vid": 30064,
+"label": "Saint Vincent - PAC",
+"value": 30064
+},
+{
+"org_id": null,
+"vid": 30041,
+"label": "Salem (NC) - USA South",
+"value": 30041
+},
+{
+"org_id": null,
+"vid": 19117,
+"label": "Salem (WV) - Independent",
+"value": 19117
+},
+{
+"org_id": null,
+"vid": 621,
+"label": "Salem St. - MASCAC",
+"value": 621
+},
+{
+"org_id": null,
+"vid": 622,
+"label": "Salisbury - C2C",
+"value": 622
+},
+{
+"org_id": null,
+"vid": 623,
+"label": "Salve Regina - NEWMAC",
+"value": 623
+},
+{
+"org_id": null,
+"vid": 624,
+"label": "Sam Houston - CUSA",
+"value": 624
+},
+{
+"org_id": null,
+"vid": 625,
+"label": "Samford - SoCon",
+"value": 625
+},
+{
+"org_id": null,
+"vid": 627,
+"label": "San Diego - WCC",
+"value": 627
+},
+{
+"org_id": null,
+"vid": 626,
+"label": "San Diego St. - Mountain West",
+"value": 626
+},
+{
+"org_id": null,
+"vid": 628,
+"label": "San Fran. St. - CCAA",
+"value": 628
+},
+{
+"org_id": null,
+"vid": 629,
+"label": "San Francisco - WCC",
+"value": 629
+},
+{
+"org_id": null,
+"vid": 630,
+"label": "San Jose St. - Mountain West",
+"value": 630
+},
+{
+"org_id": null,
+"vid": 631,
+"label": "Santa Clara - WCC",
+"value": 631
+},
+{
+"org_id": null,
+"vid": 30163,
+"label": "Sarah Lawrence - Skyline",
+"value": 30163
+},
+{
+"org_id": null,
+"vid": 632,
+"label": "Savannah St. - SIAC",
+"value": 632
+},
+{
+"org_id": null,
+"vid": 1355,
+"label": "Schreiner - SCAC",
+"value": 1355
+},
+{
+"org_id": null,
+"vid": 633,
+"label": "Scranton - Landmark",
+"value": 633
+},
+{
+"org_id": null,
+"vid": 634,
+"label": "Seattle Pacific - Great Northwest",
+"value": 634
+},
+{
+"org_id": null,
+"vid": 1356,
+"label": "Seattle U - WCC",
+"value": 1356
+},
+{
+"org_id": null,
+"vid": 635,
+"label": "Seton Hall - Big East",
+"value": 635
+},
+{
+"org_id": null,
+"vid": 30063,
+"label": "Seton Hill - PSAC",
+"value": 30063
+},
+{
+"org_id": null,
+"vid": 652,
+"label": "Sewanee - SAA",
+"value": 652
+},
+{
+"org_id": null,
+"vid": 636,
+"label": "Shaw - CIAA",
+"value": 636
+},
+{
+"org_id": null,
+"vid": 30284,
+"label": "Shawnee State  - MEC",
+"value": 30284
+},
+{
+"org_id": null,
+"vid": 637,
+"label": "Shenandoah - ODAC",
+"value": 637
+},
+{
+"org_id": null,
+"vid": 10870,
+"label": "Shepherd - PSAC",
+"value": 10870
+},
+{
+"org_id": null,
+"vid": 638,
+"label": "Shippensburg - PSAC",
+"value": 638
+},
+{
+"org_id": null,
+"vid": 30151,
+"label": "Shorter - Conference Carolinas",
+"value": 30151
+},
+{
+"org_id": null,
+"vid": 639,
+"label": "Siena - MAAC",
+"value": 639
+},
+{
+"org_id": null,
+"vid": 640,
+"label": "Simmons - Great Northeast",
+"value": 640
+},
+{
+"org_id": null,
+"vid": 30127,
+"label": "Simon Fraser - Great Northwest",
+"value": 30127
+},
+{
+"org_id": null,
+"vid": 641,
+"label": "Simpson - American Rivers",
+"value": 641
+},
+{
+"org_id": null,
+"vid": 30128,
+"label": "Sioux Falls - NSIC",
+"value": 30128
+},
+{
+"org_id": null,
+"vid": 642,
+"label": "Skidmore - Liberty League",
+"value": 642
+},
+{
+"org_id": null,
+"vid": 643,
+"label": "Slippery Rock - PSAC",
+"value": 643
+},
+{
+"org_id": null,
+"vid": 644,
+"label": "Smith - NEWMAC",
+"value": 644
+},
+{
+"org_id": null,
+"vid": 645,
+"label": "Sonoma St. - CCAA",
+"value": 645
+},
+{
+"org_id": null,
+"vid": 646,
+"label": "South Alabama - Sun Belt",
+"value": 646
+},
+{
+"org_id": null,
+"vid": 648,
+"label": "South Carolina - SEC",
+"value": 648
+},
+{
+"org_id": null,
+"vid": 647,
+"label": "South Carolina St. - MEAC",
+"value": 647
+},
+{
+"org_id": null,
+"vid": 650,
+"label": "South Dakota - Summit League",
+"value": 650
+},
+{
+"org_id": null,
+"vid": 30139,
+"label": "South Dakota Mines - RMAC",
+"value": 30139
+},
+{
+"org_id": null,
+"vid": 649,
+"label": "South Dakota St. - Summit League",
+"value": 649
+},
+{
+"org_id": null,
+"vid": 651,
+"label": "South Fla. - American",
+"value": 651
+},
+{
+"org_id": null,
+"vid": 654,
+"label": "Southeast Mo. St. - OVC",
+"value": 654
+},
+{
+"org_id": null,
+"vid": 655,
+"label": "Southeastern La. - Southland",
+"value": 655
+},
+{
+"org_id": null,
+"vid": 1371,
+"label": "Southeastern Okla. - GAC",
+"value": 1371
+},
+{
+"org_id": null,
+"vid": 1376,
+"label": "Southern Ark. - GAC",
+"value": 1376
+},
+{
+"org_id": null,
+"vid": 657,
+"label": "Southern California - Big Ten",
+"value": 657
+},
+{
+"org_id": null,
+"vid": 658,
+"label": "Southern Conn. St. - NE10",
+"value": 658
+},
+{
+"org_id": null,
+"vid": 659,
+"label": "Southern Ill. - MVC",
+"value": 659
+},
+{
+"org_id": null,
+"vid": 661,
+"label": "Southern Ind. - OVC",
+"value": 661
+},
+{
+"org_id": null,
+"vid": 662,
+"label": "Southern Me. - Little East",
+"value": 662
+},
+{
+"org_id": null,
+"vid": 664,
+"label": "Southern Miss. - Sun Belt",
+"value": 664
+},
+{
+"org_id": null,
+"vid": 468,
+"label": "Southern N.H. - NE10",
+"value": 468
+},
+{
+"org_id": null,
+"vid": 30152,
+"label": "Southern Nazarene - GAC",
+"value": 30152
+},
+{
+"org_id": null,
+"vid": 665,
+"label": "Southern U. - SWAC",
+"value": 665
+},
+{
+"org_id": null,
+"vid": 667,
+"label": "Southern Utah - WAC",
+"value": 667
+},
+{
+"org_id": null,
+"vid": 30164,
+"label": "Southern Va. - USA South",
+"value": 30164
+},
+{
+"org_id": null,
+"vid": 30192,
+"label": "Southern Wesleyan - Conference Carolinas",
+"value": 30192
+},
+{
+"org_id": null,
+"vid": 2755,
+"label": "Southwest Baptist - GLVC",
+"value": 2755
+},
+{
+"org_id": null,
+"vid": 8736,
+"label": "Southwest Minn. St. - NSIC",
+"value": 8736
+},
+{
+"org_id": null,
+"vid": 8746,
+"label": "Southwestern (TX) - SAA",
+"value": 8746
+},
+{
+"org_id": null,
+"vid": 8744,
+"label": "Southwestern Okla. - GAC",
+"value": 8744
+},
+{
+"org_id": null,
+"vid": 23260,
+"label": "Spalding - SLIAC",
+"value": 23260
+},
+{
+"org_id": null,
+"vid": 30191,
+"label": "Spring Hill - SIAC",
+"value": 30191
+},
+{
+"org_id": null,
+"vid": 673,
+"label": "Springfield - NEWMAC",
+"value": 673
+},
+{
+"org_id": null,
+"vid": 596,
+"label": "St. Bonaventure - Atlantic 10",
+"value": 596
+},
+{
+"org_id": null,
+"vid": 597,
+"label": "St. Catherine - MIAC",
+"value": 597
+},
+{
+"org_id": null,
+"vid": 598,
+"label": "St. Cloud St. - NSIC",
+"value": 598
+},
+{
+"org_id": null,
+"vid": 1334,
+"label": "St. Edward's - Lone Star",
+"value": 1334
+},
+{
+"org_id": null,
+"vid": 601,
+"label": "St. John Fisher - Empire 8",
+"value": 601
+},
+{
+"org_id": null,
+"vid": 603,
+"label": "St. John's (NY) - Big East",
+"value": 603
+},
+{
+"org_id": null,
+"vid": 30072,
+"label": "St. Joseph's (Brkln) - Skyline",
+"value": 30072
+},
+{
+"org_id": null,
+"vid": 1340,
+"label": "St. Joseph's (L.I.) - Skyline",
+"value": 1340
+},
+{
+"org_id": null,
+"vid": 605,
+"label": "St. Joseph's (ME) - Great Northeast",
+"value": 605
+},
+{
+"org_id": null,
+"vid": 607,
+"label": "St. Lawrence - Liberty League",
+"value": 607
+},
+{
+"org_id": null,
+"vid": 8688,
+"label": "St. Mary's (IN) - Michigan Intercol. Ath. Assn.",
+"value": 8688
+},
+{
+"org_id": null,
+"vid": 611,
+"label": "St. Mary's (MD) - United East",
+"value": 611
+},
+{
+"org_id": null,
+"vid": 1346,
+"label": "St. Mary's (TX) - Lone Star",
+"value": 1346
+},
+{
+"org_id": null,
+"vid": 614,
+"label": "St. Norbert - NACC",
+"value": 614
+},
+{
+"org_id": null,
+"vid": 615,
+"label": "St. Olaf - MIAC",
+"value": 615
+},
+{
+"org_id": null,
+"vid": 618,
+"label": "St. Scholastica - MIAC",
+"value": 618
+},
+{
+"org_id": null,
+"vid": 620,
+"label": "St. Thomas (MN) - Summit League",
+"value": 620
+},
+{
+"org_id": null,
+"vid": 2810,
+"label": "St. Thomas (TX) - SCAC",
+"value": 2810
+},
+{
+"org_id": null,
+"vid": 1348,
+"label": "St. Thomas Aquinas - ECC",
+"value": 1348
+},
+{
+"org_id": null,
+"vid": 674,
+"label": "Stanford - ACC",
+"value": 674
+},
+{
+"org_id": null,
+"vid": 103,
+"label": "Stanislaus St. - CCAA",
+"value": 103
+},
+{
+"org_id": null,
+"vid": 675,
+"label": "Staten Island - ECC",
+"value": 675
+},
+{
+"org_id": null,
+"vid": 678,
+"label": "Stetson - ASUN",
+"value": 678
+},
+{
+"org_id": null,
+"vid": 679,
+"label": "Stevens - Middle Atlantic",
+"value": 679
+},
+{
+"org_id": null,
+"vid": 21852,
+"label": "Stevenson - Middle Atlantic",
+"value": 21852
+},
+{
+"org_id": null,
+"vid": 681,
+"label": "Stockton - NJAC",
+"value": 681
+},
+{
+"org_id": null,
+"vid": 682,
+"label": "Stonehill - NEC",
+"value": 682
+},
+{
+"org_id": null,
+"vid": 683,
+"label": "Stony Brook - CAA",
+"value": 683
+},
+{
+"org_id": null,
+"vid": 684,
+"label": "Suffolk - CNE",
+"value": 684
+},
+{
+"org_id": null,
+"vid": 1390,
+"label": "Sul Ross St. - Lone Star",
+"value": 1390
+},
+{
+"org_id": null,
+"vid": 685,
+"label": "Susquehanna - Landmark",
+"value": 685
+},
+{
+"org_id": null,
+"vid": 686,
+"label": "Swarthmore - Centennial",
+"value": 686
+},
+{
+"org_id": null,
+"vid": 687,
+"label": "Sweet Briar - ODAC",
+"value": 687
+},
+{
+"org_id": null,
+"vid": 688,
+"label": "Syracuse - ACC",
+"value": 688
+},
+{
+"org_id": null,
+"vid": 712,
+"label": "TCNJ - NJAC",
+"value": 712
+},
+{
+"org_id": null,
+"vid": 698,
+"label": "TCU - Big 12",
+"value": 698
+},
+{
+"org_id": null,
+"vid": 689,
+"label": "Tampa - Sunshine State",
+"value": 689
+},
+{
+"org_id": null,
+"vid": 1395,
+"label": "Tarleton St. - WAC",
+"value": 1395
+},
+{
+"org_id": null,
+"vid": 690,
+"label": "Temple - American",
+"value": 690
+},
+{
+"org_id": null,
+"vid": 694,
+"label": "Tennessee - SEC",
+"value": 694
+},
+{
+"org_id": null,
+"vid": 691,
+"label": "Tennessee St. - OVC",
+"value": 691
+},
+{
+"org_id": null,
+"vid": 692,
+"label": "Tennessee Tech - OVC",
+"value": 692
+},
+{
+"org_id": null,
+"vid": 30090,
+"label": "Tex. A&M Int'l - Lone Star",
+"value": 30090
+},
+{
+"org_id": null,
+"vid": 696,
+"label": "Tex. A&M-Kingsville - Lone Star",
+"value": 696
+},
+{
+"org_id": null,
+"vid": 703,
+"label": "Texas - SEC",
+"value": 703
+},
+{
+"org_id": null,
+"vid": 697,
+"label": "Texas A&M - SEC",
+"value": 697
+},
+{
+"org_id": null,
+"vid": 1400,
+"label": "Texas Lutheran - SCAC",
+"value": 1400
+},
+{
+"org_id": null,
+"vid": 699,
+"label": "Texas Southern - SWAC",
+"value": 699
+},
+{
+"org_id": null,
+"vid": 670,
+"label": "Texas St. - Sun Belt",
+"value": 670
+},
+{
+"org_id": null,
+"vid": 700,
+"label": "Texas Tech - Big 12",
+"value": 700
+},
+{
+"org_id": null,
+"vid": 701,
+"label": "Texas Woman's - Lone Star",
+"value": 701
+},
+{
+"org_id": null,
+"vid": 23121,
+"label": "Texas-Dallas - Lone Star",
+"value": 23121
+},
+{
+"org_id": null,
+"vid": 141,
+"label": "The Citadel - SoCon",
+"value": 141
+},
+{
+"org_id": null,
+"vid": 707,
+"label": "Thiel - PAC",
+"value": 707
+},
+{
+"org_id": null,
+"vid": 2758,
+"label": "Thomas (ME) - North Atlantic",
+"value": 2758
+},
+{
+"org_id": null,
+"vid": 1402,
+"label": "Thomas More - G-MAC",
+"value": 1402
+},
+{
+"org_id": null,
+"vid": 1403,
+"label": "Tiffin - G-MAC",
+"value": 1403
+},
+{
+"org_id": null,
+"vid": 709,
+"label": "Toledo - MAC",
+"value": 709
+},
+{
+"org_id": null,
+"vid": 711,
+"label": "Towson - CAA",
+"value": 711
+},
+{
+"org_id": null,
+"vid": 28749,
+"label": "Transylvania - HCAC",
+"value": 28749
+},
+{
+"org_id": null,
+"vid": 30002,
+"label": "Trevecca Nazarene - Gulf South",
+"value": 30002
+},
+{
+"org_id": null,
+"vid": 30037,
+"label": "Trine - Michigan Intercol. Ath. Assn.",
+"value": 30037
+},
+{
+"org_id": null,
+"vid": 713,
+"label": "Trinity (CT) - NESCAC",
+"value": 713
+},
+{
+"org_id": null,
+"vid": 715,
+"label": "Trinity (TX) - SAA",
+"value": 715
+},
+{
+"org_id": null,
+"vid": 23413,
+"label": "Trinity Washington - Independent",
+"value": 23413
+},
+{
+"org_id": null,
+"vid": 716,
+"label": "Troy - Sun Belt",
+"value": 716
+},
+{
+"org_id": null,
+"vid": 499,
+"label": "Truman St. - GLVC",
+"value": 499
+},
+{
+"org_id": null,
+"vid": 717,
+"label": "Tufts - NESCAC",
+"value": 717
+},
+{
+"org_id": null,
+"vid": 718,
+"label": "Tulane - American",
+"value": 718
+},
+{
+"org_id": null,
+"vid": 719,
+"label": "Tulsa - American",
+"value": 719
+},
+{
+"org_id": null,
+"vid": 12830,
+"label": "Tusculum - SAC",
+"value": 12830
+},
+{
+"org_id": null,
+"vid": 720,
+"label": "Tuskegee - SIAC",
+"value": 720
+},
+{
+"org_id": null,
+"vid": 1255,
+"label": "U New England - CNE",
+"value": 1255
+},
+{
+"org_id": null,
+"vid": 9,
+"label": "UAB - American",
+"value": 9
+},
+{
+"org_id": null,
+"vid": 10,
+"label": "UAH - Gulf South",
+"value": 10
+},
+{
+"org_id": null,
+"vid": 14,
+"label": "UAlbany - America East",
+"value": 14
+},
+{
+"org_id": null,
+"vid": 108,
+"label": "UC Davis - Big West",
+"value": 108
+},
+{
+"org_id": null,
+"vid": 109,
+"label": "UC Irvine - Big West",
+"value": 109
+},
+{
+"org_id": null,
+"vid": 30266,
+"label": "UC Merced - CCAA",
+"value": 30266
+},
+{
+"org_id": null,
+"vid": 111,
+"label": "UC Riverside - Big West",
+"value": 111
+},
+{
+"org_id": null,
+"vid": 112,
+"label": "UC San Diego - Big West",
+"value": 112
+},
+{
+"org_id": null,
+"vid": 104,
+"label": "UC Santa Barbara - Big West",
+"value": 104
+},
+{
+"org_id": null,
+"vid": 113,
+"label": "UC Santa Cruz - C2C",
+"value": 113
+},
+{
+"org_id": null,
+"vid": 9754,
+"label": "UCCS - RMAC",
+"value": 9754
+},
+{
+"org_id": null,
+"vid": 128,
+"label": "UCF - Big 12",
+"value": 128
+},
+{
+"org_id": null,
+"vid": 110,
+"label": "UCLA - Big Ten",
+"value": 110
+},
+{
+"org_id": null,
+"vid": 137,
+"label": "UChicago - UAA",
+"value": 137
+},
+{
+"org_id": null,
+"vid": 164,
+"label": "UConn - Big East",
+"value": 164
+},
+{
+"org_id": null,
+"vid": 302,
+"label": "UIC - MVC",
+"value": 302
+},
+{
+"org_id": null,
+"vid": 2743,
+"label": "UIW - Southland",
+"value": 2743
+},
+{
+"org_id": null,
+"vid": 309,
+"label": "UIndy - GLVC",
+"value": 309
+},
+{
+"org_id": null,
+"vid": 498,
+"label": "ULM - Sun Belt",
+"value": 498
+},
+{
+"org_id": null,
+"vid": 391,
+"label": "UMBC - America East",
+"value": 391
+},
+{
+"org_id": null,
+"vid": 393,
+"label": "UMES - MEAC",
+"value": 393
+},
+{
+"org_id": null,
+"vid": 451,
+"label": "UMSV - Skyline",
+"value": 451
+},
+{
+"org_id": null,
+"vid": 401,
+"label": "UMass Boston - Little East",
+"value": 401
+},
+{
+"org_id": null,
+"vid": 656,
+"label": "UMass Dartmouth - Little East",
+"value": 656
+},
+{
+"org_id": null,
+"vid": 368,
+"label": "UMass Lowell - America East",
+"value": 368
+},
+{
+"org_id": null,
+"vid": 456,
+"label": "UNC Asheville - Big South",
+"value": 456
+},
+{
+"org_id": null,
+"vid": 459,
+"label": "UNC Greensboro - SoCon",
+"value": 459
+},
+{
+"org_id": null,
+"vid": 537,
+"label": "UNC Pembroke - Conference Carolinas",
+"value": 537
+},
+{
+"org_id": null,
+"vid": 460,
+"label": "UNCW - CAA",
+"value": 460
+},
+{
+"org_id": null,
+"vid": 504,
+"label": "UNI - MVC",
+"value": 504
+},
+{
+"org_id": null,
+"vid": 465,
+"label": "UNLV - Mountain West",
+"value": 465
+},
+{
+"org_id": null,
+"vid": 11276,
+"label": "USC Aiken - Peach Belt",
+"value": 11276
+},
+{
+"org_id": null,
+"vid": 30259,
+"label": "USC Beaufort - Peach Belt",
+"value": 30259
+},
+{
+"org_id": null,
+"vid": 10411,
+"label": "USC Upstate - Big South",
+"value": 10411
+},
+{
+"org_id": null,
+"vid": 702,
+"label": "UT Arlington - WAC",
+"value": 702
+},
+{
+"org_id": null,
+"vid": 695,
+"label": "UT Martin - OVC",
+"value": 695
+},
+{
+"org_id": null,
+"vid": 30088,
+"label": "UT Permian Basin - Lone Star",
+"value": 30088
+},
+{
+"org_id": null,
+"vid": 30028,
+"label": "UT Tyler - Lone Star",
+"value": 30028
+},
+{
+"org_id": null,
+"vid": 704,
+"label": "UTEP - CUSA",
+"value": 704
+},
+{
+"org_id": null,
+"vid": 536,
+"label": "UTRGV - Southland",
+"value": 536
+},
+{
+"org_id": null,
+"vid": 706,
+"label": "UTSA - American",
+"value": 706
+},
+{
+"org_id": null,
+"vid": 30181,
+"label": "UVA Wise - SAC",
+"value": 30181
+},
+{
+"org_id": null,
+"vid": 801,
+"label": "UW-River Falls - WIAC",
+"value": 801
+},
+{
+"org_id": null,
+"vid": 727,
+"label": "Union (NY) - Liberty League",
+"value": 727
+},
+{
+"org_id": null,
+"vid": 30153,
+"label": "Union (TN) - Gulf South",
+"value": 30153
+},
+{
+"org_id": null,
+"vid": 728,
+"label": "Upper Iowa - GLVC",
+"value": 728
+},
+{
+"org_id": null,
+"vid": 730,
+"label": "Ursinus - Centennial",
+"value": 730
+},
+{
+"org_id": null,
+"vid": 30140,
+"label": "Ursuline - G-MAC",
+"value": 30140
+},
+{
+"org_id": null,
+"vid": 732,
+"label": "Utah - Big 12",
+"value": 732
+},
+{
+"org_id": null,
+"vid": 731,
+"label": "Utah St. - Mountain West",
+"value": 731
+},
+{
+"org_id": null,
+"vid": 30095,
+"label": "Utah Tech - WAC",
+"value": 30095
+},
+{
+"org_id": null,
+"vid": 30024,
+"label": "Utah Valley - WAC",
+"value": 30024
+},
+{
+"org_id": null,
+"vid": 733,
+"label": "Utica - Empire 8",
+"value": 733
+},
+{
+"org_id": null,
+"vid": 740,
+"label": "VCU - Atlantic 10",
+"value": 740
+},
+{
+"org_id": null,
+"vid": 741,
+"label": "VMI - SoCon",
+"value": 741
+},
+{
+"org_id": null,
+"vid": 123,
+"label": "VTSU Castleton - Little East",
+"value": 123
+},
+{
+"org_id": null,
+"vid": 30065,
+"label": "VTSU Lyndon - North Atlantic",
+"value": 30065
+},
+{
+"org_id": null,
+"vid": 324,
+"label": "VTSU-Johnson - North Atlantic",
+"value": 324
+},
+{
+"org_id": null,
+"vid": 745,
+"label": "Va. Wesleyan - ODAC",
+"value": 745
+},
+{
+"org_id": null,
+"vid": 734,
+"label": "Valdosta St. - Gulf South",
+"value": 734
+},
+{
+"org_id": null,
+"vid": 30166,
+"label": "Valley Forge - United East",
+"value": 30166
+},
+{
+"org_id": null,
+"vid": 735,
+"label": "Valparaiso - MVC",
+"value": 735
+},
+{
+"org_id": null,
+"vid": 736,
+"label": "Vanderbilt - SEC",
+"value": 736
+},
+{
+"org_id": null,
+"vid": 30263,
+"label": "Vanguard - PacWest",
+"value": 30263
+},
+{
+"org_id": null,
+"vid": 737,
+"label": "Vassar - Liberty League",
+"value": 737
+},
+{
+"org_id": null,
+"vid": 738,
+"label": "Vermont - America East",
+"value": 738
+},
+{
+"org_id": null,
+"vid": 739,
+"label": "Villanova - Big East",
+"value": 739
+},
+{
+"org_id": null,
+"vid": 746,
+"label": "Virginia - ACC",
+"value": 746
+},
+{
+"org_id": null,
+"vid": 743,
+"label": "Virginia St. - CIAA",
+"value": 743
+},
+{
+"org_id": null,
+"vid": 742,
+"label": "Virginia Tech - ACC",
+"value": 742
+},
+{
+"org_id": null,
+"vid": 744,
+"label": "Virginia Union - CIAA",
+"value": 744
+},
+{
+"org_id": null,
+"vid": 808,
+"label": "WPI - NEWMAC",
+"value": 808
+},
+{
+"org_id": null,
+"vid": 747,
+"label": "Wabash - NCAC",
+"value": 747
+},
+{
+"org_id": null,
+"vid": 748,
+"label": "Wagner - NEC",
+"value": 748
+},
+{
+"org_id": null,
+"vid": 749,
+"label": "Wake Forest - ACC",
+"value": 749
+},
+{
+"org_id": null,
+"vid": 30141,
+"label": "Walsh - G-MAC",
+"value": 30141
+},
+{
+"org_id": null,
+"vid": 30236,
+"label": "Warren Wilson - C2C",
+"value": 30236
+},
+{
+"org_id": null,
+"vid": 750,
+"label": "Wartburg - American Rivers",
+"value": 750
+},
+{
+"org_id": null,
+"vid": 751,
+"label": "Wash. & Jeff. - PAC",
+"value": 751
+},
+{
+"org_id": null,
+"vid": 752,
+"label": "Wash. & Lee - ODAC",
+"value": 752
+},
+{
+"org_id": null,
+"vid": 755,
+"label": "WashU - UAA",
+"value": 755
+},
+{
+"org_id": null,
+"vid": 2814,
+"label": "Washburn - Mid-America Intercollegiate",
+"value": 2814
+},
+{
+"org_id": null,
+"vid": 756,
+"label": "Washington - Big Ten",
+"value": 756
+},
+{
+"org_id": null,
+"vid": 753,
+"label": "Washington Col. - Centennial",
+"value": 753
+},
+{
+"org_id": null,
+"vid": 754,
+"label": "Washington St. - Pac-12",
+"value": 754
+},
+{
+"org_id": null,
+"vid": 757,
+"label": "Wayne St. (MI) - GLIAC",
+"value": 757
+},
+{
+"org_id": null,
+"vid": 1433,
+"label": "Wayne St. (NE) - NSIC",
+"value": 1433
+},
+{
+"org_id": null,
+"vid": 1434,
+"label": "Waynesburg - PAC",
+"value": 1434
+},
+{
+"org_id": null,
+"vid": 758,
+"label": "Weber St. - Big Sky",
+"value": 758
+},
+{
+"org_id": null,
+"vid": 759,
+"label": "Webster - SLIAC",
+"value": 759
+},
+{
+"org_id": null,
+"vid": 760,
+"label": "Wellesley - NEWMAC",
+"value": 760
+},
+{
+"org_id": null,
+"vid": 762,
+"label": "Wentworth - CNE",
+"value": 762
+},
+{
+"org_id": null,
+"vid": 764,
+"label": "Wesleyan (CT) - NESCAC",
+"value": 764
+},
+{
+"org_id": null,
+"vid": 14718,
+"label": "Wesleyan (GA) - CCS",
+"value": 14718
+},
+{
+"org_id": null,
+"vid": 358,
+"label": "West Ala. - Gulf South",
+"value": 358
+},
+{
+"org_id": null,
+"vid": 765,
+"label": "West Chester - PSAC",
+"value": 765
+},
+{
+"org_id": null,
+"vid": 11740,
+"label": "West Florida - Gulf South",
+"value": 11740
+},
+{
+"org_id": null,
+"vid": 766,
+"label": "West Ga. - ASUN",
+"value": 766
+},
+{
+"org_id": null,
+"vid": 1438,
+"label": "West Liberty - MEC",
+"value": 1438
+},
+{
+"org_id": null,
+"vid": 767,
+"label": "West Tex. A&M - Lone Star",
+"value": 767
+},
+{
+"org_id": null,
+"vid": 9630,
+"label": "West Va. Wesleyan - MEC",
+"value": 9630
+},
+{
+"org_id": null,
+"vid": 768,
+"label": "West Virginia - Big 12",
+"value": 768
+},
+{
+"org_id": null,
+"vid": 1439,
+"label": "West Virginia St. - MEC",
+"value": 1439
+},
+{
+"org_id": null,
+"vid": 770,
+"label": "WestConn - Little East",
+"value": 770
+},
+{
+"org_id": null,
+"vid": 769,
+"label": "Western Caro. - SoCon",
+"value": 769
+},
+{
+"org_id": null,
+"vid": 2759,
+"label": "Western Colo. - RMAC",
+"value": 2759
+},
+{
+"org_id": null,
+"vid": 771,
+"label": "Western Ill. - OVC",
+"value": 771
+},
+{
+"org_id": null,
+"vid": 772,
+"label": "Western Ky. - CUSA",
+"value": 772
+},
+{
+"org_id": null,
+"vid": 774,
+"label": "Western Mich. - MAC",
+"value": 774
+},
+{
+"org_id": null,
+"vid": 1445,
+"label": "Western N.M. - Lone Star",
+"value": 1445
+},
+{
+"org_id": null,
+"vid": 775,
+"label": "Western New Eng. - CNE",
+"value": 775
+},
+{
+"org_id": null,
+"vid": 1446,
+"label": "Western Ore. - Great Northwest",
+"value": 1446
+},
+{
+"org_id": null,
+"vid": 1448,
+"label": "Western Wash. - Great Northwest",
+"value": 1448
+},
+{
+"org_id": null,
+"vid": 777,
+"label": "Westfield St. - MASCAC",
+"value": 777
+},
+{
+"org_id": null,
+"vid": 1450,
+"label": "Westminster (MO) - SLIAC",
+"value": 1450
+},
+{
+"org_id": null,
+"vid": 1451,
+"label": "Westminster (PA) - PAC",
+"value": 1451
+},
+{
+"org_id": null,
+"vid": 30209,
+"label": "Westminster (UT) - RMAC",
+"value": 30209
+},
+{
+"org_id": null,
+"vid": 30260,
+"label": "Westmont - PacWest",
+"value": 30260
+},
+{
+"org_id": null,
+"vid": 778,
+"label": "Wheaton (IL) - CCIW",
+"value": 778
+},
+{
+"org_id": null,
+"vid": 779,
+"label": "Wheaton (MA) - NEWMAC",
+"value": 779
+},
+{
+"org_id": null,
+"vid": 12799,
+"label": "Wheeling - MEC",
+"value": 12799
+},
+{
+"org_id": null,
+"vid": 780,
+"label": "Whitman - NWC",
+"value": 780
+},
+{
+"org_id": null,
+"vid": 781,
+"label": "Whittier - SCIAC",
+"value": 781
+},
+{
+"org_id": null,
+"vid": 1454,
+"label": "Whitworth - NWC",
+"value": 1454
+},
+{
+"org_id": null,
+"vid": 782,
+"label": "Wichita St. - American",
+"value": 782
+},
+{
+"org_id": null,
+"vid": 783,
+"label": "Widener - Middle Atlantic",
+"value": 783
+},
+{
+"org_id": null,
+"vid": 784,
+"label": "Wilkes - Landmark",
+"value": 784
+},
+{
+"org_id": null,
+"vid": 785,
+"label": "Willamette - NWC",
+"value": 785
+},
+{
+"org_id": null,
+"vid": 786,
+"label": "William & Mary - CAA",
+"value": 786
+},
+{
+"org_id": null,
+"vid": 30120,
+"label": "William Jewell - GLVC",
+"value": 30120
+},
+{
+"org_id": null,
+"vid": 17094,
+"label": "William Peace - USA South",
+"value": 17094
+},
+{
+"org_id": null,
+"vid": 30073,
+"label": "William Smith - Liberty League",
+"value": 30073
+},
+{
+"org_id": null,
+"vid": 789,
+"label": "Williams - NESCAC",
+"value": 789
+},
+{
+"org_id": null,
+"vid": 1460,
+"label": "Wilmington (DE) - CACC",
+"value": 1460
+},
+{
+"org_id": null,
+"vid": 1461,
+"label": "Wilmington (OH) - OAC",
+"value": 1461
+},
+{
+"org_id": null,
+"vid": 12973,
+"label": "Wilson - United East",
+"value": 12973
+},
+{
+"org_id": null,
+"vid": 1462,
+"label": "Wingate - SAC",
+"value": 1462
+},
+{
+"org_id": null,
+"vid": 790,
+"label": "Winona St. - NSIC",
+"value": 790
+},
+{
+"org_id": null,
+"vid": 791,
+"label": "Winston-Salem - CIAA",
+"value": 791
+},
+{
+"org_id": null,
+"vid": 792,
+"label": "Winthrop - Big South",
+"value": 792
+},
+{
+"org_id": null,
+"vid": 8911,
+"label": "Wis. Lutheran - NACC",
+"value": 8911
+},
+{
+"org_id": null,
+"vid": 793,
+"label": "Wis.-Eau Claire - WIAC",
+"value": 793
+},
+{
+"org_id": null,
+"vid": 795,
+"label": "Wis.-La Crosse - WIAC",
+"value": 795
+},
+{
+"org_id": null,
+"vid": 798,
+"label": "Wis.-Oshkosh - WIAC",
+"value": 798
+},
+{
+"org_id": null,
+"vid": 799,
+"label": "Wis.-Parkside - GLIAC",
+"value": 799
+},
+{
+"org_id": null,
+"vid": 800,
+"label": "Wis.-Platteville - WIAC",
+"value": 800
+},
+{
+"org_id": null,
+"vid": 802,
+"label": "Wis.-Stevens Point - WIAC",
+"value": 802
+},
+{
+"org_id": null,
+"vid": 803,
+"label": "Wis.-Stout - WIAC",
+"value": 803
+},
+{
+"org_id": null,
+"vid": 804,
+"label": "Wis.-Superior - UMAC",
+"value": 804
+},
+{
+"org_id": null,
+"vid": 805,
+"label": "Wis.-Whitewater - WIAC",
+"value": 805
+},
+{
+"org_id": null,
+"vid": 796,
+"label": "Wisconsin - Big Ten",
+"value": 796
+},
+{
+"org_id": null,
+"vid": 806,
+"label": "Wittenberg - NCAC",
+"value": 806
+},
+{
+"org_id": null,
+"vid": 787,
+"label": "Wm. Paterson - NJAC",
+"value": 787
+},
+{
+"org_id": null,
+"vid": 2915,
+"label": "Wofford - SoCon",
+"value": 2915
+},
+{
+"org_id": null,
+"vid": 807,
+"label": "Wooster - NCAC",
+"value": 807
+},
+{
+"org_id": null,
+"vid": 809,
+"label": "Worcester St. - MASCAC",
+"value": 809
+},
+{
+"org_id": null,
+"vid": 810,
+"label": "Wright St. - Horizon",
+"value": 810
+},
+{
+"org_id": null,
+"vid": 811,
+"label": "Wyoming - Mountain West",
+"value": 811
+},
+{
+"org_id": null,
+"vid": 812,
+"label": "Xavier - Big East",
+"value": 812
+},
+{
+"org_id": null,
+"vid": 813,
+"label": "Yale - Ivy League",
+"value": 813
+},
+{
+"org_id": null,
+"vid": 814,
+"label": "Yeshiva - Skyline",
+"value": 814
+},
+{
+"org_id": null,
+"vid": 2730,
+"label": "York (NY) - CUNYAC",
+"value": 2730
+},
+{
+"org_id": null,
+"vid": 815,
+"label": "York (PA) - Middle Atlantic",
+"value": 815
+},
+{
+"org_id": null,
+"vid": 30154,
+"label": "Young Harris - Conference Carolinas",
+"value": 30154
+},
+{
+"org_id": null,
+"vid": 817,
+"label": "Youngstown St. - Horizon",
+"value": 817
+}
+]

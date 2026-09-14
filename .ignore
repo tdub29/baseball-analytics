@@ -1,0 +1,45 @@
+# managed by .agents/scripts/install-search-ignores.py -- re-run it after adding a project, edit the script not this file.
+# Read by ripgrep, which is what the agent Grep and Glob tools run on. Does not touch git and
+# does not touch skill loading (Claude Code and find-local-skill.py walk directories directly).
+# Escape hatch for one search: rg --no-ignore <pattern>
+
+# Mirrored skill trees. `.claude/skills` deliberately stays searchable as the canonical copy.
+.agents/skills/
+.cursor/skills/
+.codex/skills/
+/skills/
+.skill-backup-*/
+
+# Third-party code: not ours, never edited, answers to searches meant for our own code.
+repos/
+**/repos/
+**/dbt_packages/
+**/site-packages/
+.venv*/
+**/.venv*/
+node_modules/
+
+# Frozen or superseded copies.
+**/archive/
+**/archives/
+**/legacy-workspaces/
+**/.agents copy/
+
+# Backups and build droppings that read as live code in a hit list.
+*.bak
+*.bak-*
+*.bak.*
+*.backup-*
+*.before-*
+*.partial-*
+*.orig
+*.rej
+*-shm
+*-wal
+
+# Run logs and caches: high volume, zero reuse.
+*.log
+*.log.[0-9]*
+**/output/
+**/.next/
+**/.wrangler/

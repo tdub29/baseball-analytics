@@ -1,0 +1,386 @@
+# Canonical description patterns (placeholder X, count token)
+# Total unique patterns: 383
+
+1	/ for mosiello, a.
+1	/ for robertson, j.
+1	105.1 exit velo, 31 deg. launch angle, distance: 398 ft.
+1	108.3 exit velo, 34 deg. launch angle, distance: 424 ft.
+1	110.5 exit velo, 22 deg. launch angle, distance: 389 ft.
+1	x . vidal flied out to cf to right center (count).
+1	x . vidal to ss for petersen.
+1	x . vidal to ss for sloan.
+1	x a flied out to cf to left center (0-2 kk).
+1	x a singled through the right side, 2 rbi (1-0 b)3a williams, br advanced to third3a mettam, jare scored3a castellanos, scored.
+1	x a singled to left field (3-2 kbffbb).
+1	x a singled to second base (0-2 kkf).
+1	x advanced to second on a balk.
+1	x advanced to second on a wild pitch, advanced to third on a throwing error by c.
+1	x advanced to second on a wild pitch; venverloh, v advanced to third on a wild pitch.
+1	x advanced to second; fitz, j out at third c to 3b, caught stealing.
+1	x advanced to third on a wild pitch, out at home c to p.
+1	x advanced to third on a wild pitch.
+1	x alked (3-0 bbbb).
+1	x alked (3-0 bbbb); cleary advanced to second; garcia advanced to third.
+1	x alked (3-1 bbbkb).
+1	x alked (3-1 bbfbb); ross advanced to second.
+1	x alked (3-1 bkbbb); devine advanced to second; filter advanced to third.
+1	x alked (3-1 bsbbb); filter advanced to second.
+1	x alked (3-2 bbksfbb).
+1	x alked (3-2 bkfbbb).
+7	x alked (count).
+1	x alked (count); bicknell advanced to second.
+1	x alked (count); schnabel advanced to second.
+1	x alked (count); scott advanced to second.
+1	x alked, rbi (count); schnabel advanced to second; bicknell advanced to third; scott scored.
+1	x are grounded out to ss (2-2 fsbb)3a duroff, bria advanced to third.
+1	x are singled to shortstop (1-2 ksbf)3a castellanos, advanced to second3a duroff, bria advanced to third.
+1	x are walked (3-1 bbbkb)3a castellanos, advanced to second.
+1	x are walked (3-1 bbbkb)3a duroff, bria advanced to second.
+1	x are walked (3-2 kbbbkfb).
+1	x ay for usd pitchers.
+1	x d doubled to right field (1-2 kffbf).
+1	x d grounded out to 1b unassisted (1-0 b).
+1	x d hit by pitch (1-2 bss)3a griffith, ta advanced to second.
+1	x d lined out to rf (count).
+1	x d popped up to ss to left center (count).
+1	x doubled down the lf line (3-1 bbbk).
+1	x doubled down the lf line, rbi; smith, a scored.
+1	x doubled down the rf line, rbi (count); martinez, c scored.
+1	x doubled to right center (3-2 kkffbbbf).
+1	x doubled to right center (count).
+1	x doubled to right center, 2 rbi (count); smith, a scored; lane, i scored.
+1	x doubled to right field, rbi (1-0 b); lane, i scored.
+1	x doubled to right field, rbi (count); gurevitch, j scored.
+1	x dvanced to second on a wild pitch.
+1	x dvanced to second.
+1	x dvanced to third on a wild pitch.
+1	x eached on a fielder's choice (count); waldon out at second ss to 2b; scott advanced to third.
+1	x eached on a fielder's choice to second base (2-2 bkbf); luetzow out at second 2b to ss.
+1	x eached on a fielder's choice to shortstop (1-0 b); joyce out at second ss to 2b.
+1	x eached on a fielder's choice to shortstop (2-2 bbkff); joyce out at second ss to 2b.
+1	x eached on a fielder's choice, bunt (count); sloan advanced to second; schnabel out at home p to c.
+1	x eached on a fielding error by ss (count).
+1	x eached on an error by lf, advanced to second (count); mcclellin advanced to third.
+1	x flied into double play lf to ss to 1b (count); howard, a out on the play.
+1	x flied out to cf (0-1 k).
+1	x flied out to cf (1-0 b).
+7	x flied out to cf (count).
+1	x flied out to cf to right center (3-2 bksfbb).
+1	x flied out to cf to right center (count).
+1	x flied out to lf (0-2 kf).
+1	x flied out to lf (1-1 kb).
+1	x flied out to lf to left center (1-2 kbkff).
+1	x flied out to lf to left center (3-2 sfbbb).
+1	x flied out to lf to left center (count).
+1	x flied out to lf.
+1	x flied out to rf (0-1 k).
+1	x flied out to rf (1-2 kkb).
+1	x flied out to rf (2-2 fsbbf).
+5	x flied out to rf (count).
+1	x flied out to rf to right center (3-2 bbfffbf).
+1	x fouled out to 1b (count).
+1	x fouled out to 3b (1-0 b).
+1	x grounded into double play 2b to ss to 1b (0-2 kf); meidroth, c out on the play; howard, a advanced to third; ward, r scored.
+1	x grounded into double play 2b to ss to 1b (count)3a gurevitch, j out on the play.
+1	x grounded into double play 3b to 2b to 1b (1-0 b)3a venverloh, v out on the play.
+1	x grounded out to 1b unassisted (count).
+1	x grounded out to 1b unassisted (count); lane, i advanced to second; gurevitch, j advanced to third.
+1	x grounded out to 2b (0-1 f)3a lobliner, j advanced to second.
+1	x grounded out to 2b, rbi (count)3a gurevitch, j advanced to third3a venverloh, v scored, unearned.
+1	x grounded out to 3b (0-1 k).
+1	x grounded out to 3b (1-0 b).
+1	x grounded out to 3b (1-1 kb).
+1	x grounded out to 3b (1-2 bks).
+1	x grounded out to 3b (1-2 kkb).
+1	x grounded out to 3b (2-2 bbks).
+1	x grounded out to 3b (count).
+1	x grounded out to p (count).
+1	x grounded out to p, bunt (count).
+1	x grounded out to p, sac (count); ward, r advanced to second; fitz, j advanced to third.
+1	x grounded out to p, sac, bunt (1-0 b)3a madrigal, ed advanced to second3a griffith, ta advanced to third.
+1	x grounded out to p, sac, bunt (count)3a gurevitch, j advanced to second3a venverloh, v advanced to third.
+1	x grounded out to ss (2-0 bb).
+1	x grounded out to ss (count).
+1	x hallenged play at the plate to score the run - confirmed lost chal.
+1	x hit by pitch (1-2 bkff).
+1	x hit by pitch (1-2 kkfb).
+1	x hit by pitch (2-2 kfbb).
+3	x hit by pitch (count).
+1	x hit by pitch (count); anzai, aj advanced to second.
+1	x homered to center field, 2 rbi (2-1 bfb); smith, a scored.
+1	x homered to center field, 3 rbi, team unearned (1-1 bf); anzai, aj scored, unearned; beltre, aj scored, unearned.
+1	x homered to center field, rbi (0-1 k).
+1	x homered to center field, rbi (count).
+1	x homered to left center, 2 rbi (count); gurevitch, j scored.
+1	x homered to left center, 4 rbi (1-0 b); gurevitch, j scored; meidroth, c scored; anzai, aj scored.
+1	x homered to right center, rbi (1-0 b).
+1	x homered to right center, rbi (2-1 bfb).
+1	x homered to right field, 2 rbi (2-1 kbb)3a venverloh, v scored.
+1	x ide grounded into double play ss to 2b to 1b (3-1 bbkb)3a kashimoto, c out on the play3a madrigal, ed scored.
+1	x ide intentionally walked.
+1	x ide out at first 1b to p (1-1 bf).
+1	x ide struck out looking (0-2 sfk).
+1	x ide struck out swinging (0-2 ffs).
+2	x inch hit for brown.
+1	x inch hit for davis.
+1	x inch hit for evans.
+1	x ined out to 2b (count).
+1	x ined out to 3b (count).
+1	x ined out to lf (count).
+1	x ined out to rf (2-0 bb).
+1	x ined out to rf (count).
+1	x ingled through the left side (1-1 bk); carston advanced to second.
+1	x ingled through the left side (1-2 kbk).
+1	x ingled through the left side (count).
+1	x ingled through the left side (count); garcia advanced to second.
+1	x ingled through the left side, rbi (count); schnabel advanced to third; mcclellin scored, unearned.
+1	x ingled through the right side, 2 rbi (1-1 kb); devine scored; ross scored.
+1	x ingled through the right side, rbi (2-0 bb)3a duroff, bria advanced to second3a kashimoto, c scored.
+1	x ingled to center field (count).
+1	x ingled to left center (3-2 sfbbb); ferroggiaro advanced to third.
+1	x ingled to pitcher (count).
+1	x ingled to right center (0-1 k).
+1	x ingled to right center (count).
+1	x ingled to right field (count).
+1	x ingled to shortstop (count).
+1	x ingled up the middle (count).
+1	x ingled up the middle, rbi (count); bobo scored.
+1	x ingled up the middle, rbi (count); schnabel scored.
+5	x it by pitch (count).
+1	x j doubled to right field, rbi (1-2 kbsffff); watson, r advanced to third; lobliner, j scored.
+1	x j flied out to cf (count).
+1	x j flied out to cf, sf, rbi (count); watson, r scored, unearned.
+1	x j flied out to rf (1-2 ffb).
+1	x j flied out to rf (count).
+1	x j flied out to rf to right center (count).
+1	x j fouled out to lf (count).
+1	x j grounded out to 2b (count).
+1	x j grounded out to ss (1-1 kb).
+2	x j grounded out to ss (count).
+1	x j hit by pitch (1-2 kkb); lobliner, j advanced to second.
+1	x j homered to left field, 2 rbi (1-0 b)3a lobliner, j scored, unearned.
+1	x j infield fly to 3b (1-2 kfb).
+1	x j lined out to rf (count).
+1	x j out at first 3b to 2b, sac, bunt (count); watson, r advanced to third.
+1	x j out at second c to 2b, caught stealing.
+1	x j reached on a fielder's choice to shortstop (1-0 b)3a lobliner, j out at second ss to 2b3a smith, a advanced to third.
+1	x j reached on a fielder's choice to shortstop (count); watson, r out at second ss to 2b.
+1	x j singled through the left side, rbi (2-2 skbfb); watson, r advanced to second; lobliner, j advanced to third; smith, a scored, unearned.
+1	x j singled to center field, rbi (count); smith, a scored.
+1	x j singled to left field, rbi (3-2 kfbbbf); watson, r scored.
+1	x j singled to right field, 2 rbi (0-2 kkf); beltre, aj advanced to third; watson, r scored, unearned; lobliner, j scored, unearned.
+1	x j singled to right field, 2 rbi (count); watson, r advanced to third; lobliner, j scored; smith, a scored.
+1	x j singled to third base, rbi (count); lobliner, j scored, unearned.
+1	x j singled up the middle (count); beltre, aj advanced to third.
+1	x j struck out looking (2-2 kbbfk).
+1	x j struck out swinging (2-2 kbkbs).
+1	x j struck out swinging (count).
+1	x j to p for palencia, f.
+2	x j walked (3-0 bbbb).
+1	x j walked (count).
+1	x j walked (count); watson, r advanced to second.
+3	x lay.
+5	x lied out to cf (count).
+1	x lied out to cf (count); schnabel advanced to third.
+1	x lied out to cf to left center (1-1 kb).
+2	x lied out to cf to right center (count).
+1	x lied out to lf (3-2 bkffbfb).
+4	x lied out to lf (count).
+1	x lied out to lf to left center (0-1 k).
+1	x lied out to rf (2-1 bsb); carston advanced to third.
+5	x lied out to rf (count).
+2	x lied out to rf to right center (count).
+1	x lied out to rf, sf, rbi (count); ferroggiaro scored.
+1	x lined out to 1b (count).
+1	x lined out to 2b (count).
+1	x lined out to lf (count).
+1	x lined out to rf (count).
+1	x lined out to ss (2-1 bbf).
+1	x lli to p for mcneel, jade.
+1	x o 2b for williams.
+1	x o 3b.
+1	x o c for luetzow.
+1	x o lf for garcia.
+1	x o p for carter.
+1	x o p for cruz.
+1	x o p for guardado.
+1	x o p for habermann.
+1	x o p for iglesias.
+1	x o p for lanz.
+1	x o p for lazark.
+1	x o p for mckinney.
+1	x o p for meyn.
+1	x o p for nino.
+1	x o p for perez.
+2	x o p for revay.
+1	x o p for shaver.
+1	x o p for souza.
+1	x o p for stewart.
+1	x o p for wooster.
+1	x o ss for cleary.
+1	x o ss.
+1	x omered to left center, 3 rbi (count); williams scored; ross scored.
+1	x omered to right field, rbi (count).
+1	x opped up to 1b (count).
+1	x opped up to 2b (count).
+1	x opped up to 2b to center field (2-2 bbff).
+1	x opped up to 3b, bunt (count).
+1	x opped up to lf (count).
+1	x opped up to ss (count).
+1	x oubled down the lf line, rbi (count); mcclellin advanced to third; schnabel scored.
+1	x oubled to left center (count).
+1	x oubled to left center, rbi (0-1 s); gould scored.
+1	x oubled to left field (count).
+1	x oubled to left field, rbi (3-1 kbbb); ross advanced to third; carston scored.
+1	x oubled to right field (0-2 kf).
+4	x ound visit (0-0 count).
+2	x ound visit (0-0 count). pitching change.
+1	x ound visit by catcher (1-0 count).
+1	x out at first 1b to p, sac, 2 rbi (count); libed, n advanced to second; ward, r scored; fitz, j scored.
+1	x out at home c to p.
+2	x out at second c to 2b, caught stealing.
+1	x pinch hit for anzai, aj.
+1	x pinch hit for fitz, j.
+1	x pinch hit for watson, r.
+1	x pinch ran for meidroth, c.
+3	x popped up to 2b (count).
+1	x popped up to cf (count).
+1	x popped up to lf (count).
+1	x popped up to lf to left center (count).
+2	x popped up to ss (count).
+1	x r flied out to rf to right center (count).
+1	x r hit by pitch, rbi (2-0 bb)3a mettam, jare advanced to second3a castellanos, advanced to third3a duroff, bria scored.
+1	x r struck out swinging (0-2 kfs).
+1	x r struck out swinging (2-2 bkfbs).
+1	x r walked (3-2 bsbfbb)3a mettam, jare advanced to second3a castellanos, advanced to third.
+1	x r., d to p for cody, h.
+1	x r., d to p for lamaison, t.
+1	x reached on a fielder's choice (count); gurevitch, j out at second 1b to ss; howard, a advanced to third.
+1	x reached on a fielder's choice (count); howard, a out at second 2b to ss; gurevitch, j advanced to third.
+1	x reached on a fielder's choice to pitcher, rbi (2-2 kbbff); gurevitch, j advanced to second on a throwing error by p; meidroth, c scored, unearned.
+1	x reached on a fielder's choice to third base (1-1 bf); howard, a advanced to second; anzai, aj advanced to third; beltre, aj out at home 3b to c.
+1	x reached on a fielder's choice to third base (1-1 bs); anzai, aj advanced to second; beltre, aj advanced to third; watson, r scored on a muffed throw by c, assist by 3b, unearned.
+1	x reached on a fielding error by 2b (1-1 kb).
+1	x reached on a throwing error by 2b, rbi (3-2 bbbkk)3a howard, a advanced to second, advanced to third on the error3a martinez, c scored, unearned.
+1	x reached on a throwing error by p, bunt (count).
+1	x ria doubled to left field, rbi (1-2 ffb)3a pierce, ryan scored.
+1	x ria flied out to rf (1-1 bf).
+1	x ria reached on a throwing error by 3b (0-1 k).
+1	x ria singled through the left side (0-1 f)3a kashimoto, c advanced to second.
+1	x ria singled to left field (1-1 bs).
+1	x rounded into double play 3b to 2b to 1b (count); bobo out on the play.
+5	x rounded out to 2b (count).
+1	x rounded out to 2b (count); bobo advanced to second.
+1	x rounded out to 2b (count); bobo advanced to third.
+1	x rounded out to 3b (count).
+1	x rounded out to 3b, sac, bunt (0-1 f)3a duroff, bria advanced to second.
+1	x rounded out to p (2-1 bbs).
+1	x rounded out to p (count).
+1	x rounded out to p (count); schnabel advanced to second.
+1	x rounded out to p, sac, bunt (count); bobo advanced to second.
+1	x rounded out to ss (1-0 b).
+1	x rounded out to ss (1-1 bk)3a duroff, bria advanced to third.
+1	x rounded out to ss (3-2 skbbb).
+6	x rounded out to ss (count).
+1	x singled down the 3b line, bunt (count)3a madrigal, ed advanced to third.
+1	x singled down the rf line, rbi (count); ward, r scored.
+1	x singled through the left side (0-1 s).
+1	x singled through the left side (1-2 bff).
+1	x singled through the left side (3-2 ksbbfb); howard, a advanced to second; ward, r advanced to third.
+1	x singled through the left side (count); anzai, aj advanced to second.
+2	x singled through the right side (count).
+1	x singled through the right side (count)3a gurevitch, j advanced to third.
+1	x singled through the right side, 2 rbi (2-2 bfbs); meidroth, c advanced to third; howard, a scored; anzai, aj scored.
+1	x singled to center field (count).
+1	x singled to center field (count); fitz, j advanced to second; smith, a advanced to third.
+1	x singled to center field (count); lane, i advanced to third.
+1	x singled to center field, rbi (count); ward, r advanced to second; fitz, j advanced to third; smith, a scored.
+1	x singled to left center, advanced to third on a fielding error by lf (count); lobliner, j advanced to third, scored on the error.
+1	x singled to left center, rbi (count); howard, a scored.
+1	x singled to left field (0-1 k)3a smith, a advanced to second.
+1	x singled to left field (count); gurevitch, j advanced to second.
+1	x singled to left field, 2 rbi (count); ward, r scored; fitz, j scored.
+1	x singled to left field, advanced to third on a fielding error by lf, rbi (count); smith, a scored.
+1	x singled to left field, rbi (2-2 ssbb); lobliner, j advanced to second; smith, a advanced to third; lane, i scored, unearned.
+1	x singled to right center (0-2 ff).
+1	x singled to right field (1-0 b).
+1	x singled to right field (1-0 b)3a howard, a advanced to second.
+1	x singled to right field (2-2 bffb); smith, a advanced to third.
+2	x singled to right field (count).
+1	x singled to right field (count); lane, i advanced to third.
+1	x singled to right field (count); lobliner, j advanced to third.
+1	x singled to right field, rbi (0-1 k); lane, i advanced to third; gurevitch, j scored, unearned.
+1	x singled to right field, rbi (count); lane, i advanced to second; howard, a scored.
+2	x singled to second base (count).
+1	x singled to second base (count); lane, i advanced to third.
+1	x singled to second base, rbi (1-1 fb)3a venverloh, v advanced to second3a howard, a scored, unearned.
+1	x singled to shortstop (1-2 kbk)3a martinez, c advanced to second, advanced to third on a throwing error by ss.
+1	x singled to shortstop, rbi (count); smith, a advanced to second; lane, i scored.
+1	x singled up the middle (1-1 kb).
+5	x singled up the middle (count).
+1	x singled, rbi (count); fitz, j advanced to second; anzai, aj scored.
+4	x stole second.
+1	x struck out looking (0-2 ffk).
+1	x struck out looking (1-2 fsbk).
+1	x struck out looking (1-2 sbsk).
+1	x struck out looking (2-2 bbkffk).
+6	x struck out looking (count).
+1	x struck out swinging (0-2 ffs).
+1	x struck out swinging (1-2 bfffs).
+1	x struck out swinging (1-2 fbfs).
+6	x struck out swinging (count).
+1	x struck out swinging, out at first c to 1b (0-2 sks).
+1	x struck out swinging, out at first c to 1b (1-2 bkss).
+1	x struck out swinging, out at first c to 1b (count).
+1	x to 2b for meidroth, c.
+2	x to cf.
+2	x to lf for anzai, aj.
+1	x to p for beltre, aj.
+2	x to p for cody, h.
+1	x to p for giordano, j.
+1	x to p for gonzalez, a.
+1	x to p for harrison, d.
+1	x to p for horn jr., d.
+1	x to p for joslin, elli.
+1	x to p for palencia, f.
+1	x to p for robertson, j.
+1	x to p for rovin, p.
+1	x to p for scolari, c.
+1	x to p for suspenzi, n.
+2	x to p.
+1	x to rf.
+1	x tole second, advanced to third on a throwing error by c.
+1	x tole second.
+1	x tripled to center field (count).
+1	x truck out looking (3-2 bsbbkk).
+6	x truck out looking (count).
+1	x truck out swinging (0-2 fks).
+1	x truck out swinging (1-2 bffs).
+1	x truck out swinging (2-2 bkfbfs).
+1	x truck out swinging (2-2 bsfbfs).
+1	x truck out swinging (3-2 bbkbfs).
+18	x truck out swinging (count).
+1	x truck out swinging, out at first c to 1b (2-2 kkbbs).
+1	x truck out swinging, out at first c to 1b (count).
+1	x unner advanced to second when catcher stopped the ball with mask.
+1	x ut at first 1b to p (count).
+1	x ut at second c to 2b, caught stealing.
+1	x walked (3-1 bbkbb); ward, r advanced to second.
+1	x walked (3-1 bkbbb).
+1	x walked (3-2 bbkbkb).
+1	x walked (3-2 bfsbbb); meidroth, c advanced to second; anzai, aj advanced to third.
+1	x walked (3-2 kbfbfbfb).
+1	x walked (3-2 kffbbbb).
+5	x walked (count).
+1	x walked (count); anzai, aj advanced to second.
+1	x walked (count); beltre, aj advanced to second; watson, r advanced to third.
+1	x walked (count); fitz, j advanced to second.
+1	x walked (count); gurevitch, j advanced to second.
+1	x walked (count); lobliner, j advanced to second; smith, a advanced to third.
+1	x walked (count); smith, a advanced to second.
+1	x walked (count); venverloh, v advanced to second.
+1	x yan flied out to cf (0-2 fk).
+1	x yan flied out to rf (1-1 bk).
+1	x yan grounded out to ss (1-0 b).
+1	x yan popped up to 2b (1-1 bs).
+1	x yan tripled to left center, 3 rbi (1-2 fbk)3a taurek, aide scored3a madrigal, ed scored3a griffith, ta scored.

@@ -1,0 +1,21 @@
+---
+description: Agent must run regeneration commands; never ask the user to refresh or rebuild artifacts
+alwaysApply: true
+---
+
+# Regeneration (Battles / data pipelines)
+
+When code or mappings change in ways that affect derived files (PBP validation columns, battle reports, merged season inputs, PDFs, situational comparisons, or similar):
+
+1. **Run the appropriate commands yourself** from the `battles/` folder (or document the exact failure if the environment blocks execution).
+2. **Do not** end with “you should regenerate” or “re-run X” as the user’s task—treating refresh as theirs is wrong here.
+
+3. **Do not** give copy-paste shell/Python/commands for the user to run to fix unblockable work (permissions, retries, installs). Execute here; if it still fails after your attempts, describe the blocker only (e.g. file locked) — **never** offload steps as instructions unless the user explicitly asked how they would run something locally.
+
+Typical flows in this repo (adjust to what changed):
+
+- Per-contest battle text + situational md: `python regen_situational_batch.py --battle-only` (avoids NCAA scrape when only PBP logic changed).
+- Full situational scrape + battle: `python regen_situational_batch.py` (browser).
+- Season PDF merge: `python merge_season_pdf_inputs.py --pdf` after battle inputs are updated.
+
+If a one-off script refreshes embedded validation columns on `contest_*_pbp.csv`, run it after logic fixes so on-disk PBP matches the calculator.

@@ -1,0 +1,1590 @@
+player,team,season,height_in,weight_lb,bats,throws,class_year,position,hometown,high_school
+Matthew Hollar,Emory & Henry,2026,69,165,R,R,Sr.,P,,
+Jaret Hoppes,Emory & Henry,2026,72,140,R,R,So.,INF,,
+Luke Roberts,Emory & Henry,2026,72,190,R,R,Sr.,INF,,
+Ryan Paynton,Emory & Henry,2026,69,160,R,R,Jr.,INF,,
+Drew Park,Emory & Henry,2026,72,190,R,R,Sr.,INF,,
+"Stuart Callahan, III",Emory & Henry,2026,73,185,R,R,So.,OF,,
+Hunter Word,Emory & Henry,2026,76,240,R,R,So.,P,,
+Jack Ferguson,Emory & Henry,2026,70,180,R,R,Jr.,INF,,
+Rhett Barker,Emory & Henry,2026,69,175,R,R,So.,OF,,
+Isaiah Bracy,Emory & Henry,2026,70,160,R,R,Sr.,OF,,
+Cade Varner,Emory & Henry,2026,73,160,R,R,Sr.,P/INF,,
+Clay Caldwell,Emory & Henry,2026,67,165,L,L,Sr.,OF,,
+Maddox Harwood,Emory & Henry,2026,72,155,L,R,Fr.,OF,,
+Mark Moore,Emory & Henry,2026,70,165,L,L,Sr.,P,,
+Jadden Rodriguez,Emory & Henry,2026,70,195,L,R,Jr.,P/OF,,
+Aidan Palmer,Emory & Henry,2026,68,150,R,R,So.,C,,
+J.D. James,Emory & Henry,2026,73,225,L,L,Jr.,INF,,
+Carter Lyons,Emory & Henry,2026,69,190,R,R,So.,OF,,
+Carter Sayers,Emory & Henry,2026,73,205,R,R,So.,P,,
+Jeriel Lamboy,Emory & Henry,2026,70,155,R,R,Jr.,INF,,
+Sam Kelly,Emory & Henry,2026,70,175,R,R,Jr.,C,,
+Drew Lanzo,Emory & Henry,2026,73,200,L,L,Jr.,P,,
+Alex Vaught,Emory & Henry,2026,73,255,R,R,Sr.,P,,
+Brady Halstead,Emory & Henry,2026,77,195,R,R,Sr.,P,,
+Garrett Arner,Emory & Henry,2026,71,195,R,R,Jr.,P,,
+Kyle Fields,Emory & Henry,2026,74,235,R,R,Jr.,P/INF,,
+Brett Fields,Emory & Henry,2026,74,175,R,R,So.,P,,
+Beckett Dotson,Emory & Henry,2026,77,235,L,L,Fr.,P/INF,,
+Ivan Delp,Emory & Henry,2026,73,150,R,R,Jr.,P,,
+Cole Gillis,Emory & Henry,2026,74,165,R,R,So.,P,,
+Jacob Nester,Emory & Henry,2026,74,220,R,R,Sr.,P/INF,,
+Jaxon Ehret,Emory & Henry,2026,72,200,R,R,Fr.,C,,
+David Rodriguez,Emory & Henry,2026,72,235,R,R,Fr.-RS,C,,
+Mason Price,Emory & Henry,2026,73,170,R,R,Fr.,P,,
+Jase Kotwicki,Emory & Henry,2026,68,145,L,L,Fr.,OF,,
+Billy Baxter,Emory & Henry,2026,72,175,R,R,Jr.,P,,
+Avery Salyer,Emory & Henry,2026,76,225,R,R,Sr.,P,,
+Garrett Williams,Emory & Henry,2026,75,275,R,R,Sr.,P,,
+Ky Gregoire,Emory & Henry,2026,69,210,L,R,Sr.,C,,
+Alec Krogel,Georgetown (KY),2026,75,175,,,JR,RHP,"Richland, MI",Kalamazoo Valley CC
+McLeod Sell,Georgetown (KY),2026,70,150,,,JR,INF,"Melbourne, Australia",Dakota College
+Braxton Burse,Georgetown (KY),2026,72,165,,,SO,RHP,"Lexington, KY",Frederick Douglass HS
+Davis Johnson,Georgetown (KY),2026,71,183,,,SO,INF,"Mt. Sterling, KY",Huntingdon College
+Elijah Verge,Georgetown (KY),2026,71,205,,,SO,OF,"Nashville, TN",Lipscomb Academy
+Sam Zeller,Georgetown (KY),2026,68,155,,,JR,INF,"Louisville, KY",Christian Academy Louisville
+Nathan Odaira,Georgetown (KY),2026,67,180,,,JR,OF,"Suzano, Brazil",Prairie State College
+Henry Cruz,Georgetown (KY),2026,70,175,,,SO,INF,"French Lick, IN",Springs Valley HS
+Oakland Flodell,Georgetown (KY),2026,72,200,,,JR,OF,"Dundurn, Canada",Northeastern CC
+Hideyoshi Kawahara,Georgetown (KY),2026,72,180,,,JR,RHP,"Tokoyo, Japan",Riverland CC
+Chris Lenocker,Georgetown (KY),2026,76,205,,,SR,RHP,"Clovis, CA",West Hills College Coalinga
+Braylon Titler,Georgetown (KY),2026,69,185,,,FR,LHP,"Nicholasville, KY",East Jessamine HS
+Oscar Aude,Georgetown (KY),2026,72,190,,,SO,OF,Dominican Republic,Centro Educativo America Latina
+Hunter Hampton,Georgetown (KY),2026,69,185,,,SO,C,"Morehead, KY",Rowan County HS
+Nikayha Castro,Georgetown (KY),2026,73,190,,,SR,RHP,"Madera, CA",West Hills College Coalinga
+Ashton Deskins,Georgetown (KY),2026,74,230,,,SR,RHP,"Delbarton, WV",Belfry HS
+Ryan Lynch,Georgetown (KY),2026,72,215,,,JR,OF,"Louisville, KY",Christian Academy Louisville
+Mitchell Knight,Georgetown (KY),2026,72,185,,,SR,RHP,"Long Beach, CA",Lakewood HS
+Brody Mangis,Georgetown (KY),2026,69,190,,,FR,C,"Louisville, KY",DeSales HS
+Julien Mendoza,Georgetown (KY),2026,69,180,,,JR,INF,"Rochester, NY",Monroe CC
+Abel Ramos,Georgetown (KY),2026,70,185,,,JR,RHP,"Hanford, CA",West Hills College Coalinga
+David Edwards,Georgetown (KY),2026,72,190,,,JR,LHP,"Marysville, IN",Dyersburg State CC
+Corbin Ausman,Georgetown (KY),2026,76,180,,,JR,RHP,"Cincinnati, OH",Frontier CC
+Hunter Burns,Georgetown (KY),2026,67,180,,,JR,C,"Leesburg, OH",Hocking College
+Sam Turilli,Georgetown (KY),2026,74,195,,,SR,RHP,"Stanton, MO",Webster University
+Nathan Beaven,Georgetown (KY),2026,76,195,,,SO,RHP,"Georgetown, KY",Great Crossing HS
+Jackson Hughes,Georgetown (KY),2026,77,215,,,FR,INF,"Lexington, KY",Lexington Catholic
+Zander Smith,Georgetown (KY),2026,77,225,,,FR,RHP,"Paducah, KY",McCracken County HS
+Diondre Jacob,Georgetown (KY),2026,73,210,,,SR,OF,"Tell City, IN",Tell City HS
+Luis Romero,Georgetown (KY),2026,73,220,,,JR,INF,Venezuela,Prairie State College
+Caden Noble,Georgetown (KY),2026,72,190,,,SO,RHP,"Honolulu, HI",Radford HS
+Joshua Hamilton,Georgetown (KY),2026,71,235,,,FR,C,"Brooksville, KY",Bracken County HS
+Braden Sustarich,Georgetown (KY),2026,70,180,,,FR,RHP,"Crittenden, KY",Grant County HS
+Tanner VanBerg,Georgetown (KY),2026,75,195,,,JR,RHP,"Louisville, KY",Trinity HS
+Zach Mariani,Georgetown (KY),2026,70,165,,,SO,LHP,"Chicago, IL",Pinnacle HS
+Manny Meilan,Georgetown (KY),2026,74,215,,,SR,RHP,"Panama City, Panama",St. Petersburg CC
+Aidan Jbara,Georgetown (KY),2026,79,230,,,SR,INF,"Los Angeles, CA",Antelope Valley CC
+Trenton Stukas,Georgetown (KY),2026,76,215,,,FR,OF,"Thornton, CO",Horizon HS
+Branson Carson,Georgetown (KY),2026,72,195,,,SO,RHP,"Slippery Rock, PA",Slippery Rock University
+Jaxon Perkins,Georgetown (KY),2026,70,185,,,FR,INF,"LaGrange, KY",Oldham County HS
+JJ Menesini JJ Menesini,Johnson (TN),2026,69,,,,Junior,Second Base,"Vacaville, CA",
+Christian Altamirano Christian Altamirano,Johnson (TN),2026,68,,,,Junior,Shortstop,"Brea, CA",
+Logan Fiene Logan Fiene,Johnson (TN),2026,69,,,,Junior,Catcher/RHP,"Petaluma, CA",
+Andrew Wilford Andrew Wilford,Johnson (TN),2026,73,,,,Junior,Outfield,"San Jose, CA",
+Edwin Olmeda Jr. Edwin Olmeda Jr.,Johnson (TN),2026,75,,,,Senior,Outfield,"Blythewood, SC",
+Austin Menesini Austin Menesini,Johnson (TN),2026,72,,,,Senior,Catcher/RHP,"Vacaville, CA",
+Jesse Rojas Jesse Rojas,Johnson (TN),2026,71,,,,Junior,Shortstop,"Los Angeles, CA",
+Brandon Bell Brandon Bell,Johnson (TN),2026,72,,,,Sophomore,Pitcher,"Knoxville, TN",
+Jaden Rez Jaden Rez,Johnson (TN),2026,76,,,,Senior,First Base,"Burbank, CA",
+Haden Hartgrove Haden Hartgrove,Johnson (TN),2026,71,,,,Junior,Outfield,"Knoxville, TN",
+Braden Frank Braden Frank,Johnson (TN),2026,72,,,,Senior,Second Base,"El Dorado Hills, CA",
+Tyler Barfield Tyler Barfield,Johnson (TN),2026,75,,,,Graduate,Pitcher,"Laurinburg, NC",
+Matt Newton Matt Newton,Johnson (TN),2026,72,,,,Senior,Catcher/RHP,"Rogersville, TN",
+Andrew Uharriet Andrew Uharriet,Johnson (TN),2026,74,,,,Junior,Pitcher,"El Dorado Hills, CA",
+Izaak Fernandez Izaak Fernandez,Johnson (TN),2026,70,,,,Junior,Catcher,"La Habra, CA",
+Mitchell Birdsall Mitchell Birdsall,Johnson (TN),2026,75,,,,Junior,First Base,"Morgan Hill, CA",
+Joseph Brown Joseph Brown,Johnson (TN),2026,68,,,,Junior,Second Base,"Petaluma, CA",
+Dallas Webb Dallas Webb,Johnson (TN),2026,72,,,,Junior,Second Base,"Pinellas Park, FL",
+Hunter Stewart Hunter Stewart,Johnson (TN),2026,75,,,,Sophomore,Pitcher,"Friendsville, TN",
+Jordan Hosman Jordan Hosman,Johnson (TN),2026,75,,,,Freshman,Pitcher,"Pensacola, FL",
+Ryan Dexter Ryan Dexter,Johnson (TN),2026,74,,,,Senior,Pitcher,"Ottawa, ON",
+Colby Reynolds Colby Reynolds,Johnson (TN),2026,76,,,,Senior,Pitcher,"Knoxville, TN",
+Asher Abrahams Asher Abrahams,Johnson (TN),2026,73,,,,Sophomore,Pitcher,"Montgomery, TX",
+Brooks Bird Brooks Bird,Johnson (TN),2026,75,,,,Sophomore,Pitcher,"Maryville, TN",
+Kilian deMayo Kilian deMayo,Johnson (TN),2026,74,,,,Freshman,Pitcher,"Tucker, GA",
+Jacob Jacome Jacob Jacome,Johnson (TN),2026,74,,,,Sophomore,Pitcher,"Redlands, CA",
+Luke Wilson Luke Wilson,Johnson (TN),2026,68,,,,Sophomore,Outfield,"Irvine, CA",
+Nick Turner Nick Turner,Johnson (TN),2026,69,,,,Freshman,Second Base,"Knoxville, TN",
+Eli Mitchell Eli Mitchell,Johnson (TN),2026,75,,,,Freshman,Pitcher,"College Station, TX",
+Grayson Shehan Grayson Shehan,Johnson (TN),2026,69,,,,Freshman,Outfield,"Jay, FL",
+Bodey Yates Bodey Yates,Johnson (TN),2026,72,,,,Freshman,Pitcher,"Riverside, CA",
+Rhys Thomas Rhys Thomas,Johnson (TN),2026,75,,,,Sophomore,Pitcher,"Knoxville, TN",
+Cade Arrambide,LSU,2026,75,208,R,R,Sophomore,Catcher,"Tomball, Texas",Tomball HS
+Chris Stanfield,LSU,2026,74,196,R,R,Senior,Outfield,"Tallahassee, Fla.",Chiles HS
+Steven Milam,LSU,2026,68,185,S,R,Junior,Infield,"Las Cruces, N.M.",Centennial HS
+Tanner Reaves,LSU,2026,73,175,L,R,5th-year Senior,Infield,"Bonham, Texas",Bonham HS
+Derek Curiel,LSU,2026,74,192,L,L,Sophomore,Outfield,"West Covina, Calif.",Orange Lutheran HS
+Jake Brown,LSU,2026,74,206,L,L,Junior,Outfield,"Sulphur, La.",Sulphur HS
+Gavin Guidry,LSU,2026,74,184,R,R,Redshirt Junior,Right-Handed Pitcher,"Lake Charles, La.",Barbe HS
+William Schmidt,LSU,2026,76,201,R,R,Sophomore,Right-Handed Pitcher,"Baton Rouge, La.",Catholic HS
+Brayden Simpson,LSU,2026,73,201,R,R,Senior,Infield,"Moseley, Va.",Cosby HS
+John Pearson,LSU,2026,72,235,R,R,Sophomore,Outfield / Third Base,"West Monroe, La.",West Monroe HS
+Edward Yamin IV,LSU,2026,77,206,R,R,Redshirt Junior,Catcher / First Base,"West Sand Lake, N.Y.",La Salle Academy
+Daniel Harden,LSU,2026,74,195,L,L,Junior,Outfield,"Prairieville, La.",Catholic HS
+Ethan Clauss,LSU,2026,74,186,L,R,Freshman,Infield,"Las Vegas, Nev.",Palo Verde HS
+Mavrick Rizy,LSU,2026,81,251,R,R,Sophomore,Right-Handed Pitcher,"Fiskdale, Mass.",Worcester Academy
+Mason Braun,LSU,2026,72,213,L,L,Freshman,Outfield / First Base,"South Bend, Ind.",Penn HS
+Casan Evans,LSU,2026,74,196,R,R,Sophomore,Right-Handed Pitcher,"Houston, Texas",St. Pius X HS
+Cooper Moore,LSU,2026,73,200,R,R,Junior,Right-Handed Pitcher,"Bixby, Okla.",Bixby HS
+William Patrick,LSU,2026,74,209,R,R,Freshman,Outfield,"Monroe, La.",St. Frederick HS
+Seth Dardar,LSU,2026,74,212,L,R,5th-year Senior,Infield,"Mandeville, La.",Holy Cross HS
+Omar Serna Jr.,LSU,2026,74,245,R,R,Freshman,Catcher,"Houston, Texas",Lutheran South Academy
+Zac Cowan,LSU,2026,71,211,S,R,Senior,Right-Handed Pitcher,"Blythewood, S.C.",Blythewood HS
+Jaden Noot,LSU,2026,76,244,R,R,Redshirt Junior,Right-Handed Pitcher,"Oak Park, Calif.",Sierra Canyon HS
+Danny Lachenmayer,LSU,2026,75,221,R,L,Sophomore,Left-Handed Pitcher,"Eagan, Minn.",Eagan HS
+Cooper Williams,LSU,2026,76,200,L,L,Sophomore,Left-Handed Pitcher,"Alvin, Texas",Alvin HS
+Dax Dathe,LSU,2026,75,208,R,R,5th-year Senior,Right-Handed Pitcher,"Round Rock, Texas",Stony Point HS
+Jack Ruckert,LSU,2026,73,192,L,R,Freshman,Infield,"Baton Rouge, La.",Catholic HS
+Zach Yorke,LSU,2026,74,295,L,R,Senior,Infield,"Campbell, Calif.",Mountain Ridge HS
+Santiago Garcia,LSU,2026,72,191,L,L,Junior,Left-Handed Pitcher,"Las Cruces, N.M.",Centennial HS
+Reagan Ricken,LSU,2026,77,218,R,R,Freshman,Right-Handed Pitcher,"Temecula, Calif.",Great Oak HS
+Ethan Plog,LSU,2026,73,187,L,L,Sophomore,Left-Handed Pitcher,"Green Bay, Wisc.",Bay Port HS
+Jonah Aase,LSU,2026,73,208,L,L,Freshman,Left-Handed Pitcher,"Ferndale, Wash.",Meridian HS
+Grant Fontenot,LSU,2026,75,225,R,R,5th-year Senior,Right-Handed Pitcher,"Lafayette, La.",Lafayette HS
+DJ Primeaux,LSU,2026,70,200,L,L,Redshirt Junior,Left-Handed Pitcher,"Baton Rouge, La.",Central HS
+Connor Benge,LSU,2026,72,182,R,R,Senior,Right-Handed Pitcher,"Montgomery, Texas",Montgomery HS
+Trent Caraway,LSU,2026,74,201,R,R,Junior,Infield,"Dana Point, Calif.",JSerra Catholic HS
+Deven Sheerin,LSU,2026,77,255,R,R,Redshirt Sophomore,Right-Handed Pitcher,"Reading, Pa.",Exeter Township HS
+Zion Theophilus,LSU,2026,74,196,L,R,Freshman,Right-Handed Pitcher,"Cincinnati, Ohio",Moeller HS
+Marcos Paz,LSU,2026,74,228,R,R,Freshman,Right-Handed Pitcher,"Carrollton, Texas",Hebron HS
+Aiden Alspaugh,Rochester Christian (MI),2026,72,200,R,R,Sr,C,,
+Beau Falkenhagen,Rochester Christian (MI),2026,70,165,R,R,Sr,INF,,
+Reece Jones,Rochester Christian (MI),2026,70,185,R,R,RS-So,OF,,
+Cael Kuzinski,Rochester Christian (MI),2026,70,165,R,R,So,UTL,,
+Dakota Shafer,Rochester Christian (MI),2026,76,220,L,R,Sr,INF,,
+Colin Presnar,Rochester Christian (MI),2026,76,200,R,R,Jr,RHP,,
+Kayvon Justice,Rochester Christian (MI),2026,71,175,R,R,Jr,UTL,,
+Tryce Davis,Rochester Christian (MI),2026,73,190,R,R,Fr,INF/P,,
+Ayden Novak,Rochester Christian (MI),2026,72,185,R,R,Fr,C,,
+Connor Foreman,Rochester Christian (MI),2026,73,205,R,R,Fr,RHP,,
+Louis Frontero,Rochester Christian (MI),2026,74,170,R,R,Jr,RHP,,
+Issander Vega,Rochester Christian (MI),2026,70,175,R,R,Jr,OF,,
+Gavin Swigart,Rochester Christian (MI),2026,74,185,R,R,Jr,P/OF,,
+Will Pflaum,Rochester Christian (MI),2026,73,180,R,R,Jr,RHP,,
+Joseph Arends,Rochester Christian (MI),2026,68,155,L,L,Fr,OF/P,,
+Landon Fahey,Rochester Christian (MI),2026,72,210,R,R,Fr,RHP,,
+Vinnie Campisi,Rochester Christian (MI),2026,67,150,L,L,Fr,OF,,
+Jeffrey Preston,Rochester Christian (MI),2026,70,195,L,L,Sr,LHP,,
+Matthew Shakotko,Rochester Christian (MI),2026,73,215,R,R,So,RHP,,
+Lance Jones,Rochester Christian (MI),2026,74,175,L,L,So,LHP,,
+Parker Lassner,Rochester Christian (MI),2026,72,215,R,R,Fr,INF,,
+Joey Wagner,Rochester Christian (MI),2026,70,195,L,R,So,RHP,,
+Matthew Redmond,Rochester Christian (MI),2026,74,185,R,R,So,RHP,,
+Jayden Peterson,Rochester Christian (MI),2026,71,170,R,R,Sr,C/OF,,
+Niko Lahr,Rochester Christian (MI),2026,70,160,R,R,Sr,UTL,,
+Nathaniel Crane,Rochester Christian (MI),2026,70,185,R,R,Jr,INF/OF,,
+Keaton Diserens,Rochester Christian (MI),2026,74,235,L,L,Fr,LHP,,
+Ryder Zeiman,Rochester Christian (MI),2026,70,175,R,R,Fr,C,,
+Christian Rivera,Rochester Christian (MI),2026,70,225,R,R,Fr,RHP,,
+Pashk Daka,Rochester Christian (MI),2026,69,211,,,Fr,,,
+Abdiel Gonzalez,Rochester Christian (MI),2026,69,185,,,Sr,INF,,
+Jack Gunn,Rochester Christian (MI),2026,75,215,,,So,LHP,,
+Dylan Reges,Rochester Christian (MI),2026,69,165,,,Jr,INF,,
+Jaxon Jones Jaxon Jones,Tennessee Tech,2026,68,180,L,R,Fr.,UTL,,
+Carter Casabella Carter Casabella,Tennessee Tech,2026,76,190,R,R,So.,RHP,,
+Jackson Rooker Jackson Rooker,Tennessee Tech,2026,70,185,S,R,R-So.,IF/OF,,
+Manny Garza Manny Garza,Tennessee Tech,2026,70,205,S,R,Sr.,C,,
+Luke Bragga Luke Bragga,Tennessee Tech,2026,75,185,L,R,R-So.,OF,,
+Cade Fuller Cade Fuller,Tennessee Tech,2026,76,210,R,R,Jr.,INF,,
+Eddie Garza Eddie Garza,Tennessee Tech,2026,70,200,R,R,RS Sr.,INF,,
+Reece McDuffie Reece McDuffie,Tennessee Tech,2026,71,200,R,R,Sr.,RHP,,
+Alex Kuntz Alex Kuntz,Tennessee Tech,2026,72,185,L,L,Jr.,LHP,,
+Connor Crowson Connor Crowson,Tennessee Tech,2026,72,200,R,R,Sr.,INF,,
+Owen Lee Owen Lee,Tennessee Tech,2026,72,190,L,R,R-So.,INF,,
+AJ Marchetti AJ Marchetti,Tennessee Tech,2026,72,185,R,R,Jr.,C,,
+Jorsixt Jimenez Jorsixt Jimenez,Tennessee Tech,2026,72,205,R,R,Sr.,OF,,
+Justin Fallon Justin Fallon,Tennessee Tech,2026,72,190,L,R,Fr.,OF,,
+Ty Denton Ty Denton,Tennessee Tech,2026,73,205,R,R,RS. So.,C,,
+Lawson Stricklin Lawson Stricklin,Tennessee Tech,2026,71,205,R,R,R-Jr.,UTL,,
+Braxton Lewis Braxton Lewis,Tennessee Tech,2026,75,205,R,R,So.,RHP,,
+Landon Smelser Landon Smelser,Tennessee Tech,2026,73,210,L,L,So.,OF,,
+Carson Davis Carson Davis,Tennessee Tech,2026,76,200,R,R,Fr.,RHP,,
+Jamie Robertson Jamie Robertson,Tennessee Tech,2026,75,215,R,R,Jr.,RHP,,
+Drew Kirby Drew Kirby,Tennessee Tech,2026,78,190,R,R,RS So.,RHP,,
+Drew Mattox Drew Mattox,Tennessee Tech,2026,77,210,R,R,Jr.,RHP,,
+Logan Moller Logan Moller,Tennessee Tech,2026,77,250,R,R,So.,RHP,,
+Eli Huddleston Eli Huddleston,Tennessee Tech,2026,70,185,L,L,R-So.,LHP,,
+Nash Crowell Nash Crowell,Tennessee Tech,2026,72,230,R,R,Sr.,INF,,
+Micah Summar Micah Summar,Tennessee Tech,2026,73,190,L,L,So.,LHP,,
+Tyler Bennett Tyler Bennett,Tennessee Tech,2026,74,190,R,R,Fr.,INF,,
+Jayden Dillard Jayden Dillard,Tennessee Tech,2026,71,185,R,R,Jr.,RHP,,
+Ty Barnett Ty Barnett,Tennessee Tech,2026,71,170,L,L,So.,LHP,,
+Garrett Holpuch Garrett Holpuch,Tennessee Tech,2026,79,245,R,R,Sr.,RHP,,
+Jaxson Pease Jaxson Pease,Tennessee Tech,2026,73,175,R,R,Sr.,RHP,,
+Jaxon Pridgen Jaxon Pridgen,Tennessee Tech,2026,74,230,R,R,So.,RHP,,
+Aaron Moffitt Aaron Moffitt,Tennessee Tech,2026,75,225,S,R,R-So.,INF,,
+Cooper Casteel Cooper Casteel,Tennessee Tech,2026,73,215,L,L,Sr.,LHP,,
+Carson Parrott Carson Parrott,Tennessee Tech,2026,71,185,R,R,R-Fr.,RHP,,
+Jake Smith,Tusculum,2026,70,160,R,R,RFr.,IF,"Winston-Salem, N.C.",Oak Grove HS
+Cutter Womack,Tusculum,2026,71,180,L,L,RFr.,OF,"Cleveland, Tenn.",Cleveland HS
+Jake Trottier,Tusculum,2026,74,165,L,R,RFr.,IF,"Fort Myers, Fla.",SW Florida Christian Academy
+Landon Dockery,Tusculum,2026,72,190,R,R,So.,OF,"Maryville, Tenn.",Maryville HS
+Justin Millsaps,Tusculum,2026,69,210,R,R,Jr.,IF,"Louisville, Tenn.",Maryville HS
+Connor Jurek,Tusculum,2026,70,175,R,R,Gr.,OF,"Knoxville, Tenn.",USC Upstate
+Alejandro Ponte,Tusculum,2026,71,220,L,R,Fr.,OF,"Miami, Fla.",Rise Prep Academy
+Keygan Miksa,Tusculum,2026,70,185,R,R,Jr.,IF,"Toronto, Ontario, Canada",SUNY Niagara
+Jack Gagen,Tusculum,2026,73,200,R,R,Jr.,C,"Ashburn, Va.",Independence HS
+Caden Rector,Tusculum,2026,67,170,R,R,Gr.,IF,"Knoxville, Tenn.",Chowan
+Nick Satterly,Tusculum,2026,75,205,R,R,RFr.,C,"Erwin, Tenn.",Unicoi County HS
+JeanCarlo Hernandez,Tusculum,2026,68,185,R,R,Fr.,IF,"Miami, Fla.",Felix Varela Senior HS
+Steve Scarfone,Tusculum,2026,76,215,L,R,Jr.,OF,"Staten Island, N.Y.",RCSJ Gloucester
+Evan Cage,Tusculum,2026,72,195,L,L,Jr.,OF,"Knoxville, Tenn.",Pellissippi St. CC
+Jake Absher,Tusculum,2026,74,200,R,L,So.,OF,"Lenoir, N.C.",Hibriten HS
+Drew Sliwinski,Tusculum,2026,76,225,R,R,Gr.,P,"Knoxville, Tenn.",Bearden HS
+Evan Goins,Tusculum,2026,72,195,L,R,Jr.,IF,"Knoxville, Tenn.",Cleveland St. CC
+Maverick Foster,Tusculum,2026,80,265,R,R,Jr.,P,"Bethel, Conn.",Canterbury School
+Adrian Salas,Tusculum,2026,71,185,R,R,Jr.,C,"Toronto, Ontario, Canada",SUNY Niagara
+Ryan Ortega,Tusculum,2026,70,170,R,R,So.,OF,"Miami, Fla.",Palmetto Senior HS
+Will Webb,Tusculum,2026,73,175,R,R,Jr.,P,"Knoxville, Tenn.",Cleveland St. CC
+Tine Bowman,Tusculum,2026,73,200,S,R,Fr.,C/IF,"Johnson City, Tenn.",Providence Academy
+Brice Anders,Tusculum,2026,73,200,R,R,Sr.,P,"Brevard, N.C.",TC Roberson HS
+Julian Jennings,Tusculum,2026,72,205,R,R,Gr.,IF/OF,"Port St. Lucie, Fla.",Barton
+Kolby Watson,Tusculum,2026,70,185,L,R,Jr.,IF/OF,"Mount Airy, N.C.",UNC Asheville
+Walker Pedante,Tusculum,2026,74,195,R,R,Sr.,P,"Glen Allen, Va.",Lenoir-Rhyne
+Brandon Moore,Tusculum,2026,78,240,R,R,Sr.,P,"Brampton, Ontario, Canada",Carolina Univ.
+Owen Canter,Tusculum,2026,73,180,R,R,So.,P,"New Franklin, Ohio",Walsh Univ.
+Payne Ladd,Tusculum,2026,77,230,L,L,So.,P,"Bristol, Tenn.",Tennessee HS
+Joey Socorro,Tusculum,2026,72,215,R,R,Jr.,C/IF,"West Deptford, N.J.",Wes Deptford HS
+Caleb Mulcahy,Tusculum,2026,69,190,R,R,Gr.,OF,"Dover, Tenn.",Stewart County HS
+Cooper Emery,Tusculum,2026,72,190,R,R,So.,P,"Lakeland, Fla.",Lakeland Senior HS
+Nate Davidson,Tusculum,2026,70,175,R,R,Fr.,C,"Nashville, Tenn.",Lipscomb Academy
+Luke Maicon,Tusculum,2026,74,210,R,R,Gr.,P,"Wake Forest, N.C.",Caldwell Tech
+Scout Martin,Tusculum,2026,72,195,L,L,Sr.,P,"Murfreesboro, Tenn.",Blackmon HS
+Riley Schild,Tusculum,2026,72,200,R,R,Fr.,IF,"Springfield, Tenn.",Springfield HS
+Blake Bible,Tusculum,2026,72,190,R,R,RFr.,OF,"Morristown, Tenn.",Lakeway Christian Academy
+Ryan Miller,Tusculum,2026,73,150,R,R,Fr.,P,"Brooksville, Fla.",Hernando HS
+Aiden Tipton,Tusculum,2026,70,220,R,R,So.,P,"Knoxville, Tenn.",Bearden HS
+Nathan Hayworth,Tusculum,2026,70,170,R,R,RFr.,OF,"Rockwell, N.C.",East Rowan HS
+Isaiah Piñero,Tusculum,2026,70,180,R,R,Fr.,P,"Fayetteville, N.C.",Pine Forest HS
+Ben Randall,Tusculum,2026,77,240,R,R,Jr.,P,"Land O Lakes, Fla.",Middle Georgia
+Mason Johnson,Tusculum,2026,74,235,L,R,Jr.,IF,"Tiffin, Ohio",Terra St. CC
+Noah Vickers,Tusculum,2026,72,170,R,R,Jr.,P,"Milan, Tenn.",Milan HS
+Ayden Moore,Tusculum,2026,72,200,R,R,So.,P,"Lebanon, Tenn.",Friendship Christian School
+Christian Ponte,Tusculum,2026,70,215,R,R,Fr.,P,"Miami, Fla.",Rise Prep Academy
+Aidan Sproles,Tusculum,2026,74,250,R,R,Fr.,P,"Johnson City, Tenn.",Providence Academy
+Manny Alejandro,Tusculum,2026,69,160,,,Jr.,IF,"Ft. Lauderdale, Fla.",Sauk Valley CC
+Adam Buerger,Tusculum,2026,72,195,,,Jr.,IF,"Gahanna, Ohio",Chattanooga St. CC
+Seth Charlton,Tusculum,2026,76,210,,,RFr.,IF,"Chuckey, Tenn.",North Greene HS
+Zachary Fernandez,Tusculum,2026,75,200,,,Fr.,P,"Miami, Fla.",Rise Prep Academy
+Owen Hill,Tusculum,2026,73,205,,,Fr.,C/P,"Bakersfield, Calif.",Stockdale HS
+Connor Ireland,Tusculum,2026,71,160,,,Fr.,IF,"Burlington, Ontario, Canada",Greeneville HS
+Jude Morton,Tusculum,2026,70,200,,,Sr.,IF,"Jacksonville, N.C.",Caldwell Tech
+Kobe Mundy,Tusculum,2026,71,195,,,Fr.,IF,"Greeneville, Tenn.",Greeneville HS
+Ty Smith,Tusculum,2026,74,215,,,Jr.,OF,"Elizabethton, Tenn.",Hampton-Sydney
+Amerson Dix Amerson Dix,Westcliff,2026,72,,,,SR,OF/P,"McMinnville, Tenn.",
+Carson Kawaguchi Carson Kawaguchi,Westcliff,2026,67,,,,JR,OF,"Hilo, HI",Pierce College
+David Madera Jr David Madera Jr,Westcliff,2026,70,,,,JR,P/OF,"Ripon, CA",
+Boston Souza Boston Souza,Westcliff,2026,68,,,,SO,P,"Turlock, CA",Simpson University
+Ian Carr Ian Carr,Westcliff,2026,69,,,,RS-SR,OF,"Jurupa Valley, CA",Dillard University
+Kailen Kimata Kailen Kimata,Westcliff,2026,70,,,,SR,Utility,"Mililani, HI",LA Pierce College
+Brendon Demuth Brendon Demuth,Westcliff,2026,73,,,,SR,P,"Las Vegas, NV",Providence Christian College
+Alex Chacon Alex Chacon,Westcliff,2026,71,,,,JR,INF,"San Diego, CA",San Diego City College
+Shunta Furuya Shunta Furuya,Westcliff,2026,68,,,,SR,P,"Kanagawa, Japan",Olympic College
+Ben Carter Ben Carter,Westcliff,2026,70,,,,JR,INF,"Downey, CA",Fullerton College
+Jack Varney Jack Varney,Westcliff,2026,72,,,,SR,1B,"Mercer Island, WA",Paradise Valley College
+Domingo Gaxiola Domingo Gaxiola,Westcliff,2026,71,,,,SR,P,"Oxnard, CA",Ventura College
+Riley Vogt Riley Vogt,Westcliff,2026,76,,,,FR,INF/P,"Menifee, CA",Liberty High School
+Justin Guzman Justin Guzman,Westcliff,2026,73,,,,SR,P,"Riverside, CA",Central Methodist University
+Patrick Morgan Patrick Morgan,Westcliff,2026,71,,,,GS,Utility,"Vista, CA",University of Antelope Valley
+Ryan Duron Ryan Duron,Westcliff,2026,72,,,,JR,INF,"La Habra, CA",Rio Hondo College
+Landon Raskin Landon Raskin,Westcliff,2026,73,,,,SR,OF,"Newbury Park, CA",Providence Christian College
+Jesse Chacon Jesse Chacon,Westcliff,2026,73,,,,RS-SR,INF,"Chula Vista, CA",
+Nick Malvini Nick Malvini,Westcliff,2026,73,,,,SR,OF,"Santa Clara, CA",Mission College
+Tyler Nelson Tyler Nelson,Westcliff,2026,74,,,,RS-SR,C,"Corona, CA",College of the Desert
+AJ Quezada AJ Quezada,Westcliff,2026,69,,,,SR,OF,"Long Beach, CA",Long Beach City College
+Slater Theisen Slater Theisen,Westcliff,2026,73,,,,JR,P,"Mukwonago, WI",Mt San Jacinto College
+Bill McGee Bill McGee,Westcliff,2026,76,,,,GS,P,"Reno, NV",Kansas Wesleyan University
+Kolby Wagatsuma Kolby Wagatsuma,Westcliff,2026,69,,,,SR,C,"Pearl City, HI",Presentation College
+Jackson Clark Jackson Clark,Westcliff,2026,76,,,,GS,P,"San Clemente, CA",Union Commonwealth University
+Ashton McNaughton Ashton McNaughton,Westcliff,2026,74,,,,JR,P,"Placentia, CA",
+Matthew Panzica Matthew Panzica,Westcliff,2026,75,,,,GS,P,"Vaughan, Canada",Nichols College
+Daniel Vendl Daniel Vendl,Westcliff,2026,75,,,,JR,P,"Palm Desert, CA",College of the Desert
+Haiden Letzing Haiden Letzing,Westcliff,2026,75,,,,SR,INF,"Vancouver, Canada",Ventura College
+Brendon Alvarez Brendon Alvarez,Westcliff,2026,70,,,,JR,INF,"Encinitas, CA",Cornell University
+Chris Gonzalez Chris Gonzalez,Westcliff,2026,75,,,,JR,P,"Covina, CA",Providence Christian College
+Andrew Wright Andrew Wright,Westcliff,2026,73,,,,JR,P,,LA Mission College
+Robbie Lopez Robbie Lopez,Westcliff,2026,71,,,,SR,OF,"Indio, CA",College of the Desert
+Nu’u Contrades,Arizona State,2026,70,180,R,R,Redshirt Junior,INF,"Ewa Beach, Hawai'i",Saint Louis School
+Brody Briggs,Arizona State,2026,73,205,L,R,Redshirt Sophomore,C,"Tulsa, Okla.",Union
+Jaden Alba,Arizona State,2026,75,225,R,R,Junior,RHP,"Long Beach, Calif.",Gahr
+Cole Carlon,Arizona State,2026,77,230,L,L,Junior,LHP,"Tempe, Ariz.",Corona Del Sol
+Wyatt Halvorson,Arizona State,2026,76,230,R,R,Junior,RHP,"Scottsdale, Ariz.",Chaparral
+Ky McGary,Arizona State,2026,71,180,R,R,Sophomore,OF,"Phoenix, Ariz.",Sandra Day O'Connor
+Derek Schaefer,Arizona State,2026,75,210,R,R,Junior,RHP,"Cave Creek, Ariz.",Cactus Shadows
+Easton Barrett,Arizona State,2026,72,180,L,L,Sophomore,LHP,"Springville, Utah",Springville
+Josh Butler,Arizona State,2026,79,230,R,R,Junior,RHP,"Phoenix, Ariz.",Sandra Day O'Connor
+Sean Fitzpatrick,Arizona State,2026,72,175,L,L,Senior,LHP,"Spring, Texas",Concordia Lutheran
+Colin Linder,Arizona State,2026,76,235,R,R,Redshirt Junior,RHP,"Suwanee, Ga.",Lambert
+Beckett Zavorek,Arizona State,2026,70,180,R,R,Sophomore,INF,"Fresno, Calif.",Bullard
+Eli Buxton,Arizona State,2026,77,210,R,R,Sophomore,RHP,"Sand Springs, Okla.",Charles Page
+Landon Hairston,Arizona State,2026,71,195,L,L,Sophomore,INF,"Queen Creek, Ariz.",Casteel
+Nick Anello,Arizona State,2026,75,210,,,Senior,RHP,"Coconut Creek, Fla.",Calvary Christian
+Colby Guy,Arizona State,2026,70,165,,,Graduate Student,RHP,"Chester, S.C.",Legion Collegiate Academy
+Kole Klecker,Arizona State,2026,74,205,,,Senior,RHP,"Chandler, Ariz.",Hamilton
+Brady Louck,Arizona State,2026,70,180,,,Junior,LHP,"Plainfield, Ill.",Plainfield
+Brandon Olivera,Arizona State,2026,73,205,,,Redshirt Sophomore,RHP,"Hialeah, Fla.",Miami Springs
+Alex Overbay,Arizona State,2026,75,220,,,Junior,RHP,"Olympia, Wash.",Tumwater
+Taylor Penn,Arizona State,2026,77,200,,,Sophomore,RHP,"Versailles, Ky.",Woodford County
+Coen Niclai,Arizona State,2026,74,215,,,Sophomore,C,"Anchorage, Alaska",Service
+Dominic Longo,Arizona State,2026,75,205,,,Junior,IF,"Liberty Lake, Wash.",University
+Garrett Michel,Arizona State,2026,72,220,,,Redshirt Junior,IF,"Stanley, N.C.",East Lincoln
+PJ Moutzouridis,Arizona State,2026,72,190,,,Junior,IF,"San Jose, Calif.",Valley Christian
+Austen Roellig,Arizona State,2026,71,185,,,Redshirt Sophomore,IF,"Rancho Cucamonga, Calif.",Etiwanda
+Dominic Smaldino,Arizona State,2026,78,230,,,Junior,INF,"Ladera Ranch, Calif.",Jserra Catholic
+Sam Myers,Arizona State,2026,69,185,,,Junior,OF,"Cypress, Texas",Cypress Woods
+Matt Polk,Arizona State,2026,71,195,,,Graduate Student,OF,"Long Beach, Calif.",Orange Lutheran
+Dean Toigo,Arizona State,2026,76,205,,,Fifth Year,OF,"Yorba Linda, Calif.",Yorba Linda
+Finn Edwards,Arizona State,2026,79,210,,,Sophomore,RHP,"Bend, Ore.",Summit
+Ryan Caruso,Arizona State,2026,73,185,,,Freshman,RHP,"Tempe, Ariz.",Corona Del Sol
+Ashton Higgins,Arizona State,2026,76,205,,,Freshman,RHP,"Scottsdale, Ariz.",Notre Dame Prep
+Austin Musso,Arizona State,2026,74,215,,,Freshman,RHP,"Mascoutah, Ill.",Mascoutah
+Marcelo Rodriguez,Arizona State,2026,74,205,,,Freshman,RHP,"Miami, Fla.",Doral Academy
+Tommy Brown,Arizona State,2026,75,185,,,Freshman,C,"Livermore, Calif.",Granada
+Cooper Clouser,Arizona State,2026,73,200,,,Freshman,C,"Tempe, Ariz.",Corona del Sol
+Finn Leach,Arizona State,2026,72,195,,,Freshman,INF,"Seattle, Wash.",Nathan Hale
+Brenden Lewis,Arizona State,2026,70,170,,,Freshman,INF,"Santee, Calif.",Granite Hills
+Ryan Darrah,Arizona State,2026,75,190,,,Freshman,OF,"New Orleans, La.",Brother Martin
+Jaxsyn Durst,Arizona State,2026,70,175,,,Freshman,OF,"Reno, Nev.",Jackson Manogue
+Andreas Alvarez,Auburn,2026,71,199,,,Sophomore,RHP,"Seminole, Fla.",Northside Christian
+Trevor Booton,Auburn,2026,77,213,,,Redshirt Sophomore,RHP,"LaGrange, Ga.",LaGrange
+Abe Chancellor,Auburn,2026,75,174,,,Redshirt Senior,LHP,"Dothan, Ala.",Providence Christian
+Christian Chatterton,Auburn,2026,72,202,,,Sophomore,RHP,"Killen, Ala.",Brooks
+Connor Gatwood,Auburn,2026,77,212,,,Redshirt Freshman,RHP,"Mobile, Ala.",Baker
+Griffin Graves,Auburn,2026,70,175,,,Junior,LHP,"Jackson, Tenn.",Trinity Christian
+Ryan Hetzler,Auburn,2026,71,185,,,Junior,RHP,"Corona, Calif.",Arlington
+Jett Johnston,Auburn,2026,72,200,,,Junior,RHP,"Knoxville, Tenn.",Farragut
+Mason Koch,Auburn,2026,73,201,,,Senior,RHP,"Omaha, Neb.",Millard West
+Alex Petrovic,Auburn,2026,77,235,,,Redshirt Sophomore,RHP,"Cypress, Texas",Concordia Lutheran
+Saxon Roberts,Auburn,2026,77,214,,,Redshirt Freshman,RHP,"Franklin, Tenn.",Independence
+Jackson Sanders,Auburn,2026,75,210,,,Sophomore,LHP,"Opelika, Ala.",Valley
+Chase Fralick,Auburn,2026,74,227,,,Sophomore,C/IF,"Peachtree City, Ga.",McIntosh
+Lucas Steele,Auburn,2026,72,205,,,Senior,C/OF,"Hoover, Ala.",Hoover
+Eric Guevara,Auburn,2026,71,207,,,Junior,IF,"Panama City, Panama",Georgia Premier Academy
+Brandon McCraine,Auburn,2026,75,184,,,Redshirt Freshman,IF/OF,"Salem, Ala.",Smiths Station
+Chris Rembert,Auburn,2026,72,209,,,Sophomore,IF/OF,"Pensacola, Fla.",Pensacola Catholic
+Tanner Waldrop,Auburn,2026,73,215,,,Redshirt Freshman,C/IF,"Auburn, Ala.",Auburn
+Cade Belyeu,Auburn,2026,75,215,,,Junior,OF,"Auburn, Ala.",Auburn
+Bristol Carter,Auburn,2026,71,194,,,Junior,OF,"Oak Ridge, N.C.",Northwest Guilford
+Bub Terrell,Auburn,2026,75,237,,,Sophomore,OF/IF,"Meridian, Miss.",Thompson
+Clayton Armah,Auburn,2026,76,193,,,Freshman,RHP,"Great Falls, Va.",St. John's College
+Ethin Bingaman,Auburn,2026,71,201,,,Freshman,UTL/RHP,"Redlands, Calif.",Corona
+Garrett Brewer,Auburn,2026,75,174,,,Junior,LHP,"Eau Claire, Mich.",Berrien Springs
+LJ Cormier,Auburn,2026,73,173,,,Freshman,RHP,"Tuscaloosa, Ala.",Sipsey
+Ethan Harden,Auburn,2026,72,198,,,Redshirt Junior,LHP,"Franklin, Tenn.",Battle Ground Academy
+Justice de Jong,Auburn,2026,75,220,,,Freshman,RHP,"New York, N.Y.",Poly Prep Country Day
+Marcel Kulik,Auburn,2026,72,186,,,Sophomore,RHP,"Eastchester, N.Y.",Iona Prep
+Jake Marciano,Auburn,2026,74,168,,,Sophomore,LHP,"Bayville, N.J.",Donovan Catholic
+Drew Whalen,Auburn,2026,73,210,,,Junior,RHP,"Nashville, Tenn.",Franklin
+Taylor Belza,Auburn,2026,73,191,,,Freshman,C/IF,"Grafton, Ohio",P27 Academy
+Logan Gregorio,Auburn,2026,73,203,,,Senior,C/OF,"Yorkville, Ill.",Waubonsie Valley
+Todd Clay,Auburn,2026,74,225,,,Senior,IF,"Auburn, Ala.",Auburn
+Caiden Combs,Auburn,2026,76,260,,,Freshman,IF,"Gardendale, Ala.",Gardendale
+Ryne Farber,Auburn,2026,71,185,,,Junior,IF,"San Antonio, Texas",Johnson
+Eddie Madrigal,Auburn,2026,74,203,,,Redshirt Junior,IF/OF,"Elk Grove, Calif.",Elk Grove
+Ty Thompson,Auburn,2026,72,161,,,Freshman,IF,"Columbia, Mo.",TNXL Academy
+Mason McCraine,Auburn,2026,78,206,,,Freshman,OF/LHP,"Salem, Ala.",Glenwood
+Wade Shelley,Auburn,2026,71,201,,,Freshman,OF,"Webb, Ala.",Headland
+Blade Paragas,BYU,2026,71,195,,,RS-Freshman,Right Hand Pitcher,"Makaha, Hawaii",
+Luke Anderson,BYU,2026,70,182,,,Senior,OF/INF (R/R),"Santa Clara, Utah",
+Bryant Ball,BYU,2026,70,195,,,RS-Junior,C/RHP (R/R),"Highland, Utah",
+Cayson Bell,BYU,2026,73,200,,,RS-Sophomore,Right Hand Pitcher,"St. George, Utah",Dixie High School
+Parker Goff,BYU,2026,71,190,,,Senior,Catcher (R/R),"Herriman, Utah",
+Payton Gubler,BYU,2026,70,200,,,RS-Junior,Right Hand Pitcher,"St. George, Utah",
+Bryker Hurdsman,BYU,2026,76,205,,,Senior,OF (R/R),"St. George, Utah",Desert Hills High School
+Easton Jones,BYU,2026,75,205,,,Senior,INF (R/R),"American Fork, Utah",
+Crew McChesney,BYU,2026,72,185,,,Junior,OF (L/R),"Highland, Utah",Lone Peak High School
+Keoni Painter,BYU,2026,71,177,,,RS-Junior,OF (L/L),"Kula, Hawaii",
+Justis Reiser,BYU,2026,73,193,,,RS-Junior,Left Hand Pitcher,"South Jordan, Utah",
+Ryker Schow,BYU,2026,72,180,,,Sophomore,OF/INF (R/R),"Pleasant Grove, Utah",Pleasant Grove High School
+Luke Sterner,BYU,2026,74,202,,,Senior,Right Hand Pitcher,"Laguna Niguel, California",
+Ridge Erickson,BYU,2026,71,200,,,Sophomore,Catcher (R/R),"St. George, Utah",
+Matt Hansen,BYU,2026,73,205,,,Sophomore,INF (L/R),"Colorado Springs, Colorado",
+Ashton Johnson,BYU,2026,71,195,,,Senior,Left Hand Pitcher,"Holladay, Utah",
+Rockwell Lybbert,BYU,2026,76,205,,,RS-Sophomore,Right Hand Pitcher,"Davis, California",
+Ryder Robinson,BYU,2026,74,190,,,Junior,INF (S/R),"American Fork, Utah",
+Garrison Sumner,BYU,2026,75,195,,,Senior,Right Hand Pitcher,"Eagle Mountain, Utah",
+Tu'alau Wolfgramm,BYU,2026,70,180,,,Sophomore,C/OF (R/R),"Pleasant Grove, Utah",
+Ezra McNaughton,BYU,2026,71,196,,,Sophomore,INF (L/R),"Mesa, Arizona",
+Brayden Marx,BYU,2026,72,187,,,Junior,Right Hand Pitcher,"Pleasant Grove, Utah",Pleasant Grove HS
+Patrick Graham,BYU,2026,71,190,,,Senior,Infielder,"Naperville, Illinois",
+Austin Park,BYU,2026,73,175,,,Freshman,Infielder/Outfielder,"Mona, Utah",
+Sam Hart,BYU,2026,72,200,,,Graduate,Right Hand Pitcher,"Highlands Ranch, Colorado",
+Wayland Crane,BYU,2026,72,180,,,Senior,Left Hand Pitcher,"Delta, Utah",
+Bridger Davies,BYU,2026,77,215,,,Freshman,Outfielder/Infielder,"Draper, Utah",
+Nate Gray,BYU,2026,78,226,,,Junior,Right Hand Pitcher,"Queen Creek, Arizona",
+Jaxon Clayton,BYU,2026,73,195,,,Freshman,Right Hand Pitcher,"Milwaukee, Wisconsin",
+Cooper Jones,BYU,2026,73,195,,,Freshman,Infielder,"American Fork, Utah",
+Brock Snow,BYU,2026,73,195,,,RS-Sophomore,Left Hand Pitcher,"Mesa, Arizona",
+Nate Keyes,BYU,2026,74,190,,,Freshman,Outfielder,"Las Vegas, Nevada",
+Dan Brousseau,BYU,2026,77,240,,,Junior,Right Hand Pitcher,"Murray, Utah",
+Ethan Zufall,BYU,2026,73,205,,,Freshman,Right Hand Pitcher,"Broomfield, Colorado",
+Tyler Ball,BYU,2026,73,220,,,Freshman,Right Hand Pitcher,"Highland, Utah",
+Nate Wochner,BYU,2026,76,200,,,Freshman,Right Hand Pitcher,"Arvada, Colorado",
+Anderson Moreno,Bluefield State University,2026,74,190,,,,OF,"Bronx, NY",
+Max Altieri,Bluefield State University,2026,69,175,,,,OF,"Powahatan, VA",
+Caleb Ratliff,Bluefield State University,2026,74,185,,,,C,"Richlands, VA",
+Adriel Martinez,Bluefield State University,2026,70,180,,,,C,"Lawrence, MA",
+Nate Rollins,Bluefield State University,2026,70,180,,,,SS,"Lincolnton, NC",
+Blake Mckinney,Bluefield State University,2026,71,185,,,,OF,"Waxhaw, NC",
+Nick Diaz,Bluefield State University,2026,72,170,,,,INF,"Tampa, FL",
+Jacob Frass,Bluefield State University,2026,74,180,,,,RHP,"Winston-Salem, NC",
+Edwin Hernandez,Bluefield State University,2026,72,175,,,,MIF,"Philadelphia, PA",
+Jr Baez,Bluefield State University,2026,72,215,,,,1B/DH,"New York, NY",
+Curtis Ball,Bluefield State University,2026,72,180,,,,C,"Milton, WV",
+Kevin Rodriguez,Bluefield State University,2026,71,190,,,,UTL,"Manchester, NH",
+Benny Fiens,Bluefield State University,2026,73,185,,,,RHP,"Sarasota, FL",
+Angel Martinez,Bluefield State University,2026,70,185,,,,OF,"Camden, NJ",
+Carson Allison,Bluefield State University,2026,71,200,,,,1B,"Canton, NC",
+Logan Oliver,Bluefield State University,2026,75,240,,,,RHP,"Etowah, NC",
+Grayson Peel,Bluefield State University,2026,75,170,,,,RHP,"Mooresville, NC",
+William Grubb,Bluefield State University,2026,73,190,,,,RHP,"Pleasant Gardne, NC",
+Diego Espada,Bluefield State University,2026,74,198,,,,INF,"Sarasota, FL",
+James Germosen,Bluefield State University,2026,68,180,,,,C/3B,"Philadeplhia, PA",
+Joel Camp,Bluefield State University,2026,72,185,,,,LHP,"Gaffney, SC",
+Bryson Bradley,Bluefield State University,2026,75,230,,,,1B/DH,"Fletcher, NC",
+Brodie Burgess,Bluefield State University,2026,70,180,,,,C,"Jefferson, NC",
+Steven Devore,Bluefield State University,2026,70,190,,,,INF,"Monroe, NC",
+Leudys Castillo,Bluefield State University,2026,75,200,,,,RHP,"Valverde, Mao Dominican Republic",
+Abram Threats,Bluefield State University,2026,72,190,,,,RHP/OF,"York, SC",
+Drew Cheek,Bluefield State University,2026,70,170,,,,OF,"West Jefferson, NC",
+Ryan Hamer,Bluefield State University,2026,71,180,,,,INF,"Waxhaw, NC",
+Jack Sams,Bluefield State University,2026,73,180,,,,LHP/OF,"Richmond, VA",
+Freeman Wallace,Bluefield State University,2026,75,170,,,,RHP,"Stony Point, NC",
+Evan Borrello,Bluefield State University,2026,71,180,,,,RHP,"Spring Hill, TN",
+Alex Compton,Bluefield State University,2026,73,180,,,,RHP,"Bastian, VA",
+Josh Mason,Bluefield State University,2026,73,170,,,,RHP,"Sparrows Point, MD",
+Bryson Bailey,Bluefield State University,2026,72,185,,,,RHP,"Princeton, WV",
+Noah Hildebran,Bluefield State University,2026,76,230,,,,RHP,"Mooresville, NC",
+Joshua Kapp,Bluefield State University,2026,75,195,,,,RHP,"Midland, TX",
+Jaxon Hatfield,Bluefield State University,2026,72,180,,,,RHP/UTL,"Huntington, WV",
+Jaedin Guerra,Bluefield State University,2026,75,205,,,,RHP,"Cleveland, OH",
+Andres Varas,Bluefield State University,2026,76,210,,,,LHP,"Guayaquil, Ecuador",
+Daremin Vargas,Bluefield State University,2026,71,205,,,,RHP,"Cape Coral, FL",
+Johnathon Clark,Bluefield State University,2026,74,200,,,,RHP,"Cornish, NH",
+Cody Burkman,Bluefield State University,2026,72,180,,,,RHP,"Baltimore, MD",
+Andy Williams,Bluefield State University,2026,73,205,,,,LHP/1B,"Greensboro, NC",
+Drahden Rice,Bluefield State University,2026,73,168,,,,RHP/INF,"Buckhannon, WV",
+Tyler Potts,Bluefield State University,2026,72,202,,,,RHP,"Waxhaw, NC",
+Logan Horner,Bluefield State University,2026,69,160,,,,LHP,"Fork Union, VA",
+Collin Quandee,Bluefield State University,2026,70,180,,,,RHP,,
+Tyler Deluca,Bluefield State University,2026,72,168,,,,LHP,"St. Albans, WV",
+Austin Williams,Bluefield State University,2026,73,205,,,,OF,"Greensboro, NC",
+David Rodriguez,Bluefield State University,2026,69,180,,,,C,"Indian Trail, NC",
+Alejandro Vazquez,Bryant,2026,72,185,,,,INF,"Parkland, Fla.",ESB Academy
+Hunter Kingsbury,Bryant,2026,74,185,,,,OF,"Newbury, Mass.",Governor's Academy
+Dylan Prince,Bryant,2026,71,190,,,,INF,"Doral, Fla.",Doral Academy
+Zac Zyons,Bryant,2026,70,190,,,,INF,"South Kingstown, R.I.",South Kingstown
+Michael Belcher,Bryant,2026,71,200,,,,RHP,"Prospect, Conn.",Woodland Regional
+Casey Wensley,Bryant,2026,73,180,,,,INF,"Raynham, Mass.",Bridgewater-Raynham Regional (Wheaton)
+Gavin Greger,Bryant,2026,72,190,,,,OF,"Bristol, Conn.",Avon Old Farms (UConn)
+Vince Ferrell,Bryant,2026,71,185,,,,OF,"Clearwater, Fla.",Osceola
+Cam Papetti,Bryant,2026,74,205,,,,C/INF,"Grafton, Mass.",Worcester Academy
+Mike Fiatarone,Bryant,2026,71,200,,,,INF,"Shelton, Conn.",Salisbury School
+Ian Carter,Bryant,2026,74,195,,,,RHP,"Milford, Mass.",Milford
+Kaden Hilburger,Bryant,2026,72,195,,,,RHP,"Yorktown, Va.",Tabb
+Hudson Story,Bryant,2026,74,225,,,,INF,"Stevenson Ranch, Calif.",Marantha (LA Mission College)
+Justin Hackett,Bryant,2026,73,200,,,,INF,"Wallingford, Conn.",Lyman Hall
+Jacob Gaudreau,Bryant,2026,69,200,,,,C,"Burrillville, R.I.",La Salle Academy
+Ty Davis,Bryant,2026,74,205,,,,RHP,"Bristol, Conn.",Bristol Central
+Greg Gorman,Bryant,2026,76,215,,,,RHP,"Westerly, R.I.",Westerly
+Thomas Galusha,Bryant,2026,75,230,,,,RHP,"Middlebury, Conn.",Salisbury School (UConn)
+Charlie Saul,Bryant,2026,73,205,,,,OF,"River Vale, N.J.",Pascack Valley
+Carlos Irizarry,Bryant,2026,69,185,,,,INF,"Chantilly, Va.",St. Paul VI Catholic (Penn State Harrisburg)
+Dylan Scudder,Bryant,2026,79,240,,,,RHP,"Simsbury, Conn.",Simsbury (Eastern Connecticut)
+Ellis Garcia,Bryant,2026,72,220,,,,INF,"Elmwood Park, N.J.",P27 Academy (West Virginia)
+Justin Dressler,Bryant,2026,76,205,,,,RHP,"Waldwick, N.J.",Waldwick (Pace)
+Will Hurley,Bryant,2026,71,180,,,,RHP,"Longmeadow, Mass.",Longmeadow
+Max Burkholz,Bryant,2026,69,160,,,,OF,"Boynton Beach, Fla.",North Broward Prep
+Aidan Vining,Bryant,2026,72,180,,,,LHP,"Woburn, Mass.",Woburn Memorial (Johnson & Wales)
+Brandyn Durand,Bryant,2026,75,225,,,,C,"Somerset, Mass.",Bishop Hendricken (Chipola CC)
+Cameron Soroko,Bryant,2026,69,180,,,,INF/OF,"Saugus, Mass.",Saugus
+Owen Birchard,Bryant,2026,71,205,,,,RHP,"Auburn, N.Y.",Auburn
+Tommy Malloy,Bryant,2026,72,190,,,,C,"North Smithfield, R.I.",La Salle Academy
+Zach Davis,Bryant,2026,77,230,,,,RHP,"Colchester, Vt.",Colchester
+Jackson Vanesko,Bryant,2026,76,205,,,,LHP,"Ocean City, N.J.",St. Augustine Prep
+Yamil Perez,Bryant,2026,72,200,,,,C,"New Haven, Conn.",North Branford
+Sean Zaslaw,Bryant,2026,72,200,,,,RHP,"Weymouth, Mass.",Weymouth
+Bradley Lewis,Bryant,2026,70,180,,,,LHP,"Greer, S.C.",James L. Mann
+Zev Salsberg,Bryant,2026,74,190,,,,RHP,"Toronto, Ont.",A3 Academy (Ohio State)
+Tommy Flaherty,Bryant,2026,75,215,,,,RHP,"Windham, N.H.",Pimlico Academy (Clark (MA))
+Cole Schiff,Bryant,2026,76,240,,,,LHP,"Wake Forest, N.C.",Heritage (UNC Asheville)
+Landon White,Bryant,2026,78,200,,,,RHP,"Wallingford, Conn.",Choate Rosemary Hall (Ithaca)
+Billy Mulholland,Bryant,2026,73,225,,,,RHP/C,"Montvale, N.J.",Pascack Hills
+Thomas Maher,Bryant,2026,72,200,,,,LHP,"Nanuet, N.Y.",Don Bosco Prep
+Jameson Dobis,Bryant,2026,75,210,,,,RHP,"Medford, N.J.",St. Augustine Prep
+Sean Clifford,Bryant,2026,73,210,,,,RHP,"Woonsocket, R.I.",Lincoln
+Adam Salazar,CSU Bakersfield,2026,68,170,L,R,So.,IF,"Bakersfield, Calif.",Ridgeview HS
+Elijah Pelayo,CSU Bakersfield,2026,72,188,R,R,R-Sr.,IF,"Pico Rivera, Calif.",
+Yahir Acevedo,CSU Bakersfield,2026,70,189,L,L,R-Jr.,OF,"Arecibo, Puerto Rico",
+Dusty Vela,CSU Bakersfield,2026,70,185,L,R,R-Sr.,INF,"Chico, Calif.",
+Lewis Barnum V,CSU Bakersfield,2026,70,181,R,R,Gr.,UT,San Diego,
+Gethse Ulloa,CSU Bakersfield,2026,70,214,R,R,R-Jr.,RHP,"El Paso, Texas",
+Ethan Minaker,CSU Bakersfield,2026,73,199,L,L,Jr.,LHP,"Winnipeg, Canada",
+Levi Grothen,CSU Bakersfield,2026,74,202,R,R,Fr.,RHP,"Woodinville, Wash.",Woodinville HS
+Roman Bracamonte,CSU Bakersfield,2026,77,194,R,R,R-Jr.,RHP,"Nogales, Ariz.",
+Brady Durkan,CSU Bakersfield,2026,72,195,R,R,Fr.,RHP,"Bakersfield, Calif.",Frontier HS
+Al Nsah,CSU Bakersfield,2026,73,176,R,R,Jr.,UT,"McDonough, Ga.",
+Jacob Gutierrez,CSU Bakersfield,2026,75,196,R,R,Sr.,RHP,"Bakersfield, Calif.",Ridgeview HS
+Taison Miller,CSU Bakersfield,2026,68,156,L,L,Fr.,OF,"Long Beach, Calif.",Gahr HS
+Nathaniel Pimentel,CSU Bakersfield,2026,73,184,L,L,Fr.,LHP,"Alta Loma, Calif.",Alta Loma HS
+Jacob May,CSU Bakersfield,2026,71,172,L,R,So.,OF,San Diego,
+Kanoa Morisaki,CSU Bakersfield,2026,72,199,S,R,Jr.,C/RHP,"Honolulu, HI",Kaiser HS
+Saul Bolivar,CSU Bakersfield,2026,,198,R,R,Jr.,RHP,"Miranda, Venezuela",
+Elgin Bennett,CSU Bakersfield,2026,72,210,L,L,Sr.,OF,Atlanta,
+Devon Wilkes,CSU Bakersfield,2026,74,214,L,L,Fr.,IF,"Oxnard, Calif.",Pacifica HS
+Nick Mascaro,CSU Bakersfield,2026,75,210,L,R,Gr.,OF,"Orange, Calif.",
+Brendan Thompson,CSU Bakersfield,2026,73,194,R,R,Fr.,IF,"Grand Rapids, Mich.",Forest Hills Eastern HS
+Carlos Cordero,CSU Bakersfield,2026,68,179,R,R,R-Jr.,IF,"Barquisimeto, Venezuela",
+Evan Cloyd,CSU Bakersfield,2026,73,239,R,R,Sr.,1B,"Bakersfield, Calif.",
+Christian Lopez,CSU Bakersfield,2026,74,174,L,L,Fr.,OF,Denver,Regis Jesuit HS
+Jeter Schuerman,CSU Bakersfield,2026,74,187,R,R,Gr.,RHP,"Mead, Wash.",
+Shane McAlinden,CSU Bakersfield,2026,72,186,R,R,Jr.,RHP,"Brownstown, Michigan",
+Payton Pudenz,CSU Bakersfield,2026,71,164,R,R,R-So.,RHP,"Mesa, Ariz.",
+Joe Tootle,CSU Bakersfield,2026,74,210,R,R,Gr.,RHP,"Powell, Ohio",
+Casey Leavitt-McGee,CSU Bakersfield,2026,74,217,L,L,R-Jr.,1B/OF,San Francisco,
+Alex Navarrete,CSU Bakersfield,2026,70,210,R,R,R-Sr.,RHP,"Colton, Calif.",
+Davis Goodwin,CSU Bakersfield,2026,73,205,R,R,R-Fr.,OF,"Bakersfield, Calif.",Liberty HS
+Brock Adamson,CSU Bakersfield,2026,74,214,L,L,Jr.,LHP,"Ankeny, Iowa",
+Carter Jorissen,CSU Bakersfield,2026,70,190,R,R,Jr.,C,"Rancho Santa Margarita, Calif.",
+Dante Jackson,CSU Bakersfield,2026,79,167,L,L,R-Sr.,LHP,"Laguna Woods, Calif.",
+Ethan Myers,CSU Bakersfield,2026,71,169,R,R,Fr.,RHP,"Clovis, Calif.",Buchanan HS
+CJ Brown,CSU Bakersfield,2026,75,211,R,R,Sr.,RHP,"Garden Grove, Calif.",
+Trey Mandina,CSU Bakersfield,2026,73,201,R,R,Jr.,C,"Gretna, Neb.",
+Joe O'Regan,CSU Bakersfield,2026,76,227,L,L,Jr.,LHP,"Rancho Cucamonga, Calif.",
+Matt Dobson,CSU Bakersfield,2026,73,202,R,R,Sr.,IF,"Mission Viejo, Calif.",
+Ryan King,CSU Bakersfield,2026,77,207,R,R,R-So.,RHP,"Bloomfield Hills, Mich.",
+Garrett Teunissen,CSU Bakersfield,2026,69,188,R,R,R-Sr.,IF,"Corona, Calif.",
+Joe Simpson,Campbell,2026,75,190,,,R-Sr.,OF,"Clinton, Iowa",Clinton River HS
+Elijah Clayton,Campbell,2026,70,180,,,So.,INF/OF,"Westlake Village, Calif.",Oaks Christian HS
+Connor Hensley,Campbell,2026,75,210,,,Sr.,RHP,"Casselberry, Fla.",Lake Brantley HS
+Jonah Oster,Campbell,2026,74,215,,,R-Sr.,INF,"Apex, N.C.",Middle Creek
+Seth Farni,Campbell,2026,72,200,,,Jr.,OF,"Gulfport, Miss.",St. Stanislaus HS
+Nick Biasi,Campbell,2026,69,200,,,R-Jr.,LHP,"Hazel Township, Pa.",Hazleton Area HS
+Carlos Lugo,Campbell,2026,69,185,,,Fr.,OF/LHP,"Fort Lauderdale, Fla.",Calvary Christian Academy
+Nik Sanders,Campbell,2026,74,215,,,Jr.,C,"Waco, Texas",University HS
+Andrew Schuldt,Campbell,2026,69,185,,,R-Jr.,C,"Cornelius, N.C.",Hough
+Darnell Parker Jr.,Campbell,2026,73,200,,,Jr.,INF,"Carrolton, Va.",Namsemond River HS
+Mike Murphy,Campbell,2026,71,200,,,Jr.,OF,"Minooka, Ill.",Minooka Community HS
+Lleyton Grubich,Campbell,2026,72,210,,,Jr.,LHP,"Mchenry, Ill.",Mchenry Community HS
+Jackson Thompson,Campbell,2026,74,215,,,R-Sr.,C,"Camp Hill, Pa.",Camp Hill
+Zach Sabers,Campbell,2026,74,225,,,R-Sr.,RHP,"Dubuque, Iowa",Hempstead HS
+Logan Chapman,Campbell,2026,72,215,,,Jr.,INF,"Apopka, Fla.",Montverde Academy HS
+Mason Smith,Campbell,2026,72,205,,,R-Jr.,RHP,"Denver, N.C.",Lincoln Charter School
+Trent Rumley,Campbell,2026,67,180,,,Sr.,INF,"Cowlesville, N.Y.",St. Mary's of Lancaster
+Isaiah Padilla,Campbell,2026,73,215,,,Jr.,INF,"Denver, Colo.",Denver North HS
+Logen Sutton,Campbell,2026,73,200,,,R-Jr.,INF,"Knoxville, Tenn.",Powell HS
+David Rossow,Campbell,2026,75,240,,,R-Sr.,RHP,"Boca Raton, Fla.",Cardinal Gibbons
+Lukas Schramm,Campbell,2026,75,220,,,R-Jr.,OF,"Apex, N.C.",
+Camden Wimbish,Campbell,2026,74,220,,,Jr.,RHP,"Locust, N.C.",West Stanly
+Jarrett Martin,Campbell,2026,75,220,,,R-Jr.,C,"Savannah, Tenn.",Hardin County HS
+Joey Morton,Campbell,2026,76,210,,,R-Sr.,INF,"Oxford, Pa.",Oxford Area HS
+Ethan Snyder,Campbell,2026,76,235,,,Jr.,RHP,"Welcome, N.C.",North Davidson HS
+Aaron Smigelski,Campbell,2026,74,190,,,R-Sr.,INF,"Clayton, N.C.",
+Owen Simmons,Campbell,2026,73,170,,,Jr.,RHP,"Greensboro, N.C.",Northwest Guilford HS
+Harrison Lewis,Campbell,2026,78,260,,,R-So.,RHP,"Winston-Salem, N.C.",West Forsyth
+Andrew Keller,Campbell,2026,75,215,,,So.,OF,"Fuquay-Varina, N.C.",Fuquay-Varina HS
+Zac Martin,Campbell,2026,76,200,,,Sr.,RHP,"Hickory, N.C.",Fred T. Foard HS
+Caleb White,Campbell,2026,80,210,,,Sr.,RHP,"Van, Texas",Van HS
+Aiden Denlinger,Campbell,2026,78,220,,,R-So.,RHP,"Cape Coral, Fla.",North Fort Myers HS
+Braxton Shaffer,Campbell,2026,79,215,,,Jr.,RHP,"Grinnell, Iowa",Grinnell HS
+Jimmy Bell,Campbell,2026,72,200,,,Fr.,C,"St. Thomas, Penn.",
+McCoy Fulk,Campbell,2026,72,170,,,Fr.,INF,"Noblesville, Ind.",Noblesville HS
+Beau Brailey,Campbell,2026,75,210,,,R-So.,RHP,"Hoschton, Ga.",Mill Creek HS
+Jett Music,Campbell,2026,74,195,,,So.,OF/RHP,"Clayton, N.C.",Corinth Holders HS
+Houston Wills,Campbell,2026,76,200,,,Jr.,RHP,"Holly Springs, N.C.",Holly Springs HS
+Gabriel Cruz,Campbell,2026,71,185,,,R-So.,RHP,"Miami, Fla.",Christopher Columbus HS
+Parker Webb,Campbell,2026,74,210,,,R-Jr.,RHP,"Fayetteville, Tenn.",Lincoln County HS
+Cooper Clark,Campbell,2026,76,205,,,R-So.,RHP,"Clayton, N.C.",Home School
+Jackson Roberts,Campbell,2026,73,205,,,Sr.,RHP,"Greensboro, N.C.",Northern Guilford
+Parker McDaniels,Cincinnati,2026,73,215,R,R,Sophomore,C,"Delaware, OH",Olentangy Berlin
+Christian Mitchelle,Cincinnati,2026,71,200,R,R,Senior,RHP/UTL,"Romeoville, IL",Plainfield East
+Luke Sefcik,Cincinnati,2026,70,180,R,R,Redshirt Junior,INF,"Palos Heights, IL",Marist
+Jack Natili,Cincinnati,2026,75,198,R,R,Junior,C,"Venetia, PA",Peters Township
+Charlie Niehaus,Cincinnati,2026,71,185,R,R,Redshirt Sophomore,INF,"West Chester, OH",Archbishop Moeller
+Brendin Oliver,Cincinnati,2026,75,192,R,R,Sophomore,RHP,"Mooresville, IN",Mooresville
+Quinton Coats,Cincinnati,2026,75,225,R,R,Sophomore,INF,"Olathe, KS",Olathe South
+Cal Sefcik,Cincinnati,2026,72,220,R,R,Junior,OF,"Palos Heights, IL",Marist
+Nathan Taylor,Cincinnati,2026,77,230,L,R,Junior,RHP,"Amelia, OH",West Clermont
+Gavin Brewer,Cincinnati,2026,71,190,R,R,Redshirt Freshman,C,"Knoxville, TN",Farragut
+Carson Marsh,Cincinnati,2026,70,178,R,R,Junior,RHP,"West Chester, OH",Archbishop Moeller
+Ryan Tyranski,Cincinnati,2026,76,195,L,R,Redshirt Freshman,INF/OF,"Birmingham, MI",Brother Rice
+Adam Buczkowski,Cincinnati,2026,74,205,R,R,Sophomore,RHP,"Carmel, IN",Carmel
+Tommy Boba,Cincinnati,2026,74,210,R,R,Redshirt Junior,RHP,"Wheaton, IL",Wheaton Warrenville South
+Bradley Coulter,Cincinnati,2026,73,189,R,R,Redshirt Sophomore,RHP,"Taylorsville, KY",Spencer County
+Joel Piñeiro,Cincinnati,2026,73,202,R,R,Redshirt Senior,RHP,"Miami, FL",Westminster Christian
+Hudson Johnson,Cincinnati,2026,73,245,L,L,Sophomore,LHP,"Prior Lake, MN",Prior Lake
+Derrick Pitts,Cincinnati,2026,74,198,R,R,Sophomore,OF,"St. Louis, MO",Christian Brothers College
+Brenden Garula,Cincinnati,2026,71,195,R,L,Redshirt Junior,LHP,"Mason, OH",Mason
+Conlan Daniel,Cincinnati,2026,72,190,,,Sophomore,OF,"Cincinnati, Ohio",Archbishop Moeller
+Jackson Reardon,Cincinnati,2026,75,200,R,R,Freshman,INF,"Hebron, Ky.",Covington Catholic
+Quincy Mazeke,Cincinnati,2026,70,185,,,Freshman,OF,"Canton, Ohio",GlenOak
+Enzo Infelise,Cincinnati,2026,74,225,,,Freshman,C,"New Lenox, Ill.",Providence Catholic
+Brennan Eager,Cincinnati,2026,74,210,L,L,Sophomore,LHP,"West Monroe, La.",West Monroe
+Luke Kosko,Cincinnati,2026,76,210,L,R,Freshman,OF,"Pittsburgh, Pa.",Thomas Jefferson
+Jackson Smith,Cincinnati,2026,72,180,L,R,Sophomore,INF,"Channahon, Ill.",Providence Catholic
+Tucker King,Cincinnati,2026,75,210,R,R,Freshman,RHP,"Western Springs, Ill.",Lyons Township
+Adam Brouwer,Cincinnati,2026,73,200,R,R,Redshirt Senior,RHP,"Tinley Park, Ill.",Chicago Christian
+Dominic Mauro,Cincinnati,2026,73,210,R,R,Junior,RHP,"Lapeer, Mich.",Davison
+Ben Voegele,Cincinnati,2026,73,190,L,R,Freshman,INF,"Hamilton, Ohio",Ross
+Logan Knight,Cincinnati,2026,78,220,R,R,Senior,RHP,"London, Ontario, Can.",Sir Wilfred Laurier
+Charlie Dieruf IV,Cincinnati,2026,73,200,R,R,Sophomore,RHP,"Hebron, Ky.",Covington Catholic
+Joe DuSell,Cincinnati,2026,74,210,L,L,Freshman,OF,"Elgin, Ill.",St. Edward Central Catholic
+Connor Blue,Cincinnati,2026,75,210,R,R,Freshman,RHP,"O'Fallon, Ill.",O'Fallon Township
+Alex Gonzalez,Cincinnati,2026,72,165,R,R,Freshman,RHP,"McLean, Va.",McLean
+Dillon Schueler,Cincinnati,2026,74,190,R,R,Senior,RHP,"Rock Falls, Ill.",Rock Falls
+Nolan Jaworowski,Cincinnati,2026,77,230,L,L,Freshman,1B,"St. Louis, Mo.",St. John Vianney
+Chad Brown,Cincinnati,2026,78,230,R,R,Freshman,RHP,"Hemlock, Mich.",Hemlock
+Nate Savoie,Clemson,2026,72,215,R,R,So.,C/OF,"Newport Beach, Calif.",Loyola Marymount
+Eston Simpson,Clemson,2026,77,195,R,R,Fr.,RHP,"Jefferson, Ga.",Jefferson HS
+Dylan Harrison,Clemson,2026,77,215,L,R,Fr.,RHP/INF,"Fontana, Calif.",Summit HS
+Jake Morris,Clemson,2026,78,230,L,L,Fr.,LHP,"Lugoff, S.C.",Lugoff-Elgin HS
+Landon Fowler,Clemson,2026,75,210,R,R,Fr.,RHP,"Easley, S.C.",Powdersville HS
+Peyton Miller,Clemson,2026,76,205,R,R,Fr.,RHP,"Phoenix, Md.",IMG (Fla.) Academy
+Danny Nelson,Clemson,2026,73,185,R,R,Fr.,RHP,"Hershey, Pa.",Hershey HS
+Michael Sharman,Clemson,2026,73,190,R,L,*Sr.,LHP,"Woodstock, Ga.",Tennessee
+Dan Margolies,Clemson,2026,73,175,R,L,Fr.,LHP,"Cheshire, Conn.",Cheshire Academy
+Jackson Moore,Clemson,2026,69,185,L,R,Fr.,OF,"Hartsville, S.C.",Hartsville HS
+Nick Frusco,Clemson,2026,76,200,L,L,Fr.,LHP,"Miller Place, N.Y.",Miller Place HS
+Ariston Veasey,Clemson,2026,73,185,R,R,Jr.,RHP,"Peachtree City, Ga.",Alabama
+Jackson Taylor,Clemson,2026,76,195,L,R,Fr.,INF,"Marietta, Ga.",Walton HS
+Hayden Simmerson,Clemson,2026,74,205,R,R,Jr.,RHP,"Salisbury, N.C.",Catawba
+Jason Fultz Jr.,Clemson,2026,72,215,R,R,Fr.,INF,"Harborcreek, Pa.",P27 (S.C.) Academy
+Ty Dalley,Clemson,2026,75,210,L,R,Sr.,OF,"Vidalia, Ga.",Mercer
+Tyler Lichtenberger,Clemson,2026,72,195,L,R,So.,INF,"Boca Raton, Fla.",App State
+Bryce Clavon,Clemson,2026,70,195,R,R,So.,OF/INF,"Stockbridge, Ga.",Georgia
+Briggs Sullivan,Clemson,2026,74,190,R,R,*Fr.,OF/INF,"Mount Pleasant, S.C.",Oceanside Collegiate Academy
+Dane Moehler,Clemson,2026,74,210,R,R,*Fr.,RHP,"Marietta, Ga.",Walton HS
+Luke Gaffney,Clemson,2026,73,235,R,R,*Jr.,INF/C,"Danville, Ky.",Purdue
+Dion Brown,Clemson,2026,70,155,R,R,So.,RHP,"York, S.C.",Lewisville HS
+Brendon Bennett,Clemson,2026,73,220,L,L,*Fr.,LHP,"Novi, Mich.",Novi HS
+Talan Bell,Clemson,2026,70,185,L,L,So.,LHP/OF,"Oviedo, Fla.",Hagerty HS
+Luke Kissenberth,Clemson,2026,72,180,R,R,**Sr. (Graduate),RHP,"Greenville, S.C.",The Citadel
+Collin Priest,Clemson,2026,75,260,L,R,Jr.,INF,"Mount Dora, Fla.",Michigan
+Chance Fitzgerald,Clemson,2026,73,215,R,R,Jr.,RHP,"Sanford, Fla.",Lake Howell HS
+Tryston McCladdie,Clemson,2026,71,190,L,R,Jr.,INF/OF,"Harlem, Ga.",Harlem HS
+Ty Marshall,Clemson,2026,69,185,S,R,Jr.,C,"Cayce, S.C.",Brookland-Cayce HS
+Jacob McGovern,Clemson,2026,73,195,L,L,Jr.,LHP,"Seneca, S.C.",Seneca HS
+Jarren Purify,Clemson,2026,70,190,R,R,Jr.,INF,"Detroit, Mich.",University Liggett School
+Drew Titsworth,Clemson,2026,75,215,L,R,Jr.,RHP,"Frankenmuth, Mich.",Frankenmuth HS
+Justin LeGuernic,Clemson,2026,76,210,R,L,Jr.,LHP,"Dix Hills, N.Y.",Half Hollow Hills HS West
+Noah Samol,Clemson,2026,79,245,L,L,*Jr.,LHP,"Mason, Ohio",Georgia Tech
+Aidan Knaak,Clemson,2026,73,215,R,R,Jr.,RHP,"Fort Myers, Fla.",Bishop Verot Catholic HS
+Jack Crighton,Clemson,2026,75,200,R,R,Sr.,OF/INF,"Rochester Hills, Mich.",Orchard Lake St. Mary's Preparatory
+Nathan Dvorsky,Clemson,2026,73,195,R,R,Sr.,RHP,"Suwanee, Ga.",Lambert HS
+Jacob Jarrell,Clemson,2026,72,220,R,R,Sr.,C,"Florence, S.C.",P27 Academy
+Jay Dillard,Clemson,2026,69,175,R,R,*Jr. (Graduate),INF,"Anderson, S.C.",T.L. Hanna HS
+Joe Allen,Clemson,2026,75,220,R,R,Sr. (Graduate),RHP,"Hampton Falls, N.H.",Winnacunnet HS
+Wilfred Gonzalez,FGCU,2026,66,,R,R,Jr.,INF,"Miami, Fla.",South Dade
+Ashton Pocol,FGCU,2026,74,,R,R,Sr.,RHP,"St. Johns, Fla.",Bartram Trail
+Andrew Sheffield,FGCU,2026,70,,R,R,Fr.,INF,"Palm Harbor, Fla.",East Lake
+Keaton Kangas,FGCU,2026,74,,L,R,So.,INF,"Lake Worth, Fla.",Santaluces Community
+Sebastian Lippman,FGCU,2026,73,,L,R,R-Fr.,RHP/OF,"Plainview, N.Y.",Plainview-Old Bethpage/JFK
+Hunter Possehl,FGCU,2026,79,,L,L,R-So.,LHP,"Nokomis, Fla.",Venice
+Jon Embury,FGCU,2026,72,,R,R,So.,C,"Port Charlotte, Fla.",Venice
+Merrick Rapoza,FGCU,2026,73,,L,R,Fr.,INF,"Fleming Island, Fla.",Clay
+Jhon Abreu,FGCU,2026,70,,L,L,Fr.,LHP,"Wellington, Fla.",Wellington
+Nathan Gagnon,FGCU,2026,73,,L,L,Sr.,OF,"Otterburn Park, Quebec",Quebec Schools
+Drew Seidel,FGCU,2026,70,,R,R,R-Jr.,OF,"Palatine, Ill.",Fremd
+Javier Gorostola,FGCU,2026,72,,R,R,R-So.,INF/C,"Miami, Fla.",Florida Christian
+Jordan Vera,FGCU,2026,74,,R,R,R-Jr.,RHP,"Miami, Fla.",Elite Squad Academy
+Cayden Hessemyer,FGCU,2026,72,,R,R,So.,INF/RHP,"Odessa, Fla.",Steinbrenner
+Simon Aluko,FGCU,2026,74,,L,L,Gr.,LHP,"Acworth, Ga.",Allatoona
+Ryan Thompson,FGCU,2026,76,,L,L,Fr.,LHP,"Tampa, Fla.",Jesuit
+Ethan Mattison,FGCU,2026,74,,L,L,So.,LHP,"Lake Worth, Fla.",Park Vista
+Cole Lasher,FGCU,2026,74,,R,R,Fr.,OF,"Fort Lauderdale, Fla.",St. Thomas Aquinas
+Brandyn Gonzalez,FGCU,2026,70,,L,R,Sr.,OF,"Miramar, Fla.",Mater Lakes Academy
+Elliot Cadieux Lanoue,FGCU,2026,72,,L,L,R-So.,LHP,"Saint-Pie, Quebec",Ecole Seondaire Fadette
+Chris Diaz,FGCU,2026,73,,R,R,Jr.,RHP,"Miami, Fla.",Miami Christian
+Tyler Herb,FGCU,2026,75,,L,R,So.,INF,"Mount Dora, Fla.",TNXL
+Hyatt Richardson,FGCU,2026,73,,R,R,Fr.,RHP,"Live Oak, Fla.",Lafayette
+Evan Dempsey,FGCU,2026,74,,L,R,Jr.,OF/RHP,"Tampa, Fla.",Newsome
+Jeremy Comer,FGCU,2026,74,,L,R,R-So.,OF,"Shawnee, Kan.",St. James Academy
+Logan Eisenbarth,FGCU,2026,74,,R,R,Sr.,RHP,"Barrington, Ill.",Barrington
+Logan Baisley,FGCU,2026,76,,R,R,So.,RHP,"Land O' Lakes, Fla.",Land O' Lakes
+Preston Rogers,FGCU,2026,73,,R,R,R-So.,RHP,"Plant City, Fla.",Durant
+Jaret Nelson,FGCU,2026,76,,R,R,Sr.,1B,"Nixa, Mo.",Nixa
+Ryan Rushing,FGCU,2026,70,,L,L,Jr.,LHP,"Bradenton, Fla.",IMG Academy
+Keenan Mork,FGCU,2026,74,,R,R,Jr.,RHP,"River Falls, Wis.",River Falls
+Mattox Meeks,FGCU,2026,76,,R,R,So.,RHP,"New Smyrna Beach, Fla.",New Smyrna
+Stetson Callaway,FGCU,2026,74,,R,R,Jr.,RHP,"Tuscola, Texas",Homeschool
+Levent Eldem,FGCU,2026,79,,R,R,R-Sr.,RHP,"Ocala, Fla.",Oak Hill
+Mason Hudson,FGCU,2026,73,,R,R,Fr.,RHP,"New Port Richey, Fla.",Homeschool
+Reed Biemiller,FGCU,2026,71,,R,R,Fr.,RHP,"Tampa, Fla.",Jesuit
+Jonathan Maassen,FGCU,2026,75,,S,R,Fr.,C,"Bradenton, Fla.",Parrish Community
+Juan Santos,FGCU,2026,74,,R,R,Fr.,C,"Carolina, Puerto Rico",Antilles
+Jaden Rose,FGCU,2026,75,,R,R,So.,OF/1B,"Overland Park, Kan.",Blue Valley West
+Brady Fandl,Fairleigh Dickinson,2026,69,180,R,R,Fr.,INF,"Pine Bush, N.Y.",Pine Bush
+Mason Hebert,Fairleigh Dickinson,2026,70,165,,,So.,RHP,"West Hartford, Conn.",Hall
+Caleb Walker,Fairleigh Dickinson,2026,72,210,L,R,Gr.,INF,"Deposit, N.Y.",Deposit HS
+Andre Bouffard,Fairleigh Dickinson,2026,71,185,R,R,So.,INF,"South Burlington, VT",South Burlington
+Diego Urreta,Fairleigh Dickinson,2026,68,195,L,R,Sr.,INF,"Cortlandt Manor, N.Y.",The Harvey School
+Jake Miller,Fairleigh Dickinson,2026,69,185,R,R,So.,C,"Leawood, Kan.",Shawnee Mission East
+Johnathan Gomez,Fairleigh Dickinson,2026,72,210,R,R,So.,INF,"Coral Springs, Fla.",Calvary Christian Academy
+Jeremy Cheeseman,Fairleigh Dickinson,2026,75,195,L,R,Sr.,RHP/1B,"Marlton, N.J.",Cherokee High School
+Luke Russo,Fairleigh Dickinson,2026,67,180,R,R,R-So.,OF,"Sugarloaf, Pa.",Hazleton Area
+Cooper Montelbano,Fairleigh Dickinson,2026,75,180,R,R,R-So.,RHP,"Pompton Lakes, N.J.",DePaul Catholic
+Neylin Navarro,Fairleigh Dickinson,2026,68,150,,,Fr.,RHP,"New Milford, N.J.",Saint Joseph Regional HS
+Logan Magdits,Fairleigh Dickinson,2026,71,200,R,R,Sr.,RHP,"Nazareth, Pa.",Pen Argyl
+Drew Cisney,Fairleigh Dickinson,2026,72,160,,,Fr.,RHP,"Pittston, Penn.",Holy Redeemer
+Joseph Barbarino,Fairleigh Dickinson,2026,73,178,,,So.,RHP,"Holmdel, N.J.",Holmdel
+Hunter Ray,Fairleigh Dickinson,2026,72,205,L,R,So.,OF,"Woodbine, N.J.",Lower Cape May Regional
+Derek Bartek,Fairleigh Dickinson,2026,72,195,,,Jr.,RHP,"Parsippany, N.J.",Parsippany
+Joey Ruffino,Fairleigh Dickinson,2026,71,200,,,Jr.,LHP,"Sewell, N.J.",Washington Township
+Jeremy Delamota,Fairleigh Dickinson,2026,73,225,R,R,Gr.,1B/OF,"Queens, N.Y.",Berkshire
+John Caddell,Fairleigh Dickinson,2026,71,180,,,Fr.,RHP,"Staten Island, N.Y.",St. Peter's Boys
+Jay Creighton,Fairleigh Dickinson,2026,69,190,,,Jr.,RHP,"Somers, N.Y.",Somers HS
+Jimmy Mantuano,Fairleigh Dickinson,2026,70,190,L,L,Jr.,OF,"Marlton, N.J.",Saint Joseph Academy
+Max de Lagarde,Fairleigh Dickinson,2026,69,160,R,R,Fr.,OF,"Wayne, N.J.",Wayne Hills
+Chris Mattioli,Fairleigh Dickinson,2026,73,200,R,R,Gr.,RHP,"Staten Island, N.Y.",Monsignor Farrell
+Nick Noble,Fairleigh Dickinson,2026,71,195,R,R,Sr.,RHP,"Jackson, Tenn.",Edmond Santa Fe
+Anthony Chiappetta,Fairleigh Dickinson,2026,72,215,R,R,R-Jr.,C,"Dix Hills, N.Y.",Commack
+Chris Strout,Fairleigh Dickinson,2026,76,240,,,Fr.,LHP,"South Windsor, Conn.",South Windsor HS
+Travis Stroh,Fairleigh Dickinson,2026,72,180,R,R,So.,OF,"Shelburne, Vt.",Champlain Valley Union
+Joey DiMotta,Fairleigh Dickinson,2026,70,185,L,R,Jr.,OF,"Commack, N.Y.",Commack
+Anthony Sarro,Fairleigh Dickinson,2026,70,195,L,L,So.,OF,"North Riverside, Ill.",St. Rita of Cascia
+Evan Doyle,Fairleigh Dickinson,2026,73,205,,,R-Fr.,RHP,"Fanwood, N.J.",Scotch Plains Fanwood
+Tyler Worth,Fairleigh Dickinson,2026,73,215,R,R,So.,1B,"Mahwah, N.J.",Mahwah
+Nick Quagliato,Fairleigh Dickinson,2026,70,215,R,R,R-So.,C,"Neptune, N.J.",Neptune
+Garryn Plummer,Fairleigh Dickinson,2026,71,200,R,R,Gr.,C/INF,"Wichita, Kan.",Wichita West HS
+Chris Messina,Fairleigh Dickinson,2026,68,185,,,Fr.,LHP,"East Northport, N.Y.",Commack HS
+Jason DeMarco,Fairleigh Dickinson,2026,74,215,,,R-Jr.,RHP,"Hawthorne, N.J.",Hawthorne
+Nick Werner,Fairleigh Dickinson,2026,74,185,,,Fr.,RHP,"Pequannock, N.J.",Pequannock Township High School
+George Creighton,Fairleigh Dickinson,2026,69,195,,,Jr.,LHP,"Somers, N.Y.",Somers HS
+Jacob Wrubleski,Gonzaga,2026,72,190,R,R,,C,"Okotoks, Alta.",Holy Trinity Academy
+Ryder Young,Gonzaga,2026,69,180,R,R,,INF/OF,"Upland, Ca.",San Dimas HS
+Hudson Shupe,Gonzaga,2026,72,180,L,R,,INF,"West Richland, Wash.",Hanford HS
+Kainoa Santiago,Gonzaga,2026,71,170,L,L,,OF/LHP,"Portland, Ore.",Jesuit HS
+Mikey Bell,Gonzaga,2026,74,200,R,R,,INF,"Fresno, Calif.",San Joaquin Memorial HS
+Landon White,Gonzaga,2026,72,220,R,R,,INF,"Ontario, Calif.",San Dimas HS
+Bo Shinkle,Gonzaga,2026,70,170,L,R,,OF,"Olathe, Kansas",Blue Valley Southwest HS
+Craig Kabat,Gonzaga,2026,70,185,R,R,,RHP,"Green Bay, Wis.",Bay Port HS
+Peyton Miller,Gonzaga,2026,69,170,R,R,,INF,"Thousand Oaks, Calif.",Thousand Oaks HS
+Dawson Mooney,Gonzaga,2026,73,205,L,L,,LHP,"West Richland, Wash.",Liberty Christian HS
+Noah Meffert,Gonzaga,2026,73,200,R,R,,INF/OF,"Coupeville, Wash",Oak Harbor HS
+Zach Bowman,Gonzaga,2026,72,205,L,L,,LHP,"Chewelah, Wash.",Jenkins HS
+Michael Cunneely,Gonzaga,2026,77,205,R,R,,RHP,"Spokane, Wash.",Gonzaga Prep
+Bryson Leach,Gonzaga,2026,73,205,R,R,,RHP,"Maple Valley, Wash.",Tahoma HS
+Maddox Haley,Gonzaga,2026,74,,R,R,,OF,"San Diego, Calif.",Madison HS
+Justin Feld,Gonzaga,2026,72,195,R,R,,RHP,"Everett, Wash.",Cedar Park Christian
+Garrett Gores,Gonzaga,2026,73,215,R,R,,RHP,"Spokane, Wash.",Gonzaga Prep
+Tre Morse,Gonzaga,2026,73,195,R,R,,RHP,"Mountain Home, Idaho",Mountain Home HS
+Brendan Comerford,Gonzaga,2026,70,190,R,R,,INF,"Pleasanton, Calif.",Foothill HS
+Brandon Cabrera,Gonzaga,2026,72,180,R,R,,OF,"Aloha, Ore.",Aloha HS
+Rece Schuerman,Gonzaga,2026,72,215,R,R,,C,"Spokane, Wash.",Mt. Spokane HS
+Tommy Eisenstat,Gonzaga,2026,74,205,L,R,,1B,"Menlo Park, Calif.",Menlo Atherton HS
+Andy Cisneros,Gonzaga,2026,67,175,R,R,,INF,"Moorpark, Calif.",Sierra Canyon HS
+Jared Glenn,Gonzaga,2026,76,205,L,R,,RHP,"Ladera Ranch, Calif.",JSerra Catholic HS
+Karsten Sweum,Gonzaga,2026,75,225,L,L,,LHP,"Snohomish, Wash.",Glacier Peak HS
+Gabe Brabec,Gonzaga,2026,74,195,R,R,,RHP,"Ashland, Ore.",Ashland HS
+Luca DiPaolo,Gonzaga,2026,72,210,R,R,,C,"La Cañada, Calif.",Loyola HS
+Finbar O'Brien,Gonzaga,2026,75,200,L,R,,RHP,"Portland, Ore.",La Salle HS
+Mickey McClaskey,Gonzaga,2026,75,190,R,R,,RHP,"Lake Oswego, Ore.",Jesuit HS
+Ricky Sánchez,Gonzaga,2026,67,175,R,R,,INF,"Mexico City, Mexico",Holy Trinity HS
+Erik Hoffberg,Gonzaga,2026,75,200,R,R,,RHP,"West Linn, Ore.",Lakeridge HS
+Joe Thornton,Gonzaga,2026,74,210,L,L,,LHP/INF,"Tonasket, Wash.",Tonasket HS
+Frank Willius,Gonzaga,2026,76,210,L,L,,LHP,"Denver, CO.",Northfield HS
+Landon Hood,Gonzaga,2026,75,200,R,R,,RHP,"Goodyear, Ariz.",Canyon View HS
+Carson Boyer,Gonzaga,2026,72,205,L,L,,LHP,"West Linn, Ore.",West Linn HS
+Ethan Bergan,Gonzaga,2026,71,190,R,R,,C,"Portola Valley, Calif.",Menlo-Atherton HS
+CJ Egrie,Holy Cross,2026,69,170,R,R,Sr.,OF,"Ventnor City, N.J.",Holy Spirit
+Simon Landry,Holy Cross,2026,69,165,R,R,So.,INF,"Redondo Beach, Calif.",Redondo Union
+Braden Connors,Holy Cross,2026,72,205,L,R,Jr.,1B/C,"Wyckoff, N.J.",Bergen Catholic
+Gianni Royer,Holy Cross,2026,70,180,R,R,Jr.,OF,"Lake Bluff, Ill.",Lake Forest
+John LaFleur,Holy Cross,2026,70,180,L,R,Jr.,OF,"Longmeadow, Mass.",Loomis Chaffee (Conn.)
+Marco Citro,Holy Cross,2026,72,195,R,R,So.,RHP,"Harrison, N.Y.",Harrison
+Nick Spaner,Holy Cross,2026,75,200,R,R,So.,C,"Portsmouth, R.I.",Portsmouth
+Alex Sandell,Holy Cross,2026,70,180,R,R,Jr.,INF,"Cambridge, Mass.",Buckingham Browne & Nichols
+Van Coughlin,Holy Cross,2026,70,190,R,R,Jr.,C,"Solana Beach, Calif.",La Jolla Country Day
+Pedro Leon,Holy Cross,2026,74,220,R,R,So.,RHP,"New York, N.Y.",Millbrook School
+Nick Andersen,Holy Cross,2026,76,215,L,R,So.,OF,"Framingham, Mass.",Belmont Hill
+Colin Brown,Holy Cross,2026,71,190,R,R,Jr.,C,"Los Angeles, Calif.",Notre Dame HS
+Derek Volz,Holy Cross,2026,72,215,L,L,So.,LHP,"Aston, Pa.",The Hill School
+Jake Lenahan,Holy Cross,2026,71,215,R,R,So.,RHP,"South Abington Township, Pa.",Abington Heights
+Owen Stelzer,Holy Cross,2026,74,195,R,R,Fr.,INF,"Knoxville, Tenn.",Farragut
+Thomas Skrobe,Holy Cross,2026,70,200,R,R,Jr.,RHP,"New York, N.Y.",Fordham Preparatory
+Brock Graf,Holy Cross,2026,74,200,R,R,Sr.,RHP,"Glenview, Ill.",IMG Academy
+Cayden Van Dolah,Holy Cross,2026,73,190,R,R,Fr.,INF,"Simsbury, Conn.",Taft School
+Liam Daly,Holy Cross,2026,71,190,L,R,Fr.,OF,"Paxton, Mass.",Worcester Academy (Mass.)
+Lucas Ametrano,Holy Cross,2026,70,190,R,L,Fr.,OF,"Guilford, Conn.",Guilford
+Ryan Grundy,Holy Cross,2026,73,205,L,R,Jr.,INF,"Weston, Mass.",Dexter Southfield
+Brendan Gardner,Holy Cross,2026,73,175,S,R,So.,INF,"Los Angeles, Calif",Pomfret School (Conn.)
+Fletcher Waterman,Holy Cross,2026,73,215,R,R,So.,C/1B,"Ipswich, Mass.",Deerfield Academy
+Jaden Wywoda,Holy Cross,2026,75,220,R,R,Sr.,RHP,"Milford, Conn.",Jonathan Law
+Andrew Nesson,Holy Cross,2026,72,190,R,R,Jr.,RHP,"Laguna Niguel, Calif.",Dana Hills
+Nick Harnisch,Holy Cross,2026,72,190,R,R,Jr.,RHP,"Manasquan, N.J.",Christian Brothers Academy
+Cole Mascott,Holy Cross,2026,74,200,R,R,Jr.,RHP,"Newburyport, Mass.",Phillips Academy Andover
+Jack Reyes,Holy Cross,2026,71,190,R,R,Fr.,RHP,"Weymouth, Mass.",Weymouth
+Carter Crowley,Holy Cross,2026,71,195,L,R,Fr.,INF,"Bedford, N.H.",Bedford
+Colin Dowdle,Holy Cross,2026,74,195,R,R,Jr.,RHP,"Newton, Mass.",St. Sebastian's School
+Aidan Gilbert,Holy Cross,2026,74,190,R,R,So.,RHP,"Willington, Conn.",E.O. Smith
+Brett Mulligan,Holy Cross,2026,71,190,R,R,So.,RHP,"Quincy, Mass.",Catholic Memorial
+Dan Mateffy,Holy Cross,2026,76,215,R,R,Jr.,RHP,"Philadelphia, Pa.",Germantown Friends School
+Owen Callaghan,Holy Cross,2026,73,200,R,R,Fr.,RHP,"Avon, Conn.",Avon Old Farms
+Bryan Sornas,Holy Cross,2026,71,190,R,R,Fr.,INF,"Chilmark, Mass.",Worcester Academy (Mass.)
+Connor Dow,Holy Cross,2026,76,225,R,L,Fr.,LHP,"Phoenix, Md.",Dulaney
+Macade Maxwell,Holy Cross,2026,74,195,R,R,Fr.,OF,"Long Beach, Calif.",St. John Bosco
+Ethan Maddies,Holy Cross,2026,69,190,L,L,Fr.,LHP,"Carson, Calif.",Los Alamitos
+Brady MacCutcheon,Holy Cross,2026,70,180,L,L,Fr.,LHP,"Woburn, Mass.",Buckingham Browne & Nichols
+Henry Harding,Holy Cross,2026,69,165,R,R,Fr.,RHP,"Palo Alto, Calif.",Palo Alto
+Bryce Fontenot,McNeese,2026,70,180,,,So.,INF,,
+Matt Stancliff,McNeese,2026,70,170,,,Sr.,INF,,
+DJ Pinkerton,McNeese,2026,73,164,,,Jr.,OF,,
+Easton Dowell,McNeese,2026,70,163,,,R-Jr.,INF,,
+Connor Walker,McNeese,2026,70,180,,,Fr.,C,,
+Connor Schneider,McNeese,2026,70,188,,,R-Sr.,INF,,
+Danny Barbero,McNeese,2026,69,190,,,Sr.,INF,,
+Landon Kerkmaz,McNeese,2026,72,195,,,Sr.,OF,,
+Colton Cross,McNeese,2026,73,196,,,Jr.,RHP,,
+Gage Trahan,McNeese,2026,69,184,,,Jr.,INF,,
+Cooper Golden,McNeese,2026,76,220,,,Sr.,LHP,,
+Connor Achee,McNeese,2026,74,185,,,Jr.,LHP,,
+Isaiah Keller,McNeese,2026,72,200,,,Gr.,OF,,
+Korey Cooper,McNeese,2026,74,200,,,Sr.,INF,,
+Jaden Bahl,McNeese,2026,72,165,,,Jr.,RHP,,
+Elliott Burrows,McNeese,2026,71,175,,,R-Fr.,RHP,,
+Marcus Heusohn,McNeese,2026,73,205,,,Sr.,INF,,
+Josh Jones,McNeese,2026,69,215,,,Jr.,C,,
+Viggo Lopez,McNeese,2026,73,206,,,Jr.,OF,,
+Simon Larranaga,McNeese,2026,75,223,,,Sr.,INF,,
+Eric Nachtsheim,McNeese,2026,76,235,,,Sr.,RHP,,
+Kaden Schuck,McNeese,2026,72,197,,,R-Jr.,C,,
+Diego Corrales,McNeese,2026,69,160,,,So.,LHP,,
+Larry Edwards Jr.,McNeese,2026,73,184,,,Sr.,OF,,
+Alexis Gravel,McNeese,2026,73,201,,,Sr.,LHP,,
+Parker Morgan,McNeese,2026,73,200,,,Sr.,LHP,,
+Ian Holm,McNeese,2026,73,197,,,Jr.,RHP,,
+Hayden Stringfellow,McNeese,2026,72,211,,,Jr.,INF,,
+Garett Blanchard,McNeese,2026,73,198,,,Jr.,RHP,,
+Jake Blackwell,McNeese,2026,75,200,,,Sr.,LHP,,
+Roman Tolbert,McNeese,2026,77,240,,,R-Jr.,RHP,,
+Reese Ashworth,McNeese,2026,73,198,,,Jr.,RHP,,
+Seth Fontenot,McNeese,2026,74,205,,,Jr.,C,,
+Adrian Najar,McNeese,2026,70,182,,,Jr.,RHP,,
+Brady Corcoran,McNeese,2026,71,210,,,So.,LHP,,
+Carlos Garcia,McNeese,2026,70,200,,,R-Jr.,RHP,,
+Paul Coppinger,McNeese,2026,78,265,,,Sr.,RHP,,
+Jairus Miller,McNeese,2026,74,174,,,Fr.,LHP,,
+Cameron Williams,McNeese,2026,72,180,,,Jr.,LHP,,
+Wyatt Wick,McNeese,2026,70,173,,,Sr.,RHP,,
+Myles Meyer,McNeese,2026,75,207,,,Sr.,RHP,,
+Vance Sheahan,Miami,2026,72,191,,,Junior,Infield,"Lake Worth, Fla.",Cardinal Newman
+Derek Williams,Miami,2026,72,214,,,Fifth-Year Senior,Outfield,"St. Louis, Mo.",Windsor
+Jake Ogden,Miami,2026,72,189,,,Senior,Infield,"Homestead, Fla.",Coral Reef
+Brandon DeGoti,Miami,2026,71,190,,,Sophomore,Infield,"Miami, Fla.",Belen Jesuit
+Max Galvin,Miami,2026,74,210,,,Redshirt Senior,Outfield,"Coral Gables, Fla.",IMG Academy
+Lyndon Glidewell,Miami,2026,74,182,,,Senior,Right-handed pitcher,"Temecula, Calif.",Murrieta Valley
+Rob Evans,Miami,2026,73,230,,,Senior,Left-handed pitcher,"Harlem, N.Y.",P27 Academy
+Alex Sosa,Miami,2026,73,208,,,Junior,Catcher,"Viera, Fla.",Viera
+Daniel Cuvet,Miami,2026,75,240,,,Junior,Infield,"Fort Lauderdale, Fla.",Elite Squad Baseball Academy
+Fabio Peralta,Miami,2026,74,191,,,Sophomore,Outfield,"Miami, Fla.",Miami Christian
+Frank Menendez,Miami,2026,73,230,,,Junior,Left-Handed Pitcher,"Miami, Fla.",Doral Academy
+TJ Coats,Miami,2026,74,212,,,Junior,Right-handed pitcher,"Overland Park, Kan.",Blue Valley SW
+Michael Taylor,Miami,2026,76,245,,,Senior,Right-handed pitcher,"Santa Clarita, Fla.",West Ranch
+Packy Bradley-Cooney,Miami,2026,74,208,,,Graduate Student,Right-handed pitcher,"Woburn, Mass.",Arlington Catholic
+Tate DeRias,Miami,2026,76,196,,,Sophomore,Right-handed pitcher,"Hammonton, N.J.",Gloucester Catholic
+Jackson Hugus,Miami,2026,70,194,,,Graduate Student,Catcher,"Wellington, Fla.",Wellington
+Brylan West,Miami,2026,76,269,,,Graduate Student,Infield,"Tampa, Fla.",Freedom
+Ryan Bilka,Miami,2026,73,208,,,Senior,Right-handed pitcher,"Latham, N.Y.",Christian Brothers Academy
+Michael Torres,Miami,2026,71,185,,,Sophomore,Outfield,"Miami, Fla.",Doral Academy
+Erick Peralta,Miami,2026,77,234,,,Freshman,Right-handed pitcher,"Brooklyn, N.Y.",Grand Street Campus
+Nick Robert,Miami,2026,77,230,,,Junior,Right-handed pitcher,"Stuart, Fla.",Martin County
+Alonzo Alvarez,Miami,2026,75,212,,,Freshman,Catcher,"Brentwood, Calif.",Heritage
+Michael Fernandez,Miami,2026,70,170,,,Sophomore,Left-handed pitcher,"Tampa, Fla.",Gaither
+Gabriel Milano,Miami,2026,72,198,,,Freshman,Infield,"Miami, Fla.",Doral Academy
+Jailen Watkins,Miami,2026,67,170,,,Freshman,Infield,"Sachse, Tx.",Sachse
+Jake Dorn,Miami,2026,76,235,,,Redshirt Junior,Left-handed pitcher,"Davie, Fla.",Cooper City
+Brixton Lofgren,Miami,2026,72,183,,,Junior,Right-handed pitcher,"Miami, Fla.",Gulliver Prep
+Donavan Jeffrey,Miami,2026,73,220,,,Freshman,Infield,"Chester, Va.",Pro Development Group
+Dylan Dubovik,Miami,2026,76,205,,,Freshman,Outfield/Right-handed pitcher,"Coral Springs, Fla.",American Heritage
+Bennett Gary,Miami,2026,69,168,,,Freshman,Outfield,"Parkland, Fla.",Marjory Stoneman Douglas
+Jack Durso,Miami,2026,75,210,,,Freshman,Left-handed pitcher,"Seaford, N.Y.",Kellenberg Memorial
+AJ Ciscar,Miami,2026,76,209,,,Sophomore,Right-handed pitcher,"Weston, Fla.",St. Thomas Aquinas
+Sebastian Santos-Olson,Miami,2026,75,215,,,Freshman,Left-handed pitcher,"Port Chester, N.Y.",The Stony Brook School
+Lazaro Collera,Miami,2026,77,225,,,Sophomore,Right-handed pitcher,"Miami, Fla.",Westminster Christian
+Reagan Smith,Milligan,2026,69,160,,,So.,INF,"Alexander, N.C.",North Buncombe HS
+Gaven Jones,Milligan,2026,70,175,,,Gr.,INF,"Johnson City, Tenn.",Daniel Boone
+Miller Spence,Milligan,2026,68,165,,,Jr.,OF,"Knoxville, Tenn.",Knoxville Catholic
+Brady Thomas,Milligan,2026,75,195,,,Jr.,RHP,"Plantation, Fla.",
+Bryce Burkey,Milligan,2026,71,185,,,Sr.,OF,"Knoxville, Tenn.",
+Wyatt Heidle,Milligan,2026,74,210,,,Sr.,C,"Kingston, Tenn.",
+Braxton Baird,Milligan,2026,76,160,,,Sr.,INF,"Murfreesboro, Tenn.",
+Cade Kalehuawehe,Milligan,2026,69,195,,,Gr.,C,"Wailuku, Hawaii",
+Nick Iezzi,Milligan,2026,72,200,,,Sr.,OF,"Greeneville, Tenn.",
+Brody Melton,Milligan,2026,76,205,,,Sr.,INF,"Tullahoma, Tenn.",
+J.J. Gibson,Milligan,2026,68,135,,,So.,C,"Knoxville, Tenn.",Grace Christian Academy
+Canyon Geren,Milligan,2026,70,170,,,Sr.,RHP,"Knoxville, Tenn.",Knoxville Catholic
+Kaden Wise,Milligan,2026,70,205,,,Gr.,LHP,"Columbus, Ind.",
+Anfernee Fernandez,Milligan,2026,73,195,,,Gr.,RHP,"Santiago, Dominican Republic",
+Josh Lail,Milligan,2026,73,185,,,Gr.,INF,"Charlotte, N.C.",Olympic
+Brycen Denton,Milligan,2026,71,185,,,Sr.,LHP,"Knoxville, Tenn.",
+Kaleb Meredith,Milligan,2026,,195,,,Sr.,LHP,"Chuckey, Tenn,",
+Cole Putnal,Milligan,2026,71,235,,,So.,1B/C,"Rogersville, Tenn.",Cherokee HS
+Andrew Dingus,Milligan,2026,73,175,,,Jr.,OF/RHP,"Bluff City, Tenn.",Tennessee
+Conner Hendrix,Milligan,2026,74,170,,,So.,RHP,"Jonesborough, Tenn.",David Crockett HS
+Cainan Meyers,Milligan,2026,73,200,,,So.,C/RHP,"Bristol, Tenn.",Tennessee HS
+Karsen Waslefsky,New Mexico,2026,72,190,R,R,Sr.,Infielder,"Gilbert, Ariz.",
+Tristan Russell,New Mexico,2026,72,195,S,R,RS-So.,Infielder,"Cypress, Texas",
+Shane Miller,New Mexico,2026,73,190,L,R,So.,Infielder,"Gilbert, Ariz.",
+Reid Jacobson,New Mexico,2026,74,180,,,Fr.,Infielder,"Albuquerque, N.M.",
+Anthony Diaz,New Mexico,2026,75,200,,,Jr.,Outfielder,"Tucson, Ariz.",
+Garrett Rede,New Mexico,2026,73,190,,,Gr.,Outfielder,"Rio Rancho, N.M.",
+Tommy White,New Mexico,2026,76,210,R,R,Sr.,Right-handed Pitcher,"Albuquerque, N.M.",
+Diego Alvarez,New Mexico,2026,70,185,R,R,Sr.,Right-handed Pitcher,"Sahuarita, Ariz.",
+Antonio Gianni,New Mexico,2026,70,180,,,Jr.,Infielder/Outfielder,"Cave Creek, Ariz.",
+Ethin Woltz,New Mexico,2026,76,200,,,Fr.,Right-handed Pitcher,"Aurora, Colo.",
+Matthew Cornelius,New Mexico,2026,72,185,L,L,Gr.,Left-handed Pitcher,"Zuni, N.M.",
+Talor Grubbs,New Mexico,2026,72,210,,,Sr.,Right-handed Pitcher,"Greensboro, N.C.",
+Matthew Romero,New Mexico,2026,72,195,L,L,Gr.,Left-handed Pitcher,"Albuquerque, N.M.",
+Akili Carris,New Mexico,2026,74,185,R,R,Sr.,Infielder,"Albuquerque, N.M.",
+Khalil Walker,New Mexico,2026,70,190,L,L,Gr.,Outfielder,"Mansfield, Texas",
+Samuel Jackson,New Mexico,2026,76,190,,,Jr.,Left-handed Pitcher,"Sydney, Australia",
+Cristian Mogen,New Mexico,2026,72,200,R,R,RS-So.,Right-handed Pitcher,"Peoria, Ariz.",
+Cooper Corkrean,New Mexico,2026,75,200,,,Jr.,Left-handed Pitcher,"Katy, Texas",
+Logan Barnett,New Mexico,2026,76,235,,,Jr.,Right-handed Pitcher,"Pontiac, Ill.",
+Lachlan Maude,New Mexico,2026,76,240,,,Jr.,Catcher,"Toronto, Ontario",
+Seth Lee,New Mexico,2026,73,200,,,Jr.,Right-handed Pitcher,"Rio Rancho, N.M.",
+Ty Cunningham,New Mexico,2026,75,215,R,R,Sr.,Right-handed Pitcher,"Iowa Park, Texas",
+Brodey Williams,New Mexico,2026,72,210,L,R,Sr.,Catcher,"Houston, Texas",
+Luke Wiseman,New Mexico,2026,72,215,R,R,RS-Sr.,Right-handed Pitcher,"Wylie, Texas",
+Luke Mansy,New Mexico,2026,70,185,L,R,RS-Sr.,Infielder,"San Diego, Calif.",
+Damian Garcia,New Mexico,2026,73,220,,,Sr.,Infielder/Outfielder,"San Luis, Ariz.",
+Caleb Herd,New Mexico,2026,69,178,,,Sr.,Catcher,"Vail, Ariz.",
+Josh Barnhouse,New Mexico,2026,78,240,,,Gr.,Right-handed Pitcher,"Prosper, Texas",
+Tyler Do,New Mexico,2026,72,180,,,Jr.,Right-handed Pitcher,"Sugar Land, Texas",
+Blake Lehmbeck,New Mexico,2026,73,225,,,Jr.,Right-handed Pitcher,"Tucson, Ariz.",
+Ryan Castillo,New Mexico,2026,74,195,,,Jr.,Right-handed Pitcher,"Los Lunas, N.M.",
+Seth Edgerton,New Mexico,2026,76,230,,,RS-Jr.,Right-handed Pitcher,"Greer, S.C.",
+Gene Trujillo,New Mexico,2026,78,245,,,Jr.,First Baseman,"Albuquerque, N.M.",
+Aidan Kuni,New Mexico,2026,72,190,,,Sr.,Infielder,"Flower Mound, Texas",
+Jacob Gergen,New Mexico,2026,73,170,,,Fr.,Right-handed Pitcher,"Albuquerque, N.M.",
+Lenny Junior Ashby,New Mexico,2026,67,210,,,Gr.,Outfielder,"Oranjestad, Aruba",Odessa College
+Jayce Lee,Notre Dame,2026,76,205,R,R,Sophomore,OF,"South Bend, IN",Saint Joseph
+Mason Barth,Notre Dame,2026,69,202,R,R,Freshman,INF,"St. John, IN",Andrean
+Jonathan Holt,Notre Dame,2026,74,203,R,R,Sophomore,INF,"Glen Mills, PA",Malvern Prep
+Dylan Singleton,Notre Dame,2026,74,192,L,L,Freshman,LHP,"Bradenton, FL",PDG Academy
+Andrew Graham,Notre Dame,2026,69,205,R,R,Graduate Student,INF,"Seattle, WA",Seattle Prep/ Yakima Valley College/ Metropolitan State University of Denver
+Caden Crowell,Notre Dame,2026,76,205,L,L,Freshman,LHP/IF,"Valparaiso, IN",Valparaiso
+Troy Reader,Notre Dame,2026,72,200,R,R,Junior,C,"Tampa, FL",Berkeley Prep
+Drew Berkland,Notre Dame,2026,71,208,R,R,Graduate Student,OF,"Wayzata, MN",Wayzata/Minnesota
+Noah Coy,Notre Dame,2026,71,195,L,R,Sophomore,INF,"Greenwood, IN",Center Grove
+Will Jaisle,Notre Dame,2026,74,230,R,R,Freshman,RHP,"Batesville, IN",Batesville
+Jamie Zee,Notre Dame,2026,69,187,R,R,Freshman,INF,"Hasbrouck Heights, NJ",Bergen Catholic
+Shane Miranda,Notre Dame,2026,72,207,L,R,Freshman,C,"Chula Vista, CA",Saint Augustine
+Bino Watters,Notre Dame,2026,74,215,L,L,Sophomore,OF/INF,"Rochester Hills, MI",Rochester Adams
+Brandon Logan,Notre Dame,2026,72,201,R,R,Freshman,OF,"Fort Wayne, IN",Snider
+Aiden Zerr,Notre Dame,2026,74,210,R,R,Freshman,RHP,"Brandon, SD",Brandon Valley
+Mark Quatrani,Notre Dame,2026,71,210,R,R,Junior,C,"Philadelphia, PA",The Haverford School/ Cornell
+Caleb Ricks,Notre Dame,2026,71,185,R,R,Freshman,OF,"Elizabethtown, KY",Trinity
+Dylan Passo,Notre Dame,2026,74,202,L,L,Freshman,INF,"Red Bank, NJ",Red Bank Catholic
+Parker Brzustewicz,Notre Dame,2026,75,197,R,R,Sophomore,INF,"Rochester Hills, MI",Orchard Lake St. Mary's
+Gian Gamelli,Notre Dame,2026,75,202,L,L,Freshman,LHP,"Wenham, MA",Hamilton-Wenham Regional
+Ty Uber,Notre Dame,2026,76,237,R,R,Graduate Student,RHP,"Cameron Park, CA",Ponderosa/Stanford
+Kellan Klosterman,Notre Dame,2026,73,184,R,R,Sophomore,RHP,"Loveland, OH",Archbishop Moeller
+Garrett Snyder,Notre Dame,2026,77,232,R,R,Freshman,RHP,"Farmington, CT",Cheshire Academy
+Jack Radel,Notre Dame,2026,77,250,R,R,Junior,RHP,"Sioux Falls, SD",Roosevelt
+Xavier Hirsch,Notre Dame,2026,77,205,L,R,Senior,RHP,"Mansfield, TX",Mansfield
+Evan Clark,Notre Dame,2026,71,195,L,L,Graduate Student,LHP,"Western Springs, IL",IMG Academy/USC/Illinois
+Radek Birkholz,Notre Dame,2026,71,200,R,R,Graduate Student,RHP,"Highlands Ranch, CO",Valor Christian
+Oisin Lee,Notre Dame,2026,78,200,R,R,Sophomore,RHP,"Newton, MA",St. Mark's
+Hagan Ward,Notre Dame,2026,79,250,R,R,Junior,RHP,"Wellesley, MA",St. Sebastian's School
+Eli Thurmond,Notre Dame,2026,75,210,R,R,Graduate Student,RHP,"Bradenton, FL",Bradenton Christian/State College of Florida/Tampa
+Trent Hartman,Notre Dame,2026,70,180,R,R,Sophomore,C,"Cincinnati, OH",Indian Hill
+DJ Helwig,Notre Dame,2026,78,215,R,R,Junior,RHP,"Mokena, IL",St. Laurence
+Noah Rooney,Notre Dame,2026,72,170,L,L,Senior,LHP,"Perham, MN",Perham/Minnesota
+Joe Coffey,Notre Dame,2026,74,210,R,R,Sophomore,INF,"Hinsdale, IL",Benet Academy/Baldwin Wallace University
+Chase Van Ameyde,Notre Dame,2026,77,200,R,R,Sophomore,RHP,"Lake Orion, MI",Brother Rice
+Davis Johnson,Notre Dame,2026,72,195,L,R,Junior,C/OF,"Providence, RI",Moses Brown
+Luke Waters,Old Dominion,2026,73,200,,,Graduate Student,INF,"Laurel, Del.",Delmar
+Maverick Stallings,Old Dominion,2026,72,190,,,Senior,INF,"Apopka, Fla.",Lake Brantley
+TJ Aiken,Old Dominion,2026,74,200,,,Junior,OF,"Greenwood, S.C.",Greenwood
+Tyler Zedalis,Old Dominion,2026,74,215,,,Junior,INF,"Charlotte, N.C.",Cox Mill
+Efrain Morales,Old Dominion,2026,69,195,,,Sophomore,UTL,"Raleigh, N.C.",Cedar Ridge
+Hunter Baynes,Old Dominion,2026,74,215,,,Junior,RHP,"Bradenton, Fla.",IMG Academy
+Brody Connors,Old Dominion,2026,72,200,,,Sophomore,INF,"Newport Beach, Calif.",Mater Dei
+Tanner Schaedel,Old Dominion,2026,74,200,,,Sophomore,OF,"Virginia Beach, Va.",Cape Henry Collegiate
+Zach Leite,Old Dominion,2026,74,215,,,Senior,INF,"Dana Point, Calif.",Dana Hills
+Scotty Young,Old Dominion,2026,78,220,,,Graduate Student,OF,"Mission Viejo, Calif.",Mission Viejo
+Cole Lanford,Old Dominion,2026,76,215,,,Sophomore,LHP,"Raleigh, N.C.",Leesville Road/PRO5 Academy
+Evan Holman,Old Dominion,2026,71,205,,,Senior,C,"Aurora, Ore.",North Marion
+Ethan Hubbell,Old Dominion,2026,75,220,,,Senior,RHP,"Camas, Wash.",Camas
+Bailey Matela,Old Dominion,2026,77,235,,,Senior,LHP,"Norfolk, Va.",Greenbrier Christian
+Connor Schumann,Old Dominion,2026,72,200,,,Redshirt Senior,LHP,"Midlothian, Va.",Benedictine College Prep
+Jayce Park,Old Dominion,2026,71,184,,,Sophomore,RHP,"Philadelphia, Pa.",St. John Neumann Goretti
+Tyler Stott,Old Dominion,2026,76,210,,,Senior,RHP,"Las Vegas, Nev.",Desert Oasis
+Owen Yarussi,Old Dominion,2026,72,190,,,Sophomore,LHP,"Cranberry Township, Pa.",Seneca Valley
+Nick Sulpizio,Old Dominion,2026,74,200,,,Junior,RHP,"Cherry Hill, N.J.",Bishop Eustace
+Kellen Davis,Old Dominion,2026,72,223,,,Graduate Student,RHP,"Media, Pa.",Penncrest
+Cole McKenna,Old Dominion,2026,73,175,,,Freshman,INF,"West Deptford, N.J.",West Deptford
+Bennett Siegel,Old Dominion,2026,73,205,,,Freshman,OF,"Princeton Junction, N.J.",West Windsor-Plainsboro South
+Will Johnson,Old Dominion,2026,73,185,,,Junior,INF,"Allen, Texas",Prestonwood Christian Academy
+Jack Slater,Old Dominion,2026,73,185,,,Graduate Student,UTL,"Tampa, Fla.",Hillsborough
+Cash Jay,Old Dominion,2026,72,200,,,Graduate Student,INF,"Chickasha, Okla.",Chickasha
+Nick Felton,Old Dominion,2026,75,195,,,Freshman,OF,"Odenton, Md.",St. Johns College HS
+Macaddin Dye,Old Dominion,2026,74,215,,,Junior,C,"Virginia Beach, Va.",Frank W. Cox
+Grayson Sparr,Old Dominion,2026,73,195,,,Junior,OF,"Pawtucket, R.I.",Wheeler School
+Cam Tellefsen,Old Dominion,2026,78,230,,,Freshman,INF,"Virginia Beach, Va.",Landstown
+Marcus Van Alstine,Old Dominion,2026,72,190,,,Graduate Student,RHP,"Mechanicsville, Va.",Hanover
+JJ Gatti,Old Dominion,2026,75,205,,,Junior,RHP,"Rockville Centre, N.Y.",Chaminade
+Ben Tanton,Old Dominion,2026,74,210,,,Freshman,RHP,"Vestal, N.Y.",Vestal Senior
+Ryan Sheehy,Old Dominion,2026,73,180,,,Sophomore,RHP,"Shelton, Conn.",Emmett O’Brien Technical
+Darin Kuskie,Old Dominion,2026,75,210,,,Junior,RHP,"Damascus, Md.",Damascus
+Jackson Okonkwo,Old Dominion,2026,77,210,,,Freshman,RHP,"Virginia Beach, Va.",Greenbrier Christian Academy
+JJ Hand,Old Dominion,2026,73,205,,,Freshman,C,"Bristow, Va.",Brentsville District
+Charlie Pearce,Old Dominion,2026,73,183,,,Freshman,RHP,"Superior, Colo.",Monarch
+Patrick Johnson,Old Dominion,2026,75,210,,,Senior,RHP,"Chattanooga, Tenn.",Baylor School
+Chris Cavalcante,Old Dominion,2026,77,225,,,Freshman,RHP,"Philadelphia, Pa.",La Salle College HS
+Jackson Runyon,Old Dominion,2026,74,190,,,Sophomore,RHP,"Suffolk, Va.",Nansemond-Suffolk Academy
+Will Orberson,Old Dominion,2026,74,210,,,Sophomore,RHP,"Lexington, Ky.",IMG Academy
+Maddox Jack,Old Dominion,2026,74,215,,,Redshirt Freshman,RHP,"Hickory, N.C.",Alexander Central/P27 Baseball Academy
+Will Hindle,Rhode Island,2026,70,166,R,R,R-Jr.,INF/OF,"Rye, N.H.",Portsmouth
+Ryan King,Rhode Island,2026,69,181,R,R,Gr.,IF,"Bernardsville, N.J.",St. Peter’s Prep
+Aidan Botti,Rhode Island,2026,75,185,L,R,Jr.,OF,"Wallingford, Vt.",Proctor Academy (Cuesta College)
+Brian Connolly,Rhode Island,2026,70,175,R,R,R-Fr.,IF,"Brunswick, Maine",Winchendon School (Wake Forest)
+Joel Collado,Rhode Island,2026,73,200,R,R,R-So.,C/1B,"St. Cloud, Fla.",Olympia (Alabama State)
+Joe Sabbath,Rhode Island,2026,74,194,R,R,Jr.,RHP,"Pequannock, N.J.",Pequannock
+Manny Santos,Rhode Island,2026,70,185,R,R,So.,RHP,"Amsterdam, N.Y.",The Albany Academy
+Adonis Medina,Rhode Island,2026,70,170,R,R,So.,OF,"Providence, R.I.",Central
+Ryan Henschel,Rhode Island,2026,71,182,R,R,R-Jr.,OF,"Northbrook, Ill.",Glenbrook North
+Parker Aikens,Rhode Island,2026,73,180,L,L,So.,LHP,"Schenectady, N.Y.",Niskayuna
+Reece Moroney,Rhode Island,2026,71,187,R,R,Jr.,IF,"Fair Haven, N.J.",Rumson-Fair Haven
+Colin Maloney,Rhode Island,2026,71,178,R,R,R-Jr.,RHP,"Rexford, N.Y.",Shenendehowa
+TJ Gormley,Rhode Island,2026,72,200,L,R,R-Jr.,IF,"North Kingstown, R.I.",North Kingstown (Maine)
+Braeden Perry,Rhode Island,2026,75,190,L,R,R-Jr.,RHP,"North Kingstown, R.I.",North Kingstown
+Scott Penney,Rhode Island,2026,73,185,L,R,Jr.,IF,"Cumberland, R.I.",Cumberland
+Danny Leikus,Rhode Island,2026,75,220,R,R,So.,C,"Baltimore, Md.",Gilman School
+Evan Maloney,Rhode Island,2026,76,205,R,R,R-Jr.,RHP,"North Kingstown, R.I.",North Kingstown (Wake Forest)
+Connor Grotyohann,Rhode Island,2026,76,230,R,R,R-Jr.,OF/RHP,"Stockholm, N.J.",Pope John XXII
+Jayden Tolentino,Rhode Island,2026,74,190,R,R,Fr.,C,"Cranston, R.I.",Putnam Academy
+Dorsy Asencio,Rhode Island,2026,74,200,R,R,R-Jr.,RHP,"Cranston, R.I.",Bishop Hendricken
+Connor Johnston,Rhode Island,2026,75,209,R,R,Sr.,RHP,"Trumbull, Conn.",Trumbull
+Derek Maceda,Rhode Island,2026,72,174,L,R,R-So.,OF,"North Attleboro, Mass.",Attleboro
+Andrew Ray,Rhode Island,2026,71,205,R,R,R-Fr.,UT,"Cumberland, R.I.",Cumberland
+Tommy Turner,Rhode Island,2026,71,202,R,R,R-So.,RHP,"Coventry, R.I.",Coventry (UConn)
+Nolan Urian,Rhode Island,2026,73,200,R,R,Fr.,RHP,"South Kingstown, R.I.",South Kingstown
+Nate Fletcher,Rhode Island,2026,76,200,L,L,So.,LHP,"Aurora, Ohio",Aurora
+Jake Cullen,Rhode Island,2026,74,195,R,R,So.,RHP,"Westford, Mass.",Westford Academy
+James Haughton,Rhode Island,2026,71,170,L,R,Fr.,IF,"Ballston Spa, N.Y.",Ballston Spa
+Jack Hopko,Rhode Island,2026,72,190,L,L,Sr.,1B/OF,"Endwell, N.Y.",Maine-Endwell
+Ryan Thompson,Rhode Island,2026,75,220,R,R,So.,1B,"Lincoln, R.I.",Bishop Hendricken
+Will Creed,Rhode Island,2026,72,210,L,L,R-Fr.,LHP,"North Kingstown, R.I.",North Kingstown
+Ben Jahnz,Rhode Island,2026,74,180,R,R,Fr.,RHP,"Cumberland, R.I.",Cumberland
+Sam Houchens,Rhode Island,2026,72,185,L,L,Fr.,LHP/OF,"Odenton, Md.",Archbishop Spalding
+Josh Kopetski,Rhode Island,2026,72,155,L,L,Jr.,LHP,"Arundel, Maine",Thornton Academy
+Adam Carpenter,Rhode Island,2026,72,180,R,R,Fr.,RHP,"Richmond, R.I.",Chariho
+AJ Jones,Rhode Island,2026,72,185,R,R,Jr.,RHP,"Warren, R.I.",Mount Hope
+Nicholas Toro,Rhode Island,2026,73,233,R,R,R-Jr.,C,"Lincoln, R.I.",Lincoln
+Nick Worthington,Rhode Island,2026,76,235,R,R,R-Jr.,RHP,"South Windsor, Conn.",South Windsor
+Paul Calandrelli,Rhode Island,2026,72,204,R,R,Fr.,C,"Madison, Conn.",Daniel Hand
+Luc Lavigueur,Rhode Island,2026,75,205,R,R,Sr.,RHP,"Newport, R.I.",Rogers (Maine)
+Zach Morris,Rhode Island,2026,72,181,L,R,Jr.,RHP,"Gloucester, Mass.",Gloucester
+Luke Pearre,Rhode Island,2026,70,165,L,L,So.,LHP,"Poolesville, Md.",Poolesville
+Jake Jackson,San Diego State,2026,78,215,,,Junior,OF,"San Diego, Calif.",Madison HS
+Gage Adams,San Diego State,2026,73,200,,,Senior,C,"Boynton Beach, Fla.",Saint John Paul II Academy
+Alito McBean,San Diego State,2026,74,225,,,Sophomore,LHP,"Hermosa Beach, Calif.",Mira Costa HS
+Chris Canavan,San Diego State,2026,78,210,,,Junior,LHP,"Hermosa Beach, Calif.",Mira Costa HS
+Issac Araiza,San Diego State,2026,77,270,,,Senior,RHP,"Yuma, Ariz.",Yuma Catholic HS
+Evan Miranda,San Diego State,2026,74,230,,,Junior,RHP,"Fontana, Calif.",Orange Lutheran HS
+Aidan Russell,San Diego State,2026,72,180,,,Senior,RHP,"Vacaville, Calif.",Vacaville HS
+Connor Abadie,San Diego State,2026,72,165,,,Redshirt Junior,LHP,"Apple Valley, Calif.",Serrano HS
+Connor Shaw,San Diego State,2026,74,185,,,Sophomore,LHP,"San Diego, Calif.",Westview HS
+Garvey Rumary,San Diego State,2026,75,195,,,Junior,LHP/OF,"Yorba Linda, Calif.",El Dorado HS
+Zane Kelly,San Diego State,2026,74,200,,,Junior,OF,"Las Vegas, Nev.",Faith Lutheran HS
+Dawson Santana,San Diego State,2026,66,160,,,Junior,IF,"Lake Oswego, Ore.",Lakeridge HS
+Adam Magpoc,San Diego State,2026,69,170,,,Junior,IF,"Torrance, Calif.",Loyola HS
+Nate Lopez,San Diego State,2026,70,185,,,Freshman,IF,"Reseda, Calif.",Crespi Carmelite HS
+Tyce Peterson,San Diego State,2026,71,195,,,Senior,IF,"Kirkland, Wash.",Juanita HS
+Drew Rutter,San Diego State,2026,73,190,,,Junior,OF,"Trabuco Canyon, Calif.",Santa Margarita HS
+Andrew Parker,San Diego State,2026,71,220,,,Junior,RHP,"Santa Ana, Calif.",Foothill HS
+Jabin Trosky,San Diego State,2026,70,185,,,Redshirt Junior,IF,"Carmel, Calif.",Carmel HS
+Joey Monetti,San Diego State,2026,72,170,,,Freshman,C,"Santee, Calif.",West Hills HS
+Kalani Jauregui,San Diego State,2026,72,195,,,Freshman,RHP,"Chula Vista, Calif/","Eastlake, Calif."
+Max Farrell,San Diego State,2026,72,200,,,Freshman,2B/OF,"Carlsbad, Calif.",San Marcos HS
+Levi Jones,San Diego State,2026,74,190,,,Junior,IF/OF,"Portland, Ore.",Jesuit HS
+Bryce McKnight,San Diego State,2026,73,175,,,Junior,RHP,"Phoenix, Ariz.",Desert Vista HS
+Carson Johnson,San Diego State,2026,76,205,,,Redshirt Sophomore,RHP,"Chandler, Ariz.",Hamilton HS
+Anthony Marnell IV,San Diego State,2026,75,210,,,Redshirt Sophomore,C,"Las Vegas, Nev.",Bishop Gorman HS
+David Ladjevic,San Diego State,2026,75,205,,,Redshirt Junior,RHP,"Anaheim, Calif.",Servite HS
+Trey Telfer,San Diego State,2026,74,195,,,Sophomore,RHP,"San Diego, Calif.",Cathedral Catholic HS
+Nick Falla,San Diego State,2026,73,190,,,Junior,RHP,"Coconut Creek, Fla.",St. Thomas Aquinas HS
+Colton LaFave,San Diego State,2026,74,190,,,Junior,RHP,"Litchfield Park, Ariz.",Shadow Ridge HS
+Zach Justice,San Diego State,2026,72,200,,,Redshirt Sophomore,C,"Oakland, Calif.",Summit HS (Ore.)
+Alec Belardes,San Diego State,2026,74,195,,,Redshirt Sophomore,RHP,"San Jose, Calif.",Valley Christian HS
+Jackson Tyler,San Diego State,2026,70,180,,,Freshman,OF,"Simi Valley, Calif.",Chaminade College Prep
+Rohan Lettow,San Diego State,2026,75,190,,,Junior,RHP,"Chandler, Ariz.",Hamilton HS
+Reeve Boyd,San Diego State,2026,73,200,,,Junior,UTL,"Seattle, Wash.",Seattle Prep
+Simon Lemke,San Diego State,2026,73,170,,,Junior,RHP,"Bend, Ore.",Mountain View HS
+Drew Talavs,San Diego State,2026,74,205,,,Junior,RHP,"West Linn, Ore.",West Linn HS
+Jake Frohn,San Diego State,2026,74,205,,,Freshman,RHP,"Huntington Beach, Calif.",Huntington Beach HS
+Marc Emmerman,San Diego State,2026,69,175,,,Freshman,IF,"Torrance, Calif.",Gardena HS
+Ryan Jackson,San Diego State,2026,75,175,,,Freshman,OF,"San Diego, Calif.",Madison HS
+Carson Moore,San Diego State,2026,72,170,,,Freshman,SS,"Cameron Park, Calif.",Del Oro HS
+Neil Jansen,San Jose State,2026,70,200,,,Senior,OF,"Cypress, Calif.",Cypress HS
+Jesse Gutierrez,San Jose State,2026,73,200,,,Senior,LHP,"Santa Clara, Calif.",Wilcox HS
+Cade Cushing,San Jose State,2026,75,185,,,Senior,RHP,"Martinez, Calif.",De La Salle HS
+Caden Duke,San Jose State,2026,74,200,,,Fifth Year,RHP,"Tracy, Calif.",Millenium Charter
+Tyler Albanese,San Jose State,2026,78,230,,,Junior,RHP,"Redlands, Calif.",Redlands East Valley HS
+Alex Fernandes,San Jose State,2026,71,170,,,Senior,OF,"San Marcos, Calif.",San Marcos HS
+Drew Giannini,San Jose State,2026,74,220,,,Senior,INF,"Tracy, Calif.",Tracy HS
+Rocco Caballero,San Jose State,2026,70,180,,,Senior,INF,"South Gate, Calif.",Warren HS
+Emmitt Phinney,San Jose State,2026,75,210,,,Senior,INF,"Alameda, Calif.",St. Joseph Notre Dame HS
+Trevor Wilson,San Jose State,2026,73,200,,,Redshirt Sophomore,OF,"Fresno, Calif.",Bullard HS
+Matteo Mendoza,San Jose State,2026,70,200,,,Redshirt Senior,C,"El Cerrito, Calif.",St. Mary's College HS
+Jake McCoy,San Jose State,2026,74,210,,,Senior,OF/RHP,"Rohnert Park, Calif.",Casa Grande HS
+JC Osorio-Agard,San Jose State,2026,74,210,,,Redshirt Junior,INF,"Hayward, Calif.",Sacred Heart Cathedral Prep
+Kyle Calzadiaz,San Jose State,2026,75,200,,,Senior,RHP,"Walnut, Calif.",Walnut HS
+David Thomas,San Jose State,2026,76,220,,,Senior,RHP,"Brentwood, Calif.",Heritage HS
+Luca Staiano,San Jose State,2026,78,210,,,Senior,RHP,"Newbury Park, Calif.",Newbury Park HS
+EJ McGrew,San Jose State,2026,74,240,,,Senior,LHP,"Oakland, Calif.",St Mary's College Prep
+Wade Mountz,San Jose State,2026,79,260,,,Sophomore,RHP,"Morgan Hill, Calif.",Bellarmine College Prep
+Alan Ramirez,San Jose State,2026,70,175,,,Redshirt Junior,INF,"Santa Clara, Calif.",Wilcox HS
+Brent Cota,San Jose State,2026,72,200,,,Graduate Student,OF,"Rancho Cucamonga, Calif.",Alta Loma HS
+Dennis Gamester,San Jose State,2026,71,200,,,Graduate Student,C,"West Haven, Conn.",Hamden Hall
+Vincent Gamberdella,San Jose State,2026,70,200,,,Senior,C,"Santa Barbara, Calif.",Santa Barbara HS
+Anthony Scheppler,San Jose State,2026,73,215,,,Sophomore,UTL,"Novato, Calif.",San Marin HS
+Landon Marchetti,San Jose State,2026,71,190,,,Junior,LHP,"Brentwood, Calif.",Heritage HS
+Rohne Klein,San Jose State,2026,76,230,,,Sophomore,INF,"Renton, Wash.",Libery HS
+Spencer Kratt,San Jose State,2026,73,205,,,Junior,RHP,"Woodland Hills, Calif.",Chaminade College Prep
+Cam Carignan,San Jose State,2026,71,180,,,Junior,IF,"Rutland, Mass.",Wachusett Regional HS
+Dylan Jackson,San Jose State,2026,72,195,,,Redshirt Junior,CATCHER/INFIELD,"Thousand Oaks, Calif.",Thousand Oaks HS
+Mario Ricci,San Jose State,2026,72,205,,,Junior,INF,"Los Gatos, Calif.",Archbishop Mitty HS
+Andrew Vega,San Jose State,2026,73,170,,,Freshman,OUTFIELD,"Calabasas, Calif.",Newbury Park HS
+Sam Boyle,San Jose State,2026,72,200,,,Senior,LHP,"Vancouver, Wash.",Columbia River HS
+Ben Kennaday,San Jose State,2026,70,165,,,Freshman,INF,"San Jose, Calif.",Pioneer High School
+Jack O'Malley,San Jose State,2026,80,245,,,Redshirt Sophomore,RHP,"Irvine, Calif.",Crean Lutheran HS
+Luka Pintar,San Jose State,2026,74,200,,,Sophomore,LHP,"San Jose, Calif.",Archbishop Mitty HS
+Peyton Rowles,San Jose State,2026,72,175,,,Freshman,IF,"Benicia, Calif.",Benicia HS
+Kyler Bacosa,San Jose State,2026,75,225,,,Senior,RHP,"San Jose, Calif.",Bellarmine College Prep
+Dylan Smith,San Jose State,2026,74,255,,,Senior,RHP,"Bakersfield, Calif.",Frontier HS
+Peter Herrick,San Jose State,2026,73,215,,,Redshirt Junior,RHP,"Auburn, Wash.",Puyallup HS
+Dylan Adelman,San Jose State,2026,74,220,,,Sophomore,RHP,"San Francisco, Calif.",Sacred Heart Cathedral Prep
+Mason Ravera,San Jose State,2026,72,175,,,Freshman,RHP,"Livermore, Calif.",Granada HS
+Jaisen Abner,Seattle,2026,69,180,,,Redshirt Sophomore,UTL,"Seattle,Wash.",O'Dea
+Kaden Alberghini,Seattle,2026,77,245,,,Senior,RHP,"Issaquah, WA",Liberty HS
+Luke Alwood,Seattle,2026,77,225,,,Senior,RHP,"Kihei, HI",Maui HS
+Josh Cunnigan,Seattle,2026,72,200,,,Sophomore,C,"Corona, CA",Aquinas HS (CA)
+Drake Gabel,Seattle,2026,74,200,,,Redshirt Sophomore,LHP,"West Linn, Ore.",West Linn
+Patrick Galvin,Seattle,2026,77,190,,,Sophomore,RHP,"Seattle, WA",O'Dea HS
+Micah Hagler,Seattle,2026,76,220,,,Junior,RHP,"Burien, WA",Kennedy Catholic HS
+Royce Hale,Seattle,2026,77,230,,,Junior,INF,"Marysville, Wash.",Marysville Pilchuck
+Isaac Hallam,Seattle,2026,75,205,,,Sophomore,RHP,"Issaquah, WA",Issaquah HS
+Sebastian Lopez,Seattle,2026,72,185,,,Redshirt Junior,INF,"Henderson, NV",Coronado HS
+Ryder Manale,Seattle,2026,72,195,,,Redshirt Sophomore,INF,"Mt. Pleasant, SC",Wando HS (SC)
+Blake Smith,Seattle,2026,73,190,,,Senior,RHP,"Shelton, WA",Tumwater
+Jared Stevenson,Seattle,2026,72,185,,,Senior,OF,"Reno, NV",McQueen HS (NV)
+Brandon Stinnett,Seattle,2026,69,165,,,Junior,INF,"Lyons, Ore.",Sprague HS
+Hunter Komine,Seattle,2026,68,175,,,Redshirt Junior,OF,"Mill Creek, Wash.",Jackson HS
+Preston Armstrong,Seattle,2026,75,220,,,Freshman,C,"Goodyear, Ariz.",Liberty HS
+Jake Beauchaine,Seattle,2026,71,180,,,Junior,OF,"San Clemente, Calif.",
+Duncan Bos,Seattle,2026,73,215,,,Freshman,LHP,"Bainbridge Island, Wash.",Bainbridge HS
+Hayden Carlson,Seattle,2026,73,185,,,Junior,INF,"San Clemente, Calif.",
+Alex Chamberlain,Seattle,2026,75,215,,,Junior,INF,"Fall City, Wash.",
+Cash Erdman,Seattle,2026,73,175,,,Freshman,OF,"Kirkland, Wash.",Bellevue Christian HS
+Travis Farrell,Seattle,2026,79,225,,,Redshirt Senior,RHP,,
+Kale Hammer,Seattle,2026,75,220,,,Redshirt Sophomore,LHP,"Snohomish, Wash.",
+Harrison Hoffarth,Seattle,2026,75,225,,,Freshman,LHP,"Vancouver, Wash.",Columbia River HS
+Jordan Holloway,Seattle,2026,75,220,,,Freshman,OF,"Seattle, Wash.",O'Dea HS
+Tyler Horner,Seattle,2026,74,215,,,Senior,C,"Twin Falls, Idaho",
+Tyler Jackson,Seattle,2026,76,195,,,Freshman,UTL,"Las Vegas, Nevada",Centennial HS (NV)
+Payton Knowles,Seattle,2026,72,195,,,Junior,UTL,"Purdy, Wash.",
+Jake Morell,Seattle,2026,76,215,,,Senior,LHP,"Roseville, Calif.",
+Camden Oram,Seattle,2026,75,190,,,Redshirt Senior,RHP,"Olympia, Wash.",
+Kenneth Rhein,Seattle,2026,71,185,R,R,Junior,INF,"Tucson, AZ",
+Ryan Stone,Seattle,2026,74,220,,,Redshirt Senior,RHP,"Winters, Calif.",
+Oliver Lang,Seattle,2026,78,220,,,Redshirt Junior,LHP,"Fall City, Wash.",
+Logan Sutter,South Carolina,2026,73,220,R,R,Fifth Year,Infielder,"Loomis, Calif.",Del Oro HS
+Brandon Cromer,South Carolina,2026,75,192,R,L,Freshman,Outfielder/Left Handed Pitcher,"Lexington, S.C.",Lexington HS
+Patrick Evans,South Carolina,2026,75,195,R,R,Junior,Infielder,"Leesville, S.C.",Lexington HS
+Erik Parker,South Carolina,2026,75,192,R,R,Sophomore,Infielder,"Atlanta, Ga.",North Gwinnett HS
+Talmadge LeCroy,South Carolina,2026,74,205,R,R,Fifth Year,Catcher,"Belton, S.C.",Belton-Honea Path HS
+Bradley Hodges,South Carolina,2026,73,205,L,L,Junior,Left Handed Pitcher,"Fleming Island, Fla.",St. John's Country Day
+Alex Valentin,South Carolina,2026,72,220,L,L,Junior,Left Handed Pitcher,"Hollywood, Fla.",ESB Academy
+Jack Reynolds,South Carolina,2026,72,195,L,R,Redshirt Junior,Infielder,"Columbia, S.C.",A.C. Flora HS
+Will Craddock,South Carolina,2026,75,225,R,R,Freshman,Infielder,"Anderson, S.C.",T.L. Hanna HS
+Alex Philpott,South Carolina,2026,78,200,R,R,Junior,Right Handed Pitcher,"Tampa, Fla.",Strawberry Crest HS
+Ethan Lizama,South Carolina,2026,74,214,L,L,Senior,Outfielder,"Asan Heights, Guam",Eastlake HS
+Amp Phillips,South Carolina,2026,73,180,R,R,Junior,Right Handed Pitcher,"Lancaster, S.C.",Andrew Jackson HS
+Caleb Hoover,South Carolina,2026,75,225,L,R,Sophomore,Outfielder/First Base,"Heath, Texas",Rockwall-Heath HS
+Beau Hollins,South Carolina,2026,76,230,B,L,Sophomore,First Base,"Lexington, S.C.",River Bluff
+Patrick Dudley,South Carolina,2026,76,222,R,L,Freshman,Left Handed Pitcher,"Virginia Beach, Va.",Atlantic Shores Christian HS
+Tyler Bak,South Carolina,2026,72,185,L,L,Junior,Outfielder,"Sugar Hill, Ga.",North Gwinnett HS
+Aaron Jamison,South Carolina,2026,74,202,L,L,Junior,Outfielder,"Morgantown, W. Va.",Morgantown HS
+KJ Scobey,South Carolina,2026,74,200,R,R,Sophomore,Infielder,"Lakeland, Fla.",McKeel Academy of Technology
+Elijah Foster,South Carolina,2026,72,204,R,R,Junior,Right Handed Pitcher,"Plainfield, N.J.",Seton Hall Prep
+Jake Randolph,South Carolina,2026,72,214,R,R,Senior,Catcher,"Vero Beach, Fla.",Vero Beach HS
+Reese Moore,South Carolina,2026,72,212,L,R,Junior,Catcher,"Van Meter, Iowa",Van Meter HS
+Jake McCoy,South Carolina,2026,73,185,L,L,Junior,Left Handed Pitcher,"Fort Mill, S.C.",Catawba Ridge HS
+Josh Gunther,South Carolina,2026,71,206,R,R,Junior,Right Handed Pitcher,"Fairhope, Ala.",Bayside Academy
+Zach Russell,South Carolina,2026,74,180,R,R,Sophomore,Right Handed Pitcher,"Charleston, S.C.",West Ashley
+Hudson Lee,South Carolina,2026,76,239,R,L,Junior,Left Handed Pitcher,"Spartanburg, S.C.",Dorman HS
+Cullen Horowicz,South Carolina,2026,76,231,R,R,Senior,Right Handed Pitcher,"Shepherdstown, W. Va.",Jefferson HS
+Dawson Harman,South Carolina,2026,76,224,R,R,Junior,Infielder,"Lithia, Fla.",Bloomingdale HS
+Brandon Stone,South Carolina,2026,78,240,R,R,Junior,Right Handed Pitcher,"Shawnee Mission, Kan.",Shawnee Mission West
+Luke Yuhasz,South Carolina,2026,76,230,R,R,Senior,Outfielder,"Moss Bluff, La.",Sam Houston HS
+Logan Prisco,South Carolina,2026,76,245,L,L,Sophomore,Left Handed Pitcher,"Selden, N.Y.",Newfield HS
+Bryce Navarre,South Carolina,2026,73,196,L,L,Sophomore,Left Handed Pitcher,"Montgomery, Texas",Montgomery HS
+Riley Goodman,South Carolina,2026,74,204,R,R,Redshirt Freshman,Right Handed Pitcher,"Memphis, Tenn.",Christian Brothers
+Gavin Braland,South Carolina,2026,75,185,R,R,Sophomore,Catcher,"Hampton, Ga.",Georgia Premier Academy
+Cooper Parks,South Carolina,2026,74,200,R,R,Sophomore,Right Handed Pitcher,"York, S.C.",York Comprehensive
+Parker Marlatt,South Carolina,2026,71,192,R,R,Junior,Right Handed Pitcher,"Dacula, Ga.",Hebron Christian Academy
+Connor Chicoli,South Carolina,2026,75,185,R,R,Sophomore,Right Handed Pitcher,"Raleigh, N.C.",Pro5 Baseball Academy
+Josh Gregoire,South Carolina,2026,74,201,R,R,Junior,Right Handed Pitcher,"Baton Rouge, La.",Episcopal HS
+Ruben Gandarilla,St. Thomas (FL),2026,65,,R,R,,INF,"Miami Springs, Fla.",Miami Springs High School
+Eddie Novoa,St. Thomas (FL),2026,70,,R,R,,C,"Pembroke Pines, Fla.",
+Erick Ballenilla,St. Thomas (FL),2026,73,,R,R,,INF,"The Bronx, N.Y.",
+Diego Evans,St. Thomas (FL),2026,69,,R,R,,RHP,"Monterrey, Nuevo Leon, Mexico",
+Keuri Martinez,St. Thomas (FL),2026,70,,R,R,,INF,"The Bronx, N.Y.",
+Luis Morera,St. Thomas (FL),2026,72,,R,R,,INF,"Miami Lakes, Fla.",Mater Academy High School
+Ismael Cordoba,St. Thomas (FL),2026,73,,L,L,,LHP,"Las Tablas, Los Santos, Panama",
+Jordan Naranjo,St. Thomas (FL),2026,72,,R,R,,RHP,"Miami Gardens, Fla.",
+Trent Shields,St. Thomas (FL),2026,72,,R,R,,RHP,"Fort Lauderdale, Fla.",Cardinal Gibbons High School
+Sean Bencosme,St. Thomas (FL),2026,74,,R,R,,RHP,"Pembroke Pines, Fla.",
+Adrian Quinonez,St. Thomas (FL),2026,70,,,,,LHP,"Lehigh Acres, Fla.",
+Luis Suarez,St. Thomas (FL),2026,67,,L,R,,UTL,"Miami, Fla.",St. Brendan High School
+Lester Martinez,St. Thomas (FL),2026,72,,R,R,,OF,"Miami, Fla.",Christopher Columbus High School
+Colin Aube,St. Thomas (FL),2026,75,,L,R,,RHP,"Coconut Creek, Fla.",Monarch High School
+Frank Peña,St. Thomas (FL),2026,73,,R,R,,INF,"Fort Lauderdale, Fla.",American Heritage School
+Franklin Pinales Jr.,St. Thomas (FL),2026,74,,R,R,,OF,"Pembroke Pines, Fla.",Pembroke Pines Charter High School
+Edwin Toribio,St. Thomas (FL),2026,74,,R,R,,INF,"Dajabon, Dominican Republic",
+Gio Lugo,St. Thomas (FL),2026,69,,R,R,,RHP,"Homestead, Fla.",Keys Gate Charter High School
+Juan Fernandez,St. Thomas (FL),2026,71,,R,R,,RHP,"La Habana, Cuba",
+Yoel Rojas,St. Thomas (FL),2026,70,,R,R,,C,"Santa Clara, Cuba",Champagnat Catholic School
+Freidy De La Rosa,St. Thomas (FL),2026,76,,L,R,,OF,"Providence, R.I.",
+Daytan Biegel,St. Thomas (FL),2026,73,,R,R,,OF,"Willemstad, Curacao",
+Daniel Padilla,St. Thomas (FL),2026,74,,R,R,,RHP,"Virginia Beach, Va.",
+Jared Krause,St. Thomas (FL),2026,76,,R,R,,RHP,"Parker, Colo.",
+Frank Villella,St. Thomas (FL),2026,73,,L,L,,LHP,"Hollywood, Fla.",
+Pablo Costales,St. Thomas (FL),2026,69,,L,L,,OF,"Los Realejos, Santa Cruz de Tenerife, Spain",Colegio Casa Azul
+Luis Rodriguez,St. Thomas (FL),2026,72,,R,R,,RHP,"Hialeah, Fla.",
+Gabriel Rangel,St. Thomas (FL),2026,73,,R,R,,RHP,"Clewiston, Fla.",University of Fort Lauderdale
+Nicholas Alonso,St. Thomas (FL),2026,73,,R,R,,OF,"Miami, Fla.",
+Sebastian Suarez,St. Thomas (FL),2026,71,,R,R,,C,"Trujillo Alto, P.R.",
+Rafael Peraza,St. Thomas (FL),2026,74,,R,R,,RHP,"Aventura, Fla.",
+Vincent Mercado,St. Thomas (FL),2026,70,,R,R,,RHP,"Coconut Creek, Fla.",
+Eduardo Fernandez,St. Thomas (FL),2026,76,,R,R,,RHP,"Miami, Fla.",Florida Christian School
+Alan Nava,St. Thomas (FL),2026,74,,R,R,,INF,"El Paso, Tex.",
+Jaime Gonzalez,St. Thomas (FL),2026,72,,R,R,,RHP,"Pembroke Pines, Fla.",Flanagan High School
+Bryce Ware,St. Thomas (FL),2026,70,,L,R,,INF,"Fort Myers, Fla.",Fort Myers High School
+Daniel Bravo,St. Thomas (FL),2026,72,,R,R,,RHP,"Miami, Fla.",
+Derek Rodriguez,St. Thomas (FL),2026,70,,R,R,,RHP,"Caguas, P.R.",J.P. Taravella High School
+Bryan Arrieta,St. Thomas (FL),2026,70,,S,R,,C,"Miramar, Fla.",Mater Academy High School
+Markus Gonzalez,St. Thomas (FL),2026,69,,R,R,,INF,"Miami, Fla.",Belen Jesuit Preparatory School
+Ethan Hott,Stanford,2026,70,190,,,Senior,OF,"Paradise Valley, Ariz.",Chaparral
+Cort MacDonald,Stanford,2026,73,197,,,Senior,OF,"Arlington, Texas",Pantego Christian Academy
+Jimmy Nati,Stanford,2026,74,210,,,Senior,INF,"Sydney, Australia",Oakhill College
+Toran O'Harran,Stanford,2026,73,210,,,Senior,RHP,"Rocklin, Calif.",Rocklin
+Nick Dugan,Stanford,2026,74,220,,,Senior,RHP,"Eureka, Calif.",St. Bernard’s Academy
+Trevor Moore,Stanford,2026,73,221,,,Senior,RHP,"Golden, Colo.",Mullen
+Luke Lavin,Stanford,2026,76,218,,,Junior,C/1B,"Laguna Beach, Calif.",Santa Margarita Catholic
+Sebastian David,Stanford,2026,73,204,,,Junior,INF,"Medina, Wash.",Lakeside
+Kassius Thomas,Stanford,2026,74,207,,,Senior,RHP,"Los Angeles, Calif.",Sierra Canyon
+Aidan Keenan,Stanford,2026,74,202,,,Junior,RHP,"Morgan Hill, Calif.",Live Oak
+Sam Garewal,Stanford,2026,77,243,,,Senior,LHP,"San Diego, Calif.",Canyon Crest Academy
+Brady Reynolds,Stanford,2026,73,216,,,Junior,OF,"Bakersfield, Calif.",Liberty
+Ryan Speshyock,Stanford,2026,72,223,,,Junior,RHP,"Goleta, Calif.",Dos Pueblos
+Jack Svinth,Stanford,2026,73,193,,,Junior,RHP,"Rancho Santa Margarita, Calif.",Santa Margarita Catholic
+Ben Reimers,Stanford,2026,76,222,,,Junior,RHP,"Aliso Viejo, Calif.",JSerra Catholic
+Christian Lim,Stanford,2026,70,206,,,Junior,LHP,"Nashville, Tenn.",Montgomery Bell Academy
+Austin Steeves,Stanford,2026,72,206,,,Sophomore,LHP,"Petaluma, Calif.",Casa Grande
+Dominic Panella,Stanford,2026,73,206,,,Sophomore,RHP,"San Jose, Calif.",Leigh
+Tatum Marsh,Stanford,2026,73,218,,,Sophomore,OF,"San Jose, Calif.",Valley Christian
+Charlie Bates,Stanford,2026,73,195,,,Sophomore,INF,"Palo Alto, Calif.",Palo Alto
+Cohen Gomez,Stanford,2026,75,225,,,Sophomore,RHP,"Anaheim Hills, Calif.",Canyon
+Liam Golden,Stanford,2026,77,207,,,Sophomore,RHP,"Sacramento, Calif.",Christian Brothers
+Rintaro Sasaki,Stanford,2026,73,270,,,Sophomore,1B,"Hanamaki, Iwate",Hanamaki-Higashi
+JJ Moran,Stanford,2026,74,216,,,Sophomore,INF,"San Diego, Calif.",San Marcos
+Parker Warner,Stanford,2026,74,197,,,Sophomore,RHP,"Livermore, Calif.",Granada
+Philip Cheong,Stanford,2026,70,176,,,Freshman,OF/INF,"Richmond Hill, Ontario, Canada",Bill Crothers
+Mike Erspamer,Stanford,2026,72,212,,,Freshman,LHP,"San Clemente, Calif.",San Clemente
+Braden Guentz,Stanford,2026,76,213,,,Junior,RHP,"Clovis, Calif.",Buchanan
+Rashad Hayes,Stanford,2026,73,175,,,Freshman,INF,"Oakland, Calif.",Bishop O'Dowd
+Eric Jeon,Stanford,2026,70,195,,,Junior,INF,"Fullerton, Calif.",La Mirada
+Brock Ketelsen,Stanford,2026,76,206,,,Freshman,OF/LHP,"Scotts Valley, Calif.",Valley Christian
+Quinten Marsh,Stanford,2026,74,217,,,Freshman,OF/LHP,"San Jose, Calif.",Valley Christian
+Henry McDonald,Stanford,2026,74,192,,,Sophomore,C,"South Pasadena, Calif.",Polytechnic
+Colt Peterson,Stanford,2026,72,181,,,Freshman,RHP,"Orange, Calif.",Orange Lutheran
+Brock Sell,Stanford,2026,73,176,,,Freshman,OF/INF,"Stockton, Calif.",Tokay
+Andrew Shaw,Stanford,2026,75,201,,,Freshman,LHP,"Woodstock, Ga.",Sequoyah
+Nolan Stoll,Stanford,2026,76,185,,,Freshman,C,"Stevenson Ranch, Calif.",West Ranch
+Teddy Tokheim,Stanford,2026,75,215,,,Freshman,INF/RHP,"Seattle, Wash.",Lakeside
+David Wiser,Stanford,2026,75,207,,,Freshman,RHP,"Elk Grove, Calif.",Bradshaw Christian
+Josh Arquette,UTSA,2026,72,190,,,Sophomore,INF,"Kingwood, Texas",Kingwood High School
+Damian Montanez,UTSA,2026,69,180,,,Freshman,OF,"Killeen, Texas",Shoemaker HS
+Jordan Ballin,UTSA,2026,69,175,,,Sophomore,INF,"Boerne, Texas",Boerne Champion HS
+Jacob Silva,UTSA,2026,71,210,,,Sophomore,UT,"San Antonio, Texas",Clark HS
+Tye Odom,UTSA,2026,70,175,,,Redshirt Junior,OF,"Bishop, Texas",Bishop HS
+Diego Diaz,UTSA,2026,70,180,,,Junior,INF,"Pharr, Texas",Sharyland HS
+Christian Hallmark,UTSA,2026,69,178,,,Sophomore,OF,"San Antonio, Texas",Brandeis HS
+Robert Orloski,UTSA,2026,76,195,,,Junior,P,"Middleton, Idaho",Middleton HS
+Mason Jacob,UTSA,2026,70,185,,,Sophomore,INF,"Corpus Christi, Texas",London HS
+Aidan Eshelman,UTSA,2026,73,200,,,Freshman,INF,"Houston, Texas",Episcopal HS
+Nathan Hodge,UTSA,2026,70,190,,,Sophomore,UT,"College Station, Texas",A&M Consolidated HS
+Drew Detlefsen,UTSA,2026,74,217,,,Senior,OF,"Trophy Club, Texas",Byron Nelson HS
+Josh Vaughn,UTSA,2026,74,190,,,Senior,INF,"San Antonio, Texas",Clark HS
+Brandon Bishop,UTSA,2026,70,180,,,Senior,OF,"College Station, Texas",A&M Consolidated
+Blayne Lyne,UTSA,2026,78,208,,,Sophomore,P,"Corpus Christi, Texas",London HS
+Jalen Owens,UTSA,2026,72,175,,,Freshman,P,"Elgin, Texas",Elgin HS
+James Hubbard,UTSA,2026,72,180,,,Senior,P,"Minden, Nev.",Douglas HS
+Lane Haworth,UTSA,2026,71,198,,,Junior,OF,"Lewisville, Texas",Hebron HS
+Nathan Johnson,UTSA,2026,77,222,,,Freshman,P/OF,"Katy, Texas",Seven Lakes HS
+Garrett Gruell,UTSA,2026,71,215,,,Senior,OF,"Groesbeck, Texas",Groesbeck HS
+Kendall Dove,UTSA,2026,77,228,,,Junior,RHP,"New Caney, Texas",New Caney HS
+Cade Sadler,UTSA,2026,76,226,,,Senior,INF,"Lilburn, Ga.",Parkview HS
+Sam Simmons,UTSA,2026,76,175,,,Senior,RHP,"Manvel, Texas",Manvel HS
+Andrew Stucky,UTSA,2026,72,220,,,Graduate Student,C,"Tucson, Ariz.",Canyon del Oro HS
+Mike DeBattista,UTSA,2026,75,190,,,Senior,RHP,"Katy, Texas",Tompkins HS
+Christopher Gutierrez,UTSA,2026,71,180,,,Freshman,P,"Cypress, Texas",Bridgeland HS
+Cody Demont,UTSA,2026,72,187,,,Redshirt Junior,P,"Cibolo, Texas",Steele HS
+Whitt Joyce,UTSA,2026,71,195,,,Junior,C,"Lytle, Texas",Medina Valley HS
+Christian Okerholm,UTSA,2026,75,202,,,Senior,RHP,"Austin, Texas",Vandergrift HS
+Ryan Self,UTSA,2026,70,175,,,Freshman,P,"San Antonio, Texas",Wagner HS
+Caden Miller,UTSA,2026,74,190,,,Sophomore,UT,"Madisonville, Texas",Madisonville HS
+Gunnar Brown,UTSA,2026,76,225,,,Senior,RHP,"Houston, Texas",Episcopal HS
+Ryan Jester,UTSA,2026,73,245,,,Redshirt Sophomore,P,"Spring Branch, Texas",Bracken Christian HS
+Holden Harris,UTSA,2026,74,210,,,Redshirt Sophomore,RHP,"Leander, Texas",Tom Glenn HS
+Ryan Mason,UTSA,2026,75,218,,,Freshman,P,"San Antonio, Texas",O'Connor HS
+Jake Qualia,UTSA,2026,73,208,,,Freshman,P,"Lubbock, Texas",Lubbock Cooper HS
+Conor Myles,UTSA,2026,76,215,,,Graduate Student,P,"Melbourne, Australia",St. Joseph's
+Tyler Dobbs,UTSA,2026,74,203,,,Junior,P,"Lewisville, Texas",Hebron HS
+Broc Parmer,UTSA,2026,75,215,,,Senior,C,"Pace, Fla.",Pace HS
+Connor Kelley,UTSA,2026,77,245,,,Junior,P,"Spring, Texas",Grand Oaks HS
+Michael Petite,VCU,2026,72,200,R,R,,OF,,
+Brendan Horne,VCU,2026,71,175,R,R,,INF,,
+Nate Kirkpatrick,VCU,2026,73,215,R,R,,INF,,
+Cade Tousa,VCU,2026,71,175,L,R,,INF,,
+Nick Flores,VCU,2026,69,185,R,R,,INF,,
+Dante DeFranco,VCU,2026,70,180,R,R,,UTIL,,
+Trent Adelman,VCU,2026,73,200,R,R,,INF/OF,,
+Ethan Acevedo,VCU,2026,68,180,L,L,,OF,,
+Teige Lethert,VCU,2026,76,220,L,R,,C,,
+Brody Leyboldt,VCU,2026,73,180,L,L,,OF/LHP,,
+Everett Vaughan,VCU,2026,75,200,R,R,,RHP,,
+Cooper Campbell,VCU,2026,74,160,R,R,,RHP,,
+Boyce Read,VCU,2026,72,185,L,L,,OF/LHP,,
+Rex Smith,VCU,2026,73,210,L,R,,INF,,
+Nick Frers,VCU,2026,75,225,R,R,,RHP,,
+Caleb Clover,VCU,2026,74,190,R,R,,RHP,,
+Chase Nystrom,VCU,2026,73,180,R,R,,RHP,,
+Riley Roarty,VCU,2026,77,195,L,R,,RHP,,
+Alec Warden,VCU,2026,74,185,R,R,,INF,,
+Hunter Gotschall,VCU,2026,72,200,R,R,,RHP,,
+Cooper Weygandt,VCU,2026,73,200,R,R,,RHP,,
+Anthony Roszko,VCU,2026,76,230,R,R,,RHP,,
+Graham Hylton,VCU,2026,73,195,R,L,,C,,
+Coleman Bobb,VCU,2026,75,250,R,R,,RHP,,
+Quinn Maher,VCU,2026,74,220,L,R,,UTIL,,
+Dawson Newman,VCU,2026,74,190,R,L,,LHP,,
+Bryce Carter,VCU,2026,76,225,L,L,,LHP,,
+Patrick Steitz,VCU,2026,80,210,R,R,,RHP,,
+Jacob Lee,VCU,2026,74,205,R,R,,C,,
+Fenix DiGiacomo,VCU,2026,77,240,R,R,,RHP,,
+Zach Peters,VCU,2026,75,200,R,R,,RHP,,
+Nick Bertrand,VCU,2026,72,180,R,R,,RHP,,
+Elias Holbert,VCU,2026,75,240,R,R,,RHP,,
+Cade Dressler,VCU,2026,75,215,L,L,,LHP,,
+John Paone,Virginia,2026,75,210,,,Freshman,RHP,"Lexington, Mass.",Lawrence Academy
+Max Stammel,Virginia,2026,75,205,,,Sophomore,LHP,"Dallas, Texas",Highland Park HS
+Christian Lucarelli,Virginia,2026,75,210,,,Freshman,RHP,"Beaver Falls, Pa.",Riverside HS
+Thomas Stewart,Virginia,2026,74,190,,,Freshman,RHP,"Lakewood, Colo.",Mullen HS
+Ben Schulman,Virginia,2026,77,220,,,Freshman,RHP,"Chappaqua, N.Y.",Horace Greeley HS
+Tyler Kapa,Virginia,2026,74,195,,,Graduate Student,RHP,"Waterford, Mich.",Kettering HS
+Ryan Prior,Virginia,2026,75,215,,,Freshman,RHP,"Sea Girt, N.J.",Red Bank Catholic
+Christopher Worley,Virginia,2026,73,205,,,Freshman,RHP,"Grand Blanc, Mich.",Grand Blanc Community HS
+LJ Edwards,Virginia,2026,73,205,,,Freshman,OF,"Lake Helen, Fla.",Spruce Creek HS
+Bryce Neely,Virginia,2026,71,190,,,Freshman,INF/OF,"Midlothian, Va.",St. Christopher’s School
+Brendan Cowen,Virginia,2026,76,200,,,Sophomore,LHP,"Leesburg, Va.",Tuscarora HS
+Joe Tiroly,Virginia,2026,72,200,,,Junior,INF,"Yardley, Pa.",Pennsbury HS
+Lucas Hartman,Virginia,2026,70,211,,,Graduate Student,RHP,"Bradenton, Fla.",Inspiration Academy
+AJ Gracia,Virginia,2026,75,195,,,Junior,OF,"Monroe, N.J.",Ranney HS
+Sam Harris,Virginia,2026,77,220,,,Junior,1B/OF,"Urbandale, Iowa",Urbandale HS
+Noah Yoder,Virginia,2026,78,235,,,Freshman,RHP,"Mechanicsville, Va.",Atlee HS
+Jake Weatherspoon,Virginia,2026,74,210,,,Junior,C,"Melbourne, Fla.",Melbourne HS
+Henry Zatkowski,Virginia,2026,74,190,,,Sophomore,LHP,"Clarksville, Md.",River Hill HS
+Zach Jackson,Virginia,2026,73,170,,,Sophomore,OF,"Smyrma, Ga.",Holy Innocents Episcopal
+Kyle Johnson,Virginia,2026,73,205,,,Junior,LHP/OF,"Leesburg, Va.",Riverside HS
+Will Mahala,Virginia,2026,74,195,,,Freshman,OF,"Far Hills, N.J.",Seton Hall Prep
+RJ Holmes,Virginia,2026,73,190,,,Freshman,INF,"Menifee, Calif.",Vista Murrieta HS
+Noah Jouras,Virginia,2026,72,200,,,Graduate Student,C/OF,"Western Springs, Ill.",Lyons Township HS
+Jayden Stroman,Virginia,2026,73,205,,,Freshman,RHP/INF,"Medford, N.Y.",Patchogue-Medford HS
+Noah Murray,Virginia,2026,70,170,,,Junior,INF,"Crozet, Va.",Pro5 Baseball Academy
+Thomas O’Connell,Virginia,2026,70,200,,,Freshman,C,"West Hartford, Conn.",Salisbury HS
+Griffin Enis,Virginia,2026,73,200,,,Freshman,OF,"Corinth, Miss.",Corinth HS
+Drew Koenen,Virginia,2026,75,235,,,Junior,RHP,"Park Ridge, Ill.",Maine South HS
+Joe Colucci,Virginia,2026,77,220,,,Senior,RHP,"Purcellville, Va.",Woodgrove HS
+Aiden Harris,Virginia,2026,76,240,,,Sophomore,INF/OF,"Midlothian, Va.",Pro Development Group
+Michael Yeager,Virginia,2026,75,215,,,Sophomore,RHP,"Greenwich, Conn.",Brunswick School
+Will Broderick,Virginia,2026,73,190,,,Sophomore,C,"San Antonio, Texas",Alamo Heights HS
+Tommy Roldan,Virginia,2026,73,210,,,Junior,LHP,"Poolesville, Md.",Georgetown Prep
+Nate Bassett,Virginia,2026,75,210,,,Junior,RHP,"Bristow, Va.",Patriot
+Antonio Perrotta,Virginia,2026,76,230,,,Junior,1B/OF,"Rockville, Md.",Georgetown Prep
+Eric Becker,Virginia,2026,75,190,,,Junior,INF,"Thiells, N.Y.",Don Bosco Prep
+Matt Augustin,Virginia,2026,75,215,,,Junior,RHP,"Cherry Hill, N.J.",Bishop Eustace
+Charlie Oschell,Virginia,2026,77,225,,,Junior,RHP,"Phoenixville, Pa.",Malvern Prep
+Harrison Didawick,Virginia,2026,76,215,,,Senior,OF,"Chesapeake, Va.",Western Branch
+Kevin Jaxel,Virginia,2026,77,220,,,Senior,RHP,"Congers, N.Y.",Don Bosco Prep
+Dean Kampschror,Virginia,2026,77,215,,,Graduate Student,LHP,"Falls Church, Va.",Justice
+Anderson French,Virginia Tech,2026,77,220,,,Sophomore,C,"Lewisberry, Pa.",Red Land
+Henry Cooke,Virginia Tech,2026,75,225,,,Senior,C,"Stuarts Draft, Va.",Stuarts Draft / Miller School of Albemarle
+Nick Locurto,Virginia Tech,2026,72,200,,,Junior,OF,"Garnerville, N.Y.",Don Bosco Prep
+Clay Grady,Virginia Tech,2026,69,170,,,Senior,IF,"Suffolk, Va.",Nansemond River
+Ethan Gibson,Virginia Tech,2026,72,195,,,Junior,IF,"Abingdon, Va.",Abingdon
+Treyson Hughes,Virginia Tech,2026,75,185,,,Redshirt Senior,OF,"Warner Robins, Ga.",Houston County
+Brett Renfrow,Virginia Tech,2026,75,220,,,Junior,P,"Manassas, Va.",Charles J. Colgan Sr.
+Hudson Lutterman,Virginia Tech,2026,70,180,,,Sophomore,IF,"Knoxville, Tenn.",Knoxville Catholic
+Luke Craytor,Virginia Tech,2026,77,220,,,Senior,P,"Charlottesville, Va.",Western Albemarle
+Preston Crowl,Virginia Tech,2026,72,215,,,Junior,P,"Franklin County, Va.",Franklin County
+Madden Clement,Virginia Tech,2026,75,210,,,Junior,P,"Butler, Pa.",Butler Area Sr.
+Chase Swift,Virginia Tech,2026,71,195,,,Sophomore,P,"Chester, Va.",PDG Baseball Academy
+Jacob Exum,Virginia Tech,2026,76,215,,,Senior,P,"Virginia Beach, Va.",Miller School of Albemarle
+Brendan Yagesh,Virginia Tech,2026,75,210,,,Senior,P,"Monrovia, Md.",Urbana
+Mycah Jordan,Virginia Tech,2026,70,180,,,Sophomore,OF,"Cleveland, Tenn.",Cleveland
+Josh Berzonski,Virginia Tech,2026,70,205,,,Senior,P,"Glenville, Pa.",South Western
+Logan Eisenreich,Virginia Tech,2026,76,200,,,Sophomore,P,"South Riding, Va.",St. Paul VI Catholic
+Sam Grube,Virginia Tech,2026,75,205,,,Sophomore,IF,"Mechanicsburg, Pa.",Cedar Cliff
+Aiden Robertson,Virginia Tech,2026,73,180,,,Junior,P,"Manchester, Tenn.",Coffee County Central
+Sam Gates,Virginia Tech,2026,71,185,,,Graduate Student,OF,"Island Heights, N.J.",Donovan Catholic
+Ethan Ball,Virginia Tech,2026,73,195,,,Freshman,IF,"McLean, Va.",McLean
+Tyler Stone,Virginia Tech,2026,70,205,,,Freshman,P,"Hamden, Conn.",Cheshire Academy
+CJ Oxendine,Virginia Tech,2026,73,195,,,Freshman,C,"North Myrtle Beach, S.C.",North Myrtle Beach
+Ethan Grim,Virginia Tech,2026,72,200,,,Freshman,P,"Mohnton, Pa.",Governor Mifflin
+Ben Weber,Virginia Tech,2026,73,210,,,Senior,P,"Saint Paul, Minn.",Cretin-Derham Hall
+Peyton Smith,Virginia Tech,2026,76,205,,,Senior,P,"Springfield, Tenn.",East Robertson
+Owen Petrich,Virginia Tech,2026,74,220,,,Fifth Year,IF,"Doylestown, Pa.",Central Bucks South
+Griffin Stieg,Virginia Tech,2026,76,220,,,Redshirt Junior,P,"McLean, Va.",McLean
+Austin Dean,Virginia Tech,2026,80,235,,,Freshman,P,"Alexandria, Va.",West Potomac
+Danny Lazaro,Virginia Tech,2026,70,195,,,Junior,P,"Tampa, Fla.",Tampa Catholic
+Jake Wise,Virginia Tech,2026,72,200,,,Freshman,P,"Glen Allen, Va.",Benedictine Prep
+Brody Roe,Virginia Tech,2026,75,190,,,Senior,P,"Stillwater, Okla.",Morrison
+Aimon Chandler,Virginia Tech,2026,71,210,,,Freshman,IF,"Chestnut Hill, Pa.",La Salle College
+Willie Hurt,Virginia Tech,2026,73,185,,,Freshman,IF,"Midlothian, Va.",St. Christopher's School
+Ryan Walsh,Virginia Tech,2026,72,200,,,Freshman,P,"Pittsburgh, Pa.",Bethel Park
+Pete Daniel,Virginia Tech,2026,75,195,,,Junior,IF,"Nashville, Tenn.",The Ensworth School
+Elijah Smith,Western Carolina,2026,71,185,R,R,Jr.,OF,"Warner Robins, Ga.",Houston County HS
+Yates Sikes,Western Carolina,2026,68,175,L,L,R-So.,OF,"High Point, N.C.",High Point Christian
+Jaylen Jones,Western Carolina,2026,69,180,R,R,R-Fr.,INF,"Loganville, Ga.",Loganville HS
+Jackson Lyda,Western Carolina,2026,74,190,L,R,So.,INF,"Fletcher, N.C.",West Henderson HS
+Mason Snyder,Western Carolina,2026,68,175,R,R,Jr.,RHP,"Ocilla, Ga.",Irwin County HS
+Trey Spees,Western Carolina,2026,72,195,L,R,So.,INF,"Denver, N.C.",East Lincoln HS
+Trent Turner,Western Carolina,2026,72,195,R,R,5th,INF,"Waynesville, N.C.",Tuscola HS
+Cam Murray,Western Carolina,2026,72,205,R,R,R-Sr.,C,"Fredericksburg, Va.",Mountain View HS
+Kaden Fuller,Western Carolina,2026,73,215,R,R,R-So.,RHP,"King, N.C.",West Stokes HS
+Evan Myers,Western Carolina,2026,72,175,L,L,Fr.,LHP,"Denver, N.C.",Lincoln Charter School
+Cole Jones,Western Carolina,2026,74,215,L,R,R-Sr.,OF / 1B,"Champaign, Ill.",Champaign Central HS
+Ryan White,Western Carolina,2026,70,190,L,L,Sr.,LHP,"Randleman, N.C.",Randleman HS
+Mason Holton,Western Carolina,2026,75,205,R,R,5th,INF,"Overland Park, Kan.",BVSW HS
+Noah Quarless,Western Carolina,2026,74,210,R,R,R-So.,C,"Winston-Salem, N.C.",Reagan HS
+Walker Fox,Western Carolina,2026,75,200,L,L,So.,OF,"Canton, N.C.",Pisgah HS
+Shane Huntsberger,Western Carolina,2026,72,190,R,R,R-Jr.,RHP,"Coral Springs, Fla.",North Broward Prep
+Carson Wallace,Western Carolina,2026,72,175,R,R,Fr.,INF,"Asheville, N.C.",Clyde A. Erwin HS
+Josh Ossiander,Western Carolina,2026,74,215,R,R,Jr.,INF/RHP,"Northampton, Pa.",Allentown Central Catholic
+Jacob Arnberger,Western Carolina,2026,70,205,L,L,So.,LHP,"Atlanta, Ga.",Lakeside HS
+Colton Starling,Western Carolina,2026,71,205,R,R,R-So.,RHP,"Marshville, N.C.",Chesterfield (SC) HS
+Carter Burnette,Western Carolina,2026,77,240,R,R,So.,RHP,"Asheville, N.C.",Asheville HS
+Scott Templeton,Western Carolina,2026,75,210,L,L,Gr.,LHP,"Mt. Pleasant, S.C.",Oceanside Collegiate Academy
+Davis Budd,Western Carolina,2026,74,210,R,R,Jr.,RHP,"Acworth, Ga.",North Paulding HS
+Wyatt Stanley,Western Carolina,2026,73,215,L,R,R-So.,OF,"High Point, N.C.",Southwest Guilford HS
+James Fordham,Western Carolina,2026,71,195,R,R,Jr.,RHP,"Chester, Ga.",Bleckley County HS
+Carlos Diaz,Western Carolina,2026,73,215,R,R,Fr.,C,"Youngsville, N.C.",Wake Forest HS
+Turner Gross,Western Carolina,2026,76,220,R,R,Fr.,C,"St. Petersburg, Fla.",Northside Christian School
+Davis Wright,Western Carolina,2026,71,190,L,L,Sr.,LHP,"Ridgeway, S.C.",Blythewood HS
+Griffin Guinther,Western Carolina,2026,73,200,R,R,Jr.,RHP,"Roswell, Ga.",Fellowship Christian
+Owen Austin,Western Carolina,2026,73,210,L,L,Sr.,LHP,Easley S.C.,Wren HS
+Brody Raleigh,Western Carolina,2026,70,200,R,R,Jr.,OF,"Endwell, N.Y.",Christ School
+Bryant Kimbrell,Western Carolina,2026,74,230,R,R,So.,RHP,West End N.C.,Pinecrest HS
+Marshall McGowan,Western Carolina,2026,75,230,R,R,Fr.,1B,"Forest City, N.C.",Burns HS
+Bryce Davidson,Western Carolina,2026,75,220,R,R,R-So.,RHP,"Fletcher, N.C.",North Henderson HS
+Dominic Robinson,Western Carolina,2026,72,180,R,R,Fr.,OF,"Denver, N.C.",Bandys HS
+Davis Jabaley,Western Carolina,2026,72,195,R,R,Fr.,RHP,"Dunwoody, Ga.",Holy Innocents Episcopal School
+Trey Wheeler,Western Carolina,2026,72,185,L,L,R-So.,LHP,"Melbourne, Fla.",Melbourne HS
+Ryan Perzanowski,Western Carolina,2026,74,205,R,R,Fr.,RHP,"Fawn Grove, Pa.",Kennard Dale HS
+Deegan Randall,Western Carolina,2026,74,210,R,R,Fr.,RHP,"Candler, N.C.",Enka HS
+Caden Haywood,Western Carolina,2026,77,250,R,R,R-Fr.,OF,"Harrisburg, N.C.",Hickory Ridge HS
+Caleb Williams,Western Carolina,2026,74,210,R,R,R-So.,RHP,"Bethlehem, N.C.",Alexander Central HS
+Jackson Godfrey,Western Carolina,2026,73,220,L,R,R-Fr.,1B,"Greensboro, N.C.",Northwest Guilford
+John Lobs,Western Carolina,2026,75,215,R,R,So.,RHP,"Winston-Salem, N.C.",Reagan HS
+Tyler Oaks,Western Carolina,2026,75,235,L,R,Fr.,RHP,"Madisonville, Tenn.",McMinn Central HS
+Gavin Maines,Western Carolina,2026,73,210,L,L,So.,LHP,"Yadkinville, N.C.",Forbush HS
+Domenic Nordmann,Westminster (MO),2026,70,,R,R,Jr.,MIF/RHP,"Dardenne Prairie, MO",Liberty
+Troy Romero,Westminster (MO),2026,70,,R,R,Sr.,MIF,"Trophy Club, TX",Byron Nelson
+Andrew Kuehn,Westminster (MO),2026,70,,R,R,Sr.,OF,"Arnold, MO",Seckman High School
+William Crabtree,Westminster (MO),2026,70,,R,R,Jr.,C,"Edmond,OK",Edmond North
+Brett Montgomery,Westminster (MO),2026,70,,R,L,So.,INF,"Rolla, MO",Rolla
+William Ashmore,Westminster (MO),2026,67,,R,R,Jr.,OF,"Springdale, AR",Springdale
+Ryan Vigil,Westminster (MO),2026,73,,R,R,Jr.,C,"San Antonio, TX",Churchill HS
+Aden Pecka,Westminster (MO),2026,70,,R,R,Jr.,OF,"Washington, MO",Washington
+Noah Fuller,Westminster (MO),2026,68,,R,R,Sr.,INF/ RHP,"Columbia, MO",Battle
+Blake Althuisius,Westminster (MO),2026,77,,L,L,Sr.,P,"St. Robert, MO",Waynesville
+Beno Ballard,Westminster (MO),2026,71,,R,R,Jr.,MIF,"Rolla, MO",Rolla
+Derek Archer,Westminster (MO),2026,71,,R,R,Sr.,RHP,"St. Charles, Mo",Francis Howell North
+Maddox Christenberry,Westminster (MO),2026,72,,R,R,Fr.,UTL,"Owasso, OK",Owasso
+Braden Eye,Westminster (MO),2026,71,,R,L,So.,INF,"Ballwin, MO",Parkway South
+Donovan Bohler,Westminster (MO),2026,71,,R,L,Sr.,OF,"St. Louis, Mo",St. John Vianney
+Aiden Temple,Westminster (MO),2026,78,,R,R,So.,RHP,"Atlanta, GA",Chattahoochee
+Colyn Wright,Westminster (MO),2026,76,,R,R,So.,RHP,"Wildwood, MO",Marquette
+Caleb Warren,Westminster (MO),2026,73,,R,R,Sr.,C,"Lexington, SC",Lexington
+Sam Alles,Westminster (MO),2026,69,,R,L,So.,OF,"O'Falon, MO",Fort Zumwalt
+Salvador Moncada,Westminster (MO),2026,71,,R,R,Sr.,RHP,"Altamonte Springs, Fl",Elevation Prep Academy
+James Duckworth,Westminster (MO),2026,75,,R,R,So.,RHP,"Tampa, FL",Wiregrass Ranch
+Troy Castleman,Westminster (MO),2026,71,,R,R,Sr.,CIF/RHP,"Houston, MO",Houston High School
+Aidan Bryowsky,Westminster (MO),2026,70,,R,R,Jr.,Infield,"Fenton, MO",St. John Vianney
+Max Blackburn,Westminster (MO),2026,75,,R,R,Fr.,RHP,"Jackson, MO",Jackson
+Tayden Harlow,Westminster (MO),2026,70,,R,R,So.,RHP,"St Charles, MO",Francis Howell Central
+Jack Page,Westminster (MO),2026,72,,R,R,So.,RHP,"Las Vegas, NV",Coronado
+Tiye Davis,Westminster (MO),2026,71,,R,R,Fr.,INF,"Blue Springs, MO",Lee's Summit North
+Brayden Knittel,Westminster (MO),2026,73,,R,R,Sr.,RHP,"Ballwin,Mo",Marquette
+James Dolley,Westminster (MO),2026,73,,R,R,Fr.,UTL,"Wildwood, MO",Laffayette
+Landon Lockhart,Westminster (MO),2026,72,,R,R,Fr.,RHP,"Owasso, OK",Owasso
+Joshua Ramos,Westminster (MO),2026,72,,R,R,Fr.,INF,"San Diego, CA",Hawaii'Hilo
+Hayden Sanborn,Westminster (MO),2026,71,,R,R,Sr.,RHP,"Arnold,Mo",St. John Vianney
+Ethan Washburn,Westminster (MO),2026,73,,L,L,Fr.,OF,"Ballwin, MO",Parkway South
+Aydn Bradke,Westminster (MO),2026,70,,L,L,Jr.,LHP,"Cache, OK",Carl Albert CC
+Richard Decola,Westminster (MO),2026,69,,R,R,Sr.,RHP,"Leawood,KS",Blue Valley North
+Benjamin Henthorn,Westminster (MO),2026,69,,L,L,So.,LHP,"St. Peters, MO",Francis Howell Central
+Owen Tarry,Westminster (MO),2026,71,,R,R,So.,RHP,"Scott Cirt, MO",Sazony Lutheren
+Jacob Reynolds,Westminster (MO),2026,72,,R,R,So.,INF,"St. Peters, MO",Fort Zumwalt
+Logan Shivers,Westminster (MO),2026,73,,R,R,Fr.,RHP,"Rolla, MO",Rolla
+Aydn Barrett,Westminster (MO),2026,75,,R,R,Fr.,RHP,"Owasso, OK",Owasso
+Carter Moore,Westminster (MO),2026,74,,R,R,Fr.,C/RHP,"Auxvasse, MO",North Callaway
+Dawson Willard,Westminster (MO),2026,74,,L,L,Sr.,LHP,"Lookeba-Sickles,OK",Lookeba-Sickles
+Cameron Schlegl,Westminster (MO),2026,74,,R,L,So.,1B,"Sunset Hills, MO",Westminster Christan
+Collin Yost,Westminster (MO),2026,72,,L,L,Fr.,OF,"Houston, TX",Owasso
+Tyler Godat,Westminster (MO),2026,74,,R,R,So.,OF,"O'Fallon, MO",Fort Zumwalt South
+Aidan Myers,Westminster (MO),2026,74,170,,,Fr.,RHP,"Temecula, CA",Temecula Valley
+Alex Jang,Youngstown State,2026,69,170,R,R,Fr.,IF,"Las Vegas, Nev.",P27 Academy
+Nick Miscavage,Youngstown State,2026,70,185,R,R,R-Fr.,UTIL,"Mountain Top, Pa.",Crestwood
+Misael Uriepero,Youngstown State,2026,70,170,L,R,Fr.,IF,"Caracas, Venezuela",True North Classical Academy
+Mikey Rodriques,Youngstown State,2026,73,200,R,R,Jr.,RHP,"Sharon, Pa.",Sharon
+Brady Shannon,Youngstown State,2026,74,225,R,R,R-Jr.,OF,"Youngstown, Ohio",Ursuline
+Chyran Humphries,Youngstown State,2026,77,240,L,L,R-Jr.,IF/OF,"Farmington Hills, Mich.",Detroit Country Day School
+Luke Zmolik,Youngstown State,2026,74,205,R,R,5th,RHP,"Monroe, Wash.",Monroe
+Brandon Mikos,Youngstown State,2026,76,205,R,R,R-Sr.,RHP,"Canfield, Ohio",South Range
+Jordan Capuano,Youngstown State,2026,73,225,R,R,Jr.,RHP,"Bristow, Va.",Patriot
+Caleb Hadley,Youngstown State,2026,74,215,R,R,So.,C,"Southington, Ohio",Warren JFK
+Ryan Schummer,Youngstown State,2026,72,215,L,R,Jr.,C,"West Lafayette, Ind.",Central Catholic
+Lane Rhodes,Youngstown State,2026,75,205,R,R,R-Sr.,RHP,"Salem, Ohio",Salem
+Ryan DiLullo,Youngstown State,2026,71,190,R,R,R-Fr.,IF,"Poland, Ohio",Poland Seminary
+James Carlson,Youngstown State,2026,77,205,R,R,R-Fr.,OF,"Crystal Lake, Ill.",Crystal Lake South
+Garrett Cutting,Youngstown State,2026,72,190,R,R,R-Sr.,IF,"Las Vegas, Nev.",Arbor View
+Tyler Heflin,Youngstown State,2026,72,190,R,R,So.,RHP,"West Chester, Ohio",Archbishop Moeller
+Brayden Kuriger,Youngstown State,2026,73,205,R,R,Sr.,OF,"Gonzales, La.",St. Amant
+Aidan Haynes,Youngstown State,2026,73,190,R,R,Fr.,RHP,"North Tonawanda, N.Y.",North Tonawanda
+Jake Ferretti,Youngstown State,2026,74,190,L,L,R-Jr.,LHP,"Upland, Calif.",San Dimas
+Jay Wrona,Youngstown State,2026,70,175,L,R,So.,IF,"New Castle, Pa.",Mohawk
+Kale Wemer,Youngstown State,2026,74,220,R,R,R-Fr.,RHP,"Crawfordsville, Ind.",Crawfordsville
+Sloan Ulrich,Youngstown State,2026,72,200,L,L,R-Sr.,LHP,"Solon, Ohio",Solon
+Jack Messmore,Youngstown State,2026,73,215,L,R,Sr.,RHP,"Niceville, Fla.",Niceville
+Sumner Estes,Youngstown State,2026,77,240,R,R,R-So.,RHP,"Walnut Creek, Calif.",Stuart Hall
+Luke Rossi,Youngstown State,2026,75,215,R,R,R-Jr.,IF,"Salinas, Calif.",Palma
+Aidan English,Youngstown State,2026,78,215,R,R,Sr.,RHP,"Youngstown, Ohio",South Range
+Nic Goodwin,Youngstown State,2026,75,225,R,R,R-Sr.,C,"Woodinville, Wash.",North Creek
+Dillon Lettow,Youngstown State,2026,75,185,L,L,Jr.,LHP,"Roland, Iowa",Roland-Story
+Brevin Smith,Youngstown State,2026,71,185,R,R,Jr.,IF/RHP,"Palm Bay, Fla.",Melbourne
+Aidan Dorsch,Youngstown State,2026,77,220,R,R,R-So.,RHP,"Eureka, Calif.",St. Bernard’s Academy
+Teddy Ruffner,Youngstown State,2026,70,210,R,R,R-Sr.,OF,"Mars, Pa.",Mars Area
+Banks Cox,Youngstown State,2026,73,220,R,R,R-Sr.,RHP,"Winston-Salem, N.C.",West Forsyth
+Braden Gebhardt,Youngstown State,2026,74,225,L,L,Sr.,LHP,"Howland, Ohio",Howland
+Griffin Almond,Youngstown State,2026,78,235,L,R,5th,RHP,"Thornbury, Ontario, Canada",Georgian Bay Community School
+Nathan Beckley,Youngstown State,2026,72,185,L,R,R-Jr.,UTIL,"Aliso Viejo, Calif.",San Clemente
+Bryce Palms,Youngstown State,2026,73,200,L,L,Fr.,LHP,"Upper Marlboro, Md.",DeMatha Catholic
+Kendal Spencer,Youngstown State,2026,73,180,L,L,5th,OF,"Tampa, Fla.",Brandon
+Braedon Davis,Youngstown State,2026,75,210,R,R,Jr.,RHP,"Woodinville, Wash.",Redmond

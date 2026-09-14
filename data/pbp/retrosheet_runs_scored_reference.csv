@@ -1,0 +1,10 @@
+column_plays,column_cwevent,meaning
+score_v,AWAY_SCORE_CT,Visitor (away) team cumulative score after this play
+score_h,HOME_SCORE_CT,Home team cumulative score after this play
+runs,EVENT_RUNS_CT,Number of runs scored on this play (extended field)
+run_b,run_b,"1 if batter scored on this play, else 0 (extended)"
+run1,run1,1 if runner on 1st scored on this play (extended)
+run2,run2,1 if runner on 2nd scored on this play (extended)
+run3,run3,1 if runner on 3rd scored on this play (extended)
+rbi,RBI_CT,RBI credited on this play (not same as runs if earned/unearned)
+(derived),—,Runs on play = score_v diff or score_h diff from previous event (same game)

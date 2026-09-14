@@ -1,0 +1,42 @@
+# ── dbt build artifacts ──────────────────────────────────────────────────────
+target/
+dbt_packages/
+logs/
+dbt.log
+.user.yml
+# NOTE: package-lock.yml IS committed (pins package versions for reproducible CI).
+
+# ── local DuckDB warehouses (rebuilt by `dbt build`) ─────────────────────────
+*.duckdb
+*.duckdb.wal
+dev.duckdb
+ci.duckdb
+
+# ── local toolchain ──────────────────────────────────────────────────────────
+.venv/
+venv/
+__pycache__/
+
+# ── the active profile (may hold real local paths); the example is committed ──
+profiles.yml
+
+# ── PUBLIC-REPO HYGIENE ──────────────────────────────────────────────────────
+# Do NOT commit full raw data dumps. Only the small sample fixtures under
+# sample_data/ (force-included below) are public. The full season exports and
+# the coaches'-notes Supabase schema stay local.
+#
+# Full Trackman master / full 6-4-3 exports / the SQLite DB (if symlinked here):
+full_data/
+*master_file*.csv
+*pitchers_2025*.csv
+*hitters_2025*.csv
+*.db
+
+# Re-include ONLY the committed sample fixtures + the pitch-type map seed.
+# (The root .gitignore ignores *.csv repo-wide; these negations re-add ours.)
+!sample_data/
+!sample_data/sample_trackman_pitches.csv
+!sample_data/sample_643_pitching.csv
+!sample_data/sample_643_hitting.csv
+!seeds/
+!seeds/pitch_type_map.csv

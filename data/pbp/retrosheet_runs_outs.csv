@@ -1,0 +1,5 @@
+runs_outs,meaning
+0,No out recorded on this play
+1,One out recorded on this play
+2,Two outs recorded on this play (e.g. double play)
+3,Three outs (inning ended); sometimes used as end-of-inning marker
