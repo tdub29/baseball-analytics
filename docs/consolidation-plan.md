@@ -243,8 +243,11 @@ before and after are both visible, and say so in the README.
 Code cleanup, where it is cheap and visible:
 
 - One `pyproject.toml` replacing the three `requirements.txt` files.
-- `scripts/fetch_*_PROTOTYPE.py` (3 files): delete if the non-prototype supersedes them, otherwise
-  rename to say what they actually are.
+- `scripts/fetch_*_PROTOTYPE.py`: **DONE 2026-09-17, 2 deleted** (the plan said 3, only 2 existed).
+  Checked before deleting rather than after: nothing imports either one, the only reference outside
+  themselves is a docstring in `fetch_team_bio.py` naming itself the production build of its
+  prototype, and the superseding files are roughly twice the size (597 vs 329, 937 vs 508). Git
+  history keeps them if they are ever wanted.
 - `src/ncaa/portal/` and `src/ncaa/pbp/` both fetch NCAA pages, and the MLB notebooks both hit
   Savant. Look for the shared HTTP and retry helper before writing a new one; that is what
   `src/common/` is for.
