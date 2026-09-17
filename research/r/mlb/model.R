@@ -33,7 +33,22 @@ expected_score <- function(rp_slg, rp_hr, opp_sp_so_perc, opp_sp_ld, opp_sp_slg,
 #' The legacy version was a `for (x in 1:nrow(baseball))` loop writing six columns back
 #' into `baseball` one row at a time. Same arithmetic, vectorised per row into a function,
 #' so it can be tested on 6 rows instead of a season.
-comparable_outcomes <- function(target, history, tol = 0.05) {
+#' @param as_of Predict-as-of date. Only games strictly BEFORE this date are eligible
+#'   comparables. Required whenever `history` carries a `Date` column, because a
+#'   nearest-neighbour lookup over an unfiltered season silently matches games that had not
+#'   been played yet when the prediction was made, which inflates every downstream metric.
+#'   A fixture with no `Date` column (the unit tests) is exempt, since there is no time to
+#'   leak. The guard errors rather than defaulting, because the caller that forgets it is
+#'   exactly the caller that produces a good-looking wrong number.
+comparable_outcomes <- function(target, history, tol = 0.05, as_of = NULL) {
+  has_dates <- "Date" %in% names(history)
+  if (has_dates && is.null(as_of)) {
+    stop("comparable_outcomes(): history carries a Date column, so as_of is required. ",
+         "Passing the whole season lets a game be predicted from games played after it.")
+  }
+  if (has_dates) {
+    history <- history[!is.na(history$Date) & history$Date < as.Date(as_of), , drop = FALSE]
+  }
   lo <- target * (1 - tol)
   hi <- target * (1 + tol)
   if (target < 0) { tmp <- lo; lo <- hi; hi <- tmp }

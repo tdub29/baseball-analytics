@@ -67,6 +67,35 @@ test_that("comparable_outcomes brackets correctly on both sides of zero", {
   expect_equal(neg$occurrences, 2)
 })
 
+test_that("comparable_outcomes refuses a dated history with no as_of", {
+  # The leak this guards: without a date filter, a July game can be "predicted" from
+  # September games. It looks like a good model and is arithmetic on the answer key.
+  history <- data.frame(
+    Date    = as.Date(c("2019-05-01", "2019-06-01", "2019-09-01")),
+    exscore = c(2.0, 2.0, 2.0),
+    score   = c(1, 3, 99)
+  )
+  expect_error(comparable_outcomes(2.0, history, tol = 0.05), "as_of is required")
+})
+
+test_that("comparable_outcomes with as_of excludes games that had not been played", {
+  history <- data.frame(
+    Date    = as.Date(c("2019-05-01", "2019-06-01", "2019-09-01")),
+    exscore = c(2.0, 2.0, 2.0),
+    score   = c(1, 3, 99)
+  )
+  out <- comparable_outcomes(2.0, history, tol = 0.05, as_of = "2019-07-01")
+  expect_equal(out$occurrences, 2)   # the September game is not eligible
+  expect_equal(out$mean_score, 2)    # mean(1, 3), not mean(1, 3, 99) = 34.33
+})
+
+test_that("comparable_outcomes still works on an undated fixture", {
+  # No Date column means no time to leak, so the guard must not fire.
+  history <- data.frame(exscore = c(1.9, 2.0, 2.1), score = c(4, 5, 6))
+  out <- comparable_outcomes(2.0, history, tol = 0.05)
+  expect_equal(out$occurrences, 3)
+})
+
 test_that("expected_score is a pure function of its six inputs", {
   a <- expected_score(0.45, 8, 0.22, 0.20, 0.40, 0.42)
   b <- expected_score(0.45, 8, 0.22, 0.20, 0.40, 0.42)
