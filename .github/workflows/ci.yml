@@ -47,6 +47,10 @@ jobs:
 
       # Builds off warehouse/sample_data fixtures, so this needs zero credentials.
       # If it ever needs a secret, the fixtures regressed, not the CI.
+      - name: dbt deps
+        working-directory: warehouse
+        run: dbt deps
+
       - name: dbt build
         working-directory: warehouse
         run: dbt build --profiles-dir .
