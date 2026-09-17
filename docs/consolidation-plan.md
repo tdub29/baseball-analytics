@@ -108,7 +108,11 @@ and inside the platform it reads as another source feeding the same warehouse.
 
 ### What happens to the GitHub repos
 
-- `streamlit-app-1` and `hitterapp`: **archive** with a one-line README pointing at the flagship.
+- `streamlit-app-1` and `hitterapp`: **do NOT archive.** Corrected 2026-09-17 by Trevor: both still
+  feed live Streamlit dashboards, and Streamlit Community Cloud deploys from the repo, so archiving
+  one risks breaking a running app. Their CODE is superseded by `apps/pitcher/` and `apps/hitter/`
+  here, which is a different claim from the repo being retired. Add a README line pointing at the
+  flagship, leave both writable.
   Their content moves into `apps/`.
 - `Baseball-Analysis`: **fold in.** It is the MLB track, thin only because the code implementing
   its README lives in the OneDrive notebooks. Bring both together under `src/mlb/` and
@@ -276,9 +280,9 @@ Most readers will read only the README. It needs, in order:
 | 3 | Fold in `apps/` from both app repos and the OneDrive duplicates, dedupe models | Both Streamlit apps start and render against the committed data |
 | 4 | Fold in `battles/` as `src/ncaa/pbp/`, carry its test | `pytest` green including the battle calc test |
 | 5 | Build `src/mlb/` from the 7 MLB notebooks, **and rebuild the 604-line R monolith per section 5b** | The rebuilt R pipeline runs end to end on one season, `testthat` green, no `rbind`-in-a-loop, seasons passed as arguments; legacy file preserved at `research/r/legacy/` |
-| 6 | `research/`: 22 notebooks outputs-stripped and split mlb/ncaa/competitions, plus the R files and the mapping README | Every notebook opens and renders on GitHub |
+| 6 | `research/`: 22 notebooks outputs-stripped and split mlb/ncaa/competitions, plus the R files and the mapping README | Every notebook opens and renders on GitHub. **Landed count is 20, not 22** (8 mlb, 12 ncaa), measured on disk 2026-09-16; the 22 above is the pre-consolidation inventory from section 3 and includes the 0-cell `NCAA_WHIFF-checkpoint.ipynb` this plan deletes plus one duplicate. All 20 verified to carry 0 embedded outputs. README was claiming 21 and is corrected. |
 | 7 | Cleanup table, one `pyproject.toml`, CI | CI green on a clean runner |
-| 8 | README with screenshots, `gitleaks detect`, push, archive the 3 old repos with pointers | Public URL live, gitleaks clean, `streamlit-app-1` / `hitterapp` / `Baseball-Analysis` archived |
+| 8 | README with screenshots, `gitleaks detect`, push, archive the superseded repo with a pointer | Public URL live, gitleaks clean, `Baseball-Analysis` archived; `streamlit-app-1` and `hitterapp` left live with README pointers, see section 5 |
 
 ---
 
