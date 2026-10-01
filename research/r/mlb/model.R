@@ -17,15 +17,25 @@ EXPECTED_SCORE_COEF <- c(
 
 #' Expected runs for one side.
 #'
-#' side_* are that side's OWN bullpen and the OPPOSING starter, because a team's run
-#' output is driven by the pitching it faces. The legacy file got this right but expressed
-#' it as one 180-character unnamed line repeated four times with the prefixes swapped.
-expected_score <- function(rp_slg, rp_hr, opp_sp_so_perc, opp_sp_ld, opp_sp_slg,
+#' Every pitching input is the OPPOSING side's: its bullpen and its starter, because a
+#' team's run output is driven by the pitching it faces (legacy lines 357-358). The legacy
+#' file expressed this as one 180-character unnamed line repeated four times with the
+#' prefixes swapped. Not used by the win prediction, which matches on `raw_exscore()`.
+expected_score <- function(opp_rp_slg, opp_rp_hr, opp_sp_so_perc, opp_sp_ld, opp_sp_slg,
                            bat_slg, coef = EXPECTED_SCORE_COEF) {
-  coef[["rp_slg"]] * rp_slg +
-    coef[["rp_hr"]] * rp_hr +
+  coef[["rp_slg"]] * opp_rp_slg +
+    coef[["rp_hr"]] * opp_rp_hr +
     (-1 * opp_sp_so_perc) * opp_sp_ld * opp_sp_slg * bat_slg +
-    coef[["interaction"]] * rp_slg * rp_hr
+    coef[["interaction"]] * opp_rp_slg * opp_rp_hr
+}
+
+#' The unweighted index the comparables lookup matches on (legacy lines 355-356 and 391).
+#'
+#' Same inputs as `expected_score()` with no fitted coefficients, so nothing fitted on any
+#' season, the test season included, reaches a prediction.
+raw_exscore <- function(opp_rp_slg, opp_rp_hr, opp_sp_so_perc, opp_sp_ld, opp_sp_slg,
+                        bat_slg) {
+  opp_rp_slg * opp_rp_hr + (-1 * opp_sp_so_perc) * opp_sp_ld * opp_sp_slg * bat_slg
 }
 
 #' Mean outcome among historical games whose expected score sat within `tol` of this one.
@@ -98,6 +108,7 @@ fit_expected_score <- function(df) stats::lm(score ~ expected_score, data = df)
 to_team_rows <- function(games) {
   home <- games |>
     dplyr::transmute(
+      dplyr::across(dplyr::any_of("Date")),
       score          = .data$teams.home.score,
       opp_score      = .data$teams.away.score,
       expected_score = .data$home_expected_score,
@@ -106,6 +117,7 @@ to_team_rows <- function(games) {
     )
   away <- games |>
     dplyr::transmute(
+      dplyr::across(dplyr::any_of("Date")),
       score          = .data$teams.away.score,
       opp_score      = .data$teams.home.score,
       expected_score = .data$away_expected_score,
@@ -121,12 +133,104 @@ to_team_rows <- function(games) {
 
 #' Replace remaining NAs with that column's mean.
 #'
-#' Straight port of the legacy `for (i in 1:ncol(sigg))` imputation loop, kept because
-#' changing the imputation would change the fitted coefficients and break the diff against
-#' the original. `across` does it in one pass instead of ncol assignments.
-impute_column_means <- function(df) {
-  dplyr::mutate(df, dplyr::across(
-    dplyr::where(is.numeric),
-    ~ ifelse(is.na(.x), mean(.x, na.rm = TRUE), .x)
-  ))
+#' Straight port of the legacy `for (i in 1:ncol(sigg))` imputation loop. Split into a fit
+#' and an apply so a backtest can take the means from training rows only: imputing a test
+#' week with its own column means lets that week's data shape its own inputs.
+impute_column_means <- function(df) apply_means(df, fit_means(df))
+
+fit_means <- function(df, cols = names(df)[vapply(df, is.numeric, logical(1))]) {
+  vapply(df[cols], function(x) mean(x, na.rm = TRUE), numeric(1))
+}
+
+apply_means <- function(df, means) {
+  for (col in names(means)) {
+    df[[col]] <- ifelse(is.na(df[[col]]), means[[col]], df[[col]])
+  }
+  df
+}
+
+#' Predicted runs for each side from the realised scores of comparable past team-games.
+#'
+#' `history` is team rows (Date, exscore, score); only rows before `as_of` are eligible.
+#' `population_mean` is the shrink target and must come from training rows. The legacy
+#' version shrank toward the mean of the predictions themselves, computed over the very
+#' games being predicted. A side with no comparables falls back to the target, so no game
+#' drops out of the denominator (legacy dropped them, which flatters any rate).
+add_historical_predictions <- function(games, history, as_of, population_mean, tol = 0.05) {
+  side <- function(target) {
+    res <- lapply(target, function(t) {
+      if (is.na(t)) return(list(mean_score = NA_real_, occurrences = 0L, p_value = NA_real_))
+      comparable_outcomes(t, history, tol = tol, as_of = as_of)
+    })
+    n    <- vapply(res, function(r) as.integer(r$occurrences), integer(1))
+    pred <- regress_to_mean(vapply(res, `[[`, numeric(1), "mean_score"),
+                            vapply(res, `[[`, numeric(1), "p_value"), population_mean)
+    list(pred = ifelse(n == 0, population_mean, pred), n = n)
+  }
+  h <- side(games$home_exscore)
+  a <- side(games$away_exscore)
+  dplyr::mutate(games,
+    home_pred = h$pred, home_n = h$n,
+    away_pred = a$pred, away_n = a$n,
+    home_advantage = .data$home_pred - .data$away_pred
+  )
+}
+
+#' Map predicted run advantage to a home win probability.
+#'
+#' The intercept carries home field, so an advantage of zero still favours the home side by
+#' whatever the training years say. One row per game, home perspective: mirrored team rows
+#' would count every game twice and make calibration symmetric by construction.
+fit_win_model <- function(games) {
+  stats::glm(home_win ~ home_advantage, family = stats::binomial, data = games)
+}
+
+predict_win_pct <- function(model, games) {
+  unname(stats::predict(model, newdata = games, type = "response"))
+}
+
+#' Walk-forward predictions: each weekly block is predicted only from games before it.
+#'
+#' Three passes over the same blocks, each one leak-free on its own:
+#' 1. Score index. A block's missing inputs take the means of EARLIER games, then
+#'    `add_expected_scores()` runs on the block, so every game is indexed once, as of its week.
+#' 2. Comparables. Each side is matched against earlier team-games and shrunk toward their
+#'    mean score. Burn-in blocks run too, so the win model has walk-forward training rows.
+#' 3. Win probability, `predict_seasons` only. `fit_win_model()` on earlier games, applied
+#'    to the block. `home_rate` is the earlier home win rate, the baseline's probability.
+#' Weekly refits with the cutoff at the block start carry no look-ahead and cost a seventh
+#' of daily ones. `games` needs Date, season, both scores and `SCORE_INPUTS`.
+walk_forward <- function(games, predict_seasons, block = "week", tol = 0.05) {
+  games <- games |>
+    dplyr::mutate(
+      block_start = as.Date(cut(.data$Date, block)),
+      home_win    = as.integer(.data$teams.home.score > .data$teams.away.score)
+    )
+  games$imputed <- rowSums(is.na(games[SCORE_INPUTS])) > 0
+  starts <- sort(unique(games$block_start))
+  each_block <- function(f) purrr::map_dfr(starts, f)
+
+  scored <- each_block(function(d) {
+    blk   <- games[games$block_start == d, ]
+    prior <- games[games$Date < d, ]
+    if (nrow(prior)) blk <- apply_means(blk, fit_means(prior, SCORE_INPUTS))
+    add_expected_scores(blk)
+  })
+
+  scored <- each_block(function(d) {
+    blk     <- scored[scored$block_start == d, ]
+    history <- to_team_rows(scored[scored$Date < d, ])
+    if (!nrow(history)) return(blk)
+    add_historical_predictions(blk, history, as_of = d,
+                               population_mean = mean(history$score), tol = tol)
+  })
+
+  each_block(function(d) {
+    blk <- scored[scored$block_start == d & scored$season %in% predict_seasons, ]
+    if (!nrow(blk)) return(NULL)
+    prior <- scored[scored$Date < d, ]
+    blk$win_pct   <- predict_win_pct(fit_win_model(prior), blk)
+    blk$home_rate <- mean(prior$home_win)
+    blk
+  })
 }

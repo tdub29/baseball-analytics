@@ -32,8 +32,8 @@ TrackMan
 | `apps/hitter/`, `apps/pitcher/` | 5,275 lines | The two Streamlit apps coaches open, with their 10 model artifacts |
 | `scripts/` | 19 files | NCAA bio fetchers (D1/D2/D3/portal), school geocoding, Excel import and export, board HTML build, Netlify publish, Supabase RLS verify |
 | `tests/` plus the pbp tests | 15 pytest files, 147 tests | bio, board, d1baseball, dedupe, geo, overlay, RLS schema, pipeline, program tier, resolve, rollup, speed, status, battle calc, and a guard that the battle converter stays linear in input size |
-| `research/notebooks/` | 21 notebooks | 8 MLB, 13 NCAA, outputs stripped. Every shipped model was trained in one of these |
-| `research/r/` | 5 R files + 59 testthat assertions | The MLB run-expectancy pipeline, rebuilt from a 604-line monolith into ingest / features / model / evaluate. The original is kept at `research/r/legacy/` so the diff is readable ([before and after](research/r/README.md)) |
+| `research/notebooks/` | 20 notebooks | 8 MLB, 12 NCAA, outputs stripped (verified 2026-09-16: 0 of the 20 carry embedded outputs). Every shipped model was trained in one of these |
+| `research/r/` | 7 R files + 83 testthat assertions | The MLB run-expectancy pipeline, rebuilt from a 604-line monolith into ingest / features / model / evaluate, plus a walk-forward out-of-sample backtest. The original is kept at `research/r/legacy/` so the diff is readable ([before and after](research/r/README.md)) |
 | `docs/` | 11 design docs | Pipeline design, 2026 sourcing, capabilities and blockers, Netlify and Supabase recipes, the consolidation plan |
 
 Model provenance, which notebook trained which artifact: [`models/README.md`](models/README.md).
