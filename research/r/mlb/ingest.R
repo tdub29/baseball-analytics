@@ -92,9 +92,14 @@ fetch_rolling <- function(start, end, window_days, fetch) {
   start <- as.Date(start)
   end   <- as.Date(end)
   as_of <- seq(start + window_days, end, by = "day")
+  failed_in_a_row <- 0
 
   purrr::map_dfr(as_of, function(d) {
     out <- safe_fetch(fetch, as.character(d - window_days), as.character(d))
+    # A rate-limited source fails every call; three days in a row means stop hitting it,
+    # since each refused request can extend the lockout. The cache keeps what landed.
+    failed_in_a_row <<- if (is.null(out)) failed_in_a_row + 1 else 0
+    if (failed_in_a_row >= 3) stop("3 days in a row failed at ", d, "; source likely rate-limiting, rerun later")
     if (!is.data.frame(out) || nrow(out) == 0) return(NULL)
     out$as_of <- d + 1        # the line is known the morning AFTER the window closes
     out
