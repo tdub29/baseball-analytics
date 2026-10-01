@@ -48,3 +48,6 @@ __pycache__/
 #   apps/*/models/**   the 10 trained model artifacts
 # Trevor cleared public real data and USD branding on 2026-09-12. A repo whose apps
 # cannot start from a fresh clone is a demo nobody can run.
+
+# Raw baseballr pulls, rebuilt by research/r/mlb/fetch_cache.R
+data/mlb/raw/

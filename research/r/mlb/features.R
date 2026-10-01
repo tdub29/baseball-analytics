@@ -142,8 +142,8 @@ team_batting <- function(daily, min_pa = 100) {
 
 #' Split pitchers into starters and relievers, aggregate relievers to the team.
 #'
-#' A starter is kept as an individual row because the game-level join matches the probable
-#' starter by name. Relievers are only ever used as a bullpen aggregate.
+#' A starter is kept as an individual row, keyed by bbref_id, because the game-level join
+#' matches the probable starter by id. Relievers are only ever used as a bullpen aggregate.
 split_pitching <- function(daily) {
   tidy <- daily |>
     dplyr::mutate(
@@ -175,37 +175,71 @@ split_pitching <- function(daily) {
 #' `colnames(NEW)[150] = "Home Starter"`. Any upstream column change silently renamed the
 #' wrong fields, and nothing would have errored. Prefixed joins on named keys cannot
 #' misalign, and they do not care how many columns the source has.
-build_game_features <- function(schedule, batting, starters, relievers, probables) {
-  home_sp <- probables |>
-    dplyr::select(game_pk, Team = team, starter = fullName)
-  away_sp <- home_sp
-
+#'
+#' The starter is matched by id, not name: `schedule` carries the StatsAPI (MLBAM) id of
+#' each probable, `ids` maps it to the Baseball-Reference id the daily lines use. The
+#' join is on the as-of date, so a game on date d sees the window that closed on d - 1.
+build_game_features <- function(schedule, batting, starters, relievers, ids) {
+  team_keys <- c("Team", "as_of")
   join_side <- function(games, side_team, prefix) {
+    by <- stats::setNames(team_keys, c(side_team, "Date"))
     games |>
-      dplyr::left_join(prefix_cols(batting, paste0(prefix, "bat_"), c("Team", "as_of")),
-                       by = stats::setNames(c("Team", "as_of"), c(side_team, "Date"))) |>
-      dplyr::left_join(prefix_cols(relievers, paste0(prefix, "rp_"), c("Team", "as_of")),
-                       by = stats::setNames(c("Team", "as_of"), c(side_team, "Date")))
+      dplyr::left_join(prefix_cols(batting, paste0(prefix, "bat_"), team_keys), by = by) |>
+      dplyr::left_join(prefix_cols(relievers, paste0(prefix, "rp_"), team_keys), by = by)
+  }
+
+  # ponytail: a pitcher traded inside the window can carry two lines; the first is kept.
+  starters <- dplyr::distinct(starters, .data$bbref_id, .data$as_of, .keep_all = TRUE)
+  attach_starter <- function(games, prefix) {
+    id_col <- paste0(prefix, "sp_bbref")
+    games |>
+      dplyr::left_join(dplyr::rename(ids, !!id_col := "bbref_id"),
+                       by = stats::setNames("mlbam", paste0(prefix, "_sp_mlbam"))) |>
+      dplyr::left_join(prefix_cols(starters, paste0(prefix, "sp_"), c("bbref_id", "as_of")),
+                       by = stats::setNames(c("bbref_id", "as_of"), c(id_col, "Date")))
   }
 
   out <- schedule |>
     join_side("HTeam", "h") |>
-    join_side("ATeam", "a")
+    join_side("ATeam", "a") |>
+    attach_starter("h") |>
+    attach_starter("a")
+  stopifnot(nrow(out) == nrow(schedule))   # a duplicated key upstream would fan rows out
+  out
+}
 
-  attach_starter <- function(games, side_team, prefix) {
-    side <- home_sp |> dplyr::rename(!!paste0(prefix, "starter") := starter)
-    games |>
-      dplyr::left_join(side, by = stats::setNames(c("game_pk", "Team"),
-                                                  c("game_pk", side_team))) |>
-      dplyr::left_join(
-        prefix_cols(starters, paste0(prefix, "sp_"), c("Name", "as_of")),
-        by = stats::setNames(c("Name", "as_of"), c(paste0(prefix, "starter"), "Date"))
-      )
-  }
+#' Slugging allowed by each side's bullpen and starter.
+add_slugging <- function(games) {
+  games |>
+    dplyr::mutate(
+      h_rp_slg = slugging(.data$hrp_X1B, .data$hrp_X2B, .data$hrp_X3B, .data$hrp_HR, .data$hrp_AB),
+      a_rp_slg = slugging(.data$arp_X1B, .data$arp_X2B, .data$arp_X3B, .data$arp_HR, .data$arp_AB),
+      h_sp_slg = slugging(.data$hsp_X1B, .data$hsp_X2B, .data$hsp_X3B, .data$hsp_HR, .data$hsp_AB),
+      a_sp_slg = slugging(.data$asp_X1B, .data$asp_X2B, .data$asp_X3B, .data$asp_HR, .data$asp_AB)
+    )
+}
 
-  out |>
-    attach_starter("HTeam", "h") |>
-    attach_starter("ATeam", "a")
+# The twelve inputs the score index reads. Imputation fills these and nothing else.
+SCORE_INPUTS <- c("a_rp_slg", "arp_HR", "asp_SO_perc", "asp_LD", "a_sp_slg", "hbat_slg",
+                  "h_rp_slg", "hrp_HR", "hsp_SO_perc", "hsp_LD", "h_sp_slg", "abat_slg")
+
+#' Both sides' raw comparables index and coefficient-weighted expected score.
+#'
+#' A side's runs come from the pitching it FACES, so the home score reads the AWAY bullpen
+#' and starter (legacy lines 355-358 use `arp*` / `asp*` for home). The first rebuild had
+#' each side reading its own bullpen.
+add_expected_scores <- function(games) {
+  games |>
+    dplyr::mutate(
+      home_exscore = raw_exscore(.data$a_rp_slg, .data$arp_HR, .data$asp_SO_perc,
+                                 .data$asp_LD, .data$a_sp_slg, .data$hbat_slg),
+      away_exscore = raw_exscore(.data$h_rp_slg, .data$hrp_HR, .data$hsp_SO_perc,
+                                 .data$hsp_LD, .data$h_sp_slg, .data$abat_slg),
+      home_expected_score = expected_score(.data$a_rp_slg, .data$arp_HR, .data$asp_SO_perc,
+                                           .data$asp_LD, .data$a_sp_slg, .data$hbat_slg),
+      away_expected_score = expected_score(.data$h_rp_slg, .data$hrp_HR, .data$hsp_SO_perc,
+                                           .data$hsp_LD, .data$h_sp_slg, .data$abat_slg)
+    )
 }
 
 #' Prefix every column except the join keys, so two sides never collide.

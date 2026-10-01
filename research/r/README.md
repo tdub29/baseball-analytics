@@ -6,16 +6,19 @@ untouched. `mlb/` is the rebuild. Diffing them is the point.
 ```
 legacy/projectbaseball_full_pipeline.R   604 lines, 1 file,  0 functions, 7 for loops
 mlb/ingest.R  features.R  model.R  evaluate.R  run_season.R
-tests/testthat/                          59 assertions, no network, green
+mlb/fetch_cache.R  backtest.R            raw-pull cache, walk-forward backtest
+tests/testthat/                          83 assertions, no network, green
 ncaa_baseballr_export.R                  the NCAA export, unchanged
 ```
 
 Run it:
 
 ```bash
-Rscript research/r/mlb/run_season.R 2019
+Rscript research/r/mlb/fetch_cache.R batter 2016 2019    # also pitcher, mlb; resumable
 Rscript research/r/mlb/run_season.R 2016 2019 --out data/mlb
-Rscript research/r/tests/testthat.R          # 59 pass, offline
+Rscript research/r/mlb/backtest.R 2016 2018              # burn-in 2016, validation 2017-2018
+Rscript research/r/mlb/backtest.R 2016 2019 --test 2019  # test season, scored once
+Rscript research/r/tests/testthat.R          # 83 pass, offline
 ```
 
 ## What was actually wrong, and what it cost
