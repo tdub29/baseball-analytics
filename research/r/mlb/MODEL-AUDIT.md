@@ -7,6 +7,14 @@ the diff honest. This file is the list of what that leaves.
 
 Ranked by how much each one inflates a backtest.
 
+**Closed 2026-10-02.** Items 1, 3, 4, 5 and 6 are fixed and the walk-forward backtest has run:
+[results/backtest-2019.md](results/backtest-2019.md). 2019, scored once after the model was frozen
+(commit b15a7af): 59.7% on 2,429 games against 52.9% for home team always, accuracy gap 95%
+[+4.4, +9.1] points, log loss 0.6706 vs 0.6915. Validation 2017-18: 56.7% vs 53.4%. The win
+comes from season-to-date run differential, added after the first validation run showed the
+legacy run gap alone tied home field; an ablation puts the pitching comparables at 52.7% alone.
+An independent leakage audit (real-data tamper test on the 2019-06-17 block) found no look-ahead.
+
 ## 1. The predictive half is not wired into the entry point (FIXED 2026-09-30)
 
 Fixed by `walk_forward()` in `model.R` and `backtest.R`: `fit_win_model()` maps the predicted run
