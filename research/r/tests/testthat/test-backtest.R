@@ -114,3 +114,13 @@ test_that("Wilson interval matches the textbook value", {
   expect_equal(round(wilson_ci(50, 100), 4), c(0.4038, 0.5962))
   expect_true(all(is.na(wilson_ci(0, 0))))
 })
+
+test_that("run differential reads only the prior games it is given, shrunk by k", {
+  prior <- data.frame(HTeam = c("A", "B"), ATeam = c("B", "C"),
+                      teams.home.score = c(9L, 2L), teams.away.score = c(1L, 2L))
+  blk <- data.frame(HTeam = c("A", "D"), ATeam = c("C", "B"))
+  out <- add_run_diff(blk, prior, k = 2)
+  # A: +8 in 1 game, C: 0 in 1, B: -8 in 2, D: no games
+  expect_equal(out$rd_gap, c(8 / 3 - 0 / 3, 0 - (-8) / 4))
+  expect_equal(add_run_diff(blk, prior[0, ])$rd_gap, c(0, 0))
+})
