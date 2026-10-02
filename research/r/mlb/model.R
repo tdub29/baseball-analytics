@@ -182,7 +182,24 @@ add_historical_predictions <- function(games, history, as_of, population_mean, t
 #' whatever the training years say. One row per game, home perspective: mirrored team rows
 #' would count every game twice and make calibration symmetric by construction.
 fit_win_model <- function(games) {
-  stats::glm(home_win ~ home_advantage, family = stats::binomial, data = games)
+  stats::glm(home_win ~ home_advantage + rd_gap, family = stats::binomial, data = games)
+}
+
+#' Season-to-date run differential per game, home minus away, from `prior` games only.
+#'
+#' `prior` is this season's games before the block. `k` phantom games at zero shrink an
+#' early line toward average: 2-0 by eleven runs is not an 11-run team. k = 20 was picked on
+#' validation (fit 2017, score 2018); log loss was flat from 10 to 40. A team with no games
+#' yet sits at zero.
+add_run_diff <- function(blk, prior, k = 20) {
+  team <- c(prior$HTeam, prior$ATeam)
+  rd   <- c(prior$teams.home.score - prior$teams.away.score,
+            prior$teams.away.score - prior$teams.home.score)
+  per  <- if (length(rd)) tapply(rd, team, sum) / (tapply(rd, team, length) + k) else numeric(0)
+  per  <- stats::setNames(as.numeric(per), names(per))
+  look <- function(t) { v <- unname(per[t]); ifelse(is.na(v), 0, v) }
+  blk$rd_gap <- look(blk$HTeam) - look(blk$ATeam)
+  blk
 }
 
 predict_win_pct <- function(model, games) {
@@ -191,12 +208,13 @@ predict_win_pct <- function(model, games) {
 
 #' Walk-forward predictions: each weekly block is predicted only from games before it.
 #'
-#' Three passes over the same blocks, each one leak-free on its own:
+#' Four passes over the same blocks, each one leak-free on its own:
 #' 1. Score index. A block's missing inputs take the means of EARLIER games, then
 #'    `add_expected_scores()` runs on the block, so every game is indexed once, as of its week.
 #' 2. Comparables. Each side is matched against earlier team-games and shrunk toward their
 #'    mean score. Burn-in blocks run too, so the win model has walk-forward training rows.
-#' 3. Win probability, `predict_seasons` only. `fit_win_model()` on earlier games, applied
+#' 3. Run differential. Each side's season-to-date run differential, as of the block start.
+#' 4. Win probability, `predict_seasons` only. `fit_win_model()` on earlier games, applied
 #'    to the block. `home_rate` is the earlier home win rate, the baseline's probability.
 #' Weekly refits with the cutoff at the block start carry no look-ahead and cost a seventh
 #' of daily ones. `games` needs Date, season, both scores and `SCORE_INPUTS`.
@@ -223,6 +241,11 @@ walk_forward <- function(games, predict_seasons, block = "week", tol = 0.05) {
     if (!nrow(history)) return(blk)
     add_historical_predictions(blk, history, as_of = d,
                                population_mean = mean(history$score), tol = tol)
+  })
+
+  scored <- each_block(function(d) {
+    blk <- scored[scored$block_start == d, ]
+    add_run_diff(blk, scored[scored$Date < d & scored$season == blk$season[1], ])
   })
 
   each_block(function(d) {

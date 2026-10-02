@@ -78,12 +78,18 @@ method_lines <- function(burn_in, validation, test) c(
   paste("- A side's predicted runs are the mean realised score of past team-games whose raw index",
         "sat within 5% of its own, shrunk toward the training mean by 0.2 + 0.5p when the",
         "Jarque-Bera p exceeds 0.05. All three constants are the legacy values, frozen before any",
-        "season was scored; only the threshold is chosen, and on validation games only."),
+        "season was scored."),
   paste("- The comparables match on the raw index, which has no fitted coefficients, so the shipped",
         "EXPECTED_SCORE_COEF (fitted on 2016-2019) never reach a prediction. The plan's per-fold",
         "coefficient refit was therefore unnecessary."),
-  paste("- Win probability: logistic regression of home win on the predicted run gap; the intercept",
-        "carries home field. One row per game, home perspective."),
+  paste("- Win probability: logistic regression of home win on the predicted run gap and on the",
+        "gap in season-to-date run differential per game (each side's runs scored minus allowed in",
+        "this season's games before the block, over games played plus 20); the intercept carries",
+        "home field. One row per game, home perspective."),
+  paste("- Chosen on validation, so validation rates flatter the model: the run-differential term",
+        "(added after the first validation run showed the run gap alone tied home field, 53.3% vs",
+        "53.4%), its shrink of 20 games (fit 2017, scored 2018; flat from 10 to 40) and the",
+        "threshold. The test season is the only clean number."),
   paste("- Two rebuild defects were fixed before any season was scored: each side read its own",
         "bullpen instead of the opponent's, and the comparables matched the weighted score against",
         "the raw index (different units)."),
@@ -124,7 +130,7 @@ main <- function(args = commandArgs(TRUE)) {
   dir.create("data/mlb/backtest", recursive = TRUE, showWarnings = FALSE)
   keep <- c("game_pk", "Date", "season", "role", "HTeam", "ATeam", "teams.home.score",
             "teams.away.score", "home_win", "home_exscore", "away_exscore", "home_n", "away_n",
-            "home_pred", "away_pred", "home_advantage", "win_pct", "home_rate", "imputed")
+            "home_pred", "away_pred", "home_advantage", "rd_gap", "win_pct", "home_rate", "imputed")
   utils::write.csv(preds[keep], "data/mlb/backtest/predictions.csv", row.names = FALSE)
 
   v <- season_section(val, threshold, sprintf("Validation %s (threshold chosen here)",
