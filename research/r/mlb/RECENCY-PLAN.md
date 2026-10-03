@@ -124,3 +124,5 @@ leakage verdict. Then the slide decision above, the accomplishments row, commits
   `validation-design`); its critiques folded in (log loss primary, per-season and per-era test
   table, 4-of-5 rule, Elo tier, opponent covariate, stability rerun, counted grid). Game-log fetch
   for 2015-2025 running; 2019 probe: 2,429 games, 21,342 pitcher lines, 50,174 hitter lines.
+- 2026-10-02, it 2: `windows.R` as-of estimators (calendar-day decay on a daily grid, trailing
+  days, last N starts, shrinkage, league rate) with exact-arithmetic and leak tests; suite 96 green.

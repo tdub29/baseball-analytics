@@ -7,7 +7,7 @@
 
 API <- "https://statsapi.mlb.com/api/v1"
 
-num <- function(x) suppressWarnings(as.numeric(x))
+as_num <- function(x) suppressWarnings(as.numeric(x))
 
 #' The 30 clubs in a season.
 mlb_teams <- function(season) {
@@ -55,7 +55,7 @@ STATS <- c("plateAppearances", "atBats", "hits", "doubles", "triples", "homeRuns
 
 stat_cols <- function(s) {
   cols <- intersect(paste0("stat.", STATS), names(s))
-  out  <- as.data.frame(lapply(s[cols], num))
+  out  <- as.data.frame(lapply(s[cols], as_num))
   names(out) <- sub("^stat\\.", "", cols)
   out
 }

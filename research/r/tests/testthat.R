@@ -14,5 +14,6 @@ if (!dir.exists(root)) root <- "research/r"
 source(file.path(root, "mlb", "features.R"))
 source(file.path(root, "mlb", "model.R"))
 source(file.path(root, "mlb", "evaluate.R"))
+source(file.path(root, "mlb", "windows.R"))
 
 test_dir(file.path(root, "tests", "testthat"), stop_on_failure = TRUE)
