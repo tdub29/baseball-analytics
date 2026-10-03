@@ -167,3 +167,14 @@ verdict. Then the slide decision, the accomplishments row, commits.
   Implementation choice, before results: lambda is searched at each fold's chosen (h, c), not on
   the full joint grid, and k is re-picked within 2x either way when lambda adds weight. Fixed a
   retry wrapper that recursed on itself and stalled the fetch.
+- 2026-10-03, it 5: validation component study done (`results/recency/*.csv`, 2017-2019 from
+  2015-2019 data). Chosen windows are long everywhere: half-lives of 120 to 240 in-season days or
+  none, carrying 50 to 100% of each prior season. Recent-form term: equivalent to zero for every
+  hitter rate, starter HR and runs, every reliever rate and team margin; inconclusive for starter
+  K and BB and team offense. Reliability matches published stabilization points (hitter K about
+  60 PA, BB about 110; starter K about 75 BF). Hitter K picked k = 25, the grid's lowest value;
+  left as is (its window carries several seasons, so k barely matters) and flagged in the writeup.
+  C is scored as its run-differential part (home field + season-to-date margin shrunk 20 games):
+  its Baseball-Reference pitching term does not exist past 2019, and the 2019 ablation showed the
+  run-differential part alone at log loss 0.6701 vs 0.6706 with the pitching term. Decided before
+  any win-model result.

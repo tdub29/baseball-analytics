@@ -18,6 +18,8 @@ CARRY <- c(0, 0.25, 0.5, 0.75, 1)
 LAMBDA <- expand.grid(lambda = c(0.5, 1, 2), r = c(7, 14))
 SESOI <- 0.001          # skill units: 0.1% of the outcome's variance around the league target
 OUT   <- file.path(SRC, "results", "recency")
+SMOKE <- Sys.getenv("SMOKE") == "1"          # tiny grid, for catching wiring bugs fast
+if (SMOKE) { H <- c(30, Inf); CARRY <- 0.5; LAMBDA <- LAMBDA[1, ]; OUT <- file.path(OUT, "smoke") }
 
 # --- one rate: grid, league target, scoring -------------------------------------------------
 
@@ -59,7 +61,7 @@ pick <- function(grid, seasons) {
 loso <- function(grid) dplyr::bind_rows(lapply(VALID, function(s) {
   p <- pick(grid, setdiff(VALID, s))
   held <- grid[grid$season == s & grid$h == p$h & grid$c == p$c & grid$k == p$k, ]
-  data.frame(held_out = s, h = p$h, c = p$c, k = p$k, held_out_skill = skill(held))
+  data.frame(held_out = s, ho_h = p$h, ho_c = p$c, ho_k = p$k, held_out_skill = skill(held))
 }))
 
 #' Lambda: does weight on the last r days add beyond the smooth decay? Held out by season: for
@@ -90,7 +92,7 @@ lambda_rate <- function(events, queries, num, den, grid, league, cluster, B = 10
   by <- rowsum(cbind(e0, e1, b0), cluster)
   gain <- function(m) (sum(m[, 1]) - sum(m[, 2])) / sum(m[, 3])
   set.seed(20261003)
-  boot <- replicate(B, gain(by[sample(nrow(by), replace = TRUE), , drop = FALSE]))
+  boot <- replicate(if (SMOKE) 20 else B, gain(by[sample(nrow(by), replace = TRUE), , drop = FALSE]))
   ci <- stats::quantile(boot, c(0.05, 0.95))
   verdict <- if (ci[1] > SESOI) "matters" else if (ci[1] > -SESOI && ci[2] < SESOI) "equivalent to zero" else "inconclusive"
   data.frame(held_out_gain = gain(by), lo90 = ci[1], hi90 = ci[2], verdict = verdict,
@@ -106,7 +108,8 @@ reliability <- function(events, num, den, seasons = VALID) {
   w <- stats::reshape(a, idvar = c("entity", "season"), timevar = "half", direction = "wide")
   d0 <- w[[paste0(den, ".0")]]; d1 <- w[[paste0(den, ".1")]]
   keep <- !is.na(d0) & !is.na(d1) & pmin(d0, d1) >= stats::quantile(pmin(d0, d1), 0.5, na.rm = TRUE)
-  r <- stats::cor(w[[paste0(num, ".0")]][keep] / d0[keep], w[[paste0(num, ".1")]][keep] / d1[keep])
+  r <- stats::cor(w[[paste0(num, ".0")]][keep] / d0[keep], w[[paste0(num, ".1")]][keep] / d1[keep],
+                  use = "complete.obs")
   n <- mean(d0[keep] + d1[keep])
   R <- 2 * r / (1 + r)
   data.frame(entities = sum(keep), n_per_season = n, r_half = r, r_full = R, implied_k = n * (1 - R) / R)
@@ -171,6 +174,7 @@ dir.create(OUT, recursive = TRUE, showWarnings = FALSE)
 grids <- list(); picks <- list(); lams <- list(); rels <- list(); curves <- list()
 for (p in PLAN) {
   comp <- p[[1]]; rate <- p[[2]]; ev <- p[[3]]; q <- p[[4]]; num <- p[[5]]; den <- p[[6]]
+  q <- q[!is.na(q[[paste0("y_", den)]]) & q[[paste0("y_", den)]] > 0, ]   # a 0-PA line has no rate
   message(comp, " / ", rate, ": ", nrow(q), " predictions")
   lg   <- league_target(ev, q, num, den)
   g    <- grid_rate(ev, q, num, den, p[[7]], lg)
@@ -182,7 +186,8 @@ for (p in PLAN) {
     dplyr::group_by(h) |> dplyr::slice_max(skill, n = 1, with_ties = FALSE) |>
     dplyr::mutate(component = comp, rate = rate)
   lams[[rate]]   <- cbind(component = comp, rate = rate, lambda_rate(ev, q, num, den, g, lg, q$cluster))
-  rels[[rate]]   <- cbind(component = comp, rate = rate, reliability(ev, num, den))
+  own <- if (comp == "starters") ev[ev$role == "start", ] else if (comp == "relievers") ev[ev$role != "start", ] else ev
+  rels[[rate]]   <- cbind(component = comp, rate = rate, reliability(own, num, den))
 }
 utils::write.csv(dplyr::bind_rows(grids), file.path(OUT, "grid-validation.csv"), row.names = FALSE)
 utils::write.csv(dplyr::bind_rows(picks), file.path(OUT, "picks-validation.csv"), row.names = FALSE)

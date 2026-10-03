@@ -9,7 +9,7 @@ load_seasons <- function(seasons, src = gamelog_sources("data/mlb/raw"),
   out <- lapply(seasons, function(s) {
     win <- season_window(s, fetch = seasons_src$seasons)
     g   <- season_gamelogs(s, win, src)
-    g$season <- s; g$bounds <- data.frame(season = s, start = win$start, end = win$end)
+    g$season <- s; g$bounds <- data.frame(season = s, start = as.Date(win$start), end = as.Date(win$end))
     g
   })
   stats::setNames(out, seasons)
