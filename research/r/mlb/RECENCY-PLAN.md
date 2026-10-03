@@ -205,3 +205,7 @@ verdict. Then the slide decision, the accomplishments row, commits.
   unaffected; the short-h validation cells were not. Fixed (per-entity cumulative sums, with a
   regression test) and validation is being rerun. If any pick changes, the frozen E's test
   result stands as the pre-registered one and anything new is exploratory.
+- 2026-10-03, it 9: validation rerun after the fix: all 13 picks identical, so the frozen model and
+  its test score stand. Test-stage curves and lambda re-scored with the fix (`--force`, no choice
+  changed): clean monotone curves, lambda verdicts unchanged. Writeup in
+  `results/recency-study.md`.
