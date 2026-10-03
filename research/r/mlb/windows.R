@@ -88,3 +88,59 @@ woba_den <- function(l) l$atBats + l$baseOnBalls - l$intentionalWalks + l$sacFli
 #' FIP-style numerator per batter faced: 13 HR + 3 (BB + HBP) - 2 K (no constant; it is a rate).
 fip_num <- function(l) 13 * l$homeRuns + 3 * (l$baseOnBalls + l$hitByPitch) - 2 * l$strikeOuts
 kbb_num <- function(l) l$strikeOuts - l$baseOnBalls
+
+# --- the study's workhorse: every entity at once -------------------------------------------
+
+#' In-season day: days since the first game of the entity's season plus the lengths of every
+#' earlier season, so offseason days never age anything. `bounds` has season, start, end.
+season_day <- function(dates, seasons, bounds) {
+  bounds <- bounds[order(bounds$season), ]
+  len    <- as.numeric(bounds$end - bounds$start) + 1
+  offset <- stats::setNames(c(0, cumsum(len))[seq_along(len)], bounds$season)
+  start  <- stats::setNames(bounds$start, bounds$season)
+  unname(offset[as.character(seasons)] + as.numeric(dates - start[as.character(seasons)]))
+}
+
+#' As-of decayed sums for many entities in one vectorised pass.
+#'
+#' `events` and `queries` carry entity, Date, season and t (season_day()). The weight on an
+#' event dated before the query is 0.5^((t_q - t_e) / h) * c^(s_q - s_e) + lambda * [Date_q -
+#' Date_e <= r]. Closed form with per-entity cumulative sums; exponents are anchored at each
+#' entity's first event, so any h >= 5 over a decade of in-season days stays in double range.
+#' c = 0 keeps the current season only. Returns one column per entry of `cols`.
+asof_decay <- function(events, queries, cols, h, c = 1, lambda = 0, r = 7) {
+  stopifnot(h >= 5, c >= 0, c <= 1)
+  if (c == 0) {
+    events$entity  <- paste(events$entity, events$season)
+    queries$entity <- paste(queries$entity, queries$season)
+    c <- 1
+  }
+  lev <- unique(c(events$entity, queries$entity))
+  ei  <- match(events$entity, lev); qi <- match(queries$entity, lev)
+  o   <- order(ei, events$Date); events <- events[o, , drop = FALSE]; ei <- ei[o]
+  first <- match(seq_along(lev), ei)                          # first event row per entity, NA if none
+  t0 <- events$t[first]; s0 <- events$season[first]
+  L  <- if (is.infinite(h)) 0 else log(2) / h
+  lc <- log(c)
+  e_lw <- (events$t - t0[ei]) * L - (events$season - s0[ei]) * lc
+  q_lw <- -(queries$t - t0[qi]) * L + (queries$season - s0[qi]) * lc
+  ekey <- ei * 1e6 + as.numeric(events$Date)
+  hi   <- findInterval(qi * 1e6 + as.numeric(queries$Date) - 1, ekey)      # rows dated <= d - 1
+  lo   <- findInterval(qi * 1e6 + as.numeric(queries$Date) - r - 1, ekey)  # rows dated <= d - r - 1
+  base <- first[qi] - 1L                                                   # rows before this entity
+  has  <- !is.na(base) & hi > base
+  out  <- matrix(0, nrow(queries), length(cols), dimnames = list(NULL, cols))
+  for (col in cols) {
+    x  <- events[[col]]
+    cw <- c(0, cumsum(x * exp(e_lw)))
+    cr <- c(0, cumsum(x))
+    v  <- numeric(nrow(queries))
+    v[has] <- (cw[hi[has] + 1] - cw[base[has] + 1]) * exp(q_lw[has])
+    if (lambda > 0) {
+      l2 <- pmax(lo, base)
+      v[has] <- v[has] + lambda * (cr[hi[has] + 1] - cr[l2[has] + 1])
+    }
+    out[, col] <- v
+  }
+  out
+}
