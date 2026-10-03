@@ -183,3 +183,12 @@ verdict. Then the slide decision, the accomplishments row, commits.
   candidate E 0.6707. E over C +0.0058 [+0.0029, +0.0088], 3 of 3 seasons; E over E0 +0.0018
   [+0.0007, +0.0031]; calibration slope 1.05 [0.93, 1.17]. These are in-sample for the window
   choices. FROZEN here: windows from picks-validation.csv, Elo K 4 and carry 0.8, E's six inputs.
+- 2026-10-03, it 7: TEST SCORED ONCE (2021-2025, 12,148 games; frozen at 5899385, test stage
+  fixed at ae3b6e1). Win model: E 0.6748 vs C 0.6803 log loss, gain +0.0056 [+0.0034, +0.0076],
+  E beats C in 5 of 5 seasons, calibration intercept -0.007 [-0.043, 0.029], slope 0.95 [0.86,
+  1.05]: ship rule PASS pending the leakage verifier. Accuracy 58.0% vs 56.0%. E over no-decay E0
+  +0.0027 [+0.0014, +0.0041]; E over Elo +0.0027 [+0.0012, +0.0043]. Components: the chosen
+  decayed windows beat no-decay in every component and era except reliever runs in 2023-25;
+  the recent-form term is equivalent to zero for 10 of 13 rates, hurts starter K (-0.0015,
+  interval below zero), and is a small positive for reliever K-BB (+0.0013 [+0.0010, +0.0017],
+  just under the SESOI).

@@ -1,0 +1,638 @@
+"component","rate","h","c","k","group","skill"
+"hitters","wOBA per PA",7,0,200,"2021",0.0016979633267139
+"hitters","wOBA per PA",7,0,200,"2022",0.00212543906309171
+"hitters","wOBA per PA",7,0,200,"2023",0.00158948727764818
+"hitters","wOBA per PA",7,0,200,"2023-25",0.00196909146296742
+"hitters","wOBA per PA",7,0,200,"2024",0.00250582362702201
+"hitters","wOBA per PA",7,0,200,"2025",0.00182585522532586
+"hitters","wOBA per PA",7,0,200,"pooled",0.00194702186191043
+"hitters","wOBA per PA",14,0,200,"2021",0.00275050918018227
+"hitters","wOBA per PA",14,0,200,"2022",0.00318624951469926
+"hitters","wOBA per PA",14,0,200,"2023",0.00240466601823885
+"hitters","wOBA per PA",14,0,200,"2023-25",0.00287142566660825
+"hitters","wOBA per PA",14,0,200,"2024",0.00359533189664341
+"hitters","wOBA per PA",14,0,200,"2025",0.00263194147274914
+"hitters","wOBA per PA",14,0,200,"pooled",0.00291010791399982
+"hitters","wOBA per PA",30,1,200,"2021",-0.132729094126308
+"hitters","wOBA per PA",30,1,200,"2022",-7.13858049527004
+"hitters","wOBA per PA",30,1,200,"2023",-0.880965698586485
+"hitters","wOBA per PA",30,1,200,"2023-25",-4.38518408446313
+"hitters","wOBA per PA",30,1,200,"2024",-1.44720277626431
+"hitters","wOBA per PA",30,1,200,"2025",-10.8838866221456
+"hitters","wOBA per PA",30,1,200,"pooled",-4.09866881288256
+"hitters","wOBA per PA",60,1,200,"2021",0.00638637591261448
+"hitters","wOBA per PA",60,1,200,"2022",0.00581035248747197
+"hitters","wOBA per PA",60,1,200,"2023",0.00572898269086741
+"hitters","wOBA per PA",60,1,200,"2023-25",0.0060409298454438
+"hitters","wOBA per PA",60,1,200,"2024",0.00626525599154593
+"hitters","wOBA per PA",60,1,200,"2025",0.00613799671674775
+"hitters","wOBA per PA",60,1,200,"pooled",0.0060628373941275
+"hitters","wOBA per PA",120,1,200,"2021",0.00747063421074357
+"hitters","wOBA per PA",120,1,200,"2022",0.00627293021464559
+"hitters","wOBA per PA",120,1,200,"2023",0.0069257949024687
+"hitters","wOBA per PA",120,1,200,"2023-25",0.00701513275492283
+"hitters","wOBA per PA",120,1,200,"2024",0.00681362319317758
+"hitters","wOBA per PA",120,1,200,"2025",0.00730626996053618
+"hitters","wOBA per PA",120,1,200,"pooled",0.00695727084965025
+"hitters","wOBA per PA",240,1,200,"2021",0.00772978243674949
+"hitters","wOBA per PA",240,1,200,"2022",0.00581022872202674
+"hitters","wOBA per PA",240,1,200,"2023",0.00726105282124989
+"hitters","wOBA per PA",240,1,200,"2023-25",0.00715600843769237
+"hitters","wOBA per PA",240,1,200,"2024",0.00663267940996348
+"hitters","wOBA per PA",240,1,200,"2025",0.00756704242180473
+"hitters","wOBA per PA",240,1,200,"pooled",0.00700177923289913
+"hitters","wOBA per PA",Inf,0.75,200,"2021",0.00777282337946783
+"hitters","wOBA per PA",Inf,0.75,200,"2022",0.00548815599538277
+"hitters","wOBA per PA",Inf,0.75,200,"2023",0.00714318475605569
+"hitters","wOBA per PA",Inf,0.75,200,"2023-25",0.00689550425998231
+"hitters","wOBA per PA",Inf,0.75,200,"2024",0.00621680528530066
+"hitters","wOBA per PA",Inf,0.75,200,"2025",0.00731447313801337
+"hitters","wOBA per PA",Inf,0.75,200,"pooled",0.0067884488915263
+"hitters","K per PA",7,0,25,"2021",0.034672514277124
+"hitters","K per PA",7,0,25,"2022",0.0337940997773224
+"hitters","K per PA",7,0,25,"2023",0.0334867269472368
+"hitters","K per PA",7,0,25,"2023-25",0.0332860715678618
+"hitters","K per PA",7,0,25,"2024",0.0299901289986363
+"hitters","K per PA",7,0,25,"2025",0.0363890603143662
+"hitters","K per PA",7,0,25,"pooled",0.0336496948123088
+"hitters","K per PA",14,0,25,"2021",0.0424686167410879
+"hitters","K per PA",14,0,25,"2022",0.0423927407298669
+"hitters","K per PA",14,0,25,"2023",0.0415991165358895
+"hitters","K per PA",14,0,25,"2023-25",0.0412321400155063
+"hitters","K per PA",14,0,25,"2024",0.0377022011495626
+"hitters","K per PA",14,0,25,"2025",0.0444002938806217
+"hitters","K per PA",14,0,25,"pooled",0.0416991679449852
+"hitters","K per PA",30,1,25,"2021",-90.5332142908429
+"hitters","K per PA",30,1,25,"2022",-29.3836197058453
+"hitters","K per PA",30,1,25,"2023",-13.88368846755
+"hitters","K per PA",30,1,25,"2023-25",-107.029414349263
+"hitters","K per PA",30,1,25,"2024",-301.727339488243
+"hitters","K per PA",30,1,25,"2025",-6.65629956848176
+"hitters","K per PA",30,1,25,"pooled",-88.2580765298882
+"hitters","K per PA",60,1,25,"2021",0.0580426731424717
+"hitters","K per PA",60,1,25,"2022",0.0595345421970284
+"hitters","K per PA",60,1,25,"2023",0.0572624929184592
+"hitters","K per PA",60,1,25,"2023-25",0.0568074402198276
+"hitters","K per PA",60,1,25,"2024",0.0538985409026481
+"hitters","K per PA",60,1,25,"2025",0.0592624968282562
+"hitters","K per PA",60,1,25,"pooled",0.0575902609372166
+"hitters","K per PA",120,1,25,"2021",0.0586196740236187
+"hitters","K per PA",120,1,25,"2022",0.0609337587368404
+"hitters","K per PA",120,1,25,"2023",0.058492884812454
+"hitters","K per PA",120,1,25,"2023-25",0.0581713273677668
+"hitters","K per PA",120,1,25,"2024",0.0555217551549431
+"hitters","K per PA",120,1,25,"2025",0.0605023121549835
+"hitters","K per PA",120,1,25,"pooled",0.0588130672516525
+"hitters","K per PA",240,0.75,25,"2021",0.058414960023033
+"hitters","K per PA",240,0.75,25,"2022",0.060772326325594
+"hitters","K per PA",240,0.75,25,"2023",0.0583285020450418
+"hitters","K per PA",240,0.75,25,"2023-25",0.0580702729658502
+"hitters","K per PA",240,0.75,25,"2024",0.0554651856008807
+"hitters","K per PA",240,0.75,25,"2025",0.0604212158257594
+"hitters","K per PA",240,0.75,25,"pooled",0.0586803081022803
+"hitters","K per PA",Inf,0.5,25,"2021",0.0580880456796244
+"hitters","K per PA",Inf,0.5,25,"2022",0.0604912833711377
+"hitters","K per PA",Inf,0.5,25,"2023",0.0580157577637171
+"hitters","K per PA",Inf,0.5,25,"2023-25",0.0577606666256382
+"hitters","K per PA",Inf,0.5,25,"2024",0.0551518195561694
+"hitters","K per PA",Inf,0.5,25,"2025",0.0601185835917072
+"hitters","K per PA",Inf,0.5,25,"pooled",0.0583732042369975
+"hitters","BB+HBP per PA",7,0,50,"2021",0.0127006489719032
+"hitters","BB+HBP per PA",7,0,50,"2022",0.0113206423728623
+"hitters","BB+HBP per PA",7,0,50,"2023",0.0141330545090784
+"hitters","BB+HBP per PA",7,0,50,"2023-25",0.0127722843262902
+"hitters","BB+HBP per PA",7,0,50,"2024",0.0109989599622268
+"hitters","BB+HBP per PA",7,0,50,"2025",0.0131072646268228
+"hitters","BB+HBP per PA",7,0,50,"pooled",0.0124743272976066
+"hitters","BB+HBP per PA",14,0,50,"2021",0.015352507968056
+"hitters","BB+HBP per PA",14,0,50,"2022",0.0139479565564261
+"hitters","BB+HBP per PA",14,0,50,"2023",0.0168078436610178
+"hitters","BB+HBP per PA",14,0,50,"2023-25",0.0155215336447714
+"hitters","BB+HBP per PA",14,0,50,"2024",0.0134194010912981
+"hitters","BB+HBP per PA",14,0,50,"2025",0.0162581572625068
+"hitters","BB+HBP per PA",14,0,50,"pooled",0.0151802221020552
+"hitters","BB+HBP per PA",30,1,50,"2021",-57.6799284453403
+"hitters","BB+HBP per PA",30,1,50,"2022",-40.5474634707864
+"hitters","BB+HBP per PA",30,1,50,"2023",-23.0163476000529
+"hitters","BB+HBP per PA",30,1,50,"2023-25",-22.4062042750774
+"hitters","BB+HBP per PA",30,1,50,"2024",-40.9712282998399
+"hitters","BB+HBP per PA",30,1,50,"2025",-3.46311434147279
+"hitters","BB+HBP per PA",30,1,50,"pooled",-33.0250842339654
+"hitters","BB+HBP per PA",60,1,50,"2021",0.022963238800914
+"hitters","BB+HBP per PA",60,1,50,"2022",0.0198627875640964
+"hitters","BB+HBP per PA",60,1,50,"2023",0.0238681619952308
+"hitters","BB+HBP per PA",60,1,50,"2023-25",0.0225010995846258
+"hitters","BB+HBP per PA",60,1,50,"2024",0.0201092866641522
+"hitters","BB+HBP per PA",60,1,50,"2025",0.0234395052988333
+"hitters","BB+HBP per PA",60,1,50,"pooled",0.02207837680833
+"hitters","BB+HBP per PA",120,1,100,"2021",0.0241556810467709
+"hitters","BB+HBP per PA",120,1,100,"2022",0.0210061560874417
+"hitters","BB+HBP per PA",120,1,100,"2023",0.025154118480743
+"hitters","BB+HBP per PA",120,1,100,"2023-25",0.0238475978914195
+"hitters","BB+HBP per PA",120,1,100,"2024",0.0215413659871974
+"hitters","BB+HBP per PA",120,1,100,"2025",0.0247645078749393
+"hitters","BB+HBP per PA",120,1,100,"pooled",0.0233542931739564
+"hitters","BB+HBP per PA",240,0.75,100,"2021",0.024085662982153
+"hitters","BB+HBP per PA",240,0.75,100,"2022",0.0207608609208332
+"hitters","BB+HBP per PA",240,0.75,100,"2023",0.0251765512642119
+"hitters","BB+HBP per PA",240,0.75,100,"2023-25",0.0238349982078542
+"hitters","BB+HBP per PA",240,0.75,100,"2024",0.0214366466795278
+"hitters","BB+HBP per PA",240,0.75,100,"2025",0.024806357752439
+"hitters","BB+HBP per PA",240,0.75,100,"pooled",0.0232847182829476
+"hitters","BB+HBP per PA",Inf,0.5,100,"2021",0.0237029455684132
+"hitters","BB+HBP per PA",Inf,0.5,100,"2022",0.0203272529913404
+"hitters","BB+HBP per PA",Inf,0.5,100,"2023",0.0248216630654918
+"hitters","BB+HBP per PA",Inf,0.5,100,"2023-25",0.0235381736997884
+"hitters","BB+HBP per PA",Inf,0.5,100,"2024",0.0211397678490739
+"hitters","BB+HBP per PA",Inf,0.5,100,"2025",0.0245699175681861
+"hitters","BB+HBP per PA",Inf,0.5,100,"pooled",0.0229439445731383
+"hitters","HR per PA",7,0,100,"2021",0.00567164235191209
+"hitters","HR per PA",7,0,100,"2022",0.00461463773108273
+"hitters","HR per PA",7,0,100,"2023",0.00450306953429758
+"hitters","HR per PA",7,0,100,"2023-25",0.0048081267694966
+"hitters","HR per PA",7,0,100,"2024",0.0044360239275314
+"hitters","HR per PA",7,0,100,"2025",0.00548666316155799
+"hitters","HR per PA",7,0,100,"pooled",0.00495176589738855
+"hitters","HR per PA",14,0,100,"2021",0.00830518189638363
+"hitters","HR per PA",14,0,100,"2022",0.00686954038883847
+"hitters","HR per PA",14,0,100,"2023",0.00672837912058166
+"hitters","HR per PA",14,0,100,"2023-25",0.00690944633692381
+"hitters","HR per PA",14,0,100,"2024",0.00614171078622494
+"hitters","HR per PA",14,0,100,"2025",0.00784612503428495
+"hitters","HR per PA",14,0,100,"pooled",0.00719308677956532
+"hitters","HR per PA",30,1,100,"2021",-16.5288878127831
+"hitters","HR per PA",30,1,100,"2022",-0.752820390904813
+"hitters","HR per PA",30,1,100,"2023",-0.0984535045878741
+"hitters","HR per PA",30,1,100,"2023-25",-0.425342665124404
+"hitters","HR per PA",30,1,100,"2024",-0.18683183760646
+"hitters","HR per PA",30,1,100,"2025",-0.996008897447074
+"hitters","HR per PA",30,1,100,"pooled",-3.84653068875502
+"hitters","HR per PA",60,1,100,"2021",0.0153439769059666
+"hitters","HR per PA",60,1,100,"2022",0.0122123044752335
+"hitters","HR per PA",60,1,100,"2023",0.0128791794211788
+"hitters","HR per PA",60,1,100,"2023-25",0.0124913402867803
+"hitters","HR per PA",60,1,100,"2024",0.0105958282191324
+"hitters","HR per PA",60,1,100,"2025",0.0139412140722255
+"hitters","HR per PA",60,1,100,"pooled",0.0130337977218092
+"hitters","HR per PA",120,1,100,"2021",0.0164774593251015
+"hitters","HR per PA",120,1,100,"2022",0.0124055443489492
+"hitters","HR per PA",120,1,100,"2023",0.0143276177867879
+"hitters","HR per PA",120,1,100,"2023-25",0.0138106259178624
+"hitters","HR per PA",120,1,100,"2024",0.0117968804577713
+"hitters","HR per PA",120,1,100,"2025",0.0152424719282762
+"hitters","HR per PA",120,1,100,"pooled",0.0141018950870492
+"hitters","HR per PA",240,0.75,100,"2021",0.0167210369513062
+"hitters","HR per PA",240,0.75,100,"2022",0.0125164825591685
+"hitters","HR per PA",240,0.75,100,"2023",0.0145453537720217
+"hitters","HR per PA",240,0.75,100,"2023-25",0.0140172423276567
+"hitters","HR per PA",240,0.75,100,"2024",0.0120072552394589
+"hitters","HR per PA",240,0.75,100,"2025",0.0154339281998966
+"hitters","HR per PA",240,0.75,100,"pooled",0.0142981725021686
+"hitters","HR per PA",Inf,0.5,100,"2021",0.0167421733632037
+"hitters","HR per PA",Inf,0.5,100,"2022",0.0127380276463409
+"hitters","HR per PA",Inf,0.5,100,"2023",0.0145369674653272
+"hitters","HR per PA",Inf,0.5,100,"2023-25",0.0140181575392876
+"hitters","HR per PA",Inf,0.5,100,"2024",0.0120153063209089
+"hitters","HR per PA",Inf,0.5,100,"2025",0.0154374883681554
+"hitters","HR per PA",Inf,0.5,100,"pooled",0.0143449277028808
+"starters","K per BF",7,0,25,"2021",0.0796627374397566
+"starters","K per BF",7,0,25,"2022",0.0664960273859987
+"starters","K per BF",7,0,25,"2023",0.0433944156890327
+"starters","K per BF",7,0,25,"2023-25",0.0377653489697329
+"starters","K per BF",7,0,25,"2024",0.0250431254305187
+"starters","K per BF",7,0,25,"2025",0.0447418621863831
+"starters","K per BF",7,0,25,"pooled",0.0516582132259129
+"starters","K per BF",14,0,50,"2021",0.101596757719849
+"starters","K per BF",14,0,50,"2022",0.0910618709759329
+"starters","K per BF",14,0,50,"2023",0.0687677351116316
+"starters","K per BF",14,0,50,"2023-25",0.0638199101167028
+"starters","K per BF",14,0,50,"2024",0.0534338673846494
+"starters","K per BF",14,0,50,"2025",0.0691738669847193
+"starters","K per BF",14,0,50,"pooled",0.0766117954568041
+"starters","K per BF",30,1,50,"2021",-32.1316122065505
+"starters","K per BF",30,1,50,"2022",-82.8283305679185
+"starters","K per BF",30,1,50,"2023",-187.139825104923
+"starters","K per BF",30,1,50,"2023-25",-64.84485040568
+"starters","K per BF",30,1,50,"2024",-3.8957587619439
+"starters","K per BF",30,1,50,"2025",-5.90568313847393
+"starters","K per BF",30,1,50,"pooled",-62.0196291843374
+"starters","K per BF",60,1,50,"2021",0.145531154988553
+"starters","K per BF",60,1,50,"2022",0.135245394492051
+"starters","K per BF",60,1,50,"2023",0.109013437810028
+"starters","K per BF",60,1,50,"2023-25",0.102680807060591
+"starters","K per BF",60,1,50,"2024",0.0922408937111128
+"starters","K per BF",60,1,50,"2025",0.106745673079512
+"starters","K per BF",60,1,50,"pooled",0.117520951007607
+"starters","K per BF",120,0.75,50,"2021",0.147052009910447
+"starters","K per BF",120,0.75,50,"2022",0.137509074745579
+"starters","K per BF",120,0.75,50,"2023",0.112164256910279
+"starters","K per BF",120,0.75,50,"2023-25",0.107154489518442
+"starters","K per BF",120,0.75,50,"2024",0.0976318258776567
+"starters","K per BF",120,0.75,50,"2025",0.111604851629957
+"starters","K per BF",120,0.75,50,"pooled",0.120978750532126
+"starters","K per BF",240,0.5,50,"2021",0.14705556391862
+"starters","K per BF",240,0.5,50,"2022",0.137303914707527
+"starters","K per BF",240,0.5,50,"2023",0.112184992756487
+"starters","K per BF",240,0.5,50,"2023-25",0.107534197220583
+"starters","K per BF",240,0.5,50,"2024",0.098487302344728
+"starters","K per BF",240,0.5,50,"2025",0.111867505977716
+"starters","K per BF",240,0.5,50,"pooled",0.121168836978619
+"starters","K per BF",Inf,0.25,50,"2021",0.143806903145424
+"starters","K per BF",Inf,0.25,50,"2022",0.135706221664527
+"starters","K per BF",Inf,0.25,50,"2023",0.110411210287745
+"starters","K per BF",Inf,0.25,50,"2023-25",0.105705831349851
+"starters","K per BF",Inf,0.25,50,"2024",0.0969433425177108
+"starters","K per BF",Inf,0.25,50,"2025",0.109708370939309
+"starters","K per BF",Inf,0.25,50,"pooled",0.119108618643343
+"starters","BB+HBP per BF",7,0,100,"2021",0.0319935679303722
+"starters","BB+HBP per BF",7,0,100,"2022",0.0263938801032798
+"starters","BB+HBP per BF",7,0,100,"2023",0.0337575995296433
+"starters","BB+HBP per BF",7,0,100,"2023-25",0.0262328203647404
+"starters","BB+HBP per BF",7,0,100,"2024",0.023536199281079
+"starters","BB+HBP per BF",7,0,100,"2025",0.0213181319261972
+"starters","BB+HBP per BF",7,0,100,"pooled",0.0274089308128395
+"starters","BB+HBP per BF",14,0,100,"2021",0.0477387216466748
+"starters","BB+HBP per BF",14,0,100,"2022",0.0390392335389781
+"starters","BB+HBP per BF",14,0,100,"2023",0.0505007029594993
+"starters","BB+HBP per BF",14,0,100,"2023-25",0.0385782883872751
+"starters","BB+HBP per BF",14,0,100,"2024",0.035287441622287
+"starters","BB+HBP per BF",14,0,100,"2025",0.0297937071070287
+"starters","BB+HBP per BF",14,0,100,"pooled",0.0404890871180351
+"starters","BB+HBP per BF",30,1,100,"2021",-1.91917785330328
+"starters","BB+HBP per BF",30,1,100,"2022",-13.1232641798305
+"starters","BB+HBP per BF",30,1,100,"2023",-97.8949328734227
+"starters","BB+HBP per BF",30,1,100,"2023-25",-35.5302122046238
+"starters","BB+HBP per BF",30,1,100,"2024",-4.82903610682409
+"starters","BB+HBP per BF",30,1,100,"2025",-3.28488650751607
+"starters","BB+HBP per BF",30,1,100,"pooled",-24.4121318266197
+"starters","BB+HBP per BF",60,1,100,"2021",0.0772386004761706
+"starters","BB+HBP per BF",60,1,100,"2022",0.0759477549711652
+"starters","BB+HBP per BF",60,1,100,"2023",0.078553488093305
+"starters","BB+HBP per BF",60,1,100,"2023-25",0.0651225913497224
+"starters","BB+HBP per BF",60,1,100,"2024",0.0643036021716951
+"starters","BB+HBP per BF",60,1,100,"2025",0.0522914947892104
+"starters","BB+HBP per BF",60,1,100,"pooled",0.0696752149361675
+"starters","BB+HBP per BF",120,1,200,"2021",0.0775410515171947
+"starters","BB+HBP per BF",120,1,200,"2022",0.0791660646705773
+"starters","BB+HBP per BF",120,1,200,"2023",0.0784894072808633
+"starters","BB+HBP per BF",120,1,200,"2023-25",0.0686460102160558
+"starters","BB+HBP per BF",120,1,200,"2024",0.0681208455480813
+"starters","BB+HBP per BF",120,1,200,"2025",0.0591659192051303
+"starters","BB+HBP per BF",120,1,200,"pooled",0.0724984061626824
+"starters","BB+HBP per BF",240,0.75,200,"2021",0.0768418136543364
+"starters","BB+HBP per BF",240,0.75,200,"2022",0.079505336174862
+"starters","BB+HBP per BF",240,0.75,200,"2023",0.0789263669540141
+"starters","BB+HBP per BF",240,0.75,200,"2023-25",0.069746850493673
+"starters","BB+HBP per BF",240,0.75,200,"2024",0.0688697447689519
+"starters","BB+HBP per BF",240,0.75,200,"2025",0.061299776324562
+"starters","BB+HBP per BF",240,0.75,200,"pooled",0.0730907335868529
+"starters","BB+HBP per BF",Inf,0.5,200,"2021",0.075231808340086
+"starters","BB+HBP per BF",Inf,0.5,200,"2022",0.0780927899729508
+"starters","BB+HBP per BF",Inf,0.5,200,"2023",0.0787669064920378
+"starters","BB+HBP per BF",Inf,0.5,200,"2023-25",0.0699934483844947
+"starters","BB+HBP per BF",Inf,0.5,200,"2024",0.0689095957090875
+"starters","BB+HBP per BF",Inf,0.5,200,"2025",0.0621695588126124
+"starters","BB+HBP per BF",Inf,0.5,200,"pooled",0.0726396394827288
+"starters","HR per BF",7,0,400,"2021",0.00122951850301789
+"starters","HR per BF",7,0,400,"2022",0.00193682721575394
+"starters","HR per BF",7,0,400,"2023",0.000326860028381004
+"starters","HR per BF",7,0,400,"2023-25",0.000252411960292909
+"starters","HR per BF",7,0,400,"2024",-0.000573840658523617
+"starters","HR per BF",7,0,400,"2025",0.000944602646076764
+"starters","HR per BF",7,0,400,"pooled",0.000778346695440302
+"starters","HR per BF",14,0,400,"2021",0.00246997170471353
+"starters","HR per BF",14,0,400,"2022",0.00287812119263653
+"starters","HR per BF",14,0,400,"2023",0.000841469186061983
+"starters","HR per BF",14,0,400,"2023-25",0.000692826670341207
+"starters","HR per BF",14,0,400,"2024",-0.000473074599986134
+"starters","HR per BF",14,0,400,"2025",0.00162518079551932
+"starters","HR per BF",14,0,400,"pooled",0.00148311336393692
+"starters","HR per BF",30,1,800,"2021",-0.00288761439148932
+"starters","HR per BF",30,1,800,"2022",-0.00228631026644144
+"starters","HR per BF",30,1,800,"2023",-0.00865296902491264
+"starters","HR per BF",30,1,800,"2023-25",-0.265391071892142
+"starters","HR per BF",30,1,800,"2024",-0.72367297679869
+"starters","HR per BF",30,1,800,"2025",-0.100793067514812
+"starters","HR per BF",30,1,800,"pooled",-0.159956872774806
+"starters","HR per BF",60,1,800,"2021",0.00681196905240256
+"starters","HR per BF",60,1,800,"2022",0.00488624016883765
+"starters","HR per BF",60,1,800,"2023",0.00279251877402431
+"starters","HR per BF",60,1,800,"2023-25",0.00378215643730173
+"starters","HR per BF",60,1,800,"2024",0.00280785521883187
+"starters","HR per BF",60,1,800,"2025",0.00569520788444289
+"starters","HR per BF",60,1,800,"pooled",0.00463319202900192
+"starters","HR per BF",120,1,800,"2021",0.00940797511111657
+"starters","HR per BF",120,1,800,"2022",0.00652108966485343
+"starters","HR per BF",120,1,800,"2023",0.00345926671485008
+"starters","HR per BF",120,1,800,"2023-25",0.00539708077991219
+"starters","HR per BF",120,1,800,"2024",0.00466174301971078
+"starters","HR per BF",120,1,800,"2025",0.0080532783316839
+"starters","HR per BF",120,1,800,"pooled",0.00645977898545369
+"starters","HR per BF",240,0.75,800,"2021",0.0101023809839103
+"starters","HR per BF",240,0.75,800,"2022",0.00719085101372141
+"starters","HR per BF",240,0.75,800,"2023",0.0037714676439381
+"starters","HR per BF",240,0.75,800,"2023-25",0.00588847713070284
+"starters","HR per BF",240,0.75,800,"2024",0.00537063106342117
+"starters","HR per BF",240,0.75,800,"2025",0.00852494528273484
+"starters","HR per BF",240,0.75,800,"pooled",0.00702796023052532
+"starters","HR per BF",Inf,0.5,800,"2021",0.0102591184632523
+"starters","HR per BF",Inf,0.5,800,"2022",0.00759612536270415
+"starters","HR per BF",Inf,0.5,800,"2023",0.00378583169454938
+"starters","HR per BF",Inf,0.5,800,"2023-25",0.00594891291747557
+"starters","HR per BF",Inf,0.5,800,"2024",0.00560665376873437
+"starters","HR per BF",Inf,0.5,800,"2025",0.00846907934698982
+"starters","HR per BF",Inf,0.5,800,"pooled",0.00717408569833256
+"starters","runs per BF",7,0,400,"2021",0.0041245436581705
+"starters","runs per BF",7,0,400,"2022",0.0021554966804983
+"starters","runs per BF",7,0,400,"2023",0.00158063715398682
+"starters","runs per BF",7,0,400,"2023-25",0.00172656534706861
+"starters","runs per BF",7,0,400,"2024",0.00141983498748743
+"starters","runs per BF",7,0,400,"2025",0.00219194800565303
+"starters","runs per BF",7,0,400,"pooled",0.00227055337775617
+"starters","runs per BF",14,0,400,"2021",0.00692020652667924
+"starters","runs per BF",14,0,400,"2022",0.00392812742952076
+"starters","runs per BF",14,0,400,"2023",0.00253092880277062
+"starters","runs per BF",14,0,400,"2023-25",0.00307907345398617
+"starters","runs per BF",14,0,400,"2024",0.00250708275033296
+"starters","runs per BF",14,0,400,"2025",0.00423620997312135
+"starters","runs per BF",14,0,400,"pooled",0.0039822173789219
+"starters","runs per BF",30,1,400,"2021",-0.0133218496932253
+"starters","runs per BF",30,1,400,"2022",-0.0455156712971718
+"starters","runs per BF",30,1,400,"2023",-0.433377162891665
+"starters","runs per BF",30,1,400,"2023-25",-7.13718461595717
+"starters","runs per BF",30,1,400,"2024",-9.28050245369798
+"starters","runs per BF",30,1,400,"2025",-11.9801736524954
+"starters","runs per BF",30,1,400,"pooled",-4.38005506867057
+"starters","runs per BF",60,1,400,"2021",0.0140773399538837
+"starters","runs per BF",60,1,400,"2022",0.0108840792339546
+"starters","runs per BF",60,1,400,"2023",0.00512970474444441
+"starters","runs per BF",60,1,400,"2023-25",0.00686612260485175
+"starters","runs per BF",60,1,400,"2024",0.00469719727780937
+"starters","runs per BF",60,1,400,"2025",0.0108953197412562
+"starters","runs per BF",60,1,400,"pooled",0.009037107548024
+"starters","runs per BF",120,1,800,"2021",0.0131522222810528
+"starters","runs per BF",120,1,800,"2022",0.0118410624642723
+"starters","runs per BF",120,1,800,"2023",0.00626718061384768
+"starters","runs per BF",120,1,800,"2023-25",0.00799879890878807
+"starters","runs per BF",120,1,800,"2024",0.00624859216295237
+"starters","runs per BF",120,1,800,"2025",0.0115964569260317
+"starters","runs per BF",120,1,800,"pooled",0.00974070387285941
+"starters","runs per BF",240,1,800,"2021",0.0133832255167186
+"starters","runs per BF",240,1,800,"2022",0.0132371332919344
+"starters","runs per BF",240,1,800,"2023",0.00641106636286326
+"starters","runs per BF",240,1,800,"2023-25",0.00872058495585459
+"starters","runs per BF",240,1,800,"2024",0.00716826461918718
+"starters","runs per BF",240,1,800,"2025",0.0127223655298255
+"starters","runs per BF",240,1,800,"pooled",0.0105006318797761
+"starters","runs per BF",Inf,0.5,800,"2021",0.0132164298474428
+"starters","runs per BF",Inf,0.5,800,"2022",0.0132332334866934
+"starters","runs per BF",Inf,0.5,800,"2023",0.00654353731594437
+"starters","runs per BF",Inf,0.5,800,"2023-25",0.00869924087799712
+"starters","runs per BF",Inf,0.5,800,"2024",0.00687813884754307
+"starters","runs per BF",Inf,0.5,800,"2025",0.0128135920213104
+"starters","runs per BF",Inf,0.5,800,"pooled",0.0104548165044775
+"relievers","K-BB per BF",7,0,50,"2021",0.00622682513369166
+"relievers","K-BB per BF",7,0,50,"2022",0.00500629683730858
+"relievers","K-BB per BF",7,0,50,"2023",0.00629352312179887
+"relievers","K-BB per BF",7,0,50,"2023-25",0.0059737613047508
+"relievers","K-BB per BF",7,0,50,"2024",0.00735168914492523
+"relievers","K-BB per BF",7,0,50,"2025",0.00428932299434892
+"relievers","K-BB per BF",7,0,50,"pooled",0.00583752397872661
+"relievers","K-BB per BF",14,0,50,"2021",0.00891770356717358
+"relievers","K-BB per BF",14,0,50,"2022",0.00787144456517319
+"relievers","K-BB per BF",14,0,50,"2023",0.00758424139165481
+"relievers","K-BB per BF",14,0,50,"2023-25",0.00756026457642045
+"relievers","K-BB per BF",14,0,50,"2024",0.00929721924773952
+"relievers","K-BB per BF",14,0,50,"2025",0.00581764346455027
+"relievers","K-BB per BF",14,0,50,"pooled",0.00790808241657337
+"relievers","K-BB per BF",30,1,50,"2021",-0.0248276376514558
+"relievers","K-BB per BF",30,1,50,"2022",-0.981678744381143
+"relievers","K-BB per BF",30,1,50,"2023",-0.630816217374954
+"relievers","K-BB per BF",30,1,50,"2023-25",-0.534362867550375
+"relievers","K-BB per BF",30,1,50,"2024",-0.268865072213931
+"relievers","K-BB per BF",30,1,50,"2025",-0.700184308914466
+"relievers","K-BB per BF",30,1,50,"pooled",-0.514419748062184
+"relievers","K-BB per BF",60,1,50,"2021",0.0161451995952389
+"relievers","K-BB per BF",60,1,50,"2022",0.0157235163744464
+"relievers","K-BB per BF",60,1,50,"2023",0.0126266026184524
+"relievers","K-BB per BF",60,1,50,"2023-25",0.0121415678505808
+"relievers","K-BB per BF",60,1,50,"2024",0.0132922952115571
+"relievers","K-BB per BF",60,1,50,"2025",0.0105159484209517
+"relievers","K-BB per BF",60,1,50,"pooled",0.0136898213162598
+"relievers","K-BB per BF",120,0.75,50,"2021",0.0165001721798537
+"relievers","K-BB per BF",120,0.75,50,"2022",0.0160756486176037
+"relievers","K-BB per BF",120,0.75,50,"2023",0.0132785928723751
+"relievers","K-BB per BF",120,0.75,50,"2023-25",0.0126383186921308
+"relievers","K-BB per BF",120,0.75,50,"2024",0.0134832503920433
+"relievers","K-BB per BF",120,0.75,50,"2025",0.0111593562572226
+"relievers","K-BB per BF",120,0.75,50,"pooled",0.0141282597272259
+"relievers","K-BB per BF",240,0.5,50,"2021",0.0157973117948556
+"relievers","K-BB per BF",240,0.5,50,"2022",0.0159404351680333
+"relievers","K-BB per BF",240,0.5,50,"2023",0.0130476183544287
+"relievers","K-BB per BF",240,0.5,50,"2023-25",0.0124251707522023
+"relievers","K-BB per BF",240,0.5,50,"2024",0.013106184357248
+"relievers","K-BB per BF",240,0.5,50,"2025",0.0111262909691491
+"relievers","K-BB per BF",240,0.5,50,"pooled",0.0138269268806125
+"relievers","K-BB per BF",Inf,0.25,100,"2021",0.0153408681038119
+"relievers","K-BB per BF",Inf,0.25,100,"2022",0.0171428286254306
+"relievers","K-BB per BF",Inf,0.25,100,"2023",0.0137704239169562
+"relievers","K-BB per BF",Inf,0.25,100,"2023-25",0.0133118250287367
+"relievers","K-BB per BF",Inf,0.25,100,"2024",0.0136727909583342
+"relievers","K-BB per BF",Inf,0.25,100,"2025",0.0124941433390953
+"relievers","K-BB per BF",Inf,0.25,100,"pooled",0.0144917224075699
+"relievers","FIP-style per BF",7,0,100,"2021",0.00108456544227342
+"relievers","FIP-style per BF",7,0,100,"2022",0.00101690793320064
+"relievers","FIP-style per BF",7,0,100,"2023",0.00179933242545016
+"relievers","FIP-style per BF",7,0,100,"2023-25",0.00191086055961953
+"relievers","FIP-style per BF",7,0,100,"2024",0.00274849641823294
+"relievers","FIP-style per BF",7,0,100,"2025",0.0011571645393087
+"relievers","FIP-style per BF",7,0,100,"pooled",0.00155223451902131
+"relievers","FIP-style per BF",14,0,100,"2021",0.00174934404491245
+"relievers","FIP-style per BF",14,0,100,"2022",0.00217618739453529
+"relievers","FIP-style per BF",14,0,100,"2023",0.00217878027500407
+"relievers","FIP-style per BF",14,0,100,"2023-25",0.00282761204006698
+"relievers","FIP-style per BF",14,0,100,"2024",0.00394776087581727
+"relievers","FIP-style per BF",14,0,100,"2025",0.00234221010002533
+"relievers","FIP-style per BF",14,0,100,"pooled",0.00245982178259163
+"relievers","FIP-style per BF",30,1,100,"2021",-0.0294916683994206
+"relievers","FIP-style per BF",30,1,100,"2022",-0.0466459110183837
+"relievers","FIP-style per BF",30,1,100,"2023",-0.170782253429222
+"relievers","FIP-style per BF",30,1,100,"2023-25",-0.121139873747924
+"relievers","FIP-style per BF",30,1,100,"2024",-0.130160256750551
+"relievers","FIP-style per BF",30,1,100,"2025",-0.0598592705760446
+"relievers","FIP-style per BF",30,1,100,"pooled",-0.0861592157981323
+"relievers","FIP-style per BF",60,1,200,"2021",0.00448842362752166
+"relievers","FIP-style per BF",60,1,200,"2022",0.00607728162738619
+"relievers","FIP-style per BF",60,1,200,"2023",0.00482472199444273
+"relievers","FIP-style per BF",60,1,200,"2023-25",0.00582579668688388
+"relievers","FIP-style per BF",60,1,200,"2024",0.00658589230498463
+"relievers","FIP-style per BF",60,1,200,"2025",0.00608281589805848
+"relievers","FIP-style per BF",60,1,200,"pooled",0.00557569561904625
+"relievers","FIP-style per BF",120,1,200,"2021",0.00511170357101387
+"relievers","FIP-style per BF",120,1,200,"2022",0.00595823673438978
+"relievers","FIP-style per BF",120,1,200,"2023",0.00575127449859292
+"relievers","FIP-style per BF",120,1,200,"2023-25",0.00664819410135531
+"relievers","FIP-style per BF",120,1,200,"2024",0.0073057538044039
+"relievers","FIP-style per BF",120,1,200,"2025",0.00690284025303001
+"relievers","FIP-style per BF",120,1,200,"pooled",0.00617045739129607
+"relievers","FIP-style per BF",240,0.75,200,"2021",0.00509047765678594
+"relievers","FIP-style per BF",240,0.75,200,"2022",0.00560988384384453
+"relievers","FIP-style per BF",240,0.75,200,"2023",0.00592367316611808
+"relievers","FIP-style per BF",240,0.75,200,"2023-25",0.00676988051645733
+"relievers","FIP-style per BF",240,0.75,200,"2024",0.00742334381825371
+"relievers","FIP-style per BF",240,0.75,200,"2025",0.00697575587206767
+"relievers","FIP-style per BF",240,0.75,200,"pooled",0.00616876540212941
+"relievers","FIP-style per BF",Inf,0.5,200,"2021",0.0047701976519503
+"relievers","FIP-style per BF",Inf,0.5,200,"2022",0.00526690489256565
+"relievers","FIP-style per BF",Inf,0.5,200,"2023",0.00583412720286247
+"relievers","FIP-style per BF",Inf,0.5,200,"2023-25",0.00670691215086749
+"relievers","FIP-style per BF",Inf,0.5,200,"2024",0.00743929065980098
+"relievers","FIP-style per BF",Inf,0.5,200,"2025",0.00685858428282415
+"relievers","FIP-style per BF",Inf,0.5,200,"pooled",0.0059938023693008
+"relievers","runs incl. inherited per BF",7,0,200,"2021",0.00079857994254362
+"relievers","runs incl. inherited per BF",7,0,200,"2022",-4.35562869836037e-05
+"relievers","runs incl. inherited per BF",7,0,200,"2023",0.000287570813991889
+"relievers","runs incl. inherited per BF",7,0,200,"2023-25",0.000371819161260167
+"relievers","runs incl. inherited per BF",7,0,200,"2024",9.68519448144578e-05
+"relievers","runs incl. inherited per BF",7,0,200,"2025",0.000738280967722438
+"relievers","runs incl. inherited per BF",7,0,200,"pooled",0.000387531911148487
+"relievers","runs incl. inherited per BF",14,0,200,"2021",0.00124719123861394
+"relievers","runs incl. inherited per BF",14,0,200,"2022",-0.000207256560560642
+"relievers","runs incl. inherited per BF",14,0,200,"2023",0.000632596410666264
+"relievers","runs incl. inherited per BF",14,0,200,"2023-25",0.000559022774047513
+"relievers","runs incl. inherited per BF",14,0,200,"2024",1.47297256527512e-05
+"relievers","runs incl. inherited per BF",14,0,200,"2025",0.00104470390173494
+"relievers","runs incl. inherited per BF",14,0,200,"pooled",0.000565706475869843
+"relievers","runs incl. inherited per BF",30,1,400,"2021",-0.0231782599442676
+"relievers","runs incl. inherited per BF",30,1,400,"2022",-0.00360113919858684
+"relievers","runs incl. inherited per BF",30,1,400,"2023",-0.00372815069121191
+"relievers","runs incl. inherited per BF",30,1,400,"2023-25",-0.249614356655187
+"relievers","runs incl. inherited per BF",30,1,400,"2024",-0.591983872163308
+"relievers","runs incl. inherited per BF",30,1,400,"2025",-0.143206702214896
+"relievers","runs incl. inherited per BF",30,1,400,"pooled",-0.151091356752139
+"relievers","runs incl. inherited per BF",60,1,400,"2021",0.00149817262307683
+"relievers","runs incl. inherited per BF",60,1,400,"2022",0.000523134326931074
+"relievers","runs incl. inherited per BF",60,1,400,"2023",0.0015798970388089
+"relievers","runs incl. inherited per BF",60,1,400,"2023-25",0.00154229596698574
+"relievers","runs incl. inherited per BF",60,1,400,"2024",0.00113851254998509
+"relievers","runs incl. inherited per BF",60,1,400,"2025",0.00191953399784195
+"relievers","runs incl. inherited per BF",60,1,400,"pooled",0.00133529946732902
+"relievers","runs incl. inherited per BF",120,1,400,"2021",0.00154444832281431
+"relievers","runs incl. inherited per BF",120,1,400,"2022",0.000761433117047683
+"relievers","runs incl. inherited per BF",120,1,400,"2023",0.00180782628397147
+"relievers","runs incl. inherited per BF",120,1,400,"2023-25",0.00207556229993233
+"relievers","runs incl. inherited per BF",120,1,400,"2024",0.00181673525552439
+"relievers","runs incl. inherited per BF",120,1,400,"2025",0.00260846181419239
+"relievers","runs incl. inherited per BF",120,1,400,"pooled",0.00170194620045194
+"relievers","runs incl. inherited per BF",240,0.75,400,"2021",0.00153602210246173
+"relievers","runs incl. inherited per BF",240,0.75,400,"2022",0.000891158279947013
+"relievers","runs incl. inherited per BF",240,0.75,400,"2023",0.00173600289708753
+"relievers","runs incl. inherited per BF",240,0.75,400,"2023-25",0.00220065082400689
+"relievers","runs incl. inherited per BF",240,0.75,400,"2024",0.00205700981632351
+"relievers","runs incl. inherited per BF",240,0.75,400,"2025",0.00281164372421816
+"relievers","runs incl. inherited per BF",240,0.75,400,"pooled",0.00179788743969056
+"relievers","runs incl. inherited per BF",Inf,0.5,400,"2021",0.0014748812094566
+"relievers","runs incl. inherited per BF",Inf,0.5,400,"2022",0.00100284945555618
+"relievers","runs incl. inherited per BF",Inf,0.5,400,"2023",0.00148923306200832
+"relievers","runs incl. inherited per BF",Inf,0.5,400,"2023-25",0.00217300473675119
+"relievers","runs incl. inherited per BF",Inf,0.5,400,"2024",0.00216985565777217
+"relievers","runs incl. inherited per BF",Inf,0.5,400,"2025",0.00285825304017595
+"relievers","runs incl. inherited per BF",Inf,0.5,400,"pooled",0.00178964687961147
+"team","run margin per game",7,0,20,"2021",0.0118987724325538
+"team","run margin per game",7,0,20,"2022",0.0135492020700427
+"team","run margin per game",7,0,20,"2023",0.011879737792456
+"team","run margin per game",7,0,20,"2023-25",0.00862747101716033
+"team","run margin per game",7,0,20,"2024",0.00483568003540058
+"team","run margin per game",7,0,20,"2025",0.00898370693924888
+"team","run margin per game",7,0,20,"pooled",0.010232027896824
+"team","run margin per game",14,1,20,"2021",-0.0858642036403627
+"team","run margin per game",14,1,20,"2022",0.00920038799565137
+"team","run margin per game",14,1,20,"2023",0.0174276789718875
+"team","run margin per game",14,1,20,"2023-25",0.0132089878151136
+"team","run margin per game",14,1,20,"2024",0.00930668572382021
+"team","run margin per game",14,1,20,"2025",0.0127298935268086
+"team","run margin per game",14,1,20,"pooled",-0.00741737084181837
+"team","run margin per game",30,1,10,"2021",0.0228441938850444
+"team","run margin per game",30,1,10,"2022",0.022201921615164
+"team","run margin per game",30,1,10,"2023",0.021082622942166
+"team","run margin per game",30,1,10,"2023-25",0.0163049388148337
+"team","run margin per game",30,1,10,"2024",0.0120473990976361
+"team","run margin per game",30,1,10,"2025",0.0156124812774133
+"team","run margin per game",30,1,10,"pooled",0.0187524150906746
+"team","run margin per game",60,1,10,"2021",0.0233110681431367
+"team","run margin per game",60,1,10,"2022",0.0235812977923707
+"team","run margin per game",60,1,10,"2023",0.0214510476788433
+"team","run margin per game",60,1,10,"2023-25",0.017846538955179
+"team","run margin per game",60,1,10,"2024",0.0143306201914782
+"team","run margin per game",60,1,10,"2025",0.0176055102644523
+"team","run margin per game",60,1,10,"pooled",0.020047369134106
+"team","run margin per game",120,0.75,5,"2021",0.0219293917138615
+"team","run margin per game",120,0.75,5,"2022",0.0238674337552138
+"team","run margin per game",120,0.75,5,"2023",0.0199044076261372
+"team","run margin per game",120,0.75,5,"2023-25",0.0172763902505607
+"team","run margin per game",120,0.75,5,"2024",0.0140709665781478
+"team","run margin per game",120,0.75,5,"2025",0.0176952439480768
+"team","run margin per game",120,0.75,5,"pooled",0.019479707482268
+"team","run margin per game",240,0.5,5,"2021",0.0221883813908228
+"team","run margin per game",240,0.5,5,"2022",0.024174341009098
+"team","run margin per game",240,0.5,5,"2023",0.0197635281842617
+"team","run margin per game",240,0.5,5,"2023-25",0.0170692935919583
+"team","run margin per game",240,0.5,5,"2024",0.0138742714723805
+"team","run margin per game",240,0.5,5,"2025",0.0174142661512735
+"team","run margin per game",240,0.5,5,"pooled",0.0194651215876297
+"team","run margin per game",Inf,0.25,10,"2021",0.0227221632894503
+"team","run margin per game",Inf,0.25,10,"2022",0.0247562493233667
+"team","run margin per game",Inf,0.25,10,"2023",0.0205756337588067
+"team","run margin per game",Inf,0.25,10,"2023-25",0.0171533629936185
+"team","run margin per game",Inf,0.25,10,"2024",0.0140294025756316
+"team","run margin per game",Inf,0.25,10,"2025",0.0167261393673791
+"team","run margin per game",Inf,0.25,10,"pooled",0.0197353036152674
+"team","offense wOBA per PA",7,0,800,"2021",0.00233676113897519
+"team","offense wOBA per PA",7,0,800,"2022",0.00828767289436927
+"team","offense wOBA per PA",7,0,800,"2023",0.00876735680043528
+"team","offense wOBA per PA",7,0,800,"2023-25",0.00639209219316694
+"team","offense wOBA per PA",7,0,800,"2024",0.00602699014687835
+"team","offense wOBA per PA",7,0,800,"2025",0.00441220379861718
+"team","offense wOBA per PA",7,0,800,"pooled",0.00595079338650351
+"team","offense wOBA per PA",14,1,800,"2021",-46.2854879437837
+"team","offense wOBA per PA",14,1,800,"2022",-12.1403477045608
+"team","offense wOBA per PA",14,1,800,"2023",0.0123349111982608
+"team","offense wOBA per PA",14,1,800,"2023-25",0.00933828907207623
+"team","offense wOBA per PA",14,1,800,"2024",0.00883895552075609
+"team","offense wOBA per PA",14,1,800,"2025",0.00687774039731026
+"team","offense wOBA per PA",14,1,800,"pooled",-11.6422759821489
+"team","offense wOBA per PA",30,1,800,"2021",0.00654294746454198
+"team","offense wOBA per PA",30,1,800,"2022",0.0104305960156404
+"team","offense wOBA per PA",30,1,800,"2023",0.0151888794141524
+"team","offense wOBA per PA",30,1,800,"2023-25",0.0117626111925785
+"team","offense wOBA per PA",30,1,800,"2024",0.010177798959948
+"team","offense wOBA per PA",30,1,800,"2025",0.00992509644140716
+"team","offense wOBA per PA",30,1,800,"pooled",0.0104563183082529
+"team","offense wOBA per PA",60,0.75,800,"2021",0.00796347361948679
+"team","offense wOBA per PA",60,0.75,800,"2022",0.0111210311719045
+"team","offense wOBA per PA",60,0.75,800,"2023",0.0158958342331109
+"team","offense wOBA per PA",60,0.75,800,"2023-25",0.0125355496047671
+"team","offense wOBA per PA",60,0.75,800,"2024",0.0102228046032123
+"team","offense wOBA per PA",60,0.75,800,"2025",0.0114633992086698
+"team","offense wOBA per PA",60,0.75,800,"pooled",0.0113428280030977
+"team","offense wOBA per PA",120,0.5,800,"2021",0.00827966052827644
+"team","offense wOBA per PA",120,0.5,800,"2022",0.0116309582608651
+"team","offense wOBA per PA",120,0.5,800,"2023",0.0156491273685732
+"team","offense wOBA per PA",120,0.5,800,"2023-25",0.0125517300806646
+"team","offense wOBA per PA",120,0.5,800,"2024",0.0101987542747175
+"team","offense wOBA per PA",120,0.5,800,"2025",0.0117763195757961
+"team","offense wOBA per PA",120,0.5,800,"pooled",0.01151574864449
+"team","offense wOBA per PA",240,0.25,800,"2021",0.00752366269817106
+"team","offense wOBA per PA",240,0.25,800,"2022",0.0130926168889576
+"team","offense wOBA per PA",240,0.25,800,"2023",0.0155722837372118
+"team","offense wOBA per PA",240,0.25,800,"2023-25",0.0124542711670103
+"team","offense wOBA per PA",240,0.25,800,"2024",0.0107128754715752
+"team","offense wOBA per PA",240,0.25,800,"2025",0.0110700087510029
+"team","offense wOBA per PA",240,0.25,800,"pooled",0.0115915542393491
+"team","offense wOBA per PA",Inf,0.25,800,"2021",0.00792573242389005
+"team","offense wOBA per PA",Inf,0.25,800,"2022",0.012697924814115
+"team","offense wOBA per PA",Inf,0.25,800,"2023",0.0149241886725603
+"team","offense wOBA per PA",Inf,0.25,800,"2023-25",0.0121965741139658
+"team","offense wOBA per PA",Inf,0.25,800,"2024",0.0101259936484742
+"team","offense wOBA per PA",Inf,0.25,800,"2025",0.0115123063897437
+"team","offense wOBA per PA",Inf,0.25,800,"pooled",0.0114392019826862
