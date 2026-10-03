@@ -192,3 +192,16 @@ verdict. Then the slide decision, the accomplishments row, commits.
   the recent-form term is equivalent to zero for 10 of 13 rates, hurts starter K (-0.0015,
   interval below zero), and is a small positive for reliever K-BB (+0.0013 [+0.0010, +0.0017],
   just under the SESOI).
+- 2026-10-03, it 8: leakage verifier (independent agent) SURVIVES: numbers reproduce exactly; a
+  real-data tamper test on the 2023-06-12 block moved nothing beyond float noise while the
+  control moved predictions by up to 0.069; no test row reached a choice. Caveat it requires:
+  decision time is first pitch, because StatsAPI's historical "probable" starter is the actual
+  starter (99.85% match, openers named) and lineups are the posted starting nine. Without the
+  starter and lineup inputs E still beats C by +0.0031 [+0.0016, +0.0045] in 5 of 5 seasons.
+  Charter gap it found: the bullpen is weighted by relief BF only, not also by saves and holds.
+  Bug found reading the test decay curves (skill of -88 at h = 30): asof_decay's running sum
+  crossed entities and lost precision at short h over many seasons. Every chosen window is
+  h >= 120 or no decay, where the error is below 1e-6, so the frozen E and its test score are
+  unaffected; the short-h validation cells were not. Fixed (per-entity cumulative sums, with a
+  regression test) and validation is being rerun. If any pick changes, the frozen E's test
+  result stands as the pre-registered one and anything new is exploratory.

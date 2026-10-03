@@ -130,15 +130,19 @@ asof_decay <- function(events, queries, cols, h, c = 1, lambda = 0, r = 7) {
   base <- first[qi] - 1L                                                   # rows before this entity
   has  <- !is.na(base) & hi > base
   out  <- matrix(0, nrow(queries), length(cols), dimnames = list(NULL, cols))
+  # Cumulative sums restart at each entity. A single running sum across entities subtracts two
+  # huge numbers to get one entity's small one, and at short h over many seasons that loses every
+  # digit (found in the 2021-2025 decay curves: skill of -88 at h = 30).
+  l2 <- pmax(lo, base)
   for (col in cols) {
     x  <- events[[col]]
-    cw <- c(0, cumsum(x * exp(e_lw)))
-    cr <- c(0, cumsum(x))
+    cw <- stats::ave(x * exp(e_lw), ei, FUN = cumsum)
     v  <- numeric(nrow(queries))
-    v[has] <- (cw[hi[has] + 1] - cw[base[has] + 1]) * exp(q_lw[has])
+    v[has] <- cw[hi[has]] * exp(q_lw[has])
     if (lambda > 0) {
-      l2 <- pmax(lo, base)
-      v[has] <- v[has] + lambda * (cr[hi[has] + 1] - cr[l2[has] + 1])
+      cr <- stats::ave(x, ei, FUN = cumsum)
+      older <- ifelse(l2 > base, cr[pmax(l2, 1L)], 0)
+      v[has] <- v[has] + lambda * (cr[hi[has]] - older[has])
     }
     out[, col] <- v
   }
