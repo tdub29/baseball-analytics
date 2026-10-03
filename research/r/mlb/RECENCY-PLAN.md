@@ -178,3 +178,8 @@ verdict. Then the slide decision, the accomplishments row, commits.
   its Baseball-Reference pitching term does not exist past 2019, and the 2019 ablation showed the
   run-differential part alone at log loss 0.6701 vs 0.6706 with the pitching term. Decided before
   any win-model result.
+- 2026-10-03, it 6: win model on validation (`results/recency-model-validation.md`, 7,290 games).
+  Log loss: home 0.6912, incumbent C 0.6765, Elo 0.6740 (K 4, carry 0.8), no-decay E0 0.6725,
+  candidate E 0.6707. E over C +0.0058 [+0.0029, +0.0088], 3 of 3 seasons; E over E0 +0.0018
+  [+0.0007, +0.0031]; calibration slope 1.05 [0.93, 1.17]. These are in-sample for the window
+  choices. FROZEN here: windows from picks-validation.csv, Elo K 4 and carry 0.8, E's six inputs.
