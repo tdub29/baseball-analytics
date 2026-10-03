@@ -82,13 +82,16 @@ schedule_lineups <- function(start, end) {
 
 #' Retry a flaky call a few times before letting the error through (a dropped connection
 #' should cost a pause, not a rerun of the season).
-retry <- function(f, attempts = 4) function(...) {
+retry <- function(f, attempts = 4) {
+  force(f)   # without this the wrapper looks itself up by name and recurses forever
+  function(...) {
   for (i in seq_len(attempts)) {
     out <- tryCatch(f(...), error = function(e) e)
     if (!inherits(out, "error")) return(out)
     Sys.sleep(2 * i)
   }
   stop(out)
+  }
 }
 
 #' Cached StatsAPI sources under `dir`, paced lightly; StatsAPI is not Baseball-Reference.

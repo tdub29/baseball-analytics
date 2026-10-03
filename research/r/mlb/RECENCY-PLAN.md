@@ -160,3 +160,10 @@ verdict. Then the slide decision, the accomplishments row, commits.
   offense (universal DH); eras 2021 | 2022 | 2023-25; calibration by intercept and slope.
   Dropped from v1: the opponent covariate per component (park and league target take its job;
   Elo stays as a rival).
+- 2026-10-03, it 4: vectorised `asof_decay()` (in-season days, carry c, lambda on the last r
+  calendar days; closed form with per-entity anchors) checked against the loop version and
+  leak-tested, suite 103 green. `recency_data.R` (hitter, pitcher, team rows; park factors from
+  the three prior seasons) and `recency_study.R` (validation driver: loads 2015-2019 only).
+  Implementation choice, before results: lambda is searched at each fold's chosen (h, c), not on
+  the full joint grid, and k is re-picked within 2x either way when lambda adds weight. Fixed a
+  retry wrapper that recursed on itself and stalled the fetch.

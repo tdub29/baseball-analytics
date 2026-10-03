@@ -39,3 +39,44 @@ test_that("shrinkage pulls a thin sample to the league and leaves a big one near
   expect_equal(shrink_rate(3, 10, k = 90, league = 0.32), (3 + 28.8) / 100)
   expect_lt(abs(shrink_rate(3000, 10000, k = 90, league = 0.32) - 0.3), 0.001)
 })
+
+test_that("asof_decay matches decay_sum, carries seasons by c, and adds lambda on recent days", {
+  set.seed(3)
+  ev <- data.frame(entity = sample(c("A", "B", "C"), 300, TRUE),
+                   Date = as.Date("2019-04-01") + sample(0:150, 300, TRUE), v = rpois(300, 3))
+  ev$season <- 2019L; ev$t <- as.numeric(ev$Date)
+  q <- data.frame(entity = c("A", "B", "C", "D"), Date = as.Date("2019-07-01"), season = 2019L)
+  q$t <- as.numeric(q$Date)
+  got <- asof_decay(ev, q, "v", h = 14)[, 1]
+  ref <- sapply(1:3, function(i) { e <- ev[ev$entity == q$entity[i], ]; decay_sum(e$Date, e$v, q$Date[i], 14) })
+  expect_equal(got, c(ref, 0))
+  # lambda adds the plain sum of the last r calendar days
+  lam <- asof_decay(ev, q, "v", h = 14, lambda = 2, r = 7)[, 1]
+  rec <- sapply(1:3, function(i) { e <- ev[ev$entity == q$entity[i], ]; trailing_sum(e$Date, e$v, q$Date[i], 7) })
+  expect_equal(lam, c(ref + 2 * rec, 0))
+  # carry: an event one season back weighs c on top of its in-season decay
+  two <- data.frame(entity = "A", Date = as.Date(c("2018-09-30", "2019-04-01")), v = c(1, 1),
+                    season = c(2018L, 2019L), t = c(100, 101))
+  qq  <- data.frame(entity = "A", Date = as.Date("2019-04-02"), season = 2019L, t = 102)
+  expect_equal(unname(asof_decay(two, qq, "v", h = 10, c = 0.5)[, 1]), 0.5 * 0.5^(2 / 10) + 0.5^(1 / 10))
+  expect_equal(unname(asof_decay(two, qq, "v", h = 10, c = 0)[, 1]), 0.5^(1 / 10))
+})
+
+test_that("asof_decay never sees the query date or later", {
+  set.seed(4)
+  ev <- data.frame(entity = sample(c("A", "B"), 200, TRUE),
+                   Date = as.Date("2019-04-01") + sample(0:120, 200, TRUE), v = rpois(200, 3), season = 2019L)
+  ev$t <- as.numeric(ev$Date)
+  q  <- data.frame(entity = c("A", "B"), Date = as.Date("2019-06-01"), season = 2019L); q$t <- as.numeric(q$Date)
+  run <- function(e) asof_decay(e, q, "v", h = 30, c = 0.5, lambda = 1, r = 7)
+  later <- ev; later$v[later$Date >= q$Date[1]] <- 1000
+  expect_equal(run(later), run(ev))
+  earlier <- ev; earlier$v[earlier$Date == q$Date[1] - 1] <- 1000
+  expect_false(isTRUE(all.equal(run(earlier), run(ev))))
+})
+
+test_that("season_day removes offseason days", {
+  b <- data.frame(season = 2018:2019, start = as.Date(c("2018-03-29", "2019-03-20")),
+                  end = as.Date(c("2018-10-01", "2019-09-29")))
+  expect_equal(season_day(as.Date(c("2018-10-01", "2019-03-20")), 2018:2019, b), c(186, 187))
+})
