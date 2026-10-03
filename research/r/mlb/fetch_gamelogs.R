@@ -11,16 +11,15 @@ source(file.path(SRC, "ingest.R"))
 source(file.path(SRC, "gamelogs.R"))
 
 seasons <- as.integer(commandArgs(TRUE))
-seasons <- setdiff(seq(min(seasons), max(seasons)), 2020)
+seasons <- seq(min(seasons), max(seasons))   # 2020 included: history for 2021, never scored
 src <- cached_sources("data/mlb/raw")
 gl  <- gamelog_sources("data/mlb/raw")
 
 for (season in seasons) {
   win   <- season_window(season, fetch = src$seasons)
-  sched <- fetch_schedule(win$start, win$end, fetch = src$schedule)
-  g     <- tryCatch(season_gamelogs(season, gl), error = function(e) { message("  ", conditionMessage(e)); NULL })
+  g     <- tryCatch(season_gamelogs(season, win, gl), error = function(e) { message("  ", conditionMessage(e)); NULL })
   if (is.null(g)) { message(season, ": incomplete, rerun"); next }
-  message(sprintf("%d: %d games, team hitting %d rows, team pitching %d, pitcher lines %d, hitter lines %d",
-                  season, nrow(sched), nrow(g$team_hitting), nrow(g$team_pitching),
+  message(sprintf("%d: %d games (%d with both lineups), team hitting %d rows, team pitching %d, pitcher lines %d, hitter lines %d",
+                  season, nrow(g$schedule), sum(!is.na(g$schedule$home_bat9) & !is.na(g$schedule$away_bat9)), nrow(g$team_hitting), nrow(g$team_pitching),
                   nrow(g$pitchers), nrow(g$hitters)))
 }
