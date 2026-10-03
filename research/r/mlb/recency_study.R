@@ -2,7 +2,8 @@
 # Recency study, validation stage (RECENCY-PLAN.md tests 1-4 and 6). Loads 2015-2019 only, so no
 # test-season row can reach a choice; scores 2017-2019.
 #
-#   Rscript research/r/mlb/recency_study.R
+#   Rscript research/r/mlb/recency_study.R          # validation: choose windows on 2017-2019
+#   Rscript research/r/mlb/recency_study.R test     # re-score the frozen choices on 2021-2025, once
 #
 # Writes research/r/mlb/results/recency/ (grid, lambda, reliability CSVs) and
 # results/recency-validation.md.
@@ -12,7 +13,11 @@ SRC <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = 
 if (is.na(SRC) || SRC == "") SRC <- "research/r/mlb"
 for (f in c("ingest.R", "gamelogs.R", "windows.R", "recency_data.R")) source(file.path(SRC, f))
 
+MODE  <- if (length(commandArgs(TRUE)) && commandArgs(TRUE)[1] == "test") "test" else "validation"
 VALID <- 2017:2019
+TEST  <- 2021:2025
+QS    <- if (MODE == "test") c(VALID, TEST) else VALID     # seasons that get predictions
+LOADS <- if (MODE == "test") 2015:2025 else 2015:2019
 H     <- c(7, 14, 30, 60, 120, 240, Inf)
 CARRY <- c(0, 0.25, 0.5, 0.75, 1)
 LAMBDA <- expand.grid(lambda = c(0.5, 1, 2), r = c(7, 14))
@@ -117,7 +122,7 @@ reliability <- function(events, num, den, seasons = VALID) {
 
 # --- assemble components --------------------------------------------------------------------
 
-L      <- load_seasons(2015:2019)
+L      <- load_seasons(LOADS)
 bounds <- dplyr::bind_rows(lapply(L, `[[`, "bounds"))
 sched  <- schedule_rows(L)
 venue  <- sched[c("game_pk", "venue_id")]
@@ -140,18 +145,18 @@ team <- add_t(team)
 # queries: the starting lineup's hitters; starts; relief appearances; team-games, validation only
 slots <- dplyr::bind_rows(lapply(c(paste0("home_bat", 1:9), paste0("away_bat", 1:9)), function(b)
   data.frame(entity = sched[[b]], game_pk = sched$game_pk, Date = sched$Date, season = sched$season)))
-slots <- slots[!is.na(slots$entity) & slots$season %in% VALID, ]
+slots <- slots[!is.na(slots$entity) & slots$season %in% QS, ]
 outcome <- function(q, ev, cols) {
   y <- ev[c("entity", "game_pk", cols)]; names(y)[-(1:2)] <- paste0("y_", cols)
   merge(q, y, by = c("entity", "game_pk"))
 }
 q_hit  <- add_t(outcome(slots, hit, c("woba", "woba_den", "so", "bbhbp", "hr", "pa")))
 q_hit$cluster <- paste(hit$team_id[match(paste(q_hit$entity, q_hit$game_pk), paste(hit$entity, hit$game_pk))], q_hit$season)
-q_start <- pit[pit$role == "start" & pit$season %in% VALID, c("entity", "game_pk", "Date", "season", "t")]
+q_start <- pit[pit$role == "start" & pit$season %in% QS, c("entity", "game_pk", "Date", "season", "t")]
 q_start <- outcome(q_start, pit, c("so", "bbhbp", "hr", "runs", "bf")); q_start$cluster <- paste(q_start$entity, q_start$season)
-q_rel <- pit[pit$role != "start" & pit$season %in% VALID, c("entity", "game_pk", "Date", "season", "t")]
+q_rel <- pit[pit$role != "start" & pit$season %in% QS, c("entity", "game_pk", "Date", "season", "t")]
 q_rel <- outcome(q_rel, pit, c("kbb", "fip", "resp_runs", "bf")); q_rel$cluster <- paste(q_rel$entity, q_rel$season)
-q_team <- team[team$season %in% VALID, c("entity", "game_pk", "Date", "season", "t")]
+q_team <- team[team$season %in% QS, c("entity", "game_pk", "Date", "season", "t")]
 q_team <- outcome(q_team, team, c("margin", "games", "woba", "woba_den")); q_team$cluster <- paste(q_team$entity, q_team$season)
 
 PLAN <- list(
@@ -171,6 +176,7 @@ PLAN <- list(
 )
 
 dir.create(OUT, recursive = TRUE, showWarnings = FALSE)
+if (MODE == "test") source(file.path(SRC, "recency_test_stage.R"))   # defines run_test(), then stops below
 grids <- list(); picks <- list(); lams <- list(); rels <- list(); curves <- list()
 for (p in PLAN) {
   comp <- p[[1]]; rate <- p[[2]]; ev <- p[[3]]; q <- p[[4]]; num <- p[[5]]; den <- p[[6]]
