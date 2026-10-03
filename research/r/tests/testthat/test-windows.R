@@ -80,3 +80,20 @@ test_that("season_day removes offseason days", {
                   end = as.Date(c("2018-10-01", "2019-09-29")))
   expect_equal(season_day(as.Date(c("2018-10-01", "2019-03-20")), 2018:2019, b), c(186, 187))
 })
+
+test_that("asof_decay keeps its digits at short h over many seasons and many entities", {
+  set.seed(5)
+  n <- 4000
+  ev <- data.frame(entity = sample(sprintf("p%03d", 1:200), n, TRUE),
+                   Date = as.Date("2015-04-01") + sample(0:3800, n, TRUE), v = rpois(n, 3), season = 2015L)
+  ev$t <- as.numeric(ev$Date)                       # calendar axis, one "season": compare to decay_sum
+  q  <- data.frame(entity = sprintf("p%03d", c(1, 50, 199)), Date = as.Date("2025-06-01"), season = 2015L)
+  q$t <- as.numeric(q$Date)
+  got <- unname(asof_decay(ev, q, "v", h = 7)[, 1])
+  ref <- sapply(seq_len(nrow(q)), function(i) { e <- ev[ev$entity == q$entity[i], ]; decay_sum(e$Date, e$v, q$Date[i], 7) })
+  expect_equal(got, ref, tolerance = 1e-9)
+  early <- data.frame(entity = "p001", Date = min(ev$Date[ev$entity == "p001"]) + 30, season = 2015L)
+  early$t <- as.numeric(early$Date)
+  e1 <- ev[ev$entity == "p001", ]
+  expect_equal(unname(asof_decay(ev, early, "v", h = 7)[, 1]), decay_sum(e1$Date, e1$v, early$Date, 7), tolerance = 1e-9)
+})
