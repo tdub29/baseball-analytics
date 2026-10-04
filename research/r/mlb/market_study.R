@@ -38,7 +38,9 @@ odds <- dplyr::bind_rows(lapply(names(raw), function(d) dplyr::bind_rows(lapply(
   data.frame(odds_date = as.Date(d), start = v$startDate, home = v$homeTeam$fullName, away = v$awayTeam$fullName,
              hs = as.numeric(v$homeTeamScore), as = as.numeric(v$awayTeamScore), status = v$gameStatusText %||% "",
              books = nrow(books), p_close = mean(nv), p_open = ov, overround = mean(1 / dh + 1 / da),
-             best_home = max(dh), best_away = max(da))
+             best_home = max(dh), best_away = max(da), med_home = stats::median(dh), med_away = stats::median(da),
+             med_home_open = if (any(op)) stats::median(decimal(books$oh[op])) else NA_real_,
+             med_away_open = if (any(op)) stats::median(decimal(books$oa[op])) else NA_real_)
 }))))
 
 # --- join to StatsAPI games by date, team names and final score ----------------------------
@@ -62,7 +64,7 @@ sched$odds_row <- m
 pred <- utils::read.csv(file.path(RES, "recency", "model-predictions-test.csv"))
 G <- merge(pred, sched[c("game_pk", "odds_row")], by = "game_pk")
 G <- G[!is.na(G$odds_row), ]
-G <- cbind(G, odds[G$odds_row, c("p_close", "p_open", "books", "overround", "best_home", "best_away", "status")])
+G <- cbind(G, odds[G$odds_row, c("p_close", "p_open", "books", "overround", "best_home", "best_away", "med_home", "med_away", "med_home_open", "med_away_open", "status")])
 G$Date <- as.Date(G$Date)
 # Sept-Oct 2021 "current" lines were scraped after first pitch (36% moved over 15 points from the
 # open, closing log loss 0.52 and 0.40): in-game prices, not closing lines. Found by the charter's
@@ -158,6 +160,6 @@ out <- c("# Market study: frozen recency model vs the closing line", "",
     apply(q3_season, 1, function(r) sprintf("| %s | %s | %s | %s |", r[["season"]], r[["bets"]], fmt(r[["units"]], 1), fmt(r[["roi"]], 3)))) else "", "",
   "Private research on scraped odds; not betting advice.")
 writeLines(out, file.path(RES, "market-study.md"))
-utils::write.csv(G[c("game_pk", "Date", "season", "y", "E", "C", "p_close", "p_open", "p_blend", "best_home", "best_away")],
+utils::write.csv(G[c("game_pk", "Date", "season", "y", "E", "C", "p_close", "p_open", "p_blend", "best_home", "best_away", "med_home", "med_away", "med_home_open", "med_away_open")],
                  "data/mlb/raw/odds/market-joined.csv", row.names = FALSE)   # odds-derived: stays local
 message("wrote ", file.path(RES, "market-study.md"))
