@@ -79,3 +79,15 @@ log line; the 2023-2025 test is scored once for the final model.
 
 - 2026-10-04, it 1: charter written; odds dataset downloading. No model prediction has been
   compared with any line yet.
+- 2026-10-04, it 2: first run (`results/market-study-v1-asrun.md`) failed the charter's sanity
+  check: Sept-Oct 2021 "current" lines were scraped after first pitch (36% moved over 15 points
+  from the open; closing log loss 0.52 and 0.40). Excluded that window (394 games) and reran
+  (`results/market-study.md`); results depending on validation choices are exploratory.
+  Q1: the no-vig close beats E in every season, pooled 0.6722 vs 0.6751, E minus close -0.0029
+  [-0.0042, -0.0015]. Q2: E adds nothing to the line (blend weight 0.08, test gain -0.00013
+  [-0.00041, +0.00012]). Q3 as specified (tau 0.06, best closing price across books) shows +16% ROI
+  on 600 test bets, but the audit says artifact: 18.5% of those bets took a "best" price over 10%
+  above the fair no-vig price (stale or off-market quotes in scraped data); at the fair price the
+  ROI is +4.3% (about one standard error); actual wins 278 vs 264 the close expected; and the close
+  moved away from the model's side by 3.6 points on average (negative closing-line value). Verdict:
+  does not beat the market. No profitability claim.
