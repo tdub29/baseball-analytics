@@ -10,7 +10,9 @@
 suppressPackageStartupMessages({ library(data.table) })
 SRC <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)[1]))
 if (is.na(SRC) || SRC == "") SRC <- "research/r/mlb"
-for (f in c("windows.R", "retro.R", "matchup.R")) source(file.path(SRC, f))
+for (f in c("windows.R", "retro.R", "matchup.R", "statcast.R")) source(file.path(SRC, f))
+HIT_X <- as.numeric(Sys.getenv("HIT_X", "0"))     # weight on Statcast expected outcomes for hitters (0 = actual)
+FEAT_OUT <- Sys.getenv("FEAT_OUT", "data/mlb/matchup/features.rds")
 K_SPLIT_BAT <- 600; K_SPLIT_PIT <- 600; TEAM_PA <- 38.3
 dir.create("data/mlb/matchup", showWarnings = FALSE, recursive = TRUE)
 
@@ -39,7 +41,27 @@ Px <- merge(P, xmix, by = c("season", "bb_type"), all.x = TRUE, sort = FALSE)
 has <- !is.na(Px$x_single) & Px$outcome %in% BIP
 for (o in BIP) Px[[o]][has] <- Px[[paste0("x_", o)]][has]
 Px[, paste0("x_", BIP) := NULL]
+# Where Statcast tracked the ball, exit velocity and launch angle replace the batted-ball type.
+SX <- NULL
+if (length(list.files(SC_DIR, "^bip_"))) {
+  reg <- data.table::as.data.table(readRDS(list.files("data/mlb/raw/chadwick", full.names = TRUE)[1]))
+  SX <- statcast_expected(P, reg)
+  message("statcast matched balls in play: ", nrow(SX), " of ", sum(P$outcome %in% BIP & !is.na(P$bb_type)))
+  Px <- merge(Px, SX, by = c("gid", "seq"), all.x = TRUE, sort = FALSE)
+  hs <- !is.na(Px$sx_single)
+  for (o in BIP) Px[[o]][hs] <- Px[[paste0("sx_", o)]][hs]
+  Px[, paste0("sx_", BIP) := NULL]
+}
 Pxn <- park_neutral(Px, PF)
+# Hitters: actual outcomes, or a blend with their own Statcast expected outcomes (HIT_X).
+Ph <- P
+if (HIT_X > 0 && !is.null(SX)) {
+  Ph <- merge(P, SX, by = c("gid", "seq"), all.x = TRUE, sort = FALSE)
+  hs <- !is.na(Ph$sx_single)
+  for (o in BIP) Ph[[o]][hs] <- HIT_X * Ph[[paste0("sx_", o)]][hs] + (1 - HIT_X) * Ph[[o]][hs]
+  Ph[, paste0("sx_", BIP) := NULL]
+}
+Phn <- park_neutral(Ph, PF)
 message("plate appearances: ", nrow(P))
 
 # --- who started: first nine batters and first pitcher for each side of each game ----------
@@ -58,7 +80,7 @@ L <- L[!is.na(batter)]
 message("lineup slots: ", nrow(L))
 
 q  <- function(entity) data.frame(entity = entity, Date = L$Date, season = L$season, t = L$t)
-ev <- function(entity) { x <- as.data.frame(Pn[, c("Date", "season", "t", OUT8, "n"), with = FALSE]); x$entity <- entity; x }
+ev <- function(entity) { x <- as.data.frame(Phn[, c("Date", "season", "t", OUT8, "n"), with = FALSE]); x$entity <- entity; x }
 evp <- function(entity) { x <- as.data.frame(Pxn[, c("Date", "season", "t", OUT8, "n"), with = FALSE]); x$entity <- entity; x }
 
 # --- batter, pitcher and league rates for every slot vs the starter ------------------------
@@ -73,8 +95,8 @@ lgL <- lg_hand(rep("L", nrow(L))); lgR <- lg_hand(rep("R", nrow(L)))
 # times (league lefty-vs-lefty / league lefty overall), and likewise for pitchers by their hand.
 pair_L <- lg_pair(L$bathand, rep("L", nrow(L))); pair_R <- lg_pair(L$bathand, rep("R", nrow(L)))
 lg_bside <- lg_side(L$bathand)
-bat_all <- asof_outcomes(ev(Pn$batter), q(L$batter), BAT_CFG)
-bat_key <- ev(paste(Pn$batter, Pn$pithand))
+bat_all <- asof_outcomes(ev(Phn$batter), q(L$batter), BAT_CFG)
+bat_key <- ev(paste(Phn$batter, Phn$pithand))
 bat_vL  <- shrunk_rates(bat_all, asof_outcomes(bat_key, q(paste(L$batter, "L")), BAT_CFG), BAT_CFG, lg_bside, pair_L, K_SPLIT_BAT)
 bat_vR  <- shrunk_rates(bat_all, asof_outcomes(bat_key, q(paste(L$batter, "R")), BAT_CFG), BAT_CFG, lg_bside, pair_R, K_SPLIT_BAT)
 isL     <- L$sp_hand == "L"
@@ -172,5 +194,5 @@ fd <- data.table(grp_id = names(grp), feat)      # not `key`: data.table() reads
 fd[, c("gid", "side") := tstrsplit(grp_id, " ")]
 wide <- dcast(fd, gid ~ side, value.var = setdiff(names(fd), c("grp_id", "gid", "side")))
 out <- merge(games, wide, by = "gid")
-saveRDS(out, "data/mlb/matchup/features.rds")
-message("wrote data/mlb/matchup/features.rds: ", nrow(out), " games")
+saveRDS(out, FEAT_OUT)
+message("wrote ", FEAT_OUT, ": ", nrow(out), " games")

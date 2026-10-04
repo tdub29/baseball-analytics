@@ -104,8 +104,24 @@ tab <- rbindlist(lapply(c(sort(unique(S$season)), 0L), function(s) {
     lapply(setNames(models, models), function(m) round(mean(ll(x[[m]], x$y)), 4)))
 }))
 best <- names(FORMS)[1:4][which.min(unlist(tab[season == "pooled", names(FORMS)[1:4], with = FALSE]))]
+# Ensemble with the recency model: logit-space blend, weight chosen on 2017-2019 only (both inputs
+# are walk-forward predictions), frozen for every later season.
+lgt <- function(p) stats::qlogis(pmin(pmax(p, 1e-6), 1 - 1e-6))
+ens_src <- F[season %in% 2017:2019 & !is.na(E_recency) & !is.na(get(best))]
+wgrid <- seq(0, 1, 0.05)
+ens_w <- wgrid[which.min(vapply(wgrid, function(w) mean(ll(stats::plogis(w * lgt(ens_src[[best]]) + (1 - w) * lgt(ens_src$E_recency)), ens_src$y)), 0))]
+F[, ENS := stats::plogis(ens_w * lgt(get(best)) + (1 - ens_w) * lgt(E_recency))]
+S <- F[season %in% PRED]
+models <- c(models, "ENS")
+tab <- rbindlist(lapply(c(sort(unique(S$season)), 0L), function(s) {
+  x <- if (s == 0) S else S[season == s]
+  x <- x[complete.cases(x[, models, with = FALSE])]
+  c(list(season = if (s == 0) "pooled" else as.character(s), games = nrow(x)),
+    lapply(setNames(models, models), function(m) round(mean(ll(x[[m]], x$y)), 4)))
+}))
 M <- S[!is.na(p_close) & complete.cases(S[, c(best), with = FALSE])]
-mtab <- M[, .(games = .N, close = mean(ll(p_close, y)), model = mean(ll(get(best), y)), recency = mean(ll(E_recency, y), na.rm = TRUE)), by = season]
+mtab <- M[, .(games = .N, close = mean(ll(p_close, y)), model = mean(ll(get(best), y)), recency = mean(ll(E_recency, y), na.rm = TRUE),
+              ensemble = mean(ll(ENS, y), na.rm = TRUE)), by = season]
 paired <- function(d, cl) { by <- tapply(d, cl, sum); n <- tapply(d, cl, length); set.seed(20261004)
   b <- replicate(1000, { i <- sample(length(by), replace = TRUE); sum(by[i]) / sum(n[i]) }); c(mean(d), stats::quantile(b, c(.025, .975))) }
 gap <- paired(ll(M$p_close, M$y) - ll(M[[best]], M$y), paste(M$hometeam, M$season))
@@ -131,8 +147,9 @@ lines <- c(sprintf("# Matchup model: %s", mode), "",
   apply(tab, 1, function(r) paste0("| ", paste(r, collapse = " | "), " |")), "",
   sprintf("Best matchup variant on these seasons: %s.", best), "",
   "## Against the no-vig closing line (games with odds)", "",
-  "| season | games | close | matchup | recency E |", "| --- | --- | --- | --- | --- |",
-  apply(mtab, 1, function(r) sprintf("| %s | %s | %s | %s | %s |", r[["season"]], r[["games"]], fmt(r[["close"]]), fmt(r[["model"]]), fmt(r[["recency"]]))), "",
+  sprintf("Ensemble weight on the matchup model (chosen on 2017-2019): %s.", ens_w), "",
+  "| season | games | close | matchup | recency E | ensemble |", "| --- | --- | --- | --- | --- | --- |",
+  apply(mtab, 1, function(r) sprintf("| %s | %s | %s | %s | %s | %s |", r[["season"]], r[["games"]], fmt(r[["close"]]), fmt(r[["model"]]), fmt(r[["recency"]]), fmt(r[["ensemble"]]))), "",
   sprintf("Close minus matchup per-game log loss (positive = matchup better): %s [%s, %s].", fmt(gap[1], 5), fmt(gap[2], 5), fmt(gap[3], 5)),
   sprintf("Blend fit on 2021-2022: logit p = %s + %s logit(close) + %s logit(model).", fmt(coef(blend)[1], 3), fmt(coef(blend)[2], 3), fmt(coef(blend)[3], 3)),
   "", "Betting thresholds on 2021-2022 at median-book closing prices:", "", "| tau | bets | ROI |", "| --- | --- | --- |",
