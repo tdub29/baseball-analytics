@@ -12,12 +12,13 @@ SRC <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = 
 if (is.na(SRC) || SRC == "") SRC <- "research/r/mlb"
 for (f in c("ingest.R", "gamelogs.R", "windows.R", "retro.R", "matchup.R")) source(file.path(SRC, f))
 mode <- commandArgs(TRUE)[1]; stopifnot(mode %in% c("validation", "test"))
-out_md <- file.path(SRC, "results", sprintf("matchup-model-%s.md", mode))
+TAG <- Sys.getenv("OUT_TAG", "")                       # e.g. "-dayahead" for projected-lineup features
+out_md <- file.path(SRC, "results", sprintf("matchup-model%s-%s.md", TAG, mode))
 if (mode == "test" && file.exists(out_md) && !"--force" %in% commandArgs(TRUE)) stop(out_md, " exists: scored once.")
 PRED <- if (mode == "test") 2023:2025 else 2017:2022
 MKT_VAL <- 2021:2022
 
-F <- readRDS("data/mlb/matchup/features.rds")
+F <- readRDS(Sys.getenv("FEAT_IN", "data/mlb/matchup/features.rds"))
 G <- rbindlist(lapply(2015:2025, retro_games))
 
 # --- run values per outcome, fit on 2015-2016 team-games only -----------------------------
@@ -162,7 +163,33 @@ if (mode == "test" && length(tau)) {
   lines <- c(lines, sprintf("Test 2023-2025 at tau %s: %d bets, ROI %s, week-block 95%% [%s, %s].", tau, nrow(tb), fmt(mean(tb$profit), 3), fmt(ci[1], 3), fmt(ci[2], 3)),
              paste(tb[, .(roi = round(mean(profit), 3), bets = .N), by = season][, sprintf("%s: %s on %d", season, roi, bets)], collapse = "; "))
 }
+# --- opening line: day-ahead skill test (closing-line value of bets placed at the open) ------
+O <- F[season %in% PRED & !is.na(p_open) & !is.na(p_close) & !is.na(get(best))]
+clv_bets <- function(x, tau) {
+  eh <- x[[best]] - x$p_open; side <- ifelse(eh >= tau, "h", ifelse(-eh >= tau, "a", NA))
+  b <- x[!is.na(side)]; side <- side[!is.na(side)]
+  open_p <- ifelse(side == "h", b$p_open, 1 - b$p_open); close_p <- ifelse(side == "h", b$p_close, 1 - b$p_close)
+  price <- ifelse(side == "h", b$med_home_open, b$med_away_open); won <- ifelse(side == "h", b$y == 1, b$y == 0)
+  data.table(Date = b$Date, season = b$season, clv = close_p - open_p, profit = ifelse(won, price - 1, -1))
+}
+week_ci <- function(v, d) { w <- as.Date(cut(d, "week")); by <- tapply(v, w, sum); n <- tapply(v, w, length); set.seed(20261004)
+  stats::quantile(replicate(1000, { i <- sample(length(by), replace = TRUE); sum(by[i]) / sum(n[i]) }), c(.025, .975)) }
+ot <- rbindlist(lapply(taus, function(t) { b <- clv_bets(O[season %in% MKT_VAL], t)
+  if (!nrow(b)) return(NULL); ci <- week_ci(b$clv, b$Date)
+  data.table(tau = t, bets = nrow(b), mean_clv = mean(b$clv), clv_lo = ci[1], clv_hi = ci[2], roi_open = mean(b$profit)) }))
+lines <- c(lines, "", "## Opening line (2021-2022): model vs no-vig open, and closing-line value of bets at the open", "",
+  sprintf("Log loss on %d games: open %s, close %s, model %s.", nrow(O[season %in% MKT_VAL]), fmt(mean(ll(O[season %in% MKT_VAL]$p_open, O[season %in% MKT_VAL]$y))),
+          fmt(mean(ll(O[season %in% MKT_VAL]$p_close, O[season %in% MKT_VAL]$y))), fmt(mean(ll(O[season %in% MKT_VAL][[best]], O[season %in% MKT_VAL]$y)))), "",
+  "| tau | bets | mean CLV (prob. points) | 95% | ROI at median open price |", "| --- | --- | --- | --- | --- |",
+  apply(ot, 1, function(r) sprintf("| %s | %s | %s | [%s, %s] | %s |", r[["tau"]], r[["bets"]], fmt(100 * as.numeric(r[["mean_clv"]]), 2),
+        fmt(100 * as.numeric(r[["clv_lo"]]), 2), fmt(100 * as.numeric(r[["clv_hi"]]), 2), fmt(r[["roi_open"]], 3))))
+if (mode == "test" && nrow(ot)) {
+  tau_o <- ot[bets >= 200][which.max(mean_clv), tau]
+  tb <- clv_bets(O[season %in% 2023:2025], tau_o); ci <- week_ci(tb$clv, tb$Date); ri <- week_ci(tb$profit, tb$Date)
+  lines <- c(lines, sprintf("Test 2023-2025 at tau %s (chosen on 2021-2022 by CLV): %d bets, mean CLV %s points [%s, %s], ROI at median open %s [%s, %s].",
+    tau_o, nrow(tb), fmt(100 * mean(tb$clv), 2), fmt(100 * ci[1], 2), fmt(100 * ci[2], 2), fmt(mean(tb$profit), 3), fmt(ri[1], 3), fmt(ri[2], 3)))
+}
 writeLines(c(lines, "", "The information used here was obtained free of charge from and is copyrighted by Retrosheet."), out_md)
 fwrite(F[season %in% PRED, c("gid", "game_pk", "Date", "season", "y", models, "p_close"), with = FALSE],
-       sprintf("data/mlb/matchup/predictions-%s.csv", mode))
+       sprintf("data/mlb/matchup/predictions%s-%s.csv", TAG, mode))
 message("wrote ", out_md)

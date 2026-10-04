@@ -13,6 +13,7 @@ if (is.na(SRC) || SRC == "") SRC <- "research/r/mlb"
 for (f in c("windows.R", "retro.R", "matchup.R", "statcast.R")) source(file.path(SRC, f))
 HIT_X <- as.numeric(Sys.getenv("HIT_X", "0"))     # weight on Statcast expected outcomes for hitters (0 = actual)
 FEAT_OUT <- Sys.getenv("FEAT_OUT", "data/mlb/matchup/features.rds")
+LINEUP_MODE <- Sys.getenv("LINEUP_MODE", "posted")   # "projected": day-ahead, from the team's last game vs a same-hand starter
 K_SPLIT_BAT <- 600; K_SPLIT_PIT <- 600; TEAM_PA <- 38.3
 dir.create("data/mlb/matchup", showWarnings = FALSE, recursive = TRUE)
 
@@ -69,6 +70,25 @@ first <- P[order(gid, seq)]
 lineup <- first[, .SD[!duplicated(batter)][1:9], by = .(gid, batteam), .SDcols = c("batter", "bathand", "seq")]
 lineup[, slot := seq_len(.N), by = .(gid, batteam)]
 sp <- first[, .(sp = pitcher[1], sp_hand = pithand[1]), by = .(gid, pitteam)]
+if (LINEUP_MODE == "projected") {
+  # Day-ahead lineup: the nine the team used in its most recent earlier game against a starter of
+  # the same hand (any hand if none yet). The starter itself is taken as announced the day before.
+  tg <- merge(unique(lineup[, .(gid, batteam)]), G[, .(gid, Date)], by = "gid")
+  tg <- merge(tg, sp[, .(gid, pitteam, opp_hand = sp_hand)], by.x = c("gid"), by.y = c("gid"), allow.cartesian = TRUE)[pitteam != batteam]
+  setorder(tg, batteam, Date, gid)
+  tg[, src := {
+    out <- rep(NA_character_, .N)
+    for (i in seq_len(.N)) {
+      prev <- which(Date < Date[i]); same <- prev[opp_hand[prev] == opp_hand[i]]
+      j <- if (length(same)) max(same) else if (length(prev)) max(prev) else NA
+      if (!is.na(j)) out[i] <- gid[j]
+    }
+    out
+  }, by = batteam]
+  lineup <- merge(tg[!is.na(src), .(gid, batteam, src)], lineup[, .(src = gid, batteam, batter, bathand, seq, slot)],
+                  by = c("src", "batteam"), allow.cartesian = TRUE)[, src := NULL]
+  message("projected lineups for ", uniqueN(lineup[, .(gid, batteam)]), " team-games")
+}
 games <- G[season >= 2016, .(gid, Date, season, site, visteam, hometeam, temp, winddir, windspeed, umphome, vruns, hruns)]
 games[, t := season_day(Date, season, as.data.frame(bounds))]
 
