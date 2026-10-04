@@ -23,6 +23,23 @@ P[, bathand := ifelse(bathand %in% c("L", "R"), bathand, "R")]
 P[, pithand := ifelse(pithand %in% c("L", "R"), pithand, "R")]
 PF <- park_table(P)
 Pn <- park_neutral(P, PF)
+# Pitchers are judged on expected outcomes of their batted balls (the xFIP/SIERA idea): each ball in
+# play is replaced by the league outcome mix for its type (ground ball, fly, liner, popup) over the
+# prior three seasons, so hit and home-run luck stays out of a pitcher's rates. Hitters keep actual.
+BIP <- c("single", "double", "triple", "hr", "out_ip")
+bbd <- P[!is.na(bb_type) & outcome %in% BIP, .N, by = .(season, bb_type, outcome)]
+xmix <- rbindlist(lapply(sort(unique(P$season)), function(S) {
+  src <- bbd[season %in% if (S == min(P$season)) S else (S - 3):(S - 1)]
+  m <- dcast(src[, .(N = sum(N)), by = .(bb_type, outcome)], bb_type ~ outcome, value.var = "N", fill = 0)
+  m[, tot := rowSums(.SD), .SDcols = BIP]
+  for (o in BIP) m[[paste0("x_", o)]] <- m[[o]] / m$tot
+  cbind(season = S, m[, c("bb_type", paste0("x_", BIP)), with = FALSE])
+}))
+Px <- merge(P, xmix, by = c("season", "bb_type"), all.x = TRUE, sort = FALSE)
+has <- !is.na(Px$x_single) & Px$outcome %in% BIP
+for (o in BIP) Px[[o]][has] <- Px[[paste0("x_", o)]][has]
+Px[, paste0("x_", BIP) := NULL]
+Pxn <- park_neutral(Px, PF)
 message("plate appearances: ", nrow(P))
 
 # --- who started: first nine batters and first pitcher for each side of each game ----------
@@ -42,6 +59,7 @@ message("lineup slots: ", nrow(L))
 
 q  <- function(entity) data.frame(entity = entity, Date = L$Date, season = L$season, t = L$t)
 ev <- function(entity) { x <- as.data.frame(Pn[, c("Date", "season", "t", OUT8, "n"), with = FALSE]); x$entity <- entity; x }
+evp <- function(entity) { x <- as.data.frame(Pxn[, c("Date", "season", "t", OUT8, "n"), with = FALSE]); x$entity <- entity; x }
 
 # --- batter, pitcher and league rates for every slot vs the starter ------------------------
 lgq <- data.frame(Date = L$Date, season = L$season, t = L$t)
@@ -51,16 +69,20 @@ lg_side <- function(b) league_rates(Pn, transform(lgq, lg_key = b), by = "bathan
 lg_pair <- function(b, h) league_rates(Pn, transform(lgq, lg_key = paste(b, h)), by = c("bathand", "pithand"))
 lgL <- lg_hand(rep("L", nrow(L))); lgR <- lg_hand(rep("R", nrow(L)))
 
+# Platoon priors are side-specific: a lefty's rate vs lefties is shrunk toward his overall rate
+# times (league lefty-vs-lefty / league lefty overall), and likewise for pitchers by their hand.
+pair_L <- lg_pair(L$bathand, rep("L", nrow(L))); pair_R <- lg_pair(L$bathand, rep("R", nrow(L)))
+lg_bside <- lg_side(L$bathand)
 bat_all <- asof_outcomes(ev(Pn$batter), q(L$batter), BAT_CFG)
 bat_key <- ev(paste(Pn$batter, Pn$pithand))
-bat_vL  <- shrunk_rates(bat_all, asof_outcomes(bat_key, q(paste(L$batter, "L")), BAT_CFG), BAT_CFG, lg_all, lgL, K_SPLIT_BAT)
-bat_vR  <- shrunk_rates(bat_all, asof_outcomes(bat_key, q(paste(L$batter, "R")), BAT_CFG), BAT_CFG, lg_all, lgR, K_SPLIT_BAT)
+bat_vL  <- shrunk_rates(bat_all, asof_outcomes(bat_key, q(paste(L$batter, "L")), BAT_CFG), BAT_CFG, lg_bside, pair_L, K_SPLIT_BAT)
+bat_vR  <- shrunk_rates(bat_all, asof_outcomes(bat_key, q(paste(L$batter, "R")), BAT_CFG), BAT_CFG, lg_bside, pair_R, K_SPLIT_BAT)
 isL     <- L$sp_hand == "L"
 bat_sp  <- bat_vL * isL + bat_vR * !isL
-pit_all <- asof_outcomes(ev(Pn$pitcher), q(L$sp), PIT_CFG)
-pit_sp  <- shrunk_rates(pit_all, asof_outcomes(ev(paste(Pn$pitcher, Pn$bathand)), q(paste(L$sp, L$bathand)), PIT_CFG),
-                        PIT_CFG, lg_all, lg_side(L$bathand), K_SPLIT_PIT)
-pair_L <- lg_pair(L$bathand, rep("L", nrow(L))); pair_R <- lg_pair(L$bathand, rep("R", nrow(L)))
+lg_phand <- lg_hand(L$sp_hand)
+pit_all <- asof_outcomes(evp(Pxn$pitcher), q(L$sp), PIT_CFG)
+pit_sp  <- shrunk_rates(pit_all, asof_outcomes(evp(paste(Pxn$pitcher, Pxn$bathand)), q(paste(L$sp, L$bathand)), PIT_CFG),
+                        PIT_CFG, lg_phand, pair_L * isL + pair_R * !isL, K_SPLIT_PIT)
 lg_sp  <- pair_L * isL + pair_R * !isL
 
 PFd <- as.data.frame(PF)
@@ -107,11 +129,11 @@ mem <- rbindlist(lapply(split(keys, keys$team), function(k) {
 message("bullpen members: ", nrow(mem))
 mq  <- function(entity) data.frame(entity = entity, Date = mem$Date, season = mem$season, t = mem$t)
 mlg <- data.frame(Date = mem$Date, season = mem$season, t = mem$t)
-mlg_all <- league_rates(Pn, mlg)
-rel_all <- asof_outcomes(ev(Pn$pitcher), mq(mem$pitcher), PIT_CFG)
-pit_key <- ev(paste(Pn$pitcher, Pn$bathand))
-rel_vs <- function(b) shrunk_rates(rel_all, asof_outcomes(pit_key, mq(paste(mem$pitcher, b)), PIT_CFG),
-                                   PIT_CFG, mlg_all, league_rates(Pn, transform(mlg, lg_key = b), by = "bathand"), K_SPLIT_PIT)
+mlg_hand <- league_rates(Pn, transform(mlg, lg_key = mem$hand), by = "pithand")
+rel_all <- asof_outcomes(evp(Pxn$pitcher), mq(mem$pitcher), PIT_CFG)
+pit_key <- evp(paste(Pxn$pitcher, Pxn$bathand))
+rel_vs <- function(b) shrunk_rates(rel_all, asof_outcomes(pit_key, mq(paste(mem$pitcher, b)), PIT_CFG), PIT_CFG, mlg_hand,
+                                   league_rates(Pn, transform(mlg, lg_key = paste(b, mem$hand)), by = c("bathand", "pithand")), K_SPLIT_PIT)
 agg <- function(R) {
   d <- as.data.table(R * mem$w); d[, `:=`(team = mem$team, Date = mem$Date, w = mem$w)]
   d[, c(lapply(.SD, sum), list(w = sum(w))), by = .(team, Date), .SDcols = OUT8]

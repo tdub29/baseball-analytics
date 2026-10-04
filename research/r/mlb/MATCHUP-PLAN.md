@@ -54,3 +54,11 @@ stale ones).
 ## Iteration log
 
 - 2026-10-04, it 1: charter written; Retrosheet 2015-2025 downloading.
+- 2026-10-04, it 2: v1 built (22,762 games) and validated (`results/matchup-model-validation-v1.md`).
+  Best variant (matchup components + team run margin) 0.6713 log loss on 2017-2022 vs the recency
+  model's 0.6706; trails the close by 0.0029 [0.0007, 0.0051] on 2021-2022; blend weight 0.02.
+  Two flaws found reading the code, fixed before any test row: (1) the platoon prior used one
+  league ratio for all batters instead of one per batter side and pitcher hand, which flattened
+  the same-hand effect; (2) pitchers were rated on actual hits and home runs; they are now rated
+  on the league outcome mix of their batted-ball types (ground ball, fly, liner, popup) from the
+  prior three seasons, the xFIP/SIERA principle. Hitters keep actual outcomes. Rebuilding.
