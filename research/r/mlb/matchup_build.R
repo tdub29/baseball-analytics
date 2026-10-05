@@ -12,6 +12,7 @@ SRC <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = 
 if (is.na(SRC) || SRC == "") SRC <- "research/r/mlb"
 for (f in c("windows.R", "retro.R", "matchup.R", "statcast.R")) source(file.path(SRC, f))
 HIT_X <- as.numeric(Sys.getenv("HIT_X", "0"))     # weight on Statcast expected outcomes for hitters (0 = actual)
+PIT_SC <- Sys.getenv("PIT_SC", "0") == "1"        # Statcast exit velocity and launch angle for pitchers; off: lost the v3 ablation
 FEAT_OUT <- Sys.getenv("FEAT_OUT", "data/mlb/matchup/features.rds")
 LINEUP_MODE <- Sys.getenv("LINEUP_MODE", "posted")   # "projected": day-ahead, from the team's last game vs a same-hand starter
 K_SPLIT_BAT <- 600; K_SPLIT_PIT <- 600; TEAM_PA <- 38.3
@@ -44,10 +45,12 @@ for (o in BIP) Px[[o]][has] <- Px[[paste0("x_", o)]][has]
 Px[, paste0("x_", BIP) := NULL]
 # Where Statcast tracked the ball, exit velocity and launch angle replace the batted-ball type.
 SX <- NULL
-if (length(list.files(SC_DIR, "^bip_"))) {
+if ((PIT_SC || HIT_X > 0) && length(list.files(SC_DIR, "^bip_"))) {
   reg <- data.table::as.data.table(readRDS(list.files("data/mlb/raw/chadwick", full.names = TRUE)[1]))
   SX <- statcast_expected(P, reg)
   message("statcast matched balls in play: ", nrow(SX), " of ", sum(P$outcome %in% BIP & !is.na(P$bb_type)))
+}
+if (PIT_SC && !is.null(SX)) {
   Px <- merge(Px, SX, by = c("gid", "seq"), all.x = TRUE, sort = FALSE)
   hs <- !is.na(Px$sx_single)
   for (o in BIP) Px[[o]][hs] <- Px[[paste0("sx_", o)]][hs]
@@ -193,7 +196,7 @@ miss <- !is.finite(rowSums(pen_vs))
 pen_vs[miss, ] <- as.matrix(lg_all)[miss, ]; mixL[is.na(mixL)] <- 0.3
 m_pen <- park(log5(mixL * bat_vL + (1 - mixL) * bat_vR, pen_vs, mixL * pair_L + (1 - mixL) * pair_R))
 
-saveRDS(list(L = L, m_sp = m_sp, m_pen = m_pen, mixL = mixL, games = games), "data/mlb/matchup/slots.rds")   # checkpoint
+saveRDS(list(L = L, m_sp = m_sp, m_pen = m_pen, mixL = mixL, games = games), sub("[.]rds$", "-slots.rds", FEAT_OUT))   # checkpoint, one per build
 
 # --- expected counts per side -------------------------------------------------------------
 pos <- 1:40

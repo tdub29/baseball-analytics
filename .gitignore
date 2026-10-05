@@ -51,3 +51,6 @@ __pycache__/
 
 # Raw baseballr pulls, rebuilt by research/r/mlb/fetch_cache.R
 data/mlb/raw/
+# Derived matchup features and predictions: rebuilt by matchup_build.R; predictions carry
+# odds-derived columns from an unlicensed dataset, so they never leave this machine.
+data/mlb/matchup/
