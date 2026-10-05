@@ -3,6 +3,7 @@
 #
 #   Rscript research/r/mlb/totals_study.R validation   # reads nothing after 2022; writes results/totals-validation.md
 #   Rscript research/r/mlb/totals_study.R test         # 2023-2025, scored once by the owner
+#   Rscript research/r/mlb/totals_study.R tune         # reads nothing after 2020; picks the run-environment knob
 #
 # Odds: data/mlb/raw/odds/mlb_odds_dataset.json (no license, private research). Per-game odds-derived
 # rows stay in data/mlb/raw/odds/ (gitignored); only aggregates go to results/.
@@ -13,12 +14,16 @@ SRC <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = 
 if (is.na(SRC) || SRC == "") SRC <- "research/r/mlb"
 for (f in c("windows.R", "retro.R", "matchup.R")) source(file.path(SRC, f))
 mode <- commandArgs(TRUE)[1]; if (is.na(mode)) mode <- "validation"
-stopifnot(mode %in% c("validation", "test"))
+stopifnot(mode %in% c("validation", "test", "tune"))
 RES <- file.path(SRC, "results")
 out_md <- file.path(RES, sprintf("totals-%s.md", mode))
 if (mode == "test" && file.exists(out_md)) stop(out_md, " exists: the test is scored once.")
-LAST <- if (mode == "test") 2025L else 2022L      # nothing after this season is read
-PRED <- if (mode == "test") 2021:2025 else 2017:2022
+LAST <- c(test = 2025L, validation = 2022L, tune = 2020L)[[mode]]      # nothing after this season is read
+PRED <- list(test = 2021:2025, validation = 2017:2022, tune = 2017:2020)[[mode]]
+# Run environment (TOTALS-PLAN.md it 3), chosen by `tune` on 2017-2020 outcomes and frozen here:
+# FIT_H = half-life in days of the walk-forward fit weights (charter v1: 365);
+# LRPG_H = half-life in days of the as-of league runs per nine innings, a predictor (NA = not used).
+FIT_H <- 365; LRPG_H <- 15      # results/totals-tune.md: config 7 of 10
 TUNE <- 2021:2022; TEST <- 2023:2025
 EVAL <- if (mode == "test") TEST else TUNE
 FEAT <- "data/mlb/matchup/features.rds"
@@ -29,8 +34,8 @@ if (mode == "test" && !any(grepl(feat_md5, readLines(file.path(RES, "totals-vali
 # --- games, expected runs, environment ---------------------------------------------------------
 
 F <- readRDS(FEAT)[season <= LAST]
-gi <- rbindlist(lapply(2016:LAST, function(s)
-  fread(retro_file(s, "gameinfo"), select = c("gid", "gametype", "innings", "sky"), showProgress = FALSE)))
+gi <- rbindlist(lapply(2015:LAST, function(s)
+  fread(retro_file(s, "gameinfo"), select = c("gid", "date", "gametype", "innings", "sky", "vruns", "hruns"), showProgress = FALSE)))
 F <- merge(F, gi[gametype == "regular", .(gid, innings, sky)], by = "gid", all.x = TRUE)
 F[is.na(innings), innings := 9L]
 
@@ -69,6 +74,105 @@ spd <- fifelse(is.na(F$windspeed) | F$windspeed < 0, 0, F$windspeed)
 F[, wind_out := fifelse(dome == 0 & winddir %in% c("tocf", "tolf", "torf"), spd, 0)]
 F[, wind_in := fifelse(dome == 0 & winddir %in% c("fromcf", "fromlf", "fromrf"), spd, 0)]
 F[, `:=`(total = hruns + vruns, off = log(innings / 9), lxr = log(xr_h + xr_a))]
+
+# league runs per nine scheduled innings as of the start of each game's date (2015 onward)
+lday <- gi[gametype == "regular", .(runs = sum(vruns + hruns), n9 = sum(fifelse(is.na(innings), 1, innings / 9))),
+           by = .(Date = as.Date(as.character(date), "%Y%m%d"))][order(Date)]
+lrpg <- function(h) decay_sum(lday$Date, lday$runs, F$Date, h) / decay_sum(lday$Date, lday$n9, F$Date, h)
+
+# --- walk-forward negative binomial fits -------------------------------------------------------
+
+walk <- function(df, formula, seasons, H) {
+  blk <- as.Date(cut(df$Date, "week")); bl <- sort(unique(blk[df$season %in% seasons]))
+  mu <- th <- rep(NA_real_, nrow(df)); last <- NULL
+  for (j in seq_along(bl)) {
+    tr <- df[df$Date < bl[j], ]
+    tr$w_ <- 0.5^(as.numeric(bl[j] - tr$Date) / H)
+    m <- suppressWarnings(MASS::glm.nb(formula, data = tr, weights = w_))
+    i <- which(blk == bl[j] & df$season %in% seasons)
+    mu[i] <- stats::predict(m, df[i, ], type = "response"); th[i] <- m$theta; last <- m
+  }
+  list(mu = mu, th = th, coef = stats::coef(last), theta = last$theta)
+}
+ENV <- "temp_c + wind_out + wind_in + dome + ump_k + ump_bb"
+# H: fit-weight half-life (days); h: as-of league run level half-life (days), NA = not a predictor
+fit_models <- function(H, h, models = c("T1", "T2", "T3", "B")) {
+  F[, lenv := if (is.na(h)) 0 else log(lrpg(h) / 9)]
+  LV <- if (is.na(h)) "" else "+ lenv"
+  D <- as.data.frame(F); out <- list()
+  if ("T1" %in% models) out$T1 <- walk(D, stats::as.formula(paste("total ~ lxr +", ENV, LV, "+ offset(off)")), PRED, H)
+  if ("T3" %in% models) out$T3 <- walk(D, stats::as.formula(paste("total ~ lxr", LV, "+ offset(off)")), PRED, H)
+  if ("B" %in% models) out$B <- walk(D, total ~ 1 + offset(off), PRED, H)
+  if ("T2" %in% models) {
+    S <- rbind(transform(D, runs = hruns, lxr = log(xr_h), home = 1), transform(D, runs = vruns, lxr = log(xr_a), home = 0))
+    t2 <- walk(S, stats::as.formula(paste("runs ~ lxr + home +", ENV, LV, "+ offset(off)")), PRED, H)
+    n <- nrow(D)
+    out$T2 <- list(mh = t2$mu[1:n], ma = t2$mu[n + 1:n], th = t2$th[1:n], coef = t2$coef, theta = t2$theta)
+  }
+  out
+}
+
+# distribution of the total for model m on rows i
+cdf_t <- function(m, k, i) {
+  f <- fits[[m]]
+  if (m != "T2") return(stats::pnbinom(k, size = f$th[i], mu = f$mu[i]))
+  out <- 0
+  for (j in 0:max(k, 0)) out <- out + stats::dnbinom(j, size = f$th[i], mu = f$mh[i]) * stats::pnbinom(k - j, size = f$th[i], mu = f$ma[i])
+  out
+}
+pmf_t <- function(m, k, i) {
+  f <- fits[[m]]
+  if (m != "T2") return(stats::dnbinom(k, size = f$th[i], mu = f$mu[i]))
+  out <- 0
+  for (j in 0:max(k)) out <- out + stats::dnbinom(j, size = f$th[i], mu = f$mh[i]) * suppressWarnings(stats::dnbinom(k - j, size = f$th[i], mu = f$ma[i]))
+  out
+}
+mean_t <- function(m, i) if (m == "T2") fits$T2$mh[i] + fits$T2$ma[i] else fits[[m]]$mu[i]
+var_t <- function(m, i) { f <- fits[[m]]; if (m == "T2") f$mh[i] + f$mh[i]^2 / f$th[i] + f$ma[i] + f$ma[i]^2 / f$th[i] else f$mu[i] + f$mu[i]^2 / f$th[i] }
+# P(over | no push) at line L: P(T > L) / (P(T > L) + P(T < L))
+q_over <- function(m, L, i) { under <- cdf_t(m, ceiling(L) - 1, i); over <- 1 - cdf_t(m, floor(L), i); over / (over + under) }
+
+# --- tune mode: the run-environment knob on 2017-2020 outcomes only (no odds, nothing after 2020) ---
+
+if (mode == "tune") {
+  GRID <- data.frame(H = c(365, 180, 120, 90, 60, 30, 365, 365, 365, 365), h = c(rep(NA, 6), 15, 30, 60, 120))
+  setorder(F, Date, gid)
+  res <- rbindlist(lapply(seq_len(nrow(GRID)), function(g) {
+    fits <<- fit_models(GRID$H[g], GRID$h[g], c("T1", "T2"))
+    message("config ", g, " done")
+    ci <- which(F$season %in% PRED & !is.na(fits$T1$mu))
+    rbindlist(lapply(c(PRED, 0L), function(s) {
+      i <- if (s == 0) ci else ci[F$season[ci] == s]
+      data.table(config = g, H = GRID$H[g], h = GRID$h[g], season = if (s == 0) "pooled" else as.character(s), games = length(i),
+                 actual = mean(F$total[i]), mean_T2 = mean(mean_t("T2", i)),
+                 logscore_T1 = mean(log(pmf_t("T1", F$total[i], i))), logscore_T2 = mean(log(pmf_t("T2", F$total[i], i))),
+                 ls_T2_game = list(log(pmf_t("T2", F$total[i], i))), wk = list(as.Date(cut(F$Date[i], "week"))))
+    }))
+  }))
+  best <- res[season == "pooled"][order(-logscore_T2)][1]
+  # paired per-game gain of the chosen config over charter v1 (config 1), T2 log score, week-block bootstrap
+  dd <- best$ls_T2_game[[1]] - res[season == "pooled" & config == 1]$ls_T2_game[[1]]
+  wk <- best$wk[[1]]; by <- tapply(dd, wk, sum); nn <- tapply(dd, wk, length); set.seed(20261004)
+  bb <- replicate(2000, { k <- sample(length(by), replace = TRUE); sum(by[k]) / sum(nn[k]) })
+  fmt <- function(x, d = 4) formatC(as.numeric(x), format = "f", digits = d)
+  row <- function(x) paste0("| ", paste(x, collapse = " | "), " |")
+  po <- res[season == "pooled"]
+  tl <- c("# Totals study: run-environment tuning, 2017-2020", "",
+    sprintf("Generated %s by `Rscript research/r/mlb/totals_study.R tune`. Charter: TOTALS-PLAN.md it 3. features.rds md5 %s. No row after 2020 was read and no odds were read.", format(Sys.Date()), feat_md5), "",
+    "Walk-forward weekly fits on 2017-2020 as in validation. H = half-life in days of the fit weights (charter v1: 365). h = half-life in days of the as-of league runs per nine innings, entered as log(level / 9) in every candidate (NA = not used). Rule fixed before the run: highest pooled 2017-2020 T2 mean log score of the actual total wins.", "",
+    "## Pooled 2017-2020 (higher log score is better)", "",
+    row(c("config", "H", "h", "games", "logscore_T1", "logscore_T2")), paste0("|", strrep(" --- |", 6)),
+    vapply(seq_len(nrow(po)), function(k) row(c(po$config[k], po$H[k], po$h[k], po$games[k], fmt(po$logscore_T1[k]), fmt(po$logscore_T2[k]))), ""), "",
+    "## Mean predicted total (T2) minus actual, per season", "",
+    row(c("season", "actual", paste0("c", seq_len(nrow(GRID))))), paste0("|", strrep(" --- |", nrow(GRID) + 2)),
+    vapply(c(as.character(PRED), "pooled"), function(s) { z <- res[season == s][order(config)]
+      row(c(s, fmt(z$actual[1], 3), fmt(z$mean_T2 - z$actual, 3))) }, ""), "",
+    sprintf("**Chosen: config %d (H %s, h %s)**, pooled T2 log score %s vs charter v1 %s. Paired per-game gain (chosen minus v1), week-block bootstrap 95%%: %s [%s, %s] over %d games.",
+            best$config, best$H, best$h, fmt(best$logscore_T2), fmt(po[config == 1, logscore_T2]),
+            fmt(mean(dd), 5), fmt(stats::quantile(bb, 0.025), 5), fmt(stats::quantile(bb, 0.975), 5), length(dd)), "",
+    "The information used here was obtained free of charge from and is copyrighted by Retrosheet.")
+  writeLines(tl, out_md); message("wrote ", out_md); quit(save = "no")
+}
 
 # --- odds: one row per game at the main closing total --------------------------------------------
 
@@ -113,52 +217,9 @@ F <- merge(F, O[, .(oid, line, p_mkt, price_o, price_u, books, books_line, overr
 F[, excl := Date >= as.Date("2021-09-01") & Date <= as.Date("2021-12-31")]
 setorder(F, Date, gid)
 
-# --- walk-forward negative binomial fits -------------------------------------------------------
-
-walk <- function(df, formula, seasons) {
-  blk <- as.Date(cut(df$Date, "week")); bl <- sort(unique(blk[df$season %in% seasons]))
-  mu <- th <- rep(NA_real_, nrow(df)); last <- NULL
-  for (j in seq_along(bl)) {
-    tr <- df[df$Date < bl[j], ]
-    tr$w_ <- 0.5^(as.numeric(bl[j] - tr$Date) / 365)
-    m <- suppressWarnings(MASS::glm.nb(formula, data = tr, weights = w_))
-    i <- which(blk == bl[j] & df$season %in% seasons)
-    mu[i] <- stats::predict(m, df[i, ], type = "response"); th[i] <- m$theta; last <- m
-  }
-  list(mu = mu, th = th, coef = stats::coef(last), theta = last$theta)
-}
-ENV <- "temp_c + wind_out + wind_in + dome + ump_k + ump_bb"
-D <- as.data.frame(F)
-fits <- list(
-  T1 = walk(D, stats::as.formula(paste("total ~ lxr +", ENV, "+ offset(off)")), PRED),
-  T3 = walk(D, total ~ lxr + offset(off), PRED),
-  B  = walk(D, total ~ 1 + offset(off), PRED))
-S <- rbind(transform(D, runs = hruns, lxr = log(xr_h), home = 1), transform(D, runs = vruns, lxr = log(xr_a), home = 0))
-t2 <- walk(S, stats::as.formula(paste("runs ~ lxr + home +", ENV, "+ offset(off)")), PRED)
-n <- nrow(D)
-fits$T2 <- list(mh = t2$mu[1:n], ma = t2$mu[n + 1:n], th = t2$th[1:n], coef = t2$coef, theta = t2$theta)
+fits <- fit_models(FIT_H, LRPG_H)
 CANDS <- c("T1", "T2", "T3"); MODELS <- c(CANDS, "B")
 message("walk-forward fits done")
-
-# distribution of the total for model m on rows i
-cdf_t <- function(m, k, i) {
-  f <- fits[[m]]
-  if (m != "T2") return(stats::pnbinom(k, size = f$th[i], mu = f$mu[i]))
-  out <- 0
-  for (j in 0:max(k, 0)) out <- out + stats::dnbinom(j, size = f$th[i], mu = f$mh[i]) * stats::pnbinom(k - j, size = f$th[i], mu = f$ma[i])
-  out
-}
-pmf_t <- function(m, k, i) {
-  f <- fits[[m]]
-  if (m != "T2") return(stats::dnbinom(k, size = f$th[i], mu = f$mu[i]))
-  out <- 0
-  for (j in 0:max(k)) out <- out + stats::dnbinom(j, size = f$th[i], mu = f$mh[i]) * suppressWarnings(stats::dnbinom(k - j, size = f$th[i], mu = f$ma[i]))
-  out
-}
-mean_t <- function(m, i) if (m == "T2") fits$T2$mh[i] + fits$T2$ma[i] else fits[[m]]$mu[i]
-var_t <- function(m, i) { f <- fits[[m]]; if (m == "T2") f$mh[i] + f$mh[i]^2 / f$th[i] + f$ma[i] + f$ma[i]^2 / f$th[i] else f$mu[i] + f$mu[i]^2 / f$th[i] }
-# P(over | no push) at line L: P(T > L) / (P(T > L) + P(T < L))
-q_over <- function(m, L, i) { under <- cdf_t(m, ceiling(L) - 1, i); over <- 1 - cdf_t(m, floor(L), i); over / (over + under) }
 
 # --- scoring helpers ---------------------------------------------------------------------------
 
@@ -269,7 +330,9 @@ lines <- c(sprintf("# Totals study: %s", mode), "",
   sprintf("- Market rows scored: %d games, %d pushes (%.1f%%), %.1f%% of lines whole numbers; books per game %.1f, at the main line %.1f; median closing overround %.3f.",
           nrow(mk), sum(mk$push), 100 * mean(mk$push), 100 * mean(mk$line %% 1 == 0), mean(mk$books), mean(mk$books_line), stats::median(mk$overround)),
   sprintf("- Temperature missing or implausible outdoors, set to 72: %d games. Run values (2015-2016 team-games): intercept %s, %s.",
-          temp_missing, fmt(stats::coef(rv_fit)[1], 3), paste(sprintf("%s %s", names(rv), fmt(rv, 3)), collapse = ", ")), "",
+          temp_missing, fmt(stats::coef(rv_fit)[1], 3), paste(sprintf("%s %s", names(rv), fmt(rv, 3)), collapse = ", ")),
+  sprintf("- Run environment (it 3, chosen on 2017-2020 by `totals_study.R tune`, results/totals-tune.md): fit weights half-life %s days; as-of league runs per nine innings as a predictor, half-life %s days%s.",
+          FIT_H, LRPG_H, if (is.na(LRPG_H)) " (not used)" else ""), "",
   "## Calibration of total runs vs outcomes (no market)", "",
   sprintf("Walk-forward weekly, %s. Mean predicted total and log score of the actual total (higher is better).", paste(range(PRED), collapse = "-")), "",
   tab(cal), "",
