@@ -48,6 +48,8 @@ tm[is.na(rest), rest := 3][is.na(moved), moved := 0]
 F <- merge(F, tm[, .(gid, hometeam = team, rest_h = rest, moved_h = moved)], by = c("gid", "hometeam"))
 F <- merge(F, tm[, .(gid, visteam = team, rest_a = rest, moved_a = moved)], by = c("gid", "visteam"))
 F[, drest := rest_h - rest_a][, dmoved := moved_h - moved_a]
+ctx <- readRDS("data/mlb/matchup/context.rds")[, .(gid, dder)]      # team defensive efficiency gap (context_features.R)
+F <- merge(F, ctx, by = "gid", all.x = TRUE); F[is.na(dder), dder := 0]
 F[, y := as.integer(hruns > vruns)]
 F <- F[hruns != vruns]
 setorder(F, Date, gid)
@@ -68,6 +70,7 @@ FORMS <- list(
   M2_components   = y ~ d12 + d3 + dpen,
   M3_plus_team    = y ~ d12 + d3 + dpen + drd,
   M4_plus_rest    = y ~ d12 + d3 + dpen + drd + drest + dmoved,
+  M5_plus_defense = y ~ d12 + d3 + dpen + drd + dder,
   B_home          = y ~ 1,
   C_team_only     = y ~ drd)
 for (nm in names(FORMS)) F[[nm]] <- walk(F, FORMS[[nm]], PRED)
@@ -104,7 +107,8 @@ tab <- rbindlist(lapply(c(sort(unique(S$season)), 0L), function(s) {
   c(list(season = if (s == 0) "pooled" else as.character(s), games = nrow(x)),
     lapply(setNames(models, models), function(m) round(mean(ll(x[[m]], x$y)), 4)))
 }))
-best <- names(FORMS)[1:4][which.min(unlist(tab[season == "pooled", names(FORMS)[1:4], with = FALSE]))]
+cands <- grep("^M", names(FORMS), value = TRUE)
+best <- cands[which.min(unlist(tab[season == "pooled", cands, with = FALSE]))]
 # Ensemble with the recency model: logit-space blend, weight chosen on 2017-2019 only (both inputs
 # are walk-forward predictions), frozen for every later season.
 lgt <- function(p) stats::qlogis(pmin(pmax(p, 1e-6), 1 - 1e-6))
