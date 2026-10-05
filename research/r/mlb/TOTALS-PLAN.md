@@ -133,3 +133,30 @@ Scored once by `Rscript research/r/mlb/totals_study.R test` (refuses to overwrit
   Chosen tau 0.10. Data findings: odds start 2021-04-01, not 2021-03-20; Sept-Oct 2021 totals
   also look partly in-game (6-9% of lines moved 1.5+ runs from the open vs under 1% in other
   months, lower closing log loss), confirming the exclusion. Charter frozen for the test as is.
+- 2026-10-04, it 3: run-environment fix, tuned on 2017-2020 only. The it 2 calibration table
+  confirms the lag: T2 mean total minus actual was -0.06 (2017), +0.28 (2018), -0.35 (2019),
+  +0.12 (2020), -0.07 (2021), +0.40 (2022), each against the sign of that season's change in league
+  scoring, roughly half of the change missed. Charter v1 fits were already weighted
+  0.5^(age / 365), not equally, so the lag is a one-year half-life meeting offseason shifts (ball,
+  rules) that as-of data cannot see until games are played. Added `totals_study.R tune` (reads
+  nothing after 2020 and no odds) with a 10-config grid and rule fixed before the run: fit-weight
+  half-life H in {365, 180, 120, 90, 60, 30} days, or H 365 plus an as-of league runs per nine
+  scheduled innings predictor, log(level / 9), calendar half-life h in {15, 30, 60, 120} days
+  (`decay_sum`, games before the date only, Retrosheet 2015 onward), in T1, T2 and T3 (B
+  unchanged); highest pooled 2017-2020 T2 log score of the actual total wins. Shorter fit weights
+  remove the per-season bias (H 60: within 0.21 runs every season) but score worse because the
+  slopes get noisy (H 60 -2.8813, H 30 -2.8883, v1 -2.8791). Chosen: H 365, h 15
+  (`results/totals-tune.md`), -2.8789 vs -2.8791, paired gain +0.00025 [-0.00029, +0.00081]
+  (week-block bootstrap 95%, 8,168 games): within noise. Bias left 2018 +0.26, 2019 -0.21, 2020
+  +0.15; the league-level coefficient in the last fit is 0.33, so about a third of a level shift
+  carries. Frozen in the script as FIT_H 365, LRPG_H 15. Validation rerun (same features.rds md5
+  67b60417...): T2 still selected (0.6943 vs T1 0.6945); 2022 bias +0.40 to +0.31 runs, 2021
+  -0.07 to -0.10; over/under log loss 2021 0.6899 (was 0.6894), 2022 0.6978 (was 0.6983), pooled
+  0.6943 vs the no-vig close 0.6919, market minus model -0.0023 [-0.0055, +0.0009] (it 2: -0.0023
+  [-0.0059, +0.0013]). Blend gain +0.0018 [+0.0005, +0.0032], in-sample. Betting: ROI negative
+  for tau 0.01-0.03, flat at 0.04, positive from 0.05; tau 0.10 chosen again, 446 bets, +20.8
+  units, ROI +0.047 [-0.034, +0.129] week-block (2021 +0.116, 2022 +0.003), in-sample and
+  optimistic. 2021-2022 rule check: does not beat the close, adds information, not profitable.
+  Conclusion: the lag is mostly not forecastable as of the game from league scoring; the fix
+  narrows it without moving the market comparison. Charter re-frozen for the test with this
+  specification (the test reads FIT_H and LRPG_H from the script).
