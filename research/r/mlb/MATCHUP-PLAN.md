@@ -98,3 +98,31 @@ stale ones).
   3 to 10 times too hard; reliever BB about 2x. Retrosheet batted-ball coding changed in 2020, so
   the prior-three-season expected-outcome mix biases 2020-2022 pitcher x rates (league x-HR / HR
   0.58 in 2020). Any re-tune belongs on 2017-2022 validation; nothing here touches the test.
+- 2026-10-04, it 7, **exploratory** (after the test; nothing tuned on 2023-2025, every choice made by
+  the script on 2017-2022). An adversarial review found two gaps in the day-ahead test: the starter
+  was the actual one (Retrosheet's first pitcher; no archived pre-game probables exist locally), and
+  every input used results through the day before, though the open may be posted before those games
+  end. Two stricter builds test whether the open-line result survives:
+  `STARTER_MODE=rotation` guesses each starter from the team's starts known two days out (longest
+  rest among the last 6 games' starters with 4+ days of rest; unknown starts in between predicted in
+  order; previous-season starters by count as fallback; 6 games chosen on 2017-2022 match rate, 10
+  games kept picking pitchers who had left the rotation, 0.44). The guess equals the actual starter
+  0.669, 0.644, 0.639, 0.515, 0.595, 0.623 in 2017-2022 and 0.624, 0.661, 0.661 in 2023-2025, far
+  below announced probables, so this variant is a lower bound. `ASOF_LAG=1` moves every as-of query
+  back a day: hitter, pitcher and league rates, starter length, bullpen membership and availability,
+  the projected-lineup source game, and in `matchup_model.R` the run margin, defensive efficiency
+  (`der_gap()`, which reproduces `context.rds` exactly at lag 0) and the walk-forward fit window.
+  Park factors use prior seasons only and need no shift; the recency model feeds only the ensemble
+  column and is not lagged. Defaults reproduce `features-v2-dayahead.rds` exactly (identical).
+  Results (`results/matchup-model-explore-rot-test.md`, `-explore-rotlag-test.md`), best variant M5
+  in both, opening threshold 6 points:
+  rotation: trails the close by 0.0042 [0.0020, 0.0064]; at the open 955 bets, 0.73 points of
+  closing-line value [0.53, 0.94], ROI at the median open -1.4% [-9.7%, +5.9%].
+  rotation plus lag: trails the close by 0.0044 [0.0023, 0.0066]; at the open 975 bets, 0.81 points
+  [0.60, 1.02], ROI +0.4% [-7.1%, +7.9%].
+  Split of the frozen actual-starter day-ahead test bets: on 2023-2025 games where both starters
+  matched the rotation guess (44.6% of games), CLV 1.54 [1.03, 2.08] on 183 bets but ROI -10.7%; on
+  the rest, CLV 2.23 [1.84, 2.64] on 378 bets, ROI +12.3%. Reading: positive closing-line value
+  survives both stricter information sets, at about 0.7-0.8 points instead of 2.01, and survives
+  where the starter was knowable without announcements; the profit sits in games where
+  actual-starter knowledge could include late scratches, so there is no profit claim.

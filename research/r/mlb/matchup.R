@@ -84,10 +84,99 @@ shrunk_rates <- function(all, split, cfg, lg_all, lg_split, k_split) {
   r / rowSums(r)
 }
 
+#' Rotation guess for every team-game: the starter predicted from the starts known `known` days
+#' before the game's date (games dated d - known or earlier). Starts after that and before the game
+#' (the day before, doubleheader game 1) are unknown, so they are predicted in order with the same
+#' rule and count as made. Rule: among pitchers who started one of the team's last `pool` games this
+#' season, the one with the longest rest, if he has `min_rest` or more days of rest (days between
+#' starts, so 4 = every fifth day). Fallback: the team's previous-season starters by number of
+#' starts who have not started in the last `min_rest` days, then the longest-rested pool pitcher.
+#' pool = 6 was chosen by how often the guess equals the actual starter on 2017-2022 (match rate
+#' 0.626; 5 games 0.624, 7 games 0.569, 10 games 0.437: a long pool lets a pitcher who started once
+#' and left the rotation win on rest).
+#' `st` has one row per team-game: gid, team, Date, season, sp, sp_hand (the actual starters, read
+#' only once known). Returns gid, team, sp, sp_hand of the guess.
+rotation_starters <- function(st, known = 2, pool = 6, min_rest = 4) {
+  st <- data.table::as.data.table(st)[order(team, Date, gid)]
+  st[, {
+    d <- as.numeric(Date); n <- .N
+    prev <- lapply(split(seq_len(n), season), function(i) {         # each season's starters, most starts first
+      p <- sp[i]; cnt <- table(p); lst <- tapply(d[i], p, max)[names(cnt)]
+      p <- names(cnt)[order(-cnt, -lst)]
+      list(p = p, h = sp_hand[i][length(i) + 1L - match(p, rev(sp[i]))])
+    })
+    first <- match(season, season)                                   # first row of each row's season
+    gp <- gh <- rep(NA_character_, n)
+    pick <- function(hp, hh, hd, dd, s) {
+      m <- length(hp)
+      if (m) {
+        tk <- max(1L, m - pool + 1L):m
+        u <- tk[!duplicated(hp[tk], fromLast = TRUE)]                # each pool pitcher's latest start
+        rest <- dd - hd[u] - 1
+        ok <- rest >= min_rest
+        if (any(ok)) { j <- u[ok][which.max(rest[ok])]; return(c(hp[j], hh[j])) }
+      }
+      pv <- prev[[as.character(s - 1)]]
+      if (!is.null(pv)) {
+        j <- which(!pv$p %in% hp[dd - hd - 1 < min_rest])[1]
+        if (!is.na(j)) return(c(pv$p[j], pv$h[j]))
+      }
+      if (m) { j <- u[which.max(rest)]; return(c(hp[j], hh[j])) }
+      c(NA_character_, NA_character_)
+    }
+    for (i in seq_len(n)) {
+      k <- findInterval(d[i] - known, d)                             # last row dated d - known or earlier
+      f <- first[i]
+      idx <- if (k >= f) f:k else integer(0)
+      hp <- sp[idx]; hh <- sp_hand[idx]; hd <- d[idx]
+      lo <- max(k + 1L, f)
+      if (lo < i) for (j in lo:(i - 1L)) {                          # unknown starts before the game
+        g <- pick(hp, hh, hd, d[j], season[i])
+        hp <- c(hp, g[1]); hh <- c(hh, g[2]); hd <- c(hd, d[j])
+      }
+      g <- pick(hp, hh, hd, d[i], season[i]); gp[i] <- g[1]; gh[i] <- g[2]
+    }
+    .(gid = gid, sp = gp, sp_hand = gh)
+  }, by = team]
+}
+
 #' Odds-ratio combination of batter, pitcher and league rates for each outcome, renormalised.
 log5 <- function(b, p, l) {
   odds <- function(x) x / (1 - x)
   o <- odds(pmin(b, 0.999)) * odds(pmin(p, 0.999)) / odds(pmin(l, 0.999))
   m <- o / (1 + o)
   m / rowSums(m)
+}
+
+#' Team defensive efficiency gap, home minus away in points of ball-in-play out rate, as of `lag`
+#' days before each game's date (inputs dated date - lag - 1 or earlier). The definition of dder in
+#' context_features.R: outs on balls in play (homers out, reached-on-error not an out), park-
+#' neutralised by the site's three prior seasons, decayed h = 120, carry 0.75, shrunk to the
+#' trailing-year league rate with 3000 balls. lag = 0 reproduces context.rds.
+der_gap <- function(games, lag = 0) {
+  G <- data.table::rbindlist(lapply(2015:2025, retro_games))
+  BND <- as.data.frame(G[, .(start = min(Date), end = max(Date)), by = season])
+  P <- data.table::rbindlist(lapply(2015:2025, retro_pa))
+  BIPO <- c("single", "double", "triple", "out_ip")
+  der <- P[outcome %in% BIPO, .(bip = .N, outs = sum(outcome == "out_ip")), by = .(gid, Date, season, site, team = pitteam)]
+  rm(P)
+  roe <- data.table::rbindlist(lapply(2015:2025, function(s)
+    data.table::fread(retro_file(s, "plays"), select = c("gid", "gametype", "pa", "pitteam", "roe"), showProgress = FALSE)[
+      gametype == "regular" & pa == 1, .(roe = sum(roe)), by = .(gid, team = pitteam)]))
+  der <- merge(der, roe, by = c("gid", "team"), all.x = TRUE)
+  der[is.na(roe), roe := 0][, outs := outs - roe]
+  pf <- data.table::rbindlist(lapply(2015:2025, function(S) {
+    x <- der[season %in% (S - 3):(S - 1)]
+    if (!nrow(x)) return(NULL)
+    lg <- sum(x$outs) / sum(x$bip)
+    x[, .(season = S, pf = ((sum(outs) + 4000 * lg) / (sum(bip) + 4000)) / lg), by = site]
+  }))
+  der <- merge(der, pf, by = c("season", "site"), all.x = TRUE)
+  der[is.na(pf), pf := 1][, outs_n := outs / pf][, t := season_day(Date, season, BND)]
+  qd <- games$Date - lag
+  lg_der <- league_rate(der[, .(outs_n = sum(outs_n), bip = sum(bip)), by = Date], "outs_n", "bip", qd, 365)
+  de <- as.data.frame(der[, .(entity = team, Date, season, t, outs_n, bip)])
+  q <- function(team) data.frame(entity = team, Date = qd, season = games$season, t = season_day(qd, games$season, BND))
+  derx <- function(team) { s <- asof_decay(de, q(team), c("outs_n", "bip"), h = 120, c = 0.75); (s[, 1] + 3000 * lg_der) / (s[, 2] + 3000) }
+  data.table::data.table(gid = games$gid, dder = 100 * (derx(games$hometeam) - derx(games$visteam)))
 }
