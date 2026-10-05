@@ -82,3 +82,12 @@ stale ones).
   2017-2022. **Frozen for the test:** `features.rds` (v2, `PIT_SC=0`, `HIT_X=0`), best variant by
   2017-2022 log loss, ensemble weight from 2017-2019, closing and opening thresholds from 2021-2022;
   day-ahead features `features-v2-dayahead.rds` for the opening-line test.
+- 2026-10-04, it 6, **test scored once** (`results/matchup-model-v2-test.md`, `-v2-dayahead-test.md`).
+  Close: the model trails the no-vig close by 0.0036 [0.0016, 0.0054] log loss on 6,451 games;
+  betting at the median close at the frozen 5-point threshold lost 4.4% on 965 bets [-12.6%, +4.2%].
+  Open, day-ahead lineups (the honest pre-lineup test): 561 bets at the frozen 6-point threshold
+  gained 2.01 points of closing-line value [1.67, 2.35] and returned +4.7% at the median opening
+  price [-5.0%, +13.7%]; by season +3.2% (222), +12.1% (216), -5.4% (123, odds end 2025-08-16).
+  Verdicts under the fixed rules: does not match the close; not profitable (interval spans zero);
+  positive closing-line value at the open, the secondary skill test, passes. Everything after
+  this line is exploratory.
