@@ -71,3 +71,14 @@ stale ones).
   game against a same-hand starter), v3 features: bets at the open where the model disagrees by 4+
   points gain 0.94 points of closing-line value [0.78, 1.11] on 1,256 bets, but lose 0.1% at the
   median opening price; the edge is real and smaller than the vig. v2 day-ahead rerunning.
+- 2026-10-04, it 5: v2 plus defense (M5) is the best model: 0.6703 pooled, ensemble with E 0.6699.
+  Against the close it trails by 0.0021 [-0.0042, +0.0001], the first interval that includes zero,
+  and the 2021-2022 blend puts 0.17 weight on it next to the close. v2 day-ahead at the open: 1.05
+  points of closing-line value [0.88, 1.22] on 1,213 bets at a 4-point threshold, ROI at the median
+  open +0.7% (+1.6% on 764 bets at 5 points), not yet an interval claim.
+  Two test-mode flaws found and fixed before any test row: the best variant was picked on the test
+  seasons, and 2017-2022 were not predicted in test mode, so the ensemble weight and thresholds
+  could not be tuned. Test mode now predicts 2017-2025 walk-forward and makes every choice on
+  2017-2022. **Frozen for the test:** `features.rds` (v2, `PIT_SC=0`, `HIT_X=0`), best variant by
+  2017-2022 log loss, ensemble weight from 2017-2019, closing and opening thresholds from 2021-2022;
+  day-ahead features `features-v2-dayahead.rds` for the opening-line test.

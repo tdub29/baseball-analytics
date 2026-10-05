@@ -73,7 +73,10 @@ FORMS <- list(
   M5_plus_defense = y ~ d12 + d3 + dpen + drd + dder,
   B_home          = y ~ 1,
   C_team_only     = y ~ drd)
-for (nm in names(FORMS)) F[[nm]] <- walk(F, FORMS[[nm]], PRED)
+# Test mode also predicts 2017-2022 (walk-forward, identical to validation) so every choice below
+# is made on validation seasons and frozen before a test row is scored.
+WALK <- 2017:(if (mode == "test") 2025L else 2022L)
+for (nm in names(FORMS)) F[[nm]] <- walk(F, FORMS[[nm]], WALK)
 
 # --- join to StatsAPI games, the recency model and the market --------------------------------
 gl <- gamelog_sources("data/mlb/raw"); cs <- cached_sources("data/mlb/raw")
@@ -108,7 +111,8 @@ tab <- rbindlist(lapply(c(sort(unique(S$season)), 0L), function(s) {
     lapply(setNames(models, models), function(m) round(mean(ll(x[[m]], x$y)), 4)))
 }))
 cands <- grep("^M", names(FORMS), value = TRUE)
-best <- cands[which.min(unlist(tab[season == "pooled", cands, with = FALSE]))]
+V <- F[season %in% 2017:2022]; V <- V[complete.cases(V[, models, with = FALSE])]
+best <- cands[which.min(vapply(cands, function(m) round(mean(ll(V[[m]], V$y)), 4), 0))]   # chosen on 2017-2022 only
 # Ensemble with the recency model: logit-space blend, weight chosen on 2017-2019 only (both inputs
 # are walk-forward predictions), frozen for every later season.
 lgt <- function(p) stats::qlogis(pmin(pmax(p, 1e-6), 1 - 1e-6))
@@ -150,7 +154,7 @@ lines <- c(sprintf("# Matchup model: %s", mode), "",
   "## Log loss vs outcomes (lower is better)", "",
   paste0("| ", paste(names(tab), collapse = " | "), " |"), paste0("|", strrep(" --- |", ncol(tab))),
   apply(tab, 1, function(r) paste0("| ", paste(r, collapse = " | "), " |")), "",
-  sprintf("Best matchup variant on these seasons: %s.", best), "",
+  sprintf("Best matchup variant on 2017-2022 (validation): %s.", best), "",
   "## Against the no-vig closing line (games with odds)", "",
   sprintf("Ensemble weight on the matchup model (chosen on 2017-2019): %s.", ens_w), "",
   "| season | games | close | matchup | recency E | ensemble |", "| --- | --- | --- | --- | --- | --- |",
@@ -168,7 +172,7 @@ if (mode == "test" && length(tau)) {
              paste(tb[, .(roi = round(mean(profit), 3), bets = .N), by = season][, sprintf("%s: %s on %d", season, roi, bets)], collapse = "; "))
 }
 # --- opening line: day-ahead skill test (closing-line value of bets placed at the open) ------
-O <- F[season %in% PRED & !is.na(p_open) & !is.na(p_close) & !is.na(get(best))]
+O <- F[season %in% WALK & !is.na(p_open) & !is.na(p_close) & !is.na(get(best))]
 clv_bets <- function(x, tau) {
   eh <- x[[best]] - x$p_open; side <- ifelse(eh >= tau, "h", ifelse(-eh >= tau, "a", NA))
   b <- x[!is.na(side)]; side <- side[!is.na(side)]
