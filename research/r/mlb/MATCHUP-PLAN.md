@@ -91,3 +91,10 @@ stale ones).
   Verdicts under the fixed rules: does not match the close; not profitable (interval spans zero);
   positive closing-line value at the open, the secondary skill test, passes. Everything after
   this line is exploratory.
+- 2026-10-05, exploratory: stat reliability study (`results/reliability.md`, 2015-2022). Hitter K
+  stabilizes at about 45 PA, BB 110, HR 150 to 170; starter K about 75 BF, BB 215 to 240, HR 740 to
+  900, BABIP over 1,000 balls in play. `PIT_CFG` shrinks the pitchers' batted-ball expected outcomes
+  7 to 31 times too hard (1,300 to 3,000 vs 70 to 220); hitter singles, outs in play and triples
+  3 to 10 times too hard; reliever BB about 2x. Retrosheet batted-ball coding changed in 2020, so
+  the prior-three-season expected-outcome mix biases 2020-2022 pitcher x rates (league x-HR / HR
+  0.58 in 2020). Any re-tune belongs on 2017-2022 validation; nothing here touches the test.
