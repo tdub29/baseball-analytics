@@ -19,6 +19,9 @@ PRED <- if (mode == "test") 2023:2025 else 2017:2022
 MKT_VAL <- 2021:2022
 
 F <- readRDS(Sys.getenv("FEAT_IN", "data/mlb/matchup/features.rds"))
+# Features built with ASOF_LAG = 1 carry it as an attribute; the team inputs below (run margin,
+# defensive efficiency, the walk-forward fit) then stop two days before each game as well.
+LAG <- as.integer(Sys.getenv("ASOF_LAG", if (is.null(attr(F, "asof_lag"))) "0" else attr(F, "asof_lag")))
 G <- rbindlist(lapply(2015:2025, retro_games))
 
 # --- run values per outcome, fit on 2015-2016 team-games only -----------------------------
@@ -39,7 +42,7 @@ tm <- rbind(G[, .(team = hometeam, gid, Date, season, margin = hruns - vruns, si
             G[, .(team = visteam, gid, Date, season, margin = vruns - hruns, site)])
 bounds <- tm[, .(start = min(Date), end = max(Date)), by = season]
 tm[, t := season_day(Date, season, as.data.frame(bounds))][, n := 1]
-tq <- function(team) data.frame(entity = team, Date = F$Date, season = F$season, t = season_day(F$Date, F$season, as.data.frame(bounds)))
+tq <- function(team) data.frame(entity = team, Date = F$Date - LAG, season = F$season, t = season_day(F$Date - LAG, F$season, as.data.frame(bounds)))
 rdx <- function(team) { s <- asof_decay(transform(as.data.frame(tm), entity = team), tq(team), c("margin", "n"), h = 120, c = 0.75); s[, 1] / (s[, 2] + 5) }
 F[, drd := rdx(hometeam) - rdx(visteam)]
 setorder(tm, team, Date, gid)
@@ -49,6 +52,7 @@ F <- merge(F, tm[, .(gid, hometeam = team, rest_h = rest, moved_h = moved)], by 
 F <- merge(F, tm[, .(gid, visteam = team, rest_a = rest, moved_a = moved)], by = c("gid", "visteam"))
 F[, drest := rest_h - rest_a][, dmoved := moved_h - moved_a]
 ctx <- readRDS("data/mlb/matchup/context.rds")[, .(gid, dder)]      # team defensive efficiency gap (context_features.R)
+if (LAG > 0) ctx <- der_gap(F[, .(gid, Date, season, hometeam, visteam)], LAG)   # same definition, LAG days earlier
 F <- merge(F, ctx, by = "gid", all.x = TRUE); F[is.na(dder), dder := 0]
 F[, y := as.integer(hruns > vruns)]
 F <- F[hruns != vruns]
@@ -59,7 +63,7 @@ walk <- function(df, formula, seasons) {
   df$block <- as.Date(cut(df$Date, "week")); p <- rep(NA_real_, nrow(df))
   for (b in sort(unique(df$block[df$season %in% seasons]))) {
     i <- which(df$block == b & df$season %in% seasons)
-    m <- stats::glm(formula, stats::binomial, df[df$Date < b, ])
+    m <- stats::glm(formula, stats::binomial, df[df$Date < b - LAG, ])
     p[i] <- stats::predict(m, df[i, ], type = "response")
   }
   p

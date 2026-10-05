@@ -5,7 +5,8 @@
 #
 # Per side of each game: expected outcome counts against the starter (first and second time
 # through the order, then third and later), against the bullpen, and the starter's expected
-# batters faced. Every input is as of the start of the game's date.
+# batters faced. Every input is as of the start of the game's date (events through the day
+# before); ASOF_LAG = 1 moves every as-of query back one day, so inputs stop two days before.
 
 suppressPackageStartupMessages({ library(data.table) })
 SRC <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)[1]))
@@ -15,6 +16,9 @@ HIT_X <- as.numeric(Sys.getenv("HIT_X", "0"))     # weight on Statcast expected 
 PIT_SC <- Sys.getenv("PIT_SC", "0") == "1"        # Statcast exit velocity and launch angle for pitchers; off: lost the v3 ablation
 FEAT_OUT <- Sys.getenv("FEAT_OUT", "data/mlb/matchup/features.rds")
 LINEUP_MODE <- Sys.getenv("LINEUP_MODE", "posted")   # "projected": day-ahead, from the team's last game vs a same-hand starter
+STARTER_MODE <- Sys.getenv("STARTER_MODE", "actual") # "rotation": starter guessed from the team's starts two days out
+ASOF_LAG <- as.integer(Sys.getenv("ASOF_LAG", "0"))  # 1: every as-of input uses events through two days before the game
+stopifnot(STARTER_MODE %in% c("actual", "rotation"), ASOF_LAG %in% 0:1)
 K_SPLIT_BAT <- 600; K_SPLIT_PIT <- 600; TEAM_PA <- 38.3
 dir.create("data/mlb/matchup", showWarnings = FALSE, recursive = TRUE)
 
@@ -72,17 +76,36 @@ message("plate appearances: ", nrow(P))
 first <- P[order(gid, seq)]
 lineup <- first[, .SD[!duplicated(batter)][1:9], by = .(gid, batteam), .SDcols = c("batter", "bathand", "seq")]
 lineup[, slot := seq_len(.N), by = .(gid, batteam)]
-sp <- first[, .(sp = pitcher[1], sp_hand = pithand[1]), by = .(gid, pitteam)]
+sp <- first[, .(sp = pitcher[1], sp_hand = pithand[1]), by = .(gid, pitteam)]   # who actually started each past game
+# The starter each lineup faces (sp_tgt). STARTER_MODE "actual": the first pitcher in the Retrosheet
+# play-by-play, i.e. who really started; that is known for sure only at first pitch, and no archived
+# pre-game probables exist locally (cached StatsAPI probables were updated after the games).
+# "rotation": a guess from the team's starts known two days before the game (rotation_starters() in
+# matchup.R), whose rates, expected batters faced and times-through-the-order split replace the
+# actual starter's everywhere below. Past games' starters (sp) stay actual: they were known then.
+sp_tgt <- sp
+if (STARTER_MODE == "rotation") {
+  st <- merge(sp, G[, .(gid, Date, season)], by = "gid")
+  st[, team := sub("^ATH$", "OAK", pitteam)]            # one franchise code across 2024-2025
+  rot <- rotation_starters(st, known = 1 + max(1, ASOF_LAG))
+  sp_tgt <- merge(st[, .(gid, team, pitteam)], rot, by = c("gid", "team"))[, .(gid, pitteam, sp, sp_hand)]
+  hit <- merge(sp_tgt, st[, .(gid, pitteam, season, sp_act = sp)], by = c("gid", "pitteam"))
+  message("rotation guess equals the actual starter:\n",
+          paste(capture.output(print(hit[season >= 2016, .(team_games = .N, match = round(mean(sp == sp_act), 4)), by = season][order(season)])), collapse = "\n"))
+}
 if (LINEUP_MODE == "projected") {
-  # Day-ahead lineup: the nine the team used in its most recent earlier game against a starter of
-  # the same hand (any hand if none yet). The starter itself is taken as announced the day before.
+  # Day-ahead lineup: the nine the team used in its most recent game dated before the as-of date
+  # (game date minus ASOF_LAG) against a starter of the same hand as the one it faces (sp_tgt), or of
+  # any hand if none yet. Past games are matched on the hand of who actually started them.
   tg <- merge(unique(lineup[, .(gid, batteam)]), G[, .(gid, Date)], by = "gid")
   tg <- merge(tg, sp[, .(gid, pitteam, opp_hand = sp_hand)], by.x = c("gid"), by.y = c("gid"), allow.cartesian = TRUE)[pitteam != batteam]
+  if (STARTER_MODE == "actual") tg[, tgt_hand := opp_hand] else
+    tg <- merge(tg, sp_tgt[, .(gid, pitteam, tgt_hand = sp_hand)], by = c("gid", "pitteam"))
   setorder(tg, batteam, Date, gid)
   tg[, src := {
     out <- rep(NA_character_, .N)
     for (i in seq_len(.N)) {
-      prev <- which(Date < Date[i]); same <- prev[opp_hand[prev] == opp_hand[i]]
+      prev <- which(Date < Date[i] - ASOF_LAG); same <- prev[opp_hand[prev] == tgt_hand[i]]
       j <- if (length(same)) max(same) else if (length(prev)) max(prev) else NA
       if (!is.na(j)) out[i] <- gid[j]
     }
@@ -98,16 +121,20 @@ games[, t := season_day(Date, season, as.data.frame(bounds))]
 L <- merge(lineup, games[, .(gid, Date, season, t, site, hometeam, visteam)], by = "gid")
 L[, side := ifelse(batteam == hometeam, "home", "away")]
 L[, opp := ifelse(side == "home", visteam, hometeam)]
-L <- merge(L, sp, by.x = c("gid", "opp"), by.y = c("gid", "pitteam"))
+L <- merge(L, sp_tgt, by.x = c("gid", "opp"), by.y = c("gid", "pitteam"))
 L <- L[!is.na(batter)]
 message("lineup slots: ", nrow(L))
 
-q  <- function(entity) data.frame(entity = entity, Date = L$Date, season = L$season, t = L$t)
+# As-of query date and in-season day for every slot: asof_decay() and the bullpen window use events
+# dated qd - 1 or earlier. Park factors need no shift: they come from the three prior seasons.
+qd <- L$Date - ASOF_LAG
+qt <- if (ASOF_LAG == 0) L$t else season_day(qd, L$season, as.data.frame(bounds))
+q  <- function(entity) data.frame(entity = entity, Date = qd, season = L$season, t = qt)
 ev <- function(entity) { x <- as.data.frame(Phn[, c("Date", "season", "t", OUT8, "n"), with = FALSE]); x$entity <- entity; x }
 evp <- function(entity) { x <- as.data.frame(Pxn[, c("Date", "season", "t", OUT8, "n"), with = FALSE]); x$entity <- entity; x }
 
 # --- batter, pitcher and league rates for every slot vs the starter ------------------------
-lgq <- data.frame(Date = L$Date, season = L$season, t = L$t)
+lgq <- data.frame(Date = qd, season = L$season, t = qt)
 lg_all  <- league_rates(Pn, lgq)
 lg_hand <- function(h) league_rates(Pn, transform(lgq, lg_key = h), by = "pithand")
 lg_side <- function(b) league_rates(Pn, transform(lgq, lg_key = b), by = "bathand")
@@ -144,7 +171,7 @@ message("starter matchups done")
 starts <- merge(P[, .(bf = .N), by = .(gid, pitcher, Date, season, t)], sp[, .(gid, sp)],
                 by.x = c("gid", "pitcher"), by.y = c("gid", "sp"))
 starts[, n := 1]
-sq <- data.frame(entity = L$sp, Date = L$Date, season = L$season, t = L$t)
+sq <- data.frame(entity = L$sp, Date = qd, season = L$season, t = qt)
 st <- as.data.frame(starts)
 sb <- asof_decay(transform(st, entity = pitcher), sq, c("bf", "n"), h = 60, c = 0.5)
 lb <- asof_decay(transform(st, entity = "lg"), transform(sq, entity = "lg"), c("bf", "n"), h = 30, c = 1)
@@ -154,7 +181,7 @@ L[, exp_bf := (sb[, 1] + 3 * lb[, 1] / pmax(lb[, 2], 1e-9)) / (sb[, 2] + 3)]
 spk <- unique(sp[, .(gid, pitcher = sp)])[, starter := TRUE]
 rp <- merge(P, spk, by = c("gid", "pitcher"), all.x = TRUE)[is.na(starter)]
 rel <- rp[, .(bf = .N), by = .(pitteam, pitcher, pithand, Date)]
-keys <- unique(L[, .(team = opp, Date, season, t)])
+keys <- unique(data.table(team = L$opp, Date = qd, season = L$season, t = qt))   # members and availability as of qd
 mem <- rbindlist(lapply(split(keys, keys$team), function(k) {
   r <- rel[pitteam == k$team[1]]
   if (!nrow(r)) return(NULL)
@@ -187,7 +214,7 @@ penL <- agg(rel_vs("L")); penR <- agg(rel_vs("R"))
 hm <- mem[, .(mixL = sum(w * (hand == "L")) / pmax(sum(w), 1e-9)), by = .(team, Date)]
 message("bullpen rates done")
 
-pk <- paste(L$opp, L$Date)
+pk <- paste(L$opp, qd)
 iL <- match(pk, paste(penL$team, penL$Date)); iR <- match(pk, paste(penR$team, penR$Date))
 bsL <- L$bathand == "L"
 pen_vs <- as.matrix(penL[iL, OUT8, with = FALSE]) / penL$w[iL] * bsL + as.matrix(penR[iR, OUT8, with = FALSE]) / penR$w[iR] * !bsL
@@ -217,5 +244,7 @@ fd <- data.table(grp_id = names(grp), feat)      # not `key`: data.table() reads
 fd[, c("gid", "side") := tstrsplit(grp_id, " ")]
 wide <- dcast(fd, gid ~ side, value.var = setdiff(names(fd), c("grp_id", "gid", "side")))
 out <- merge(games, wide, by = "gid")
+if (ASOF_LAG > 0) setattr(out, "asof_lag", ASOF_LAG)             # matchup_model.R lags its own as-of inputs to match
+if (STARTER_MODE != "actual") setattr(out, "starter_mode", STARTER_MODE)
 saveRDS(out, FEAT_OUT)
 message("wrote ", FEAT_OUT, ": ", nrow(out), " games")
