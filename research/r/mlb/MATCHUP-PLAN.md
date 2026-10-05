@@ -62,3 +62,12 @@ stale ones).
   the same-hand effect; (2) pitchers were rated on actual hits and home runs; they are now rated
   on the league outcome mix of their batted-ball types (ground ball, fly, liner, popup) from the
   prior three seasons, the xFIP/SIERA principle. Hitters keep actual outcomes. Rebuilding.
+- 2026-10-04, it 3: v2 (both fixes) 0.6705 pooled, trails the close by 0.0026 [0.0003, 0.0046].
+  Context ablation (`results/context-ablation.md`): only team defensive efficiency helps (M5).
+- 2026-10-04, it 4: Statcast batted balls 2015-2025 (1,282,277 balls, 97.8% matched to Retrosheet).
+  Exit velocity and launch angle replacing the batted-ball type for pitchers made it worse (v3 M3
+  0.6709 vs 0.6705), and blending hitters' Statcast expected outcomes at 0.5 worse again (0.6711).
+  Both dropped (`PIT_SC=0`, `HIT_X=0` defaults). Day-ahead lineups (projected from each team's last
+  game against a same-hand starter), v3 features: bets at the open where the model disagrees by 4+
+  points gain 0.94 points of closing-line value [0.78, 1.11] on 1,256 bets, but lose 0.1% at the
+  median opening price; the edge is real and smaller than the vig. v2 day-ahead rerunning.
