@@ -143,18 +143,18 @@ All on 2017-2022 (2020 included only where the baseline has it).
   (2016-2022), no row after 2022, every candidate's last appearance is before the game date, rates
   complete and summing to one, and the simulated games, candidates and starters equal the inputs.
   Verdict under the rules fixed in the charter:
-  (1) **Win probability: no value over M5 or the ensemble.** M5 minus recalibrated
-  -0.00051 [-0.00140, 0.00038]; M5 minus stack -0.00026 [-0.00060, 0.00007]; against the ensemble
-  both intervals are below zero (-0.00093 [-0.00179, -0.00005], -0.00059 [-0.00122, -0.00001]).
+  (1) **Win probability: no detectable value over M5 or the ensemble.** M5 minus recalibrated
+  -0.00051 [-0.00140, 0.00038]; M5 minus stack -0.00026 [-0.00060, 0.00007]; ensemble minus
+  recalibrated -0.00093 [-0.00179, -0.00005], ensemble minus stack -0.00059 [-0.00122, -0.00001],
+  an upper bound that borders zero.
   The raw simulator is worse than M5 by 0.0030 (0.0028 at infinite N); logit(sim) correlates 0.947
   with logit(M5) and the last stack fit puts -0.03 on it, so the explicit bullpen, base-out state
-  and batting order carry no win information the expected-run gaps lack. Raw simulated
+  and batting order add no detectable win information to the expected-run gaps. Raw simulated
   probabilities are too compressed at the extremes (top decile 0.664 simulated, 0.697 observed);
   the recalibration fixes that.
-  (2) **Totals: does not beat T2 as simulated**, -0.0030 [-0.0091, 0.0033]. The charter does not
-  say whether the totals gate uses the raw or the split-half extrapolated score; the extrapolated
-  one is above zero, 0.0085 [0.0023, 0.0148]. I judge on the raw score, the distribution the
-  simulator actually produces. Post-hoc checks, added after seeing this and not changing the rule:
+  (2) **Totals: undetermined at N = 2000 (raw no, extrapolated yes).** As simulated -0.0030
+  [-0.0091, 0.0033]; the charter does not say whether the totals gate uses the raw or the
+  split-half extrapolated score, and the extrapolated one is above zero, 0.0085 [0.0023, 0.0148]. Post-hoc checks, added after seeing this and not changing the rule:
   the delta-method finite-N penalty is 0.0085 against a measured extrapolation of 0.0114, so the
   extrapolation likely overshoots by about 0.003, and the moment-matched negative binomial alone
   is worse than T2 (-0.0100 [-0.0131, -0.0070]), so any gain lives in the histogram shape. A
@@ -175,3 +175,13 @@ All on 2017-2022 (2020 included only where the baseline has it).
   baselines; it cannot turn a no into a yes. Leakage verdict: REVIEW REQUIRED only for lineups and
   starters, which are the actual ones as in the v2 build (known before first pitch, not before the
   date), so the comparison with M5 uses the same information.
+- 2026-10-06, it 3 review: an independent critic agent (leakage-audit, sports-predictive-modeling
+  and model-interpretation skills) recomputed every win-probability number exactly and found three
+  issues, all fixed. (a) `simulate.R` read byte-identical copies of `features.rds` and the
+  odds-bearing `predictions-v2-validation.csv` from `data/mlb/sim/`, which was not gitignored; it
+  now reads the `data/mlb/matchup/` originals, the copies are deleted and `data/mlb/sim/` is
+  ignored. (b) The totals verdict had been picked as "no" after both scores were seen; it now reads
+  "undetermined at N = 2000". The delta-method penalty (0.0085) added to the raw score gives about
+  +0.0055, so a larger-N run decides it. (c) "No value" became "no detectable value": with
+  game-date clusters the ensemble-minus-stack interval is [-0.00127, 0.00006], spanning zero, and
+  the 2019 gap is positive. The no-value verdict on win probability stands.
