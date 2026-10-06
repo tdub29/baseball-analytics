@@ -254,12 +254,12 @@ p4 <- ggplot(cum, aes(bets, cum)) +
   scale_colour_manual(values = c(m = MODEL, b = INK2)) + scale_fill_manual(values = c(m = MODEL, b = MUTED)) +
   scale_x_continuous(labels = label_comma()) + scale_y_continuous(labels = label_comma()) +
   facet_wrap(~panel, scales = "free") +
-  labs(title = sprintf("Bets at the open gained %s points of closing-line value each, about %.0f to %.0f times the naive baselines", f2(100 * S4$model$clv$est),
-                       round(S4$model$clv$est / S4$team$clv$est), round(S4$model$clv$est / S4$home$clv$est)),
+  labs(title = sprintf("Bets at the open gained %s points of closing-line value each as run; with the starter guessed, about 0.8", f2(100 * S4$model$clv$est)),
        subtitle = sprintf("Cumulative closing-line value (CLV) of bets at the opening line, 2023-2025, in time order: how far the no-vig line moved toward each side bet, summed in\nprobability points. Every panel uses the same points-per-bet scale, so steeper means more value per bet. Betting every home team also drifts upward (lines\ntend to move toward home sides), so that drift is the floor to beat. Model and team-margin bets: %d+ points off the no-vig open (frozen threshold).", round(100 * TAU)),
        x = "Bets placed (cumulative, weekly steps)", y = "Cumulative CLV, probability points",
        caption = cap("Band: bets placed times the 95% week-block bootstrap interval of mean CLV per bet (1,000 draws). Model figures reproduce results/matchup-model-v2-dayahead-test.md.",
-                     sprintf("At the model's observed mean and spread (SD %s points per bet, week design effect %s), about %d bets give a CLV interval expected to exclude zero.", f2(clv_sd), f2(clv_deff), clv_need),
+                     "As run this is an upper bound: the day-ahead model knows the actual starter. Exploratory builds that guess the starter from the rotation gain 0.73 [0.53, 0.94]",
+                     "and, with every input lagged a day, 0.81 [0.60, 1.02] points per bet (results/matchup-model-explore-rot-test.md, -explore-rotlag-test.md; MATCHUP-PLAN.md iteration 7).",
                      "The two baselines are computed by this script from the same predictions and odds and are exploratory (not in a committed result). Odds end 2025-08-16.", SRC_NOTE, RETRO)) +
   theme_report() + theme(panel.spacing = unit(2, "lines"), strip.text = element_text(face = "bold", hjust = 0, size = 10.5, lineheight = 1.05))
 save_png(p4, "fig4-clv-at-open.png", w = 12.5, h = 7.2)
@@ -371,9 +371,50 @@ p6 <- ggplot(tot, aes(x, est)) +
 save_png(p6, "fig6-totals.png", w = 11.5, h = 6.75)
 
 # =====================================================================================================
-# Figure 7. Stabilization curves, only if the reliability study has landed
+# Figure 7. The 2026 forward season, outcomes only: each matchup model against three baselines
+# (stabilization curves live in results/reliability-alpha-vs-n.png, drawn by reliability.R)
 # =====================================================================================================
-rel_md <- file.path(SRC, "results", "reliability.md")
-if (!file.exists(rel_md)) say("Fig 7: skipped, %s does not exist", rel_md) else say("Fig 7: %s exists; draw it from its committed data (not implemented in this run)", rel_md)
+fw <- function(f) fread(file.path("data/mlb/matchup", f))
+F2 <- fw("predictions-v2-forward.csv"); FD <- fw("predictions-v2-dayahead-forward.csv"); F4 <- fw("predictions-v4-forward.csv")
+FS <- fw("sabr-predictions-forward.csv")
+FP <- F2[, .(gid, y, B_home, C_team_only, v2 = get(unique(best)))]
+FP <- merge(FP, FD[, .(gid, v2_dayahead = get(unique(best)))], by = "gid")
+FP <- merge(FP, F4[, .(gid, v4 = get(unique(best)))], by = "gid")
+FP <- merge(FP, FS[, .(gid, y_s4 = y, S4 = S4_plus_team)], by = "gid")
+stopifnot(FP$y == FP$y_s4, nrow(FP) == 2429, !anyNA(FP))
+fpaired <- function(d, cl) { by <- tapply(d, cl, sum); n <- tapply(d, cl, length); set.seed(20261005)   # forward_score.R's draws
+  b <- replicate(1000, { i <- sample(length(by), replace = TRUE); sum(by[i]) / sum(n[i]) }); c(mean(d), quantile(b, c(.025, .975))) }
+FMOD <- c(v2 = "v2, posted lineups", v2_dayahead = "v2, projected lineups (actual starter)", v4 = "v4, tuned shrinkage")
+FBASE <- c(B_home = "vs home field only", C_team_only = "vs team run margin only", S4 = "vs SIERA, xFIP, wOBA,\nbullpen FIP and run margin (S4)")
+fcl <- substr(FP$gid, 1, 3)
+f7 <- rbindlist(lapply(names(FBASE), function(b) rbindlist(lapply(names(FMOD), function(m) {
+  g <- fpaired(ll(FP[[b]], FP$y) - ll(FP[[m]], FP$y), fcl); data.table(base = b, model = m, est = g[1], lo = g[2], hi = g[3]) }))))
+# committed: results/forward-test-2026.md (as run)
+stopifnot(near(unlist(f7[base == "B_home" & model == "v2", .(est, lo, hi)]), c(0.01028, 0.00475, 0.01643), 6e-6),
+          near(unlist(f7[base == "C_team_only" & model == "v2", .(est, lo, hi)]), c(0.00270, -0.00124, 0.00777), 6e-6),
+          near(unlist(f7[base == "S4" & model == "v2", .(est, lo, hi)]), c(0.00048, -0.00198, 0.00298), 6e-6),
+          near(mean(ll(FP$v2, FP$y)), 0.6813, 6e-5))
+for (i in seq_len(nrow(f7))) say("Fig 7 %s %s: %+.5f [%+.5f, %+.5f]", f7$model[i], f7$base[i], f7$est[i], f7$lo[i], f7$hi[i])
+f7[, base_f := factor(FBASE[base], levels = FBASE)][, model_f := factor(FMOD[model], levels = rev(FMOD))]
+f7[, col := fifelse(lo > 0, MODEL, BASE)]
+f7lev <- sapply(c("v2", "B_home", "C_team_only", "S4"), function(m) mean(ll(FP[[m]], FP$y)))
+p7 <- ggplot(f7, aes(y = model_f)) +
+  geom_vline(xintercept = 0, colour = INK2, linewidth = 0.5) +
+  geom_errorbar(aes(xmin = lo, xmax = hi, colour = col), width = 0, linewidth = 1.1, orientation = "y") +
+  geom_point(aes(x = est, colour = col), size = 3.2) +
+  geom_text(aes(x = hi, label = sprintf("%+.4f", est)), hjust = -0.25, size = 3.4, colour = INK2) +
+  scale_colour_identity() +
+  scale_x_continuous(labels = function(x) sprintf("%+.3f", x), expand = expansion(mult = c(0.05, 0.18))) +
+  facet_wrap(~base_f, ncol = 1) +
+  labs(title = "2026, unseen by every model: better than home field, no detectable edge over run margin or S4",
+       subtitle = sprintf(cap("Log loss saved per game by each frozen matchup model; right of zero = the model was better. 2,429 games, scored once.",
+                              "Levels: v2 %s, home field %s, team run margin %s, S4 %s. One season is underpowered for edges this small.",
+                              "No licensed 2026 odds, so no market comparison."),
+                          f4(f7lev[["v2"]]), f4(f7lev[["B_home"]]), f4(f7lev[["C_team_only"]]), f4(f7lev[["S4"]])),
+       x = "Baseline log loss minus model log loss, per game (95% interval, 30 home-team clusters)", y = NULL,
+       caption = cap("Pre-registered in FORWARD-PLAN.md; as-run results in results/forward-test-2026.md. Blue: interval excludes zero.",
+                     "2026 games and plate appearances: MLB StatsAPI, copyright MLB Advanced Media, L.P., used for private research.", RETRO)) +
+  theme_report() + theme(panel.grid.major.y = element_blank(), strip.text = element_text(face = "bold", hjust = 0, size = 11.5, lineheight = 1.05))
+save_png(p7, "fig7-forward-2026.png", w = 11.5, h = 7.6)
 
 writeLines(summary_lines)
