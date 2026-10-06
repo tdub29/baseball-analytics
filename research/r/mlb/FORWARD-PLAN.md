@@ -63,3 +63,8 @@ reported, and both the as-run and corrected numbers are published.
   original date; v2 and v4 use the posted lineup, which is the actual first nine, so their
   decision time is first pitch (v2 day-ahead uses projected lineups); 6 games at a venue with no
   Retrosheet park id (StatsAPI venue 5355) get a park factor of 1.
+- 2026-10-06: scored once at commit 6d2503c (`results/forward-test-2026.md`, as run), hashes
+  matched. On 2,429 games every matchup model beats home field only (v2 by 0.0103 [0.0048, 0.0164])
+  and none is detectably better than team run margin only or S4 (v2 vs S4 +0.0005 [-0.0020,
+  +0.0030]). v4 vs v2 is -0.00003 [-0.00018, +0.00012], so v2 stays the default. B_home's
+  calibration slope (-40) is not meaningful: its predictions span 0.5319 to 0.5329.
