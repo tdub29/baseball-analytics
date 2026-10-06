@@ -145,3 +145,11 @@ stale ones).
   `M_BAT_V4 = 8`, `M_REL_BB_V4 = 1`): pooled 2017-2022 +0.00002 [-0.00022, +0.00025], 2021-2022
   +0.00016 [-0.00015, +0.00046], both selection-biased. Tuned k alone had the cleaner record; SWITCH
   rides on a lenient rule. v4 enters the 2026 forward test only (`results/matchup-model-v4-validation.md`).
+- 2026-10-06, it 8 **amendment** (before any 2026 row was scored): independent review found SWITCH's
+  2021-2022 validation file (2026-10-05 11:02) predates the keep rule above, so its admission on the
+  point estimate was post hoc; the rule's interval arm is also empty (an interval above zero implies a
+  point estimate above zero). **v4 = tuned k only** (`K_SET=v4`, `SWITCH=0`). Checks
+  (`results/matchup-model-v4-checks.md`): tuned k's 2021-2022 gain is all 2021 (2022 +0.00001
+  [-0.00015, +0.00017]) and its interval spans zero under a two-way home and away team-season
+  bootstrap (+0.00013 [-0.00009, +0.00037]); ECE 2021-2022 (10 equal-count bins) 0.0118 vs v2 0.0136.
+  Future keep rules must say whether the frozen combination itself has to pass.
