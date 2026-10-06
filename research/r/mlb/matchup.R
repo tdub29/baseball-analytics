@@ -172,20 +172,23 @@ log5 <- function(b, p, l) {
 #' days before each game's date (inputs dated date - lag - 1 or earlier). The definition of dder in
 #' context_features.R: outs on balls in play (homers out, reached-on-error not an out), park-
 #' neutralised by the site's three prior seasons, decayed h = 120, carry 0.75, shrunk to the
-#' trailing-year league rate with 3000 balls. lag = 0 reproduces context.rds.
-der_gap <- function(games, lag = 0) {
-  G <- data.table::rbindlist(lapply(2015:2025, retro_games))
+#' trailing-year league rate with 3000 balls. lag = 0 reproduces context.rds. forward = TRUE adds the
+#' 2026 StatsAPI season (statsapi_pa.R must be sourced), with its field_error events as reached on error.
+der_gap <- function(games, lag = 0, forward = FALSE) {
+  G <- data.table::rbindlist(c(lapply(2015:2025, retro_games), if (forward) list(statsapi_games(2026))))
   BND <- as.data.frame(G[, .(start = min(Date), end = max(Date)), by = season])
   P <- data.table::rbindlist(lapply(2015:2025, retro_pa))
+  if (forward) { P26 <- statsapi_pa(2026, raw = TRUE); P <- rbind(P, P26[, names(P), with = FALSE]) }
   BIPO <- c("single", "double", "triple", "out_ip")
   der <- P[outcome %in% BIPO, .(bip = .N, outs = sum(outcome == "out_ip")), by = .(gid, Date, season, site, team = pitteam)]
   rm(P)
   roe <- data.table::rbindlist(lapply(2015:2025, function(s)
     data.table::fread(retro_file(s, "plays"), select = c("gid", "gametype", "pa", "pitteam", "roe"), showProgress = FALSE)[
       gametype == "regular" & pa == 1, .(roe = sum(roe)), by = .(gid, team = pitteam)]))
+  if (forward) roe <- rbind(roe, P26[, .(roe = sum(event == "field_error")), by = .(gid, team = pitteam)])
   der <- merge(der, roe, by = c("gid", "team"), all.x = TRUE)
   der[is.na(roe), roe := 0][, outs := outs - roe]
-  pf <- data.table::rbindlist(lapply(2015:2025, function(S) {
+  pf <- data.table::rbindlist(lapply(2015:(if (forward) 2026 else 2025), function(S) {
     x <- der[season %in% (S - 3):(S - 1)]
     if (!nrow(x)) return(NULL)
     lg <- sum(x$outs) / sum(x$bip)

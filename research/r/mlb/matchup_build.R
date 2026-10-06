@@ -2,7 +2,10 @@
 # Build per-game matchup features for 2016-2025 from Retrosheet plate appearances.
 #
 #   Rscript research/r/mlb/matchup_build.R            # writes data/mlb/matchup/features.rds
+#   FORWARD=1 FEAT_OUT=data/mlb/matchup/features-forward.rds Rscript research/r/mlb/matchup_build.R
 #
+# FORWARD=1 (FORWARD-PLAN.md) adds the 2026 season from MLB StatsAPI (statsapi_pa.R, parity-checked
+# on 2025) after Retrosheet 2015-2025, so 2026 games get features; every input stays as of the game.
 # Per side of each game: expected outcome counts against the starter (first and second time
 # through the order, then third and later), against the bullpen, and the starter's expected
 # batters faced. Every input is as of the start of the game's date (events through the day
@@ -21,12 +24,18 @@ ASOF_LAG <- as.integer(Sys.getenv("ASOF_LAG", "0"))  # 1: every as-of input uses
 stopifnot(STARTER_MODE %in% c("actual", "rotation"), ASOF_LAG %in% 0:1)
 SWITCH <- Sys.getenv("SWITCH", "0") == "1"         # 1: switch hitters bat opposite each pitcher's hand (v2 counts them as right-handed)
 BB_REGIME <- Sys.getenv("BB_REGIME", "0") == "1"   # 1: batted-ball expected-outcome mix within one Retrosheet coding regime
+FORWARD <- Sys.getenv("FORWARD", "0") == "1"      # 1: add 2026 from StatsAPI; needs its own FEAT_OUT
+if (FORWARD && FEAT_OUT == "data/mlb/matchup/features.rds") stop("FORWARD=1 needs its own FEAT_OUT: features.rds is the frozen v2 file")
 K_GRID <- Sys.getenv("K_GRID", "")                 # CSV of k_cfg() multipliers (id, m_pit, m_bat, m_rel_bb): one extra features file per row
 K_SPLIT_BAT <- 600; K_SPLIT_PIT <- 600; TEAM_PA <- 38.3
 dir.create("data/mlb/matchup", showWarnings = FALSE, recursive = TRUE)
 
 P <- rbindlist(lapply(2015:2025, retro_pa))
 G <- rbindlist(lapply(2015:2025, retro_games))
+if (FORWARD) {                                     # same columns and coding as retro_pa() and retro_games()
+  for (f in c("gamelogs.R", "statsapi_pa.R")) source(file.path(SRC, f))   # gamelogs.R: retry()
+  P <- rbind(P, statsapi_pa(2026)); G <- rbind(G, statsapi_games(2026))
+}
 bounds <- P[, .(start = min(Date), end = max(Date)), by = season]
 P[, t := season_day(Date, season, as.data.frame(bounds))]
 P <- outcome_matrix(P)

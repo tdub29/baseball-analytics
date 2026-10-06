@@ -4,19 +4,25 @@
 #
 #   Rscript research/r/mlb/matchup_model.R validation    # 2017-2022 outcomes, 2021-2022 vs market
 #   Rscript research/r/mlb/matchup_model.R test          # 2023-2025, scored once
+#   FEAT_IN=data/mlb/matchup/features-forward.rds OUT_TAG=-v2 Rscript research/r/mlb/matchup_model.R forward
 #
+# forward (FORWARD-PLAN.md): features built with FORWARD=1; the walk-forward runs through 2026 and
+# the 2026 predictions are written with the best variant, chosen on 2017-2022 exactly as above.
+# Nothing is scored: forward_score.R does that once. CHECK_PRED names an earlier predictions file
+# (validation or test) whose rows the forward run must reproduce.
 # The information used here was obtained free of charge from and is copyrighted by Retrosheet.
 
 suppressPackageStartupMessages({ library(data.table) })
 SRC <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)[1]))
 if (is.na(SRC) || SRC == "") SRC <- "research/r/mlb"
 for (f in c("ingest.R", "gamelogs.R", "windows.R", "retro.R", "matchup.R")) source(file.path(SRC, f))
-mode <- commandArgs(TRUE)[1]; stopifnot(mode %in% c("validation", "test"))
+mode <- commandArgs(TRUE)[1]; stopifnot(mode %in% c("validation", "test", "forward"))
 TAG <- Sys.getenv("OUT_TAG", "")                       # e.g. "-dayahead" for projected-lineup features
 RECAL <- Sys.getenv("RECAL", "0") == "1"               # 1: recalibrate the best variant on its 2017-2020 walk-forward predictions
 out_md <- file.path(SRC, "results", sprintf("matchup-model%s-%s.md", TAG, mode))
 if (mode == "test" && file.exists(out_md) && !"--force" %in% commandArgs(TRUE)) stop(out_md, " exists: scored once.")
-PRED <- if (mode == "test") 2023:2025 else 2017:2022
+PRED <- if (mode == "test") 2023:2025 else if (mode == "forward") 2026L else 2017:2022
+if (mode == "forward") source(file.path(SRC, "statsapi_pa.R"))
 MKT_VAL <- 2021:2022
 
 F <- readRDS(Sys.getenv("FEAT_IN", "data/mlb/matchup/features.rds"))
@@ -24,6 +30,8 @@ F <- readRDS(Sys.getenv("FEAT_IN", "data/mlb/matchup/features.rds"))
 # defensive efficiency, the walk-forward fit) then stop two days before each game as well.
 LAG <- as.integer(Sys.getenv("ASOF_LAG", if (is.null(attr(F, "asof_lag"))) "0" else attr(F, "asof_lag")))
 G <- rbindlist(lapply(2015:2025, retro_games))
+if (mode == "forward") { G26 <- statsapi_games(2026, raw = TRUE); G <- rbind(G, G26[, names(G), with = FALSE]) }
+stopifnot(all(F$gid %in% G$gid))
 
 # --- run values per outcome, fit on 2015-2016 team-games only -----------------------------
 rv_fit <- {
@@ -54,6 +62,11 @@ F <- merge(F, tm[, .(gid, visteam = team, rest_a = rest, moved_a = moved)], by =
 F[, drest := rest_h - rest_a][, dmoved := moved_h - moved_a]
 ctx <- readRDS("data/mlb/matchup/context.rds")[, .(gid, dder)]      # team defensive efficiency gap (context_features.R)
 if (LAG > 0) ctx <- der_gap(F[, .(gid, Date, season, hometeam, visteam)], LAG)   # same definition, LAG days earlier
+if (mode == "forward") {                                           # context.rds stops at 2025
+  cf <- der_gap(F[, .(gid, Date, season, hometeam, visteam)], LAG, forward = TRUE)
+  if (LAG == 0) { j <- merge(ctx, cf, by = "gid"); stopifnot(nrow(j) == nrow(ctx), isTRUE(all.equal(j$dder.x, j$dder.y))) }
+  ctx <- cf
+}
 F <- merge(F, ctx, by = "gid", all.x = TRUE); F[is.na(dder), dder := 0]
 F[, y := as.integer(hruns > vruns)]
 F <- F[hruns != vruns]
@@ -80,7 +93,7 @@ FORMS <- list(
   C_team_only     = y ~ drd)
 # Test mode also predicts 2017-2022 (walk-forward, identical to validation) so every choice below
 # is made on validation seasons and frozen before a test row is scored.
-WALK <- 2017:(if (mode == "test") 2025L else 2022L)
+WALK <- 2017:(if (mode == "forward") 2026L else if (mode == "test") 2025L else 2022L)
 for (nm in names(FORMS)) F[[nm]] <- walk(F, FORMS[[nm]], WALK)
 
 # --- join to StatsAPI games, the recency model and the market --------------------------------
@@ -98,6 +111,7 @@ cand <- merge(merge(cand, hmap[, .(hometeam, hid = home_id)], by = "hometeam"), 
 cand <- cand[home_id == hid & away_id == aid]
 cand <- cand[!duplicated(gid) & !duplicated(game_pk)]
 F <- merge(F, cand[, .(gid, game_pk)], by = "gid", all.x = TRUE)
+if (mode == "forward") F[season == 2026, game_pk := G26$game_pk[match(gid, G26$gid)]]
 rec <- rbind(fread(file.path(SRC, "results", "recency", "model-predictions-validation.csv")),
              fread(file.path(SRC, "results", "recency", "model-predictions-test.csv")), fill = TRUE)
 F <- merge(F, rec[, .(game_pk, E_recency = E, C_incumbent = C)], by = "game_pk", all.x = TRUE)
@@ -109,7 +123,7 @@ F <- merge(F, mk[, .(game_pk, p_close, p_open, med_home, med_away, med_home_open
 ll <- function(p, y) -(y * log(p) + (1 - y) * log(1 - p))
 S <- F[season %in% PRED]
 models <- c(names(FORMS), "E_recency", "C_incumbent")
-tab <- rbindlist(lapply(c(sort(unique(S$season)), 0L), function(s) {
+if (mode != "forward") tab <- rbindlist(lapply(c(sort(unique(S$season)), 0L), function(s) {
   x <- if (s == 0) S else S[season == s]
   x <- x[complete.cases(x[, models, with = FALSE])]
   c(list(season = if (s == 0) "pooled" else as.character(s), games = nrow(x)),
@@ -131,6 +145,28 @@ ens_src <- F[season %in% 2017:2019 & !is.na(E_recency) & !is.na(get(best))]
 wgrid <- seq(0, 1, 0.05)
 ens_w <- wgrid[which.min(vapply(wgrid, function(w) mean(ll(stats::plogis(w * lgt(ens_src[[best]]) + (1 - w) * lgt(ens_src$E_recency)), ens_src$y)), 0))]
 F[, ENS := stats::plogis(ens_w * lgt(get(best)) + (1 - ens_w) * lgt(E_recency))]
+if (mode == "forward") {                                           # predictions only; forward_score.R scores them once
+  out <- F[season == 2026, c("gid", "game_pk", "Date", "season", "y", names(FORMS)), with = FALSE][, best := best]
+  stopifnot(nrow(out) > 0, !anyNA(out[[best]]))
+  chk <- "none requested"
+  if (nzchar(Sys.getenv("CHECK_PRED"))) {
+    old <- fread(Sys.getenv("CHECK_PRED")); fm <- intersect(names(FORMS), names(old))
+    j <- merge(old[, c("gid", fm), with = FALSE], F[, c("gid", fm), with = FALSE], by = "gid")
+    stopifnot(nrow(j) == nrow(old), length(fm) == length(FORMS))
+    eq <- vapply(fm, function(m) isTRUE(all.equal(j[[paste0(m, ".x")]], j[[paste0(m, ".y")]])), TRUE)
+    if (!all(eq)) stop("forward run does not reproduce ", Sys.getenv("CHECK_PRED"), ": ", paste(fm[!eq], collapse = ", "))
+    chk <- sprintf("reproduces all %d rows of `%s` on every variant", nrow(j), basename(Sys.getenv("CHECK_PRED")))
+  }
+  fwrite(out, sprintf("data/mlb/matchup/predictions%s-forward.csv", TAG))
+  writeLines(c(sprintf("# Matchup model%s: 2026 forward predictions", TAG), "",
+    sprintf("Generated %s from `%s`. Predictions for %d 2026 games (%s to %s); nothing scored here (FORWARD-PLAN.md, `forward_score.R`).",
+            format(Sys.Date()), Sys.getenv("FEAT_IN", "data/mlb/matchup/features.rds"), nrow(out), min(out$Date), max(out$Date)),
+    sprintf("Best variant, chosen on 2017-2022 validation as in every earlier run: %s.%s", best, if (RECAL) " RECAL=1." else ""),
+    sprintf("Walk-forward weekly refits through 2026. Earlier predictions check: %s.", chk), "",
+    "The information used here was obtained free of charge from and is copyrighted by Retrosheet.",
+    "2026 games and plate appearances: MLB StatsAPI, copyright MLB Advanced Media, L.P., used for private research."), out_md)
+  message("wrote ", out_md); quit(save = "no")
+}
 S <- F[season %in% PRED]
 models <- c(models, "ENS")
 tab <- rbindlist(lapply(c(sort(unique(S$season)), 0L), function(s) {
