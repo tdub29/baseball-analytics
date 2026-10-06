@@ -75,8 +75,9 @@ reported, and both the as-run and corrected numbers are published.
   day-ahead reproduce all 7,289 rows of their 2023-2025 test predictions; v4 reproduces its 13,045
   validation rows for 2017-2022 (it has no 2023-2025 predictions); S4's forward path writes 2026
   predictions without a reproduction check, and S4 had no 2023-2025 predictions. Disclosures added
-  to REPORT.md: the "no detectable difference" rows are underpowered (about 15% power for the
-  earlier edges; 80%-power detectable edges about 0.0036 vs S4 and 0.0063 vs team run margin); a
+  to REPORT.md: the "no detectable difference" rows are underpowered (about 14% to 16% power for the
+  earlier edges, corrected from "about 15%" by `review_checks.R`, which also puts the team run margin
+  standard error at 0.0022 and March at 40% of the projected-lineup edge; 80%-power detectable edges about 0.0036 vs S4 and 0.0063 vs team run margin); a
   Holm adjustment over the ten comparisons keeps only the home-field wins; a t(29) correction
   widens intervals about 4% and flips nothing; v2 day-ahead vs team run margin clears zero under a
   game or week resample but not under the pre-registered home-team resample, which decides. The
