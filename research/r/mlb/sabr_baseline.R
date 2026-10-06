@@ -7,15 +7,22 @@
 # validation predictions.
 #
 #   Rscript research/r/mlb/sabr_baseline.R          # writes results/sabr-baseline.md
+#   FORWARD=1 Rscript research/r/mlb/sabr_baseline.R  # 2026 forward test: predictions only
 #
 # Reads Retrosheet 2015-2022 only: the 2023-2025 test seasons were scored once and are not touched.
+# FORWARD=1 (FORWARD-PLAN.md) adds Retrosheet 2023-2025 and the StatsAPI 2026 season (statsapi_pa.R),
+# walks 2026 only with the same recipe, writes data/mlb/matchup/sabr-predictions-forward.csv and stops
+# before any scoring; forward_score.R scores it.
 # The information used here was obtained free of charge from and is copyrighted by Retrosheet.
 
 suppressPackageStartupMessages({ library(data.table) })
 SRC <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)[1]))
 if (is.na(SRC) || SRC == "") SRC <- "research/r/mlb"
 for (f in c("windows.R", "retro.R")) source(file.path(SRC, f))
-SEASONS <- 2015:2022; WALK <- 2017:2022
+FWD <- Sys.getenv("FORWARD") == "1"
+SEASONS <- if (FWD) 2015:2026 else 2015:2022; WALK <- if (FWD) 2026L else 2017:2022
+RS <- SEASONS[SEASONS <= 2025]                       # Retrosheet seasons; 2026 comes from StatsAPI
+if (FWD) for (f in c("gamelogs.R", "statsapi_pa.R")) source(file.path(SRC, f))
 out_md <- file.path(SRC, "results", "sabr-baseline.md")
 
 # Pitcher components per batter faced: half-life (in-season days) and season carry from the model's
@@ -31,12 +38,17 @@ K_BAT <- 300        # PA of league-average batting added to every hitter and tea
 K_SPLIT_BAT <- 600; K_SPLIT_PIT <- 600   # handedness splits, as matchup_build.R
 
 # --- plate appearances, with the sacrifice flags retro_pa() drops ---------------------------
-P <- rbindlist(lapply(SEASONS, retro_pa))
-sac <- rbindlist(lapply(SEASONS, function(s) {
+P <- rbindlist(lapply(RS, retro_pa))
+sac <- rbindlist(lapply(RS, function(s) {
   x <- fread(retro_file(s, "plays"), select = c("gid", "gametype", "pa", "walk", "iw", "sh", "sf"), showProgress = FALSE)
   x[gametype == "regular" & pa == 1 & !(walk == 1 & iw == 1), .(seq = seq_len(.N), sh, sf), by = gid]   # retro_pa()'s rows, same order
 }))
 n0 <- nrow(P); P <- merge(P, sac, by = c("gid", "seq")); stopifnot(nrow(P) == n0)
+if (FWD) {   # StatsAPI event types carry the sacrifice flags
+  P26 <- statsapi_pa(2026, raw = TRUE)
+  P26[, `:=`(sh = as.integer(event %in% c("sac_bunt", "sac_bunt_double_play")), sf = as.integer(event %in% c("sac_fly", "sac_fly_double_play")))]
+  P <- rbind(P, P26[, names(P), with = FALSE])
+}
 P[!pithand %in% c("L", "R"), pithand := "R"]
 P[!bathand %in% c("L", "R", "B"), bathand := "R"]
 # Retrosheet codes switch hitters "B" on nearly every PA; they bat from the side opposite the pitcher.
@@ -48,14 +60,15 @@ P[, wn := woba_num(list(hits = h, doubles = double, triples = triple, homeRuns =
 P[, wd := woba_den(list(atBats = ab, baseOnBalls = ubb, intentionalWalks = 0, sacFlies = sf, hitByPitch = hbp))]
 bounds <- as.data.frame(P[, .(start = min(Date), end = max(Date)), by = season])
 P[, t := season_day(Date, season, bounds)]
-G <- rbindlist(lapply(SEASONS, retro_games))
+G <- rbindlist(c(lapply(RS, retro_games), if (FWD) list(statsapi_games(2026))))
 G[, t := season_day(Date, season, bounds)]
 
 # --- pitcher-games: PA components from the play-by-play, outs and earned runs from the box lines --
 PC <- c("n", "k", "ubb", "hbp", "hr", "gb", "fb", "pu"); PCO <- c(PC, "outs", "er")
-pit <- rbindlist(lapply(SEASONS, function(s)
+pit <- rbindlist(c(lapply(RS, function(s)
   fread(retro_file(s, "pitching"), select = c("gid", "id", "gametype", "stattype", "p_ipouts", "p_er"), showProgress = FALSE)[
-    gametype == "regular" & stattype == "value", .(gid, pitcher = id, outs = p_ipouts, er = p_er)]))
+    gametype == "regular" & stattype == "value", .(gid, pitcher = id, outs = p_ipouts, er = p_er)]),
+  if (FWD) list(statsapi_pitching(2026))))          # box lines; 2025 parity: outs and ER identical on all 20,868
 first <- P[order(gid, seq)]
 sp <- first[, .(sp = pitcher[1], sp_hand = pithand[1]), by = .(gid, pitteam)]       # who actually started
 pg <- P[, lapply(.SD, sum), by = .(gid, Date, season, t, pitcher, team = pitteam), .SDcols = PC]
@@ -214,6 +227,11 @@ SM <- names(FORMS)
 for (nm in SM) F[[nm]] <- walk(F, FORMS[[nm]], WALK)
 F$C_chk <- walk(F, y ~ drd, WALK)          # the matchup model's team-only model, to check drd and the loop
 coefs <- lapply(FORMS, function(f) round(stats::coef(stats::glm(f, stats::binomial, F[season <= 2022])), 3))
+if (FWD) {
+  fwrite(F[season %in% WALK, c("gid", "Date", "season", "y", SM), with = FALSE], "data/mlb/matchup/sabr-predictions-forward.csv")
+  print(coefs); message("wrote data/mlb/matchup/sabr-predictions-forward.csv, ", F[season %in% WALK, .N], " games; not scored here")
+  quit(save = "no")
+}
 fwrite(F[season %in% WALK, c("gid", "Date", "season", "y", SM), with = FALSE], "data/mlb/matchup/sabr-predictions-validation.csv")
 
 # --- score next to the matchup model's saved validation predictions -----------------------------
