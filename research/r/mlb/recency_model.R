@@ -3,6 +3,7 @@
 #
 #   Rscript research/r/mlb/recency_model.R validation        # 2017-2019, from 2015-2019 data
 #   Rscript research/r/mlb/recency_model.R test              # 2021-2025, scored once
+#   Rscript research/r/mlb/recency_model.R forward           # + 2026, exploratory, csv only
 #
 # Windows come from results/recency/picks-validation.csv and grid-validation.csv, frozen before
 # any test row is loaded. One row per game, home side; weekly walk-forward logistic refits.
@@ -14,10 +15,14 @@ for (f in c("ingest.R", "gamelogs.R", "windows.R", "recency_data.R")) source(fil
 RES <- file.path(SRC, "results", "recency")
 
 mode <- commandArgs(TRUE)[1]
-stopifnot(mode %in% c("validation", "test"))
-PRED  <- if (mode == "test") 2021:2025 else 2017:2019
-LOAD  <- if (mode == "test") 2015:2025 else 2015:2019
-out_md <- file.path(SRC, "results", sprintf("recency-model-%s.md", mode))
+stopifnot(mode %in% c("validation", "test", "forward"))
+# forward: exploratory, post hoc 2026 predictions from the frozen spec (2021-2025 rerun alongside as
+# the reproduction check); writes the csv only, never a scored md. RECENCY_OUT (unset by default)
+# sends the csv and md to another directory so a rerun cannot overwrite committed results.
+PRED  <- switch(mode, test = 2021:2025, forward = 2021:2026, 2017:2019)
+LOAD  <- switch(mode, test = 2015:2025, forward = 2015:2026, 2015:2019)
+OUT   <- Sys.getenv("RECENCY_OUT")
+out_md <- file.path(if (nzchar(OUT)) OUT else file.path(SRC, "results"), sprintf("recency-model-%s.md", mode))
 if (mode == "test" && file.exists(out_md) && !"--force" %in% commandArgs(TRUE))
   stop(out_md, " exists: the test is scored once. --force only if 2021-2025 are to become validation.")
 
@@ -197,10 +202,12 @@ P$E0 <- walk(transform(E0, Date = E$Date, season = E$season), y ~ lineup + start
 P$E  <- walk(E, y ~ lineup + starter + bullpen + fatigue1 + fatigue3 + rd)
 P <- P[P$season %in% PRED, ]
 
-dir.create(RES, showWarnings = FALSE, recursive = TRUE)
-utils::write.csv(P, file.path(RES, sprintf("model-predictions-%s.csv", mode)), row.names = FALSE)
+csv_dir <- if (nzchar(OUT)) OUT else RES
+dir.create(csv_dir, showWarnings = FALSE, recursive = TRUE)
+utils::write.csv(P, file.path(csv_dir, sprintf("model-predictions-%s.csv", mode)), row.names = FALSE)
 message("Elo pick: K ", eg$K, ", carry ", eg$carry)
 message("wrote predictions for ", nrow(P), " games")
+if (mode == "forward") quit(save = "no")   # exploratory: no scoring, no verdict
 
 # --- score ------------------------------------------------------------------------------------
 

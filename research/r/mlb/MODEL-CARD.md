@@ -136,12 +136,14 @@ Season intervals are computed by `figures.R`; pooled values are the committed on
 |---|---|
 | Log loss, M5 v2 | 0.6813 (home field 0.6916, team run margin 0.6840, S4 0.6818) |
 | Saved vs home field | +0.0103 [+0.0048, +0.0164] |
-| Saved vs team run margin | +0.0027 [-0.0012, +0.0078] (underpowered: about 15% power for the 2023-2025 edge) |
+| Saved vs team run margin | +0.0027 [-0.0012, +0.0078] (underpowered: about 16% power for the 2023-2025 edge) |
 | Saved vs S4 | +0.0005 [-0.0020, +0.0030] (underpowered likewise) |
 | v4 vs v2 (positive = v4 better) | -0.00003 [-0.00018, +0.00012]: v2 stays the default |
 | Calibration slope | 0.933 (point estimate; an interval of [0.705, 1.151] from the post-scoring review is not in a committed result) |
 
-E and the ensemble were not in the 2026 plan, so 2026 does not compare M5 with them.
+E and the ensemble were not in the 2026 plan, so 2026 does not compare M5 with them. A post hoc,
+exploratory scoring with the frozen spec finds them indistinguishable from M5 (log loss 0.6820 and
+0.6811 against 0.6813; `results/forward-2026-recency-explore.md`); it settles no trigger.
 
 - **Validation, 2017-2022:** M5 0.6703 on 12,142 games; close minus M5 -0.0021 [-0.0042,
   +0.0001] on 4,130 games with odds. These seasons were used for selection, so they flatter it.
@@ -178,7 +180,7 @@ E and the ensemble were not in the 2026 plan, so 2026 does not compare M5 with t
 | Trigger | Minimum evidence | Action |
 |---|---|---|
 | Forward test with announced starters and timestamped lines: mean CLV at the 6-point threshold does not beat the always-home baseline (week-block 95% interval) | 200 bets minimum (200 to 1,000 may be needed to beat the home-drift baseline at the stricter-build effect of about 0.8 points) | Retire the opening-line skill claim |
-| M5 fails to beat E's log loss in the next held-out season | One full season | Retire M5 as a standalone forecast; use the ensemble or E. Unchecked: E was not scored in 2026, so this carries to 2027 |
+| M5 fails to beat E's log loss in the next held-out season | One full season | Retire M5 as a standalone forecast; use the ensemble or E. Unchecked: E was not in the 2026 plan (post hoc it is level with M5), so this carries to 2027 |
 | Calibration slope interval excludes 1 | One season, 2,000+ games | Recalibrate, new version, new card. 2026: point estimate 0.933; review interval [0.705, 1.151], not in a committed result; not triggered |
 | Retrosheet or StatsAPI schema change breaks a feature family (lineups, batted-ball types, hands) | Any failed build or join | Mark non-reproducible; rebuild and revalidate before scoring |
 | Rule or measurement change on the scale of 2023 (pitch clock, shift ban) | Announcement | Revalidate on post-change data before trusting new predictions |

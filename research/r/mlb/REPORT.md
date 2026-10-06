@@ -10,7 +10,7 @@ zero, and about ten seasons of bets would be needed before it could.
 A second holdout, the 2026 season, was scored once on outcomes only. The model beat home field by
 0.0103 per game [0.0048, 0.0164], but it was not detectably better than team run margin alone or
 than a conventional model built from SIERA, xFIP, wOBA, bullpen FIP and run margin. One season is
-too short to see edges that small (about 15% power for the edges measured earlier), so this is a
+too short to see edges that small (about 14% to 16% power for the edges measured earlier), so this is a
 weak test, not evidence of a tie. No licensed 2026 odds were available, so 2026 says nothing about
 the market.
 
@@ -390,13 +390,13 @@ run margin only or S4; and v4 against v2 (positive = v4 better) is -0.00003 [-0.
 v2 stays the default.
 The projected-lineup variant has the best point estimate, but it was not a pre-registered
 contender for the default; an exploratory check from the independent review, not in a committed
-result, puts its edge over v2 at 0.0007 (standard error 0.0005), most of it from March. Only the lineup is projected: the starter is still the actual one.
+result, puts its edge over v2 at 0.0007 (standard error 0.0005), 40% of it from the 76 March games (3% of the season; `review_checks.R`). Only the lineup is projected: the starter is still the actual one.
 
 **How much these intervals can say.** The "not detectably better" rows are underpowered, not
-ties. The cluster standard errors are 0.0013 against S4 and 0.0023 against team run margin, so the
+ties. The cluster standard errors are 0.0013 against S4 and 0.0022 against team run margin, so the
 smallest edges this season could detect with 80% power are about 0.0036 and 0.0063. The edges
 measured earlier (0.0011 over S4 on 2017-2022, 0.0021 over team run margin on 2023-2025) had about
-a 15% chance of showing up, and the 2026 estimates agree with them. v4 against v2 is different: its
+a 14% and 16% chance of showing up (`results/review-checks-2026.md`), and the 2026 estimates agree with them. v4 against v2 is different: its
 interval is narrow enough to call a real tie. Three checks from the independent post-scoring
 review, none of them in a committed result, change no verdict. With a Holm adjustment across all ten comparisons, the three home-field
 wins stay significant (adjusted p at most 0.006) and nothing else comes close. A t correction for
@@ -409,7 +409,11 @@ meaningful because its predictions span only 0.5319 to 0.5329. Source:
 independent post-scoring review logged in `FORWARD-PLAN.md`.
 
 The recency model E and the ensemble, the best two forecasts on 2023-2025, were not in the 2026
-plan, so 2026 does not test them.
+plan, so 2026 does not test them. Scored afterwards as an exploratory, post hoc check with the frozen
+spec and weight (`results/forward-2026-recency-explore.md`), the three are indistinguishable on the
+2,429 games: log loss M5 0.6813, E 0.6820, ensemble 0.6811; M5 minus E +0.00076 [-0.00186,
++0.00326] and ensemble minus M5 +0.00013 [-0.00101, +0.00131] (positive = first model better,
+home-team bootstrap). It decides nothing: the MODEL-CARD trigger stays unchecked and carries to 2027.
 
 ### 10. How much data each rate needs, and what the model does with it
 
