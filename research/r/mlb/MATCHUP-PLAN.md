@@ -126,3 +126,22 @@ stale ones).
   survives both stricter information sets, at about 0.7-0.8 points instead of 2.01, and survives
   where the starter was knowable without announcements; the profit sits in games where
   actual-starter knowledge could include late scratches, so there is no profit claim.
+- 2026-10-06, it 8 (v4), **keep rule written before any ablation was run**: each v4 component
+  (`SWITCH=1`, `BB_REGIME=1`, tuned `K_SET=v4`, `RECAL=1`, and their combination) is scored by
+  `matchup_model.R` in validation mode against v2 with `matchup_compare.R` (paired home-team-season
+  cluster bootstrap, 1,000 draws). A component is kept only if it helps on 2021-2022: the paired
+  interval of v2 minus component log loss lies above zero, or its point estimate is above zero.
+  Pooled 2017-2022 is reported but does not decide. The k multipliers are chosen on 2017-2019 only
+  (`matchup_tune.R`); `RECAL` is fit on 2017-2020, so only its 2021-2022 number is honest. If no
+  component passes, v4 = v2. The 2023-2025 test is spent and is not read.
+- 2026-10-06, it 8 (v4), **exploratory** result (2017-2022 only; 2023-2025 not read). Defaults
+  reproduce `features.rds` exactly (identical). Shrink k tuned on 2017-2019 (`matchup_tune.R`): every
+  multiplier 0.5 to 4 of the reliability-study k lost to v2, and log loss fell as k grew; an extended
+  grid peaked at 8 / 8 (0.67028 vs v2 0.67033), about v2's own scale, so the reliability study's
+  "far too hard" does not carry over to game prediction. Ablation vs v2 on 2021-2022 under the rule
+  above: tuned k +0.00013 [+0.00002, +0.00027] kept; `SWITCH` +0.00003 [-0.00023, +0.00031] kept on
+  the point estimate; `BB_REGIME` -0.00026 [-0.00042, -0.00008] dropped; `RECAL` -0.000001 dropped
+  (v2 ECE 0.0067 on 2021-2022 already). Frozen v4 = `SWITCH=1 K_SET=v4` (`M_PIT_V4 = 8`,
+  `M_BAT_V4 = 8`, `M_REL_BB_V4 = 1`): pooled 2017-2022 +0.00002 [-0.00022, +0.00025], 2021-2022
+  +0.00016 [-0.00015, +0.00046], both selection-biased. Tuned k alone had the cleaner record; SWITCH
+  rides on a lenient rule. v4 enters the 2026 forward test only (`results/matchup-model-v4-validation.md`).

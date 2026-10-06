@@ -13,6 +13,7 @@ if (is.na(SRC) || SRC == "") SRC <- "research/r/mlb"
 for (f in c("ingest.R", "gamelogs.R", "windows.R", "retro.R", "matchup.R")) source(file.path(SRC, f))
 mode <- commandArgs(TRUE)[1]; stopifnot(mode %in% c("validation", "test"))
 TAG <- Sys.getenv("OUT_TAG", "")                       # e.g. "-dayahead" for projected-lineup features
+RECAL <- Sys.getenv("RECAL", "0") == "1"               # 1: recalibrate the best variant on its 2017-2020 walk-forward predictions
 out_md <- file.path(SRC, "results", sprintf("matchup-model%s-%s.md", TAG, mode))
 if (mode == "test" && file.exists(out_md) && !"--force" %in% commandArgs(TRUE)) stop(out_md, " exists: scored once.")
 PRED <- if (mode == "test") 2023:2025 else 2017:2022
@@ -120,6 +121,12 @@ best <- cands[which.min(vapply(cands, function(m) round(mean(ll(V[[m]], V$y)), 4
 # Ensemble with the recency model: logit-space blend, weight chosen on 2017-2019 only (both inputs
 # are walk-forward predictions), frozen for every later season.
 lgt <- function(p) stats::qlogis(pmin(pmax(p, 1e-6), 1 - 1e-6))
+recal <- NULL
+if (RECAL) {   # logit p' = a + b logit p, fit on the 2017-2020 walk-forward predictions, frozen for every season
+  rc <- F[season %in% 2017:2020 & !is.na(get(best))]
+  recal <- stats::coef(stats::glm(y ~ x, stats::binomial, data.frame(y = rc$y, x = lgt(rc[[best]]))))
+  F[, (best) := stats::plogis(recal[1] + recal[2] * lgt(get(best)))]
+}
 ens_src <- F[season %in% 2017:2019 & !is.na(E_recency) & !is.na(get(best))]
 wgrid <- seq(0, 1, 0.05)
 ens_w <- wgrid[which.min(vapply(wgrid, function(w) mean(ll(stats::plogis(w * lgt(ens_src[[best]]) + (1 - w) * lgt(ens_src$E_recency)), ens_src$y)), 0))]
@@ -159,6 +166,8 @@ lines <- c(sprintf("# Matchup model: %s", mode), "",
   paste0("| ", paste(names(tab), collapse = " | "), " |"), paste0("|", strrep(" --- |", ncol(tab))),
   apply(tab, 1, function(r) paste0("| ", paste(r, collapse = " | "), " |")), "",
   sprintf("Best matchup variant on 2017-2022 (validation): %s.", best), "",
+  if (RECAL) c(sprintf("RECAL=1: %s recalibrated as logit p' = %s + %s logit p, fit on its 2017-2020 walk-forward predictions (in sample there).",
+                       best, fmt(recal[1], 3), fmt(recal[2], 3)), ""),
   "## Against the no-vig closing line (games with odds)", "",
   sprintf("Ensemble weight on the matchup model (chosen on 2017-2019): %s.", ens_w), "",
   "| season | games | close | matchup | recency E | ensemble |", "| --- | --- | --- | --- | --- | --- |",
