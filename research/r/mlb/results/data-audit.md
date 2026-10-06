@@ -1,6 +1,6 @@
 # Data audit: MLB research pipeline
 
-Generated 2026-10-05 by `Rscript research/r/mlb/data_audit.R` from the local raw cache (no network). Source descriptions, terms and known gaps: [DATA.md](../DATA.md). Aggregates only: no odds row or per-game price appears here.
+Generated 2026-10-06 by `Rscript research/r/mlb/data_audit.R` from the local raw cache (no network). Source descriptions, terms and known gaps: [DATA.md](../DATA.md). Aggregates only: no odds row or per-game price appears here.
 
 Method (McGilvray assessment baseline): each check has a population, a pass rule and a reason. Reconciliation pairs records one to one, exact first, then each looser rule on what is left, so every record lands in exactly one category.
 
@@ -8,7 +8,7 @@ Method (McGilvray assessment baseline): each check has a population, a pass rule
 
 - Retrosheet vs StatsAPI: 25155 of 25191 Retrosheet regular-season games (99.86%) match a StatsAPI game on date, both teams and final score; 0 score disagreements, 0 date disagreements, 36 home/away swaps, 0 Retrosheet-only and 2 StatsAPI-only games.
 - Statcast to Retrosheet balls in play: 99.54% of Retrosheet balls in play matched (range 96.02% to 100.00% by season); 98.70% usable with exit velocity and launch angle.
-- Odds to StatsAPI games: 11017 of 11326 final regular-season odds games matched (97.27%; the file also holds 1791 spring, All-Star and postseason rows); 95.24% of StatsAPI games between 2021-04-01 and 2025-08-16 have a matched odds row; 394 matched games fall in the excluded window. 0 StatsAPI games matched by two odds rows.
+- Odds to StatsAPI games: 11296 of 11326 final regular-season odds games matched (99.74%; the file also holds 1791 spring, All-Star and postseason rows); 97.65% of StatsAPI games between 2021-04-01 and 2025-08-16 have a matched odds row; 423 matched games fall in the excluded window. 0 StatsAPI games matched by two odds rows.
 - Duplicate keys: 15 source keys checked, 2 with duplicates (table 5). The Statcast cache matches the weekly CSVs.
 
 ## Prioritized findings
@@ -17,7 +17,7 @@ Ranked by how much each could move a committed result. Severity is a judgement o
 
 1. **High: switch hitters entered as right-handed (matchup model, totals).** 11.89% of Retrosheet PAs carry batter hand B; `matchup_build.R` maps them to R, so platoon splits, the platoon prior and park factors by batter hand treat a switch hitter as right-handed even against right-handed pitchers. Reaches `features.rds`, the frozen matchup v2 test and the totals study. Fix: side = opposite of the pitcher's hand for B (table 6).
 2. **Medium: Retrosheet batted-ball types change definition in 2020 (matchup model, totals).** Pitchers are rated on the outcome mix of their batted-ball types over the prior three seasons, so 2020-2022 balls get mixes fit partly on the pre-2020 definition (table 3). Touches validation seasons 2021-2022 directly and the 2023-2025 test through decayed history.
-3. **Medium: odds team names that never match (market study, matchup market tests).** 2021: "Cleveland Guardians" (154 rows); 2025: "Athletics Athletics" (131 rows). Those games are silently missing from `market-joined.csv`, so the 2021 market validation and the 2025 test season each lose one club. `totals_study.R` maps names by majority vote and keeps them (table 4).
+3. **Resolved 2026-10-06: odds team names that never matched.** 2021 "Cleveland Guardians" and 2025 "Athletics Athletics" are now mapped in `market_study.R` and here; every regular-season odds name matches a StatsAPI team (table 4). Corrected market results: `market-study-joinfix.md` and the `*-joinfix-test.md` files.
 4. **Low to medium: StatsAPI player logs miss pitchers absent from the cached rosters (recency model E and everything built on it).** Up to 1.96% of pitcher batters faced missing in a season; 212 starts by 16 such pitchers across 2015-2025 (table 6).
 5. **Low: 36 games with home and away swapped between Retrosheet and StatsAPI** (relocated series, mostly 2020; table 2). The Retrosheet-to-StatsAPI join in `matchup_model.R` drops them, so they carry no recency or market row. The 2018 tiebreakers are StatsAPI-only.
 6. **Low: Statcast gaps (7 Retrosheet dates without Statcast rows).** Statcast feeds only the dropped v3 ablations, not a frozen model.
@@ -169,28 +169,25 @@ Joined as `market_study.R` does: odds file date, both team names (normalised, "O
 
 | season | odds entries | not final or no score | odds final games | outside regular season | matched | ambiguous | date off by one | score differs | name not in StatsAPI | no game that day | in excluded window | StatsAPI games in odds range | regular-season odds matched | StatsAPI games covered |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2021 | 2388 | 0 | 2388 | 38 | 2189 | 0 | 6 | 1 | 154 | 0 | 394 | 2429 | 93.15% | 90.12% |
+| 2021 | 2388 | 0 | 2388 | 38 | 2343 | 0 | 6 | 1 | 0 | 0 | 423 | 2429 | 99.70% | 96.46% |
 | 2022 | 2671 | 2 | 2669 | 308 | 2360 | 0 | 1 | 0 | 0 | 0 | 0 | 2430 | 99.96% | 97.12% |
 | 2023 | 2888 | 0 | 2888 | 499 | 2381 | 1 | 6 | 0 | 0 | 1 | 0 | 2430 | 99.67% | 97.98% |
 | 2024 | 2894 | 1 | 2893 | 495 | 2394 | 0 | 2 | 1 | 0 | 1 | 0 | 2429 | 99.83% | 98.56% |
-| 2025 | 2280 | 1 | 2279 | 451 | 1693 | 0 | 3 | 1 | 131 | 0 | 0 | 1850 | 92.61% | 91.51% |
+| 2025 | 2280 | 1 | 2279 | 451 | 1818 | 0 | 3 | 1 | 0 | 6 | 0 | 1850 | 99.45% | 98.27% |
 
 Regular-season odds names that never match a StatsAPI team name that season (rows, home or away). Each one drops that team's games from the moneyline join:
 
-| season | odds name | rows |
-| --- | --- | --- |
-| 2021 | Cleveland Guardians | 154 |
-| 2025 | Athletics Athletics | 131 |
+none
 
 StatsAPI games inside the odds date range with no matched odds row (the excluded window counts as matched here), and the teams most affected:
 
 | season | games without odds | teams most affected (games) |
 | --- | --- | --- |
-| 2021 | 240 | Cleveland Indians (162), Chicago White Sox (26), Minnesota Twins (25) |
+| 2021 | 86 | New York Mets (18), Washington Nationals (13), Chicago White Sox (10) |
 | 2022 | 70 | Cleveland Guardians (11), New York Mets (10), Detroit Tigers (8) |
 | 2023 | 49 | New York Mets (11), Detroit Tigers (8), Washington Nationals (7) |
 | 2024 | 35 | St. Louis Cardinals (7), Minnesota Twins (5), Chicago White Sox (5) |
-| 2025 | 157 | Athletics (125), Cleveland Guardians (12), Baltimore Orioles (11) |
+| 2025 | 32 | St. Louis Cardinals (6), Cleveland Guardians (6), Cincinnati Reds (6) |
 
 Sportsbooks named in the moneyline and totals entries: bet_rivers_ny, bet365, betmgm, caesars, draftkings, fanduel.
 
@@ -200,13 +197,13 @@ Line-move sanity per month (matched games, no ties): share of games whose consen
 
 | month | games | moved 15+ points from open | closing log loss | flag |
 | --- | --- | --- | --- | --- |
-| 2021-04 | 343 | 0.00% | 0.6993 |  |
-| 2021-05 | 374 | 0.00% | 0.6646 |  |
-| 2021-06 | 366 | 0.00% | 0.6569 |  |
-| 2021-07 | 328 | 0.00% | 0.6906 |  |
-| 2021-08 | 378 | 0.00% | 0.6518 |  |
-| 2021-09 | 352 | 36.36% | 0.5224 | excluded window |
-| 2021-10 | 42 | 59.52% | 0.4017 | excluded window |
+| 2021-04 | 367 | 0.00% | 0.6958 |  |
+| 2021-05 | 401 | 0.00% | 0.6660 |  |
+| 2021-06 | 388 | 0.00% | 0.6574 |  |
+| 2021-07 | 350 | 0.00% | 0.6872 |  |
+| 2021-08 | 406 | 0.00% | 0.6513 |  |
+| 2021-09 | 378 | 37.04% | 0.5195 | excluded window |
+| 2021-10 | 45 | 62.22% | 0.3965 | excluded window |
 | 2022-04 | 313 | 0.32% | 0.6682 |  |
 | 2022-05 | 393 | 0.00% | 0.6761 |  |
 | 2022-06 | 394 | 1.27% | 0.6639 |  |
@@ -229,12 +226,12 @@ Line-move sanity per month (matched games, no ties): share of games whose consen
 | 2024-07 | 362 | 1.10% | 0.6868 |  |
 | 2024-08 | 403 | 0.74% | 0.6493 |  |
 | 2024-09 | 382 | 0.00% | 0.6744 |  |
-| 2025-03 | 61 | 0.00% | 0.6488 |  |
-| 2025-04 | 358 | 0.00% | 0.6562 |  |
-| 2025-05 | 374 | 0.00% | 0.6805 |  |
-| 2025-06 | 364 | 0.27% | 0.6839 |  |
-| 2025-07 | 332 | 0.00% | 0.6924 |  |
-| 2025-08 | 199 | 1.51% | 0.6760 |  |
+| 2025-03 | 66 | 0.00% | 0.6493 |  |
+| 2025-04 | 384 | 0.00% | 0.6567 |  |
+| 2025-05 | 402 | 0.00% | 0.6775 |  |
+| 2025-06 | 392 | 0.26% | 0.6833 |  |
+| 2025-07 | 356 | 0.00% | 0.6935 |  |
+| 2025-08 | 213 | 1.41% | 0.6771 |  |
 
 ## 5. Duplicate keys
 

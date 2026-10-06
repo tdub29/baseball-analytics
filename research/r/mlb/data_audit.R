@@ -225,7 +225,10 @@ csv_rows <- nrow(y); csv_dup <- sum(duplicated(y)); rm(y)
 # --- 4. odds to StatsAPI games --------------------------------------------------------------------
 
 message(format(Sys.time(), "%H:%M:%S "), "matching odds to StatsAPI")
-norm <- function(x) gsub("[^a-z]", "", tolower(sub("^Oakland ", "", x)))    # market_study.R's key
+norm <- function(x) {                       # odds names: 2021 Cleveland already "Guardians",
+  x <- gsub("[^a-z]", "", tolower(sub("^Oakland ", "", x)))   # 2025 A's "Athletics Athletics"
+  x[x == "clevelandindians"] <- "clevelandguardians"; x[x == "athleticsathletics"] <- "athletics"; x
+}   # market_study.R's key
 S[, `:=`(home = TM$team[match(paste(season, home_id), paste(TM$season, TM$team_id))],
          away = TM$team[match(paste(season, away_id), paste(TM$season, TM$team_id))])]
 key <- function(d, h, a, hs, as) paste(d, norm(h), norm(a), hs, as)
@@ -389,8 +392,9 @@ add("# Data audit: MLB research pipeline", "",
     sprintf("1. **High: switch hitters entered as right-handed (matchup model, totals).** %s of Retrosheet PAs carry batter hand B; `matchup_build.R` maps them to R, so platoon splits, the platoon prior and park factors by batter hand treat a switch hitter as right-handed even against right-handed pitchers. Reaches `features.rds`, the frozen matchup v2 test and the totals study. Fix: side = opposite of the pitcher's hand for B (table 6).",
             pct(sum(P$bathand == "B"), nrow(P))),
     "2. **Medium: Retrosheet batted-ball types change definition in 2020 (matchup model, totals).** Pitchers are rated on the outcome mix of their batted-ball types over the prior three seasons, so 2020-2022 balls get mixes fit partly on the pre-2020 definition (table 3). Touches validation seasons 2021-2022 directly and the 2023-2025 test through decayed history.",
-    sprintf("3. **Medium: odds team names that never match (market study, matchup market tests).** %s. Those games are silently missing from `market-joined.csv`, so the 2021 market validation and the 2025 test season each lose one club. `totals_study.R` maps names by majority vote and keeps them (table 4).",
-            if (nrow(bad_names)) paste(bad_names[, sprintf("%d: \"%s\" (%d rows)", season, nm, rows)], collapse = "; ") else "none found"),
+    if (nrow(bad_names)) sprintf("3. **Medium: odds team names that never match (market study, matchup market tests).** %s. Those games are silently missing from `market-joined.csv`. `totals_study.R` maps names by majority vote and keeps them (table 4).",
+            paste(bad_names[, sprintf("%d: \"%s\" (%d rows)", season, nm, rows)], collapse = "; "))
+    else "3. **Resolved 2026-10-06: odds team names that never matched.** 2021 \"Cleveland Guardians\" and 2025 \"Athletics Athletics\" are now mapped in `market_study.R` and here; every regular-season odds name matches a StatsAPI team (table 4). Corrected market results: `market-study-joinfix.md` and the `*-joinfix-test.md` files.",
     sprintf("4. **Low to medium: StatsAPI player logs miss pitchers absent from the cached rosters (recency model E and everything built on it).** Up to %s of pitcher batters faced missing in a season; %d starts by %d such pitchers across 2015-2025 (table 6).",
             PLC[, `pitcher BF missing vs team logs`][which.max(bfc$miss[match(PLC$season, bfc$season)] / bfc$tot[match(PLC$season, bfc$season)])],
             sum(off_roster$starts), sum(off_roster$pitchers)),
