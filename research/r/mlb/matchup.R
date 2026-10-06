@@ -13,6 +13,26 @@ BAT_CFG <- list(k = c(120, 1.0, 60), ubb = c(240, 0.75, 110), hbp = c(240, 0.75,
 PIT_CFG <- list(k = c(120, 0.75, 90), ubb = c(240, 0.75, 300), hbp = c(240, 0.75, 500),
                 single = c(Inf, 0.5, 1500), double = c(Inf, 0.5, 1500), triple = c(Inf, 0.5, 3000),
                 hr = c(240, 0.75, 1300), out_ip = c(Inf, 0.5, 1500))
+REL_CFG <- PIT_CFG                                  # relievers' bullpen rates; v2 uses the pitcher constants
+
+#' Shrink constants centred on the random-effects k of the reliability study (results/reliability.md),
+#' one multiplier per group: pitchers' batted-ball expected outcomes (starter centres in PIT, reliever
+#' centres in REL), hitters' singles, triples and outs in play, and relievers' walks. Windows and
+#' every other constant stay as in v2.
+k_cfg <- function(m_pit = 1, m_bat = 1, m_rel_bb = 1) {
+  set <- function(cfg, k) { for (o in names(k)) cfg[[o]][3] <- k[[o]]; cfg }
+  list(BAT = set(BAT_CFG, m_bat * c(single = 195, triple = 534, out_ip = 75)),
+       PIT = set(PIT_CFG, m_pit * c(single = 157, double = 210, triple = 129, hr = 106, out_ip = 121)),
+       REL = set(PIT_CFG, c(m_pit * c(single = 89, double = 152, triple = 97, hr = 79, out_ip = 69), ubb = m_rel_bb * 134)))
+}
+# K_SET=v4: multipliers chosen by walk-forward log loss on 2017-2019 outcomes (matchup_tune.R,
+# MATCHUP-PLAN.md it 8, 2026-10-06). The default, v2, keeps the constants above.
+# Tuned 2026-10-06 (results/matchup-k-tune-v4-base.md, -v4-base2.md): 0.5 to 4 all lost to v2; the
+# extended grid peaked inside at 8 / 8, about v2 scale. Relievers' walk multiplier was flat.
+M_PIT_V4 <- 8; M_BAT_V4 <- 8; M_REL_BB_V4 <- 1
+K_SET <- Sys.getenv("K_SET", "v2")
+stopifnot(K_SET %in% c("v2", "v4"))
+if (K_SET == "v4") { ks <- k_cfg(M_PIT_V4, M_BAT_V4, M_REL_BB_V4); BAT_CFG <- ks$BAT; PIT_CFG <- ks$PIT; REL_CFG <- ks$REL }
 
 #' Add one 0/1 column per outcome and an opportunity count.
 outcome_matrix <- function(P) {

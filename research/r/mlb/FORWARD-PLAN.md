@@ -16,8 +16,11 @@ is the only data no choice has touched. No model in this repo has been scored on
 1. **v2**: `features.rds` recipe (`PIT_SC=0`, `HIT_X=0`, posted lineups), M5 by 2017-2022
    selection, walk-forward weekly refit exactly as in the 2023-2025 test, extended through 2026.
 2. **v2 day-ahead**: the same with `LINEUP_MODE=projected`.
-3. **v4**: the recipe frozen in MATCHUP-PLAN.md by the v4 iteration (2026-10-05). If v4 is not
-   committed before scoring, it is not part of this test.
+3. **v4**: frozen 2026-10-06 (MATCHUP-PLAN.md it 8, `results/matchup-model-v4-validation.md`):
+   `SWITCH=1 K_SET=v4` in `matchup_build.R` (`M_PIT_V4 = 8`, `M_BAT_V4 = 8`, `M_REL_BB_V4 = 1` in
+   matchup.R; `BB_REGIME=0`), `RECAL=0` in `matchup_model.R`, posted lineups, otherwise as v2. On
+   2017-2022 validation it is within 0.0002 of v2 (2021-2022 +0.00016 [-0.00015, +0.00046], selected
+   on those seasons), so it joins this forward test only.
 4. Baselines: home field only, team run margin only, S4 (`sabr_baseline.R`).
 
 No 2026 result may change a model, a threshold or a recipe. Bugs found during scoring are fixed,
