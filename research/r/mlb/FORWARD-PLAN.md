@@ -46,3 +46,20 @@ reported, and both the as-run and corrected numbers are published.
 - 2026-10-06: v4 frozen as tuned k plus `SWITCH=1`, then amended to tuned k only after review found
   SWITCH's validation result predated the keep rule. No 2026 outcome had been scored or read; no
   2026 prediction file existed for any matchup model.
+- 2026-10-06: forward predictions written (`matchup_model.R forward` for v2, v2 day-ahead and v4;
+  `FORWARD=1 sabr_baseline.R` for S4), 2,429 games each. Each run reproduces its earlier
+  2017-2025 predictions exactly and every pre-2026 feature row is unchanged, so 2026 adds rows
+  without touching history. A pre-scoring leakage review found no 2026 input dated on or after
+  its game. No 2026 metric has been computed. The scored files, by sha256:
+  - `predictions-v2-forward.csv` sha256 `3f5e9ce682e690709bbe175b509d55bcdf282ae35f8ca87472f07b20fc7f102d`
+  - `predictions-v2-dayahead-forward.csv` sha256 `38dfb27406c949597a4368acd24e639179894920069499a64bf6a97f1b954c26`
+  - `predictions-v4-forward.csv` sha256 `8a27a230805d51817e63ebfa9fd9fea5be86b66fe6b0fe5b789d238fa2e59067`
+  - `sabr-predictions-forward.csv` sha256 `159c21f574ada21d94fb17b1db15ac76ea9f1cf2913c910344dcf7dfa0f00434`
+
+  `forward_score.R` refuses to score if a hash differs or the model code is uncommitted.
+  Retrosheet has not released the 2026 season as of 2026-10-06 (its 2026-08-09 release covers
+  1897, 1908-1909, the Negro Leagues and corrections to 1910-2025), so StatsAPI stays the 2026
+  source. Known simplifications (the first two also hold in the 2023-2025 test): a suspended game carries its
+  original date; v2 and v4 use the posted lineup, which is the actual first nine, so their
+  decision time is first pitch (v2 day-ahead uses projected lineups); 6 games at a venue with no
+  Retrosheet park id (StatsAPI venue 5355) get a park factor of 1.
