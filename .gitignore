@@ -54,3 +54,5 @@ data/mlb/raw/
 # Derived matchup features and predictions: rebuilt by matchup_build.R; predictions carry
 # odds-derived columns from an unlicensed dataset, so they never leave this machine.
 data/mlb/matchup/
+# Simulator inputs and per-game outputs: rebuilt by bullpen_model.R and simulate.R.
+data/mlb/sim/

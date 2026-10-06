@@ -205,7 +205,7 @@ run_season <- function(S) {
 #' frozen v2 features: per-side negative binomial on log expected runs, environment, umpire and as-of
 #' league run level, weekly fits weighted by a 365-day half-life. Returns per-game means and theta.
 t2_reproduce <- function() {
-  FEAT <- file.path(OUT, "features-v2.rds")
+  FEAT <- "data/mlb/matchup/features.rds"
   stopifnot(unname(tools::md5sum(FEAT)) == "67b60417d85f10baa823bc4f5ca9922f")   # the file totals-validation.md used
   F <- readRDS(FEAT)[season <= 2022]
   gi <- rbindlist(lapply(2015:2022, function(s) fread(retro_file(s, "gameinfo"), select = c("gid", "date", "gametype", "innings", "sky", "vruns", "hruns"), showProgress = FALSE)))
@@ -366,7 +366,7 @@ evaluate <- function() {
   V[is.na(dder), dder := 0]
   V[, `:=`(p1 = clampN(w1 / (N / 2), N / 2), p2 = clampN(w2 / (N / 2), N / 2), pf = clampN(p, N))]
   V[, lsim := stats::qlogis(pf)]
-  pv2 <- fread(file.path(OUT, "predictions-v2-validation.csv"),            # no odds column is read
+  pv2 <- fread("data/mlb/matchup/predictions-v2-validation.csv",            # no odds column is read
                select = c("gid", "season", "M5_plus_defense", "ENS", "E_recency", "C_incumbent"))[season <= 2022]
   V <- merge(V, pv2[, .(gid, M5 = M5_plus_defense, ENS, E_recency, C_incumbent)], by = "gid", all.x = TRUE)
   setorder(V, Date, gid)
@@ -475,11 +475,13 @@ evaluate <- function() {
             format(Sys.Date()), N, N / 2), "",
     "## Verdict under the charter's rules", "",
     sprintf("- Win probability, adds value over M5: **%s**. Recalibrated (b) %s; stack (c) %s. The rule needs either interval above zero.",
-            if (gaps$recal_m5[["lo"]] > 0 || gaps$stack_m5[["lo"]] > 0) "yes" else "no", ci(gaps$recal_m5, 5), ci(gaps$stack_m5, 5)),
-    sprintf("- Win probability, adds value over the ensemble: **%s**. Recalibrated %s; stack %s.",
-            if (gaps$recal_ens[["lo"]] > 0 || gaps$stack_ens[["lo"]] > 0) "yes" else "no", ci(gaps$recal_ens, 5), ci(gaps$stack_ens, 5)),
-    sprintf("- Totals, beats T2 as simulated (N = %d): **%s**, %s. Extrapolated to infinite N: %s (see the post-hoc checks in section 4).",
-            N, if (tgap[["lo"]] > 0) "yes" else "no", ci(tgap, 4), ci(tgap_inf, 4)),
+            if (gaps$recal_m5[["lo"]] > 0 || gaps$stack_m5[["lo"]] > 0) "yes" else "no detectable value", ci(gaps$recal_m5, 5), ci(gaps$stack_m5, 5)),
+    sprintf("- Win probability, adds value over the ensemble: **%s**. Recalibrated %s; stack %s. An upper bound near zero is sensitive to the cluster definition (SIM-PLAN.md it 3).",
+            if (gaps$recal_ens[["lo"]] > 0 || gaps$stack_ens[["lo"]] > 0) "yes" else "no detectable value", ci(gaps$recal_ens, 5), ci(gaps$stack_ens, 5)),
+    sprintf("- Totals, beats T2: **%s**. As simulated %s; extrapolated to infinite N %s. The charter does not say which score gates; see the post-hoc checks in section 4.",
+            if (tgap[["lo"]] > 0 && tgap_inf[["lo"]] > 0) "yes" else if (tgap[["hi"]] < 0 && tgap_inf[["hi"]] < 0) "no"
+            else if (tgap_inf[["lo"]] > 0) sprintf("undetermined at N = %d (raw no, extrapolated yes)", N) else sprintf("no at N = %d", N),
+            ci(tgap, 4), ci(tgap_inf, 4)),
     sprintf("- Reported, not gated: bullpen \"pitched\" log loss beats the naive window rate by %s; starter batters faced beats the normal baseline by %s in log score.", ci(bp_gap, 4), ci(hk_gap, 4)), "",
     "## Simulator calibration, 2017-2022", "",
     "Means over games. sp_share = share of a team's plate appearances against the opposing starter; relievers = relievers used per team-game.", "",

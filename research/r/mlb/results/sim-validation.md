@@ -4,9 +4,9 @@ Generated 2026-10-06 by `Rscript research/r/mlb/simulate.R evaluate`. Validation
 
 ## Verdict under the charter's rules
 
-- Win probability, adds value over M5: **no**. Recalibrated (b) -0.00051 [-0.00140, 0.00038]; stack (c) -0.00026 [-0.00060, 0.00007]. The rule needs either interval above zero.
-- Win probability, adds value over the ensemble: **no**. Recalibrated -0.00093 [-0.00179, -0.00005]; stack -0.00059 [-0.00122, -0.00001].
-- Totals, beats T2 as simulated (N = 2000): **no**, -0.0030 [-0.0091, 0.0033]. Extrapolated to infinite N: 0.0085 [0.0023, 0.0148] (see the post-hoc checks in section 4).
+- Win probability, adds value over M5: **no detectable value**. Recalibrated (b) -0.00051 [-0.00140, 0.00038]; stack (c) -0.00026 [-0.00060, 0.00007]. The rule needs either interval above zero.
+- Win probability, adds value over the ensemble: **no detectable value**. Recalibrated -0.00093 [-0.00179, -0.00005]; stack -0.00059 [-0.00122, -0.00001]. An upper bound near zero is sensitive to the cluster definition (SIM-PLAN.md it 3).
+- Totals, beats T2: **undetermined at N = 2000 (raw no, extrapolated yes)**. As simulated -0.0030 [-0.0091, 0.0033]; extrapolated to infinite N 0.0085 [0.0023, 0.0148]. The charter does not say which score gates; see the post-hoc checks in section 4.
 - Reported, not gated: bullpen "pitched" log loss beats the naive window rate by 0.0385 [0.0371, 0.0399]; starter batters faced beats the normal baseline by 0.1190 [0.1035, 0.1364] in log score.
 
 ## Simulator calibration, 2017-2022
