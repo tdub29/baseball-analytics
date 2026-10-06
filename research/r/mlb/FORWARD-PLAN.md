@@ -68,3 +68,21 @@ reported, and both the as-run and corrected numbers are published.
   and none is detectably better than team run margin only or S4 (v2 vs S4 +0.0005 [-0.0020,
   +0.0030]). v4 vs v2 is -0.00003 [-0.00018, +0.00012], so v2 stays the default. B_home's
   calibration slope (-40) is not meaningful: its predictions span 0.5319 to 0.5329.
+- 2026-10-06: independent post-scoring review: pass with fixes, no bug that changes a number or a
+  verdict, so no corrected run. It recomputed all six models' metrics and all ten intervals, found
+  the 2,429 games complete with no duplicates, and found no 2026 input dated on or after its game.
+  Correction to the 2026-10-06 log line above: the reproduction check differs by model. v2 and v2
+  day-ahead reproduce all 7,289 rows of their 2023-2025 test predictions; v4 reproduces its 13,045
+  validation rows for 2017-2022 (it has no 2023-2025 predictions); S4's forward path writes 2026
+  predictions without a reproduction check, and S4 had no 2023-2025 predictions. Disclosures added
+  to REPORT.md: the "no detectable difference" rows are underpowered (about 15% power for the
+  earlier edges; 80%-power detectable edges about 0.0036 vs S4 and 0.0063 vs team run margin); a
+  Holm adjustment over the ten comparisons keeps only the home-field wins; a t(29) correction
+  widens intervals about 4% and flips nothing; v2 day-ahead vs team run margin clears zero under a
+  game or week resample but not under the pre-registered home-team resample, which decides. The
+  scorer's dirty check covers only the model code and this plan; accepted, because the scorer
+  sources no other file and the sha256 lock covers every scored input.
+- 2026-10-06: second independent critic of REPORT.md and MODEL-CARD.md: text and disclosure fixes
+  only (the as-run CLV marked as an upper bound with the stricter starter builds beside it, game
+  sets named, the 2020 exclusion and the threshold grid disclosed, sign conventions stated); no
+  number, model, threshold or verdict changed.
