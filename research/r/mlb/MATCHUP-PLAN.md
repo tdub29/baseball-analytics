@@ -153,3 +153,9 @@ stale ones).
   [-0.00015, +0.00017]) and its interval spans zero under a two-way home and away team-season
   bootstrap (+0.00013 [-0.00009, +0.00037]); ECE 2021-2022 (10 equal-count bins) 0.0118 vs v2 0.0136.
   Future keep rules must say whether the frozen combination itself has to pass.
+- 2026-10-06, odds-join fix (MARKET-PLAN.md, same date): 125 more 2025 games reach the market
+  comparison. Corrected runs `results/matchup-model-v2-joinfix-test.md` and
+  `results/matchup-model-v2-dayahead-joinfix-test.md` sit beside the as-run files. Verdicts
+  unchanged: the close beats v2 by 0.00354 [0.00170, 0.00550] (as run 0.00356) and v2 day-ahead by
+  0.00374 [0.00199, 0.00560] (as run 0.00383); v2's closing-line value at tau 0.06 is 2.45 points
+  [2.16, 2.73] (as run 2.44), with ROI at the median open 0.013 [-0.077, 0.103] (as run 0.018).

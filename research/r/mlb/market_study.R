@@ -2,6 +2,7 @@
 # Market study (MARKET-PLAN.md): the frozen recency model against the no-vig closing moneyline.
 #
 #   Rscript research/r/mlb/market_study.R
+#   OUT=market-study-joinfix.md Rscript research/r/mlb/market_study.R   # corrected run beside the as-run md
 #
 # Odds: data/mlb/raw/odds/mlb_odds_dataset.json (SportsBookReview scrape, private research only).
 # Model: results/recency/model-predictions-test.csv (E, frozen before any odds were loaded).
@@ -11,6 +12,7 @@ SRC <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = 
 if (is.na(SRC) || SRC == "") SRC <- "research/r/mlb"
 for (f in c("ingest.R", "gamelogs.R")) source(file.path(SRC, f))
 RES  <- file.path(SRC, "results")
+OUT  <- Sys.getenv("OUT", "market-study.md")
 VALM <- 2021:2022
 TESTM <- 2023:2025
 
@@ -53,7 +55,10 @@ sched <- dplyr::bind_rows(lapply(2021:2025, function(s) {
   data.frame(game_pk = sc$game_pk, Date = sc$Date, season = s, home = tm$team[match(sc$home_id, tm$team_id)],
              away = tm$team[match(sc$away_id, tm$team_id)], hs = sc$home_score, as = sc$away_score)
 }))
-norm <- function(x) gsub("[^a-z]", "", tolower(sub("^Oakland ", "", x)))    # the A's dropped "Oakland" in 2025
+norm <- function(x) {                       # odds names: 2021 Cleveland already "Guardians",
+  x <- gsub("[^a-z]", "", tolower(sub("^Oakland ", "", x)))   # 2025 A's "Athletics Athletics"
+  x[x == "clevelandindians"] <- "clevelandguardians"; x[x == "athleticsathletics"] <- "athletics"; x
+}
 key  <- function(d, h, a, hs, as) paste(d, norm(h), norm(a), hs, as)
 sk <- key(sched$Date, sched$home, sched$away, sched$hs, sched$as)
 ok <- key(odds$odds_date, odds$home, odds$away, odds$hs, odds$as)
@@ -159,7 +164,7 @@ out <- c("# Market study: frozen recency model vs the closing line", "",
   if (!is.null(q3_season)) c("| season | bets | units | ROI |", "| --- | --- | --- | --- |",
     apply(q3_season, 1, function(r) sprintf("| %s | %s | %s | %s |", r[["season"]], r[["bets"]], fmt(r[["units"]], 1), fmt(r[["roi"]], 3)))) else "", "",
   "Private research on scraped odds; not betting advice.")
-writeLines(out, file.path(RES, "market-study.md"))
+writeLines(out, file.path(RES, OUT))
 utils::write.csv(G[c("game_pk", "Date", "season", "y", "E", "C", "p_close", "p_open", "p_blend", "best_home", "best_away", "med_home", "med_away", "med_home_open", "med_away_open")],
                  "data/mlb/raw/odds/market-joined.csv", row.names = FALSE)   # odds-derived: stays local
-message("wrote ", file.path(RES, "market-study.md"))
+message("wrote ", file.path(RES, OUT))

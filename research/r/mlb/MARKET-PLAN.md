@@ -91,3 +91,11 @@ log line; the 2023-2025 test is scored once for the final model.
   ROI is +4.3% (about one standard error); actual wins 278 vs 264 the close expected; and the close
   moved away from the model's side by 3.6 points on average (negative closing-line value). Verdict:
   does not beat the market. No profitability claim.
+- 2026-10-06, odds-join fix: the odds file already names 2021 Cleveland "Guardians" and names the
+  2025 A's "Athletics Athletics", so 248 games (123 in 2021, 125 in 2025) never matched.
+  `market_study.R` and `data_audit.R` now map both names. Corrected run:
+  `results/market-study-joinfix.md`, 10,831 games against 10,583 as run; `market-study.md` stays as
+  the as-run file. Verdicts unchanged: E trails the close by 0.00293 [0.00167, 0.00416] (as run
+  0.00290), Q2's blend adds nothing (-0.00015 [-0.00037, +0.00009]), and the Q3 best-price ROI moves
+  from 0.160 to 0.153 [0.050, 0.244]. The Q3 artifact audit above (stale best prices, negative
+  closing-line value) was not rerun on the corrected join; "does not beat the market" stands.
