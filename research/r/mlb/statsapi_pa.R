@@ -230,3 +230,27 @@ statsapi_games <- function(season, raw = FALSE, x = statsapi_parsed(season), m =
             "temp", "winddir", "windspeed", "sky", "precip", "umphome", "vruns", "hruns")
   g[, c(keep, if (raw) "game_pk"), with = FALSE]
 }
+
+#' Pitcher box lines for one season in the shape sabr_baseline.R reads from Retrosheet's pitching
+#' file (gid, pitcher, outs = p_ipouts, er = p_er), from the cached feeds' boxscores. The StatsAPI
+#' ids are cached as pitching_{season}.rds, re-parsed when new games land; ids map on read.
+statsapi_pitching <- function(season) {
+  out <- file.path(FEED_DIR, sprintf("pitching_%d.rds", season))
+  pks <- fetch_feeds(season)
+  x <- if (file.exists(out)) readRDS(out) else NULL
+  if (is.null(x) || !setequal(unique(x$game_pk), pks)) {
+    x <- data.table::rbindlist(lapply(seq_along(pks), function(i) {
+      if (i %% 250 == 0) message(season, ": box lines ", i, " of ", length(pks))
+      d <- jsonlite::fromJSON(paste(readLines(gzfile(feed_path(season, pks[i])), warn = FALSE, encoding = "UTF-8"),
+                                    collapse = "\n"), simplifyVector = FALSE)
+      data.table::rbindlist(lapply(d$liveData$boxscore$teams, function(t) data.table::rbindlist(lapply(t$pitchers, function(id) {
+        s <- t$players[[paste0("ID", id)]]$stats$pitching
+        list(game_pk = pks[i], pitcher = as.integer(id), outs = as.integer(s$outs %||% 0L), er = as.integer(s$earnedRuns %||% 0L))
+      }))))
+    }))
+    saveRDS(x, out)
+  }
+  g <- statsapi_games(season, raw = TRUE)
+  x <- merge(x, g[, .(game_pk, gid)], by = "game_pk")
+  x[, .(gid, pitcher = to_retro(pitcher, id_maps(season)$person), outs, er)]
+}
