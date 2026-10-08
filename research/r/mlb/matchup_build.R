@@ -19,13 +19,15 @@ HIT_X <- as.numeric(Sys.getenv("HIT_X", "0"))     # weight on Statcast expected 
 PIT_SC <- Sys.getenv("PIT_SC", "0") == "1"        # Statcast exit velocity and launch angle for pitchers; off: lost the v3 ablation
 FEAT_OUT <- Sys.getenv("FEAT_OUT", "data/mlb/matchup/features.rds")
 LINEUP_MODE <- Sys.getenv("LINEUP_MODE", "posted")   # "projected": day-ahead, from the team's last game vs a same-hand starter
-STARTER_MODE <- Sys.getenv("STARTER_MODE", "actual") # "rotation": starter guessed from the team's starts two days out
+STARTER_MODE <- Sys.getenv("STARTER_MODE", "actual") # "rotation": starter guessed from the team's starts two days out;
+                                                     # "probable": archived StatsAPI pregame probables, rotation guess where missing
 ASOF_LAG <- as.integer(Sys.getenv("ASOF_LAG", "0"))  # 1: every as-of input uses events through two days before the game
-stopifnot(STARTER_MODE %in% c("actual", "rotation"), ASOF_LAG %in% 0:1)
+stopifnot(STARTER_MODE %in% c("actual", "rotation", "probable"), ASOF_LAG %in% 0:1)
 SWITCH <- Sys.getenv("SWITCH", "0") == "1"         # 1: switch hitters bat opposite each pitcher's hand (v2 counts them as right-handed)
 BB_REGIME <- Sys.getenv("BB_REGIME", "0") == "1"   # 1: batted-ball expected-outcome mix within one Retrosheet coding regime
 FORWARD <- Sys.getenv("FORWARD", "0") == "1"      # 1: add 2026 from StatsAPI; needs its own FEAT_OUT
 if (FORWARD && FEAT_OUT == "data/mlb/matchup/features.rds") stop("FORWARD=1 needs its own FEAT_OUT: features.rds is the frozen v2 file")
+if (FORWARD && STARTER_MODE == "probable") stop("STARTER_MODE=probable has no 2026 probables (fetch_pregame_probables.py stops at 2025)")
 K_GRID <- Sys.getenv("K_GRID", "")                 # CSV of k_cfg() multipliers (id, m_pit, m_bat, m_rel_bb): one extra features file per row
 K_SPLIT_BAT <- 600; K_SPLIT_PIT <- 600; TEAM_PA <- 38.3
 dir.create("data/mlb/matchup", showWarnings = FALSE, recursive = TRUE)
@@ -35,6 +37,12 @@ G <- rbindlist(lapply(2015:2025, retro_games))
 if (FORWARD) {                                     # same columns and coding as retro_pa() and retro_games()
   for (f in c("gamelogs.R", "statsapi_pa.R")) source(file.path(SRC, f))   # gamelogs.R: retry()
   P <- rbind(P, statsapi_pa(2026)); G <- rbind(G, statsapi_games(2026))
+}
+if (nzchar(Sys.getenv("TAMPER_FROM"))) {           # leakage test (leakage_tamper.R): scramble outcomes dated on or after it
+  source(file.path(SRC, "tamper.R")); tp <- tamper_pg(P, G, as.Date(Sys.getenv("TAMPER_FROM"))); P <- tp$P; G <- tp$G
+}
+if (nzchar(Sys.getenv("TRUNCATE_FROM"))) {         # participation test (leakage_tamper.R): every play and game dated on or after it removed
+  D_TRUNC <- as.Date(Sys.getenv("TRUNCATE_FROM")); P <- P[Date < D_TRUNC]; G <- G[Date < D_TRUNC]
 }
 bounds <- P[, .(start = min(Date), end = max(Date)), by = season]
 P[, t := season_day(Date, season, as.data.frame(bounds))]
@@ -116,13 +124,17 @@ lineup <- first[, .SD[!duplicated(batter)][1:9], by = .(gid, batteam), .SDcols =
 lineup[, slot := seq_len(.N), by = .(gid, batteam)]
 sp <- first[, .(sp = pitcher[1], sp_hand = pithand[1]), by = .(gid, pitteam)]   # who actually started each past game
 # The starter each lineup faces (sp_tgt). STARTER_MODE "actual": the first pitcher in the Retrosheet
-# play-by-play, i.e. who really started; that is known for sure only at first pitch, and no archived
-# pre-game probables exist locally (cached StatsAPI probables were updated after the games).
-# "rotation": a guess from the team's starts known two days before the game (rotation_starters() in
-# matchup.R), whose rates, expected batters faced and times-through-the-order split replace the
-# actual starter's everywhere below. Past games' starters (sp) stay actual: they were known then.
+# play-by-play, i.e. who really started; that is known for sure only at first pitch. "rotation": a
+# guess from the team's starts known two days before the game (rotation_starters() in matchup.R),
+# whose rates, expected batters faced and times-through-the-order split replace the actual starter's
+# everywhere below. "probable": the probables StatsAPI's live feed returns at a pregame timecode
+# (fetch_pregame_probables.py), the rotation guess where a game has none (all of 2016) or its
+# probable has no Retrosheet id. That feed returns MLB's last stored probable, not the listing as of
+# the timecode: it equals the cached schedule's on all 14,580 team-games in 2017-2019, and 63 of
+# 39,967 differ from the actual starter, so it is not backfilled to who started. Past games'
+# starters (sp) stay actual: they were known then.
 sp_tgt <- sp
-if (STARTER_MODE == "rotation") {
+if (STARTER_MODE != "actual") {
   st <- merge(sp, G[, .(gid, Date, season)], by = "gid")
   st[, team := sub("^ATH$", "OAK", pitteam)]            # one franchise code across 2024-2025
   rot <- rotation_starters(st, known = 1 + max(1, ASOF_LAG))
@@ -130,6 +142,29 @@ if (STARTER_MODE == "rotation") {
   hit <- merge(sp_tgt, st[, .(gid, pitteam, season, sp_act = sp)], by = c("gid", "pitteam"))
   message("rotation guess equals the actual starter:\n",
           paste(capture.output(print(hit[season >= 2016, .(team_games = .N, match = round(mean(sp == sp_act), 4)), by = season][order(season)])), collapse = "\n"))
+}
+if (STARTER_MODE == "probable") {
+  pr <- fread("data/mlb/raw/statsapi/pregame-probables.csv")
+  pr <- pr[status %in% c("Pre-Game", "Scheduled", "Warmup", "Delayed Start") & !is.na(first_pitch) &
+           as.POSIXct(snapshot, "%Y%m%d_%H%M%S", tz = "UTC") < as.POSIXct(first_pitch, "%Y-%m-%dT%H:%M:%SZ", tz = "UTC")]
+  pr[, Date := as.Date(date)]
+  xw <- pk_crosswalk(G, pr[, .(game_pk, Date, home_id = home_team, away_id = away_team, home_score, away_score)])
+  reg <- as.data.table(readRDS(list.files("data/mlb/raw/chadwick", full.names = TRUE)[1]))
+  reg <- reg[!is.na(key_mlbam) & key_retro != "", .(mlbam = as.integer(key_mlbam), sp = key_retro)]
+  pl <- merge(rbind(pr[, .(game_pk, home = TRUE, mlbam = home_prob)], pr[, .(game_pk, home = FALSE, mlbam = away_prob)]), xw, by = "game_pk")
+  pl <- merge(merge(pl, G[, .(gid, hometeam, visteam)], by = "gid"), reg, by = "mlbam")
+  pl[, pitteam := ifelse(home, hometeam, visteam)]
+  hand <- P[, .N, by = .(sp = pitcher, pithand)][order(-N)][!duplicated(sp), .(sp, sp_hand = pithand)]   # throwing hand: fixed, not as-of
+  pl <- merge(pl, hand, by = "sp", all.x = TRUE)[is.na(sp_hand), sp_hand := "R"]
+  sp_tgt <- rbind(pl[, .(gid, pitteam, sp, sp_hand, src = "probable")],
+                  sp_tgt[!pl, on = .(gid, pitteam)][, src := "rotation"])
+  stopifnot(!anyDuplicated(sp_tgt[, .(gid, pitteam)]))
+  chk <- merge(sp_tgt, st[, .(gid, pitteam, season, sp_act = sp)], by = c("gid", "pitteam"))
+  message("starter source and match with the actual starter:\n", paste(capture.output(print(
+    chk[season >= 2016, .(team_games = .N, probable = round(mean(src == "probable"), 4), match = round(mean(sp == sp_act), 4),
+                          match_probable = round(mean(sp[src == "probable"] == sp_act[src == "probable"]), 4)), by = season][order(season)])), collapse = "\n"))
+  fwrite(chk[, .(gid, pitteam, season, src, sp, sp_act)], sub("[.]rds$", "-starters.csv", FEAT_OUT))   # which listed starters started (void rule)
+  sp_tgt[, src := NULL]
 }
 if (LINEUP_MODE == "projected") {
   # Day-ahead lineup: the nine the team used in its most recent game dated before the as-of date

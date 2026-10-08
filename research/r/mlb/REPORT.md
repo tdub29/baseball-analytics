@@ -3,8 +3,8 @@
 **No.** Scored once on 6,451 games from 2023 to 2025, the frozen model's log loss was 0.0036 per
 game worse than the no-vig closing line (95% interval 0.0016 to 0.0054). Its bets at the opening
 line did see where the market was going, gaining 2.01 probability points of closing-line value per
-bet [1.67, 2.35] on 561 bets, an upper bound that falls to about 0.8 when the starter is guessed
-instead of known. The return those bets earned, +4.7% [-5.0%, +13.7%], cannot be told apart from
+bet [1.67, 2.35] on 561 bets. With MLB's listed probable starters in place of the actual ones it
+stays at 1.97, but it remains an upper bound, because the opening line carries no timestamp. The return those bets earned, +4.7% [-5.0%, +13.7%], cannot be told apart from
 zero, and about ten seasons of bets would be needed before it could.
 
 A second holdout, the 2026 season, was scored once on outcomes only. The model beat home field by
@@ -242,7 +242,7 @@ against 0.97 [0.84, 1.10] for the close, so the model's strongest calls are slig
 Both intervals include 1. This is an exploratory description of the test seasons, computed by
 `figures.R`, not a pre-registered test. In 2026 the model's slope was 0.93 (point estimate only).
 
-### 4. Bets at the open gained about 2 points of closing-line value each as run, about 0.8 under stricter starter rules
+### 4. Bets at the open gained about 2 points of closing-line value each, with or without the actual starter
 
 ![Cumulative closing-line value of bets at the open, model vs two naive baselines](results/figures/fig4-clv-at-open.png)
 
@@ -254,6 +254,8 @@ fewer bets than profit to settle.
 |---|---:|---|---|---|
 | **Model M5, day-ahead lineups, 6+ points off the open** | **561** | **+2.01 [1.67, 2.35]** | **+4.7% [-5.0%, +13.7%]** | Pre-registered |
 | Same, after the odds-join fix | 573 | +2.01 [1.67, 2.36] | +4.6% [-5.2%, +13.6%] | Corrected |
+| Same, MLB's listed probable starters instead of the actual ones | 558 | +1.97 [1.62, 2.30] | +4.4% [-5.6%, +13.6%] | Exploratory |
+| ...of which both listed starters were the rotation's pick | 190 | +1.46 [0.92, 2.05] | -11.0% [-26.2%, +3.0%] | Exploratory |
 | Team run margin only, 6+ points off the open | 1,342 | +0.51 [0.36, 0.68] | -3.0% [-10.3%, +3.9%] | Exploratory |
 | Always bet the home team | 6,451 | +0.36 [0.28, 0.44] | -3.5% [-5.8%, -1.2%] | Exploratory |
 
@@ -263,17 +265,29 @@ test CLV (2.01) came in above validation (1.37). Intervals are week-block bootst
 baselines are computed by `figures.R` from the same predictions and odds on the as-run join; they
 are not in a committed result.
 
-As run, the model's CLV is large and steady: the cumulative line climbs through every season. It is
-an upper bound, because the day-ahead model knows the actual starter (see Limits). Exploratory
-builds that guess the starter from the rotation instead, with and without a one-day lag on every
-input, cut it to 0.73 [0.53, 0.94] points on 955 bets and 0.81 [0.60, 1.02] on 975, with ROI near
-zero (`MATCHUP-PLAN.md`, iteration 7). The rotation guess names the actual starter only 62% to 66%
-of the time on the test seasons, well below announced probables, so those builds are a lower bound.
+As run, the model's CLV is large and steady: the cumulative line climbs through every season. The
+day-ahead model uses the starter who actually pitched, which raised the question of whether it knew
+late scratches the opening line could not. An exploratory rerun settles most of that. With MLB's
+stored probable starters, read from a StatsAPI feed timecoded before each game for 20,014 games,
+the model makes 558 bets at +1.97 [1.62, 2.30] points. The stored probable matches the actual
+starter in 99.85% of team-games, so the edge does not come from late scratches. Voiding bets where
+a listed starter did not start, as sportsbook "listed pitcher" rules do, leaves 555 bets at +1.96
+[1.62, 2.29] (`results/starter-void-explore-prob.md`).
+
+What stays open is timing. The opening price has no timestamp, so if a line opened before the
+starters were announced, part of the move the model "predicted" is the announcement itself. Where
+both listed starters were the ones the two-day rotation predicted, so the announcement carried
+little news, CLV is +1.46 on 190 bets; on the other 368 it is +2.23 [1.85, 2.65]. The two sets hold
+different games, so the split shows where the edge sits rather than bounding it. Builds that use
+only the rotation guess, with and without a one-day lag on every input, give 0.73 [0.53, 0.94]
+points on 955 bets and 0.81 [0.60, 1.02] on 975 (`MATCHUP-PLAN.md`, iteration 7). That guess names
+the actual starter only 62% to 66% of the time on the test seasons, so those builds are a
+pessimistic floor.
 
 The baselines are positive too. Even betting every home team at the open picks up 0.36 points,
 because these lines tend to drift toward home sides, so a CLV claim has to beat that drift, not
-zero. As run, the model does so by a wide margin. The stricter builds sit at 1.4 to 2.3 times the
-two baselines: still clear of home drift, but not clearly above team run margin's 0.51. (The
+zero. As run and with listed probables, the model does so by a wide margin, about five times home
+drift. The rotation-only builds sit at 1.4 to 2.3 times the two baselines: still clear of home drift, but not clearly above team run margin's 0.51. (The
 first-pitch model posts more CLV at the open, 2.44 points as run and 2.45 corrected, but it knows
 lineups the opener did not, so it is not the honest test.)
 
@@ -478,17 +492,20 @@ episode is why best-of-books prices decide nothing here.
   elsewhere after a monthly sanity check.
 - **No odds for 2026.** The 2026 test compares the model with baselines and outcomes only. Whether
   it would have matched the 2026 close is unknown.
-- **Actual starter, not announced starter.** StatsAPI's historical "probable" starter is the actual
-  starter (a 99.85% match), and Retrosheet records who actually started. Even the day-ahead model
-  therefore knows about late scratches the opening line could not have known. This flatters the
-  opening-line CLV result: exploratory stricter builds that guess the starter from the rotation,
-  with and without a one-day lag, cut CLV to 0.73 [0.53, 0.94] and 0.81 [0.60, 1.02] points with
-  ROI near zero, and the frozen bets' profit sits in games where the guess missed a starter (ROI
-  +12.3% on 378 bets, against -10.7% on the 183 where both matched; `MATCHUP-PLAN.md`, iteration
-  7).
+- **Actual starter versus listed starter.** Retrosheet records who actually started, and the as-run
+  day-ahead model uses it. An exploratory rerun with MLB's stored probable starters keeps the result
+  (558 bets, +1.97 [1.62, 2.30]), because the stored probable matches the actual starter in 99.85%
+  of team-games. It is not backfilled: 63 of 39,967 listed probables differ from the actual starter.
+  But the pregame timecode adds nothing, since the stored probable equals the final one on all 4,855
+  listed 2025 team-games and the cached schedule's on all 14,580 in 2017-2019, and 4 late scratches
+  persist in 2025 final feeds. So it is MLB's last stored listing, not provably the listing at the
+  snapshot, which sits a median 84 to 88 minutes before first pitch in 2023-2024 and 187 in 2025.
 - **No timestamps on opening lines.** The open is whatever the scrape recorded first. If a line
-  opened before the starters were announced, part of the move the model "predicted" is simply the
-  starter news the model already had. The CLV result is an upper bound on genuine day-ahead skill.
+  opened before the starters were announced, part of the move the model "predicted" is the
+  announcement the model already had. Where both listed starters were the rotation's pick, CLV is
+  1.46 [0.92, 2.05] on 190 bets against 2.23 on the other 368, an indication rather than a bound.
+  Rotation-only builds, a pessimistic floor, give 0.73 and 0.81 points with ROI near zero. The CLV
+  result is an upper bound on genuine day-ahead skill.
 - **2025 is partial.** Odds end on 2025-08-16, so 2025 contributes 1,688 games with odds as run
   (1,813 corrected) and 123 opening-line bets as run.
 - **2026 comes from StatsAPI.** It matched Retrosheet exactly on 2025, but it is a different source.
@@ -499,8 +516,16 @@ episode is why best-of-books prices decide nothing here.
   staking plan, bet limits or margin sensitivity is modelled.
 - **Leakage checks.** The recency model's leakage was checked by an independent tamper test. The
   matchup model's as-of rules are enforced in code and by weekly walk-forward refits, and a
-  pre-scoring review of the 2026 inputs found none dated on or after its game. No independent
-  tamper test of the matchup model on 2017-2025 is recorded.
+  pre-scoring review of the 2026 inputs found none dated on or after its game. A tamper test on
+  2017-2025 shuffles every outcome from a cutoff on (2019-07-01 and 2024-07-01), rebuilds and reruns:
+  features and M1-M5 predictions before each cutoff stay bit-identical and every later game moves
+  (`results/leakage-tamper.md`). It shuffles outcomes, not participation, so a truncation test also
+  drops everything from each cutoff on. As run it read FAIL at 2024-07-01: every earlier game is
+  bit-identical except one suspended game that straddles the cutoff, whose lineup is read from its
+  completion-day plays. No play-dated input leaked into other games, but the test cannot see facts on
+  a game row dated at the start: suspended games enter the team run margin on their start date (at
+  most 0.13 runs) and their reached-on-error counts are joined by game id. Recorded, not fixed,
+  because v2 is frozen.
 - **No multiplicity correction on validation.** The ladder, the variants and the six context groups
   were each judged on their own paired interval. Team defense, the one context group kept, was the
   only one of six to help, and its gain (+0.0002) is small enough that chance remains a live
@@ -513,9 +538,10 @@ episode is why best-of-books prices decide nothing here.
 The forecast question is answered twice: the model does not match the close on 2023-2025, and in
 2026 its edge over a careful conventional model was too small for one season to detect. The open
 question is narrow: is the opening-line edge real day-ahead skill, or the model peeking at starters
-the opener had not seen? Exploratory builds that guess the starter cut the edge from 2.0 to about
-0.8 points, still above the home-drift baseline, so the starter explains much of it but perhaps not
-all. The 2026 holdout could not answer it, because no licensed 2026 line history was available. One
+the opener had not seen? Using MLB's listed probables instead of the actual starters leaves it at
+2.0 points, so late scratches are not the source. The unknown is whether lines opened before the
+starters were listed: where the listing held no surprise the edge is about 1.5 points, and builds
+that never see the listing fall to about 0.8, still above the home-drift baseline. The 2026 holdout could not answer it, because no licensed 2026 line history was available. One
 clean forward test still would.
 
 1. **Freeze what exists.** Model M5 day-ahead, the 6-point threshold, median-book prices, and the
@@ -526,7 +552,7 @@ clean forward test still would.
    the actual one, and score one season once. 2026 has been scored on outcomes, so the cleanest
    remaining holdout is a live, prospective 2027.
 4. **Read CLV first, money second.** CLV settles far faster than profit: beating the home-drift
-   baseline at the stricter-build effect (about 0.8 points) needs roughly 200 to 1,000 bets, one to
+   baseline at the rotation-only floor (about 0.8 points) needs roughly 200 to 1,000 bets, one to
    four seasons. Profit at +4.7% needs about 2,300 bets. A forward season can kill the skill claim;
    confirming it may take more than one.
 

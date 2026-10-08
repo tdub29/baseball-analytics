@@ -31,6 +31,10 @@ F <- readRDS(Sys.getenv("FEAT_IN", "data/mlb/matchup/features.rds"))
 LAG <- as.integer(Sys.getenv("ASOF_LAG", if (is.null(attr(F, "asof_lag"))) "0" else attr(F, "asof_lag")))
 G <- rbindlist(lapply(2015:2025, retro_games))
 if (mode == "forward") { G26 <- statsapi_games(2026, raw = TRUE); G <- rbind(G, G26[, names(G), with = FALSE]) }
+TAMPER <- Sys.getenv("TAMPER_FROM")                    # leakage test (leakage_tamper.R): scores dated on or after it scrambled
+if (nzchar(TAMPER)) { source(file.path(SRC, "tamper.R")); G <- tamper_pg(NULL, G, as.Date(TAMPER))$G }
+TRUNC <- Sys.getenv("TRUNCATE_FROM")                   # participation test (leakage_tamper.R): plays and games dated on or after it removed
+if (nzchar(TRUNC)) { G <- G[Date < as.Date(TRUNC)]; F <- F[Date < as.Date(TRUNC)] }
 stopifnot(all(F$gid %in% G$gid))
 
 # --- run values per outcome, fit on 2015-2016 team-games only -----------------------------
@@ -61,7 +65,7 @@ F <- merge(F, tm[, .(gid, hometeam = team, rest_h = rest, moved_h = moved)], by 
 F <- merge(F, tm[, .(gid, visteam = team, rest_a = rest, moved_a = moved)], by = c("gid", "visteam"))
 F[, drest := rest_h - rest_a][, dmoved := moved_h - moved_a]
 ctx <- readRDS("data/mlb/matchup/context.rds")[, .(gid, dder)]      # team defensive efficiency gap (context_features.R)
-if (LAG > 0) ctx <- der_gap(F[, .(gid, Date, season, hometeam, visteam)], LAG)   # same definition, LAG days earlier
+if (LAG > 0 || nzchar(TAMPER) || nzchar(TRUNC)) ctx <- der_gap(F[, .(gid, Date, season, hometeam, visteam)], LAG)   # same definition, LAG days earlier or tampered
 if (mode == "forward") {                                           # context.rds stops at 2025
   cf <- der_gap(F[, .(gid, Date, season, hometeam, visteam)], LAG, forward = TRUE)
   if (LAG == 0) { j <- merge(ctx, cf, by = "gid"); stopifnot(nrow(j) == nrow(ctx), isTRUE(all.equal(j$dder.x, j$dder.y))) }
@@ -71,6 +75,7 @@ F <- merge(F, ctx, by = "gid", all.x = TRUE); F[is.na(dder), dder := 0]
 F[, y := as.integer(hruns > vruns)]
 F <- F[hruns != vruns]
 setorder(F, Date, gid)
+if (nzchar(TAMPER) || nzchar(TRUNC)) saveRDS(F[, .(gid, Date, d12, d3, dpen, drd, dder, drest, dmoved, y)], sprintf("data/mlb/matchup/model-inputs%s-%s.rds", TAG, mode))
 
 # --- walk-forward ---------------------------------------------------------------------------
 walk <- function(df, formula, seasons) {
@@ -95,6 +100,10 @@ FORMS <- list(
 # is made on validation seasons and frozen before a test row is scored.
 WALK <- 2017:(if (mode == "forward") 2026L else if (mode == "test") 2025L else 2022L)
 for (nm in names(FORMS)) F[[nm]] <- walk(F, FORMS[[nm]], WALK)
+if (nzchar(TRUNC)) {                                   # nothing after the cutoff to join or score
+  saveRDS(F[, c("gid", "Date", "y", names(FORMS)), with = FALSE], sprintf("data/mlb/matchup/predictions%s-%s.rds", TAG, mode))
+  quit(save = "no")
+}
 
 # --- join to StatsAPI games, the recency model and the market --------------------------------
 gl <- gamelog_sources("data/mlb/raw"); cs <- cached_sources("data/mlb/raw")
@@ -249,4 +258,5 @@ if (mode == "test" && nrow(ot)) {
 writeLines(c(lines, "", "The information used here was obtained free of charge from and is copyrighted by Retrosheet."), out_md)
 fwrite(F[season %in% PRED, c("gid", "game_pk", "Date", "season", "y", models, "p_close"), with = FALSE],
        sprintf("data/mlb/matchup/predictions%s-%s.csv", TAG, mode))
+if (nzchar(TAMPER)) saveRDS(F[season %in% PRED, c("gid", "Date", "y", models), with = FALSE], sprintf("data/mlb/matchup/predictions%s-%s.rds", TAG, mode))   # full precision
 message("wrote ", out_md)
