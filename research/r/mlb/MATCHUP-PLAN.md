@@ -159,3 +159,48 @@ stale ones).
   unchanged: the close beats v2 by 0.00354 [0.00170, 0.00550] (as run 0.00356) and v2 day-ahead by
   0.00374 [0.00199, 0.00560] (as run 0.00383); v2's closing-line value at tau 0.06 is 2.45 points
   [2.16, 2.73] (as run 2.44), with ROI at the median open 0.013 [-0.077, 0.103] (as run 0.018).
+- 2026-10-07, **exploratory** (2023-2025 spent, tau frozen at 0.06, nothing tuned): listed starters.
+  `fetch_pregame_probables.py` read MLB StatsAPI's live feed at a pregame timecode for 21,050
+  2017-2025 games (0 failed; `data/mlb/raw/statsapi/pregame-probables.csv`, gitignored). Both
+  probables are listed in 92% to 99.7% of games by season and match the actual starter in 99.7% to
+  99.9% of team-games, against 51% to 69% for the two-day rotation guess. `matchup_build.R` mode
+  `probable` uses them (rotation guess for the 34 Retrosheet games and 36 pks with no match).
+  Day-ahead at the open: 558 bets, CLV 1.97 [1.62, 2.30], ROI at the median open 0.044 [-0.056,
+  0.136]; close minus model log loss -0.00368 [-0.00556, -0.00194]
+  (`results/matchup-model-explore-prob-test.md`). Voiding bets where a listed starter did not start
+  leaves 555 bets at 1.96 [1.62, 2.29]; where both listed starters were the rotation's pick, 190
+  bets at 1.46 [0.92, 2.05], ROI -0.110; the other 368 at 2.23 [1.85, 2.65], ROI 0.124
+  (`results/starter-void-explore-prob.md`). Independent adversarial review the same day: no feature
+  leak, every claim holds with two disclosures. (1) The stored probable is not backfilled (63 of
+  39,967 differ from the actual starter) but the timecode adds nothing: it equals the final stored
+  probable on all 4,855 listed 2025 team-games and the cached schedule's on all 14,580 in
+  2017-2019, and 4 late scratches persist in 2025 final feeds, so it is MLB's last stored listing.
+  The earlier premise that StatsAPI's historical probable "is the actual starter" was wrong.
+  (2) The open has no timestamp, so 1.97 is an upper bound; the snapshots sit a median 84, 88 and
+  187 minutes before first pitch in 2023, 2024 and 2025.
+- 2026-10-08, truncation (participation) test scored (`results/leakage-tamper.md`). Every play and
+  game dated on or after the cutoff dropped, v2 rebuilt and rerun. 2019-07-01: all 8,542 earlier
+  games bit-identical. 2024-07-01: as run, FAIL on one game, BOS202406260, suspended June 26 after
+  10 plate appearances and finished August 26. Retrosheet dates the game on its start day and each
+  play on the day it was played, so truncation removes that game's own completion-day plays and its
+  lineup (first nine batters in its plays) changes: M5 0.608 against 0.439 (the truncated run has a
+  partial lineup, 4 BOS and 6 TOR batters, so the gap is not the size of the oracle). The other
+  19,164 games and 3,691 predictions are bit-identical, so no play-dated input leaked. Both results
+  are published; the comparison now shows straddling games apart. Truncation drops rows by their own
+  date, so it cannot see game-row facts dated at the start. Unfixed properties of frozen v2: the
+  lineup of a suspended game can include a completion-day batter (10 of 68 team-lineups, 6 games);
+  `drd` counts a suspended game's score from its start date (at most 0.132 runs, 0.113 in
+  2023-2025, mean under 0.001); `der_gap()` joins reached-on-error counts by game id onto both
+  dates (unmeasured); the day-ahead lineup build can copy completion-day batters into later games
+  (untested). Independent review agreed with the numbers and required these wording changes. Next
+  pre-registered version: date suspended scores and errors on completion and take the lineup from
+  the start-day card.
+- 2026-10-08, checkpoint. State: v2 frozen; 2023-2025 test and 2026 forward test spent; the close
+  still beats every variant. A senior-director style review rated the analysis as having significant
+  gaps; its queue, each exploratory on 2017-2022 only or a pre-registered 2027 test: (1) weight
+  relievers by role and by how close the game was when they pitched; (2) a starter expected-batters-faced model instead of the naive one;
+  (3) Shin de-vig and CLV split by favourite and underdog; (4) injured-list and transaction data;
+  (5) run values refit beyond 2015-2016; (6) forecast, not observed, weather for totals; (7) catcher
+  framing; (8) switch hitters coded by platoon side (v2 codes them R); (9) aging curves and fielder
+  defense beyond team DER; (10) scope some nulls more narrowly and check the M5 blend weight out of
+  sample. Also queued: the suspended-game fixes above; travel miles only from verified coordinates.

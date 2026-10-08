@@ -254,13 +254,14 @@ p4 <- ggplot(cum, aes(bets, cum)) +
   scale_colour_manual(values = c(m = MODEL, b = INK2)) + scale_fill_manual(values = c(m = MODEL, b = MUTED)) +
   scale_x_continuous(labels = label_comma()) + scale_y_continuous(labels = label_comma()) +
   facet_wrap(~panel, scales = "free") +
-  labs(title = sprintf("Bets at the open gained %s points of closing-line value each as run; with the starter guessed, about 0.8", f2(100 * S4$model$clv$est)),
+  labs(title = sprintf("Bets at the open gained %s points of closing-line value each as run; 1.97 with MLB's listed starters", f2(100 * S4$model$clv$est)),
        subtitle = sprintf("Cumulative closing-line value (CLV) of bets at the opening line, 2023-2025, in time order: how far the no-vig line moved toward each side bet, summed in\nprobability points. Every panel uses the same points-per-bet scale, so steeper means more value per bet. Betting every home team also drifts upward (lines\ntend to move toward home sides), so that drift is the floor to beat. Model and team-margin bets: %d+ points off the no-vig open (frozen threshold).", round(100 * TAU)),
        x = "Bets placed (cumulative, weekly steps)", y = "Cumulative CLV, probability points",
        caption = cap("Band: bets placed times the 95% week-block bootstrap interval of mean CLV per bet (1,000 draws). Model figures reproduce results/matchup-model-v2-dayahead-test.md.",
-                     "As run this is an upper bound: the day-ahead model knows the actual starter. Exploratory builds that guess the starter from the rotation gain 0.73 [0.53, 0.94]",
-                     "and, with every input lagged a day, 0.81 [0.60, 1.02] points per bet (results/matchup-model-explore-rot-test.md, -explore-rotlag-test.md; MATCHUP-PLAN.md iteration 7).",
-                     "The two baselines are computed by this script from the same predictions and odds and are exploratory (not in a committed result). Odds end 2025-08-16.", SRC_NOTE, RETRO)) +
+                     "Exploratory: with MLB's listed probable starters the model gains 1.97 [1.62, 2.30] on 558 bets (results/matchup-model-explore-prob-test.md); where both were the rotation's pick,",
+                     "1.46 [0.92, 2.05] on 190 (results/starter-void-explore-prob.md). Opening lines have no timestamps, so these are upper bounds; rotation-only builds, a pessimistic floor, gain 0.73 and 0.81.",
+                     "The two baselines are computed by this script from the same predictions and odds and are exploratory (not in a committed result). Odds end 2025-08-16.", SRC_NOTE,
+                     "2017-2025 probable starters: MLB StatsAPI, copyright MLB Advanced Media, L.P., used for private research.", RETRO)) +
   theme_report() + theme(panel.spacing = unit(2, "lines"), strip.text = element_text(face = "bold", hjust = 0, size = 10.5, lineheight = 1.05))
 save_png(p4, "fig4-clv-at-open.png", w = 12.5, h = 7.2)
 

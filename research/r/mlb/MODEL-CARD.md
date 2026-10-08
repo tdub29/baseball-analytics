@@ -11,10 +11,10 @@ The full evaluation story is in [REPORT.md](REPORT.md); this card is the operati
 | Version | v2: features `data/mlb/matchup/features.rds` built with `PIT_SC=0`, `HIT_X=0`; day-ahead variant on `features-v2-dayahead.rds` |
 | Code | `research/r/mlb/matchup_build.R`, `matchup.R`, `matchup_model.R`, `context_features.R`, `retro.R`, `windows.R` at commit ba559be |
 | Owner | Trevor White |
-| Reviewers | 2026 forward test: a pre-scoring leakage review of the 2026 inputs and an independent post-scoring review that recomputed every metric and interval (`FORWARD-PLAN.md`, 2026-10-06; pass with disclosure fixes, no number changed). No independent review of the 2017-2025 matchup features is recorded. (The recency model E passed an independent leakage audit, `RECENCY-PLAN.md` iteration 8; the simulator, which is not this model, had an independent critic, `SIM-PLAN.md` iteration 3.) |
-| Status | Evaluated and frozen. Fails the pre-registered "matches the close" and "profitable" rules; passes the secondary closing-line-value rule (an upper bound: about 0.8 points under stricter starter rules). In the 2026 forward test (outcomes only) it beats home field and shows no detectable edge over team run margin or the conventional model S4; it stays the default over the tuned variant v4. Not approved. |
+| Reviewers | 2026 forward test: a pre-scoring leakage review of the 2026 inputs and an independent post-scoring review that recomputed every metric and interval (`FORWARD-PLAN.md`, 2026-10-06; pass with disclosure fixes, no number changed). 2017-2025 day-ahead result and tamper test: an independent adversarial review on 2026-10-07 (every claim holds with disclosures, no number changed; `MATCHUP-PLAN.md`, 2026-10-07). (The recency model E passed an independent leakage audit, `RECENCY-PLAN.md` iteration 8; the simulator, which is not this model, had an independent critic, `SIM-PLAN.md` iteration 3.) |
+| Status | Evaluated and frozen. Fails the pre-registered "matches the close" and "profitable" rules; passes the secondary closing-line-value rule (an upper bound, since opening lines carry no timestamps: 1.97 points with MLB's listed probable starters, about 0.8 with rotation-only starters). In the 2026 forward test (outcomes only) it beats home field and shows no detectable edge over team run margin or the conventional model S4; it stays the default over the tuned variant v4. Not approved. |
 | Frozen | 2026-10-04, commit 5992fdf; test scored once at commit ba559be; 2026 forward test scored once at commit 6d2503c |
-| Card written | 2026-10-05; updated 2026-10-06 with the odds-join fix and the 2026 forward test |
+| Card written | 2026-10-05; updated 2026-10-06 with the odds-join fix and the 2026 forward test; 2026-10-07 with the listed-probable rerun, the independent review and the truncation test; 2026-10-08 with the truncation result and the suspended-game limits |
 | Next review | When a timestamped, licensed line history is in hand, and in any case by 2027-03-01, before the 2027 season |
 
 ## 2. Intended use
@@ -37,7 +37,7 @@ The full evaluation story is in [REPORT.md](REPORT.md); this card is the operati
 | Target | Home team wins (home runs greater than away runs); tied games are dropped |
 | Grain | One row per game, home perspective (not a doubled team-game panel) |
 | Decision time, first-pitch variant | First pitch: posted starting lineups and the actual starting pitcher |
-| Decision time, day-ahead variant | Lineups projected from each team's most recent game against a same-handed starter; starting pitcher is the actual starter, not the announced one |
+| Decision time, day-ahead variant | Lineups projected from each team's most recent game against a same-handed starter; starting pitcher is the actual starter, not the announced one (exploratory rerun with MLB's stored probables: `results/matchup-model-explore-prob-test.md`) |
 | Output | Home win probability from a logistic link, refit weekly |
 | Horizon | Same day |
 
@@ -81,8 +81,18 @@ Pitchers are rated on the league outcome mix of their batted-ball types.
 
 **Time safety:** every input is as of the start of the game's date; the win model is refit each
 Monday on games before that Monday and predicts that week only. For 2026, a pre-scoring review and
-an independent post-scoring review found no input dated on or after its game. No independent tamper
-test of the 2017-2025 matchup features is recorded.
+an independent post-scoring review found no input dated on or after its game. A tamper test of
+2017-2025 (`results/leakage-tamper.md`) shuffles every outcome dated on or after a cutoff (2019-07-01,
+2024-07-01), rebuilds the features and reruns the model: every feature and every M1-M5 prediction dated
+on or before the cutoff is bit-identical, and 100% of later games change. It moves outcomes, not
+participation, so a truncation test also drops every play and game dated on or after each cutoff and
+reruns. As run, it read FAIL at 2024-07-01: every game before the cutoff is bit-identical except one
+suspended game that straddles it (BOS202406260, started June 26, finished August 26, 61 days later),
+whose own lineup is read from its completion-day plays. That is the actual-lineup oracle reaching past
+the cutoff within that one game; no play-dated input leaked into other games. Truncation drops rows by
+their own date, so it cannot see facts stored on a game row dated at the start: suspended games enter
+the team run margin on their start date, a look-ahead of at most 0.13 runs, and their reached-on-error
+counts are joined by game id. These are recorded, not fixed, because v2 is frozen (section 9).
 
 ## 6. Baselines
 
@@ -153,17 +163,20 @@ exploratory scoring with the frozen spec finds them indistinguishable from M5 (l
   on 1,342 bets; always home +0.36 [0.28, 0.44] on 6,451.
 - **Calibration (exploratory):** logistic recalibration slope 0.88 [0.75, 1.02] against 0.97
   [0.84, 1.10] for the close on the same 6,451 games: close to calibrated, slightly overconfident.
-- **Leakage status:** as-of by construction and walk-forward; the 2026 inputs were reviewed before and after scoring; no independent tamper test of 2017-2025.
+- **Leakage status:** as-of by construction and walk-forward; the 2026 inputs were reviewed before and after scoring; a 2017-2025 tamper test at two cutoffs passes (features and M1-M5 predictions before each cutoff bit-identical under shuffled outcomes); a truncation test that removes everything from each cutoff on passes at 2019-07-01 and, at 2024-07-01, read FAIL as run on one suspended game straddling the cutoff and passes everywhere else; that game is shown apart in `results/leakage-tamper.md`. Game-row facts of suspended games (final score, reached-on-error count) sit outside that test (section 9).
 
 ## 9. Limits and failure modes
 
 - Does not match the closing line; on the test seasons it also did not beat the simpler recency
   model E (0.6776 vs 0.6775).
-- The day-ahead variant uses the actual starter, which flatters opening-line CLV: exploratory stricter
-  builds that guess the starter from the rotation, with and without a one-day lag, cut it to 0.73
-  [0.53, 0.94] and 0.81 [0.60, 1.02] points with ROI near zero, and the frozen bets' profit sits in
-  games where the guess missed a starter (`MATCHUP-PLAN.md`, iteration 7).
-- Opening lines carry no timestamps, so CLV is an upper bound on genuine day-ahead skill.
+- The day-ahead variant uses the actual starter. With MLB's stored probable starters instead, CLV
+  is 1.97 [1.62, 2.30] on 558 bets (exploratory), because the stored probable matches the actual
+  starter in 99.85% of team-games; it is MLB's last stored listing, not provably the listing at the
+  pregame snapshot (`results/starter-void-explore-prob.md`).
+- Opening lines carry no timestamps, so CLV is an upper bound on genuine day-ahead skill. Where both
+  listed starters were the rotation's pick, CLV is 1.46 [0.92, 2.05] on 190 bets (an indication, not
+  a bound); rotation-only builds, a pessimistic floor, give 0.73 and 0.81 points with ROI near zero
+  (`MATCHUP-PLAN.md`, iteration 7).
 - The odds source is unlicensed and scraped; 2025 ends on August 16; prices are median-book proxies,
   not executions.
 - Its errors are largest in seasons the market read better (2024: -0.0069).
@@ -173,13 +186,20 @@ exploratory scoring with the frozen spec finds them indistinguishable from M5 (l
   detect edges of 0.001 to 0.002 over the simple baselines.
 - 2026 comes from StatsAPI, not Retrosheet; 6 games at a venue with no Retrosheet park id get a park
   factor of 1.
+- Suspended games (34 in 2015-2025): the lineup is read from all of the game's plays, completion day
+  included (10 of 68 team-lineups in 6 games take a batter first seen on the completion day), and the
+  final score enters the team run margin on the start date. Re-dating those scores to completion
+  moves `drd` by at most 0.132 runs (0.113 in 2023-2025; mean under 0.001). The reached-on-error
+  count is joined by game id onto both dates (unmeasured), and the day-ahead lineup build can copy a
+  suspended game's completion-day batters into later games (untested). Recorded, not fixed; the next
+  pre-registered version should date them on completion (`results/leakage-tamper.md`).
 - Not evaluated for the postseason, for doubled team-game panels, or outside 2017-2026.
 
 ## 10. Maintenance
 
 | Trigger | Minimum evidence | Action |
 |---|---|---|
-| Forward test with announced starters and timestamped lines: mean CLV at the 6-point threshold does not beat the always-home baseline (week-block 95% interval) | 200 bets minimum (200 to 1,000 may be needed to beat the home-drift baseline at the stricter-build effect of about 0.8 points) | Retire the opening-line skill claim |
+| Forward test with announced starters and timestamped lines: mean CLV at the 6-point threshold does not beat the always-home baseline (week-block 95% interval) | 200 bets minimum (200 to 1,000 may be needed to beat the home-drift baseline at the rotation-only floor of about 0.8 points) | Retire the opening-line skill claim |
 | M5 fails to beat E's log loss in the next held-out season | One full season | Retire M5 as a standalone forecast; use the ensemble or E. Unchecked: E was not in the 2026 plan (post hoc it is level with M5), so this carries to 2027 |
 | Calibration slope interval excludes 1 | One season, 2,000+ games | Recalibrate, new version, new card. 2026: point estimate 0.933; review interval [0.705, 1.151], not in a committed result; not triggered |
 | Retrosheet or StatsAPI schema change breaks a feature family (lineups, batted-ball types, hands) | Any failed build or join | Mark non-reproducible; rebuild and revalidate before scoring |
