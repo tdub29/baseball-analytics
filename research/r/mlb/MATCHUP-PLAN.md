@@ -204,3 +204,11 @@ stale ones).
   framing; (8) switch hitters coded by platoon side (v2 codes them R); (9) aging curves and fielder
   defense beyond team DER; (10) scope some nulls more narrowly and check the M5 blend weight out of
   sample. Also queued: the suspended-game fixes above; travel miles only from verified coordinates.
+- 2026-10-09, queue item 3 done, post hoc and exploratory:
+  [results/devig-check.md](results/devig-check.md). Removing the margin by Shin (1993) instead of
+  proportionally moves the 2023-2025 closing log loss from 0.6743 to 0.6744 and leaves M5 behind
+  the close by 0.0035 [0.0015, 0.0054]. The 561 listed-starter open bets keep their closing-line
+  value under Shin, +2.09 [+1.74, +2.45] points against +2.01 proportional. Favourites and
+  underdogs show it with overlapping intervals (+1.95 and +2.04), and so do the 36 longshot bets,
+  sides under 35% at the open (+2.31 [+1.01, +3.68]). The CLV reading is not an artifact of the
+  de-vig method and is not confined to longshots. No published number changes.
