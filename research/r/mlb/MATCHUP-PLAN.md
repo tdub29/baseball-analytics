@@ -264,3 +264,18 @@ stale ones).
   gives the model a weight of -0.137. REPORT.md section 2 now says the weight is in-sample only, and
   three null claims are scoped to what their intervals show (handedness splits, totals blend, the
   recency model's blend), with the "what did not work" table limited to the idea as built here.
+- 2026-10-09, closing-line timing check registered before any outcome is scored on it
+  (`close_timing.R`). The adversarial review found the closes of 2024-07-31 to 2024-08-07 moving
+  three to five times more than usual from the open, the Sept-Oct 2021 failure (lines scraped after
+  first pitch) in a window too short for the monthly check. Rule, set after a daily-move scan of
+  2021-2025 but before scoring any outcome under it (the reviewer had already scored the 2024
+  window, so this is a post hoc data-quality correction): a date is flagged when it has at least 5
+  matched games and its mean |no-vig close minus no-vig open| is over 3 times that season's median
+  daily mean. Flagged dates leave the moneyline and totals joins. Reported beside the join-fix
+  numbers, never replacing them: on 2023-2025, close minus M5 per season and pooled; v2's close bets
+  at tau 0.05; the day-ahead CLV and ROI at the open at tau 0.06; the totals gap; on 2021-2022, the
+  games dropped. The script stops unless the unflagged run reproduces the join-fix numbers
+  (-0.00354, 988 bets at -0.046, 573 bets at 2.01 points, totals -0.00520 on 6,310 games). Reading
+  rule: "the close beats M5 on 2023-2025" stands if the corrected pooled interval lies below zero.
+  v2, its thresholds and its blend do not change; flagged validation dates are recorded as a fix
+  for the next version.
