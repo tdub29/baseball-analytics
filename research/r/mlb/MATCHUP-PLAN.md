@@ -212,3 +212,16 @@ stale ones).
   underdogs show it with overlapping intervals (+1.95 and +2.04), and so do the 36 longshot bets,
   sides under 35% at the open (+2.31 [+1.01, +3.68]). The CLV reading is not an artifact of the
   de-vig method and is not confined to longshots. No published number changes.
+- 2026-10-09, queue item 2 registered before any scoring, exploratory on 2017-2022 only
+  (`starter_length.R`). v2's expected batters faced is the starter's decayed mean over past starts,
+  shrunk 3 starts toward the league. The candidate is a linear model on as-of inputs: that naive
+  mean, his previous start's batters faced and pitches, days of rest, starts so far this season,
+  his relief share of the past 365 days, his decayed pitches per batter, and his team's decayed
+  starter length. It is fit on 2017-2019 starts and scored on 2021-2022 starts. Keep rule, stage 1:
+  the 2021-2022 mean squared error must fall, with the week-block bootstrap interval on the paired
+  difference above zero. Stage 2 runs only if stage 1 keeps: the games are rebuilt with the new
+  value from the frozen v2 slot checkpoint, which must first reproduce `features.rds` exactly, and
+  `matchup_model.R validation` reruns. The candidate goes to a pre-registered 2027 test only if M5's
+  2017-2022 log loss falls and the 2021-2022 home team-season bootstrap interval on the paired
+  per-game difference excludes zero. A diagnostic, not a candidate: the same rebuild with each
+  starter's actual batters faced, a ceiling on what starter length can add. v2 does not change.
