@@ -65,7 +65,7 @@ pbp = [
   "reportlab>=4.0",
 ]
 warehouse = [
-  "dbt-core>=1.8",
+  "dbt-core>=1.10.5",  # arguments: under generic tests
   "dbt-duckdb>=1.8",
 ]
 dev = [

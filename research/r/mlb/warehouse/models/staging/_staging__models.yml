@@ -18,6 +18,9 @@ models:
       - unique:
           arguments:
             column_name: "gid || '-' || pn"
+      - not_null:
+          arguments:
+            column_name: "gid || '-' || pn"
       - relationships:
           arguments:
             column_name: gid
@@ -39,10 +42,16 @@ models:
       - unique:
           arguments:
             column_name: "game_pk || '-' || listed_at"
+      - not_null:
+          arguments:
+            column_name: "game_pk || '-' || listed_at"
 
   - name: stg_statsapi__team_game_logs
     data_tests:
       - unique:
+          arguments:
+            column_name: "team_id || '-' || game_pk || '-' || stat_group"
+      - not_null:
           arguments:
             column_name: "team_id || '-' || game_pk || '-' || stat_group"
     columns:
@@ -57,6 +66,9 @@ models:
       - unique:
           arguments:
             column_name: "person_id || '-' || game_pk || '-' || team_id || '-' || stat_group"
+      - not_null:
+          arguments:
+            column_name: "person_id || '-' || game_pk || '-' || team_id || '-' || stat_group"
     columns:
       - name: stat_group
         data_tests:
@@ -67,6 +79,9 @@ models:
   - name: stg_statsapi__rosters
     data_tests:
       - unique:
+          arguments:
+            column_name: "person_id || '-' || team_id || '-' || season"
+      - not_null:
           arguments:
             column_name: "person_id || '-' || team_id || '-' || season"
 
