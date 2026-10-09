@@ -7,7 +7,8 @@
 # data/mlb/matchup/predictions<tag>-validation.csv and results/matchup-model<tag>-validation.md,
 # writes results/matchup-model-v4-ablation.md (OUT env to rename). Differences are reference minus
 # run, per game, so positive means the run is better; 95% intervals resample team-seasons, as the
-# close comparison in matchup_model.R does.
+# close comparison in matchup_model.R does. MODEL=M5_plus_defense compares that variant in every run
+# instead of each run's best.
 
 suppressPackageStartupMessages({ library(data.table) })
 SRC <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)[1]))
@@ -24,6 +25,7 @@ ci <- function(g) sprintf("%s [%s, %s]", fmt(g[1]), fmt(g[2]), fmt(g[3]))
 run <- function(tag) {
   md <- readLines(file.path(SRC, "results", sprintf("matchup-model%s-validation.md", tag)))
   best <- sub(".*: (\\S+)[.]$", "\\1", grep("^Best matchup variant", md, value = TRUE))
+  best <- Sys.getenv("MODEL", best)
   close <- sub("^Close minus matchup[^:]*: ", "", grep("^Close minus matchup", md, value = TRUE))
   x <- fread(sprintf("data/mlb/matchup/predictions%s-validation.csv", tag))
   ms <- setdiff(names(x), c("gid", "game_pk", "Date", "season", "y", "p_close"))
@@ -42,14 +44,15 @@ rows <- rbindlist(lapply(R, function(r) {
              d_2122 = ci(paired(ll(w$p_0, w$y) - ll(w$p, w$y), clw)),
              slope_1720 = fmt(slope(r$x, 2017:2020), 3), slope_2122 = fmt(slope(r$x, 2021:2022), 3), close = r$close)
 }))
-lines <- c("# Matchup model v4: validation ablation against v2", "",
+lines <- c(paste("#", Sys.getenv("TITLE", "Matchup model v4: validation ablation against v2")), "",
   sprintf("Generated %s by `matchup_compare.R %s`. Validation seasons only; the 2023-2025 test is not read.", format(Sys.Date()), paste(tags, collapse = " ")), "",
   sprintf("Reference: `%s`. Log loss on the %s games of matchup_model.R's pooled 2017-2022 row (2020 has no recency model, so it is",
           ref$tag, rows$games[1]),
   "out of every pooled number). \"Best\" is each run's best matchup variant on 2017-2022; \"vs ref\" is reference minus run per game",
   "(positive = run better) with a team-season cluster bootstrap 95% interval. Calibration slope: logistic slope of the outcome on the",
   "logit of the best variant (1 = calibrated, below 1 = too extreme); 2017-2020 includes 2020. \"Close\" is matchup_model.R's close minus",
-  "matchup on 2021-2022 games with odds (positive = model better).", "",
+  "matchup on 2021-2022 games with odds (positive = model better).",
+  if (nzchar(Sys.getenv("MODEL"))) sprintf("MODEL=%s: \"best\" in every column below is that variant, not each run's best.", Sys.getenv("MODEL")), "",
   "| run | best | log loss | log loss 2021-2022 | ensemble | best vs ref | ensemble vs ref | best vs ref, 2021-2022 | slope 2017-2020 | slope 2021-2022 | close minus model, 2021-2022 |",
   "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
   rows[, sprintf("| %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s |", run, best, ll, ll_2122, ens, d_best, d_ens, d_2122, slope_1720, slope_2122, close)], "",
