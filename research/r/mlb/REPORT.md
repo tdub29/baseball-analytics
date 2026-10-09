@@ -227,10 +227,15 @@ the model on 2021-2022 (open 0.6695, close 0.6689, model 0.6710 on 4,130 games; 
 0.6686 and 0.6707 on 4,253).
 
 A regression of outcomes on both forecasts, fit on 2021-2022, puts most of the weight on the close
-(0.847 on the close's logit, 0.166 on the model's; corrected, 0.856 and 0.173). The model holds a
-sliver the close lacks in-sample. Whether such a sliver survives out of sample was tested for the
-earlier recency model, and it did not (blend gain -0.00013 [-0.00041, +0.00012],
-`results/market-study.md`; corrected, -0.00015 [-0.00037, +0.00009]).
+(0.847 on the close's logit, 0.166 on the model's; corrected, 0.856 and 0.173). That weight is an
+in-sample fit and does not hold out of sample (`results/blend-oos.md`, registered before scoring).
+Fit on one of 2021 and 2022 and scored on the other, the blend's gain over the close alone is
+-0.00003 [-0.00061, +0.00062] per game; a home team-season bootstrap puts the model's weight at
+0.173 [-0.139, 0.494]; and, post hoc on the spent test, the frozen blend scores 0.00032 worse than
+the close alone [-0.00071, +0.00006], refitting there to a negative weight (-0.137). So the data
+detect no information in the model that the close lacks. The earlier recency model gave the same
+answer (blend gain -0.00013 [-0.00041, +0.00012], `results/market-study.md`; corrected, -0.00015
+[-0.00037, +0.00009]).
 
 ### 3. Both forecasts track the observed rates; the model leans slightly overconfident
 
@@ -319,7 +324,7 @@ total (`TOTALS-PLAN.md`). Totals are often called the softer market; here they w
 | 2023-2025 test, scored once | 6,310 | 0.6930 | 0.6982 | **-0.0052 [-0.0087, -0.0020]** |
 
 The model won 2021 (+0.0028), but 2021 was one of the seasons used to choose it; it lost each test
-season. It adds no information to the close on the test (blend gain -0.00082 [-0.00241, +0.00069]),
+season. No information beyond the close is detected on the test (blend gain -0.00082 [-0.00241, +0.00069]),
 and its frozen 10-point threshold produced 718 bets at +4.6% [-3.0%, +12.0%]: the same shape as the
 moneyline, positive and unproven (`results/totals-test.md`). Its main flaw in validation was a run
 level that lagged league-wide scoring shifts by roughly half of each season's change; a fix tuned on
@@ -346,7 +351,8 @@ gap.
 - **ERA and OPS are the weakest inputs:** they carry hit and sequencing luck. Swapping in FIP, wOBA and bullpen FIP removes three quarters of S1's gap to M5.
 - **With run margin added, S4 sits within noise of the matchup model** on validation, and in 2026
   the model beat it by only +0.0005 [-0.0020, +0.0030].
-- **Handedness splits add nothing** over S4: S5 minus S4 is +0.00014 [-0.00051, +0.00077].
+- **Handedness splits add nothing detectable** over S4: S5 minus S4 is +0.00014 [-0.00051, +0.00077],
+  so a gain up to about 0.0008 per game is not ruled out.
 - **Against the close, S4 trails by more:** 0.0035 [0.0008, 0.0060] on 2021-2022, against 0.0021
   for M5 on the same games.
 
@@ -459,7 +465,11 @@ shrinkage.
 
 Every idea below was tested on validation seasons, most with a paired interval, before it could
 reach the model, and was left out when it failed. Sources: `results/context-ablation.md` (paired differences,
-home team-season cluster bootstrap) and `MATCHUP-PLAN.md`.
+home team-season cluster bootstrap) and `MATCHUP-PLAN.md`. Each "No" is narrow: the idea as built here,
+added to this model, on 2017-2022 moneyline log loss. An interval that spans zero means no gain was
+detected at about its own width, not that the factor is irrelevant. Weather is observed game-time
+weather, not the forecast a bettor would have; travel is a change of site and time-zone hours, not
+miles; neither row says anything about totals or other markets.
 
 | Idea | Change in log loss per game, 2017-2022 (positive = helps) | Kept? |
 |---|---|---|
@@ -478,8 +488,8 @@ home team-season cluster bootstrap) and `MATCHUP-PLAN.md`.
 | Shrinkage tuned to the reliability study (v4), 2017-2019 | +0.00005 [-0.00012, +0.00022] | Forward test only; tied in 2026 |
 
 The earlier recency model (E) went through the same market test and also trailed the close, by
-0.0029 [0.0015, 0.0042] on 10,583 games (0.0029 [0.0017, 0.0042] on 10,831 corrected), adding
-nothing to it. Its betting test first showed +16% at the best available closing price; an audit
+0.0029 [0.0015, 0.0042] on 10,583 games (0.0029 [0.0017, 0.0042] on 10,831 corrected), with no
+detectable blend gain over it. Its betting test first showed +16% at the best available closing price; an audit
 traced that to stale quotes (18.5% of bets took a "best" price more than 10% above fair), and the
 closing line moved *against* its bets by 3.6 points on average (`MARKET-PLAN.md`, iteration 2). That
 episode is why best-of-books prices decide nothing here.
