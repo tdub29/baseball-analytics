@@ -55,6 +55,12 @@ jobs:
         working-directory: warehouse
         run: dbt build --profiles-dir .
 
+      # The MLB staging layer reads private local caches (StatsAPI terms, Retrosheet), so CI
+      # parses it to catch broken SQL, refs and test configs; dbt build runs locally.
+      - name: dbt parse (MLB staging)
+        working-directory: research/r/mlb/warehouse
+        run: cp profiles.example.yml profiles.yml && dbt parse --profiles-dir .
+
   # The MLB R pipeline is a headline deliverable, so it gets a gate. testthat runs entirely
   # on in-line data frames, so this job never touches the network or baseballr.
   r-pipeline:

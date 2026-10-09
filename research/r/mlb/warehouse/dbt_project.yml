@@ -1,0 +1,10 @@
+name: mlb_warehouse
+version: "1.0.0"
+config-version: 2
+profile: mlb_warehouse
+
+# Staging reads multi-GB CSV and Parquet; tables, so tests and queries scan the local
+# DuckDB file once instead of re-reading the raw files.
+models:
+  mlb_warehouse:
+    +materialized: table
