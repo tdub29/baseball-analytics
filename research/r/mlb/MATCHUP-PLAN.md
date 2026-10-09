@@ -243,3 +243,24 @@ stale ones).
   upper bound with outcome leakage, not a reachable target: how long a starter lasts depends on how
   he pitched that day, so it says nothing about beating the market before first pitch. v2 does not
   change.
+- 2026-10-09, queue item 10 registered before any scoring (`blend_oos.R`). The 0.17 weight on M5
+  in the 2021-2022 blend, logit p = a + b logit(close) + c logit(M5), was fit and read on the same
+  games. Checks: (a) cross-fit, the blend fit on 2021 and scored on 2022 and the reverse, with the
+  close minus blend per-game log loss and a home team-season bootstrap interval, each season and
+  pooled; (b) a home team-season bootstrap interval on c from the 2021-2022 fit; (c) post hoc on the
+  spent 2023-2025 test, the frozen 2021-2022 blend scored against the close the same way, labeled
+  post hoc. The inputs are v2's frozen walk-forward M5 predictions and the corrected odds join; the
+  script stops unless its 2021-2022 fit reproduces the published blend (0.018, 0.856, 0.173). Claim
+  rule: "M5 adds information to the close out of sample" is written only if the pooled cross-fit
+  interval in (a) lies above zero; (c) can narrow that claim, never establish it. Nothing in v2,
+  its thresholds or any published number changes.
+- 2026-10-09, queue item 10 done ([results/blend-oos.md](results/blend-oos.md)). The 2021-2022
+  fit reproduces the published blend (0.018, 0.856, 0.173 on 4,253 games). Cross-fit, the blend's
+  gain over the close alone is -0.00010 [-0.00116, +0.00094] fit on 2021 and scored on 2022, and
+  +0.00005 [-0.00048, +0.00058] the other way; pooled -0.00003 [-0.00061, +0.00062], so under the
+  claim rule the report does not say M5 adds information to the close out of sample. The weight
+  itself is 0.173 [-0.139, 0.494] under the bootstrap. Post hoc on 2023-2025 the frozen blend is
+  0.00032 worse than the close alone [-0.00071, +0.00006], 2024 clearly worse, and a refit there
+  gives the model a weight of -0.137. REPORT.md section 2 now says the weight is in-sample only, and
+  three null claims are scoped to what their intervals show (handedness splits, totals blend, the
+  recency model's blend), with the "what did not work" table limited to the idea as built here.
