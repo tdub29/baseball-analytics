@@ -160,6 +160,20 @@ rotation_starters <- function(st, known = 2, pool = 6, min_rest = 4) {
   }, by = team]
 }
 
+#' Retrosheet gid to StatsAPI game_pk: games matched on date and final score, then on the team-id
+#' maps those matches imply (each Retrosheet code to its most frequent StatsAPI id), one pk per gid.
+#' The same join as matchup_model.R (left inline there: frozen). `G`: gid, Date, hometeam, visteam,
+#' hruns, vruns. `S`: game_pk, Date, home_id, away_id, home_score, away_score.
+pk_crosswalk <- function(G, S) {
+  cand <- merge(G[, .(gid, Date, hometeam, visteam, hruns, vruns)], S, by.x = c("Date", "hruns", "vruns"),
+                by.y = c("Date", "home_score", "away_score"))
+  hmap <- cand[, .N, by = .(hometeam, home_id)][order(-N)][!duplicated(hometeam)]
+  amap <- cand[, .N, by = .(visteam, away_id)][order(-N)][!duplicated(visteam)]
+  cand <- merge(merge(cand, hmap[, .(hometeam, hid = home_id)], by = "hometeam"), amap[, .(visteam, aid = away_id)], by = "visteam")
+  cand <- cand[home_id == hid & away_id == aid]
+  cand[!duplicated(gid) & !duplicated(game_pk), .(gid, game_pk)]
+}
+
 #' Odds-ratio combination of batter, pitcher and league rates for each outcome, renormalised.
 log5 <- function(b, p, l) {
   odds <- function(x) x / (1 - x)
@@ -179,6 +193,10 @@ der_gap <- function(games, lag = 0, forward = FALSE) {
   BND <- as.data.frame(G[, .(start = min(Date), end = max(Date)), by = season])
   P <- data.table::rbindlist(lapply(2015:2025, retro_pa))
   if (forward) { P26 <- statsapi_pa(2026, raw = TRUE); P <- rbind(P, P26[, names(P), with = FALSE]) }
+  TD <- Sys.getenv("TAMPER_FROM")                      # leakage test only (tamper.R, sourced by matchup_model.R)
+  if (nzchar(TD)) P <- tamper_pg(P, NULL, as.Date(TD))$P
+  TR <- Sys.getenv("TRUNCATE_FROM")                    # participation test only (leakage_tamper.R)
+  if (nzchar(TR)) { P <- P[Date < as.Date(TR)]; G <- G[Date < as.Date(TR)] }
   BIPO <- c("single", "double", "triple", "out_ip")
   der <- P[outcome %in% BIPO, .(bip = .N, outs = sum(outcome == "out_ip")), by = .(gid, Date, season, site, team = pitteam)]
   rm(P)
@@ -186,6 +204,8 @@ der_gap <- function(games, lag = 0, forward = FALSE) {
     data.table::fread(retro_file(s, "plays"), select = c("gid", "gametype", "pa", "pitteam", "roe"), showProgress = FALSE)[
       gametype == "regular" & pa == 1, .(roe = sum(roe)), by = .(gid, team = pitteam)]))
   if (forward) roe <- rbind(roe, P26[, .(roe = sum(event == "field_error")), by = .(gid, team = pitteam)])
+  if (nzchar(TD)) roe <- tamper_roe(roe, G, as.Date(TD))
+  if (nzchar(TR)) roe <- roe[gid %in% G$gid]
   der <- merge(der, roe, by = c("gid", "team"), all.x = TRUE)
   der[is.na(roe), roe := 0][, outs := outs - roe]
   pf <- data.table::rbindlist(lapply(2015:(if (forward) 2026 else 2025), function(S) {
