@@ -25,6 +25,10 @@ dist/
 warehouse/target/
 warehouse/logs/
 warehouse/dbt_packages/
+research/r/mlb/warehouse/target/
+research/r/mlb/warehouse/logs/
+# dbt's per-machine anonymous id
+.user.yml
 data/cache/
 data/ncaa_cache/
 
@@ -56,3 +60,5 @@ data/mlb/raw/
 data/mlb/matchup/
 # Simulator inputs and per-game outputs: rebuilt by bullpen_model.R and simulate.R.
 data/mlb/sim/
+# Parquet copies of the raw caches (StatsAPI terms: private use only): rebuilt by export_parquet.R.
+data/mlb/parquet/

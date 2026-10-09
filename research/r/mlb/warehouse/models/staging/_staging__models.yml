@@ -1,0 +1,97 @@
+version: 2
+
+models:
+  - name: stg_retro__games
+    columns:
+      - name: gid
+        data_tests: [unique, not_null]
+      - name: game_type
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [regular, allstar, playoff, wildcard, divisionseries, lcs, worldseries]
+      - name: start_date
+        data_tests: [not_null]
+
+  - name: stg_retro__plays
+    data_tests:
+      - unique:
+          arguments:
+            column_name: "gid || '-' || pn"
+      - not_null:
+          arguments:
+            column_name: "gid || '-' || pn"
+      - relationships:
+          arguments:
+            column_name: gid
+            to: ref('stg_retro__games')
+            field: gid
+    columns:
+      - name: play_date
+        data_tests: [not_null]
+
+  - name: stg_statsapi__games
+    columns:
+      - name: game_pk
+        data_tests: [unique, not_null]
+      - name: game_date
+        data_tests: [not_null]
+
+  - name: stg_statsapi__schedule
+    data_tests:
+      - unique:
+          arguments:
+            column_name: "game_pk || '-' || listed_at"
+      - not_null:
+          arguments:
+            column_name: "game_pk || '-' || listed_at"
+
+  - name: stg_statsapi__team_game_logs
+    data_tests:
+      - unique:
+          arguments:
+            column_name: "team_id || '-' || game_pk || '-' || stat_group"
+      - not_null:
+          arguments:
+            column_name: "team_id || '-' || game_pk || '-' || stat_group"
+    columns:
+      - name: stat_group
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [hitting, pitching]
+
+  - name: stg_statsapi__player_game_logs
+    data_tests:
+      - unique:
+          arguments:
+            column_name: "person_id || '-' || game_pk || '-' || team_id || '-' || stat_group"
+      - not_null:
+          arguments:
+            column_name: "person_id || '-' || game_pk || '-' || team_id || '-' || stat_group"
+    columns:
+      - name: stat_group
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [hitting, pitching]
+
+  - name: stg_statsapi__rosters
+    data_tests:
+      - unique:
+          arguments:
+            column_name: "person_id || '-' || team_id || '-' || season"
+      - not_null:
+          arguments:
+            column_name: "person_id || '-' || team_id || '-' || season"
+
+  - name: stg_chadwick__people
+    columns:
+      - name: key_person
+        data_tests: [unique, not_null]
+      - name: key_mlbam
+        data_tests: [unique]
+      - name: key_retro
+        data_tests: [unique]
+      - name: key_bbref
+        data_tests: [unique]

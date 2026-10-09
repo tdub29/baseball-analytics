@@ -21,7 +21,8 @@ this file's sources is committed except aggregates in result files.
 | SportsBookReview odds scrape | market, matchup market tests, totals | 2021-04-01 to 2025-08-16 | `data/mlb/raw/odds/mlb_odds_dataset.json` | game per date: (date key, home name, away name, start time); no game id |
 
 Retrieval dates are the local file times recorded in data-audit.md section 0 (with an md5 per
-source, so a rebuild can confirm it is reading the same bytes).
+source, so a rebuild can confirm it is reading the same bytes). The keys and dates below are also
+checked as dbt tests over a local DuckDB copy: [warehouse/README.md](warehouse/README.md).
 
 ## Retrosheet
 
