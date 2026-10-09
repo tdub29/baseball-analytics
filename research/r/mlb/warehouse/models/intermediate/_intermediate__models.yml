@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: int_game_xwalk
+    description: Retrosheet gid to StatsAPI game_pk for regular-season games, as matchup.R pk_crosswalk().
+    columns:
+      - name: gid
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_retro__games')
+                field: gid
+      - name: game_pk
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_statsapi__games')
+                field: game_pk
