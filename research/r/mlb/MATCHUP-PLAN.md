@@ -212,3 +212,34 @@ stale ones).
   underdogs show it with overlapping intervals (+1.95 and +2.04), and so do the 36 longshot bets,
   sides under 35% at the open (+2.31 [+1.01, +3.68]). The CLV reading is not an artifact of the
   de-vig method and is not confined to longshots. No published number changes.
+- 2026-10-09, queue item 2 registered before any scoring, exploratory on 2017-2022 only
+  (`starter_length.R`). v2's expected batters faced is the starter's decayed mean over past starts,
+  shrunk 3 starts toward the league. The candidate is a linear model on as-of inputs: that naive
+  mean, his previous start's batters faced and pitches, days of rest, starts so far this season,
+  his relief share of the past 365 days, his decayed pitches per batter, and his team's decayed
+  starter length. It is fit on 2017-2019 starts and scored on 2021-2022 starts. Keep rule, stage 1:
+  the 2021-2022 mean squared error must fall, with the week-block bootstrap interval on the paired
+  difference above zero. Stage 2 runs only if stage 1 keeps: the games are rebuilt with the new
+  value from the frozen v2 slot checkpoint, which must first reproduce `features.rds` exactly, and
+  `matchup_model.R validation` reruns. The candidate goes to a pre-registered 2027 test only if M5's
+  2017-2022 log loss falls and the 2021-2022 home team-season bootstrap interval on the paired
+  per-game difference excludes zero. A diagnostic, not a candidate: the same rebuild with each
+  starter's actual batters faced, a ceiling on what starter length can add. v2 does not change.
+- 2026-10-09, queue item 2 done, exploratory on 2017-2022:
+  [results/starter-length.md](results/starter-length.md),
+  [results/starter-length-stage2.md](results/starter-length-stage2.md). Stage 1 keeps: on 2021-2022
+  starts the candidate cuts mean squared error from 19.67 to 16.55, a paired gain of 3.12 [2.50,
+  3.73]. Queried at v2's game date, the naive formula reproduces v2's `exp_bf` on all 30,946 starts;
+  one start of the suspended game NYN202104110 is dated by the day it was pitched and moves. Stage 2
+  drops. The frozen checkpoint reproduces `features.rds` exactly (`starter_length_rebuild.R` stops
+  otherwise), and with the candidate M5's 2017-2022 log loss falls from 0.6703 to 0.6700, but the
+  2021-2022 home team-season
+  interval on the paired per-game difference is 0.00051 [-0.00004, 0.00111] and includes zero, so
+  the candidate does not go to a 2027 test. The pooled row leaves out 2020, as v2's own pooled
+  numbers do, and the 2017-2019 candidate values are in-sample for the starter model, so only the
+  2021-2022 interval is clean. The oracle, each starter's actual batters faced, gains 0.0113
+  [0.0078, 0.0147] pooled and 0.0080 [0.0035, 0.0121] on 2021-2022, and puts M5 ahead of the
+  2021-2022 close by 0.0065 [0.0019, 0.0107]. That is an
+  upper bound with outcome leakage, not a reachable target: how long a starter lasts depends on how
+  he pitched that day, so it says nothing about beating the market before first pitch. v2 does not
+  change.
