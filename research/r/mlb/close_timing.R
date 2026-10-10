@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 # Closing-line timing check (MATCHUP-PLAN.md, registered 2026-10-09 before scoring). Some scraped
-# "closing" lines were taken after first pitch: Sept-Oct 2021 is already excluded, and the review
+# "closing" lines were most likely taken after first pitch: Sept-Oct 2021 is already excluded, and the review
 # found 2024-07-31 to 2024-08-07 too. Rule: flag a date with at least 5 matched games whose mean
 # |no-vig close minus no-vig open| is over 3 times that season's median daily mean. This rescores the
 # headline market comparisons without flagged dates, beside the join-fix numbers, after checking the
