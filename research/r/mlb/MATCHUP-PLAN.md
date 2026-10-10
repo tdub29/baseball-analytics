@@ -296,5 +296,5 @@ stale ones).
   +0.00030] against the recalibrated close, refit weight +0.111, so the negative test weight came
   from the late closes. The corrected gap is borderline: 10,000 draws give -0.0018 [-0.0036,
   -0.0001], an edge about 0.0001 from zero. A looser 2x flag (18 dates) leaves it at -0.0018 on
-  6,401 games. Dropping flagged dates widens the totals gap, so totals closes show no late scrape.
+  6,401 games. Dropping flagged dates widens the totals gap, so the totals closes show no log-loss sign of being late. The screen is one-sided: stale closes that moved too little were not checked.
   Wording: "were most likely taken after first pitch" replaces "early innings".
