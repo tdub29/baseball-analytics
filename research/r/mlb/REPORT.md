@@ -2,8 +2,9 @@
 
 **No.** Scored once on 6,451 games from 2023 to 2025, the frozen model's log loss was 0.0036 per
 game worse than the no-vig closing line (95% interval 0.0016 to 0.0054). A later check found 12
-dates whose scraped "closing" lines were taken after first pitch; without them the gap halves to
-0.0018 [0.0001, 0.0036] on 6,436 games, still in the close's favor (`results/close-timing.md`). Its bets at the opening
+dates whose scraped "closing" lines were most likely taken after first pitch; without them the gap
+halves to 0.0018 [0.0001, 0.0036] on 6,436 games, still in the close's favor but borderline, since the
+interval's edge sits about 0.0001 from zero even at 10,000 draws (`results/close-timing.md`). Its bets at the opening
 line did see where the market was going, gaining 2.01 probability points of closing-line value per
 bet [1.67, 2.35] on 561 bets. With MLB's listed probable starters in place of the actual ones it
 stays at 1.97, but it remains an upper bound, because the opening line carries no timestamp. The return those bets earned, +4.7% [-5.0%, +13.7%], cannot be told apart from
@@ -18,7 +19,7 @@ the market.
 
 | | What was asked | Result on the frozen 2023-2025 test, as run | After the odds-join fix | Plus the closing-time fix | Verdict under the pre-registered rule |
 |---|---|---|---|---|---|
-| Forecast | Does the model predict winners as well as the closing line? | Trails by 0.0036 [0.0016, 0.0054] on 6,451 games | Trails by 0.0035 [0.0017, 0.0055] on 6,576 games | Trails by 0.0018 [0.0001, 0.0036] on 6,436 games | Does not match the close |
+| Forecast | Does the model predict winners as well as the closing line? | Trails by 0.0036 [0.0016, 0.0054] on 6,451 games | Trails by 0.0035 [0.0017, 0.0055] on 6,576 games | Trails by 0.0018 [0.0001, 0.0036] on 6,436 games (borderline) | Does not match the close |
 | Money at the close | Do bets at closing prices make money? | 965 bets, -4.4% [-12.6%, +4.2%] | 988 bets, -4.6% [-12.6%, +4.0%] | 907 bets, +0.5% [-6.4%, +8.0%] | Not profitable |
 | Skill at the open | Do bets at the opening line beat the close? | 561 bets, +2.01 points [1.67, 2.35] | 573 bets, +2.01 points [1.67, 2.36] | 561 bets, +1.94 points [1.62, 2.26] | Passes (an upper bound; see Limits) |
 | Money at the open | Do those bets make money? | +4.7% [-5.0%, +13.7%] | +4.6% [-5.2%, +13.6%] | +4.5% [-5.4%, +13.7%] | Not profitable (interval spans zero) |
@@ -90,7 +91,7 @@ rule, committed before scoring, flags any date with at least 5 games whose mean 
 is over three times its season's median day: 12 dates, 8 of them 2024-07-31 to 2024-08-07. On those
 dates the "close" scores 0.585 log loss against 0.668 for the open over 155 games; on every other
 date the two are 0.673 and 0.674 over 10,676. A pregame line cannot be that much sharper than the
-open, so those closes most likely priced in early innings (`results/close-timing.md`). The odds dataset has no stated license, so it stays local and only aggregates appear
+open, so those closes were most likely taken after first pitch (`results/close-timing.md`). The odds dataset has no stated license, so it stays local and only aggregates appear
 here.
 
 The information used here was obtained free of charge from and is copyrighted by Retrosheet.
@@ -252,8 +253,11 @@ which isolates the model's information from simply rescaling the close, the gain
 [-0.00018, +0.00036]. A home team-season bootstrap puts the model's weight at 0.173 [-0.139, 0.494].
 Post hoc on the spent test, the frozen blend scores 0.00032 worse than the raw close [-0.00071,
 +0.00006] and 0.00020 worse than the recalibrated close [-0.00051, +0.00009], refitting there to a
-negative weight (-0.137). So the data detect no information in the model that the close lacks; a
-gain of up to about 0.0004 per game is not ruled out. The earlier recency model gave the same
+negative weight (-0.137). That loss and the negative weight sit on the 12 late-close dates: without
+them the blend is 0.00010 worse than the raw close [-0.00049, +0.00027], level with the recalibrated
+close (+0.00002 [-0.00027, +0.00030]), and the refit weight is +0.111. So the data detect no
+information in the model that the close lacks; a gain of up to about 0.0004 per game is not ruled
+out (nested cross-fit bound; 0.0006 against the raw close). The earlier recency model gave the same
 answer (blend gain -0.00013 [-0.00041, +0.00012], `results/market-study.md`; corrected, -0.00015
 [-0.00037, +0.00009]).
 
@@ -330,8 +334,8 @@ of 1.05 units and a week-clustering design effect of 1.23, a true edge of 4.7% n
 bets before its 95% interval is even expected to exclude zero, and 4,664 for an 80% chance. At about
 219 bets a full season, that is roughly ten seasons. A 2% edge would need about 12,900. Betting the
 first-pitch model at *closing* prices, the realistic comparison for that model, lost 4.4%
-[-12.6%, +4.2%] on 965 bets (corrected: -4.6% [-12.6%, +4.0%] on 988). Most of that loss sat on
-the late-close dates, where the "closing" price most likely already knew early innings: without them the same
+[-12.6%, +4.2%] on 965 bets (corrected: -4.6% [-12.6%, +4.0%] on 988). All of that loss, and more,
+sat on the late-close dates, where the "closing" price was most likely taken after first pitch: without them the same
 rule makes 907 bets at +0.5% [-6.4%, +8.0%], break-even rather than a loss, and still not a profit.
 
 ### 6. On totals, the model trailed the closing over/under in every test season

@@ -32,6 +32,8 @@ Post hoc. The test was scored once on 2026-10-04; this reads it again and change
 
 Pooled (6576 games): -0.00032 [-0.00071, 0.00006] against the raw close; -0.00020 [-0.00051, 0.00009] against the close recalibrated alone on 2021-2022. Refit on 2023-2025 (in sample, descriptive only): a -0.003, b 1.099, c -0.137.
 
+Without the 12 late-close dates (`close_timing.R`'s rule, 6436 games): -0.00010 [-0.00049, 0.00027] against the raw close; 0.00002 [-0.00027, 0.00030] against the recalibrated close. Refit: a 0.001, b 0.826, c 0.111.
+
 ## Reading under the registered claim rule
 
 The pooled cross-fit interval does not lie above zero, so the report does not say M5 adds information to the close out of sample. The 0.17 weight is an in-sample fit.
