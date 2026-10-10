@@ -298,3 +298,28 @@ stale ones).
   -0.0001], an edge about 0.0001 from zero. A looser 2x flag (18 dates) leaves it at -0.0018 on
   6,401 games. Dropping flagged dates widens the totals gap, so the totals closes show no log-loss sign of being late. The screen is one-sided: stale closes that moved too little were not checked.
   Wording: "were most likely taken after first pitch" replaces "early innings".
+- 2026-10-10, rest and travel v2 registered before any scoring, exploratory on 2017-2022 only. This
+  is a second look: the same rows already rejected the five-term rest and travel group at -0.0004
+  [-0.0007, -0.0001], so a pass here is weaker evidence than a first look. New script
+  `travel_features.R` writes `results/travel-ablation.md` and edits no existing script or output.
+  Features, per team, from schedule facts before the game plus the game's own site and scheduled
+  start: days since the previous game (cap 3); great-circle miles from the previous site and summed
+  over the previous 7 days (thousands, caps 3 and 6), from a per-site coordinate table checked site
+  by site; remaining circadian lag east and west in hours, the body clock moving 1 hour a day toward
+  local time (Song, Severini and Allada 2017); start hour on the body clock, as hours before 1 pm and
+  hours after 10 pm (missing start times: 1:05 pm day, 7:05 pm night); games in the previous 7 days
+  and consecutive days with a game; day game after a night game; doubleheader the previous day;
+  games into the current home stand or road trip (cap 10); played at Coors Field in the previous 3
+  days and not there today. Home and away columns enter separately, not as differences.
+  Model: the v2 M5 base (d12, d3, dpen, drd, dder), weekly walk-forward as in matchup_model.R.
+  Primary test, the only one that can keep anything: base plus every travel feature in a ridge
+  logistic (glmnet, alpha 0, base terms unpenalised, lambda.min by 10-fold cross-validation on the
+  earlier games only, folds by calendar week, seed 20261004). Keep rule: the paired gain over the
+  base (base log loss minus variant, per game) must have a 95% interval above zero over 2017-2022
+  pooled (home team-season cluster bootstrap, 1000 draws, seed 20261004). A pass makes it a
+  candidate for a pre-registered 2027 test only; v2 does not change. Descriptive, never a keep:
+  the same features in an unpenalised glm; each family alone; and on 2021-2022, the no-vig close
+  plus the travel features cross-fit by season (Sept-Oct 2021 and the flagged late-close dates out),
+  asking whether the market already prices travel. The script stops unless the rebuilt base
+  reproduces the saved v2 M5_plus_defense validation predictions and the old five rest terms
+  reproduce M4_plus_rest, both to 1e-9.
