@@ -113,8 +113,8 @@ to earn its place on validation seasons before the test was touched (`MATCHUP-PL
 2. **Matchup.** An odds-ratio (log5) combination of batter, pitcher and league rates for each of the
    nine hitters against the starter, park-adjusted by batter hand, split into the first two passes
    through the order and the third.
-3. **Bullpen.** The remaining batters against the current relievers, weighted by role and recent
-   availability.
+3. **Bullpen.** The same nine hitters, after the starter's expected batters faced, against the current relievers, weighted by role and recent
+   availability. Pinch hitters and other substitutions are not modeled: the posted nine bat all game.
 4. **Runs, then wins.** Expected outcome counts become expected runs through run values fit on
    2015-2016 team-games only, and a logistic regression turns the run gaps into a home win
    probability. It is refit every Monday on every earlier game and predicts that week, so no game is
