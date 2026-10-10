@@ -323,3 +323,14 @@ stale ones).
   asking whether the market already prices travel. The script stops unless the rebuilt base
   reproduces the saved v2 M5_plus_defense validation predictions and the old five rest terms
   reproduce M4_plus_rest, both to 1e-9.
+- 2026-10-10, rest and travel v2 result (exploratory second look, 2017-2022, scored once under the
+  entry above). Primary ridge gain over the v2 M5 base: -0.399 [-1.060, 0.132] x 1000. The interval
+  does not sit above zero, so nothing is kept, nothing goes to a 2027 test, and v2 does not change.
+  Parity held: rebuilt base and M4_plus_rest both reproduce to 6.1e-16. Descriptive only: no single
+  family helps (distance and start clock hurt); on 2021-2022 travel adds 0.051 [0.007, 0.099] x 1000
+  to the no-vig close, about 0.00005 nats a game, too small to matter. Recorded, not applied:
+  actual start time stood in for scheduled (it could only help travel); time-zone changes wrap to 12
+  hours (2019 Tokyo only); training rows include 2016; the M4 parity check was split in two; on an
+  off day the body clock recovers toward the old zone, so lag after an off-day trip reads about an
+  hour high. An independent check found none of these could flip the result. Details:
+  `results/travel-ablation.md`.
