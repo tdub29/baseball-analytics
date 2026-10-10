@@ -9,12 +9,12 @@ Parity: the 2021-2022 fit reproduces the published blend, a 0.018, b 0.856, c 0.
 
 ## (a) Cross-fit on the market-tuning seasons
 
-| fit on | scored on | games | b (close) | c (model) | close minus blend |
-| --- | --- | --- | --- | --- | --- |
-| 2021 | 2022 | 2342 | 0.879 | 0.127 | -0.00010 [-0.00116, 0.00094] |
-| 2022 | 2021 | 1911 | 0.845 | 0.198 | 0.00005 [-0.00048, 0.00058] |
+| fit on | scored on | games | b (close) | c (model) | close minus blend | recalibrated close minus blend |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2021 | 2022 | 2342 | 0.879 | 0.127 | -0.00010 [-0.00116, 0.00094] | 0.00011 [-0.00024, 0.00051] |
+| 2022 | 2021 (backward in time) | 1911 | 0.845 | 0.198 | 0.00005 [-0.00048, 0.00058] | 0.00003 [-0.00041, 0.00051] |
 
-Pooled over both scored seasons (4253 games): -0.00003 [-0.00061, 0.00062].
+Pooled over both scored seasons (4253 games): -0.00003 [-0.00061, 0.00062] against the raw close; 0.00007 [-0.00018, 0.00036] against the close recalibrated alone (the nested test of M5's information).
 
 ## (b) Uncertainty in the model weight
 
@@ -30,7 +30,7 @@ Post hoc. The test was scored once on 2026-10-04; this reads it again and change
 | 2024 | 2382 | -0.00083 [-0.00132, -0.00023] |
 | 2025 | 1813 | 0.00047 [-0.00016, 0.00108] |
 
-Pooled (6576 games): -0.00032 [-0.00071, 0.00006]. Refit on 2023-2025 (in sample, descriptive only): a -0.003, b 1.099, c -0.137.
+Pooled (6576 games): -0.00032 [-0.00071, 0.00006] against the raw close; -0.00020 [-0.00051, 0.00009] against the close recalibrated alone on 2021-2022. Refit on 2023-2025 (in sample, descriptive only): a -0.003, b 1.099, c -0.137.
 
 ## Reading under the registered claim rule
 

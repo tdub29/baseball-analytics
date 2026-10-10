@@ -279,3 +279,15 @@ stale ones).
   rule: "the close beats M5 on 2023-2025" stands if the corrected pooled interval lies below zero.
   v2, its thresholds and its blend do not change; flagged validation dates are recorded as a fix
   for the next version.
+- 2026-10-09, closing-line timing check scored ([results/close-timing.md](results/close-timing.md)).
+  Parity held. The rule flags 12 dates: 2022-06-14, 2024-05-15, 2024-06-17, 2024-07-31 to
+  2024-08-07 and 2025-08-12. On them the "close" scores 0.5853 log loss against 0.6678 for the open
+  (155 games); elsewhere 0.6733 against 0.6739 (10,676). Corrected 2023-2025: close minus M5
+  -0.0018 [-0.0036, -0.0001] on 6,436 games, so under the reading rule "the close beats M5" stands;
+  2024 -0.0023 [-0.0055, +0.0008]; close bets 907 at +0.5% [-6.4%, +8.0%]; CLV at the open 1.94
+  [1.62, 2.26] on 561, ROI +4.5%; totals -0.0061 [-0.0097, -0.0027] on 6,171. The rule drops 15
+  validation games (gap -0.00212 to -0.00196); v2 stays frozen and that drop is a next-version fix.
+  Same day, blend wording fixed per the review: the weight is "not detected" out of sample rather
+  than "does not hold", the item-10 registration is noted as committed with its result, the
+  backward fold is labeled, and a nested test (close recalibrated alone vs close plus M5) is added:
+  +0.00007 [-0.00018, +0.00036] cross-fit, -0.00020 [-0.00051, +0.00009] post hoc.
