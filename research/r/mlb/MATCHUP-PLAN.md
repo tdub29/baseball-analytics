@@ -291,3 +291,10 @@ stale ones).
   than "does not hold", the item-10 registration is noted as committed with its result, the
   backward fold is labeled, and a nested test (close recalibrated alone vs close plus M5) is added:
   +0.00007 [-0.00018, +0.00036] cross-fit, -0.00020 [-0.00051, +0.00009] post hoc.
+- Result, 2026-10-09 (post hoc, second review of the timing fix): without the 12 late-close dates
+  the frozen blend is -0.00010 [-0.00049, +0.00027] against the raw close and +0.00002 [-0.00027,
+  +0.00030] against the recalibrated close, refit weight +0.111, so the negative test weight came
+  from the late closes. The corrected gap is borderline: 10,000 draws give -0.0018 [-0.0036,
+  -0.0001], an edge about 0.0001 from zero. A looser 2x flag (18 dates) leaves it at -0.0018 on
+  6,401 games. Dropping flagged dates widens the totals gap, so totals closes show no late scrape.
+  Wording: "were most likely taken after first pitch" replaces "early innings".

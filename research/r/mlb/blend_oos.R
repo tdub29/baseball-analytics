@@ -24,7 +24,7 @@ ci <- function(g, d = 5) sprintf("%s [%s, %s]", fmt(g[1], d), fmt(g[2], d), fmt(
 
 mk <- fread("data/mlb/raw/odds/market-joined.csv")[, .(game_pk, p_close)]
 load_pred <- function(f, s) {
-  x <- fread(f)[season %in% s, c("gid", "game_pk", "season", "y", BEST), with = FALSE]
+  x <- fread(f)[season %in% s, c("gid", "game_pk", "season", "Date", "y", BEST), with = FALSE]
   x <- merge(x, mk, by = "game_pk")[!is.na(p_close) & !is.na(get(BEST))]
   x[, `:=`(m = get(BEST), cl = paste(substr(gid, 1, 3), season))]
 }
@@ -64,6 +64,11 @@ f0 <- fit(V); T[, `:=`(d = score(f0, T), dn = nested(f0, fitc(V), T))]
 ph_rows <- T[, .(games = .N, d = ci(paired(d, cl))), by = season][order(season)]
 ph_pool <- paired(T$d, T$cl); ph_pool_n <- paired(T$dn, T$cl)
 bt <- stats::coef(fit(T))
+# post hoc: the same reading without the 12 late-close dates (close_timing.R's rule, results/close-timing.md)
+mo <- fread("data/mlb/raw/odds/market-joined.csv")[!is.na(p_open) & !is.na(p_close),
+        .(games = .N, move = mean(abs(p_close - p_open))), by = .(season, Date = as.Date(Date))]
+bad <- mo[, ratio := move / median(move), by = season][games >= 5 & ratio > 3, Date]; stopifnot(length(bad) == 12)
+L <- T[!as.Date(Date) %in% bad]; lt_pool <- paired(L$d, L$cl); lt_pool_n <- paired(L$dn, L$cl); blt <- stats::coef(fit(L))
 claim <- cf_pool[2] > 0
 
 lines <- c("# Market blend weight out of sample (review queue item 10)", "",
@@ -85,6 +90,8 @@ lines <- c("# Market blend weight out of sample (review queue item 10)", "",
   ph_rows[, sprintf("| %s | %s | %s |", season, games, d)], "",
   sprintf("Pooled (%d games): %s against the raw close; %s against the close recalibrated alone on 2021-2022. Refit on 2023-2025 (in sample, descriptive only): a %s, b %s, c %s.",
           nrow(T), ci(ph_pool), ci(ph_pool_n), fmt(bt[1], 3), fmt(bt[2], 3), fmt(bt[3], 3)), "",
+  sprintf("Without the 12 late-close dates (`close_timing.R`'s rule, %d games): %s against the raw close; %s against the recalibrated close. Refit: a %s, b %s, c %s.",
+          nrow(L), ci(lt_pool), ci(lt_pool_n), fmt(blt[1], 3), fmt(blt[2], 3), fmt(blt[3], 3)), "",
   "## Reading under the registered claim rule", "",
   if (claim) "The pooled cross-fit interval lies above zero: M5 adds information to the close out of sample on 2021-2022." else
     "The pooled cross-fit interval does not lie above zero, so the report does not say M5 adds information to the close out of sample. The 0.17 weight is an in-sample fit.",

@@ -38,8 +38,8 @@ T <- fread("data/mlb/matchup/predictions-v2-joinfix-test.csv")[season %in% 2023:
 T <- merge(T, mk[, .(game_pk, med_home, med_away)], by = "game_pk", all.x = TRUE)
 D <- fread("data/mlb/matchup/predictions-v2-dayahead-joinfix-test.csv")[season %in% 2023:2025][, Date := as.Date(Date)]
 D <- merge(D, mk[, .(game_pk, p_open, med_home_open, med_away_open)], by = "game_pk", all.x = TRUE)
-gap_of <- function(x) { x <- x[!is.na(p_close) & !is.na(get(BEST))]
-  list(n = nrow(x), g = cboot(ll(x$p_close, x$y) - ll(x[[BEST]], x$y), paste(substr(x$gid, 1, 3), x$season))) }
+gap_of <- function(x, B = 1000) { x <- x[!is.na(p_close) & !is.na(get(BEST))]
+  list(n = nrow(x), g = cboot(ll(x$p_close, x$y) - ll(x[[BEST]], x$y), paste(substr(x$gid, 1, 3), x$season), B = B)) }
 close_bets <- function(x) { x <- x[!is.na(p_close)]; eh <- x[[BEST]] - x$p_close
   side <- ifelse(eh >= TAU_CLOSE, "h", ifelse(-eh >= TAU_CLOSE, "a", NA)); b <- x[!is.na(side)]; side <- side[!is.na(side)]
   price <- ifelse(side == "h", b$med_home, b$med_away); won <- ifelse(side == "h", b$y == 1, b$y == 0)
@@ -72,6 +72,8 @@ V <- merge(V[, !"p_close"], mk[, .(game_pk, p_close)], by = "game_pk")
 gv <- gap_of(V); gvf <- gap_of(V[!Date %in% bad])
 
 f <- R$fixed
+# stability (post hoc): the corrected pooled gap with 10,000 draws, and a looser 2x flag
+g10 <- gap_of(runs$fixed$T, B = 10000); bad2 <- dm[games >= 5 & ratio > 2, Date]; g2 <- gap_of(T[!Date %in% bad2])
 row <- function(lab, x, y) sprintf("| %s | %s | %s |", lab, x, y)
 lines <- c("# Closing-line timing check", "",
   sprintf("Generated %s by `close_timing.R`. Registered in MATCHUP-PLAN.md (2026-10-09) before scoring; post hoc data-quality", format(Sys.Date())),
@@ -94,6 +96,9 @@ lines <- c("# Closing-line timing check", "",
   row("Same bets, ROI at the median open price", ci(a$ob$roi, 3), ci(f$ob$roi, 3)),
   row("Totals, market minus T2", sprintf("%s, %d games", ci(a$tot$g, 5), a$tot$n), sprintf("%s, %d games", ci(f$tot$g, 5), f$tot$n)), "",
   "Intervals: home team-season bootstrap for log loss, week-block bootstrap for bets (1,000 draws; totals 2,000), seed 20261004.", "",
+  sprintf("Stability (post hoc): with 10,000 draws the corrected pooled gap is %s. Its upper edge sits about 0.0001 from zero, so after the fix the close's lead is borderline. A looser flag (2 times the season median) drops %d dates across 2021-2025 and gives %s on %d games.",
+          ci(g10$g), length(bad2), ci(g2$g), g2$n), "",
+  sprintf("Totals: dropping the flagged dates widens the market's lead (%s to %s), so the totals closes show no sign of late scraping on those dates.", fmt(a$tot$g[1], 5), fmt(f$tot$g[1], 5)), "",
   "## 2021-2022 validation", "",
   sprintf("The rule flags %d validation games. Close minus M5 there: %s on %d games as run, %s on %d without them. v2's threshold and blend",
           gv$n - gvf$n, ci(gv$g, 5), gv$n, ci(gvf$g, 5), gvf$n),

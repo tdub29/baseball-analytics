@@ -43,6 +43,10 @@ Why it reads as after first pitch (descriptive, outcomes used): on flagged dates
 
 Intervals: home team-season bootstrap for log loss, week-block bootstrap for bets (1,000 draws; totals 2,000), seed 20261004.
 
+Stability (post hoc): with 10,000 draws the corrected pooled gap is -0.0018 [-0.0036, -0.0001]. Its upper edge sits about 0.0001 from zero, so after the fix the close's lead is borderline. A looser flag (2 times the season median) drops 18 dates across 2021-2025 and gives -0.0018 [-0.0036, -0.0001] on 6401 games.
+
+Totals: dropping the flagged dates widens the market's lead (-0.00520 to -0.00610), so the totals closes show no sign of late scraping on those dates.
+
 ## 2021-2022 validation
 
 The rule flags 15 validation games. Close minus M5 there: -0.00212 [-0.00384, -0.00022] on 4253 games as run, -0.00196 [-0.00373, -0.00005] on 4238 without them. v2's threshold and blend

@@ -144,7 +144,7 @@ Season intervals are computed by `figures.R`; pooled values are the committed on
 
 | Measure, join fix plus closing-time fix (`results/close-timing.md`, post hoc) | Value |
 |---|---|
-| Close minus M5 | -0.0018 [-0.0036, -0.0001] on 6,436 games; 2024 -0.0023 [-0.0055, +0.0008] |
+| Close minus M5 | -0.0018 [-0.0036, -0.0001] on 6,436 games (borderline: the edge sits about 0.0001 from zero even at 10,000 draws); 2024 -0.0023 [-0.0055, +0.0008] |
 | Bets at the close | 907 bets, ROI +0.5% [-6.4%, +8.0%] |
 | Day-ahead bets at the open | 561 bets, CLV +1.94 [1.62, 2.26], ROI +4.5% [-5.4%, +13.7%] |
 | Totals, market minus T2 | -0.0061 [-0.0097, -0.0027] on 6,171 games |
