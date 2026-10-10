@@ -243,3 +243,58 @@ stale ones).
   upper bound with outcome leakage, not a reachable target: how long a starter lasts depends on how
   he pitched that day, so it says nothing about beating the market before first pitch. v2 does not
   change.
+- 2026-10-09, queue item 10 registered before any scoring (`blend_oos.R`). The 0.17 weight on M5
+  in the 2021-2022 blend, logit p = a + b logit(close) + c logit(M5), was fit and read on the same
+  games. Checks: (a) cross-fit, the blend fit on 2021 and scored on 2022 and the reverse, with the
+  close minus blend per-game log loss and a home team-season bootstrap interval, each season and
+  pooled; (b) a home team-season bootstrap interval on c from the 2021-2022 fit; (c) post hoc on the
+  spent 2023-2025 test, the frozen 2021-2022 blend scored against the close the same way, labeled
+  post hoc. The inputs are v2's frozen walk-forward M5 predictions and the corrected odds join; the
+  script stops unless its 2021-2022 fit reproduces the published blend (0.018, 0.856, 0.173). Claim
+  rule: "M5 adds information to the close out of sample" is written only if the pooled cross-fit
+  interval in (a) lies above zero; (c) can narrow that claim, never establish it. Nothing in v2,
+  its thresholds or any published number changes.
+- 2026-10-09, queue item 10 done ([results/blend-oos.md](results/blend-oos.md)). The 2021-2022
+  fit reproduces the published blend (0.018, 0.856, 0.173 on 4,253 games). Cross-fit, the blend's
+  gain over the close alone is -0.00010 [-0.00116, +0.00094] fit on 2021 and scored on 2022, and
+  +0.00005 [-0.00048, +0.00058] the other way; pooled -0.00003 [-0.00061, +0.00062], so under the
+  claim rule the report does not say M5 adds information to the close out of sample. The weight
+  itself is 0.173 [-0.139, 0.494] under the bootstrap. Post hoc on 2023-2025 the frozen blend is
+  0.00032 worse than the close alone [-0.00071, +0.00006], 2024 clearly worse, and a refit there
+  gives the model a weight of -0.137. REPORT.md section 2 now says the weight is in-sample only, and
+  three null claims are scoped to what their intervals show (handedness splits, totals blend, the
+  recency model's blend), with the "what did not work" table limited to the idea as built here.
+- 2026-10-09, closing-line timing check registered before any outcome is scored on it
+  (`close_timing.R`). The adversarial review found the closes of 2024-07-31 to 2024-08-07 moving
+  three to five times more than usual from the open, the Sept-Oct 2021 failure (lines scraped after
+  first pitch) in a window too short for the monthly check. Rule, set after a daily-move scan of
+  2021-2025 but before scoring any outcome under it (the reviewer had already scored the 2024
+  window, so this is a post hoc data-quality correction): a date is flagged when it has at least 5
+  matched games and its mean |no-vig close minus no-vig open| is over 3 times that season's median
+  daily mean. Flagged dates leave the moneyline and totals joins. Reported beside the join-fix
+  numbers, never replacing them: on 2023-2025, close minus M5 per season and pooled; v2's close bets
+  at tau 0.05; the day-ahead CLV and ROI at the open at tau 0.06; the totals gap; on 2021-2022, the
+  games dropped. The script stops unless the unflagged run reproduces the join-fix numbers
+  (-0.00354, 988 bets at -0.046, 573 bets at 2.01 points, totals -0.00520 on 6,310 games). Reading
+  rule: "the close beats M5 on 2023-2025" stands if the corrected pooled interval lies below zero.
+  v2, its thresholds and its blend do not change; flagged validation dates are recorded as a fix
+  for the next version.
+- 2026-10-09, closing-line timing check scored ([results/close-timing.md](results/close-timing.md)).
+  Parity held. The rule flags 12 dates: 2022-06-14, 2024-05-15, 2024-06-17, 2024-07-31 to
+  2024-08-07 and 2025-08-12. On them the "close" scores 0.5853 log loss against 0.6678 for the open
+  (155 games); elsewhere 0.6733 against 0.6739 (10,676). Corrected 2023-2025: close minus M5
+  -0.0018 [-0.0036, -0.0001] on 6,436 games, so under the reading rule "the close beats M5" stands;
+  2024 -0.0023 [-0.0055, +0.0008]; close bets 907 at +0.5% [-6.4%, +8.0%]; CLV at the open 1.94
+  [1.62, 2.26] on 561, ROI +4.5%; totals -0.0061 [-0.0097, -0.0027] on 6,171. The rule drops 15
+  validation games (gap -0.00212 to -0.00196); v2 stays frozen and that drop is a next-version fix.
+  Same day, blend wording fixed per the review: the weight is "not detected" out of sample rather
+  than "does not hold", the item-10 registration is noted as committed with its result, the
+  backward fold is labeled, and a nested test (close recalibrated alone vs close plus M5) is added:
+  +0.00007 [-0.00018, +0.00036] cross-fit, -0.00020 [-0.00051, +0.00009] post hoc.
+- Result, 2026-10-09 (post hoc, second review of the timing fix): without the 12 late-close dates
+  the frozen blend is -0.00010 [-0.00049, +0.00027] against the raw close and +0.00002 [-0.00027,
+  +0.00030] against the recalibrated close, refit weight +0.111, so the negative test weight came
+  from the late closes. The corrected gap is borderline: 10,000 draws give -0.0018 [-0.0036,
+  -0.0001], an edge about 0.0001 from zero. A looser 2x flag (18 dates) leaves it at -0.0018 on
+  6,401 games. Dropping flagged dates widens the totals gap, so the totals closes show no log-loss sign of being late. The screen is one-sided: stale closes that moved too little were not checked.
+  Wording: "were most likely taken after first pitch" replaces "early innings".
