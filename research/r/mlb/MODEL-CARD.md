@@ -142,6 +142,17 @@ Season intervals are computed by `figures.R`; pooled values are the committed on
 | Bets at the close | 988 bets, ROI -4.6% [-12.6%, +4.0%] |
 | Day-ahead bets at the open | 573 bets, CLV +2.01 [1.67, 2.36], ROI +4.6% [-5.2%, +13.6%] |
 
+| Measure, join fix plus closing-time fix (`results/close-timing.md`, post hoc) | Value |
+|---|---|
+| Close minus M5 | -0.0018 [-0.0036, -0.0001] on 6,436 games; 2024 -0.0023 [-0.0055, +0.0008] |
+| Bets at the close | 907 bets, ROI +0.5% [-6.4%, +8.0%] |
+| Day-ahead bets at the open | 561 bets, CLV +1.94 [1.62, 2.26], ROI +4.5% [-5.4%, +13.7%] |
+| Totals, market minus T2 | -0.0061 [-0.0097, -0.0027] on 6,171 games |
+
+The closing-time fix drops 12 dates whose scraped "closing" lines were most likely taken after first
+pitch (daily mean open-to-close move over three times the season's median day; rule committed before
+scoring). No verdict moves; the forecast gap halves and 2024 stops standing out.
+
 | 2026 forward test, 2,429 games (`results/forward-test-2026.md`) | Value |
 |---|---|
 | Log loss, M5 v2 | 0.6813 (home field 0.6916, team run margin 0.6840, S4 0.6818) |
@@ -179,7 +190,9 @@ exploratory scoring with the frozen spec finds them indistinguishable from M5 (l
   (`MATCHUP-PLAN.md`, iteration 7).
 - The odds source is unlicensed and scraped; 2025 ends on August 16; prices are median-book proxies,
   not executions.
-- Its errors are largest in seasons the market read better (2024: -0.0069).
+- Its errors looked largest in 2024 (-0.0069), but about two thirds of that came from late-scraped
+  closes; corrected, 2024 is -0.0023 [-0.0055, +0.0008].
+- Scraped closes are checked by a daily rule; a late scrape on a few games of a normal day would pass it.
 - Profit is unproven and would take about 2,300 bets at the observed +4.7% to show (about ten
   seasons at this threshold).
 - 2026 has no odds, so whether it matched the 2026 close is unknown; one season is too short to

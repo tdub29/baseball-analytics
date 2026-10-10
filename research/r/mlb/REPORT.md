@@ -1,7 +1,9 @@
 # Can a public-data model beat Vegas, game by game?
 
 **No.** Scored once on 6,451 games from 2023 to 2025, the frozen model's log loss was 0.0036 per
-game worse than the no-vig closing line (95% interval 0.0016 to 0.0054). Its bets at the opening
+game worse than the no-vig closing line (95% interval 0.0016 to 0.0054). A later check found 12
+dates whose scraped "closing" lines were taken after first pitch; without them the gap halves to
+0.0018 [0.0001, 0.0036] on 6,436 games, still in the close's favor (`results/close-timing.md`). Its bets at the opening
 line did see where the market was going, gaining 2.01 probability points of closing-line value per
 bet [1.67, 2.35] on 561 bets. With MLB's listed probable starters in place of the actual ones it
 stays at 1.97, but it remains an upper bound, because the opening line carries no timestamp. The return those bets earned, +4.7% [-5.0%, +13.7%], cannot be told apart from
@@ -14,13 +16,18 @@ too short to see edges that small (about 14% to 16% power for the edges measured
 weak test, not evidence of a tie. No licensed 2026 odds were available, so 2026 says nothing about
 the market.
 
-| | What was asked | Result on the frozen 2023-2025 test, as run | After the odds-join fix | Verdict under the pre-registered rule |
-|---|---|---|---|---|
-| Forecast | Does the model predict winners as well as the closing line? | Trails by 0.0036 [0.0016, 0.0054] on 6,451 games | Trails by 0.0035 [0.0017, 0.0055] on 6,576 games | Does not match the close |
-| Money at the close | Do bets at closing prices make money? | 965 bets, -4.4% [-12.6%, +4.2%] | 988 bets, -4.6% [-12.6%, +4.0%] | Not profitable |
-| Skill at the open | Do bets at the opening line beat the close? | 561 bets, +2.01 points [1.67, 2.35] | 573 bets, +2.01 points [1.67, 2.36] | Passes (an upper bound; see Limits) |
-| Money at the open | Do those bets make money? | +4.7% [-5.0%, +13.7%] | +4.6% [-5.2%, +13.6%] | Not profitable (interval spans zero) |
-| Totals | Does a run model beat the closing over/under? | Trails by 0.0052 [0.0020, 0.0087] | Not affected | Does not beat the closing total |
+| | What was asked | Result on the frozen 2023-2025 test, as run | After the odds-join fix | Plus the closing-time fix | Verdict under the pre-registered rule |
+|---|---|---|---|---|---|
+| Forecast | Does the model predict winners as well as the closing line? | Trails by 0.0036 [0.0016, 0.0054] on 6,451 games | Trails by 0.0035 [0.0017, 0.0055] on 6,576 games | Trails by 0.0018 [0.0001, 0.0036] on 6,436 games | Does not match the close |
+| Money at the close | Do bets at closing prices make money? | 965 bets, -4.4% [-12.6%, +4.2%] | 988 bets, -4.6% [-12.6%, +4.0%] | 907 bets, +0.5% [-6.4%, +8.0%] | Not profitable |
+| Skill at the open | Do bets at the opening line beat the close? | 561 bets, +2.01 points [1.67, 2.35] | 573 bets, +2.01 points [1.67, 2.36] | 561 bets, +1.94 points [1.62, 2.26] | Passes (an upper bound; see Limits) |
+| Money at the open | Do those bets make money? | +4.7% [-5.0%, +13.7%] | +4.6% [-5.2%, +13.6%] | +4.5% [-5.4%, +13.7%] | Not profitable (interval spans zero) |
+| Totals | Does a run model beat the closing over/under? | Trails by 0.0052 [0.0020, 0.0087] | Not affected | Trails by 0.0061 [0.0027, 0.0097] on 6,171 games | Does not beat the closing total |
+
+The closing-time fix drops 12 dates (2022-06-14, 2024-05-15, 2024-06-17, 2024-07-31 to 2024-08-07,
+2025-08-12) whose "closing" lines moved over three times the season's typical daily amount, a rule
+committed before it was scored (`MATCHUP-PLAN.md`). It is a post hoc data-quality correction, shown
+beside the as-run numbers, and no verdict moves.
 
 | 2026 forward test, 2,429 games, scored once | Log loss saved per game by the model [95%] | Verdict |
 |---|---|---|
@@ -78,7 +85,12 @@ games never joined; with both names mapped the join reaches 10,831 games
 (`results/market-study-joinfix.md`). Both versions are published and no verdict moved. September
 and October 2021 are excluded: their "closing" lines were scraped after first pitch (36% moved more
 than 15 points from the open), which a sanity check caught on the first run (`MARKET-PLAN.md`,
-iteration 2). The odds dataset has no stated license, so it stays local and only aggregates appear
+iteration 2). That check was monthly, and a later review found shorter windows it missed. A daily
+rule, committed before scoring, flags any date with at least 5 games whose mean open-to-close move
+is over three times its season's median day: 12 dates, 8 of them 2024-07-31 to 2024-08-07. On those
+dates the "close" scores 0.585 log loss against 0.668 for the open over 155 games; on every other
+date the two are 0.673 and 0.674 over 10,676. A pregame line cannot be that much sharper than the
+open, so those closes most likely priced in early innings (`results/close-timing.md`). The odds dataset has no stated license, so it stays local and only aggregates appear
 here.
 
 The information used here was obtained free of charge from and is copyrighted by Retrosheet.
@@ -199,7 +211,7 @@ What the ladder says:
 - **The test seasons were harder for every forecast,** the close included (0.6743 vs 0.6689), so
   levels are compared within a period, not across.
 
-### 2. The model trailed the closing line in every season but 2025; only 2024 is clearly worse
+### 2. The model trailed the closing line in every season but 2025; 2024 looked clearly worse until late closes were removed
 
 ![Close minus model by season, 2021-2025, paired intervals; test seasons shaded](results/figures/fig2-gap-to-close.png)
 
@@ -216,24 +228,32 @@ What the ladder says:
 Negative means the close was better. Intervals: paired, home team-season cluster bootstrap. Pooled
 rows reproduce the committed results exactly; season intervals are computed by `figures.R`. This
 table is the as-run join. With the fix, 2025 has 1,813 games and the pooled gap is -0.0035
-[-0.0055, -0.0017] on 6,576 games (`results/matchup-model-v2-joinfix-test.md`).
+[-0.0055, -0.0017] on 6,576 games (`results/matchup-model-v2-joinfix-test.md`). Dropping the 12
+dates with late closes as well, the pooled gap is -0.0018 [-0.0036, -0.0001] on 6,436 games and 2024
+is -0.0023 [-0.0055, +0.0008], no longer distinguishable from the other seasons; 2023 is unchanged
+and 2025 is +0.0002 [-0.0026, +0.0026] (`results/close-timing.md`).
 
 On validation the gap had shrunk to the first interval that touched zero, which is why the test was
 worth running. That gap was read at each iteration (0.0029, 0.0026, then 0.0021; `MATCHUP-PLAN.md`),
 so it flatters the model; the test gap is the honest one. On the test it widened again, driven by
-2024. The day-ahead variant trails by more,
+2024, but the widening disappears once late closes are removed (0.0018 on the test against 0.0020
+on validation, both corrected). The day-ahead variant trails by more,
 0.0038 [0.0020, 0.0055] as run and 0.0037 [0.0020, 0.0056] corrected. Even the *opening* line beat
 the model on 2021-2022 (open 0.6695, close 0.6689, model 0.6710 on 4,130 games; corrected, 0.6691,
 0.6686 and 0.6707 on 4,253).
 
 A regression of outcomes on both forecasts, fit on 2021-2022, puts most of the weight on the close
 (0.847 on the close's logit, 0.166 on the model's; corrected, 0.856 and 0.173). That weight is an
-in-sample fit and does not hold out of sample (`results/blend-oos.md`, registered before scoring).
-Fit on one of 2021 and 2022 and scored on the other, the blend's gain over the close alone is
--0.00003 [-0.00061, +0.00062] per game; a home team-season bootstrap puts the model's weight at
-0.173 [-0.139, 0.494]; and, post hoc on the spent test, the frozen blend scores 0.00032 worse than
-the close alone [-0.00071, +0.00006], refitting there to a negative weight (-0.137). So the data
-detect no information in the model that the close lacks. The earlier recency model gave the same
+in-sample fit, and out of sample no gain is detected (`results/blend-oos.md`; its registration and
+result were committed together, so the order cannot be checked from history). Fit on one of 2021
+and 2022 and scored on the other (one of the two folds runs backward in time), the blend's gain over
+the raw close is -0.00003 [-0.00061, +0.00062] per game. Against the close recalibrated on its own,
+which isolates the model's information from simply rescaling the close, the gain is +0.00007
+[-0.00018, +0.00036]. A home team-season bootstrap puts the model's weight at 0.173 [-0.139, 0.494].
+Post hoc on the spent test, the frozen blend scores 0.00032 worse than the raw close [-0.00071,
++0.00006] and 0.00020 worse than the recalibrated close [-0.00051, +0.00009], refitting there to a
+negative weight (-0.137). So the data detect no information in the model that the close lacks; a
+gain of up to about 0.0004 per game is not ruled out. The earlier recency model gave the same
 answer (blend gain -0.00013 [-0.00041, +0.00012], `results/market-study.md`; corrected, -0.00015
 [-0.00037, +0.00009]).
 
@@ -259,6 +279,7 @@ fewer bets than profit to settle.
 |---|---:|---|---|---|
 | **Model M5, day-ahead lineups, 6+ points off the open** | **561** | **+2.01 [1.67, 2.35]** | **+4.7% [-5.0%, +13.7%]** | Pre-registered |
 | Same, after the odds-join fix | 573 | +2.01 [1.67, 2.36] | +4.6% [-5.2%, +13.6%] | Corrected |
+| Same, also without the 12 late-close dates | 561 | +1.94 [1.62, 2.26] | +4.5% [-5.4%, +13.7%] | Corrected, post hoc |
 | Same, MLB's listed probable starters instead of the actual ones | 558 | +1.97 [1.62, 2.30] | +4.4% [-5.6%, +13.6%] | Exploratory |
 | ...of which both listed starters were the rotation's pick | 190 | +1.46 [0.92, 2.05] | -11.0% [-26.2%, +3.0%] | Exploratory |
 | Team run margin only, 6+ points off the open | 1,342 | +0.51 [0.36, 0.68] | -3.0% [-10.3%, +3.9%] | Exploratory |
@@ -309,7 +330,9 @@ of 1.05 units and a week-clustering design effect of 1.23, a true edge of 4.7% n
 bets before its 95% interval is even expected to exclude zero, and 4,664 for an 80% chance. At about
 219 bets a full season, that is roughly ten seasons. A 2% edge would need about 12,900. Betting the
 first-pitch model at *closing* prices, the realistic comparison for that model, lost 4.4%
-[-12.6%, +4.2%] on 965 bets (corrected: -4.6% [-12.6%, +4.0%] on 988).
+[-12.6%, +4.2%] on 965 bets (corrected: -4.6% [-12.6%, +4.0%] on 988). Most of that loss sat on
+the late-close dates, where the "closing" price most likely already knew early innings: without them the same
+rule makes 907 bets at +0.5% [-6.4%, +8.0%], break-even rather than a loss, and still not a profit.
 
 ### 6. On totals, the model trailed the closing over/under in every test season
 
@@ -322,6 +345,7 @@ total (`TOTALS-PLAN.md`). Totals are often called the softer market; here they w
 |---|---:|---:|---:|---|
 | 2021-2022 validation (choices made here) | 4,059 | 0.6919 | 0.6943 | -0.0023 [-0.0055, +0.0009] |
 | 2023-2025 test, scored once | 6,310 | 0.6930 | 0.6982 | **-0.0052 [-0.0087, -0.0020]** |
+| Same, without the 12 late-close dates (post hoc) | 6,171 | | | -0.0061 [-0.0097, -0.0027] |
 
 The model won 2021 (+0.0028), but 2021 was one of the seasons used to choose it; it lost each test
 season. No information beyond the close is detected on the test (blend gain -0.00082 [-0.00241, +0.00069]),
@@ -498,8 +522,9 @@ episode is why best-of-books prices decide nothing here.
 
 - **Unlicensed odds.** The only historical line source in hand is a scraped dataset with no stated
   license. It is used privately, never committed, and only aggregates are shown. Its "current" line
-  is taken as the close, which failed for September and October 2021 and is assumed to hold
-  elsewhere after a monthly sanity check.
+  is taken as the close, which failed for September and October 2021 and on 12 later dates caught
+  by a daily rule (mean open-to-close move over three times the season's median day). Shorter
+  failures, a few games on an otherwise normal day, would pass that rule.
 - **No odds for 2026.** The 2026 test compares the model with baselines and outcomes only. Whether
   it would have matched the 2026 close is unknown.
 - **Actual starter versus listed starter.** Retrosheet records who actually started, and the as-run
