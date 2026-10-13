@@ -2,10 +2,10 @@
 
 Pitch-level baseball modeling at two levels. The NCAA half is a transfer-portal scouting
 platform the University of San Diego coaching staff uses: seven ingest sources feed a tested
-warehouse, ten trained models score players, and two Streamlit apps and a row-level-secured
-board put the output in front of coaches. The MLB half is where the same methods get validated
-against far more data: run expectancy and win probability over full seasons, Statcast arm-angle
-and pitch modeling, and a top-25 finish in the Nick Wan / NWDS batted-ball competition.
+warehouse, ten trained models (Stuff+, whiff probability, xSLG, run value) score players, and two
+Streamlit apps and a row-level-secured board put the output in front of coaches. The MLB half is
+where the same methods get validated against far more data: run expectancy and win probability over full seasons, Statcast arm-angle
+and pitch modeling.
 
 The pairing is the point. The NCAA work shows the models ship to real users on a deadline. The
 MLB work shows they are not one school's quirk.
@@ -25,16 +25,16 @@ TrackMan
 
 | Area | Size | Notes |
 |---|---|---|
-| `src/ncaa/portal/` | 28 files, 5,294 lines | Portal ingest, dedupe, entity resolution, enrichment, geo, program tier, rollup, fit scoring, alerts |
-| `src/ncaa/pbp/` | 24 files, 6,444 lines | NCAA play-by-play acquisition (Playwright plus `ncaa-api.henrygd.me`), situational "battle" scoring, season PDF reports |
+| `src/ncaa/portal/` | 28 files, 5,296 lines | Portal ingest, dedupe, entity resolution, enrichment, geo, program tier, rollup, fit scoring, alerts |
+| `src/ncaa/pbp/` | 25 files, 6,516 lines | NCAA play-by-play acquisition (Playwright plus `ncaa-api.henrygd.me`), situational "battle" scoring, season PDF reports |
 | `src/ncaa/cli.py` | 336 lines | `init`, `import-excel`, `ingest`, `enrich-643`, `evaluate`, `board`, `run-all` |
-| `warehouse/` | 18 SQL files, 925 lines | dbt-duckdb rebuild of the transform layer, with model contracts, source freshness and sample fixtures |
+| `warehouse/` | 18 SQL files, 925 lines | dbt-duckdb rebuild of the transform layer: 3 staging, 1 intermediate and 7 mart models (dims, `fct_pitch`, season marts), 3 singular tests, a pitch-type seed, model contracts, source freshness and sample fixtures |
 | `apps/hitter/`, `apps/pitcher/` | 5,275 lines | The two Streamlit apps coaches open, with their 10 model artifacts |
-| `scripts/` | 19 files | NCAA bio fetchers (D1/D2/D3/portal), school geocoding, Excel import and export, board HTML build, Netlify publish, Supabase RLS verify |
-| `tests/` plus the pbp tests | 15 pytest files, 147 tests | bio, board, d1baseball, dedupe, geo, overlay, RLS schema, pipeline, program tier, resolve, rollup, speed, status, battle calc, and a guard that the battle converter stays linear in input size |
+| `scripts/` | 22 files | NCAA bio fetchers (D1/D2/D3/portal), school geocoding, Excel import and export, board HTML build, Netlify publish, Supabase RLS verify |
+| `tests/` plus the pbp tests | 15 pytest files, 98 test functions | bio, board, d1baseball, dedupe, geo, overlay, RLS schema, pipeline, program tier, resolve, rollup, speed, status, battle calc, and a guard that the battle converter stays linear in input size |
 | `research/notebooks/` | 20 notebooks | 8 MLB, 12 NCAA, outputs stripped (verified 2026-09-16: 0 of the 20 carry embedded outputs). Every shipped model was trained in one of these |
-| `research/r/` | 7 R files + 83 testthat assertions | The MLB run-expectancy pipeline, rebuilt from a 604-line monolith into ingest / features / model / evaluate, plus a walk-forward out-of-sample backtest. The original is kept at `research/r/legacy/` so the diff is readable ([before and after](research/r/README.md)) |
-| `docs/` | 11 design docs | Pipeline design, 2026 sourcing, capabilities and blockers, Netlify and Supabase recipes, the consolidation plan |
+| `research/r/` | 46 R scripts in `mlb/`, 4 testthat files with 38 `test_that` blocks | The MLB run-expectancy pipeline, rebuilt from a 604-line monolith into ingest / features / model / evaluate, plus a walk-forward out-of-sample backtest. The original is kept at `research/r/legacy/` so the diff is readable ([before and after](research/r/README.md)) |
+| `docs/` | 12 design docs | Pipeline design, 2026 sourcing, capabilities and blockers, Netlify and Supabase recipes, the consolidation plan |
 
 Model provenance, which notebook trained which artifact: [`models/README.md`](models/README.md).
 
@@ -42,6 +42,7 @@ Model provenance, which notebook trained which artifact: [`models/README.md`](mo
 
 The two Streamlit apps and the coach board are in active use. The dbt warehouse is a staged
 rebuild of the transform layer and has **not** cut over; the SQLite pipeline is still what runs.
+CI (`.github/workflows/ci.yml`) runs ruff, pytest, `dbt build` on the fixtures and the testthat suite.
 Everything under `research/` is exactly that, and several notebooks depend on a TruMedia or
 6-4-3 export this repo does not carry.
 
@@ -82,7 +83,7 @@ that ships holds two local duckdb paths and nothing else.
 The MLB R pipeline runs on its own, and its tests need no network:
 
 ```bash
-Rscript research/r/tests/testthat.R        # 59 assertions
+Rscript research/r/tests/testthat.R
 Rscript research/r/mlb/run_season.R 2019   # one season end to end
 ```
 
