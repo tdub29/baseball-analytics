@@ -1,16 +1,25 @@
 # baseball-analytics
 
-Pitch-level baseball modeling at two levels. The NCAA half is a transfer-portal scouting
-platform the University of San Diego coaching staff uses: seven ingest sources feed a tested
-warehouse, ten trained models (Stuff+, whiff probability, xSLG, run value) score players, and two
-Streamlit apps and a row-level-secured board put the output in front of coaches. The MLB half is
-where the same methods get validated against far more data: run expectancy and win probability over full seasons, Statcast arm-angle
-and pitch modeling.
+Baseball scouting, player evaluation, and MLB game modeling. The NCAA platform combines
+transfer-portal scouting, pitch-level models, hitter and pitcher Streamlit apps, and play-by-play
+reports used by the University of San Diego coaching staff. The MLB work covers Statcast pitch
+and contact models, run expectancy, recency-weighted forecasting, batter-pitcher matchups,
+bullpen usage, and plate-appearance Monte Carlo game simulation.
 
-The pairing is the point. The NCAA work shows the models ship to real users on a deadline. The
-MLB work shows they are not one school's quirk.
+MLB-trained xSLG and swing-decision models feed the NCAA hitter app; NCAA TrackMan trains the
+Stuff+, whiff, and pitch-location models. The [model index](models/README.md) connects trained
+artifacts to their source notebooks. Game-level MLB research has its own methods, experiments,
+and evaluation reports below.
 
 ## Scouting and pitch models
+
+| Work | What it provides | Start here |
+|---|---|---|
+| Hitter app | xSLG, swing/take decision value, heatmaps, spray charts, and rolling trends | [Hitter app](apps/hitter/README.md) |
+| Pitcher app | Stuff+, whiff probability, movement, command and release plots, ideal locations, and reports | [Pitcher app](apps/pitcher/README.md) |
+| Transfer portal | Multi-source ingestion, identity resolution, enrichment, fit scoring, alerts, and the coach board | [Portal pipeline](docs/transfer-portal-pipeline.md) |
+| Play-by-play reporting | Situational battle scoring and individual-game and season PDF reports | [Pipeline](src/ncaa/pbp/) and [sample reports](docs/samples/README.md) |
+| Pitch-level research | Arm angle, shoulder coordinates, 3D wOBA, effective velocity, pitch mix, bunts, umpire analysis, and scouting notebooks | [Research notebooks](research/notebooks/) |
 
 ![Pitch-location run-value analysis for right- and left-handed hitters](docs/images/usd-baseball-01.webp)
 
@@ -31,6 +40,38 @@ Sidearm bio
 TrackMan
 ```
 
+## MLB forecasting and game simulation
+
+The MLB pipelines build player and team estimates from public play-by-play and game logs,
+combine them into game forecasts, and evaluate them across seasons. The simulator also models
+how a game unfolds, including the starter's exit and which reliever is likely to enter.
+
+| Work | What it provides | Methods and results |
+|---|---|---|
+| Run expectancy and recency | Rolling hitter, starter, bullpen, and team estimates; decay windows, offseason carry, shrinkage, and recent-form experiments | [Recency study](research/r/mlb/RECENCY-PLAN.md) and [R pipeline](research/r/README.md) |
+| Batter-pitcher matchup models | Handedness-specific outcome rates combined through log5, park adjustments, times through the order, bullpen availability, and walk-forward win forecasts | [Model card](research/r/mlb/MODEL-CARD.md) and [matchup experiments](research/r/mlb/MATCHUP-PLAN.md) |
+| Monte Carlo game simulator | Plate appearances, batting order, base-out transitions, starter hook, reliever selection, workload, win/run distributions, and hitter-pitcher exposure | [Simulator design](research/r/mlb/SIM-PLAN.md) and [implementation](research/r/mlb/simulate.R) |
+| Evaluation and market comparisons | Calibration, moneyline and totals benchmarks, closing-line value, conventional sabermetric baselines, and forward-season testing | [Research report](research/r/mlb/REPORT.md) and [evaluation figures](research/r/mlb/results/figures/) |
+| Reliability and model development | Sample-size stabilization, shrinkage tuning, context ablations, and comparisons of model variants | [Research report](research/r/mlb/REPORT.md) and [experiment log](research/r/mlb/MATCHUP-PLAN.md) |
+
+```mermaid
+flowchart LR
+    A["Retrosheet and MLB StatsAPI"] --> B["Player and team history available before each game"]
+    B --> C["Decay and shrinkage estimates"]
+    C --> D["Recency-based forecasts"]
+    C --> E["Handedness and park-adjusted matchups"]
+    E --> F["Walk-forward win model"]
+    E --> G["Plate-appearance game simulator"]
+    D --> H["Season-based evaluation and research reports"]
+    F --> H
+    G --> H
+```
+
+The [original Baseball-Analysis pipeline](https://github.com/tdub29/Baseball-Analysis) is
+preserved in [research/r/legacy/](research/r/legacy/); its maintained implementation and later
+MLB research live here. The Nick Wan / NWDS CatBoost competition entry remains a separate
+related project: [WanBattedBall](https://github.com/tdub29/WanBattedBall).
+
 ## What is in here
 
 | Area | Size | Notes |
@@ -43,7 +84,7 @@ TrackMan
 | `scripts/` | 22 files | NCAA bio fetchers (D1/D2/D3/portal), school geocoding, Excel import and export, board HTML build, Netlify publish, Supabase RLS verify |
 | `tests/` plus the pbp tests | 15 pytest files, 98 test functions | bio, board, d1baseball, dedupe, geo, overlay, RLS schema, pipeline, program tier, resolve, rollup, speed, status, battle calc, and a guard that the battle converter stays linear in input size |
 | `research/notebooks/` | 20 notebooks | 8 MLB, 12 NCAA, outputs stripped (verified 2026-09-16: 0 of the 20 carry embedded outputs). Every shipped model was trained in one of these |
-| `research/r/` | 46 R scripts in `mlb/`, 4 testthat files with 38 `test_that` blocks | The MLB run-expectancy pipeline, rebuilt from a 604-line monolith into ingest / features / model / evaluate, plus a walk-forward out-of-sample backtest. The original is kept at `research/r/legacy/` so the diff is readable ([before and after](research/r/README.md)) |
+| `research/r/` | MLB pipelines, studies, simulator, and testthat suite | Run expectancy, recency and matchup models, bullpen usage, Monte Carlo game simulation, market comparisons, and forward-season evaluation. The original pipeline is preserved in `research/r/legacy/`. |
 | `docs/` | 12 design docs | Pipeline design, 2026 sourcing, capabilities and blockers, Netlify and Supabase recipes, the consolidation plan |
 
 Model provenance, which notebook trained which artifact: [`models/README.md`](models/README.md).
