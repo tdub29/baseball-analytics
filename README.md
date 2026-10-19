@@ -67,10 +67,8 @@ flowchart LR
     G --> H
 ```
 
-The [original Baseball-Analysis pipeline](https://github.com/tdub29/Baseball-Analysis) is
-preserved in [research/r/legacy/](research/r/legacy/); its maintained implementation and later
-MLB research live here. The Nick Wan / NWDS CatBoost competition entry remains a separate
-related project: [WanBattedBall](https://github.com/tdub29/WanBattedBall).
+Related projects: [original R pipeline](research/r/legacy/) and
+[WanBattedBall](https://github.com/tdub29/WanBattedBall), a CatBoost entry in Nick Wan’s NWDS competition.
 
 ## What is in here
 
