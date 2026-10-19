@@ -62,3 +62,18 @@ data/mlb/matchup/
 data/mlb/sim/
 # Parquet copies of the raw caches (StatsAPI terms: private use only): rebuilt by export_parquet.R.
 data/mlb/parquet/
+
+# Local workspace state is not public project source.
+/.agents/
+/.claude/
+/.codex/
+/.cursor/
+/.impeccable/
+/.vscode/
+/.mcp.json
+/skills-lock.json
+**/AGENTS.md
+**/CLAUDE.md
+*.bak
+*.err
+tmp_*
