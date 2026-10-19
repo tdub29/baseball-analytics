@@ -10,6 +10,16 @@ and pitch modeling.
 The pairing is the point. The NCAA work shows the models ship to real users on a deadline. The
 MLB work shows they are not one school's quirk.
 
+## Scouting and pitch models
+
+![Pitch-location run-value analysis for right- and left-handed hitters](docs/images/usd-baseball-01.webp)
+
+Pitch-location analysis from the scouting tools built for USD coaches.
+
+![Pitch movement colored by Stuff+, with pitcher and date filters](docs/images/usd-baseball-02.webp)
+
+Pitch movement colored by Stuff+, with pitcher and date filters.
+
 ```
 sources ──▶ ingest/dedupe/resolve ──▶ SQLite + dbt warehouse ──▶ models ──▶ apps + board
 D1Baseball                            staging / intermediate      Stuff+     hitter app
