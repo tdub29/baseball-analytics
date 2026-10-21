@@ -9,8 +9,6 @@
 # attached package versions, platform, command line, the named env vars as set ("" when unset), and sha256
 # of every input and output. check_provenance() stops when a named env var or input hash differs from the
 # run that built the file, so a cached artifact is not reused under another recipe.
-#
-#   Rscript research/r/mlb/provenance.R    # self-check in a temp dir
 
 sha256_of <- function(f) c(as.character(openssl::sha256(file(f))))   # c() drops the "hash" class
 
@@ -43,12 +41,3 @@ check_provenance <- function(output, inputs = character(), env = character()) {
   invisible(TRUE)
 }
 
-if (sys.nframe() == 0L) {                                          # Rscript provenance.R
-  d <- tempfile(); dir.create(d); i <- file.path(d, "in.csv"); o <- file.path(d, "out.csv")
-  writeLines("a", i); writeLines("b", o)
-  Sys.setenv(PROV_TEST = "1"); write_provenance(o, inputs = i, env = "PROV_TEST")
-  stopifnot(check_provenance(o, inputs = i, env = "PROV_TEST"))
-  Sys.setenv(PROV_TEST = "2"); stopifnot(inherits(try(check_provenance(o, env = "PROV_TEST"), silent = TRUE), "try-error"))
-  writeLines("c", i); stopifnot(inherits(try(check_provenance(o, inputs = i), silent = TRUE), "try-error"))
-  cat("provenance self-check ok\n")
-}

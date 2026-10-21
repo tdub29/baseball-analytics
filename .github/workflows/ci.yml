@@ -79,5 +79,7 @@ jobs:
             any::testthat
             any::tseries
             any::ggplot2
+            any::jsonlite
+            any::openssl
       - name: testthat
         run: Rscript research/r/tests/testthat.R
