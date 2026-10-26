@@ -17,6 +17,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from ncaa.pbp import DATA_DIR
+
 BASEBALLR_DESCRIPTIONS = [
     "Smith singled to center.",
     "Jones flied out to right.",
@@ -265,7 +267,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    out_dir = Path(args.out_dir) if args.out_dir else Path(__file__).resolve().parent
+    out_dir = Path(args.out_dir) if args.out_dir else DATA_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # Build DataFrames

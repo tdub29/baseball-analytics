@@ -15,6 +15,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from ncaa.pbp import DATA_DIR, VALIDATION_DIR
 from ncaa.pbp.baseballr_description_mappings import (
     count_any_adv,
     count_any_adv_breakdown,
@@ -1037,9 +1038,9 @@ def build_rows_df_and_summary_df(
 def main() -> None:
     """Load PBP CSV, run battle calc for all games, print and write output."""
     battles_dir = Path(__file__).resolve().parent
-    csv_path = battles_dir / "real5_pbp_baseballr_style.csv"
-    games_csv = battles_dir / "real5_selected_games.csv"
-    out_path = battles_dir / "real5_battle_calc_output.txt"
+    csv_path = DATA_DIR / "real5_pbp_baseballr_style.csv"
+    games_csv = DATA_DIR / "real5_selected_games.csv"
+    out_path = VALIDATION_DIR / "real5_battle_calc_output.txt"
     if not csv_path.is_file():
         print(f"CSV not found: {csv_path}")
         return
@@ -1063,7 +1064,7 @@ def main() -> None:
     mjs = pdf_dir / "generate-pdf.mjs"
     if mjs.is_file():
         out_pdf = pdf_dir / "season_battle_report.pdf"
-        pbp_csv = battles_dir / "real5_pbp_baseballr_style.csv"
+        pbp_csv = DATA_DIR / "real5_pbp_baseballr_style.csv"
         logo = pdf_dir / "sd_logo.png"
         cmd = ["node", str(mjs), str(out_path), str(out_pdf), str(pbp_csv), str(logo)]
         try:

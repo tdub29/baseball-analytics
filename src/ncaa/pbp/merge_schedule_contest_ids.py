@@ -19,9 +19,11 @@ from pathlib import Path
 
 import pandas as pd
 
+from ncaa.pbp import DATA_DIR
+
 OUT_DIR = Path(__file__).resolve().parent
-DEFAULT_SCHEDULE = OUT_DIR / "usd_2026_schedule.csv"
-DEFAULT_R_CSV = OUT_DIR / "usd_2026_schedule_baseballr.csv"
+DEFAULT_SCHEDULE = DATA_DIR / "usd_2026_schedule.csv"
+DEFAULT_R_CSV = DATA_DIR / "usd_2026_schedule_baseballr.csv"
 
 
 def normalize_date(s: str) -> str:

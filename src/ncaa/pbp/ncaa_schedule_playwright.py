@@ -22,6 +22,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from ncaa.pbp import DATA_DIR
+
 try:
     from playwright.sync_api import sync_playwright
 except ImportError:
@@ -34,7 +36,7 @@ except ImportError:
 
 OUT_DIR = Path(__file__).resolve().parent
 DEFAULT_TEAM_ID = "614731"  # San Diego Toreros
-DEFAULT_OUT_CSV = OUT_DIR / "usd_2026_schedule.csv"
+DEFAULT_OUT_CSV = DATA_DIR / "usd_2026_schedule.csv"
 
 
 def fetch_page_with_playwright(url: str, headless: bool = False) -> str:

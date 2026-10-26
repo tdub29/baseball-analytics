@@ -33,8 +33,10 @@ from ncaa_pbp_playwright import (
     parse_pbp_table,
 )
 
+from ncaa.pbp import DATA_DIR
+
 DEFAULT_URL = "https://stats.ncaa.org/contests/6500370/play_by_play"
-DEFAULT_CSV = OUT_DIR / "pbp_ncaa_playwright_baseballr_style.csv"
+DEFAULT_CSV = DATA_DIR / "pbp_ncaa_playwright_baseballr_style.csv"
 
 
 def main() -> None:

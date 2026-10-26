@@ -8,7 +8,8 @@ Paste format: stat lines like "R\t6\t3" (label, SD value, LB value).
 from __future__ import annotations
 
 import re
-from pathlib import Path
+
+from ncaa.pbp import VALIDATION_DIR
 
 # Period stats from user (San Diego = col1, Long Beach St. = col2)
 PERIOD_STATS_RAW = """
@@ -303,7 +304,6 @@ def main() -> None:
 
     # Build comparison. When PBP had San Diego/Long Beach St. and correct innings,
     # we got: B3a 14, B3b 16, B3c 9, B4 4, B5a 10/6, B5b 9 (from earlier run).
-    out_dir = Path(__file__).resolve().parent
     report = [
         "Comparison: Period Stats (SD vs Long Beach St.) vs PBP Battle Calc",
         "Game: 6500370 (San Diego @ Long Beach St. — Blair Field)",
@@ -337,7 +337,7 @@ def main() -> None:
         "            Small differences are expected (definition of baserunner, errors).",
     ]
     text = "\n".join(report)
-    out_path = out_dir / "period_stats_vs_pbp_compare.txt"
+    out_path = VALIDATION_DIR / "period_stats_vs_pbp_compare.txt"
     out_path.write_text(text, encoding="utf-8")
     print(text)
     print(f"\nWrote: {out_path}")
