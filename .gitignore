@@ -77,3 +77,6 @@ data/mlb/parquet/
 *.bak
 *.err
 tmp_*
+
+# Raw HTML dumped by the pbp scrapers when parsing fails
+ncaa_pbp_debug.html

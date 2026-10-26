@@ -75,7 +75,7 @@ Related projects: [original R pipeline](research/r/legacy/) and
 | Area | Size | Notes |
 |---|---|---|
 | `src/ncaa/portal/` | 28 files, 5,296 lines | Portal ingest, dedupe, entity resolution, enrichment, geo, program tier, rollup, fit scoring, alerts |
-| `src/ncaa/pbp/` | 25 files, 6,516 lines | NCAA play-by-play acquisition (Playwright plus `ncaa-api.henrygd.me`), situational "battle" scoring, season PDF reports |
+| `src/ncaa/pbp/` | 26 code files, 6,550 lines | NCAA play-by-play acquisition (Playwright plus `ncaa-api.henrygd.me`), situational "battle" scoring, season PDF reports |
 | `src/ncaa/cli.py` | 336 lines | `init`, `import-excel`, `ingest`, `enrich-643`, `evaluate`, `board`, `run-all` |
 | `warehouse/` | 18 SQL files, 925 lines | dbt-duckdb rebuild of the transform layer: 3 staging, 1 intermediate and 7 mart models (dims, `fct_pitch`, season marts), 3 singular tests, a pitch-type seed, model contracts, source freshness and sample fixtures |
 | `apps/hitter/`, `apps/pitcher/` | 5,275 lines | The two Streamlit apps coaches open, with their 10 model artifacts |

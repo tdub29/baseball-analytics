@@ -78,9 +78,6 @@ evaluations. Offline `python run.py board` produces a ranked CSV with `google_sh
   auto-detect) and `secrets/README.md` (Google service-account setup + env-var table);
   `secrets/` folder created. Both READMEs gitignored (guidance only).
 
-**The input-unlock packet** (exactly what to provide + where): see
-[input-unlock-packet-2026-06-30.md](input-unlock-packet-2026-06-30.md).
-
 **Still blocked (each on ONE Trevor input):**
 | Feed | Input needed | Lands at |
 |---|---|---|
