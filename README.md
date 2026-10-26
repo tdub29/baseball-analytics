@@ -158,3 +158,7 @@ data are used with permission.
 Secrets are a separate matter and are not committed: `config.yaml`, `secrets/`, `.env`, keys and
 service-account JSON are all ignored, and `git ls-files` is checked against that list before any
 push.
+
+## More projects
+
+More of my work and contact details are at [twhite.dev](https://twhite.dev).
