@@ -98,7 +98,7 @@ Related projects: [original R pipeline](research/r/legacy/) and
 | `warehouse/` | 18 SQL files, 925 lines | dbt-duckdb rebuild of the transform layer: 3 staging, 1 intermediate and 7 mart models (dims, `fct_pitch`, season marts), 3 singular tests, a pitch-type seed, model contracts, source freshness and sample fixtures |
 | `apps/hitter/`, `apps/pitcher/` | 5,275 lines | The two Streamlit apps coaches open, with their 10 model artifacts |
 | `scripts/` | 22 files | NCAA bio fetchers (D1/D2/D3/portal), school geocoding, Excel import and export, board HTML build, Netlify publish, Supabase RLS verify |
-| `tests/` plus the pbp tests | 15 pytest files, 98 test functions | bio, board, d1baseball, dedupe, geo, overlay, RLS schema, pipeline, program tier, resolve, rollup, speed, status, battle calc, and a guard that the battle converter stays linear in input size |
+| `tests/` plus the pbp tests | 16 pytest files, 100 test functions | bio, board, d1baseball, dedupe, geo, overlay, paths, RLS schema, pipeline, program tier, resolve, rollup, speed, status, battle calc, and a guard that the battle converter stays linear in input size |
 | `research/notebooks/` | 20 notebooks | 8 MLB, 12 NCAA, outputs stripped (verified 2026-09-16: none carry embedded outputs). Every shipped model was trained in one of these |
 | `research/r/` | MLB pipelines, studies, simulator, and testthat suite | Run expectancy, recency and matchup models, bullpen usage, Monte Carlo game simulation, market comparisons, and forward-season evaluation. The original pipeline is preserved in `research/r/legacy/`. |
 | `docs/` | 10 design docs | Pipeline design, 2026 sourcing, capabilities and blockers, Netlify and Supabase recipes, the consolidation plan |
