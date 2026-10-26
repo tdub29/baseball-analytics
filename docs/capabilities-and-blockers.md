@@ -60,7 +60,7 @@ D1Baseball cookie, X token, Google service account, alert webhook).
 
 ## Re-verified + live-feed readiness prep — 2026-06-30
 
-**Verified built state** (system Python 3.12 — not the Polymarket `.venv`, which lacks
+**Verified built state** (Python 3.12 with the project deps installed, including
 `rapidfuzz`): **125 tests passing**, no network. DB (`db/baseball.db`, refreshed 2026-06-27) is
 current and populated: 35,034 players · 11,001 portal_events (10,147 ENTERED / 854 COMMITTED /
 **0 WITHDRAWN** — withdrawals await the 64 Analytics feed) · 1,706 currently-ENTERED · 39,770

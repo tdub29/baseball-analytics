@@ -11,6 +11,24 @@ Stuff+, whiff, and pitch-location models. The [model index](models/README.md) co
 artifacts to their source notebooks. Game-level MLB research has its own methods, experiments,
 and evaluation reports below.
 
+## Highlights
+
+- **Can a public-data model beat Vegas? No, and the test says how close it came.** A model
+  built only from Retrosheet and MLB StatsAPI was frozen, then scored once on 6,451 games from
+  2023 to 2025. Its log loss trails the no-vig closing line by 0.0036 per game (0.0018, borderline,
+  once 12 dates with late-scraped "closing" lines are dropped). Its bets at the opening line moved
+  toward the close by about 2 probability points, but the return cannot be told apart from zero.
+  The rules for every verdict were written down before the test data was scored.
+  [Read the report](research/r/mlb/REPORT.md).
+- **Coaches use these tools every week.** USD's staff uses the hitter and pitcher apps, the
+  transfer-portal board and the per-game PDF reports ([samples](docs/samples/README.md)).
+- **One method at two levels.** Stuff+ and whiff models are trained on NCAA TrackMan. The xSLG
+  and swing-decision models are trained on MLB Statcast and applied to NCAA pitches in the hitter
+  app ([model index](models/README.md)).
+- **Designed around a 2FA wall.** The NCAA portal login needs a coach's 2FA code every time, so
+  about 90 percent of the portal workflow runs from public sources with no login at all
+  ([design](docs/transfer-portal-pipeline.md)).
+
 ## Scouting and pitch models
 
 | Work | What it provides | Start here |
@@ -81,9 +99,9 @@ Related projects: [original R pipeline](research/r/legacy/) and
 | `apps/hitter/`, `apps/pitcher/` | 5,275 lines | The two Streamlit apps coaches open, with their 10 model artifacts |
 | `scripts/` | 22 files | NCAA bio fetchers (D1/D2/D3/portal), school geocoding, Excel import and export, board HTML build, Netlify publish, Supabase RLS verify |
 | `tests/` plus the pbp tests | 15 pytest files, 98 test functions | bio, board, d1baseball, dedupe, geo, overlay, RLS schema, pipeline, program tier, resolve, rollup, speed, status, battle calc, and a guard that the battle converter stays linear in input size |
-| `research/notebooks/` | 20 notebooks | 8 MLB, 12 NCAA, outputs stripped (verified 2026-09-16: 0 of the 20 carry embedded outputs). Every shipped model was trained in one of these |
+| `research/notebooks/` | 20 notebooks | 8 MLB, 12 NCAA, outputs stripped (verified 2026-09-16: none carry embedded outputs). Every shipped model was trained in one of these |
 | `research/r/` | MLB pipelines, studies, simulator, and testthat suite | Run expectancy, recency and matchup models, bullpen usage, Monte Carlo game simulation, market comparisons, and forward-season evaluation. The original pipeline is preserved in `research/r/legacy/`. |
-| `docs/` | 12 design docs | Pipeline design, 2026 sourcing, capabilities and blockers, Netlify and Supabase recipes, the consolidation plan |
+| `docs/` | 10 design docs | Pipeline design, 2026 sourcing, capabilities and blockers, Netlify and Supabase recipes, the consolidation plan |
 
 Model provenance, which notebook trained which artifact: [`models/README.md`](models/README.md).
 

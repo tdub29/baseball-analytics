@@ -10,7 +10,7 @@ a few model value-adds prepended:
   - Hot List - Call Assignments (CRM: Date, First, Last, Div, School, ..., Notes)
   - Pitch Arsenal (per pitch)   (per-pitcher x pitch detail — the source of truth)
   - California Board            (CA/SD recruiting ties)
-Inspo: C:/Users/TrevorWhite/Downloads/2025 Transfer Portal Main Database (1).xlsx
+Inspo: the 2025 Transfer Portal Main Database workbook this export replaces
 """
 from __future__ import annotations
 
