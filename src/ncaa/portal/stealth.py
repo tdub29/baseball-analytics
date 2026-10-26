@@ -20,7 +20,7 @@ import time
 from pathlib import Path
 
 log = logging.getLogger(__name__)
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 CACHE_DIR = ROOT / "data" / "cache"
 
 

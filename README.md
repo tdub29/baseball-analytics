@@ -115,14 +115,18 @@ Everything under `research/` is exactly that, and several notebooks depend on a 
 
 ## Quickstart
 
-Real data ships with this repo, so a fresh clone runs without credentials.
+The pipeline runs from a fresh clone without credentials, but it needs portal entries to rank.
+Those come from the coaching staff's transfer-portal workbook (sheets `Names + Notes`,
+`All Divisions Pitcher Data`, `Hitter Hot Board Data`, `RosterInfo`), which is not committed, or
+from the live sources. Without either, `evaluate` and `board` run and produce an empty board.
 
 ```bash
 pip install -e ".[scoring,ncaa-stats]"
-python -m ncaa.cli init --force            # create db/baseball.db from db/schema.sql
-python -m ncaa.cli import-excel            # seed from the committed workbook
-python -m ncaa.cli evaluate                # compute fit scores
-python -m ncaa.cli board --limit 150       # write data/hot_board.csv
+python -m ncaa.cli init --force                     # create db/baseball.db from db/schema.sql
+python -m ncaa.cli import-excel path/to/workbook.xlsx   # seed portal entries
+python -m ncaa.cli enrich-643 --dir data/643_exports    # load the committed 6-4-3 stat exports
+python -m ncaa.cli evaluate                         # compute fit scores
+python -m ncaa.cli board --limit 150                # write data/hot_board.csv
 ```
 
 Live sources need a `config.yaml` (copy `config.example.yaml`). The D1Baseball adapter needs a
