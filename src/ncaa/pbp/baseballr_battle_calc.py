@@ -517,16 +517,19 @@ def _align_to_game_team(raw_batting: str, away: str, home: str) -> str | None:
     n = str(raw_batting).strip().lower()
     if not n:
         return None
-    for full in (away, home):
-        f = full.strip().lower()
-        if not f:
-            continue
-        if n == f or n in f or f in n:
+    teams = [(full, full.strip().lower()) for full in (away, home) if full.strip()]
+    # Exact first, then containment, then first word; a looser test only counts when it picks
+    # one team, so "San Diego St. Aztecs" cannot match "San Diego Toreros" on "san".
+    for full, f in teams:
+        if n == f:
             return full
-        first = f.split()[0]
-        if len(first) > 2 and first in n:
-            return full
-    return None
+    hits = [full for full, f in teams if n in f or f in n]
+    if len(hits) == 1:
+        return hits[0]
+    if hits:
+        return None
+    hits = [full for full, f in teams if len(f.split()[0]) > 2 and f.split()[0] in n]
+    return hits[0] if len(hits) == 1 else None
 
 
 def _looks_like_dense_player_stub(tok: str) -> bool:

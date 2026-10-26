@@ -98,3 +98,27 @@ def test_at_least_one_game_has_offense_metrics(csv_path):
             has_offense = True
             break
     assert has_offense, "At least one game should have USD offense metrics (B1a or B3a > 0)"
+
+
+@pytest.mark.parametrize("cell,expected", [
+    ("San Diego St. Aztecs", "San Diego St. Aztecs"),   # exact match beats the shared first word
+    ("San Diego Toreros", "San Diego Toreros"),
+    ("Toreros", "San Diego Toreros"),                   # containment, one team only
+    ("San Diego", None),                                # contained in both names: no vote
+    ("Cal Poly", None),
+])
+def test_align_to_game_team_same_city(cell, expected):
+    from ncaa.pbp.baseballr_battle_calc import _align_to_game_team
+    assert _align_to_game_team(cell, "San Diego Toreros", "San Diego St. Aztecs") == expected
+
+
+def test_sdsu_batters_keep_their_team(csv_path):
+    """Game 6530004 (USD @ SDSU): the batter vote must not relabel SDSU's half-innings as USD."""
+    from ncaa.pbp.baseballr_battle_calc import add_validation_columns_to_pbp, load_games_from_csv
+
+    raw = pd.read_csv(csv_path, low_memory=False)
+    game = raw[raw["game_pbp_id"] == 6530004]
+    lookup = load_games_from_csv(csv_path.parent / "real5_selected_games.csv")
+    out = add_validation_columns_to_pbp(game, games_lookup=lookup)
+    bottom = out[out["inning_top_bot"] == "bot"]
+    assert (bottom["batting"] == "San Diego St. Aztecs").all()
