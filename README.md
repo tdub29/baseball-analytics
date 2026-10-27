@@ -31,6 +31,16 @@ and evaluation reports below.
   about 90 percent of the portal workflow runs from public sources with no login at all
   ([design](docs/transfer-portal-pipeline.md)).
 
+## Hitter and pitcher dashboards
+
+The hitter app moves from strike-zone heatmaps to spray charts and hitter metrics.
+The pitcher app compares pitch metrics, location and movement profiles.
+These paced screenshot sequences show three states from each running app, using the apps and data already in this public repository.
+
+![Hitter app: heatmaps, spray chart and hitter metrics](docs/demos/hitter-walkthrough.gif)
+
+![Pitcher app: pitch metrics, locations and movement profile](docs/demos/pitcher-walkthrough.gif)
+
 ## Scouting and pitch models
 
 | Work | What it provides | Start here |
@@ -90,6 +100,22 @@ flowchart LR
 Related projects: [original R pipeline](research/r/legacy/) and
 [WanBattedBall](https://github.com/tdub29/WanBattedBall), a CatBoost entry in Nick Wan’s NWDS competition.
 
+## Try the sample dbt warehouse
+
+Build and test the staged DuckDB transform layer with the committed fixtures in
+[`warehouse/sample_data/`](warehouse/sample_data/). Python 3.10+; no credentials required.
+The SQLite pipeline still runs the operational workflow.
+
+```bash
+pip install -e ".[warehouse]"
+cd warehouse
+cp profiles.example.yml profiles.yml
+dbt deps
+dbt build --profiles-dir .
+```
+
+See the [warehouse guide](warehouse/README.md) for the model layout and migration plan.
+
 ## What is in here
 
 | Area | Size | Notes |
@@ -144,16 +170,8 @@ pip install -e ".[hitter]"  && streamlit run apps/hitter/streamlit_app.py
 pip install -e ".[pitcher]" && streamlit run apps/pitcher/streamlit_app.py
 ```
 
-The warehouse builds green from a clone with zero credentials, off the fixtures in
-`warehouse/sample_data/`:
-
-```bash
-pip install -e ".[warehouse]"
-cd warehouse && cp profiles.example.yml profiles.yml && dbt build
-```
-
-`profiles.yml` is gitignored because it is the file that can hold credentials; the example
-that ships holds two local duckdb paths and nothing else.
+For the credential-free warehouse build, use the [sample dbt quickstart](#try-the-sample-dbt-warehouse) above.
+`profiles.yml` is gitignored; the example holds two local DuckDB paths.
 
 The MLB R pipeline runs on its own, and its tests need no network:
 
