@@ -30,8 +30,8 @@ from ncaa.pbp.baseballr_description_mappings import (
 )
 
 try:
-    from ncaa_pbp_playwright import _effective_outs_added
-    from ncaa_pbp_playwright import _outs_on_play as _parser_outs_on_play
+    from ncaa.pbp.ncaa_pbp_playwright import _effective_outs_added
+    from ncaa.pbp.ncaa_pbp_playwright import _outs_on_play as _parser_outs_on_play
 except ImportError:
     _effective_outs_added = None
     _parser_outs_on_play = None

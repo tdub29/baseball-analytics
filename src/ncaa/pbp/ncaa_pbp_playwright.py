@@ -29,11 +29,6 @@ import pandas as pd
 from ncaa.pbp import DATA_DIR, VALIDATION_DIR
 
 try:
-    from playwright.sync_api import sync_playwright
-except ImportError:
-    raise SystemExit("Install Playwright: pip install playwright && playwright install chromium")
-
-try:
     from bs4 import BeautifulSoup
 except ImportError:
     raise SystemExit("Install BeautifulSoup: pip install beautifulsoup4")
@@ -412,6 +407,11 @@ def parse_pbp_table(html: str, game_pbp_url: str, game_pbp_id: str) -> list[dict
 
 
 def fetch_pbp_with_playwright(url: str, headless: bool = True) -> str:
+    # Imported here so the pure parsers above load without Playwright (baseballr_battle_calc uses them).
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        raise SystemExit("Install Playwright: pip install playwright && playwright install chromium")
     with sync_playwright() as p:
         browser = p.chromium.launch(
             headless=headless,

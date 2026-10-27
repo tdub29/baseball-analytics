@@ -122,3 +122,11 @@ def test_sdsu_batters_keep_their_team(csv_path):
     out = add_validation_columns_to_pbp(game, games_lookup=lookup)
     bottom = out[out["inning_top_bot"] == "bot"]
     assert (bottom["batting"] == "San Diego St. Aztecs").all()
+
+
+def test_outs_parser_loads_without_playwright():
+    """The battle calc's outs recompute needs the PBP parsers, which must import without Playwright."""
+    import ncaa.pbp.baseballr_battle_calc as calc
+
+    assert calc._effective_outs_added is not None
+    assert calc._parser_outs_on_play is not None
