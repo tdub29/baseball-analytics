@@ -1,5 +1,12 @@
 # Can a public-data model beat Vegas, game by game?
 
+> **In plain English.** A model of who wins each MLB game, built only from free public data, was
+> compared with the betting market's final odds. It came close but did not beat them. Its
+> early bets did tend to move with the market, which suggests it saw some information early
+> (an upper bound, since the opening odds carry no timestamp), but the money those bets made is
+> too small and too noisy to call a profit. Every pass/fail rule was written down before the
+> test games were scored, and each test was scored only once. The detailed numbers follow.
+
 **No.** Scored once on 6,451 games from 2023 to 2025, the frozen model's log loss was 0.0036 per
 game worse than the no-vig closing line (95% interval 0.0016 to 0.0054). A later check found 12
 dates whose scraped "closing" lines were most likely taken after first pitch; without them the gap
@@ -172,6 +179,10 @@ Every verdict rule was written down before its test data was scored; where a rul
   is uncommitted; it scored once, at commit 6d2503c.
 - **Bugs after scoring are fixed in the open.** The odds-join fix above landed after the 2023-2025
   score. The as-run files stay; corrected runs sit beside them with their own names.
+- **Who reviewed.** The reviews this report and the plan logs call independent, adversarial or
+  critic reviews were separate AI agent sessions, given the code and results and asked to find
+  leakage, validation and wording problems. They are not human peer review. What each one found,
+  and what changed because of it, is in the plan logs.
 
 ## Results
 

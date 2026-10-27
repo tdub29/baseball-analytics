@@ -7,13 +7,14 @@ Run: python extract_distinct_descriptions.py
 from __future__ import annotations
 
 import re
-from pathlib import Path
 
 import pandas as pd
 
-CSV_PATH = Path(__file__).resolve().parent / "real5_pbp_baseballr_style.csv"
-OUT_UNIQUE = Path(__file__).resolve().parent / "real5_descriptions_distinct.csv"
-OUT_PATTERNS = Path(__file__).resolve().parent / "real5_descriptions_canonical_patterns.txt"
+from ncaa.pbp import DATA_DIR, VALIDATION_DIR
+
+CSV_PATH = DATA_DIR / "real5_pbp_baseballr_style.csv"
+OUT_UNIQUE = DATA_DIR / "real5_descriptions_distinct.csv"
+OUT_PATTERNS = VALIDATION_DIR / "real5_descriptions_canonical_patterns.txt"
 
 
 def normalize(s: str) -> str:

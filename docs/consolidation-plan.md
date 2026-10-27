@@ -203,7 +203,6 @@ No AI co-authorship in any commit or PR, per the standing rule.
 
 | Item | Action |
 |---|---|
-| `C:UsersTrevorWhiteDownloadsprobe_x_profile.py` | Delete. Mangled filename from a Unicode colon look-alike, unrelated to baseball |
 | `book-to-skill-workspace/` | Delete from here. Belongs to its own workspace project |
 | `.netlify/`, `.pytest_cache/`, `__pycache__/`, `warehouse/.venv/`, `warehouse/logs/`, `warehouse/target/`, `warehouse/dbt_packages/` | Delete. All regenerable |
 | `sampl.txt`, `sampl copy.txt`, `sampl copy 2.txt`, `sampl copy 3.txt` | Keep the newest, delete 3. Check `PASTES.md` first, which records which paste each code path defaults to |

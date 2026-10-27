@@ -9,7 +9,7 @@ from typing import Any
 
 from .util import name_key
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_DB = ROOT / "db" / "baseball.db"
 
 

@@ -10,7 +10,7 @@ from pathlib import Path
 
 import pandas as pd
 
-BASE = Path(r"c:\Users\TrevorWhite\Downloads\Big Projects\baseball")
+BASE = Path(__file__).resolve().parents[1]
 INPUT = BASE / "data" / "cache" / "team_bio_rosters.json"
 OUTPUT = BASE / "data" / "643_exports" / "bio" / "team_bio_full.csv"
 

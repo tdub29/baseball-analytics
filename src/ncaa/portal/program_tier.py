@@ -670,7 +670,7 @@ if __name__ == "__main__":
     here = Path(__file__).resolve()
     # Walk up to the project root (folder containing data/cache/d1_schools.json).
     candidates = [
-        here.parents[2] / "data" / "cache" / "d1_schools.json",  # src/portal/.. -> root
+        here.parents[3] / "data" / "cache" / "d1_schools.json",  # src/ncaa/portal/.. -> root
         Path.cwd() / "data" / "cache" / "d1_schools.json",
     ]
     path = next((p for p in candidates if p.exists()), None)

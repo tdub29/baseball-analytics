@@ -26,10 +26,7 @@ from pathlib import Path
 
 import pandas as pd
 
-try:
-    from playwright.sync_api import sync_playwright
-except ImportError:
-    raise SystemExit("Install Playwright: pip install playwright && playwright install chromium")
+from ncaa.pbp import DATA_DIR, VALIDATION_DIR
 
 try:
     from bs4 import BeautifulSoup
@@ -38,7 +35,7 @@ except ImportError:
 
 DEFAULT_URL = "https://stats.ncaa.org/contests/6500370/play_by_play"
 OUT_DIR = Path(__file__).resolve().parent
-OUT_CSV = OUT_DIR / "pbp_ncaa_playwright_baseballr_style.csv"
+OUT_CSV = DATA_DIR / "pbp_ncaa_playwright_baseballr_style.csv"
 
 BASEBALLR_COLUMNS = [
     "game_date",
@@ -410,6 +407,11 @@ def parse_pbp_table(html: str, game_pbp_url: str, game_pbp_id: str) -> list[dict
 
 
 def fetch_pbp_with_playwright(url: str, headless: bool = True) -> str:
+    # Imported here so the pure parsers above load without Playwright (baseballr_battle_calc uses them).
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        raise SystemExit("Install Playwright: pip install playwright && playwright install chromium")
     with sync_playwright() as p:
         browser = p.chromium.launch(
             headless=headless,
@@ -472,7 +474,7 @@ def main() -> None:
             for ri, tr in enumerate((tbody.find_all("tr") if tbody else [])[:25]):
                 cells = [c.get_text(strip=True)[:40] for c in tr.find_all(["td", "th"])]
                 lines.append(f"T{ti} R{ri}: {cells}")
-        (OUT_DIR / "ncaa_pbp_table_debug.txt").write_text("\n".join(lines), encoding="utf-8")
+        (VALIDATION_DIR / "ncaa_pbp_table_debug.txt").write_text("\n".join(lines), encoding="utf-8")
         print("Debug: saved ncaa_pbp_table_debug.txt")
     df = pd.DataFrame(rows) if rows else pd.DataFrame(columns=BASEBALLR_COLUMNS)
     if rows:
