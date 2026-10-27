@@ -179,6 +179,10 @@ Every verdict rule was written down before its test data was scored; where a rul
   is uncommitted; it scored once, at commit 6d2503c.
 - **Bugs after scoring are fixed in the open.** The odds-join fix above landed after the 2023-2025
   score. The as-run files stay; corrected runs sit beside them with their own names.
+- **Who reviewed.** The reviews this report and the plan logs call independent, adversarial or
+  critic reviews were separate AI agent sessions, given the code and results and asked to find
+  leakage, validation and wording problems. They are not human peer review. What each one found,
+  and what changed because of it, is in the plan logs.
 
 ## Results
 
