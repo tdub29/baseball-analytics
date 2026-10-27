@@ -52,6 +52,20 @@ __pycache__/
 #   apps/*/models/**   the 10 trained model artifacts
 # Trevor cleared public real data and USD branding on 2026-09-12. A repo whose apps
 # cannot start from a fresh clone is a demo nobody can run.
+#
+# Except third-party data, ignored since 2026-10-27: that clearance covers USD's own
+# TrackMan and branding, not data licensed or scraped from others. 6-4-3 Charts exports
+# and the bios built from PerfectGame, Sidearm and D1Baseball stay local, and so do the
+# generated boards, which name athletes and carry fit and likelihood scores.
+data/643_exports/**/*.csv
+data/hot_board.csv
+data/board_by_role.csv
+data/california_board.csv
+data/ca_ties_baseline.csv
+data/portal_board.html
+data/portal_board.xlsx
+data/portal_data_gaps.csv
+apps/hitter/docs/D1+Baseball+Reference+Docs.pdf
 
 # Raw baseballr pulls, rebuilt by research/r/mlb/fetch_cache.R
 data/mlb/raw/

@@ -1,5 +1,7 @@
 # baseball-analytics
 
+By Trevor White ([@tdub29](https://github.com/tdub29) on GitHub).
+
 Baseball scouting, player evaluation, and MLB game modeling. The NCAA platform combines
 transfer-portal scouting, pitch-level models, hitter and pitcher Streamlit apps, and play-by-play
 reports used by the University of San Diego coaching staff. The MLB work covers Statcast pitch
@@ -119,12 +121,14 @@ The pipeline runs from a fresh clone without credentials, but it needs portal en
 Those come from the coaching staff's transfer-portal workbook (sheets `Names + Notes`,
 `All Divisions Pitcher Data`, `Hitter Hot Board Data`, `RosterInfo`), which is not committed, or
 from the live sources. Without either, `evaluate` and `board` run and produce an empty board.
+6-4-3 Charts stat exports are licensed and are not committed either; `data/643_exports/README.md`
+gives the format to drop your own into.
 
 ```bash
 pip install -e ".[scoring,ncaa-stats]"
 python -m ncaa.cli init --force                     # create db/baseball.db from db/schema.sql
 python -m ncaa.cli import-excel path/to/workbook.xlsx   # seed portal entries
-python -m ncaa.cli enrich-643 --dir data/643_exports    # load the committed 6-4-3 stat exports
+python -m ncaa.cli enrich-643 --dir data/643_exports    # load your own 6-4-3 exports, if licensed
 python -m ncaa.cli evaluate                         # compute fit scores
 python -m ncaa.cli board --limit 150                # write data/hot_board.csv
 ```
@@ -161,7 +165,8 @@ Rscript research/r/mlb/run_season.R 2019   # one season end to end
 ## Sample output
 
 `docs/samples/` holds real per-game battle reports the pbp pipeline generated for the 2026
-season. `data/portal_board.html` is a published hot board.
+season. The coach board itself (`scripts/build_html.py`) is generated locally and not committed,
+because it names athletes and carries fit scores.
 
 ## What this repo replaced
 
@@ -173,9 +178,11 @@ fields for the top call targets. `docs/transfer-portal-pipeline.md` has the full
 
 ## Data and attribution
 
-Real TrackMan and portal exports are committed on purpose, because an app nobody can start is a
-screenshot. The files name individual athletes and carry player IDs. USD branding, names and
-data are used with permission.
+USD's own TrackMan data is committed on purpose, because an app nobody can start is a
+screenshot; USD branding, names and data are used with permission. Data licensed or scraped from
+third parties (6-4-3 Charts exports, PerfectGame, Sidearm and D1Baseball bios) and the generated
+recruiting boards are kept local and gitignored. The NCAA play-by-play under `data/pbp/` comes
+from public box scores.
 
 Secrets are a separate matter and are not committed: `config.yaml`, `secrets/`, `.env`, keys and
 service-account JSON are all ignored, and `git ls-files` is checked against that list before any
