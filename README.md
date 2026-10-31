@@ -15,18 +15,14 @@ and evaluation reports below.
 
 ## Highlights
 
-- **Can a public-data model beat Vegas? No, and the test says how close it came.** A model
-  built only from Retrosheet and MLB StatsAPI was frozen, then scored once on 6,451 games from
-  2023 to 2025. Its log loss trails the no-vig closing line by 0.0036 per game (0.0018, borderline,
-  once 12 dates with late-scraped "closing" lines are dropped). Its bets at the opening line moved
-  toward the close by about 2 probability points, but the return cannot be told apart from zero.
-  The rules for every verdict were written down before the test data was scored.
-  [Read the report](research/r/mlb/REPORT.md).
 - **Coaches use these tools every week.** USD's staff uses the hitter and pitcher apps, the
   transfer-portal board and the per-game PDF reports ([samples](docs/samples/README.md)).
 - **One method at two levels.** Stuff+ and whiff models are trained on NCAA TrackMan. The xSLG
   and swing-decision models are trained on MLB Statcast and applied to NCAA pitches in the hitter
   app ([model index](models/README.md)).
+- **A dbt/DuckDB warehouse runs from committed fixtures with no credentials.** It rebuilds the
+  transform layer as staged, tested models. The SQLite pipeline still runs the operational
+  workflow ([try it](#try-the-sample-dbt-warehouse)).
 - **Designed around a 2FA wall.** The NCAA portal login needs a coach's 2FA code every time, so
   about 90 percent of the portal workflow runs from public sources with no login at all
   ([design](docs/transfer-portal-pipeline.md)).
@@ -75,6 +71,14 @@ TrackMan
 The MLB pipelines build player and team estimates from public play-by-play and game logs,
 combine them into game forecasts, and evaluate them across seasons. The simulator also models
 how a game unfolds, including the starter's exit and which reliever is likely to enter.
+
+**Can a public-data model beat Vegas? No, and the test says how close it came.** A model
+built only from Retrosheet and MLB StatsAPI was frozen, then scored once on 6,451 games from
+2023 to 2025. Its log loss trails the no-vig closing line by 0.0036 per game (0.0018, borderline,
+once 12 dates with late-scraped "closing" lines are dropped). Its bets at the opening line moved
+toward the close by about 2 probability points, but the return cannot be told apart from zero.
+The rules for every verdict were written down before the test data was scored.
+[Read the report](research/r/mlb/REPORT.md).
 
 | Work | What it provides | Methods and results |
 |---|---|---|
