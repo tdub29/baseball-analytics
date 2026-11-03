@@ -3,9 +3,9 @@
   coerce to a double.
 
   Mirrors the Python pipeline's two coercers:
-    - src/portal/arsenal.py `_dim`  : iVB '0.3"', RelHeight "6.3'", VAA '-9.1°'
+    - src/ncaa/portal/arsenal.py `_dim`  : iVB '0.3"', RelHeight "6.3'", VAA '-9.1°'
         -> re.sub(r"[^0-9.\-]", "", s) then float
-    - src/portal/util.py    `to_float`: strips '%' and ',' then float
+    - src/ncaa/portal/util.py    `to_float`: strips '%' and ',' then float
 
   We strip everything that is not a digit, a dot, or a leading minus, then cast.
   Empty / lone-'-' / lone-'.' become NULL (matching the Python guards).

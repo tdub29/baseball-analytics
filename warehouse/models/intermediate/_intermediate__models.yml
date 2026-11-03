@@ -5,7 +5,7 @@ models:
     description: >
       Per-pitch TrackMan rows with engineered boolean event flags (swing / whiff /
       strike / in-zone / contact / in-play / barrel-proxy) and a normalized
-      pitch_code. Mirrors src/portal/trackman._pitch_flags. Feeds fct_pitch and
+      pitch_code. Mirrors src/ncaa/portal/trackman._pitch_flags. Feeds fct_pitch and
       the per-pitcher / per-hitter season marts. Grain = one row per pitch_uid.
     columns:
       - name: pitch_uid

@@ -4,7 +4,7 @@
 -- staging arsenal (the same math rollup.py `_weighted_mean(stuff_plus, pitches)`
 -- runs), then assert it matches mart_pitcher_arsenal.stuff_plus. If the mart's
 -- rollup ever drifts from the hand calculation, this fails — which is exactly the
--- guarantee you want when cutting run.py over from the Python rollup to dbt.
+-- guarantee you want when cutting src/ncaa/cli.py over from the Python rollup to dbt.
 --
 -- Tolerance 0.1 absorbs the round(.., 1) the macro applies. A failing row = a
 -- pitcher whose mart Stuff+ disagrees with the hand-computed weighted mean.
