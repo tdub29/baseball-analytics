@@ -1,5 +1,5 @@
 -- 6-4-3 per-(pitcher, pitch-type) export -> typed arsenal rows.
--- This is the dbt analogue of src/portal/arsenal.import_643_arsenal: strip the
+-- This is the dbt analogue of src/ncaa/portal/arsenal.import_643_arsenal: strip the
 -- Team "Name|logo_url" decoration, strip units off the dimensional cells
 -- (iVB '0.3"', VAA '-9.1°') via clean_numeric (mirrors arsenal._dim), strip '%'
 -- off the percent cells (mirrors util.to_float), and map the pitch-type label to
