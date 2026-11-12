@@ -23,7 +23,7 @@ If you ever need to reinstall the CLI: `npm i -g netlify-cli`
 netlify login
 
 # 2. Move into the project
-cd "C:\Users\TrevorWhite\Downloads\Big Projects\baseball"
+cd path/to/baseball-analytics
 
 # 3. Create the site — let it AUTO-GENERATE the name
 netlify sites:create

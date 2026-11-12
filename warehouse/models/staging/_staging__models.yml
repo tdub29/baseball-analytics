@@ -5,7 +5,7 @@ models:
     description: >
       Typed, snake_case TrackMan pitch rows (one per pitch). Numeric release /
       movement / location fields are coerced from the all-varchar source; the
-      grain is pitch_uid. Mirrors src/portal/trackman.load_trackman().
+      grain is pitch_uid. Mirrors src/ncaa/portal/trackman.load_trackman().
     columns:
       - name: pitch_uid
         description: "Stable per-pitch key (TrackMan UUID; synthesized only if missing)."
@@ -48,7 +48,7 @@ models:
   - name: stg_643__pitch_arsenal
     description: >
       6-4-3 per-(pitcher, pitch-type) grades + shape, unit-stripped and typed.
-      dbt analogue of src/portal/arsenal.import_643_arsenal. Stuff+/Location+/xRV+
+      dbt analogue of src/ncaa/portal/arsenal.import_643_arsenal. Stuff+/Location+/xRV+
       are 6-4-3 model outputs consumed as-is (no recompute in dbt).
     columns:
       - name: player

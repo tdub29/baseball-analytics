@@ -1,7 +1,7 @@
 {#
   name_key: a stable, sorted, de-accented join key for a player name.
 
-  Mirrors src/portal/util.py `name_key` / `normalize_name`:
+  Mirrors src/ncaa/portal/util.py `name_key` / `normalize_name`:
     - lowercase
     - strip accents (DuckDB `strip_accents`)
     - drop punctuation/digits (keep a-z and spaces)

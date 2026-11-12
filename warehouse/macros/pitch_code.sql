@@ -2,7 +2,7 @@
   pitch_code: map a free-text pitch-type label to the normalized bucket used
   across the warehouse and the schema's per-code columns (fb/si/sl/cb/ch/ct).
 
-  Mirrors src/portal/arsenal.py `_CODE` (and trackman.py `_PITCH_CODE`):
+  Mirrors src/ncaa/portal/arsenal.py `_CODE` (and trackman.py `_PITCH_CODE`):
     Fastball / Four-Seam / FourSeamFastBall   -> fb
     Sinker / Two-Seam / TwoSeamFastBall       -> si
     Cutter                                    -> ct

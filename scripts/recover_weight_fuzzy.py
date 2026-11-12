@@ -29,7 +29,7 @@ import pandas as pd
 from rapidfuzz import fuzz, process
 
 # --- paths -----------------------------------------------------------------
-ROOT = Path(r"c:\Users\TrevorWhite\Downloads\Big Projects\baseball")
+ROOT = Path(__file__).resolve().parents[1]
 ROSTER_JSON = ROOT / "data" / "cache" / "team_bio_rosters.json"
 DB_PATH = ROOT / "db" / "baseball.db"
 OUT_CSV = ROOT / "data" / "643_exports" / "bio" / "recovered_fuzzy.csv"

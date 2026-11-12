@@ -10,7 +10,7 @@ sources:
     description: >
       USD Baseball TrackMan master export, pitch-level grain. One row per tracked
       pitch (release/movement/location/outcome). This is the radar feed the
-      pitcher-app and hitter-app score with their Stuff+/xWhiff/xSLG models;
+      apps/pitcher and apps/hitter score with their Stuff+/xWhiff/xSLG models;
       the warehouse consumes the RAW measured fields only and does NOT run model
       inference (ML scoring stays in Python — see README honest-scope note).
     meta:

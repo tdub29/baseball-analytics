@@ -1,5 +1,5 @@
 -- Engineer per-pitch event flags from the raw TrackMan PitchCall + location.
--- Mirrors the flag logic in src/portal/trackman._pitch_flags (and the hitter-app
+-- Mirrors the flag logic in src/ncaa/portal/trackman._pitch_flags (and the apps/hitter
 -- swing/contact semantics), expressed as deterministic SQL:
 --
 --   is_swing   : StrikeSwinging OR any foul OR in-play (incl. ExitSpeed > 0)

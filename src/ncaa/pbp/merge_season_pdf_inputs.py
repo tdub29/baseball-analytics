@@ -22,6 +22,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from ncaa.pbp import DATA_DIR, VALIDATION_DIR
+
 SCRIPT_DIR = Path(__file__).resolve().parent
 
 HEADER = """USD Baseball — Battle calculation output
@@ -58,7 +60,7 @@ def _parse_game_blocks(text: str) -> dict[int, str]:
 def _load_contest_battle_blocks() -> dict[int, str]:
     out: dict[int, str] = {}
     pat = re.compile(r"^contest_(\d+)_battle_calc_output\.txt$", re.I)
-    for p in sorted(SCRIPT_DIR.glob("contest_*_battle_calc_output.txt")):
+    for p in sorted(VALIDATION_DIR.glob("contest_*_battle_calc_output.txt")):
         m = pat.match(p.name)
         if not m:
             continue
@@ -72,7 +74,7 @@ def _load_contest_battle_blocks() -> dict[int, str]:
 
 
 def merge_battle_text() -> dict[int, str]:
-    real5_path = SCRIPT_DIR / "real5_battle_calc_output.txt"
+    real5_path = VALIDATION_DIR / "real5_battle_calc_output.txt"
     if not real5_path.is_file():
         print("Warning: real5_battle_calc_output.txt not found; using contest_* only.", file=sys.stderr)
         merged = {}
@@ -87,10 +89,10 @@ def merge_battle_text() -> dict[int, str]:
 
 def merge_pbp_csv() -> pd.DataFrame:
     """All PBP play rows: real5, with any game_id that has contest_*_pbp.csv replaced in full by the contest file."""
-    real5_path = SCRIPT_DIR / "real5_pbp_baseballr_style.csv"
+    real5_path = DATA_DIR / "real5_pbp_baseballr_style.csv"
     contest_paths = sorted(
         p
-        for p in SCRIPT_DIR.glob("contest_*_pbp.csv")
+        for p in DATA_DIR.glob("contest_*_pbp.csv")
         if re.match(r"^contest_(\d+)_pbp\.csv$", p.name, re.I)
     )
     contest_frames = [pd.read_csv(p) for p in contest_paths]
@@ -148,11 +150,11 @@ def main() -> None:
     for gid in order:
         lines.append(merged[gid])
         lines.append("")
-    battle_out = SCRIPT_DIR / "season_pdf_battle_input.txt"
+    battle_out = VALIDATION_DIR / "season_pdf_battle_input.txt"
     battle_out.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
     print(f"Wrote {battle_out.name} ({len(merged)} games)")
 
-    pbp_out = SCRIPT_DIR / "season_pdf_pbp_input.csv"
+    pbp_out = DATA_DIR / "season_pdf_pbp_input.csv"
     pbp.to_csv(pbp_out, index=False)
     ng = int(pbp["game_pbp_id"].nunique()) if not pbp.empty and "game_pbp_id" in pbp.columns else 0
     print(f"Wrote {pbp_out.name} ({len(pbp)} rows, {ng} games)")

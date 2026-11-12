@@ -32,7 +32,7 @@ from .util import clean_str
 
 log = logging.getLogger(__name__)
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 
 # ── TJ Stuff+ scaling (from pitcher-app run_model_and_scale) ─────────────────
 _STUFF_TARGET_MEAN = 0.011532333993710725

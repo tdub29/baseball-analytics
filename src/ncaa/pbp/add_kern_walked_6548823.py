@@ -6,11 +6,12 @@ Run from battles/ with the CSV closed.
   python add_kern_walked_6548823.py
   python baseballr_battle_calc.py
 """
-from pathlib import Path
 
 import pandas as pd
 
-CSV = Path(__file__).resolve().parent / "real5_pbp_baseballr_style.csv"
+from ncaa.pbp import DATA_DIR
+
+CSV = DATA_DIR / "real5_pbp_baseballr_style.csv"
 
 # All columns set so battle calc counts: leadoff (inning_leadoff=1), reached_base, walk (event_category, is_walk), is_pa
 ROW = {

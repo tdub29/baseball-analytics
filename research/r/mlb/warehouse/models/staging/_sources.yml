@@ -1,0 +1,45 @@
+version: 2
+
+# Every source reads the gitignored local cache in place (dbt-duckdb external_location). The
+# StatsAPI and Chadwick caches are .rds, so research/r/mlb/export_parquet.R writes them to Parquet
+# first. Retrosheet is read as text and cast in staging, so a column that is blank for a whole
+# season cannot change type between files.
+
+sources:
+  - name: retrosheet
+    description: >
+      Retrosheet season CSVs, 2015-2025. The information used here was obtained free of charge
+      from and is copyrighted by Retrosheet. Interested parties may contact Retrosheet at
+      "www.retrosheet.org".
+    meta:
+      external_location: "read_csv('{{ env_var('MLB_DATA', '../../../../data/mlb') }}/raw/retrosheet/*/*{name}.csv', union_by_name = true, all_varchar = true)"
+    tables:
+      - name: gameinfo
+        description: One row per game, dated on the day it started.
+      - name: plays
+        description: One row per event, dated on the day it was played.
+
+  - name: statsapi
+    description: >
+      MLB StatsAPI pulls, copyright MLB Advanced Media, L.P., used for private research
+      (non-commercial, non-bulk). Never committed.
+    meta:
+      external_location: "read_parquet('{{ env_var('MLB_DATA', '../../../../data/mlb') }}/parquet/statsapi_{name}.parquet')"
+    tables:
+      - name: lineups
+        description: Final regular-season games 2015-2026 with scores, starters and starting nines.
+      - name: schedule
+        description: Schedule listings 2015-2019 (backtest); a game appears once per listing.
+      - name: team_log
+        description: Team game logs; group (hitting, pitching) is in source_file.
+      - name: player_log
+        description: Player game logs; season and group are in source_file.
+      - name: roster
+        description: Full-season rosters; team and season are in source_file.
+
+  - name: chadwick
+    description: Chadwick Bureau register (ODC-By), the MLBAM / Retrosheet / Baseball-Reference id crosswalk.
+    meta:
+      external_location: "read_parquet('{{ env_var('MLB_DATA', '../../../../data/mlb') }}/parquet/chadwick.parquet')"
+    tables:
+      - name: register

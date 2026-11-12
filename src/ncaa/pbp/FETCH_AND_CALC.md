@@ -84,14 +84,14 @@ A separate R workflow uses the **baseballr** package (stats.ncaa.org) to get USD
 **Run in R or RStudio:**
 
 ```r
-setwd("c:/Users/TrevorWhite/OneDrive - Good360/Documents/Python Scripts")  # or your repo root
+setwd("path/to/baseball-analytics")  # your repo root
 source("Baseball/r_fetch_usd_schedule_2026.R")
 ```
 
 Or from a terminal (if R is on PATH):
 
 ```text
-cd "c:\Users\TrevorWhite\OneDrive - Good360\Documents\Python Scripts"
+cd path/to/baseball-analytics
 Rscript Baseball/r_fetch_usd_schedule_2026.R
 ```
 

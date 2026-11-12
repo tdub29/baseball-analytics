@@ -1,6 +1,6 @@
 {#
   weighted_mean: pitches-weighted mean, rounded to 1 dp — the SQL twin of
-  src/portal/rollup.py `_weighted_mean`.
+  src/ncaa/portal/rollup.py `_weighted_mean`.
 
   Python semantics reproduced exactly:
     - sum(value * weight) / sum(weight)

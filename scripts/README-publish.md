@@ -17,7 +17,7 @@ npm i -g netlify-cli
 netlify login
 
 # 3. Create the site and link this folder to it
-cd "C:\Users\TrevorWhite\Downloads\Big Projects\baseball"
+cd path/to/baseball-analytics
 netlify link --name usd-portal-3p176b
 ```
 

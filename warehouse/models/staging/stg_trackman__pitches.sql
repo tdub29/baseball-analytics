@@ -2,7 +2,7 @@
 -- Source is read all-varchar (so a messy export never fails the load); we coerce
 -- the numeric fields here and keep the grain at one row per PitchUID.
 --
--- Mirrors src/portal/trackman.py load_trackman(): same numeric columns coerced,
+-- Mirrors src/ncaa/portal/trackman.py load_trackman(): same numeric columns coerced,
 -- same lowercase canonical names, and a synthesized key only if PitchUID is null.
 
 with source as (
@@ -77,5 +77,5 @@ renamed as (
 
 select * from renamed
 -- Drop non-pitch tracking artifacts (catcher throws / untagged rows carry a null
--- pitcher). Mirrors src/portal/trackman.aggregate_pitching: `if not clean_str(pitcher): continue`.
+-- pitcher). Mirrors src/ncaa/portal/trackman.aggregate_pitching: `if not clean_str(pitcher): continue`.
 where pitcher is not null

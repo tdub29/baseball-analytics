@@ -11,6 +11,7 @@ from ncaa_situational_stats_playwright import (
     batch_situational_vs_b1_consolidated_battle_refresh,
 )
 
+from ncaa.pbp import DATA_DIR, VALIDATION_DIR
 from ncaa.pbp.baseballr_battle_calc import (
     build_complete_games_lookup,
     run_battle_calc_for_all_games,
@@ -22,7 +23,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 
 def contest_ids_with_pbp() -> list[int]:
     ids = []
-    for p in SCRIPT_DIR.glob("contest_*_pbp.csv"):
+    for p in DATA_DIR.glob("contest_*_pbp.csv"):
         m = re.match(r"^contest_(\d+)_pbp\.csv$", p.name, re.I)
         if m:
             ids.append(int(m.group(1)))
@@ -31,8 +32,8 @@ def contest_ids_with_pbp() -> list[int]:
 
 def regenerate_battle_outputs(ids: list[int]) -> None:
     for cid in ids:
-        pbp = SCRIPT_DIR / f"contest_{cid}_pbp.csv"
-        out_txt = SCRIPT_DIR / f"contest_{cid}_battle_calc_output.txt"
+        pbp = DATA_DIR / f"contest_{cid}_pbp.csv"
+        out_txt = VALIDATION_DIR / f"contest_{cid}_battle_calc_output.txt"
         if not pbp.is_file():
             print(f"skip {cid}: no {pbp.name}", file=sys.stderr)
             continue

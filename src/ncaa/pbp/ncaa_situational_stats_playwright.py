@@ -21,6 +21,8 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
+from ncaa.pbp import VALIDATION_DIR
+
 try:
     from playwright.sync_api import sync_playwright
 except ImportError:
@@ -145,7 +147,7 @@ def batch_situational_vs_b1_verbose(
             page = context.new_page()
 
             for cid in contest_ids:
-                br_path = SCRIPT_DIR / f"contest_{cid}_battle_calc_output.txt"
+                br_path = VALIDATION_DIR / f"contest_{cid}_battle_calc_output.txt"
                 b1a_val, b1b_val = None, None
                 br_txt = ""
                 if br_path.is_file():
@@ -260,7 +262,7 @@ def batch_situational_vs_b1_consolidated(
             page = context.new_page()
 
             for cid in contest_ids:
-                br_path = SCRIPT_DIR / f"contest_{cid}_battle_calc_output.txt"
+                br_path = VALIDATION_DIR / f"contest_{cid}_battle_calc_output.txt"
                 b1a_val, b1b_val = None, None
                 matchup = ""
                 if br_path.is_file():
@@ -553,7 +555,7 @@ def main() -> None:
     b1b_val: int | None = None
     br_path = args.battle_report
     if br_path is None and cid is not None and not args.no_b1_compare:
-        br_path = SCRIPT_DIR / f"contest_{cid}_battle_calc_output.txt"
+        br_path = VALIDATION_DIR / f"contest_{cid}_battle_calc_output.txt"
     if br_path and br_path.is_file() and cid is not None:
         b1a_val, b1b_val = parse_b1_from_battle_report(
             br_path.read_text(encoding="utf-8"), cid

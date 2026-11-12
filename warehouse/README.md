@@ -3,7 +3,7 @@
 A tested, documented, incrementally-loaded **dbt** rebuild of the transform /
 rollup layer of the USD baseball scouting pipeline.
 
-I run the USD baseball scouting pipeline (SQLite + Python `run.py` rollups,
+I run the USD baseball scouting pipeline (SQLite + Python `src/ncaa/cli.py` rollups,
 `INSERT OR REPLACE` upserts, 18 pytest tests). This `warehouse/` rebuilds the
 **transform / rollup layer** of that pipeline as a dbt project: source freshness,
 model contracts, data-quality tests the Python layer lacked, and full
@@ -11,9 +11,9 @@ lineage/docs — over the same real TrackMan + 6-4-3 data. It runs on
 [dbt-duckdb](https://github.com/duckdb/dbt-duckdb), so it reads the CSVs directly
 with **zero credentials**.
 
-This layer is **purely additive**. It does not modify `run.py`, `src/portal/`,
+This layer is **purely additive**. It does not modify `src/ncaa/cli.py`, `src/ncaa/portal/`,
 the Streamlit apps, `db/schema.sql`, or anything else in the repo. Cutover is
-staged — `run.py` is unchanged and Trevor flips it to read from the warehouse
+staged — `src/ncaa/cli.py` is unchanged and Trevor flips it to read from the warehouse
 when ready (see [MIGRATION.md](MIGRATION.md)).
 
 ## Honest scope — what dbt does and does NOT do
@@ -24,13 +24,13 @@ dbt owns the **SQL transform / cleaning / rollup / test / mart** layer:
   `'%'`, `'°'`; type the columns; normalize pitch-type labels)
 - engineer per-pitch event flags (swing / whiff / strike / in-zone / contact)
 - roll the 6-4-3 per-(pitcher, pitch-type) arsenal up into one pitches-weighted
-  row per pitcher (the dbt replacement for `src/portal/rollup.py`)
+  row per pitcher (the dbt replacement for `src/ncaa/portal/rollup.py`)
 - build conformed dims + a pitch-grain fact + season marts
 - enforce model contracts and run data-quality tests
 
 The **ML scoring stays in Python and is out of dbt scope.** The Stuff+ / xWhiff /
-xSLG models (joblib / XGBoost / LightGBM, in `pitcher-app/` + `hitter-app/`,
-invoked by `src/portal/trackman.py`) run model **inference** that does not belong
+xSLG models (joblib / XGBoost / LightGBM, in `apps/pitcher/` + `apps/hitter/`,
+invoked by `src/ncaa/portal/trackman.py`) run model **inference** that does not belong
 in a SQL warehouse. dbt **consumes** 6-4-3's already-computed `Stuff+` /
 `Location+` / `xRV+` columns and the raw TrackMan measured fields; it never runs a
 model. The pitches-weighted *aggregation* of those scores is dbt's job; producing
@@ -86,7 +86,7 @@ flowchart LR
     INT --> MPS
     FCT --> MPS
 
-    MARS --> EXP[exposures:<br/>pitcher-app · hitter-app<br/>hot-board · PDF reports]
+    MARS --> EXP[exposures:<br/>apps/pitcher · apps/hitter<br/>hot-board · PDF reports]
     MPS --> EXP
     MHS --> EXP
     FCT --> EXP
@@ -121,7 +121,7 @@ source vars at the real CSVs:
 
 ```bash
 dbt build --profiles-dir . --full-refresh --vars '{
-  "trackman_csv": "../pitcher-app/data/raw/usd_baseball_TM_master_file.csv",
+  "trackman_csv": "../apps/pitcher/data/raw/usd_baseball_TM_master_file.csv",
   "six43_pitching_csv": "../data/643_exports/pitching/pitchers_2025.csv",
   "six43_hitting_csv": "../data/643_exports/hitters_2025_overall.csv"
 }'

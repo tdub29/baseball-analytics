@@ -32,7 +32,7 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-ROOT = Path(__file__).resolve().parents[3]
+ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(ROOT / "src"))
 
 from ncaa.portal.util import clean_str, parse_hometown  # type: ignore  # noqa: E402

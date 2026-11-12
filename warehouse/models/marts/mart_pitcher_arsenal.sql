@@ -1,4 +1,4 @@
--- mart_pitcher_arsenal — the dbt replacement for src/portal/rollup.rollup_arsenal.
+-- mart_pitcher_arsenal — the dbt replacement for src/ncaa/portal/rollup.rollup_arsenal.
 --
 -- Collapses the per-(pitcher, pitch-type) 6-4-3 arsenal (stg_643__pitch_arsenal)
 -- into ONE wide row per pitcher, exactly the way rollup.py builds a stats_pitching

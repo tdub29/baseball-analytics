@@ -2,9 +2,6 @@
 Build real 5-game dual-style play-by-play outputs and an exact-only battle
 feasibility report.
 
-This script extends the workflow documented in:
-  Baseball/battles/cursor_battle_logic_migration_and_docum.md
-
 It pulls real NCAA play-by-play data for University of San Diego games from:
   https://ncaa-api.henrygd.me
 
@@ -751,8 +748,6 @@ def build_markdown_report(
 ) -> str:
     lines: list[str] = []
     lines.append("# Real 5-Game Battle Feasibility (Exact-Only)")
-    lines.append("")
-    lines.append("Built from the workflow in `Baseball/battles/cursor_battle_logic_migration_and_docum.md`.")
     lines.append("")
     lines.append("## Selected Games")
     lines.append("")

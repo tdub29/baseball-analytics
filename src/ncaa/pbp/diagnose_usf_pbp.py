@@ -8,6 +8,7 @@ from pathlib import Path
 import pandas as pd
 from ncaa_pbp_playwright import _effective_outs_added, _outs_on_play
 
+from ncaa.pbp import DATA_DIR, VALIDATION_DIR
 from ncaa.pbp.baseballr_description_mappings import has_pa_action
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -32,11 +33,11 @@ def lead_batter_last(desc: str) -> str | None:
     return m.group(1) if m else None
 
 
-SUR_LOWER = {x.lower() for x in roster_surnames(SCRIPT_DIR / "usd_roster_names.txt")}
+SUR_LOWER = {x.lower() for x in roster_surnames(VALIDATION_DIR / "usd_roster_names.txt")}
 
 
 def diagnose(cid: int) -> None:
-    p = SCRIPT_DIR / f"contest_{cid}_pbp.csv"
+    p = DATA_DIR / f"contest_{cid}_pbp.csv"
     df = pd.read_csv(p)
     print(f"=== contest {cid}  ({len(df)} rows)")
 

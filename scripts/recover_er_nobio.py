@@ -46,7 +46,7 @@ import pandas as pd
 from rapidfuzz import fuzz, process
 
 # --- paths -----------------------------------------------------------------
-ROOT = Path(r"c:\Users\TrevorWhite\Downloads\Big Projects\baseball")
+ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = ROOT / "db" / "baseball.db"
 BIO_DIR = ROOT / "data" / "643_exports" / "bio"
 OUT_CSV = BIO_DIR / "recovered_er.csv"

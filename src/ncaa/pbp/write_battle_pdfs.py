@@ -21,6 +21,7 @@ sys.path.insert(0, str(OUT_DIR))
 
 import pandas as pd
 
+from ncaa.pbp import DATA_DIR
 from ncaa.pbp.baseballr_battle_calc import (
     build_complete_games_lookup,
     build_rows_df_and_summary_df,
@@ -37,8 +38,8 @@ def _safe_filename(s: str) -> str:
 
 def main() -> None:
     battles_dir = OUT_DIR
-    csv_path = battles_dir / "real5_pbp_baseballr_style.csv"
-    games_csv = battles_dir / "real5_selected_games.csv"
+    csv_path = DATA_DIR / "real5_pbp_baseballr_style.csv"
+    games_csv = DATA_DIR / "real5_selected_games.csv"
     pdf_dir = battles_dir / "battle_pdf"
 
     if not csv_path.is_file():

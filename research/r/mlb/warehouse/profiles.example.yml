@@ -1,0 +1,10 @@
+# Copy to profiles.yml (gitignored) or pass --profiles-dir with this file renamed. No credentials:
+# DuckDB reads the local cache. MLB_DATA is the data/mlb folder; the default is the repo's own,
+# relative to this directory. Set it when running from a git worktree, which has no data.
+mlb_warehouse:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('MLB_DATA', '../../../../data/mlb') }}/mlb.duckdb"
+      threads: 4

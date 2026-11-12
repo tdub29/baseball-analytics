@@ -1,5 +1,5 @@
 -- mart_pitcher_season — one row per pitcher from the TrackMan pitch fact.
--- Mirrors src/portal/trackman.aggregate_pitching: rate stats off the engineered
+-- Mirrors src/ncaa/portal/trackman.aggregate_pitching: rate stats off the engineered
 -- flags (strike% / miss% / in-zone whiff% / chase% / ground% / hardhit%) plus
 -- per-pitch-type Stuff+ would normally come from the ML scorer — that scoring
 -- stays in Python, so here we surface the MEASURED + FLAG-DERIVED aggregates only

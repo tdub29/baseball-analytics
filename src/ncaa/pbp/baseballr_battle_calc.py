@@ -15,6 +15,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from ncaa.pbp import DATA_DIR, VALIDATION_DIR
 from ncaa.pbp.baseballr_description_mappings import (
     count_any_adv,
     count_any_adv_breakdown,
@@ -29,8 +30,8 @@ from ncaa.pbp.baseballr_description_mappings import (
 )
 
 try:
-    from ncaa_pbp_playwright import _effective_outs_added
-    from ncaa_pbp_playwright import _outs_on_play as _parser_outs_on_play
+    from ncaa.pbp.ncaa_pbp_playwright import _effective_outs_added
+    from ncaa.pbp.ncaa_pbp_playwright import _outs_on_play as _parser_outs_on_play
 except ImportError:
     _effective_outs_added = None
     _parser_outs_on_play = None
@@ -516,16 +517,19 @@ def _align_to_game_team(raw_batting: str, away: str, home: str) -> str | None:
     n = str(raw_batting).strip().lower()
     if not n:
         return None
-    for full in (away, home):
-        f = full.strip().lower()
-        if not f:
-            continue
-        if n == f or n in f or f in n:
+    teams = [(full, full.strip().lower()) for full in (away, home) if full.strip()]
+    # Exact first, then containment, then first word; a looser test only counts when it picks
+    # one team, so "San Diego St. Aztecs" cannot match "San Diego Toreros" on "san".
+    for full, f in teams:
+        if n == f:
             return full
-        first = f.split()[0]
-        if len(first) > 2 and first in n:
-            return full
-    return None
+    hits = [full for full, f in teams if n in f or f in n]
+    if len(hits) == 1:
+        return hits[0]
+    if hits:
+        return None
+    hits = [full for full, f in teams if len(f.split()[0]) > 2 and f.split()[0] in n]
+    return hits[0] if len(hits) == 1 else None
 
 
 def _looks_like_dense_player_stub(tok: str) -> bool:
@@ -1037,9 +1041,9 @@ def build_rows_df_and_summary_df(
 def main() -> None:
     """Load PBP CSV, run battle calc for all games, print and write output."""
     battles_dir = Path(__file__).resolve().parent
-    csv_path = battles_dir / "real5_pbp_baseballr_style.csv"
-    games_csv = battles_dir / "real5_selected_games.csv"
-    out_path = battles_dir / "real5_battle_calc_output.txt"
+    csv_path = DATA_DIR / "real5_pbp_baseballr_style.csv"
+    games_csv = DATA_DIR / "real5_selected_games.csv"
+    out_path = VALIDATION_DIR / "real5_battle_calc_output.txt"
     if not csv_path.is_file():
         print(f"CSV not found: {csv_path}")
         return
@@ -1063,7 +1067,7 @@ def main() -> None:
     mjs = pdf_dir / "generate-pdf.mjs"
     if mjs.is_file():
         out_pdf = pdf_dir / "season_battle_report.pdf"
-        pbp_csv = battles_dir / "real5_pbp_baseballr_style.csv"
+        pbp_csv = DATA_DIR / "real5_pbp_baseballr_style.csv"
         logo = pdf_dir / "sd_logo.png"
         cmd = ["node", str(mjs), str(out_path), str(out_pdf), str(pbp_csv), str(logo)]
         try:

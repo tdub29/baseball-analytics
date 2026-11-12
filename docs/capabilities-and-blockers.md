@@ -60,7 +60,7 @@ D1Baseball cookie, X token, Google service account, alert webhook).
 
 ## Re-verified + live-feed readiness prep — 2026-06-30
 
-**Verified built state** (system Python 3.12 — not the Polymarket `.venv`, which lacks
+**Verified built state** (Python 3.12 with the project deps installed, including
 `rapidfuzz`): **125 tests passing**, no network. DB (`db/baseball.db`, refreshed 2026-06-27) is
 current and populated: 35,034 players · 11,001 portal_events (10,147 ENTERED / 854 COMMITTED /
 **0 WITHDRAWN** — withdrawals await the 64 Analytics feed) · 1,706 currently-ENTERED · 39,770
@@ -77,9 +77,6 @@ evaluations. Offline `python run.py board` produces a ranked CSV with `google_sh
   required name column, accepted headers, filename→season/split inference, hitting/pitching
   auto-detect) and `secrets/README.md` (Google service-account setup + env-var table);
   `secrets/` folder created. Both READMEs gitignored (guidance only).
-
-**The input-unlock packet** (exactly what to provide + where): see
-[input-unlock-packet-2026-06-30.md](input-unlock-packet-2026-06-30.md).
 
 **Still blocked (each on ONE Trevor input):**
 | Feed | Input needed | Lands at |

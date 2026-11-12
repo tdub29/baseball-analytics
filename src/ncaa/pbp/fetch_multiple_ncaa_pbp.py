@@ -26,6 +26,7 @@ from ncaa_pbp_playwright import (
     parse_pbp_table,
 )
 
+from ncaa.pbp import DATA_DIR, VALIDATION_DIR
 from ncaa.pbp.baseballr_battle_calc import add_leadoff_column_to_pbp
 
 
@@ -49,8 +50,8 @@ def main() -> None:
 
     battles_dir = OUT_DIR
     battles_dir.mkdir(parents=True, exist_ok=True)
-    pbp_path = battles_dir / "real5_pbp_baseballr_style.csv"
-    games_path = battles_dir / "real5_selected_games.csv"
+    pbp_path = DATA_DIR / "real5_pbp_baseballr_style.csv"
+    games_path = DATA_DIR / "real5_selected_games.csv"
 
     # Append mode: load existing PBP/games and only fetch IDs not already present (or in refresh_ids)
     existing_games_df = None
@@ -131,7 +132,7 @@ def main() -> None:
     from ncaa.pbp.baseballr_battle_calc import run_battle_calc_for_all_games, write_battle_report
     results, full = run_battle_calc_for_all_games(pbp_path, games_csv_path=games_path)
     # Text report first; PDF (e.g. render_season_summary_pdf) is a separate step.
-    out_path = OUT_DIR / "real5_battle_calc_output.txt"
+    out_path = VALIDATION_DIR / "real5_battle_calc_output.txt"
     lookup = {int(r["contest_id"]): (r["away_short"], r["home_short"]) for _, r in games_df.iterrows()}
     write_battle_report(results, out_path, games_lookup=lookup, full_battle_df=full)
     print(f"Wrote battle report: {out_path}")
@@ -141,7 +142,7 @@ def main() -> None:
     mjs = pdf_dir / "generate-pdf.mjs"
     if mjs.is_file():
         out_pdf = pdf_dir / "season_battle_report.pdf"
-        pbp_csv = battles_dir / "real5_pbp_baseballr_style.csv"
+        pbp_csv = DATA_DIR / "real5_pbp_baseballr_style.csv"
         logo = pdf_dir / "sd_logo.png"
         cmd = [
             "node",
