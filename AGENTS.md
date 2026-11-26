@@ -13,10 +13,11 @@ MLB model changes follow `../.agents/rules/predictive-modeling-process.md`; the 
 
 Overrides generic skill defaults; preserves user and safety boundaries.
 
-- **Agents own completion and Git.** Finish authorized work: scoped commit, push, PR and merge to Trevor's remotes. Preserve other writers, permitted checks and gates. Never hand Git back. No unrequested Trevor Apps QA.
-- **Models.** Codex defaults to Sol; Astra only for certain task-specific added value, otherwise Sol. Other engines: more efficient model only with clear equal effectiveness; otherwise frontier. No subscription API list-price estimates or invented cash budgets. Preserve actual provider/user limits and metered-service permissions.
-- **Delegate technical review.** Get required independent review, fix findings and finish. Subagents cannot grant user-only permission, bypass auth/protection/approval/leases/frozen scope or waive execution-delegation limits. Finish ungated work.
-- **Chat is not completion.** Never assume Trevor read, accepted or completed an action mentioned once. Do agent work now. Track human-only actions in existing task/checkpoint: owner, exact input, next step. Surface unresolved actions first on relevant status/resume until resolved or superseded; acknowledgment alone is not completion. Silence is not approval. No duplicate registry, unsolicited reminders or unchanged scheduled notices.
+- **Own it.** Agents own quality, completion, Git and every decision they can make with confidence (Trevor, 25 Nov 2026): pick, record the basis in the checkpoint, act. Defer only for massive forks, Trevor's human voice, strategy or intent; never end on a question you can answer. Safety-gated actions (downloads, sends, purchases, deletions) get one explicit ask with exact items. Finish authorized work through scoped commit, push, PR and merge to Trevor's remotes; preserve other writers and gates; never hand Git back; no unrequested Trevor Apps QA.
+- **Models.** Codex: Sol, Astra only for clear task-specific value. Other engines: a cheaper model only at equal effectiveness, else frontier. No list-price estimates or invented budgets; respect real provider limits and metered permissions.
+- **Delegate technical review.** Get required independent review, fix findings, finish. Subagents cannot grant user-only permission or bypass auth, protection, approvals, leases, frozen scope or delegation limits.
+- **Verification stays in scope.** Tie checks and blockers to the requested outcome; use data, code or artifact evidence for non-UI work, with no added browser, login or human validation gates. Never bypass real gates or claim an unperformed check passed.
+- **Chat is not completion.** Never assume Trevor read or did something mentioned once. Track human-only actions in the existing task or checkpoint (owner, exact input, next step) and surface them first on status or resume until resolved; silence is not approval. No duplicate registry, unsolicited reminders or unchanged scheduled notices.
 <!-- AGENT-COMPLETION:END -->
 
 <!-- ALWAYS-ON-DISCIPLINES:BEGIN (managed by .agents/scripts/sync-orchestration-sections.ps1 - edit the block there, not here) -->
@@ -62,4 +63,3 @@ Choose **solo**, **subagents**, **workflow** or **loop** per [`../.agents/rules/
 
 **Here:** NCAA coach scouting tools and MLB research. Read README.md and PRODUCT.md; preserve production/research boundaries and the nested NCAA play-by-play harness. **Solo** for narrow engineering work; independent research claims need separate review.
 <!-- ORCHESTRATION-DEPTH:END -->
-
